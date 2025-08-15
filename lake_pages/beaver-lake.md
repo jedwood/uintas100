@@ -1,21 +1,11 @@
-# Beaver Lake (BR-10)
+# Beaver Lake
 
-## Location
 Beaver Lake also known as BR-10 is located in Summit County, Utah and is part of the northwest Uinta Mountain area. The lake is located about a half mile southwest of Whitney Reservoir. From the Mirror Lake Highway take the Whitney Road exit and head 7 miles west to Whitney Reservoir, then follow the road around 3 more miles. The exit to Whitney Road is just southwest of the Christmas Meadows Area. The main road from the Mirror Lake Highway is on Forrest Road 32 which becomes Forrest road 69. You can also take Forrest Road 310 or 109, although these roads are rough and better suited for a 4wheeler.
 
-## Fish Species
 Rainbow Trout are the likely catch. On average the lake is stocked with around 2,000 rainbow trout a year measuring around 10".
 
-## Historical DWR Info
-
-### 1964
 Beaver Lake is 13 acres in size, it has an elevation of 9,500 feet, maximum depth 32 feet, and an average depth of 16 feet. 10 miles by jeep road. Follow the Whitney Forest Service Guard Station road from the Hayden Fork Highway 150, as posted. A round lake with an open shoreline. Excellent campsites. There are numerous beaver dams in this area; several provide some excellent fishing. The streams in the area are generally good fishing. Stocked with brook trout. A very productive lake.
 
-### 1985
 Beaver is a scenic meadow lake located in open terrain characterized by grassy slopes and scattered groves of conifers in the West Fork Drainage. The lake is 13.2 acres, 9,420 feet in elevation, with 32 feet maximum depth. Beaver is easily accessible on the Moffit Pass Road 1% miles southwest of the Whitney Reservoir dam. The total distance from U-150 in the Hayden Fork Drainage is about 9 miles. Excellent sites are available for camping activity, but spring water and fuelwood are scarce. Large shallow shelves and dense growths of aquatic vegetation around the lake perimeter make shore fishing very difficult. Anglers are encouraged to bring boats or rubber rafts. Beaver Lake is productive in nature and subject to frequent winterkill. As a result, the Forest Service has installed a water circulator on the surface of this lake in an attempt to improve winter survival. Beaver is currently stocked on an annual basis with catchable-sized rainbow trout and may contain brook and cutthroat trout.
 
-## Nearby Areas to Fish
 There are some beaver ponds near the area with rainbow trout in them. Whitney Reservoir, west fork of the Bear River, and Bourbon Lake.
-
-## Photos
-![Beaver Lake](../photos/beaver-lake.jpg)

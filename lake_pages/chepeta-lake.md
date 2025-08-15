@@ -1,32 +1,16 @@
-# Chepeta Lake (WR-64)
+# Chepeta Lake
 
-## Location
-Chepeta Lake, also known as WR-64, is located in Duchesne County, Utah at an elevation of 10,600 feet. The lake has a maximum surface area of 50 acres and reaches a maximum depth of 60 feet.
+## Location:
+Chepeta Lake also known as WR-64 is located in Duchesne County, Utah. From Roosevelt take US 40 until your reach Eagle View Elementary School. Turn east directly after the school onto White Rocks Highway which is also called 5750 East. The road eventually turns into Farm Creek Road. After about 20 miles on the road from highway 40 there will be a turn for FR117 also known as Elkhorn Loop. A lot of people will miss the turn but its easy to tell because the road will look like you're entering private property if you miss the turn. You will follow FR117/Elkhorn loop about 14 Miles east until you hit a fork with a sign for Chepeta Lake/Pole Creek Lake. Turn right and follow the road another ten miles. The parking is about 200 yards away from the lake. There is also various spots to unload horse trailers just before the lake.
 
-## Fish Species
-Chepeta Lake is stocked with:
-- Brook Trout (cyclically stocked)
-- Rainbow Trout
+## Fish Species:
+Brook Trout, and Rainbow Trout
 
-## Other Info
-Chepeta Lake is named after Native American princess Chipeta. The lake offers excellent campsites with plenty of horse feed, though it experiences heavy fishing pressure due to its popularity and fish quality.
+## DWR Info:
+Elevation 10,600 feet. Maximum surface acres 50, maximum depth 60 feet. Reservoir with 20-foot dam on the south end of the lake. Size and depth fluctuates. Located 20 miles from Paradise Park Reservoir. Several fishing streams enter this large reservoir. Excellent campsites with plenty of horse feed. Good fishing for Brook Trout. Heavy fishing pressure. Plenty of open shoreline for fly fishermen with hip boots. Several good fishing lakes nearby. A small rubber boat or raft is helpful on this large water. Some natural reproduction. Large insect population too, and they bite as fast as the fish. Stocked cyclically with brook trout.
 
-## Historical DWR Info
-This high-elevation lake is known for producing quality trout. The cyclical stocking program helps maintain healthy fish populations while managing pressure on wild fish stocks.
+## Other Info:
+Chepeta Lake was named after the native american princess chipeta.
 
-## Access/Directions
-1. From Roosevelt, take US 40 to Eagle View Elementary School
-2. Turn east onto White Rocks Highway/5750 East
-3. Follow road (becomes Farm Creek Road) for 20 miles
-4. Turn onto FR117/Elkhorn Loop
-5. Follow 14 miles to Chepeta Lake fork
-6. Turn right, follow 10 more miles
-7. Parking is located 200 yards from the lake
-
-## Nearby Areas to Fish
-Whiterocks River, Moccasin Lake, Wigwam Reservoir, Papoose Lake, and over 20 additional nearby lakes and waters in the White Rocks drainage system.
-
-## Photos
-![Chepeta Lake Utah](../photos/chepeta-lake-1.jpg)
-
-![Chepeta Lake View](../photos/chepeta-lake-2.jpg)
+## Nearby Areas to Fish:
+Whiterocks river, Moccasin Lake, Wigwam Reservoir, Wigwam Lake, Papoose Lake, Elbow Lake, Reader Lakes, Walk Up Lake, Jessen Lake, Tamarack Lake, Spirit Lake, Workman Lake, Teds Lake, Saucer Lake, Sand Lake, Dollar Lake, Whiterocks Lake, Pearl lake, Dagget Lake, Hidden Lake, Quent Lake, Rasmussen lakes, Cirque Lake.

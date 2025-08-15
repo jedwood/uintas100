@@ -1,32 +1,15 @@
-# Echo Lake (Z-16)
+# Echo Lake
 
-## Location
-Echo Lake, also known as Z-16, is located in the Uinta-Wasatch-Cache National Forest, Utah at an elevation of 9,740 feet. The lake covers 18 acres with a maximum depth of 44 feet.
+## Directions:
+Echo Lake also known as Z-16 is located in the Uinta-Wasatch-Cache National Forest in Utah. From the Mirror Lake highway take the Murdock Basin exit. Follow the Murdock Basin Road (road 137) to the lake. There are signs leading all the way up to Echo Lake although most people miss them and drive past the lake. I recommend you take a GPS. The first quarter mile of the road is paved after that the road will open up to a flat area that has a large map. Study the map before you drive up. The road looks like a old river bed and has lots of large rocks in it. Use a 4 wheel drive vehicle with lots of clearance. I broke the ball joint on my truck the last time I drove up there.
 
-## Fish Species
-Echo Lake is stocked with:
-- Brook Trout
-- Golden Trout
+## Fish Species:
+Brook Trout, Golden Trout
 
-## Other Info
-Echo Lake is situated in thick conifers at the base of a talus slope and receives heavy recreational use. The lake offers campsites with spring water available at the southeastern end, though horse feed is limited in the area.
+## Historical DWR Info:
+Echo is a beautiful lake located in thick conifers at the base of a talus slope. This lake is 18 acres, 9,740 feet in elevation, with 44 feet maximum depth. Echo is a popular lake and receives heavy recreational use. Access is 5 1/4 miles east and north on the Murdock Basin Road to the Echo Lake turnoff, and then north for 1/2 mile along a rough road. Numerous campsites with spring water are available at the southeastern end of the lake. Horse feed is limited. Echo contains a large population of brook trout.
 
-## Historical DWR Info
-Echo Lake is known for its golden trout population, making it a unique fishing destination in the Uintas. The combination of brook trout and golden trout provides diverse angling opportunities for visitors willing to navigate the challenging access road.
+## Nearby Areas to Fish:
+Pyramid Lake, Joan Lake, Gem Lake, Blizzard Lake, Marshall Lake, Hoover Lake, Shepard Lake, Lost Lake
 
-## Access/Directions
-- Take Mirror Lake Highway to Murdock Basin exit
-- Follow Murdock Basin Road (Road 137)
-- Requires 4-wheel drive vehicle with high clearance
-- Rough road conditions - GPS recommended
-- Not suitable for standard passenger vehicles
-
-## Nearby Areas to Fish
-Pyramid Lake, Joan Lake, Gem Lake, Blizzard Lake, Marshall Lake, Hoover Lake, Shepard Lake, Lost Lake.
-
-## Photos
-![Echo Lake Utah](../photos/echo-lake-1.jpg)
-
-![Golden Trout from Echo Lake](../photos/echo-lake-golden-trout.jpg)
-
-![Pyramid Lake Sign near Echo Lake](../photos/pyramid-lake-sign.jpg)
+Were You Looking For? Echo Reservoir (Summit County)

@@ -1,27 +1,11 @@
-# Hoover Lake (Z-10)
+# Hoover Lake
 
-## Location
-Hoover Lake, also known as Z-10, is located in the northwest corner of Duchesne County, Utah at an elevation of 9,900 feet. The lake covers 18.6 acres with a maximum depth of 28 feet and is part of the Uinta-Wasatch-Cache National Forest.
+Hoover Lake also known as Z-10 is located in the northwest corner of Duchesne County, Utah. The lake is part of the Uinta-Wasatch-Cache Natinal Forest. Hoover Lake is part of the Duchesne Drainage of the Uintas. From the Mirror Lake Highway take the Murdock Basin Road and follow it about 8.5 miles. When the road ends you have reached your destination. We highly recommend you take a 4 wheeler or a vehicle with a high ground clearance. If you follow the sign to the Marshall Lake turn, it will put you on the west side of Hoover Lake.
 
-## Fish Species
-Hoover Lake is stocked with:
-- Brook Trout (stocked periodically)
-- Potentially a few Cutthroat Trout
+It is about a 480 foot hike to the lake from this side. Otherwise you can follow Murdock Basin Road to it's end. Then enter on the east side of the lake. When we last traveled here in August of 2017, several of the road signs were damaged or missing. So we recommend you take a GPS.
 
-## Other Info
-Hoover Lake is a natural lake surrounded by conifers with multiple shoreline access points. The lake has a piped spring water source and experiences heavy fishing pressure. Horse feed is limited in the area.
+Brook Trout are stocked here every few years.
 
-## Historical DWR Info
-This popular lake receives periodic brook trout stocking to maintain fishable populations. The lake's accessibility and consistent fishing make it a heavily pressured but productive fishing destination.
+Hoover is a natural lake surrounded by conifers with several areas of open shoreline. It is 18.6 acres, 9,900 feet in elevation, with 28 feet maximum depth. The major inlets originate from Shepard and Maba lakes. Several campsites are available, and there is a piped spring water source. Horse feed is limited. Access is 8 miles north and east of U-150 on the well-traveled Murdock Basin Road to the Hoover Lake turnoff. The lake is located 100 yards northwest of this point. Hoover Lake is managed for brook trout but it may also contain a few cutthroat trout. Fishing pressure is excessive.
 
-## Access/Directions
-- Access via Murdock Basin Road, approximately 8.5 miles from Mirror Lake Highway
-- Recommended transportation: 4-wheeler or high-clearance vehicle
-- GPS navigation recommended due to potentially damaged or missing road signs
-- Not suitable for standard passenger vehicles
-
-## Nearby Areas to Fish
-Maba Lake, Shepard Lake, Marshall Lake, Fehr Lake, Echo Lake, Pyramid Lake, Gem Lake, Joan Lake, Blizzard Lake.
-
-## Photos
-![Hoover Lake Uintas](../photos/hoover-lake.jpg)
+From the northern tip of the lake Maba Lake is a very short hike. Shepard Lake is a short hike to the northeast. Marshall Lake is located just southeast of here. There are also several beaver ponds around the area which contain fish. Fehr Lake is located about 1 mile northeast of here. Other Lakes in the area include Echo, Pyramid, Gem, Joan, and Blizzard.

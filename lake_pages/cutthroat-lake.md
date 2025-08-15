@@ -1,29 +1,13 @@
-# Cutthroat Lake (BR-37)
+# Cutthroat Lake
 
-## Location
-Cutthroat Lake, also known as BR-37, is located in Summit County within the Uinta-Wasatch-Cache National Forest at an elevation of 10,400 feet. The lake covers 5 acres with a maximum depth of 16 feet and average depth of 13 feet.
+Cutthroat Lake also known as BR-37 is located in Summit County and is part of the Uinta-Wasatch-Cache National Forest. The lake is located a little more than a mile west of Ruth Lake.
 
-## Fish Species
-Cutthroat Lake is stocked with:
-- Cutthroat Trout
-- Tiger Trout
+Cutthroat Trout, and Tiger Trout.
 
-## Other Info
-Cutthroat Lake is described as a heart-shaped lake set in a rugged mountain environment. The lake's remote location and lack of direct trails make it a destination for more adventurous anglers seeking solitude and pristine fishing conditions.
+The quickest way to the lake is to hike to Ruth Lake, then head north west of Hayden Lake and hike towards Jewel Lake. You can hike around and up the mountain past Hayden but its rocky and more steep then the area around Jewel Lake. From this area you pretty much head west. There isn't really a trail around this area so a GPS will help immensely. From what I saw the lake looked deeper around the south west bank.
 
-## Historical DWR Info
-This remote alpine lake is stocked with cutthroat trout and provides excellent fishing for those willing to make the challenging hike. The lake's isolation helps maintain quality fishing with less pressure than more accessible waters.
+You can also access the lake from the Lofty Lake Loop Trail, although it is twice the distance.
 
-## Access/Directions
-- Quickest route: Hike to Ruth Lake, then proceed northwest towards Jewel Lake
-- No direct trail to the lake - GPS navigation recommended
-- Alternative access via Lofty Lake Loop Trail (longer route)
-- Challenging hike requiring good navigation skills
+5 acres, elevation 10,400 feet, maximum depth 16 feet, average depth 13 feet. A half mile south of Teal. A heart-shaped lake in a rugged setting. No direct trail to the lake. Some open shoreline for fly fishing. Good campsites with horse feed. Plenty of running water. Wary cutthroat and rainbow trout. Stocked with cutthroat trout.
 
-## Nearby Areas to Fish
-Teal Lake, Cuberant Lake, Jewel Lake, Hayden Lake, Naomi Lake, Ruth Lake, Kamas Lake, Scout Lake.
-
-## Photos
-![Cutthroat Lake Utah](../photos/cutthroat-lake-1.jpg)
-
-![Cutthroat Lake Mountain Setting](../photos/cutthroat-lake-2.jpg)
+Teal Lake, Cuberant Lake, Jewel Lake, Hayden Lake, Naomi Lake, Ruth Lake, Kamas Lake, and Scout Lake.

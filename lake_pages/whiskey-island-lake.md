@@ -1,29 +1,25 @@
-# Whiskey Island Lake (Guys Lake/BR-3)
+# Whiskey Island Lake
 
-## Location
-Whiskey Island Lake, also known as Guys Lake, is located in Summit County, Utah at an elevation of 10,200-10,400 feet. The lake covers 5 acres with a maximum depth of 19 feet.
+Whiskey Island Lake also known as Guys Lake is located in Summit County, Utah. The lake is part of the Uinta Wasatch Cache national forest, and lies within the Bear river drainage of the Uinta Mountains. From Mirror Lake Highway take Forest Road 110. There is no visible sign for the turn off. There is a sign saying low clearance vehicles not recommended. The exit is between Ruth Lake and Whitney Reservoir on the same side of the road. You can take a high clearance vehicle 3/4 of the way in, then you will need to hike the rest of the way. My ball joints were broken on my truck at the time so I hiked in from Mirror Lake Highway.
 
-## Fish Species
-Whiskey Island Lake is known for:
-- Arctic Grayling (naturally reproducing population)
-- Regular stocking by Utah Division of Wildlife Resources
-- Historical significance: 1990 state record Arctic Grayling was caught here (1lb 4oz, 15 1/4" long)
+Hiking from the main highway the hike is a little over 2 miles to the lake. You can drive the first 3 legs or 1.6 miles with a high clearance vehicle.
 
-## Other Info
-Whiskey Island Lake is subject to winterkill but has been part of experimental Arctic Grayling stocking programs. The lake supports a naturally reproducing population of Arctic Grayling, making it a unique fishing destination in Utah.
+Leg 1 – 24 flights of stairsFrom Mirror Lake Highway FR 110 starts out around 9,524 feet and forks around 9767 feet, about 243 feet in elevation gain. An average flight of stairs is about 10 feet in elevation gain. For reference this rocky road is about 24 flights of stairs. Of the three dirt roads this one had the most road hazards. At the top of the first leg you will come to a fork in the road. You should see a sign pointing left for FR 636. Take the left fork which is FR 636 to begin leg 2. A lot of people continue on FR 110 then get lost trying to find the lake. The hike in from FR 110 is a lot longer and harder.
 
-## Historical DWR Info
-This high-elevation lake has been an important location for Arctic Grayling conservation efforts. Despite occasional winterkill events, the lake has maintained viable grayling populations through natural reproduction and supplemental stocking.
+Leg 2 – 14 flights of stairsThis is the easiest leg of the hike. You will travel on FR 636 for a half a mile (.46 mile) with 141 feet elevation gain from 9,767 ft to 9,908 feet. Of the four legs this road was the smoothest. Once you come to the fork take your first right on to FR 711. You should be able to see a sign for the road.
 
-## Access/Directions
-- Access from Mirror Lake Highway via Forest Road 110
-- Hiking distance: Over 2 miles total
-- Recommended: High clearance vehicle for first 1.6 miles
-- The hiking route involves 4 legs with significant elevation changes
-- Challenging access but rewarding fishing experience
+Leg 3 – 17 flights of stairsForest Road 711 is 0.4 miles long, 175 feet in elevation gain from 9,907 to 10,082 feet. Once you near the end of the road it kind of just disappears.  If you’re in a vehicle there should be a multiple places to pull off and park. From here you will need to try and establish a land mark for leg 4. There were several animal trails that were heading the wrong direction to the southwest. Don’t follow those trails instead look towards the mountain and walk just north east of it’s base. When I was last here there in 2018 there was a big meadow in this area.
 
-## Nearby Areas to Fish
-Bourbon Lake, Fish Lake, Sand Lake, Round Lake, Cuberant Lake, Teal Lake, Cutthroat Lake, Hayden Lake, Ruth Lake, Whitney Reservoir.
+Leg 4 – 31 flights of stairsThis is by far the steepest leg of the hike and the longest at .54 miles. Most of the elevation increase will come in the first 2 tenths of a mile in the hike. You should see a giant hill that you will need to climb. It seems like it is straight up but it actually isn’t to bad if you take it slow. The elevation goes from 10083 feet to 10400 feet. Try to stay about 40 feet below the boulder field.
 
-## Photos
-![Arctic Grayling from Whiskey Island Lake](../photos/whiskey-island-grayling.jpg)
+Whiskey Island Lake contains a population of naturally reproducing Arctic Grayling. It is also stocked regularly by the the DWR.2017 – Stocked with 999 Arctic  Grayling2015 – Stocked with 1508 Arctic Grayling2014 – Stocked with 1472 Arctic Grayling2013 – Stocked with  1495 Arctic Grayling
+
+In 1990, the state record for arctic grayling was caught here. The record was set by Harris Asay. The fish was 1lb 4oz in weight, had a length of 15 1/4″ and girth of 8 1/2″.
+
+BR-3. 5 acres, elevation 10,200 feet, maximum depth 17 feet. 1 long mile southwest of Gold Hill as the crow flies. No trail, campsites or horse feed. Follow up base of ridge and lake lies in a small rugged basin under the ledge rock. A pretty, blue lake with an island in the center. Some open, rocky shore line. Very little fishing pressure. Good fishing for brook trout. Stocked.
+
+Whiskey Island (GUY’S), BR – 3 . Whiskey Island is a natural alpine lake situated in a rugged cirque basin at the foot of a steep talus ridge. It is 5 acres, 10,340 feet in elevation, with 19 feet maximum depth. The lake, characterized by a glacial turbidity, is green in color. Due to the frequent snow slides in the area, Whiskey Island is not usually free of ice and snow until mid-July. Access is 1 1/4 miles southwest of the Whiskey Creek timber road from a point approximately 1 1/4 miles northwest o f U-150. The terrain is rough and composed o f boulder fields and dead fall timber. There is no direct access trail. Whiskey Island is not accessible on horseback. Campsites, horse feed and spring water are not available in the lake vicinity. Whiskey Island is subject to winterkill, but experimental stocking of arctic grayling has been scheduled for 1985.
+
+The lake has a max depth of 19 feet. The elevation is measured between 10,200 and 10,400 feet depending on date and multiple sources. The max surface area is 5 acres.
+
+Bourbon Lake,  Fish Lake, Sand Lake, Round Lake, Cuberant Lake, Teal Lake, Cutthroat Lake, Hayden Lake, Ruth Lake, and Whitney Reservoir.
