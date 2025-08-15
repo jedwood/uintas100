@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "Bash(pip3 install:*)",
+      "Bash(source:*)",
+      "Bash(pip install:*)",
+      "Bash(python:*)",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_evaluate",
+      "Bash(sqlite3:*)",
+      "Bash(rm:*)",
+      "mcp__playwright__browser_console_messages",
+      "Bash(git checkout:*)",
+      "mcp__playwright__browser_close",
+      "Bash(git init:*)",
+      "Bash(mkdir:*)",
+      "Bash(playwright install:*)",
+      "mcp__playwright__browser_click",
+      "Bash(curl:*)",
+      "mcp__playwright__browser_navigate_back",
+      "WebFetch(domain:junesucker.com)",
+      "mcp__playwright__browser_install",
+      "mcp__playwright__browser_take_screenshot",
+      "Bash(cp:*)",
+      "Bash(wget:*)"
+    ],
+    "defaultMode": "acceptEdits",
+    "additionalDirectories": [
+      "/Volumes"
+    ]
+  }
+}

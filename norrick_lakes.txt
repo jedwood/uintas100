@@ -1,0 +1,567 @@
+Lake name	Size (acres)	Max depth (ft)	Fish species	Fishing pressure
+Ashley Twins Reservoir, GR-35	25	18	Brook trout, cutthroat trout (reproducing)	Moderate
+Bert, FR-62	3.7	11	Brook trout (stocked)	Low
+Blue, DF-1	6.5	16	Brook trout	Moderate
+Deadman, GR-38	7	9	Brook trout, cutthroat trout	High
+DF-4	10	23	Cutthroat	Low
+East Kibah, DF-11	2.9	12	Brook trout (stocked), rainbow trout (reproducing)	Moderate
+Finger Kibah, DF-12	4.7	9	Brook trout	Moderate
+West Kibah, DF-14	7.8	15	Brook trout (stocked)	Moderate
+Island Kibah, DF-16	8	14	Brook trout	Moderate
+Fish, GR-57	17.5	40	Cutthroat trout (reproducing)	High
+Goose #2, GR-43	19.4	15	Cutthroat	Low
+GR-52	2.1	4	Brook trout	Moderate
+Hooper, GR-46	4.5	4	Cutthroat trout	Moderate
+Lakeshore, GR-34	11.1	18	Brook and cutthroat trout	Moderate
+Little Blue, GR-48	3.2	6	Brook trout	Low
+March, GR-39	12.6	21	Brook trout	Moderate
+North Twin (Dry Fork), GR-50	n/a	n/a	Brook and cutthroat trout	High
+Paul, DF-18	11.1	17	Brook trout	Low
+Red Belly, GR-51	6.3	8	Cutthroat trout	Moderate
+Sandy, GR-45	5.6	10	Cutthroat trout	Low
+Shaw, GR-59	2.8	5	Cutthroat trout	Low
+South Twin (Dry Fork), GR-49	6.2	8	Brook and cutthroat trout	High
+Allsop, BR-42	12.3	22	Cutthroat (natural reproducing)	Moderate
+Amethyst, BR-28	42.5	59	Brook and cutthroat trout	Moderate
+Baker, BR-45	3.6	8	Tiger trout	Moderate
+Beaver, BR-10	13.2	32	Rainbow, brook and cutthroat trout	Moderate
+Bourbon (Gold Hill), BR-1	1.9	8	Brook trout	Moderate
+BR-2	0.7	5	Brook trout	Low
+BR-16	1	5	Brook and cutthroat trout (natural reproducing)	Low
+BR-17	2.8	7	Brook trout (natural reproducing)	Moderate
+BR-18	4.8	12	Brook trout	Low
+BR-24	2.4	10	Tiger trout	Low
+BR-44	3.6	15	Tiger trout	Low
+Cutthroat, BR-37	3.8	16	Cutthroat and tiger trout	Moderate
+Hayden, BR-36	4.4	5	Tiger trout	Moderate
+Kermsuh, BR-20	12.4	14	Cutthroat trout (natural reproducing)	Low
+Lily, BR-11	12.6	20	Rainbow trout	Moderate
+Lorena, BR-46	12	20	Brook trout (stocked)	Low
+Lym, BR-7	6.4	20	Brook trout (natural reproducing)	Moderate
+McPheters, BR-14	28	45	Tiger trout	Moderate
+Meadow, BR-19	2.9	5	Brook trout (natural reproducing)	Low
+Mt. Elizabeth, BR-8	3.1	15	Cutthroat trout	Moderate
+Norice, BR-47	4.8	3	Cutthroat trout (natural reproducing)	Moderate
+Ostler, BR-27	14	14	Tiger trout	Moderate
+Priord, BR-48	12	20	Cutthroat trout (stocked), Tiger trout	Moderate
+Ruth, BR-40	9.7	30	Brook trout (stocked)	High
+Ryder, BR-15	23.7	55	Brook trout	Moderate
+Salamander, BR-26	4.1	13	Brook trout (stocked)	Low
+Scow, BR-12	22.9	6	Brook trout	Low
+Seidner, BR-31	3.2	8	Brook trout (natural reproducing)	Moderate
+Teal, BR-32	6.9	14	Tiger trout	Moderate
+Toom Set, BR-25	2.1	11	Brook trout (natural reproducing)	Low
+Whiskey Island (Guy's) BR-3	5	19	Arctic grayling	Low
+Beaver, GR-147	38.3	30	Brook trout (natural reproducing), Cutthroat	High
+Coffin, GR-144	25.8	28	Cutthroat (stocked), Tiger trout	Low
+Dine, GR-148	5.1	15	Brook trout	Low
+Gilbert, GR-150	15.2	2	Brook and cutthroat trout (natural reproducing)	Moderate
+GR-145	5.6	11	Cutthroat (variable), Arctic grayling	Low
+GR-151	12.6	11	Brook trout (natural reproducing)	Low
+GR-152	4.8	13	Brook trout	Low
+GR-153	3.6	2	Brook and cutthroat trout	Low
+GR-154	2.1	6	Brook trout (stocked)	Low
+GR-155	1.6	6	Brook trout (stocked)	Low
+GR-160	4.8	50	Brook trout	Low
+GR-161	4.3	41	Brook trout (variable)	Low
+GR-162	6.5	18	Brook trout (variable)	Low
+GR-163	6.5	16	Brook trout (variable)	Low
+GR-172	3.6	15	Brook trout (variable)	Low
+GR-173	3.9	27	Brook trout (variable)	Low
+GR-175	18.3	11	Cutthroat trout	Low
+GR-179	5.5	11	Brook trout (variable)	Low
+Hidden, GR-149	6.5	18	Brook trout (stocked)	Moderate
+Bobs, G-73	6.6	30	Cutthroat trout (stocked), Tiger trout	Low
+Dead Horse, G-77	16	41	Cutthroat trout (stocked), Tiger trout	Moderate
+Duck, G-37	5.9	5	Brook trout (stocked)	Moderate
+Ejod, G-76	6.7	12	Cutthroat trout (natural & stocked)	Low
+G-65	5	5	Brook trout (natural reproducing)	Moderate
+G-66	4	12	Brook trout (natural reproducing)	Moderate
+G-67	7.7	25	Brook trout (stocked)	Low
+G-69	4.8	13	Cutthrout (natural reproducing)	Low
+G-70	3.8	4	Cutthroat trout (stocked)	Low
+G-71	4.8	14	Brook trout	n/a
+G-72	1.3	6	Unknown	Low
+G-74	3.4	3	Brook trout	Low
+G-78	3.2	9	Brook trout	Low
+G-79	2.5	5	Brook trout	Low
+G-80	1.8	8	Brook trout	Low
+G-81	1.6	5	Cutthrout trout (stocked)	Low
+G-82	3.8	6	Brook trout	Low
+G-86	6.4	7	Brook trout	Low
+Little Lyman, G-25	5	25	Rainbow trout (stocked)	High
+Lyman, G-27	36.6	30	Rainbow trout (stocked)	Moderate
+Moslander, G-102	11.4	29	Brook trout	Low
+Crow, DG-3	18	26	Cutthroat trout	Moderate
+DG-6	3	5	Cutthroat trout (stocked)	Low
+DG-7	6	4	Cutthroat trout	Low
+DG-8	7	8	Cutthroat trout	Low
+DG-9	10	27	Cutthroat trout	Low
+DG-10	10	12	Cutthroat trout	Low
+DG-14	2	10	Cutthroat trout (stocked)	Low
+DG-15	3	9	Cutthroat trout	Low
+DG-16	3	8	Cutthroat trout	Low
+DG-17	3	12	Cutthroat trout	Low
+Heller Reservoir, DG-28	12	37	Brook trout	High
+Hidden, DG-27	10	39	Brook trout	Low
+Lower Lily Pad, DG-26	9	11	Brook trout	Low
+Upper Lily Pad, DG-25	12	37	Brook and cutthroat trout	High
+Albert, U-94	7	8	Cutthroat trout	Low
+Allred, U-14	34	30	Brook trout	Moderate
+Atwood, U-16	200	40	Brook trout and golden trout	Moderate
+B-29 Lake, U-18	19	7	Brook trout	Low
+Bear, U-74	9	15	Brook trout (stocked)	Low
+Bollie, U-96	10	15	Cutthroat trout	Low
+Bowden, U-32	4.5	14	Brook trout (stocked)	Moderate
+Brook, U-54	10	8	Brook trout (stocked)	Low
+Carrot, U-17	31	31	Brook trout (stocked)	Low
+Chain 1 (Lower), U-3	62	38	Brook trout (natural reproducing)	High
+Chain 2 (Middle), U-2	14.4	13	Brook trout (natural reproducing)	Moderate
+Chain 3 (Upper), U-1	51	44	Brook trout	Moderate
+Chain 4, U-4	13.5	31	Cutthroat trout	Low
+Craig, U-85	9.3	14	Cutthroat and brook trout	Low
+Crescent, U-48	31	23	Cutthroat and brook trout	Moderate high
+Davis, North, U-46	7.3	7	Brook trout	Low
+Davis, South, U-34	6.1	4	Brook trout	Low
+Divide, U-59	18.9	39	Cutthroat trout	Low
+Dollar, U-49	11.5	6	Brook trout	Moderate
+Fox, U-47	102	47	Brook and cutthroat trout	Moderate
+George Beard, U-21	7.4	15	Brook trout (natural reproducing)	Low
+Gilbert, U-82	14.6	20	Brook trout (stocked)	Low
+Kidney, East, U-25	13.7	12	Brook trout	High
+Kidney, West, U-26	20	4	Brook trout	High
+Lily, U-23	5.3	15	Brook trout	Low
+Lily Pad, U-8	3.7	7	Brook and rainbow trout (natural reproducing)	Moderate
+Milk, U-73	13.1	35	Brook and cutthroat trout	Low
+Mt. Emmons, U-13	15.5	21	Brook trout, Golden Trout	Low
+Oke Doke, U-5	12.9	38	Cutthroat (stocked)	Low
+Penny Nickell, U-98	11.5	43	Cutthroat (stocked)	Low
+Pippen, U-9	3.2	3	Brook trout (natural reproducing)	Moderate
+Rainbow, U-33	35.1	20	Brook trout (natural reproducing)	Moderate
+Roberts, U-15	23.3	38	Cutthroat and brook trout	Low
+Samuals, U27	4.8	7	Brook trout	Low
+U-19	15	8	Brook trout, Golden trout	Low
+U-35	4.4	5	Cutthroat and brook trout	Moderate
+U-36	4.6	7	Brook trout (natural reproducing)	Moderage
+U-37	6.3	12	Brook trout (stocked)	Low
+U-38	15.7	13	Cutthroat trout	Moderate
+U-42	7.6	7	Cutthroat trout	Low
+U-45	5	5	Cutthroat trout	Low
+U-50	18	8	Brook trout	Low
+U-75	6.9	18	Brook trout	Low
+U-76	6	15	Cutthroat trout	Low
+U-88	14	18	Brook trout	Low
+U-89	11.5	15	Brook trout	Low
+U-93	11.1	8	Cutthroat trout (stocked)	Very low
+Verlie, U-41	10.6	12	Brook trout (natural reproducing)	Moderate
+Blizzard, D-25	19	36	Brook trout	Moderate
+Blythe, Z-20	5	14	Brook trout (stocked)	Moderate
+Bonnie, Z-6	3.6	7	Brook trout (stocked), Cutthroat	High
+Broadhead, D-40	8.8	16	Brook trout (stocked)	Low
+Bud, Z-2	3.7	13	Brook trout (stocked)	Moderate
+Butterfly, Z-1	4.3	13	Rainbow and brook trout (stocked)	High
+Carolyn, Z-42	5	17	Brook and cutthroat trout	Moderate
+Castle, D-14	1	12	Cutthroat trout, Tiger trout	Moderate
+D-19	1.2	6	Brook and cutthroat trout	Moderate
+D-26	3	10	Brook trout (stocked)	Moderate
+Echo, Z-16	18	44	Golden trout	Moderate
+Everman, Z-36	7.8	7	Brook trout (stocked)	Moderate
+Farney, X-14	12.6	14	Arctic grayling (stocked)	Low
+Fehr, Z-7	5.7	27	Brook trout	High
+Gem, Z-17	3.8	14	Tiger trout	Low
+Hades, D-11	6.4	32	Rainbow and brook trout (stocked)	Low
+Hoover, Z-10	18.6	28	Brook and cutthroat trout	High
+Joan, Z-19	15.2	20	Brook trout	Moderate
+Jordan, Z-35	23.2	30	Brook trout (stocked)	Moderate
+Leconte, Z-33	9.5	15	Cutthroat trout, Arctic grayling	Moderate
+Maba, Z-8	4.2	20	Brook trout	High
+Marsell, X-11	16.4	50	Cutthroat trout (stocked)	Moderate
+Marshall, Z-11	18	36	Cutthroat	High
+Mirror, Z-3	42	37	Rainbow and brook trout (stocked)	High
+Moosehorn, Z-4	8	11	Rainbow trout (stocked)	High
+Morat #1, Z-31	5.4	13	Cutthroat trout (stocked)	Moderate
+Morat #2, Z-27	3.6	5	Cutthroat trout	Moderate
+Packard, Z-15	4.5	10	Brook trout	High
+Pass, Z-5	3.3	8	Rainbow trout	Moderate
+Pyramid, Z-17	15	36	Brook trout	High
+Scout, Z-12	30	17	Rainbow trout	High
+Shaler, Z-34	13	7	Cutthroat trout	Moderate
+Shepard, Z-9	14.2	32	Brook, cutthroat and rainbow trout	High
+Sonny, X-12	5	13	Brook trout (stocked)	Low
+Wilder, Z-13	3.7	14	Brook trout	High
+Wyman, Z-14	6.5	17	Brook trout (stocked)	Moderate
+Alligator, G-38	14.5	26	Trout	High
+Bear, G-7	16.9	37	Brook trout (stocked)	Moderate
+Blanchard, G-3	31.3	29	Cutthroat trout	Moderate
+Castle, G-11	11.5	10	Brook trout (stocked)	Low
+Cliff, G-5	33.1	69	Cutthroat trout (stocked), Tiger trout	Low
+Dollar, G-2	9.7	18	Brook and cutthroat trout	Moderate
+G-10	5.4	12	Brook trout	Low
+G-39	2.6	7	Brook trout	Low
+G-42	4.6	2	Brook and cutthroat trout	Low
+G-44	1.5	7	Cutthroat trout	Low
+G-62	2.2	7	Brook trout	Low
+G-100	7.9	13	Brook trout	Low
+Grass, G-8	5.5	4	Brook and cutthroat trout	Moderate
+Henrys Fork, G-1	19.7	19	Cutthroat trout	Moderate
+Island, G-9	10.4	5	Brook trout (stocked)	Low
+Little Blanchard, G-4	3.6	8	Cutthroat trout	Low
+Sawmill, G-6	7.2	21	Brook and cutthroat trout	High
+Alexander, A-1	23	28	Brook trout (stocked)	High
+Azure, A-11	9	23	Arctic grayling	Low
+Beaver, A-17	3.5	15	Brook trout (stocked)	Low
+Beth, A-6	5.4	10	Brook trout	High
+Big Elk, A-18	30	85	Brook and tiger trout	High
+Blue, A-5	8	26	Brook trout (stocked)	High
+Booker, A-35	4.1	8	Brook trout	High
+Brook, A-20	1.1	6	Brook trout	Moderate
+Buckeye, A-3	5	8	Brook trout (stocked)	High
+Clegg, A-47	5.1	12	Brook trout (stocked)	Moderate
+Cliff, A-34	9	20	Cutthroat and tiger trout	High
+Clyde, A-28	16	21	Brook trout	High
+Crystal, A-51	9.8	7	Brook trout (stocked)	High
+Cutthroat (Clint), A-40	3	10	Brook and tiger trout	Low
+Diamond, A-22	3	7	Brook and cutthroat trout	Moderate
+Divide, #1, A-36	3.5	5	Brook trout	High
+Duck, A-7	12.7	15	Brook and cutthroat trout	High
+Fire, A-14	9	59	Cutthroat trout	Moderate
+Haystack, A-9	17	29	Brook and cutthroat trout	High
+Hidden, A-15	8.2	25	Brook trout (stocked)	Moderate
+Hope, A-54	2	5	Brook trout	Low
+Hourglass, A-48	5.7	2	Brook and cutthroat trout	High
+Island, A-57	28	40	Brook, cutthroat and tiger trout	High
+Jacks, A-13	1.2	23	Brook trout	Moderate
+James, A-31	2.1	8	Brook trout (stocked)	Moderate
+John, A-30	4	10	Brook trout	Moderate
+Junior, A-56	2.8	11	Cutthroat and tiger trout	Low
+Lambert A-2	2	8	Brook trout (stocked)	Low
+Lillian, A43	2	8	Brook trout	Low
+Lilly, A-58	4.1	13	Rainbow trout	Moderate
+Lily, Lower, A-25	3.2	16	Brook trout	High
+Little Elk, A-19	13.2	31	Cutthroat trout	Moderate
+Long Pond, A-62	2	5	Brook and cutthroat trout	Moderate
+Long, A-37	35	26	Brook and cutthroat trout	High
+Lost, A-59	62	22	Rainbow trout (stocked)	Moderate
+Marjorie, A-12	13	16	Arctic grayling	High
+Petit (Junior #5), A-26	2	3	Brook trout	Moderate
+Pot, A-8	4	28	Brook trout (stocked)	High
+Ramona, A-38	4.7	21	Brook trout (stocked)	Moderate
+Rock, A-10	8	14	Tiger trout	Moderate
+Shadow, A-52	14	20	Brook trout	High
+Shingle Creek, East, A-39	7	44	Brook and tiger trout	High
+Shingle Creek, Lower, P-62	4	14	Brook trout	Moderate
+Shingle Creek, West, P-60	5	12	Brook trout (stocked)	Moderate
+Spectacle (Hourglass), A-44	9.3	17	Brook trout (stocked)	Moderate
+Star, A-42	16	35	Brook and tiger trout	High
+Tail, A-53	9.8	13	Brook, cutthroat and rainbow trout	High
+Teapot, A-60	13	46	Rainbow and brook trout	High
+Trial, A-61	98	68	Rainbow and brook trout	High
+Trident, A-41	4	5	Brook trout	High
+Twin, Lower, A-33	3	14	Brook trout	High
+Twin, Upper, A-32	9	13	Brook and tiger trout	High
+Wall, A-29	80	97	Brook and tiger trout	High
+Washington, A-23	106	70	Rainbow, cutthroat and brook trout	High
+Watson, A-27	6	10	Brook trout	Moderate
+Weir, A-50	7	13	Cutthroat and arctic grayling	Moderate
+Allen, Z-44	15.2	16	Brook trout (natural reproducing), Arctic grayling	Low
+Amlen, X-99	7.3	9	Brook trout (stocked)	Moderate
+Anderson, X-117	5.8	12	Brook trout (natural reproducing), cutthroat trout	High
+Arta, RC-23	5.4	6	Cutthroat trout	Low
+Audrey, RC-45	13.2	25	Brook trout (stocked)	Low
+Bedground, Z-46	2	15	Brook trout (stocked), Arctic grayling	Moderate
+Betsey, X-7	33.8	44	Cutthroat and brook trout	High
+Black, X-132	11.8	14	Brook trout (stocked) and cutthroat	High
+Boot, X-124	9.1	17	Cutthroat trout	Low
+Brinkley, RC-4	4.2	18	Brook trout	High
+Cabin, RC-42	4.3	16	Brook trout (stocked)	Low
+Continent, X-121	27.4	23	Cutthroat and brook trout	Moderate
+Dale, Z-39	12.9	25	Brook trout (stocked)	High
+Daynes, Z-38	23.2	21	Brook trout (stocked) and arctic grayling	
+Dean, Z-40	24	44	Brook trout (stocked)	Moderate
+Diamond, X-43	13	45	Brook trout (stocked)	Moderate
+DOC'S, X-15	14.5	45	Brook trout (stocked)	Low
+Doug, X-123	1	8	Cutthroat (natural reproducing)	Low
+Fern, X-5	19.3	19	Brook trout (stocked)	Moderate
+Fish Hatchery, X-6	37.2	28	Brook trout	High
+Gibby, RC-30	1.9	25	Brook trout (stocked)	Moderate
+Gladys, X-128	7.5	6	Brook trout (stocked)	Moderate
+Governor Dern, Z-24	32	9	Brook and cutthroat trout	High
+Grandaddy, X-9	173	40	Brook and cutthroat trout (naturally reproducing)	High
+Heart, X-13	5.7	19	Cutthroat trout (stocked)	High
+Helen, X-126	8.4	14	Brook trout (stocked)	Moderate
+Horseshoe, RC-38	2.9	20	Brook trout (stocked)	Low
+Huntley, RC-3	1.2	9	Brook trout (naturally reproducting)	Low
+Jack, X-133	2.7	14	Cutthroat and brook trout	Moderate
+Jean, Z-41	23.2	23	Brook and cutthroat trout	Moderate
+Jill, X-111	3.6	25	Brook trout (stocked)	Moderate
+Ledge, X-113	3.1	13	Brook trout (stocked)	Moderate
+Lightning, X-127	14.1	23	Brook and cutthroat trout	Moderate
+Lily Pad, X-2	9.5	14	Brook and cutthroat trout	Moderate
+Lodgepole, X-3	20.4	29	Brook trout (stocked)	Moderate
+Lost, Z-29	14	15	Brook trout (stocked)	Moderate
+Margie, X-129	7.5	11	Brook trout (stocked)	Low
+Margo, Z-23	11.1	29	Cutthroat trout (stocked)	Low
+MID, X-42	5.1	3	Brook trout (stocked)	Moderate
+Mohawk, X-10	50.8	23	Brook trout (naturally reproducting)	High
+Ouray, X-112	4	6	Cutthroat and brook trout	Moderate
+Palisade, Z-28	22.7	45	Brook and cutthroat trout	High
+Phinney, X-119	13.6	30	Brook trout (stocked)	Moderate
+Pine Island, X-8	79.6	44	Brook trout (stocked)	High
+Pinto, X-22	46.6	36	Brook trout (stocked)	High
+Powell, Z-30	22.4	15	Cutthroat trout (stocked)	Moderate
+Rainbow, Z-25	17.9	15	Brook trout (stocked)	High
+Reconnaissance, X-125	8.8	30	Brook and cutthroat trout (naturally reproducing)	Low
+Rock1, X-96	4.8	19	Brook trout	Low
+Rock 2, X-97	7.7	17	Brook trout (stocked)	Low
+Rosalie, X-130	8.1	8	Brook trout (stocked)	Low
+Rudolph 1, X-39	25.6	46	Brook trout (stocked)	Moderate
+Rudolph 2, X-40	2.9	9	Brook trout (stocked)	Moderate
+Rudolph 3, X-41	2.4	14.5	Brook trout	Low
+Sea Lion, RC-11	7.9	11	Cutthroat trout (stocked)	Low
+Shadow, X-1	7.2	22	Brook and cutthroat trout	Moderate
+Shamrock, X-98	18.2	33	Brook trout (stocked)	Moderate
+Squaw, X-95	10.4	9	Brook trout (stocked)	High
+Survey, RC-20	6	12	Brook trout (stocked)	Low
+Thompson, RC-8	21.2	26	Brook trout (stocked)	Low
+Uintah, X-131	8.4	14	Brook trout (stocked)	Low
+Youg, X-100	4	19	Cutthroat trout (stocked)	Low
+Anson, Lower GR-9	14.5	20	Brook and cutthroat trout	Moderate
+Anson, Upper, GR-10	7.7	58	Brook trout (natural reproducing)	Moderate
+Bummer, GR-22	1.9	6	Brook trout, Arctic grayling	Low
+Clear, GR-12	10.2	25	Cutthroat trout, Tiger trout	Low
+Columbine, GR-116	5.7	5	Brook trout (stocked), Tiger trout	Low
+Daggett, GR-6	42.6	29	Rainbow trout (stocked), Tiger trout	High
+EWE, GR-18	3	10	Arctic grayling	Low
+Gail, GR-115	4.5	25	Cutthroat trout	Low
+GR-11	2.6	8	Brook trout (stocked)	Low
+GR-13	9.2	Unknown	Brook trout (stocked)	Low
+GR-20	5.7	8	Brook trout (stocked)	Low
+GR-21	3.7	7	Brook trout (stocked)	Low
+GR-31	6	6	Brook trout (naturally reproducing)	Low
+GR-104	4.3	19	Trout	Low
+Hidden, GR-7	8.5	26	Brook (stocked) and cutthroat trout	Low
+Hidden, GR-112	4.3	8	Brook and cutthroat trout	Low
+Jesson, GR-1	25.5	56	Brook (stocked) and cutthroat trout, Tiger trout	High
+Judy, GR-25	4.7	24	Brook trout (stocked), Tiger trout	Low
+Lamb, GR-19	6	10	Arctic grayling, Tiger Trout	Low
+Lost, GR-4	3.2	7	Cutthroat trout (naturally reproducing)	Low
+Lost, GR-101 (Mystery)	10.2	25	Brook (stocked) and cutthroat trout	Moderate
+Mutton, GR-23	3.8	10	Brook trout (stocked)	Low
+One Fish, GR-32	4.5	35	Brook trout (stocked), Arctic grayling	Low
+Penguin, GR-16	2.1	20	Brook trout (naturally reproducing)	Moderate
+Potter, Lower, GR-27	3.4	16	Brook trout (naturally reproducing)	Moderate
+Potter, Upper, GR-27	21.3	75	Brook trout (naturally reproducing)	Low
+RAM, GR-24	7	27	Cutthroat trout	Low
+RED, GR-33	20.9	57	Brook trout (stocked), Tiger trout	Low
+Sesame, GR-15	6	7	Brook trout (stocked), Arctic grayling	Low
+Summit, GR-5	9.9	7	Arctic grayling	Low
+Tamarack, GR-2	79.1	90	Brook trout and cutthroat trout (naturally reproducing), Tiger Trout	High
+Teepee, Lower, GR-28	4.3	28	Brook trout (stocked)	High
+Teepee, Upper, GR-30	6.5	28	Cutthroat, Tiger trout	Moderate
+Bennion, Lower, GR-134	7.7	13	Brook and cutthroat trout	Low
+Bennion, Upper, GR-135	2	3	Brook and cutthroat trout	Low
+Boxer, GR-126	6	11	Cutthroat trout	Moderate
+Burnt Fork, GR-127	9.8	25	Cutthroat trout (naturally reproducing)	Moderate
+Crystal, GR-128	5.4	5	Cutthroat trout (naturally reproducing) and brook trout	Low
+Fish, GR-125	38.3	23	Brook and cutthroat trout	Moderate
+Island, GR-132	117.8	34	Cutthroat trout (naturally reproducing) and brook trout	High
+Kabell, GR-140	14.7	23	Cutthroat trout (stocked)	Moderate
+Round, GR-131	24.3	38	Cutthroat trout (stocked)	Moderate
+Snow, GR-130	9.4	35	Cutthroat trout (stocked)	Low
+Whitewall, GR-133	14.5	3	Brook and cutthroat trout	Low
+Bald, G-63	6.4	23	Brook trout (naturally reproducing)	Low
+Bridger, G-20	21	15	Rainbow and brook trout (stocked)	High
+China, G-21	31.2	45	Brook trout, cutthroat trout, arctic grayling	Moderate
+G-13	7.9	17	Brook trout (stocked)	Low
+G-34	1	6	Brook and rainbow trout	Moderate
+G-36	4.7	11	Trout	Low
+G-45	3.1	12	Brook trout (stocked)	Low
+G-49	3.9	11	Brook, cutthroat and rainbow trout	Low
+G-50	3.7	5	Brook trout (naturally reproducing)	Moderate
+G-51	8.1	5	Brook trout	Low
+G-52	2.6	4	Cutthroat (stocked)	Low
+G-53	5.5	17	Cutthroat and brook trout (naturally reproducing)	Moderate
+G-56	1.5	12	Brook trout	Low
+G-58	1.3	5	Cutthroat	Low
+G-59	3.2	24	Brook trout (stocked)	Low
+G-60	2.5	9	Brook trout, Tiger trout	Moderate
+G-61	3.1	6	Brook trout	Low
+G-64	3.4	5	Cutthroat trout (stocked), Tiger trout	Low
+Grahams, G-32	18.5	25	Unknown	Unknown
+Hessie, G-18	13.2	18	Cutthroat trout (stocked), Tiger trout	Moderate
+Marsh, G-19	33.6	35	Brook and rainbow trout (stocked)	High
+Red Castle, G-15	168.2	103	Cutthroat trout (stocked), Tiger trout	High
+Red Castle, East, G-17	21.1	58	Cutthroat trout, Tiger trout	Moderate
+Red Castle, Lower, G-12	45	28	Brook trout	Moderate
+Red Castle, Upper, G-16	25.6	72	Cutthroat (stocked), Tiger trout	Moderate
+Sargent, G-35	8.3	22	Trout	Low
+Smiths Fork Pass, G-14	26.1	17	Cutthroat trout, Tiger trout	Low
+Abes, W-30	21.6	62	Cutthroat trout	High
+Adax, W-34	5	10	Cutthroat trout	Low
+Anchor, W-29	13	50	Brook trout	Moderate
+Arrowhead, W-68	2.1	26	Brook trout (naturally reproducing)	Moderate
+Carol, W-51	3	25	Brook trout (stocked)	Low
+Castle, W-67	10	30	Tiger trout	Moderate
+Cuberant #1, W42	3.5	18	Brook trout	Moderate
+Cuberant #2, W43	3.2	6	Brook and cutthroat trout	Moderate
+Cuberant #3, W44	3.5	24	Brook trout	Moderate
+Cuberant #4, W45	22	25	Tiger trout	Moderate
+Cuberant #5, W46	5	15	Unknown	Low
+Dean, W-35	12	16	Brook trout, Arctic grayling	High
+Divide #2, W-20	3.5	10	Trout	Low
+Elkhorn, W-64	1.5	10	Brook trout (stocked)	Moderate
+Erickson, South, W-25	10	12	Brook trout (stocked)	Moderate
+Erickson, North, W-26	9	12	Brook trout (stocked)	High
+Fish, W-47	46	38	Arctic grayling, brook trout	High
+Fran, W-39	3	8	Brook trout	Moderate
+Ibantik, W-24	10.2	28	Brook trout (naturally reproducing)	High
+Jean, W-58	3	25	Cutthroat trout (stocked)	Low
+Jerry, W-28	3.2	16	Brook trout (stocked)	Low
+Kamas, W-40	17.1	42	Tiger trout	Moderate
+Little Hidden, W-21	8	28	Brook trout	Moderate
+Lofty, W41	4	20	Tiger trout	Moderate
+Lovenia, W-23	2.5	11	Brook trout	High
+Meadow, W-27	29	46	Cutthroat trout (naturally reproducing), Tiger trout	High
+Neil, W-31	1.1	20	Brook trout	Low
+Notch, W-36	20.2	57	Brook and cutthroat trout	Moderate
+Olsen, W-32	7	13	Brook trout (stocked)	Moderate
+Peter, W-22	3	13	Unknown	Low
+Reids, W-38	3	8	Brook trout	Low
+Rhoads, W-33	7.5	32	Brook trout (naturally reproducing)	Moderate
+Round, W-48	5	36	Cutthroat trout, Arctic grayling	Moderate
+Sand, W-49	19.3	41	Arctic grayling	Low
+W-16	Unknown	Unknown	Brook trout (stocked)	Low
+W-52	3.6	25	Brook trout	Moderate
+W-53	2.2	9	Brook trout (stocked)	Low
+W-57	3	8	Brook trout (stocked)	Moderate
+W-59	4	10	Brook trout (naturally reproducing)	Moderate
+W-62	2.1	18	Brook trout (stocked)	Low
+Yellowpine, Lower, W-66	2	7	Brook trout (stocked)	High
+Yellowpine, Upper, W-65	3	12	Brook trout (stocked)	High
+Chepeta, WR-64	50	60	Brook (stocked) and cutthroat trout	High
+Cleveland, WR-7	26	6	Brook (stocked) and cutthroat trout	High
+Cliff, WR-49	40	55	Brook (stocked) and cutthroat trout	Moderate
+Dollar, WR-43	7	15	Brook, rainbow and cutthroat trout, Tiger trout	Moderate
+Elbow, WR-58	25	17	Brook trout (stocked)	Moderate
+Figure-eight WR-56	3	5	Cutthroat trout	Low
+Hidden, WR-63	12	27	Brook trout	Moderate
+Larvae, WR-12	4	28	Brook trout	High
+Lower Rock, WR-17	12	39	Cutthroat trout, Brook trout (stocked)	Moderate
+Middle Rock, WR-16	6	10	Brook and cutthroat trout	Low
+Mocassin, WR-53	11	27	Brook and cutthroat trout	Moderate
+Ogden, WR-5	14	21	Cutthroat and brook trout	Low
+Papoose, WR-52	8	22	Cutthroat and brook trout	Moderate
+Paradise Park Reservoir, WR-18	137	36	Rainbow trout (stocked)	High
+Pearl, WR-45	2.5	15	Brook trout (stocked)	Low
+Point (Adams) WR-6	16	21	Brook trout (stocked)	Low
+Pole Creek Lake, WR-13	5	10	Tiger trout, rainbow trout	High
+Queant, WR-4	57	44	Brook trout (stocked)	High
+Rassmussen #1, WR-35	19	5	Brook trout (stocked)	Moderate
+Rassmussen #2, WR-36	14	8	Brook trout (stocked)	Moderate
+RC #1, WR-2	10	16	Brook and cutthroat trout (stocked)	Low
+Reader, WR-66	10	10	Brook and cutthroat trout	Moderate
+Sand, WR-42	6	5	Brook and cutthroat trout	Low
+Sharlee, WR-57	10	4	Brook and cutthroat trout	Low
+Taylor, WR-8	25	53	Brook trout (stocked)	Low
+Teds, WR-44	14	20	Brook trout (stocked)	High
+Upper Rock, WR-14	15	28	Cutthroat trout (stocked)	Low
+Walk-up, WR-55	13	60	Brook trout	Low
+Watkins, WR-48	18	36	Brook trout	Low
+Whiterocks Reservoir Lake, WR-46	35	42	Brook and cutthroat trout	High
+Wigwam, WR-54	4	14	Brook and cutthroat trout (stocked)	Moderate
+Wooley, WR-40	18	42	Brook trout (stocked)	Moderate
+Workman, WR-50	20	14	Brook trout and cutthroat	Moderate
+WR-9	3	12	Brook trout	Low
+WR-19	10	18	Cutthroat trout	Low
+WR-34	9	20	Brook trout	Low
+WR-37	3	13	Cutthroat and brook trout	Moderate
+WR-65 (Hell Hole)	8	6	Brook trout	Moderate
+WR-67 (Horseshoe)	12	14	Cutthroat trout	Low
+WR-73	8	Unknown	Brook trout	Low
+WR-74	4	14	Brook trout	Low
+WR-75	3	8	Brook trout	Low
+WR-76	8	7	Brook trout	Unknown
+WR-77	4	15	Brook trout	Low
+Bluebell, X-10	38.3	32	Brook and cutthroat trout (naturally reproducing)	Moderate
+Doll, Y-16	42.5	47	Brook trout	Low
+Drift Reservoir, Y-41	14.8	Unknown	Brook trout	Low
+Five Point Reservoir, X-106	82	21	Brook and cutthroat trout	Moderate
+Gem, Y-34	11.1	15	Brook trout (naturally reproducing)	Moderate
+Kings, Y-22	10	Unknown	Cutthroat trout	Low
+Little Superior, X-104	13.9	24	Brook trout	Low
+Milk, Y-25	17.5	20	Brook trout	Low
+North Star, X-108	14	15	Brook trout (naturally reproducing)	Moderate
+Spider, X-109	20	31	Brook and cutthroat trout	High
+Superior, X-103	36	26	Brook trout (naturally reproducing)	Moderate
+Swasey, X-58	36	30	Brook and cutthroat trout (naturally reproducing)	High
+Tungsten, X-107	13	13	Brook and cutthroat trout	Moderate
+X-57	8.8	30	Brook trout (naturally reproducing)	Low
+X-59	4.5	13	Brook and cutthroat trout	Moderate
+X-60	8	30	Cutthroat trout (stocked)	Low
+X-105	8.1	14	Cutthroat trout	Low
+Y-2	1.8	20	Brook trout (naturally reproducing)	Low
+Y-4	5.8	12	Brook trout (naturally reproducing)	Low
+Y-5	1.8	6	Brook trout (naturally reproducing)	Low
+Y-19	6.2	15	Brook trout	Low
+Y-20	5	20	Arctic grayling	Low
+Y-31	4.6	7	Brook trout (naturally reproducing)	Moderate
+Y-36	14	15	Brook trout	Low
+Y-37	13	12	Brook trout	Low
+Ameba, X-90	4.6	4	Cutthroat trout (stocked)	Low
+Aspen, X-63	8	26	Brook trout (stocked)	Moderate
+Atwine, X-64	32	35	Brook trout (natural reproducing)	Moderate
+Big Dog, X-32	6	12	Arctic grayling	Low
+Brown Duck, X-31	30.7	12	Cutthroat trout (natural and stocked)	High
+Clements, X-74	79.2	50	Cutthroat trout (naturally reproducing)	Moderate
+Crater, X-94	28	147	Brook trout	Low
+East Slide, LF-44	5	Unknown	Brook trout (stocked)	Low
+Gates, LF-34	5.4	20	Brook trout	Low
+Hook, X-81	21	19	Brook trout (stocked)	Low
+Island, X-34	66	48	Cutthroat trout, Tiger trout	High
+Kidney, X-35	190	112	Cuthroat and brook trout	Moderate
+Lambert, LF-21	6.6	15	Brook trout (stocked)	Moderate
+LF-8	7	17	Unknown	Low
+LF-16	3	6	Brook trout (stocked)	Low
+LF-35	1	6	Brook trout (natural reproducing)	Low
+LF-37	1.9	3	Brook trout (stocked)	Low
+LF-43	1.4	4	Brook trout	Low
+Lilly Pad, X-37	1.4	8	Brook and cutthroat trout (naturally reproducing)	Moderate
+Linda, LF-36	3.8	5	Brook trout	Low
+Little Dog, X-33	4.5	17	Brook trout (stocked)	Low
+Moon Lake	49.8	n/a	Brook trout, Mountain whitefish, Rainbow trout, Splake, Cutthroat trout, Kokanee salmon, Tiger trout, Arctic grayling	High
+Mud, X-66	2.5	5	Brook trout (stocked)	Low
+Oweep, LF-30	6.4	16	Brook trout	Low
+Ottoson, Lower, X-88	9.1	8	Cutthroat trout (naturally reproducing)	Low
+Ottoson, Upper, X-87	12.4	30	Cuthroat trout	Low
+Picture, X-82	20	13	Rainbow trout	Low
+Porcupine, LF-22	12.8	14	Brook trout (naturally reproducing)	Low
+Stewart, X-79	9.2	22	Brook trout (stocked)	Low
+Toquer, LF-25	11.1	32	Brook and cutthroat trout	Low
+Twin, X-77	12.9	15	Brook trout (stocked)	Low
+Tworoose, X-36	21.9	37	Cutthroat trout (naturally reproducing)	Moderate
+X-61	5.2	10	Cutthroat trout	Low
+X-62	6	10	Cutthroat trout	Low
+X-75	4.4	6	Cutthroat trout	Low
+X-78	17	18	Cutthroat trout	Low
+X-80	4.6	5	Brook and cutthroat trout (naturally reproducing)	Low
+X-84	4.6	18	Brook trout (stocked)	Low
+X-85	4.7	14	Brook trout	Low
+X-86	6.9	12	Brook trout (stocked)	Low
+X-89	3.4	Unknown	Unknown	Low
+Carrol, East, X-21	10	19	Cutthroat trout	Moderate
+Carrol, Lower, X-17	9	7	Brook trout	Moderate
+Carrol, Upper, X-18	35	48	Brook trout	Moderate
+Deer, X-55	12	4	Brook and cutthroat trout (naturally reproducing)	High
+Farmers, X-23	63	24	Brook trout (stocked)	Moderate
+Grayling, X-56	8.5	33	Brook trout	High
+Lily, S-15	20	39	Brook trout (stocked)	High
+Timothy, Center, X-20	10	18	Brook trout (naturally reproducing)	High
+Timothy, East, X-16	40	35	Cutthroat trout	High
+Timothy, West, X-19	45	45	Brook trout	Moderate
+Twin, X-49	14	15	Cutthroat trout	Moderate
+White Miller, X-54	11	18	Brook trout (stocked)	High
+X-22	9	8	Brook and cutthroat trout	Moderate
+X-24	21.4	30	Cutthroat trout (stocked)	Low
+X-25	15.9	27	Cutthroat trout	Moderate
+X-26	7.7	23	Brook trout	Low
+X-51	5	8	Cutthroat trout	Low
