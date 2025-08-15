@@ -24,7 +24,9 @@
       "mcp__playwright__browser_install",
       "mcp__playwright__browser_take_screenshot",
       "Bash(cp:*)",
-      "Bash(wget:*)"
+      "Bash(wget:*)",
+      "WebFetch(domain:norrik.com)",
+      "mcp__playwright__browser_press_key"
     ],
     "defaultMode": "acceptEdits",
     "additionalDirectories": [
