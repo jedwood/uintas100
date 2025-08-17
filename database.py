@@ -49,6 +49,18 @@ def create_database(db_path="uinta_lakes.db"):
         )
     ''')
     
+    # Fishing reports table
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS fishing_reports (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            lake_id INTEGER,
+            date DATE,
+            success TEXT CHECK(success IN ("CAUGHT", "NONE", "OTHERS")),
+            notes TEXT,
+            FOREIGN KEY (lake_id) REFERENCES lakes (id)
+        )
+    ''')
+    
     # Add new columns for Norrick data if they don't exist
     try:
         cursor.execute('ALTER TABLE lakes ADD COLUMN size_acres REAL')
@@ -72,6 +84,16 @@ def create_database(db_path="uinta_lakes.db"):
     
     try:
         cursor.execute('ALTER TABLE lakes ADD COLUMN data_source TEXT')
+    except sqlite3.OperationalError:
+        pass
+    
+    try:
+        cursor.execute('ALTER TABLE lakes ADD COLUMN jed_notes TEXT')
+    except sqlite3.OperationalError:
+        pass
+    
+    try:
+        cursor.execute('ALTER TABLE lakes ADD COLUMN status TEXT CHECK(status IN ("CAUGHT", "NONE", "OTHERS"))')
     except sqlite3.OperationalError:
         pass
     
@@ -154,7 +176,7 @@ def load_lake_data(conn):
     """Load lake data from lake_data.csv into database"""
     cursor = conn.cursor()
     
-    with open('lake_data.csv', 'r') as f:
+    with open('data/lake_data.csv', 'r') as f:
         reader = csv.DictReader(f)
         
         for row in reader:
@@ -203,7 +225,7 @@ def load_norrick_data(conn):
     new_count = 0
     unmatched_count = 0
     
-    with open('norrick_lakes.txt', 'r') as f:
+    with open('data/norrick_lakes.txt', 'r') as f:
         lines = f.readlines()
         
         # Skip header line
@@ -254,13 +276,13 @@ def load_norrick_data(conn):
     conn.commit()
     print(f"Norrick data loaded: {updated_count} updated, {new_count} new, {unmatched_count} unmatched")
 
-def dump_lake_data(conn, output_file="lake_dump.txt"):
+def dump_lake_data(conn, output_file="output/lake_dump.txt"):
     """Create a text dump of all lakes for review"""
     cursor = conn.cursor()
     
     cursor.execute('''
         SELECT letter_number, name, drainage, size_acres, max_depth_ft, 
-               fish_species, fishing_pressure, data_source
+               fish_species, fishing_pressure, data_source, jed_notes, status
         FROM lakes 
         ORDER BY drainage, letter_number
     ''')
@@ -274,7 +296,7 @@ def dump_lake_data(conn, output_file="lake_dump.txt"):
         
         current_drainage = None
         for lake_data in lakes:
-            letter_number, name, drainage, size_acres, max_depth_ft, fish_species, fishing_pressure, data_source = lake_data
+            letter_number, name, drainage, size_acres, max_depth_ft, fish_species, fishing_pressure, data_source, jed_notes, status = lake_data
             
             if drainage != current_drainage:
                 current_drainage = drainage
@@ -285,17 +307,111 @@ def dump_lake_data(conn, output_file="lake_dump.txt"):
             depth_display = f"{max_depth_ft}ft" if max_depth_ft else "?ft"
             pressure_display = fishing_pressure if fishing_pressure else "?"
             source_display = f"[{data_source}]" if data_source else ""
+            status_display = f"[{status}]" if status else ""
+            jed_notes_display = f" - {jed_notes}" if jed_notes else ""
             
-            f.write(f"{letter_number:8} | {name_display:25} | {size_display:8} | {depth_display:6} | {pressure_display:8} | {source_display}\n")
+            f.write(f"{letter_number:8} | {name_display:25} | {size_display:8} | {depth_display:6} | {pressure_display:8} | {source_display}{status_display}{jed_notes_display}\n")
     
     print(f"Lake dump written to {output_file}")
+
+def dump_stocking_data(conn, output_file="output/stocking_dump.txt"):
+    """Create a text dump of all stocking records for review"""
+    cursor = conn.cursor()
+    
+    cursor.execute('''
+        SELECT l.letter_number, l.name, s.species, s.quantity, s.length, 
+               s.stock_date, s.source_year, s.county
+        FROM stocking_records s
+        JOIN lakes l ON s.lake_id = l.id
+        ORDER BY l.name, l.letter_number, s.stock_date DESC
+    ''')
+    
+    records = cursor.fetchall()
+    
+    with open(output_file, 'w') as f:
+        f.write("UINTA MOUNTAINS STOCKING RECORDS DUMP\n")
+        f.write("=" * 50 + "\n\n")
+        f.write(f"Total Stocking Records: {len(records)}\n\n")
+        
+        current_lake = None
+        for record_data in records:
+            letter_number, name, species, quantity, length, stock_date, source_year, county = record_data
+            
+            lake_display = f"{name} {letter_number}" if name else letter_number
+            
+            if lake_display != current_lake:
+                current_lake = lake_display
+                f.write(f"\n--- {lake_display} ---\n")
+            
+            length_display = f"{length}\"" if length else "?"
+            
+            f.write(f"  {stock_date} | {species:15} | {quantity:6} fish | {length_display:6} | {county}\n")
+    
+    print(f"Stocking dump written to {output_file}")
+
+def dump_combined_data(conn, output_file="output/combined_dump.txt"):
+    """Create a combined dump of lakes with their stocking records"""
+    cursor = conn.cursor()
+    
+    cursor.execute('''
+        SELECT l.letter_number, l.name, l.drainage, l.size_acres, l.max_depth_ft, 
+               l.fish_species, l.fishing_pressure, l.data_source, l.jed_notes, l.status
+        FROM lakes l
+        ORDER BY l.drainage, l.name, l.letter_number
+    ''')
+    
+    lakes = cursor.fetchall()
+    
+    with open(output_file, 'w') as f:
+        f.write("UINTA MOUNTAINS COMBINED LAKE & STOCKING DATA\n")
+        f.write("=" * 60 + "\n\n")
+        f.write(f"Total Lakes: {len(lakes)}\n\n")
+        
+        current_drainage = None
+        for lake_data in lakes:
+            letter_number, name, drainage, size_acres, max_depth_ft, fish_species, fishing_pressure, data_source, jed_notes, status = lake_data
+            
+            if drainage != current_drainage:
+                current_drainage = drainage
+                f.write(f"\n--- {drainage} ---\n")
+            
+            name_display = name if name else "(No name)"
+            size_display = f"{size_acres:.1f}ac" if size_acres else "?ac"
+            depth_display = f"{max_depth_ft}ft" if max_depth_ft else "?ft"
+            pressure_display = fishing_pressure if fishing_pressure else "?"
+            source_display = f"[{data_source}]" if data_source else ""
+            status_display = f"[{status}]" if status else ""
+            jed_notes_display = f" - {jed_notes}" if jed_notes else ""
+            
+            f.write(f"{letter_number:8} | {name_display:25} | {size_display:8} | {depth_display:6} | {pressure_display:8} | {source_display}{status_display}{jed_notes_display}\n")
+            
+            # Get stocking records for this lake
+            cursor.execute('''
+                SELECT species, quantity, length, stock_date, county
+                FROM stocking_records 
+                WHERE lake_id = (SELECT id FROM lakes WHERE letter_number = ?)
+                ORDER BY stock_date DESC
+            ''', (letter_number,))
+            
+            stocking_records = cursor.fetchall()
+            
+            if stocking_records:
+                for species, quantity, length, stock_date, county in stocking_records:
+                    length_display = f"{length}\"" if length else "?"
+                    f.write(f"         └─ {stock_date} | {species:15} | {quantity:6} fish | {length_display:6} | {county}\n")
+            else:
+                f.write(f"         └─ No stocking records\n")
+            
+            f.write("\n")
+    
+    print(f"Combined dump written to {output_file}")
 
 def process_stocking_data(conn):
     """Process stocking data and match with lakes"""
     cursor = conn.cursor()
     unmatched_records = []
     
-    with open('utah_dwr_stocking_data.csv', 'r') as f:
+    with open('data/utah_dwr_stocking_data.csv', 'r') as f:
         reader = csv.DictReader(f)
         
         for row in reader:
@@ -303,19 +419,39 @@ def process_stocking_data(conn):
             lake_id, confidence, notes = find_matching_lake(cursor, water_name)
             
             if lake_id:
-                # Insert stocking record
+                # Convert date from MM/DD/YYYY to YYYY-MM-DD for comparison and storage
+                try:
+                    date_obj = datetime.strptime(row['stock_date'], '%m/%d/%Y')
+                    formatted_date = date_obj.strftime('%Y-%m-%d')
+                except:
+                    formatted_date = row['stock_date']
+                
+                # Check if record already exists
                 cursor.execute('''
-                    INSERT INTO stocking_records (lake_id, county, species, quantity, length, stock_date, source_year)
-                    VALUES (?, ?, ?, ?, ?, ?, ?)
+                    SELECT COUNT(*) FROM stocking_records 
+                    WHERE lake_id = ? AND species = ? AND quantity = ? AND stock_date = ? AND source_year = ?
                 ''', (
                     lake_id,
-                    row['county'],
                     row['species'],
                     int(row['quantity']) if row['quantity'].isdigit() else 0,
-                    float(row['length']) if row['length'].replace('.', '').isdigit() else 0.0,
-                    row['stock_date'],
+                    formatted_date,
                     int(row['source_year'])
                 ))
+                
+                if cursor.fetchone()[0] == 0:
+                    # Insert stocking record only if it doesn't exist
+                    cursor.execute('''
+                        INSERT INTO stocking_records (lake_id, county, species, quantity, length, stock_date, source_year)
+                        VALUES (?, ?, ?, ?, ?, ?, ?)
+                    ''', (
+                        lake_id,
+                        row['county'],
+                        row['species'],
+                        int(row['quantity']) if row['quantity'].isdigit() else 0,
+                        float(row['length']) if row['length'].replace('.', '').isdigit() else 0.0,
+                        formatted_date,
+                        int(row['source_year'])
+                    ))
                                 
                 
             else:
@@ -331,6 +467,13 @@ def process_stocking_data(conn):
                     
                     new_lake_id = cursor.lastrowid
                     
+                    # Convert date from MM/DD/YYYY to YYYY-MM-DD
+                    try:
+                        date_obj = datetime.strptime(row['stock_date'], '%m/%d/%Y')
+                        formatted_date = date_obj.strftime('%Y-%m-%d')
+                    except:
+                        formatted_date = row['stock_date']
+                    
                     # Insert stocking record
                     cursor.execute('''
                         INSERT INTO stocking_records (lake_id, county, species, quantity, length, stock_date, source_year)
@@ -341,7 +484,7 @@ def process_stocking_data(conn):
                         row['species'],
                         int(row['quantity']) if row['quantity'].isdigit() else 0,
                         float(row['length']) if row['length'].replace('.', '').isdigit() else 0.0,
-                        row['stock_date'],
+                        formatted_date,
                         int(row['source_year'])
                     ))
                                         
@@ -354,12 +497,12 @@ def process_stocking_data(conn):
     
     # Save unmatched records
     if unmatched_records:
-        with open('unmatched_stocking.csv', 'w', newline='') as f:
+        with open('output/unmatched_stocking.csv', 'w', newline='') as f:
             writer = csv.DictWriter(f, fieldnames=['water_name', 'county', 'species', 'quantity', 'length', 'stock_date', 'source_year'])
             writer.writeheader()
             writer.writerows(unmatched_records)
     
-    print(f"Processed stocking data. {len(unmatched_records)} unmatched records saved to unmatched_stocking.csv")
+    print(f"Processed stocking data. {len(unmatched_records)} unmatched records saved to output/unmatched_stocking.csv")
 
 def main():
     """Main execution function"""
@@ -377,6 +520,12 @@ def main():
     
     print("Creating enhanced lake dump...")
     dump_lake_data(conn)
+    
+    print("Creating stocking data dump...")
+    dump_stocking_data(conn)
+    
+    print("Creating combined lake and stocking dump...")
+    dump_combined_data(conn)
     
     # Generate summary stats
     cursor = conn.cursor()
