@@ -1,6 +1,6 @@
 Lake name	Size (acres)	Max depth (ft)	Fish species	Fishing pressure
 Ashley Twins Reservoir, GR-35	25	18	Brook trout, cutthroat trout (reproducing)	Moderate
-Bert, FR-62	3.7	11	Brook trout (stocked)	Low
+Bert, GR-62	3.7	11	Brook trout (stocked)	Low
 Blue, DF-1	6.5	16	Brook trout	Moderate
 Deadman, GR-38	7	9	Brook trout, cutthroat trout	High
 DF-4	10	23	Cutthroat	Low
@@ -142,7 +142,7 @@ Roberts, U-15	23.3	38	Cutthroat and brook trout	Low
 Samuals, U27	4.8	7	Brook trout	Low
 U-19	15	8	Brook trout, Golden trout	Low
 U-35	4.4	5	Cutthroat and brook trout	Moderate
-U-36	4.6	7	Brook trout (natural reproducing)	Moderage
+U-36	4.6	7	Brook trout (natural reproducing)	Moderate
 U-37	6.3	12	Brook trout (stocked)	Low
 U-38	15.7	13	Cutthroat trout	Moderate
 U-42	7.6	7	Cutthroat trout	Low
@@ -350,7 +350,7 @@ Mutton, GR-23	3.8	10	Brook trout (stocked)	Low
 One Fish, GR-32	4.5	35	Brook trout (stocked), Arctic grayling	Low
 Penguin, GR-16	2.1	20	Brook trout (naturally reproducing)	Moderate
 Potter, Lower, GR-27	3.4	16	Brook trout (naturally reproducing)	Moderate
-Potter, Upper, GR-27	21.3	75	Brook trout (naturally reproducing)	Low
+Potter, Upper, GR-28	21.3	75	Brook trout (naturally reproducing)	Low
 RAM, GR-24	7	27	Cutthroat trout	Low
 RED, GR-33	20.9	57	Brook trout (stocked), Tiger trout	Low
 Sesame, GR-15	6	7	Brook trout (stocked), Arctic grayling	Low

@@ -1,29 +1,50 @@
 UINTA MOUNTAINS COMBINED LAKE & STOCKING DATA
 ============================================================
 
-Total Lakes: 668
+Total Lakes: 669
 
 
 --- Ashley Creek Drainage ---
 DF-4     | (No name)                 | 10.0ac   | 23ft   | Low      | [Norrick]
          └─ No stocking records
 
-GR-38    | (No name)                 | 7.0ac    | 9ft    | High     | [Norrick]
+GR-104   | (No name)                 | 4.3ac    | 19ft   | Low      | [Norrick]
          └─ No stocking records
 
-GR-42    | (No name)                 | ?ac      | ?ft    | ?        | 
+GR-11    | (No name)                 | 2.6ac    | 8ft    | Low      | [Norrick]
+         └─ No stocking records
+
+GR-119   | (No name)                 | ?ac      | ?ft    | ?        | 
+         └─ 2019-10-01 | GRAYLING ARCTIC |    323 fish | 2.39"  | SUMMIT
+
+GR-13    | (No name)                 | 9.2ac    | ?ft    | Low      | [Norrick]
+         └─ No stocking records
+
+GR-20    | (No name)                 | 5.7ac    | 8ft    | Low      | [Norrick]
+         └─ No stocking records
+
+GR-21    | (No name)                 | 3.7ac    | 7ft    | Low      | [Norrick]
+         └─ No stocking records
+
+GR-31    | (No name)                 | 6.0ac    | 6ft    | Low      | [Norrick]
          └─ No stocking records
 
 GR-52    | (No name)                 | 2.1ac    | 4ft    | Moderate | [Norrick]
          └─ No stocking records
 
-GR-35    | Bert                      | 25.0ac   | 18ft   | Moderate | [Norrick]
+GR-35    | Ashley Twin Reservoir     | 25.0ac   | 18ft   | Moderate | [Norrick]
          └─ No stocking records
 
-DF-1     | Chimney Rock              | 6.5ac    | 16ft   | Moderate | [Norrick]
+GR-62    | Bert                      | ?ac      | ?ft    | ?        | 
          └─ No stocking records
 
-GR-63    | Deadman                   | ?ac      | ?ft    | ?        | 
+DF-1     | Blue                      | 6.5ac    | 16ft   | Moderate | [Norrick]
+         └─ No stocking records
+
+GR-63    | Chimney Rock              | ?ac      | ?ft    | ?        | 
+         └─ No stocking records
+
+GR-38    | Deadman                   | 7.0ac    | 9ft    | High     | [Norrick]
          └─ 2023-11-16 | CUTTHROAT       |    200 fish | 3.22"  | SUMMIT
          └─ 2023-05-31 | CUTTHROAT       |    155 fish | 8.69"  | SUMMIT
          └─ 2022-09-19 | BROOK TROUT     |    114 fish | 16.99" | SUMMIT
@@ -37,10 +58,13 @@ DF-11    | East Kibah                | 2.9ac    | 12ft   | Moderate | [Norrick]
 DF-12    | Finger Kibah              | 4.7ac    | 9ft    | Moderate | [Norrick]
          └─ No stocking records
 
-GR-43    | Goose #1                  | 19.4ac   | 15ft   | Low      | [Norrick]
+GR-57    | Fish                      | ?ac      | ?ft    | ?        | 
          └─ No stocking records
 
-GR-57    | Goose #2                  | 17.5ac   | 40ft   | High     | [Norrick]
+GR-42    | Goose #1                  | ?ac      | ?ft    | ?        | 
+         └─ No stocking records
+
+GR-43    | Goose #2                  | 17.5ac   | 40ft   | High     | [Norrick]
          └─ No stocking records
 
 GR-40    | Hacking                   | ?ac      | ?ft    | ?        | 
@@ -53,6 +77,9 @@ DF-16    | Island Kibah              | 8.0ac    | 14ft   | Moderate | [Norrick]
          └─ No stocking records
 
 GR-34    | Lakeshore                 | 11.1ac   | 18ft   | Moderate | [Norrick]
+         └─ No stocking records
+
+GR-19    | Lamb                      | 6.0ac    | 10ft   | Low      | [Norrick]
          └─ No stocking records
 
 GR-48    | Little Blue               | 3.2ac    | 6ft    | Low      | [Norrick]
@@ -70,6 +97,9 @@ DF-2     | Moap                      | ?ac      | ?ft    | ?        |
 GR-47    | Mud                       | ?ac      | ?ft    | ?        | 
          └─ No stocking records
 
+GR-23    | Mutton                    | 3.8ac    | 10ft   | Low      | [Norrick]
+         └─ No stocking records
+
 DF-15    | North Kibah               | ?ac      | ?ft    | ?        | 
          └─ No stocking records
 
@@ -79,10 +109,19 @@ GR-50    | North Twin (Dry Fork)     | ?ac      | ?ft    | High     | [Norrick]
 DF-18    | Paul                      | 11.1ac   | 17ft   | Low      | [Norrick]
          └─ No stocking records
 
+GR-16    | Penguin                   | 2.1ac    | 20ft   | Moderate | [Norrick]
+         └─ No stocking records
+
+GR-24    | RAM                       | 7.0ac    | 27ft   | Low      | [Norrick]
+         └─ No stocking records
+
 GR-51    | Red Belly                 | 6.3ac    | 8ft    | Moderate | [Norrick]
          └─ No stocking records
 
 GR-45    | Sandy                     | 5.6ac    | 10ft   | Low      | [Norrick]
+         └─ No stocking records
+
+GR-15    | Sesame                    | 6.0ac    | 7ft    | Low      | [Norrick]
          └─ No stocking records
 
 GR-59    | Shaw                      | 2.8ac    | 5ft    | Low      | [Norrick]
@@ -90,6 +129,9 @@ GR-59    | Shaw                      | 2.8ac    | 5ft    | Low      | [Norrick]
 
 GR-49    | South Twin (Dry Fork)     | 6.2ac    | 8ft    | High     | [Norrick]
          └─ No stocking records
+
+GR-5     | Summit                    | 9.9ac    | 7ft    | Low      | [Norrick]
+         └─ 2020-09-21 | GRAYLING ARCTIC |    756 fish | 2.81"  | SUMMIT
 
 DF-14    | West Kibah                | 7.8ac    | 15ft   | Moderate | [Norrick]
          └─ No stocking records
@@ -99,13 +141,13 @@ GR-36    | Wilde                     | ?ac      | ?ft    | ?        |
 
 
 --- Bear River Drainage ---
+BR-16    | (No name)                 | 1.0ac    | 5ft    | Low      | [Norrick]
+         └─ No stocking records
+
 BR-17    | (No name)                 | 2.8ac    | 7ft    | Moderate | [Norrick]
          └─ No stocking records
 
 BR-18    | (No name)                 | 4.8ac    | 12ft   | Low      | [Norrick]
-         └─ No stocking records
-
-BR-19    | (No name)                 | 2.9ac    | 5ft    | Low      | [Norrick]
          └─ No stocking records
 
 BR-2     | (No name)                 | 0.7ac    | 5ft    | Low      | [Norrick]
@@ -116,14 +158,28 @@ BR-2     | (No name)                 | 0.7ac    | 5ft    | Low      | [Norrick]
 BR-24    | (No name)                 | 2.4ac    | 10ft   | Low      | [Norrick]
          └─ 2022-06-28 | TIGER TROUT     |    257 fish | 2.65"  | SUMMIT
 
-BR-25    | (No name)                 | 2.1ac    | 11ft   | Low      | [Norrick]
-         └─ No stocking records
-
 BR-30    | (No name)                 | ?ac      | ?ft    | ?        | 
          └─ No stocking records
 
-BR-31    | (No name)                 | 3.2ac    | 8ft    | Moderate | [Norrick]
-         └─ No stocking records
+BR-34    | (No name)                 | ?ac      | ?ft    | ?        | 
+         └─ 2025-07-02 | TIGER TROUT     |    239 fish | 3.8"   | SUMMIT
+         └─ 2022-06-28 | TIGER TROUT     |    243 fish | 2.65"  | SUMMIT
+         └─ 2019-07-09 | TIGER TROUT     |    243 fish | 2.65"  | SUMMIT
+
+BR-35    | (No name)                 | ?ac      | ?ft    | ?        | 
+         └─ 2025-07-02 | TIGER TROUT     |    137 fish | 3.8"   | SUMMIT
+         └─ 2023-07-14 | TIGER TROUT     |    132 fish | 2.83"  | SUMMIT
+
+BR-43    | (No name)                 | ?ac      | ?ft    | ?        | 
+         └─ 2024-07-08 | TIGER TROUT     |    197 fish | 2.78"  | SUMMIT
+         └─ 2022-06-28 | TIGER TROUT     |    203 fish | 2.65"  | SUMMIT
+         └─ 2020-07-31 | TIGER TROUT     |    216 fish | 2.4"   | SUMMIT
+         └─ 2018-07-09 | TIGER TROUT     |    156 fish | 2.34"  | SUMMIT
+
+BR-44    | (No name)                 | 3.6ac    | 15ft   | Low      | [Norrick]
+         └─ 2024-07-08 | TIGER TROUT     |    348 fish | 2.78"  | SUMMIT
+         └─ 2021-06-30 | TIGER TROUT     |    346 fish | 2.69"  | SUMMIT
+         └─ 2018-07-09 | TIGER TROUT     |    254 fish | 2.34"  | SUMMIT
 
 BR-45    | (No name)                 | 3.6ac    | 8ft    | Moderate | [Norrick]
          └─ 2024-07-08 | TIGER TROUT     |    360 fish | 2.78"  | SUMMIT
@@ -143,6 +199,10 @@ BR-50    | (No name)                 | ?ac      | ?ft    | ?        |
          └─ 2021-06-29 | BROOK TROUT     |    345 fish | 2.79"  | SUMMIT
          └─ 2020-07-31 | BROOK TROUT     |    363 fish | 2.47"  | SUMMIT
          └─ 2018-06-26 | BROOK TROUT     |   1150 fish | 2.88"  | SUMMIT
+
+BR-55    | (No name)                 | ?ac      | ?ft    | ?        | 
+         └─ 2025-06-26 | BROOK TROUT     |    230 fish | 3.01"  | SUMMIT
+         └─ 2021-06-29 | BROOK TROUT     |    230 fish | 2.79"  | SUMMIT
 
 BR-42    | Allsop                    | 12.3ac   | 22ft   | Moderate | [Norrick]
          └─ No stocking records
@@ -218,9 +278,6 @@ BR-37    | Cutthroat                 | 3.8ac    | 16ft   | Moderate | [Norrick]
          └─ 2019-10-21 | CUTTHROAT       |    150 fish | 2.56"  | DUCHESNE
          └─ 2019-07-09 | TIGER TROUT     |    405 fish | 2.65"  | SUMMIT
 
-BR-8     | Elizabeth                 | 3.1ac    | 15ft   | Moderate | [Norrick]
-         └─ No stocking records
-
 BR-36    | Hayden Lake               | 4.4ac    | 5ft    | Moderate | [Norrick]
          └─ 2022-06-28 | TIGER TROUT     |    473 fish | 2.65"  | SUMMIT
          └─ 2019-07-09 | TIGER TROUT     |    446 fish | 2.65"  | SUMMIT
@@ -273,6 +330,12 @@ BR-14    | Mcpheters                 | 28.0ac   | 45ft   | Moderate | [Norrick]
          └─ 2020-07-31 | TIGER TROUT     |   2880 fish | 2.4"   | SUMMIT
          └─ 2018-07-09 | TIGER TROUT     |   2886 fish | 2.34"  | SUMMIT
 
+BR-19    | Meadow Lake               | 2.9ac    | 5ft    | Low      | [Norrick]
+         └─ No stocking records
+
+BR-8     | Mt Elizabeth              | 3.1ac    | 15ft   | Moderate | [Norrick]
+         └─ No stocking records
+
 BR-39    | Naomi Lake                | ?ac      | ?ft    | ?        | 
          └─ No stocking records
 
@@ -312,10 +375,16 @@ BR-12    | Scow                      | 22.9ac   | 6ft    | Low      | [Norrick]
          └─ 2021-06-30 | BROOK TROUT     |   1702 fish | 2.79"  | SUMMIT
          └─ 2019-07-09 | BROOK TROUT     |   1274 fish | 2.68"  | SUMMIT
 
+BR-31    | Seidner                   | 3.2ac    | 8ft    | Moderate | [Norrick]
+         └─ No stocking records
+
 BR-32    | Teal                      | 6.9ac    | 14ft   | Moderate | [Norrick]
          └─ 2025-07-02 | TIGER TROUT     |    701 fish | 3.8"   | SUMMIT
          └─ 2022-06-28 | TIGER TROUT     |    716 fish | 2.65"  | SUMMIT
          └─ 2019-07-09 | TIGER TROUT     |   1404 fish | 2.65"  | SUMMIT
+
+BR-25    | Toomset                   | 2.1ac    | 11ft   | Low      | [Norrick]
+         └─ No stocking records
 
 BR-3     | Whiskey Island Lake       | 5.0ac    | 19ft   | Low      | [Norrick]
          └─ 2021-09-21 | GRAYLING ARCTIC |   1011 fish | 2.65"  | SUMMIT
@@ -323,9 +392,23 @@ BR-3     | Whiskey Island Lake       | 5.0ac    | 19ft   | Low      | [Norrick]
          └─ 2019-09-26 | GRAYLING ARCTIC |    999 fish | 2.29"  | SUMMIT
 
 
---- Beaver Creek Drainage: Middle Fork ---
+--- Beaver Creek Drainage ---
 GR-145   | (No name)                 | 5.6ac    | 11ft   | Low      | [Norrick]
          └─ 2020-09-21 | GRAYLING ARCTIC |   1098 fish | 2.81"  | SUMMIT
+
+GR-151   | (No name)                 | 12.6ac   | 11ft   | Low      | [Norrick]
+         └─ No stocking records
+
+GR-152   | (No name)                 | 4.8ac    | 13ft   | Low      | [Norrick]
+         └─ 2024-06-26 | BROOK TROUT     |    497 fish | 2.93"  | SUMMIT
+         └─ 2022-06-29 | BROOK TROUT     |    516 fish | 2.75"  | SUMMIT
+
+GR-153   | (No name)                 | 3.6ac    | 2ft    | Low      | [Norrick]
+         └─ No stocking records
+
+GR-154   | (No name)                 | 2.1ac    | 6ft    | Low      | [Norrick]
+         └─ 2022-06-29 | BROOK TROUT     |    216 fish | 2.75"  | SUMMIT
+         └─ 2018-07-11 | BROOK TROUT     |    200 fish | 2.88"  | SUMMIT
 
 GR-155   | (No name)                 | 1.6ac    | 6ft    | Low      | [Norrick]
          └─ 2025-07-01 | BROOK TROUT     |    202 fish | 3.4"   | SUMMIT
@@ -370,7 +453,16 @@ GR-173   | (No name)                 | 3.9ac    | 27ft   | Low      | [Norrick]
          └─ 2020-07-06 | BROOK TROUT     |    402 fish | 3.49"  | SUMMIT
          └─ 2018-07-11 | BROOK TROUT     |    399 fish | 2.88"  | SUMMIT
 
+GR-175   | (No name)                 | 18.3ac   | 11ft   | Low      | [Norrick]
+         └─ No stocking records
+
 GR-177   | (No name)                 | ?ac      | ?ft    | ?        | 
+         └─ No stocking records
+
+GR-178   | (No name)                 | ?ac      | ?ft    | ?        | 
+         └─ No stocking records
+
+GR-179   | (No name)                 | 5.5ac    | 11ft   | Low      | [Norrick]
          └─ No stocking records
 
 GR-147   | Beaver                    | 38.3ac   | 30ft   | High     | [Norrick]
@@ -384,30 +476,199 @@ GR-144   | Coffin                    | 25.8ac   | 28ft   | Low      | [Norrick]
 GR-148   | Dine                      | 5.1ac    | 15ft   | Low      | [Norrick]
          └─ No stocking records
 
+GR-150   | Gilbert                   | 15.2ac   | 2ft    | Moderate | [Norrick]
+         └─ No stocking records
+
 GR-149   | Hidden                    | 6.5ac    | 18ft   | Moderate | [Norrick]
          └─ 2022-06-29 | BROOK TROUT     |    708 fish | 2.75"  | SUMMIT
 
 
---- Beaver Creek Drainage: West Fork ---
-GR-151   | (No name)                 | 12.6ac   | 11ft   | Low      | [Norrick]
+--- Blacks Fork Drainage ---
+G-100    | (No name)                 | 7.9ac    | 13ft   | Low      | [Norrick]
          └─ No stocking records
 
-GR-152   | (No name)                 | 4.8ac    | 13ft   | Low      | [Norrick]
-         └─ 2024-06-26 | BROOK TROUT     |    497 fish | 2.93"  | SUMMIT
-         └─ 2022-06-29 | BROOK TROUT     |    516 fish | 2.75"  | SUMMIT
+G-113    | (No name)                 | ?ac      | ?ft    | ?        | 
+         └─ 2023-09-19 | CUTTHROAT       |    276 fish | 1.73"  | SUMMIT
 
-GR-153   | (No name)                 | 3.6ac    | 2ft    | Low      | [Norrick]
+G-36     | (No name)                 | 4.7ac    | 11ft   | Low      | [Norrick]
          └─ No stocking records
 
-GR-154   | (No name)                 | 2.1ac    | 6ft    | Low      | [Norrick]
-         └─ 2022-06-29 | BROOK TROUT     |    216 fish | 2.75"  | SUMMIT
-         └─ 2018-07-11 | BROOK TROUT     |    200 fish | 2.88"  | SUMMIT
-
-GR-178   | (No name)                 | ?ac      | ?ft    | ?        | 
+G-39     | (No name)                 | 2.6ac    | 7ft    | Low      | [Norrick]
          └─ No stocking records
 
-GR-150   | Gilbert                   | 15.2ac   | 2ft    | Moderate | [Norrick]
+G-44     | (No name)                 | 1.5ac    | 7ft    | Low      | [Norrick]
          └─ No stocking records
+
+G-58     | (No name)                 | 1.3ac    | 5ft    | Low      | [Norrick]
+         └─ No stocking records
+
+G-62     | (No name)                 | 2.2ac    | 7ft    | Low      | [Norrick]
+         └─ No stocking records
+
+G-64     | (No name)                 | 3.4ac    | 5ft    | Low      | [Norrick]
+         └─ 2024-07-08 | TIGER TROUT     |    336 fish | 2.78"  | SUMMIT
+         └─ 2022-06-28 | TIGER TROUT     |    351 fish | 2.65"  | SUMMIT
+         └─ 2020-07-31 | TIGER TROUT     |    342 fish | 2.4"   | SUMMIT
+         └─ 2018-07-09 | TIGER TROUT     |    273 fish | 2.34"  | SUMMIT
+
+G-65     | (No name)                 | 5.0ac    | 5ft    | Moderate | [Norrick]
+         └─ No stocking records
+
+G-66     | (No name)                 | 4.0ac    | 12ft   | Moderate | [Norrick]
+         └─ No stocking records
+
+G-67     | (No name)                 | 7.7ac    | 25ft   | Low      | [Norrick]
+         └─ 2022-09-26 | BROOK TROUT     |    774 fish | 3.03"  | SUMMIT
+         └─ 2018-07-11 | BROOK TROUT     |    777 fish | 2.88"  | SUMMIT
+
+G-69     | (No name)                 | 4.8ac    | 13ft   | Low      | [Norrick]
+         └─ No stocking records
+
+G-70     | (No name)                 | 3.8ac    | 4ft    | Low      | [Norrick]
+         └─ No stocking records
+
+G-71     | (No name)                 | 4.8ac    | 14ft   | n/a      | [Norrick]
+         └─ 2024-07-09 | BROOK TROUT     |    306 fish | 2.9"   | SUMMIT
+         └─ 2021-06-30 | BROOK TROUT     |    311 fish | 2.79"  | SUMMIT
+         └─ 2018-07-11 | BROOK TROUT     |    315 fish | 2.88"  | SUMMIT
+
+G-72     | (No name)                 | 1.3ac    | 6ft    | Low      | [Norrick]
+         └─ No stocking records
+
+G-74     | (No name)                 | 3.4ac    | 3ft    | Low      | [Norrick]
+         └─ 2024-07-09 | BROOK TROUT     |    296 fish | 2.9"   | SUMMIT
+         └─ 2021-06-30 | BROOK TROUT     |    299 fish | 2.79"  | SUMMIT
+         └─ 2018-07-11 | BROOK TROUT     |    305 fish | 2.88"  | SUMMIT
+
+G-78     | (No name)                 | 3.2ac    | 9ft    | Low      | [Norrick]
+         └─ No stocking records
+
+G-79     | (No name)                 | 2.5ac    | 5ft    | Low      | [Norrick]
+         └─ No stocking records
+
+G-80     | (No name)                 | 1.8ac    | 8ft    | Low      | [Norrick]
+         └─ 2025-06-26 | BROOK TROUT     |     90 fish | 3.01"  | SUMMIT
+         └─ 2021-06-30 | BROOK TROUT     |     92 fish | 2.79"  | SUMMIT
+
+G-81     | (No name)                 | 1.6ac    | 5ft    | Low      | [Norrick]
+         └─ No stocking records
+
+G-82     | (No name)                 | 3.8ac    | 6ft    | Low      | [Norrick]
+         └─ 2022-09-26 | BROOK TROUT     |    189 fish | 3.03"  | SUMMIT
+         └─ 2018-07-11 | BROOK TROUT     |    189 fish | 2.88"  | SUMMIT
+
+G-86     | (No name)                 | 6.4ac    | 7ft    | Low      | [Norrick]
+         └─ No stocking records
+
+G-73     | Bobs                      | 6.6ac    | 30ft   | Low      | [Norrick]
+         └─ 2023-09-19 | CUTTHROAT       |   1326 fish | 1.73"  | SUMMIT
+         └─ 2020-09-23 | CUTTHROAT       |    501 fish | 2.48"  | SUMMIT
+         └─ 2020-07-31 | TIGER TROUT     |    504 fish | 2.4"   | SUMMIT
+         └─ 2018-07-09 | TIGER TROUT     |    371 fish | 2.34"  | SUMMIT
+
+G-11     | Castle                    | 11.5ac   | 10ft   | Low      | [Norrick]
+         └─ 2024-07-08 | TIGER TROUT     |    603 fish | 2.78"  | SUMMIT
+         └─ 2020-07-31 | TIGER TROUT     |    612 fish | 2.4"   | SUMMIT
+
+G-77     | Dead Horse                | 16.0ac   | 41ft   | Moderate | [Norrick]
+         └─ 2023-09-19 | CUTTHROAT       |   3203 fish | 1.73"  | SUMMIT
+         └─ 2020-07-31 | TIGER TROUT     |   1602 fish | 2.4"   | SUMMIT
+         └─ 2018-07-09 | TIGER TROUT     |   1209 fish | 2.34"  | SUMMIT
+
+G-37     | Duck                      | 5.9ac    | 5ft    | Moderate | [Norrick]
+         └─ No stocking records
+
+G-76     | Ejod                      | 6.7ac    | 12ft   | Low      | [Norrick]
+         └─ No stocking records
+
+G-40     | G- 40                     | ?ac      | ?ft    | ?        | 
+         └─ 2022-06-30 | BROOK TROUT     |    301 fish | 3.7"   | SUMMIT
+
+G-68     | G- 68                     | ?ac      | ?ft    | ?        | 
+         └─ 2024-07-09 | BROOK TROUT     |    408 fish | 2.9"   | SUMMIT
+         └─ 2022-09-26 | BROOK TROUT     |    414 fish | 3.03"  | SUMMIT
+         └─ 2020-07-31 | BROOK TROUT     |    413 fish | 2.47"  | SUMMIT
+         └─ 2018-07-11 | BROOK TROUT     |    410 fish | 2.88"  | SUMMIT
+
+G-32     | Grahams                   | 18.5ac   | 25ft   | Unknown  | [Norrick]
+         └─ No stocking records
+
+G-25     | Little Lyman              | 5.0ac    | 25ft   | High     | [Norrick]
+         └─ 2025-07-24 | RAINBOW         |    324 fish | 10.77" | SUMMIT
+         └─ 2025-07-24 | RAINBOW         |    326 fish | 10.77" | SUMMIT
+         └─ 2025-07-02 | BROOK TROUT     |   2998 fish | 2.97"  | SUMMIT
+         └─ 2025-07-02 | RAINBOW         |   1602 fish | 10.52" | SUMMIT
+         └─ 2024-07-23 | RAINBOW         |    656 fish | 10.28" | SUMMIT
+         └─ 2024-07-17 | BROOK TROUT     |   3494 fish | 3.71"  | SUMMIT
+         └─ 2024-06-24 | RAINBOW         |    864 fish | 11.16" | SUMMIT
+         └─ 2024-06-04 | RAINBOW         |    822 fish | 9.91"  | SUMMIT
+         └─ 2023-08-09 | BROOK TROUT     |   3500 fish | 3.72"  | SUMMIT
+         └─ 2023-08-09 | RAINBOW         |    651 fish | 12.13" | SUMMIT
+         └─ 2023-07-31 | RAINBOW         |      0 fish | 11.99" | SUMMIT
+         └─ 2023-07-11 | RAINBOW         |    805 fish | 11.26" | SUMMIT
+         └─ 2023-06-13 | RAINBOW         |    880 fish | 11.6"  | SUMMIT
+         └─ 2022-07-28 | RAINBOW         |    650 fish | 10.0"  | SUMMIT
+         └─ 2022-06-30 | RAINBOW         |    810 fish | 9.41"  | SUMMIT
+         └─ 2022-06-06 | RAINBOW         |    810 fish | 9.41"  | SUMMIT
+         └─ 2022-06-06 | BROOK TROUT     |   3496 fish | 2.54"  | SUMMIT
+         └─ 2021-07-26 | RAINBOW         |    650 fish | 10.14" | SUMMIT
+         └─ 2021-06-29 | BROOK TROUT     |   2795 fish | 2.68"  | SUMMIT
+         └─ 2021-06-29 | RAINBOW         |    803 fish | 9.32"  | SUMMIT
+         └─ 2021-05-26 | RAINBOW         |    802 fish | 9.03"  | SUMMIT
+         └─ 2020-07-24 | BROOK TROUT     |   2495 fish | 2.49"  | SUMMIT
+         └─ 2020-07-24 | RAINBOW         |   1407 fish | 11.99" | SUMMIT
+         └─ 2020-07-09 | RAINBOW         |    799 fish | 9.75"  | SUMMIT
+         └─ 2020-06-02 | RAINBOW         |    799 fish | 9.19"  | SUMMIT
+         └─ 2019-07-22 | RAINBOW         |   1400 fish | 9.63"  | SUMMIT
+         └─ 2019-07-09 | RAINBOW         |    798 fish | 10.12" | SUMMIT
+         └─ 2019-07-09 | BROOK TROUT     |   2002 fish | 2.68"  | SUMMIT
+         └─ 2019-06-24 | RAINBOW         |    850 fish | 9.55"  | SUMMIT
+         └─ 2018-07-17 | RAINBOW         |   1401 fish | 10.21" | SUMMIT
+         └─ 2018-06-28 | RAINBOW         |    801 fish | 9.64"  | SUMMIT
+         └─ 2018-05-29 | BROOK TROUT     |   2503 fish | 2.65"  | SUMMIT
+         └─ 2018-05-29 | RAINBOW         |    800 fish | 9.59"  | SUMMIT
+
+G-27     | Lyman                     | 36.6ac   | 30ft   | Moderate | [Norrick]
+         └─ 2025-07-02 | BROOK TROUT     |   2496 fish | 2.97"  | SUMMIT
+         └─ 2024-07-17 | BROOK TROUT     |   1998 fish | 3.71"  | SUMMIT
+         └─ 2024-06-24 | RAINBOW         |    756 fish | 11.16" | SUMMIT
+         └─ 2024-06-04 | RAINBOW         |    771 fish | 9.91"  | SUMMIT
+         └─ 2023-08-09 | BROOK TROUT     |   2000 fish | 3.72"  | SUMMIT
+         └─ 2023-07-11 | RAINBOW         |    753 fish | 11.26" | SUMMIT
+         └─ 2023-06-13 | RAINBOW         |    832 fish | 11.6"  | SUMMIT
+         └─ 2022-06-30 | RAINBOW         |    750 fish | 9.41"  | SUMMIT
+         └─ 2022-06-06 | RAINBOW         |    750 fish | 9.41"  | SUMMIT
+         └─ 2022-06-06 | BROOK TROUT     |   2006 fish | 2.54"  | SUMMIT
+         └─ 2021-06-29 | RAINBOW         |    757 fish | 9.32"  | SUMMIT
+         └─ 2021-06-29 | BROOK TROUT     |   1001 fish | 2.68"  | SUMMIT
+         └─ 2021-05-26 | RAINBOW         |    748 fish | 9.03"  | SUMMIT
+         └─ 2020-07-24 | RAINBOW         |   1001 fish | 11.99" | SUMMIT
+         └─ 2020-07-24 | BROOK TROUT     |   1993 fish | 2.49"  | SUMMIT
+         └─ 2020-06-02 | RAINBOW         |   1030 fish | 9.19"  | SUMMIT
+         └─ 2019-07-09 | BROOK TROUT     |   1001 fish | 2.68"  | SUMMIT
+         └─ 2019-07-09 | TIGER TROUT     |    999 fish | 2.65"  | SUMMIT
+         └─ 2019-07-09 | RAINBOW         |   1000 fish | 10.12" | SUMMIT
+         └─ 2019-06-24 | RAINBOW         |   1062 fish | 9.55"  | SUMMIT
+         └─ 2018-06-28 | RAINBOW         |    999 fish | 9.64"  | SUMMIT
+         └─ 2018-05-29 | TIGER TROUT     |    999 fish | 2.34"  | SUMMIT
+         └─ 2018-05-29 | BROOK TROUT     |    999 fish | 2.65"  | SUMMIT
+         └─ 2018-05-29 | RAINBOW         |    998 fish | 9.59"  | SUMMIT
+
+G-102    | Moslander                 | 11.4ac   | 29ft   | Low      | [Norrick]
+         └─ No stocking records
+
+G-103    | QUARTER CORNER LG103      | ?ac      | ?ft    | ?        | 
+         └─ 2025-06-03 | RAINBOW         |    920 fish | 10.77" | SUMMIT
+         └─ 2024-05-30 | RAINBOW         |    900 fish | 10.77" | SUMMIT
+         └─ 2023-06-07 | RAINBOW         |    899 fish | 10.6"  | SUMMIT
+         └─ 2022-05-23 | RAINBOW         |    928 fish | 9.52"  | SUMMIT
+         └─ 2021-09-21 | GRAYLING ARCTIC |    194 fish | 2.65"  | SUMMIT
+         └─ 2021-05-25 | RAINBOW         |    901 fish | 9.03"  | SUMMIT
+         └─ 2020-09-21 | GRAYLING ARCTIC |    198 fish | 2.81"  | SUMMIT
+         └─ 2020-06-01 | RAINBOW         |   1197 fish | 9.01"  | SUMMIT
+         └─ 2019-09-26 | GRAYLING ARCTIC |    200 fish | 2.29"  | SUMMIT
+         └─ 2019-06-10 | RAINBOW         |   1207 fish | 9.03"  | SUMMIT
+         └─ 2018-05-29 | RAINBOW         |   1199 fish | 9.59"  | SUMMIT
 
 
 --- Burnt Fork Drainage ---
@@ -765,11 +1026,10 @@ Z-1      | Butterfly                 | 4.3ac    | 13ft   | High     | [Norrick]
 Z-42     | Carolyn                   | 5.0ac    | 17ft   | Moderate | [Norrick]
          └─ No stocking records
 
-Z-14     | Castle                    | 6.5ac    | 17ft   | Moderate | [Norrick]
-         └─ 2025-06-26 | BROOK TROUT     |    550 fish | 3.01"  | DUCHESNE
-         └─ 2023-07-13 | BROOK TROUT     |    546 fish | 2.68"  | DUCHESNE
-         └─ 2021-09-21 | GRAYLING ARCTIC |    301 fish | 2.65"  | DUCHESNE
-         └─ 2018-06-27 | BROOK TROUT     |   1000 fish | 2.88"  | DUCHESNE
+D-14     | Castle                    | 1.0ac    | 12ft   | Moderate | [Norrick]
+         └─ 2024-09-23 | CUTTHROAT       |    196 fish | 1.48"  | DUCHESNE
+         └─ 2022-09-23 | CUTTHROAT       |    223 fish | 1.57"  | DUCHESNE
+         └─ 2019-07-09 | TIGER TROUT     |     95 fish | 2.65"  | DUCHESNE
 
 Z-16     | Echo                      | 18.0ac   | 44ft   | Moderate | [Norrick]
          └─ No stocking records
@@ -1292,6 +1552,12 @@ Z-13     | Wilder                    | 3.7ac    | 14ft   | High     | [Norrick]
          └─ 2021-06-28 | BROOK TROUT     |    403 fish | 2.79"  | DUCHESNE
          └─ 2018-06-27 | BROOK TROUT     |    400 fish | 2.88"  | DUCHESNE
 
+Z-14     | Wyman                     | 6.5ac    | 17ft   | Moderate | [Norrick]
+         └─ 2025-06-26 | BROOK TROUT     |    550 fish | 3.01"  | DUCHESNE
+         └─ 2023-07-13 | BROOK TROUT     |    546 fish | 2.68"  | DUCHESNE
+         └─ 2021-09-21 | GRAYLING ARCTIC |    301 fish | 2.65"  | DUCHESNE
+         └─ 2018-06-27 | BROOK TROUT     |   1000 fish | 2.88"  | DUCHESNE
+
 
 --- Henry's Fork and Smith Fork Drainage ---
 G-10     | (No name)                 | 5.4ac    | 12ft   | Low      | [Norrick]
@@ -1302,13 +1568,6 @@ G-13     | (No name)                 | 7.9ac    | 17ft   | Low      | [Norrick]
          └─ 2022-06-30 | BROOK TROUT     |    798 fish | 3.7"   | SUMMIT
          └─ 2020-07-06 | BROOK TROUT     |    797 fish | 3.49"  | SUMMIT
          └─ 2018-07-11 | BROOK TROUT     |    809 fish | 2.88"  | SUMMIT
-
-G-16     | (No name)                 | 25.6ac   | 72ft   | Moderate | [Norrick]
-         └─ 2025-07-02 | TIGER TROUT     |    849 fish | 3.8"   | SUMMIT
-         └─ 2024-07-08 | TIGER TROUT     |    847 fish | 2.78"  | SUMMIT
-         └─ 2023-07-14 | TIGER TROUT     |    847 fish | 2.83"  | SUMMIT
-         └─ 2022-07-11 | TIGER TROUT     |    850 fish | 2.92"  | SUMMIT
-         └─ 2020-07-31 | TIGER TROUT     |   2556 fish | 2.4"   | SUMMIT
 
 G-29     | (No name)                 | ?ac      | ?ft    | ?        | 
          └─ No stocking records
@@ -1517,6 +1776,13 @@ G-14     | Smiths Fork Pass          | 26.1ac   | 17ft   | Low      | [Norrick]
          └─ 2020-07-31 | TIGER TROUT     |    846 fish | 2.4"   | SUMMIT
          └─ 2019-07-15 | TIGER TROUT     |   1760 fish | 2.87"  | SUMMIT
 
+G-16     | Upper Red Castle          | 25.6ac   | 72ft   | Moderate | [Norrick]
+         └─ 2025-07-02 | TIGER TROUT     |    849 fish | 3.8"   | SUMMIT
+         └─ 2024-07-08 | TIGER TROUT     |    847 fish | 2.78"  | SUMMIT
+         └─ 2023-07-14 | TIGER TROUT     |    847 fish | 2.83"  | SUMMIT
+         └─ 2022-07-11 | TIGER TROUT     |    850 fish | 2.92"  | SUMMIT
+         └─ 2020-07-31 | TIGER TROUT     |   2556 fish | 2.4"   | SUMMIT
+
 
 --- Lake Fork Drainage ---
 LF-16    | (No name)                 | 3.0ac    | 6ft    | Low      | [Norrick]
@@ -1697,6 +1963,12 @@ X-36     | Tworoose                  | 21.9ac   | 37ft   | Moderate | [Norrick]
 P-10     | (No name)                 | ?ac      | ?ft    | ?        | 
          └─ No stocking records
 
+P-11     | (No name)                 | ?ac      | ?ft    | ?        | 
+         └─ 2025-06-25 | BROOK TROUT     |    230 fish | 3.01"  | SUMMIT
+         └─ 2024-07-03 | BROOK TROUT     |     51 fish | 2.9"   | SUMMIT
+         └─ 2023-07-13 | BROOK TROUT     |     52 fish | 2.68"  | SUMMIT
+         └─ 2022-06-27 | BROOK TROUT     |     48 fish | 2.75"  | SUMMIT
+
 P-15     | (No name)                 | ?ac      | ?ft    | ?        | 
          └─ No stocking records
 
@@ -1763,6 +2035,11 @@ A-3      | Buckeye                   | 5.0ac    | 8ft    | High     | [Norrick]
          └─ 2020-07-31 | BROOK TROUT     |    182 fish | 2.47"  | SUMMIT
          └─ 2018-06-27 | BROOK TROUT     |    500 fish | 2.88"  | SUMMIT
 
+P-16     | CHARITY L                 | ?ac      | ?ft    | ?        | 
+         └─ 2024-07-03 | BROOK TROUT     |    204 fish | 2.9"   | SUMMIT
+         └─ 2022-06-27 | BROOK TROUT     |    204 fish | 2.75"  | SUMMIT
+         └─ 2019-07-08 | BROOK TROUT     |    195 fish | 2.68"  | SUMMIT
+
 A-21     | Carol                     | ?ac      | ?ft    | ?        | 
          └─ No stocking records
 
@@ -1782,6 +2059,11 @@ A-34     | Cliff                     | 9.0ac    | 20ft   | High     | [Norrick]
          └─ 2019-07-09 | TIGER TROUT     |    905 fish | 2.65"  | SUMMIT
          └─ 2018-07-09 | TIGER TROUT     |    761 fish | 2.34"  | SUMMIT
 
+A-28     | Clyde                     | 16.0ac   | 21ft   | High     | [Norrick]
+         └─ 2025-06-25 | BROOK TROUT     |   1600 fish | 3.01"  | SUMMIT
+         └─ 2022-06-27 | BROOK TROUT     |   1596 fish | 2.75"  | SUMMIT
+         └─ 2019-07-08 | BROOK TROUT     |   1196 fish | 2.68"  | SUMMIT
+
 A-51     | Crystal                   | 9.8ac    | 7ft    | High     | [Norrick]
          └─ 2025-06-25 | BROOK TROUT     |   1000 fish | 3.01"  | SUMMIT
          └─ 2024-07-03 | BROOK TROUT     |   1000 fish | 2.9"   | SUMMIT
@@ -1800,6 +2082,12 @@ A-22     | Diamond                   | 3.0ac    | 7ft    | Moderate | [Norrick]
          └─ 2024-07-03 | BROOK TROUT     |    296 fish | 2.9"   | SUMMIT
          └─ 2021-06-28 | BROOK TROUT     |    299 fish | 2.79"  | SUMMIT
          └─ 2018-06-27 | BROOK TROUT     |    300 fish | 2.88"  | SUMMIT
+
+A-36     | Divide, #1                | 3.5ac    | 5ft    | High     | [Norrick]
+         └─ 2025-06-26 | BROOK TROUT     |    525 fish | 3.01"  | SUMMIT
+         └─ 2023-07-14 | BROOK TROUT     |    520 fish | 2.68"  | SUMMIT
+         └─ 2021-06-28 | BROOK TROUT     |    529 fish | 2.79"  | SUMMIT
+         └─ 2019-07-09 | BROOK TROUT     |    390 fish | 2.68"  | SUMMIT
 
 A-7      | Duck                      | 12.7ac   | 15ft   | High     | [Norrick]
          └─ No stocking records
@@ -2524,6 +2812,10 @@ A-50     | Weir                      | 7.0ac    | 13ft   | Moderate | [Norrick]
 
 
 --- Rock Creek Drainage ---
+RC-36    | (No name)                 | ?ac      | ?ft    | ?        | 
+         └─ 2022-07-11 | BROOK TROUT     |    300 fish | 2.92"  | DUCHESNE
+         └─ 2018-07-10 | BROOK TROUT     |    305 fish | 2.88"  | DUCHESNE
+
 Z-44     | Allen                     | 15.2ac   | 16ft   | Low      | [Norrick]
          └─ No stocking records
 
@@ -2601,6 +2893,11 @@ X-15     | Doc's                     | 14.5ac   | 45ft   | Low      | [Norrick]
 
 X-123    | Doug                      | 1.0ac    | 8ft    | Low      | [Norrick]
          └─ No stocking records
+
+Z-36     | Everman                   | 7.8ac    | 7ft    | Moderate | [Norrick]
+         └─ 2024-07-03 | BROOK TROUT     |    796 fish | 2.9"   | DUCHESNE
+         └─ 2021-06-28 | BROOK TROUT     |    805 fish | 2.79"  | DUCHESNE
+         └─ 2018-06-26 | BROOK TROUT     |    800 fish | 2.88"  | DUCHESNE
 
 X-122    | Fall                      | ?ac      | ?ft    | ?        | 
          └─ No stocking records
@@ -2833,12 +3130,12 @@ GR-25    | Judy                      | 4.7ac    | 24ft   | Low      | [Norrick]
          └─ 2023-07-21 | TIGER TROUT     |    350 fish | 2.7"   | SUMMIT
          └─ 2019-07-11 | TIGER TROUT     |    351 fish | 2.65"  | SUMMIT
 
-GR-27    | Little Potters            | 21.3ac   | 75ft   | Low      | [Norrick]
-         └─ No stocking records
-
 GR-4     | Lost                      | 3.2ac    | 7ft    | Low      | [Norrick]
          └─ 2023-09-19 | CUTTHROAT       |    221 fish | 1.73"  | SUMMIT
          └─ 2020-09-23 | CUTTHROAT       |    488 fish | 2.48"  | SUMMIT
+
+GR-27    | Lower Potter              | 3.4ac    | 16ft   | Moderate | [Norrick]
+         └─ No stocking records
 
 GR-29    | Lower Teepee              | ?ac      | ?ft    | ?        | 
          └─ No stocking records
@@ -2847,9 +3144,6 @@ GR-101   | Mystery                   | 10.2ac   | 25ft   | Moderate | [Norrick]
          └─ No stocking records
 
 GR-32    | One Fish                  | 4.5ac    | 35ft   | Low      | [Norrick]
-         └─ No stocking records
-
-GR-28    | Potters                   | 4.3ac    | 28ft   | High     | [Norrick]
          └─ No stocking records
 
 GR-33    | Red Lake                  | 20.9ac   | 57ft   | Low      | [Norrick]
@@ -2869,6 +3163,9 @@ GR-2     | Tamarack                  | 79.1ac   | 90ft   | High     | [Norrick]
          └─ 2018-10-12 | CUTTHROAT       |   4148 fish | 2.09"  | SUMMIT
          └─ 2018-07-10 | TIGER TROUT     |   2007 fish | 2.35"  | SUMMIT
 
+GR-28    | Upper Potter              | 21.3ac   | 75ft   | Low      | [Norrick]
+         └─ No stocking records
+
 GR-30    | Upper Teepee              | 6.5ac    | 28ft   | Moderate | [Norrick]
          └─ No stocking records
 
@@ -2878,6 +3175,9 @@ S-2      | (No name)                 | ?ac      | ?ft    | ?        |
          └─ No stocking records
 
 S-3      | (No name)                 | ?ac      | ?ft    | ?        | 
+         └─ No stocking records
+
+X-22 (alt) | (No name)                 | ?ac      | ?ft    | ?        | 
          └─ No stocking records
 
 X-24     | (No name)                 | 21.4ac   | 30ft   | Low      | [Norrick]
@@ -2940,10 +3240,16 @@ X-54     | White Miller              | 11.0ac   | 18ft   | High     | [Norrick]
 
 
 --- Uinta River Drainage ---
+U-100    | (No name)                 | ?ac      | ?ft    | ?        | 
+         └─ 2019-10-01 | GRAYLING ARCTIC |    323 fish | 2.39"  | DUCHESNE
+
 U-19     | (No name)                 | 15.0ac   | 8ft    | Low      | [Norrick]
          └─ 2022-07-06 | BROOK TROUT     |   1610 fish | 3.62"  | DUCHESNE
 
 U-35     | (No name)                 | 4.4ac    | 5ft    | Moderate | [Norrick]
+         └─ No stocking records
+
+U-36     | (No name)                 | 4.6ac    | 7ft    | Moderage | [Norrick]
          └─ No stocking records
 
 U-37     | (No name)                 | 6.3ac    | 12ft   | Low      | [Norrick]
@@ -3107,327 +3413,6 @@ U-15     | Roberts                   | 23.3ac   | 38ft   | Low      | [Norrick]
 U-27     | Samuals                   | 4.8ac    | 7ft    | Low      | [Norrick]
          └─ No stocking records
 
-U-41     | Verlie                    | 10.6ac   | 12ft   | Moderate | [Norrick]
-         └─ 2019-07-11 | BROOK TROUT     |    416 fish | 2.68"  | DUCHESNE
-
-
---- Unknown ---
-BR-16    | (No name)                 | 1.0ac    | 5ft    | Low      | [Norrick]
-         └─ No stocking records
-
-BR-34    | (No name)                 | ?ac      | ?ft    | ?        | 
-         └─ 2025-07-02 | TIGER TROUT     |    239 fish | 3.8"   | SUMMIT
-         └─ 2022-06-28 | TIGER TROUT     |    243 fish | 2.65"  | SUMMIT
-         └─ 2019-07-09 | TIGER TROUT     |    243 fish | 2.65"  | SUMMIT
-
-BR-35    | (No name)                 | ?ac      | ?ft    | ?        | 
-         └─ 2025-07-02 | TIGER TROUT     |    137 fish | 3.8"   | SUMMIT
-         └─ 2023-07-14 | TIGER TROUT     |    132 fish | 2.83"  | SUMMIT
-
-BR-43    | (No name)                 | ?ac      | ?ft    | ?        | 
-         └─ 2024-07-08 | TIGER TROUT     |    197 fish | 2.78"  | SUMMIT
-         └─ 2022-06-28 | TIGER TROUT     |    203 fish | 2.65"  | SUMMIT
-         └─ 2020-07-31 | TIGER TROUT     |    216 fish | 2.4"   | SUMMIT
-         └─ 2018-07-09 | TIGER TROUT     |    156 fish | 2.34"  | SUMMIT
-
-BR-44    | (No name)                 | 3.6ac    | 15ft   | Low      | [Norrick]
-         └─ 2024-07-08 | TIGER TROUT     |    348 fish | 2.78"  | SUMMIT
-         └─ 2021-06-30 | TIGER TROUT     |    346 fish | 2.69"  | SUMMIT
-         └─ 2018-07-09 | TIGER TROUT     |    254 fish | 2.34"  | SUMMIT
-
-BR-55    | (No name)                 | ?ac      | ?ft    | ?        | 
-         └─ 2025-06-26 | BROOK TROUT     |    230 fish | 3.01"  | SUMMIT
-         └─ 2021-06-29 | BROOK TROUT     |    230 fish | 2.79"  | SUMMIT
-
-G-100    | (No name)                 | 7.9ac    | 13ft   | Low      | [Norrick]
-         └─ No stocking records
-
-G-113    | (No name)                 | ?ac      | ?ft    | ?        | 
-         └─ 2023-09-19 | CUTTHROAT       |    276 fish | 1.73"  | SUMMIT
-
-G-36     | (No name)                 | 4.7ac    | 11ft   | Low      | [Norrick]
-         └─ No stocking records
-
-G-39     | (No name)                 | 2.6ac    | 7ft    | Low      | [Norrick]
-         └─ No stocking records
-
-G-44     | (No name)                 | 1.5ac    | 7ft    | Low      | [Norrick]
-         └─ No stocking records
-
-G-58     | (No name)                 | 1.3ac    | 5ft    | Low      | [Norrick]
-         └─ No stocking records
-
-G-62     | (No name)                 | 2.2ac    | 7ft    | Low      | [Norrick]
-         └─ No stocking records
-
-G-64     | (No name)                 | 3.4ac    | 5ft    | Low      | [Norrick]
-         └─ 2024-07-08 | TIGER TROUT     |    336 fish | 2.78"  | SUMMIT
-         └─ 2022-06-28 | TIGER TROUT     |    351 fish | 2.65"  | SUMMIT
-         └─ 2020-07-31 | TIGER TROUT     |    342 fish | 2.4"   | SUMMIT
-         └─ 2018-07-09 | TIGER TROUT     |    273 fish | 2.34"  | SUMMIT
-
-G-65     | (No name)                 | 5.0ac    | 5ft    | Moderate | [Norrick]
-         └─ No stocking records
-
-G-66     | (No name)                 | 4.0ac    | 12ft   | Moderate | [Norrick]
-         └─ No stocking records
-
-G-67     | (No name)                 | 7.7ac    | 25ft   | Low      | [Norrick]
-         └─ 2022-09-26 | BROOK TROUT     |    774 fish | 3.03"  | SUMMIT
-         └─ 2018-07-11 | BROOK TROUT     |    777 fish | 2.88"  | SUMMIT
-
-G-69     | (No name)                 | 4.8ac    | 13ft   | Low      | [Norrick]
-         └─ No stocking records
-
-G-70     | (No name)                 | 3.8ac    | 4ft    | Low      | [Norrick]
-         └─ No stocking records
-
-G-71     | (No name)                 | 4.8ac    | 14ft   | n/a      | [Norrick]
-         └─ 2024-07-09 | BROOK TROUT     |    306 fish | 2.9"   | SUMMIT
-         └─ 2021-06-30 | BROOK TROUT     |    311 fish | 2.79"  | SUMMIT
-         └─ 2018-07-11 | BROOK TROUT     |    315 fish | 2.88"  | SUMMIT
-
-G-72     | (No name)                 | 1.3ac    | 6ft    | Low      | [Norrick]
-         └─ No stocking records
-
-G-74     | (No name)                 | 3.4ac    | 3ft    | Low      | [Norrick]
-         └─ 2024-07-09 | BROOK TROUT     |    296 fish | 2.9"   | SUMMIT
-         └─ 2021-06-30 | BROOK TROUT     |    299 fish | 2.79"  | SUMMIT
-         └─ 2018-07-11 | BROOK TROUT     |    305 fish | 2.88"  | SUMMIT
-
-G-78     | (No name)                 | 3.2ac    | 9ft    | Low      | [Norrick]
-         └─ No stocking records
-
-G-79     | (No name)                 | 2.5ac    | 5ft    | Low      | [Norrick]
-         └─ No stocking records
-
-G-80     | (No name)                 | 1.8ac    | 8ft    | Low      | [Norrick]
-         └─ 2025-06-26 | BROOK TROUT     |     90 fish | 3.01"  | SUMMIT
-         └─ 2021-06-30 | BROOK TROUT     |     92 fish | 2.79"  | SUMMIT
-
-G-81     | (No name)                 | 1.6ac    | 5ft    | Low      | [Norrick]
-         └─ No stocking records
-
-G-82     | (No name)                 | 3.8ac    | 6ft    | Low      | [Norrick]
-         └─ 2022-09-26 | BROOK TROUT     |    189 fish | 3.03"  | SUMMIT
-         └─ 2018-07-11 | BROOK TROUT     |    189 fish | 2.88"  | SUMMIT
-
-G-86     | (No name)                 | 6.4ac    | 7ft    | Low      | [Norrick]
-         └─ No stocking records
-
-GR-104   | (No name)                 | 4.3ac    | 19ft   | Low      | [Norrick]
-         └─ No stocking records
-
-GR-11    | (No name)                 | 2.6ac    | 8ft    | Low      | [Norrick]
-         └─ No stocking records
-
-GR-119   | (No name)                 | ?ac      | ?ft    | ?        | 
-         └─ 2019-10-01 | GRAYLING ARCTIC |    323 fish | 2.39"  | SUMMIT
-
-GR-13    | (No name)                 | 9.2ac    | ?ft    | Low      | [Norrick]
-         └─ No stocking records
-
-GR-175   | (No name)                 | 18.3ac   | 11ft   | Low      | [Norrick]
-         └─ No stocking records
-
-GR-179   | (No name)                 | 5.5ac    | 11ft   | Low      | [Norrick]
-         └─ No stocking records
-
-GR-20    | (No name)                 | 5.7ac    | 8ft    | Low      | [Norrick]
-         └─ No stocking records
-
-GR-21    | (No name)                 | 3.7ac    | 7ft    | Low      | [Norrick]
-         └─ No stocking records
-
-GR-31    | (No name)                 | 6.0ac    | 6ft    | Low      | [Norrick]
-         └─ No stocking records
-
-P-11     | (No name)                 | ?ac      | ?ft    | ?        | 
-         └─ 2025-06-25 | BROOK TROUT     |    230 fish | 3.01"  | SUMMIT
-         └─ 2024-07-03 | BROOK TROUT     |     51 fish | 2.9"   | SUMMIT
-         └─ 2023-07-13 | BROOK TROUT     |     52 fish | 2.68"  | SUMMIT
-         └─ 2022-06-27 | BROOK TROUT     |     48 fish | 2.75"  | SUMMIT
-
-RC-36    | (No name)                 | ?ac      | ?ft    | ?        | 
-         └─ 2022-07-11 | BROOK TROUT     |    300 fish | 2.92"  | DUCHESNE
-         └─ 2018-07-10 | BROOK TROUT     |    305 fish | 2.88"  | DUCHESNE
-
-U-100    | (No name)                 | ?ac      | ?ft    | ?        | 
-         └─ 2019-10-01 | GRAYLING ARCTIC |    323 fish | 2.39"  | DUCHESNE
-
-U-36     | (No name)                 | 4.6ac    | 7ft    | Moderage | [Norrick]
-         └─ No stocking records
-
-FR-62    | Bert                      | 3.7ac    | 11ft   | Low      | [Norrick]
-         └─ No stocking records
-
-G-73     | Bobs                      | 6.6ac    | 30ft   | Low      | [Norrick]
-         └─ 2023-09-19 | CUTTHROAT       |   1326 fish | 1.73"  | SUMMIT
-         └─ 2020-09-23 | CUTTHROAT       |    501 fish | 2.48"  | SUMMIT
-         └─ 2020-07-31 | TIGER TROUT     |    504 fish | 2.4"   | SUMMIT
-         └─ 2018-07-09 | TIGER TROUT     |    371 fish | 2.34"  | SUMMIT
-
-P-16     | CHARITY L                 | ?ac      | ?ft    | ?        | 
-         └─ 2024-07-03 | BROOK TROUT     |    204 fish | 2.9"   | SUMMIT
-         └─ 2022-06-27 | BROOK TROUT     |    204 fish | 2.75"  | SUMMIT
-         └─ 2019-07-08 | BROOK TROUT     |    195 fish | 2.68"  | SUMMIT
-
-WR-33    | CIRQUE L                  | ?ac      | ?ft    | ?        | 
-         └─ 2019-10-01 | GRAYLING ARCTIC |    706 fish | 2.39"  | DUCHESNE
-
-D-14     | Castle                    | 1.0ac    | 12ft   | Moderate | [Norrick]
-         └─ 2024-09-23 | CUTTHROAT       |    196 fish | 1.48"  | DUCHESNE
-         └─ 2022-09-23 | CUTTHROAT       |    223 fish | 1.57"  | DUCHESNE
-         └─ 2019-07-09 | TIGER TROUT     |     95 fish | 2.65"  | DUCHESNE
-
-G-11     | Castle                    | 11.5ac   | 10ft   | Low      | [Norrick]
-         └─ 2024-07-08 | TIGER TROUT     |    603 fish | 2.78"  | SUMMIT
-         └─ 2020-07-31 | TIGER TROUT     |    612 fish | 2.4"   | SUMMIT
-
-A-28     | Clyde                     | 16.0ac   | 21ft   | High     | [Norrick]
-         └─ 2025-06-25 | BROOK TROUT     |   1600 fish | 3.01"  | SUMMIT
-         └─ 2022-06-27 | BROOK TROUT     |   1596 fish | 2.75"  | SUMMIT
-         └─ 2019-07-08 | BROOK TROUT     |   1196 fish | 2.68"  | SUMMIT
-
-G-77     | Dead Horse                | 16.0ac   | 41ft   | Moderate | [Norrick]
-         └─ 2023-09-19 | CUTTHROAT       |   3203 fish | 1.73"  | SUMMIT
-         └─ 2020-07-31 | TIGER TROUT     |   1602 fish | 2.4"   | SUMMIT
-         └─ 2018-07-09 | TIGER TROUT     |   1209 fish | 2.34"  | SUMMIT
-
-A-36     | Divide, #1                | 3.5ac    | 5ft    | High     | [Norrick]
-         └─ 2025-06-26 | BROOK TROUT     |    525 fish | 3.01"  | SUMMIT
-         └─ 2023-07-14 | BROOK TROUT     |    520 fish | 2.68"  | SUMMIT
-         └─ 2021-06-28 | BROOK TROUT     |    529 fish | 2.79"  | SUMMIT
-         └─ 2019-07-09 | BROOK TROUT     |    390 fish | 2.68"  | SUMMIT
-
-G-37     | Duck                      | 5.9ac    | 5ft    | Moderate | [Norrick]
-         └─ No stocking records
-
-G-76     | Ejod                      | 6.7ac    | 12ft   | Low      | [Norrick]
-         └─ No stocking records
-
-Z-36     | Everman                   | 7.8ac    | 7ft    | Moderate | [Norrick]
-         └─ 2024-07-03 | BROOK TROUT     |    796 fish | 2.9"   | DUCHESNE
-         └─ 2021-06-28 | BROOK TROUT     |    805 fish | 2.79"  | DUCHESNE
-         └─ 2018-06-26 | BROOK TROUT     |    800 fish | 2.88"  | DUCHESNE
-
-X-106    | Five Point Reservoir      | 82.0ac   | 21ft   | Moderate | [Norrick]
-         └─ 2024-09-23 | CUTTHROAT       |   3456 fish | 1.85"  | DUCHESNE
-
-G-40     | G- 40                     | ?ac      | ?ft    | ?        | 
-         └─ 2022-06-30 | BROOK TROUT     |    301 fish | 3.7"   | SUMMIT
-
-G-68     | G- 68                     | ?ac      | ?ft    | ?        | 
-         └─ 2024-07-09 | BROOK TROUT     |    408 fish | 2.9"   | SUMMIT
-         └─ 2022-09-26 | BROOK TROUT     |    414 fish | 3.03"  | SUMMIT
-         └─ 2020-07-31 | BROOK TROUT     |    413 fish | 2.47"  | SUMMIT
-         └─ 2018-07-11 | BROOK TROUT     |    410 fish | 2.88"  | SUMMIT
-
-G-32     | Grahams                   | 18.5ac   | 25ft   | Unknown  | [Norrick]
-         └─ No stocking records
-
-GR-19    | Lamb                      | 6.0ac    | 10ft   | Low      | [Norrick]
-         └─ No stocking records
-
-G-25     | Little Lyman              | 5.0ac    | 25ft   | High     | [Norrick]
-         └─ 2025-07-24 | RAINBOW         |    324 fish | 10.77" | SUMMIT
-         └─ 2025-07-24 | RAINBOW         |    326 fish | 10.77" | SUMMIT
-         └─ 2025-07-02 | BROOK TROUT     |   2998 fish | 2.97"  | SUMMIT
-         └─ 2025-07-02 | RAINBOW         |   1602 fish | 10.52" | SUMMIT
-         └─ 2024-07-23 | RAINBOW         |    656 fish | 10.28" | SUMMIT
-         └─ 2024-07-17 | BROOK TROUT     |   3494 fish | 3.71"  | SUMMIT
-         └─ 2024-06-24 | RAINBOW         |    864 fish | 11.16" | SUMMIT
-         └─ 2024-06-04 | RAINBOW         |    822 fish | 9.91"  | SUMMIT
-         └─ 2023-08-09 | BROOK TROUT     |   3500 fish | 3.72"  | SUMMIT
-         └─ 2023-08-09 | RAINBOW         |    651 fish | 12.13" | SUMMIT
-         └─ 2023-07-31 | RAINBOW         |      0 fish | 11.99" | SUMMIT
-         └─ 2023-07-11 | RAINBOW         |    805 fish | 11.26" | SUMMIT
-         └─ 2023-06-13 | RAINBOW         |    880 fish | 11.6"  | SUMMIT
-         └─ 2022-07-28 | RAINBOW         |    650 fish | 10.0"  | SUMMIT
-         └─ 2022-06-30 | RAINBOW         |    810 fish | 9.41"  | SUMMIT
-         └─ 2022-06-06 | RAINBOW         |    810 fish | 9.41"  | SUMMIT
-         └─ 2022-06-06 | BROOK TROUT     |   3496 fish | 2.54"  | SUMMIT
-         └─ 2021-07-26 | RAINBOW         |    650 fish | 10.14" | SUMMIT
-         └─ 2021-06-29 | BROOK TROUT     |   2795 fish | 2.68"  | SUMMIT
-         └─ 2021-06-29 | RAINBOW         |    803 fish | 9.32"  | SUMMIT
-         └─ 2021-05-26 | RAINBOW         |    802 fish | 9.03"  | SUMMIT
-         └─ 2020-07-24 | BROOK TROUT     |   2495 fish | 2.49"  | SUMMIT
-         └─ 2020-07-24 | RAINBOW         |   1407 fish | 11.99" | SUMMIT
-         └─ 2020-07-09 | RAINBOW         |    799 fish | 9.75"  | SUMMIT
-         └─ 2020-06-02 | RAINBOW         |    799 fish | 9.19"  | SUMMIT
-         └─ 2019-07-22 | RAINBOW         |   1400 fish | 9.63"  | SUMMIT
-         └─ 2019-07-09 | RAINBOW         |    798 fish | 10.12" | SUMMIT
-         └─ 2019-07-09 | BROOK TROUT     |   2002 fish | 2.68"  | SUMMIT
-         └─ 2019-06-24 | RAINBOW         |    850 fish | 9.55"  | SUMMIT
-         └─ 2018-07-17 | RAINBOW         |   1401 fish | 10.21" | SUMMIT
-         └─ 2018-06-28 | RAINBOW         |    801 fish | 9.64"  | SUMMIT
-         └─ 2018-05-29 | BROOK TROUT     |   2503 fish | 2.65"  | SUMMIT
-         └─ 2018-05-29 | RAINBOW         |    800 fish | 9.59"  | SUMMIT
-
-G-27     | Lyman                     | 36.6ac   | 30ft   | Moderate | [Norrick]
-         └─ 2025-07-02 | BROOK TROUT     |   2496 fish | 2.97"  | SUMMIT
-         └─ 2024-07-17 | BROOK TROUT     |   1998 fish | 3.71"  | SUMMIT
-         └─ 2024-06-24 | RAINBOW         |    756 fish | 11.16" | SUMMIT
-         └─ 2024-06-04 | RAINBOW         |    771 fish | 9.91"  | SUMMIT
-         └─ 2023-08-09 | BROOK TROUT     |   2000 fish | 3.72"  | SUMMIT
-         └─ 2023-07-11 | RAINBOW         |    753 fish | 11.26" | SUMMIT
-         └─ 2023-06-13 | RAINBOW         |    832 fish | 11.6"  | SUMMIT
-         └─ 2022-06-30 | RAINBOW         |    750 fish | 9.41"  | SUMMIT
-         └─ 2022-06-06 | RAINBOW         |    750 fish | 9.41"  | SUMMIT
-         └─ 2022-06-06 | BROOK TROUT     |   2006 fish | 2.54"  | SUMMIT
-         └─ 2021-06-29 | RAINBOW         |    757 fish | 9.32"  | SUMMIT
-         └─ 2021-06-29 | BROOK TROUT     |   1001 fish | 2.68"  | SUMMIT
-         └─ 2021-05-26 | RAINBOW         |    748 fish | 9.03"  | SUMMIT
-         └─ 2020-07-24 | RAINBOW         |   1001 fish | 11.99" | SUMMIT
-         └─ 2020-07-24 | BROOK TROUT     |   1993 fish | 2.49"  | SUMMIT
-         └─ 2020-06-02 | RAINBOW         |   1030 fish | 9.19"  | SUMMIT
-         └─ 2019-07-09 | BROOK TROUT     |   1001 fish | 2.68"  | SUMMIT
-         └─ 2019-07-09 | TIGER TROUT     |    999 fish | 2.65"  | SUMMIT
-         └─ 2019-07-09 | RAINBOW         |   1000 fish | 10.12" | SUMMIT
-         └─ 2019-06-24 | RAINBOW         |   1062 fish | 9.55"  | SUMMIT
-         └─ 2018-06-28 | RAINBOW         |    999 fish | 9.64"  | SUMMIT
-         └─ 2018-05-29 | TIGER TROUT     |    999 fish | 2.34"  | SUMMIT
-         └─ 2018-05-29 | BROOK TROUT     |    999 fish | 2.65"  | SUMMIT
-         └─ 2018-05-29 | RAINBOW         |    998 fish | 9.59"  | SUMMIT
-
-G-102    | Moslander                 | 11.4ac   | 29ft   | Low      | [Norrick]
-         └─ No stocking records
-
-GR-23    | Mutton                    | 3.8ac    | 10ft   | Low      | [Norrick]
-         └─ No stocking records
-
-GR-16    | Penguin                   | 2.1ac    | 20ft   | Moderate | [Norrick]
-         └─ No stocking records
-
-W-22     | Peter                     | 3.0ac    | 13ft   | Low      | [Norrick]
-         └─ No stocking records
-
-G-103    | QUARTER CORNER LG103      | ?ac      | ?ft    | ?        | 
-         └─ 2025-06-03 | RAINBOW         |    920 fish | 10.77" | SUMMIT
-         └─ 2024-05-30 | RAINBOW         |    900 fish | 10.77" | SUMMIT
-         └─ 2023-06-07 | RAINBOW         |    899 fish | 10.6"  | SUMMIT
-         └─ 2022-05-23 | RAINBOW         |    928 fish | 9.52"  | SUMMIT
-         └─ 2021-09-21 | GRAYLING ARCTIC |    194 fish | 2.65"  | SUMMIT
-         └─ 2021-05-25 | RAINBOW         |    901 fish | 9.03"  | SUMMIT
-         └─ 2020-09-21 | GRAYLING ARCTIC |    198 fish | 2.81"  | SUMMIT
-         └─ 2020-06-01 | RAINBOW         |   1197 fish | 9.01"  | SUMMIT
-         └─ 2019-09-26 | GRAYLING ARCTIC |    200 fish | 2.29"  | SUMMIT
-         └─ 2019-06-10 | RAINBOW         |   1207 fish | 9.03"  | SUMMIT
-         └─ 2018-05-29 | RAINBOW         |   1199 fish | 9.59"  | SUMMIT
-
-GR-24    | RAM                       | 7.0ac    | 27ft   | Low      | [Norrick]
-         └─ No stocking records
-
-WR-1     | ROBB L                    | ?ac      | ?ft    | ?        | 
-         └─ 2024-06-26 | BROOK TROUT     |    320 fish | 2.93"  | DUCHESNE
-         └─ 2022-07-06 | BROOK TROUT     |    420 fish | 3.62"  | DUCHESNE
-
-GR-15    | Sesame                    | 6.0ac    | 7ft    | Low      | [Norrick]
-         └─ No stocking records
-
-GR-5     | Summit                    | 9.9ac    | 7ft    | Low      | [Norrick]
-         └─ 2020-09-21 | GRAYLING ARCTIC |    756 fish | 2.81"  | SUMMIT
-
 U-22     | U- 22                     | ?ac      | ?ft    | ?        | 
          └─ 2024-06-26 | BROOK TROUT     |    604 fish | 2.93"  | DUCHESNE
          └─ 2021-07-01 | BROOK TROUT     |    602 fish | 3.32"  | DUCHESNE
@@ -3440,11 +3425,11 @@ U-91     | U- 91                     | ?ac      | ?ft    | ?        |
          └─ 2024-09-23 | CUTTHROAT       |    524 fish | 1.85"  | DUCHESNE
          └─ 2020-09-23 | CUTTHROAT       |    480 fish | 1.53"  | DUCHESNE
 
+U-41     | Verlie                    | 10.6ac   | 12ft   | Moderate | [Norrick]
+         └─ 2019-07-11 | BROOK TROUT     |    416 fish | 2.68"  | DUCHESNE
+
 U-99     | WALL L                    | ?ac      | ?ft    | ?        | 
          └─ 2020-09-21 | GRAYLING ARCTIC |    504 fish | 2.81"  | DUCHESNE
-
-X-50     | X- 50                     | ?ac      | ?ft    | ?        | 
-         └─ 2021-09-21 | GRAYLING ARCTIC |    194 fish | 2.65"  | DUCHESNE
 
 
 --- Weber River Drainage ---
@@ -3511,6 +3496,9 @@ W-68     | Arrowhead                 | 2.1ac    | 26ft   | Moderate | [Norrick]
 
 W-37     | Bench                     | ?ac      | ?ft    | ?        | 
          └─ No stocking records
+
+WR-33    | CIRQUE L                  | ?ac      | ?ft    | ?        | 
+         └─ 2019-10-01 | GRAYLING ARCTIC |    706 fish | 2.39"  | DUCHESNE
 
 W-51     | Carol                     | 3.0ac    | 25ft   | Low      | [Norrick]
          └─ 2024-07-02 | BROOK TROUT     |    265 fish | 2.9"   | SUMMIT
@@ -3633,6 +3621,13 @@ W-32     | Olsen                     | 7.0ac    | 13ft   | Moderate | [Norrick]
          └─ 2023-07-13 | BROOK TROUT     |    702 fish | 2.68"  | SUMMIT
          └─ 2021-06-29 | BROOK TROUT     |    702 fish | 2.79"  | SUMMIT
          └─ 2018-06-26 | BROOK TROUT     |    700 fish | 2.88"  | SUMMIT
+
+W-22     | Peter                     | 3.0ac    | 13ft   | Low      | [Norrick]
+         └─ No stocking records
+
+WR-1     | ROBB L                    | ?ac      | ?ft    | ?        | 
+         └─ 2024-06-26 | BROOK TROUT     |    320 fish | 2.93"  | DUCHESNE
+         └─ 2022-07-06 | BROOK TROUT     |    420 fish | 3.62"  | DUCHESNE
 
 W-38     | Reids                     | 3.0ac    | 8ft    | Low      | [Norrick]
          └─ 2025-06-26 | BROOK TROUT     |    250 fish | 3.01"  | SUMMIT
@@ -3910,6 +3905,9 @@ Y-41     | Drift Reservoir           | 14.8ac   | ?ft    | Low      | [Norrick]
          └─ 2022-06-30 | BROOK TROUT     |    740 fish | 3.7"   | DUCHESNE
          └─ 2018-07-10 | BROOK TROUT     |    746 fish | 2.88"  | DUCHESNE
 
+X-106    | Five Point Reservoir      | 82.0ac   | 21ft   | Moderate | [Norrick]
+         └─ 2024-09-23 | CUTTHROAT       |   3456 fish | 1.85"  | DUCHESNE
+
 Y-34     | Gem                       | 11.1ac   | 15ft   | Moderate | [Norrick]
          └─ No stocking records
 
@@ -3941,4 +3939,7 @@ X-58     | Swasey                    | 36.0ac   | 30ft   | High     | [Norrick]
 X-107    | Tungsten                  | 13.0ac   | 13ft   | Moderate | [Norrick]
          └─ 2023-09-19 | CUTTHROAT       |   1029 fish | 1.45"  | DUCHESNE
          └─ 2019-09-23 | CUTTHROAT       |   1011 fish | 1.7"   | DUCHESNE
+
+X-50     | X- 50                     | ?ac      | ?ft    | ?        | 
+         └─ 2021-09-21 | GRAYLING ARCTIC |    194 fish | 2.65"  | DUCHESNE
 

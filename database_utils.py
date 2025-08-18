@@ -120,7 +120,7 @@ def extract_letter_number(water_name):
     if re.search(r'NO2.*WR36', water_name):
         return 'WR-36'
     
-    # Handle spaces around hyphen like "U- 22" or "U -22"
+    # Handle spaces around hyphen like "U- 22", "U -22", "G- 52"
     pattern = r'\b([A-Z]{1,3})\s*-\s*(\d+)\b'
     match = re.search(pattern, water_name)
     if match:
@@ -133,6 +133,44 @@ def extract_letter_number(water_name):
         return f"{match.group(1)}-{match.group(2)}"
     
     return None
+
+def assign_drainage_by_designation(letter_number):
+    """Assign drainage based on letter designation prefix"""
+    if not letter_number:
+        return 'Unknown'
+    
+    prefix = letter_number.split('-')[0]
+    
+    drainage_map = {
+        'BR': 'Bear River Drainage',
+        'G': 'Blacks Fork Drainage',  # but not DG-
+        'A': 'Provo River Drainage',
+        'P': 'Provo River Drainage', 
+        'Z': 'Rock Creek Drainage',
+        'W': 'Weber River Drainage',
+        'WR': 'Weber River Drainage',
+        'U': 'Uinta River Drainage',
+        'DF': 'Duchesne Drainage',
+        'D': 'Duchesne Drainage',
+        'X': 'Yellowstone Drainage',
+        'RC': 'Rock Creek Drainage',
+        'GR': 'Ashley Creek Drainage'
+    }
+    
+    # Special cases
+    if letter_number.startswith('DG-'):
+        return 'Dry Gulch Drainage'
+    
+    # GR- lakes 147 and higher belong to Beaver Creek Drainage
+    if letter_number.startswith('GR-'):
+        try:
+            number = int(letter_number.split('-')[1])
+            if number >= 147:
+                return 'Beaver Creek Drainage'
+        except (ValueError, IndexError):
+            pass
+    
+    return drainage_map.get(prefix, 'Unknown')
 
 def normalize_lake_name(name):
     """Normalize lake names for matching"""

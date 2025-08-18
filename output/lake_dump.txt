@@ -5,9 +5,7 @@ Total Lakes: 669
 
 
 --- Ashley Creek Drainage ---
-A-28     | Clyde,                    | 16.0ac   | 21ft   | High     | [Norrick]
-A-36     | Divide, #1,               | 3.5ac    | 5ft    | High     | [Norrick]
-DF-1     | Chimney Rock              | 6.5ac    | 16ft   | Moderate | [Norrick]
+DF-1     | Blue                      | 6.5ac    | 16ft   | Moderate | [Norrick]
 DF-11    | East Kibah                | 2.9ac    | 12ft   | Moderate | [Norrick]
 DF-12    | Finger Kibah              | 4.7ac    | 9ft    | Moderate | [Norrick]
 DF-14    | West Kibah                | 7.8ac    | 15ft   | Moderate | [Norrick]
@@ -17,25 +15,39 @@ DF-17    | Little Elk                | ?ac      | ?ft    | ?        |
 DF-18    | Paul                      | 11.1ac   | 17ft   | Low      | [Norrick]
 DF-2     | Moap                      | ?ac      | ?ft    | ?        | 
 DF-4     | (No name)                 | 10.0ac   | 23ft   | Low      | [Norrick]
+GR-104   | (No name)                 | 4.3ac    | 19ft   | Low      | [Norrick]
+GR-11    | (No name)                 | 2.6ac    | 8ft    | Low      | [Norrick]
+GR-119   | (No name)                 | ?ac      | ?ft    | ?        | 
+GR-13    | (No name)                 | 9.2ac    | ?ft    | Low      | [Norrick]
+GR-15    | Sesame                    | 6.0ac    | 7ft    | Low      | [Norrick]
+GR-16    | Penguin                   | 2.1ac    | 20ft   | Moderate | [Norrick]
+GR-19    | Lamb                      | 6.0ac    | 10ft   | Low      | [Norrick]
+GR-20    | (No name)                 | 5.7ac    | 8ft    | Low      | [Norrick]
+GR-21    | (No name)                 | 3.7ac    | 7ft    | Low      | [Norrick]
+GR-23    | Mutton                    | 3.8ac    | 10ft   | Low      | [Norrick]
+GR-24    | RAM                       | 7.0ac    | 27ft   | Low      | [Norrick]
+GR-31    | (No name)                 | 6.0ac    | 6ft    | Low      | [Norrick]
 GR-34    | Lakeshore                 | 11.1ac   | 18ft   | Moderate | [Norrick]
-GR-35    | Bert                      | 25.0ac   | 18ft   | Moderate | [Norrick]
+GR-35    | Ashley Twin Reservoir     | 25.0ac   | 18ft   | Moderate | [Norrick]
 GR-36    | Wilde                     | ?ac      | ?ft    | ?        | 
-GR-38    | (No name)                 | 7.0ac    | 9ft    | High     | [Norrick]
+GR-38    | Deadman                   | 7.0ac    | 9ft    | High     | [Norrick]
 GR-39    | Marsh                     | 12.6ac   | 21ft   | Moderate | [Norrick]
 GR-40    | Hacking                   | ?ac      | ?ft    | ?        | 
-GR-42    | (No name)                 | ?ac      | ?ft    | ?        | 
-GR-43    | Goose #1                  | 19.4ac   | 15ft   | Low      | [Norrick]
+GR-42    | Goose #1                  | ?ac      | ?ft    | ?        | 
+GR-43    | Goose #2                  | 17.5ac   | 40ft   | High     | [Norrick]
 GR-45    | Sandy                     | 5.6ac    | 10ft   | Low      | [Norrick]
 GR-46    | Hooper                    | 4.5ac    | 4ft    | Moderate | [Norrick]
 GR-47    | Mud                       | ?ac      | ?ft    | ?        | 
 GR-48    | Little Blue               | 3.2ac    | 6ft    | Low      | [Norrick]
 GR-49    | South Twin (Dry Fork)     | 6.2ac    | 8ft    | High     | [Norrick]
+GR-5     | Summit                    | 9.9ac    | 7ft    | Low      | [Norrick]
 GR-50    | North Twin (Dry Fork)     | ?ac      | ?ft    | High     | [Norrick]
 GR-51    | Red Belly                 | 6.3ac    | 8ft    | Moderate | [Norrick]
 GR-52    | (No name)                 | 2.1ac    | 4ft    | Moderate | [Norrick]
-GR-57    | Goose #2                  | 17.5ac   | 40ft   | High     | [Norrick]
+GR-57    | Fish                      | ?ac      | ?ft    | ?        | 
 GR-59    | Shaw                      | 2.8ac    | 5ft    | Low      | [Norrick]
-GR-63    | Deadman                   | ?ac      | ?ft    | ?        | 
+GR-62    | Bert                      | ?ac      | ?ft    | ?        | 
+GR-63    | Chimney Rock              | ?ac      | ?ft    | ?        | 
 
 --- Bear River Drainage ---
 BR-1     | Bourbon lake (Gold Hill)  | 1.9ac    | 8ft    | Moderate | [Norrick]
@@ -47,7 +59,7 @@ BR-15    | Ryder                     | 23.7ac   | 55ft   | Moderate | [Norrick]
 BR-16    | (No name)                 | 1.0ac    | 5ft    | Low      | [Norrick]
 BR-17    | (No name)                 | 2.8ac    | 7ft    | Moderate | [Norrick]
 BR-18    | (No name)                 | 4.8ac    | 12ft   | Low      | [Norrick]
-BR-19    | (No name)                 | 2.9ac    | 5ft    | Low      | [Norrick]
+BR-19    | Meadow Lake               | 2.9ac    | 5ft    | Low      | [Norrick]
 BR-2     | (No name)                 | 0.7ac    | 5ft    | Low      | [Norrick]
 BR-20    | Kermsuh                   | 12.4ac   | 14ft   | Low      | [Norrick]
 BR-24    | (No name)                 | 2.4ac    | 10ft   | Low      | [Norrick]
@@ -58,7 +70,7 @@ BR-28    | Amethyst                  | 42.5ac   | 59ft   | Moderate | [Norrick]
 BR-29    | Hell Hole                 | ?ac      | ?ft    | ?        | 
 BR-3     | Whiskey Island Lake       | 5.0ac    | 19ft   | Low      | [Norrick]
 BR-30    | (No name)                 | ?ac      | ?ft    | ?        | 
-BR-31    | (No name)                 | 3.2ac    | 8ft    | Moderate | [Norrick]
+BR-31    | Seidner                   | 3.2ac    | 8ft    | Moderate | [Norrick]
 BR-32    | Teal                      | 6.9ac    | 14ft   | Moderate | [Norrick]
 BR-34    | (No name)                 | ?ac      | ?ft    | ?        | 
 BR-35    | (No name)                 | ?ac      | ?ft    | ?        | 
@@ -77,14 +89,19 @@ BR-48    | Priord                    | 12.0ac   | 20ft   | Moderate | [Norrick]
 BR-50    | (No name)                 | ?ac      | ?ft    | ?        | 
 BR-55    | (No name)                 | ?ac      | ?ft    | ?        | 
 BR-7     | Lym                       | 6.4ac    | 20ft   | Moderate | [Norrick]
-BR-8     | Elizabeth                 | 3.1ac    | 15ft   | Moderate | [Norrick]
+BR-8     | Mt Elizabeth              | 3.1ac    | 15ft   | Moderate | [Norrick]
 
---- Beaver Creek Drainage: Middle Fork ---
+--- Beaver Creek Drainage ---
 GR-144   | Coffin                    | 25.8ac   | 28ft   | Low      | [Norrick]
 GR-145   | (No name)                 | 5.6ac    | 11ft   | Low      | [Norrick]
 GR-147   | Beaver                    | 38.3ac   | 30ft   | High     | [Norrick]
 GR-148   | Dine                      | 5.1ac    | 15ft   | Low      | [Norrick]
 GR-149   | Hidden                    | 6.5ac    | 18ft   | Moderate | [Norrick]
+GR-150   | Gilbert                   | 15.2ac   | 2ft    | Moderate | [Norrick]
+GR-151   | (No name)                 | 12.6ac   | 11ft   | Low      | [Norrick]
+GR-152   | (No name)                 | 4.8ac    | 13ft   | Low      | [Norrick]
+GR-153   | (No name)                 | 3.6ac    | 2ft    | Low      | [Norrick]
+GR-154   | (No name)                 | 2.1ac    | 6ft    | Low      | [Norrick]
 GR-155   | (No name)                 | 1.6ac    | 6ft    | Low      | [Norrick]
 GR-160   | (No name)                 | 4.8ac    | 50ft   | Low      | [Norrick]
 GR-161   | (No name)                 | 4.3ac    | 41ft   | Low      | [Norrick]
@@ -93,15 +110,46 @@ GR-163   | (No name)                 | 6.5ac    | 16ft   | Low      | [Norrick]
 GR-164   | (No name)                 | ?ac      | ?ft    | ?        | 
 GR-172   | (No name)                 | 3.6ac    | 15ft   | Low      | [Norrick]
 GR-173   | (No name)                 | 3.9ac    | 27ft   | Low      | [Norrick]
+GR-175   | (No name)                 | 18.3ac   | 11ft   | Low      | [Norrick]
 GR-177   | (No name)                 | ?ac      | ?ft    | ?        | 
-
---- Beaver Creek Drainage: West Fork ---
-GR-150   | Gilbert                   | 15.2ac   | 2ft    | Moderate | [Norrick]
-GR-151   | (No name)                 | 12.6ac   | 11ft   | Low      | [Norrick]
-GR-152   | (No name)                 | 4.8ac    | 13ft   | Low      | [Norrick]
-GR-153   | (No name)                 | 3.6ac    | 2ft    | Low      | [Norrick]
-GR-154   | (No name)                 | 2.1ac    | 6ft    | Low      | [Norrick]
 GR-178   | (No name)                 | ?ac      | ?ft    | ?        | 
+GR-179   | (No name)                 | 5.5ac    | 11ft   | Low      | [Norrick]
+
+--- Blacks Fork Drainage ---
+G-100    | (No name)                 | 7.9ac    | 13ft   | Low      | [Norrick]
+G-102    | Moslander                 | 11.4ac   | 29ft   | Low      | [Norrick]
+G-103    | QUARTER CORNER LG103      | ?ac      | ?ft    | ?        | 
+G-11     | Castle                    | 11.5ac   | 10ft   | Low      | [Norrick]
+G-113    | (No name)                 | ?ac      | ?ft    | ?        | 
+G-25     | Little Lyman              | 5.0ac    | 25ft   | High     | [Norrick]
+G-27     | Lyman                     | 36.6ac   | 30ft   | Moderate | [Norrick]
+G-32     | Grahams                   | 18.5ac   | 25ft   | Unknown  | [Norrick]
+G-36     | (No name)                 | 4.7ac    | 11ft   | Low      | [Norrick]
+G-37     | Duck                      | 5.9ac    | 5ft    | Moderate | [Norrick]
+G-39     | (No name)                 | 2.6ac    | 7ft    | Low      | [Norrick]
+G-40     | G- 40                     | ?ac      | ?ft    | ?        | 
+G-44     | (No name)                 | 1.5ac    | 7ft    | Low      | [Norrick]
+G-58     | (No name)                 | 1.3ac    | 5ft    | Low      | [Norrick]
+G-62     | (No name)                 | 2.2ac    | 7ft    | Low      | [Norrick]
+G-64     | (No name)                 | 3.4ac    | 5ft    | Low      | [Norrick]
+G-65     | (No name)                 | 5.0ac    | 5ft    | Moderate | [Norrick]
+G-66     | (No name)                 | 4.0ac    | 12ft   | Moderate | [Norrick]
+G-67     | (No name)                 | 7.7ac    | 25ft   | Low      | [Norrick]
+G-68     | G- 68                     | ?ac      | ?ft    | ?        | 
+G-69     | (No name)                 | 4.8ac    | 13ft   | Low      | [Norrick]
+G-70     | (No name)                 | 3.8ac    | 4ft    | Low      | [Norrick]
+G-71     | (No name)                 | 4.8ac    | 14ft   | n/a      | [Norrick]
+G-72     | (No name)                 | 1.3ac    | 6ft    | Low      | [Norrick]
+G-73     | Bobs                      | 6.6ac    | 30ft   | Low      | [Norrick]
+G-74     | (No name)                 | 3.4ac    | 3ft    | Low      | [Norrick]
+G-76     | Ejod                      | 6.7ac    | 12ft   | Low      | [Norrick]
+G-77     | Dead Horse                | 16.0ac   | 41ft   | Moderate | [Norrick]
+G-78     | (No name)                 | 3.2ac    | 9ft    | Low      | [Norrick]
+G-79     | (No name)                 | 2.5ac    | 5ft    | Low      | [Norrick]
+G-80     | (No name)                 | 1.8ac    | 8ft    | Low      | [Norrick]
+G-81     | (No name)                 | 1.6ac    | 5ft    | Low      | [Norrick]
+G-82     | (No name)                 | 3.8ac    | 6ft    | Low      | [Norrick]
+G-86     | (No name)                 | 6.4ac    | 7ft    | Low      | [Norrick]
 
 --- Burnt Fork Drainage ---
 GR-125   | Fish                      | 38.3ac   | 23ft   | Moderate | [Norrick]
@@ -145,7 +193,7 @@ D-1      | Faxon                     | ?ac      | ?ft    | ?        |
 D-10     | (No name)                 | ?ac      | ?ft    | ?        | 
 D-11     | Hades                     | 6.4ac    | 32ft   | Low      | [Norrick]
 D-12     | Gatman                    | ?ac      | ?ft    | ?        | 
-D-14     | Castle,                   | 1.0ac    | 12ft   | Moderate | [Norrick]
+D-14     | Castle                    | 1.0ac    | 12ft   | Moderate | [Norrick]
 D-15     | Tadpole                   | ?ac      | ?ft    | ?        | 
 D-19     | (No name)                 | 1.2ac    | 6ft    | Moderate | [Norrick]
 D-20     | Emerald                   | ?ac      | ?ft    | ?        | 
@@ -168,7 +216,7 @@ Z-10     | Hoover                    | 18.6ac   | 28ft   | High     | [Norrick]
 Z-11     | Marshall                  | 18.0ac   | 36ft   | High     | [Norrick]
 Z-12     | Scout                     | 30.0ac   | 17ft   | High     | [Norrick]
 Z-13     | Wilder                    | 3.7ac    | 14ft   | High     | [Norrick]
-Z-14     | Castle                    | 6.5ac    | 17ft   | Moderate | [Norrick]
+Z-14     | Wyman                     | 6.5ac    | 17ft   | Moderate | [Norrick]
 Z-15     | Packard                   | 4.5ac    | 10ft   | High     | [Norrick]
 Z-16     | Echo                      | 18.0ac   | 44ft   | Moderate | [Norrick]
 Z-17     | Pyramid                   | 15.0ac   | 36ft   | High     | [Norrick]
@@ -185,7 +233,6 @@ Z-32     | Blue                      | ?ac      | ?ft    | ?        |
 Z-33     | Leconte                   | 9.5ac    | 15ft   | Moderate | [Norrick]
 Z-34     | Shaler                    | 13.0ac   | 7ft    | Moderate | [Norrick]
 Z-35     | Jordan                    | 23.2ac   | 30ft   | Moderate | [Norrick]
-Z-36     | Everman,                  | 7.8ac    | 7ft    | Moderate | [Norrick]
 Z-37     | Hyatt                     | ?ac      | ?ft    | ?        | 
 Z-4      | Moosehorn                 | 8.0ac    | 11ft   | High     | [Norrick]
 Z-42     | Carolyn                   | 5.0ac    | 17ft   | Moderate | [Norrick]
@@ -199,11 +246,6 @@ Z-9      | Shepard                   | 14.2ac   | 32ft   | High     | [Norrick]
 --- Henry's Fork and Smith Fork Drainage ---
 G-1      | Henrys Fork Lake          | 19.7ac   | 19ft   | Moderate | [Norrick]
 G-10     | (No name)                 | 5.4ac    | 12ft   | Low      | [Norrick]
-G-100    | (No name)                 | 7.9ac    | 13ft   | Low      | [Norrick]
-G-102    | Moslander,                | 11.4ac   | 29ft   | Low      | [Norrick]
-G-103    | QUARTER CORNER LG103      | ?ac      | ?ft    | ?        | 
-G-11     | Castle,                   | 11.5ac   | 10ft   | Low      | [Norrick]
-G-113    | (No name)                 | ?ac      | ?ft    | ?        | 
 G-12     | Lower Red Castle          | 45.0ac   | 28ft   | Moderate | [Norrick]
 G-13     | (No name)                 | 7.9ac    | 17ft   | Low      | [Norrick]
 G-14     | Smiths Fork Pass          | 26.1ac   | 17ft   | Low      | [Norrick]
@@ -215,22 +257,14 @@ G-19     | Marsh                     | 33.6ac   | 35ft   | High     | [Norrick]
 G-2      | Dollar Lake               | 9.7ac    | 18ft   | Moderate | [Norrick]
 G-20     | Bridger                   | 21.0ac   | 15ft   | High     | [Norrick]
 G-21     | China                     | 31.2ac   | 45ft   | Moderate | [Norrick]
-G-25     | Little Lyman,             | 5.0ac    | 25ft   | High     | [Norrick]
-G-27     | Lyman,                    | 36.6ac   | 30ft   | Moderate | [Norrick]
 G-29     | (No name)                 | ?ac      | ?ft    | ?        | 
 G-3      | Blanchard                 | 31.3ac   | 29ft   | Moderate | [Norrick]
 G-30     | (No name)                 | ?ac      | ?ft    | ?        | 
-G-32     | Grahams,                  | 18.5ac   | 25ft   | Unknown  | [Norrick]
 G-34     | (No name)                 | 1.0ac    | 6ft    | Moderate | [Norrick]
 G-35     | Sargent                   | 8.3ac    | 22ft   | Low      | [Norrick]
-G-36     | (No name)                 | 4.7ac    | 11ft   | Low      | [Norrick]
-G-37     | Duck,                     | 5.9ac    | 5ft    | Moderate | [Norrick]
 G-38     | Alligator                 | 14.5ac   | 26ft   | High     | [Norrick]
-G-39     | (No name)                 | 2.6ac    | 7ft    | Low      | [Norrick]
 G-4      | (No name)                 | 3.6ac    | 8ft    | Low      | [Norrick]
-G-40     | G- 40                     | ?ac      | ?ft    | ?        | 
 G-42     | (No name)                 | 4.6ac    | 2ft    | Low      | [Norrick]
-G-44     | (No name)                 | 1.5ac    | 7ft    | Low      | [Norrick]
 G-45     | (No name)                 | 3.1ac    | 12ft   | Low      | [Norrick]
 G-49     | (No name)                 | 3.9ac    | 11ft   | Low      | [Norrick]
 G-5      | Cliff                     | 33.1ac   | 69ft   | Low      | [Norrick]
@@ -239,34 +273,13 @@ G-51     | (No name)                 | 8.1ac    | 5ft    | Low      | [Norrick]
 G-52     | (No name)                 | 2.6ac    | 4ft    | Low      | [Norrick]
 G-53     | (No name)                 | 5.5ac    | 17ft   | Moderate | [Norrick]
 G-56     | (No name)                 | 1.5ac    | 12ft   | Low      | [Norrick]
-G-58     | (No name)                 | 1.3ac    | 5ft    | Low      | [Norrick]
 G-59     | (No name)                 | 3.2ac    | 24ft   | Low      | [Norrick]
 G-6      | Sawmill                   | 7.2ac    | 21ft   | High     | [Norrick]
 G-60     | (No name)                 | 2.5ac    | 9ft    | Moderate | [Norrick]
 G-61     | (No name)                 | 3.1ac    | 6ft    | Low      | [Norrick]
-G-62     | (No name)                 | 2.2ac    | 7ft    | Low      | [Norrick]
 G-63     | Bald                      | 6.4ac    | 23ft   | Low      | [Norrick]
-G-64     | (No name)                 | 3.4ac    | 5ft    | Low      | [Norrick]
-G-65     | (No name)                 | 5.0ac    | 5ft    | Moderate | [Norrick]
-G-66     | (No name)                 | 4.0ac    | 12ft   | Moderate | [Norrick]
-G-67     | (No name)                 | 7.7ac    | 25ft   | Low      | [Norrick]
-G-68     | G- 68                     | ?ac      | ?ft    | ?        | 
-G-69     | (No name)                 | 4.8ac    | 13ft   | Low      | [Norrick]
 G-7      | Bear                      | 16.9ac   | 37ft   | Moderate | [Norrick]
-G-70     | (No name)                 | 3.8ac    | 4ft    | Low      | [Norrick]
-G-71     | (No name)                 | 4.8ac    | 14ft   | n/a      | [Norrick]
-G-72     | (No name)                 | 1.3ac    | 6ft    | Low      | [Norrick]
-G-73     | Bobs,                     | 6.6ac    | 30ft   | Low      | [Norrick]
-G-74     | (No name)                 | 3.4ac    | 3ft    | Low      | [Norrick]
-G-76     | Ejod,                     | 6.7ac    | 12ft   | Low      | [Norrick]
-G-77     | Dead Horse,               | 16.0ac   | 41ft   | Moderate | [Norrick]
-G-78     | (No name)                 | 3.2ac    | 9ft    | Low      | [Norrick]
-G-79     | (No name)                 | 2.5ac    | 5ft    | Low      | [Norrick]
 G-8      | Grass                     | 5.5ac    | 4ft    | Moderate | [Norrick]
-G-80     | (No name)                 | 1.8ac    | 8ft    | Low      | [Norrick]
-G-81     | (No name)                 | 1.6ac    | 5ft    | Low      | [Norrick]
-G-82     | (No name)                 | 3.8ac    | 6ft    | Low      | [Norrick]
-G-86     | (No name)                 | 6.4ac    | 7ft    | Low      | [Norrick]
 G-9      | Island                    | 10.4ac   | 5ft    | Low      | [Norrick]
 
 --- Lake Fork Drainage ---
@@ -283,7 +296,6 @@ LF-37    | (No name)                 | 1.9ac    | 3ft    | Low      | [Norrick]
 LF-43    | (No name)                 | 1.4ac    | 4ft    | Low      | [Norrick]
 LF-44    | East Slide                | 5.0ac    | ?ft    | Low      | [Norrick]
 LF-8     | (No name)                 | 7.0ac    | 17ft   | Low      | [Norrick]
-X-106    | Five Point Reservoir,     | 82.0ac   | 21ft   | Moderate | [Norrick]
 X-31     | Brown Duck                | 30.7ac   | 12ft   | High     | [Norrick]
 X-32     | Big Dog                   | 6.0ac    | 12ft   | Low      | [Norrick]
 X-33     | Little Dog                | 4.5ac    | 17ft   | Low      | [Norrick]
@@ -292,7 +304,6 @@ X-35     | Kidney                    | 190.0ac  | 112ft  | Moderate | [Norrick]
 X-36     | Tworoose                  | 21.9ac   | 37ft   | Moderate | [Norrick]
 X-37     | Lilly Pad                 | 1.4ac    | 8ft    | Moderate | [Norrick]
 X-45     | (No name)                 | ?ac      | ?ft    | ?        | 
-X-50     | X- 50                     | ?ac      | ?ft    | ?        | 
 X-61     | (No name)                 | 5.2ac    | 10ft   | Low      | [Norrick]
 X-62     | (No name)                 | 6.0ac    | 10ft   | Low      | [Norrick]
 X-63     | Aspen                     | 8.0ac    | 26ft   | Moderate | [Norrick]
@@ -338,6 +349,7 @@ A-24     | Lily Upper                | ?ac      | ?ft    | ?        |
 A-25     | Lily Lower                | 3.2ac    | 16ft   | High     | [Norrick]
 A-26     | Petit (Junior #5)         | 2.0ac    | 3ft    | Moderate | [Norrick]
 A-27     | Watson                    | 6.0ac    | 10ft   | Moderate | [Norrick]
+A-28     | Clyde                     | 16.0ac   | 21ft   | High     | [Norrick]
 A-29     | Wall                      | 80.0ac   | 97ft   | High     | [Norrick]
 A-3      | Buckeye                   | 5.0ac    | 8ft    | High     | [Norrick]
 A-30     | John                      | 4.0ac    | 10ft   | Moderate | [Norrick]
@@ -346,6 +358,7 @@ A-32     | Twin Upper                | 9.0ac    | 13ft   | High     | [Norrick]
 A-33     | Twin Lower                | 3.0ac    | 14ft   | High     | [Norrick]
 A-34     | Cliff                     | 9.0ac    | 20ft   | High     | [Norrick]
 A-35     | Booker                    | 4.1ac    | 8ft    | High     | [Norrick]
+A-36     | Divide, #1                | 3.5ac    | 5ft    | High     | [Norrick]
 A-37     | Long                      | 35.0ac   | 26ft   | High     | [Norrick]
 A-38     | Ramona                    | 4.7ac    | 21ft   | Moderate | [Norrick]
 A-39     | Shingle Creek East        | 7.0ac    | 44ft   | High     | [Norrick]
@@ -452,6 +465,7 @@ Z-25     | Rainbow                   | 17.9ac   | 15ft   | High     | [Norrick]
 Z-28     | Palisade                  | 22.7ac   | 45ft   | High     | [Norrick]
 Z-29     | Lost                      | 14.0ac   | 15ft   | Moderate | [Norrick]
 Z-30     | Powell                    | 22.4ac   | 15ft   | Moderate | [Norrick]
+Z-36     | Everman                   | 7.8ac    | 7ft    | Moderate | [Norrick]
 Z-38     | Daynes                    | ?ac      | ?ft    | ?        | 
 Z-39     | Dale                      | 12.9ac   | 25ft   | High     | [Norrick]
 Z-40     | Dean                      | 24.0ac   | 44ft   | Moderate | [Norrick]
@@ -463,40 +477,24 @@ Z-46     | Bedground                 | 2.0ac    | 15ft   | Moderate | [Norrick]
 GR-1     | Jesson                    | 25.5ac   | 56ft   | High     | [Norrick]
 GR-10    | Anson Upper               | 7.7ac    | 58ft   | Moderate | [Norrick]
 GR-101   | Mystery                   | 10.2ac   | 25ft   | Moderate | [Norrick]
-GR-104   | (No name)                 | 4.3ac    | 19ft   | Low      | [Norrick]
-GR-11    | (No name)                 | 2.6ac    | 8ft    | Low      | [Norrick]
 GR-112   | Hidden                    | 4.3ac    | 8ft    | Low      | [Norrick]
 GR-115   | Gail                      | 4.5ac    | 25ft   | Low      | [Norrick]
 GR-116   | Columbine                 | 5.7ac    | 5ft    | Low      | [Norrick]
-GR-119   | (No name)                 | ?ac      | ?ft    | ?        | 
 GR-12    | Clear                     | 10.2ac   | 25ft   | Low      | [Norrick]
-GR-13    | (No name)                 | 9.2ac    | ?ft    | Low      | [Norrick]
-GR-15    | Sesame,                   | 6.0ac    | 7ft    | Low      | [Norrick]
-GR-16    | Penguin,                  | 2.1ac    | 20ft   | Moderate | [Norrick]
 GR-17    | Candy                     | ?ac      | ?ft    | ?        | 
-GR-175   | (No name)                 | 18.3ac   | 11ft   | Low      | [Norrick]
-GR-179   | (No name)                 | 5.5ac    | 11ft   | Low      | [Norrick]
 GR-18    | EWE                       | 3.0ac    | 10ft   | Low      | [Norrick]
-GR-19    | Lamb,                     | 6.0ac    | 10ft   | Low      | [Norrick]
 GR-2     | Tamarack                  | 79.1ac   | 90ft   | High     | [Norrick]
-GR-20    | (No name)                 | 5.7ac    | 8ft    | Low      | [Norrick]
-GR-21    | (No name)                 | 3.7ac    | 7ft    | Low      | [Norrick]
 GR-22    | Bummer                    | 1.9ac    | 6ft    | Low      | [Norrick]
-GR-23    | Mutton,                   | 3.8ac    | 10ft   | Low      | [Norrick]
-GR-24    | RAM,                      | 7.0ac    | 27ft   | Low      | [Norrick]
 GR-25    | Judy                      | 4.7ac    | 24ft   | Low      | [Norrick]
-GR-27    | Little Potters            | 21.3ac   | 75ft   | Low      | [Norrick]
-GR-28    | Potters                   | 4.3ac    | 28ft   | High     | [Norrick]
+GR-27    | Lower Potter              | 3.4ac    | 16ft   | Moderate | [Norrick]
+GR-28    | Upper Potter              | 21.3ac   | 75ft   | Low      | [Norrick]
 GR-29    | Lower Teepee              | ?ac      | ?ft    | ?        | 
 GR-3     | Spirit Lake               | ?ac      | ?ft    | ?        | 
 GR-30    | Upper Teepee              | 6.5ac    | 28ft   | Moderate | [Norrick]
-GR-31    | (No name)                 | 6.0ac    | 6ft    | Low      | [Norrick]
 GR-32    | One Fish                  | 4.5ac    | 35ft   | Low      | [Norrick]
 GR-33    | Red Lake                  | 20.9ac   | 57ft   | Low      | [Norrick]
 GR-4     | Lost                      | 3.2ac    | 7ft    | Low      | [Norrick]
-GR-5     | Summit,                   | 9.9ac    | 7ft    | Low      | [Norrick]
 GR-6     | Dagget                    | 42.6ac   | 29ft   | High     | [Norrick]
-GR-62    | Bert                      | 3.7ac    | 11ft   | Low      | [Norrick]
 GR-7     | Hidden                    | 8.5ac    | 26ft   | Low      | [Norrick]
 GR-9     | Anson Lower               | 14.5ac   | 20ft   | Moderate | [Norrick]
 
@@ -510,6 +508,7 @@ X-18     | Carrol Upper              | 35.0ac   | 48ft   | Moderate | [Norrick]
 X-19     | Timothy West              | 45.0ac   | 45ft   | Moderate | [Norrick]
 X-20     | Timothy Center            | 10.0ac   | 18ft   | High     | [Norrick]
 X-21     | Carrol East               | 10.0ac   | 19ft   | Moderate | [Norrick]
+X-22 (alt) | (No name)                 | ?ac      | ?ft    | ?        | 
 X-23     | Farmers                   | 63.0ac   | 24ft   | Moderate | [Norrick]
 X-24     | (No name)                 | 21.4ac   | 30ft   | Low      | [Norrick]
 X-25     | (No name)                 | 15.9ac   | 27ft   | Moderate | [Norrick]
@@ -575,9 +574,6 @@ U-94     | Albert                    | 7.0ac    | 8ft    | Low      | [Norrick]
 U-98     | Penny Nickell             | 11.5ac   | 43ft   | Low      | [Norrick]
 U-99     | WALL L                    | ?ac      | ?ft    | ?        | 
 
---- Unknown ---
-FR-62    | Bert                      | 3.7ac    | 11ft   | Low      | [Norrick]
-
 --- Weber River Drainage ---
 W-14     | (No name)                 | ?ac      | ?ft    | ?        | 
 W-15     | (No name)                 | ?ac      | ?ft    | ?        | 
@@ -586,6 +582,7 @@ W-17     | (No name)                 | ?ac      | ?ft    | ?        |
 W-18     | (No name)                 | ?ac      | ?ft    | ?        | 
 W-20     | Divide #2                 | 3.5ac    | 10ft   | Low      | [Norrick]
 W-21     | Little Hidden             | 8.0ac    | 28ft   | Moderate | [Norrick]
+W-22     | Peter                     | 3.0ac    | 13ft   | Low      | [Norrick]
 W-23     | Lovenia                   | 2.5ac    | 11ft   | High     | [Norrick]
 W-24     | Ibantik                   | 10.2ac   | 28ft   | High     | [Norrick]
 W-25     | Erickson South            | 10.0ac   | 12ft   | Moderate | [Norrick]
@@ -634,7 +631,6 @@ WR-1     | ROBB L                    | ?ac      | ?ft    | ?        |
 WR-33    | CIRQUE L                  | ?ac      | ?ft    | ?        | 
 
 --- White Rocks Drainage ---
-W-22     | Peter,                    | 3.0ac    | 13ft   | Low      | [Norrick]
 WR-12    | Larvae                    | 4.0ac    | 28ft   | High     | [Norrick]
 WR-13    | Pole Creek Lake           | 5.0ac    | 10ft   | High     | [Norrick]
 WR-14    | Upper Rock                | 15.0ac   | 28ft   | Low      | [Norrick]
@@ -684,10 +680,12 @@ WR-9     | (No name)                 | 3.0ac    | 12ft   | Low      | [Norrick]
 X-103    | Superior                  | 36.0ac   | 26ft   | Moderate | [Norrick]
 X-104    | Little Superior           | 13.9ac   | 24ft   | Low      | [Norrick]
 X-105    | (No name)                 | 8.1ac    | 14ft   | Low      | [Norrick]
+X-106    | Five Point Reservoir      | 82.0ac   | 21ft   | Moderate | [Norrick]
 X-107    | Tungsten                  | 13.0ac   | 13ft   | Moderate | [Norrick]
 X-108    | North Star                | 14.0ac   | 15ft   | Moderate | [Norrick]
 X-109    | Spider                    | 20.0ac   | 31ft   | High     | [Norrick]
 X-110    | Bluebell                  | ?ac      | ?ft    | ?        | 
+X-50     | X- 50                     | ?ac      | ?ft    | ?        | 
 X-57     | (No name)                 | 8.8ac    | 30ft   | Low      | [Norrick]
 X-58     | Swasey                    | 36.0ac   | 30ft   | High     | [Norrick]
 X-59     | (No name)                 | 4.5ac    | 13ft   | Moderate | [Norrick]

@@ -1,19 +1,17 @@
 drainage,lake_name,lake_designation
 Ashley Creek Drainage,Ashley Twins Reservoir,
 Ashley Creek Drainage,Bert,GR-35
-Ashley Creek Drainage,Chimney Rock,DF-1
-Ashley Creek Drainage,Deadman,GR-63
-Ashley Creek Drainage,,GR-38
+Ashley Creek Drainage,Chimney Rock,GR-63
+Ashley Creek Drainage,Deadman,GR-38
 Ashley Creek Drainage,,DF-4
 Ashley Creek Drainage,East Kibah,DF-11
 Ashley Creek Drainage,Finger Kibah,DF-12
 Ashley Creek Drainage,West Kibah,DF-14
 Ashley Creek Drainage,North Kibah,DF-15
 Ashley Creek Drainage,Island Kibah,DF-16
-Ashley Creek Drainage,Fish,
-Ashley Creek Drainage,Goose #2,GR-57
-Ashley Creek Drainage,Goose #1,GR-43
-Ashley Creek Drainage,,GR-42
+Ashley Creek Drainage,Fish,GR-57
+Ashley Creek Drainage,Goose #2,GR-43
+Ashley Creek Drainage,Goose #1,GR-42
 Ashley Creek Drainage,,GR-52
 Ashley Creek Drainage,Hacking,GR-40
 Ashley Creek Drainage,Hooper,GR-46
@@ -37,16 +35,12 @@ Bear River Drainage,Bourbon lake (Gold Hill),BR-1
 Bear River Drainage,,BR-2
 Bear River Drainage,,BR-17
 Bear River Drainage,,BR-18
-Bear River Drainage,,BR-19
 Bear River Drainage,,BR-24
-Bear River Drainage,,BR-25
 Bear River Drainage,,BR-30
-Bear River Drainage,,BR-31
 Bear River Drainage,,BR-45
 Bear River Drainage,,BR-46
 Bear River Drainage,,BR-50
 Bear River Drainage,Cutthroat,BR-37
-Bear River Drainage,Elizabeth,BR-8
 Bear River Drainage,Hayden Lake,BR-36
 Bear River Drainage,Hell Hole,BR-29
 Bear River Drainage,Jewel,BR-38
@@ -68,27 +62,26 @@ Bear River Drainage,Seidner Lake,BR-31
 Bear River Drainage,Teal,BR-32
 Bear River Drainage,Toomset Lake,BR-25
 Bear River Drainage,Whiskey Island Lake,BR-3
-Beaver Creek Drainage: Middle Fork,Beaver,GR-147
-Beaver Creek Drainage: Middle Fork,Coffin,GR-144
-Beaver Creek Drainage: Middle Fork,Dine,GR-148
-Beaver Creek Drainage: Middle Fork,,GR-155
-Beaver Creek Drainage: Middle Fork,Hidden,GR-149
-Beaver Creek Drainage: Middle Fork,,GR-145
-Beaver Creek Drainage: Middle Fork,,GR-160
-Beaver Creek Drainage: Middle Fork,,GR-161
-Beaver Creek Drainage: Middle Fork,,GR-162
-Beaver Creek Drainage: Middle Fork,,GR-163
-Beaver Creek Drainage: Middle Fork,,GR-164
-Beaver Creek Drainage: Middle Fork,,GR-172
-Beaver Creek Drainage: Middle Fork,,GR-173
-Beaver Creek Drainage: Middle Fork,,GR-177
-Beaver Creek Drainage: West Fork,Gilbert,GR-150
-Beaver Creek Drainage: West Fork,,GR-151
-Beaver Creek Drainage: West Fork,,GR-152
-Beaver Creek Drainage: West Fork,,GR-153
-Beaver Creek Drainage: West Fork,,GR-154
-Beaver Creek Drainage: West Fork,,GR-155
-Beaver Creek Drainage: West Fork,,GR-178
+Beaver Creek Drainage,Beaver,GR-147
+Beaver Creek Drainage,Coffin,GR-144
+Beaver Creek Drainage,Dine,GR-148
+Beaver Creek Drainage,Hidden,GR-149
+Beaver Creek Drainage,,GR-145
+Beaver Creek Drainage,,GR-160
+Beaver Creek Drainage,,GR-161
+Beaver Creek Drainage,,GR-162
+Beaver Creek Drainage,,GR-163
+Beaver Creek Drainage,,GR-164
+Beaver Creek Drainage,,GR-172
+Beaver Creek Drainage,,GR-173
+Beaver Creek Drainage,,GR-177
+Beaver Creek Drainage,Gilbert,GR-150
+Beaver Creek Drainage,,GR-151
+Beaver Creek Drainage,,GR-152
+Beaver Creek Drainage,,GR-153
+Beaver Creek Drainage,,GR-154
+Beaver Creek Drainage,,GR-155
+Beaver Creek Drainage,,GR-178
 Burnt Fork Drainage,Bennion,GR-134
 Burnt Fork Drainage,Burnt Fork Lake,GR-127
 Burnt Fork Drainage,Fish,GR-125
@@ -130,7 +123,6 @@ Duchesne Drainage,Broadhead,D-40
 Duchesne Drainage,Bud,Z-2
 Duchesne Drainage,Butterfly,Z-1
 Duchesne Drainage,Carolyn,Z-42
-Duchesne Drainage,Castle,Z-14
 Duchesne Drainage,,D-5
 Duchesne Drainage,,D-10
 Duchesne Drainage,,D-19
@@ -189,7 +181,6 @@ Henry's Fork and Smith Fork Drainage,,G-4
 Henry's Fork and Smith Fork Drainage,,G-10
 Henry's Fork and Smith Fork Drainage,,G-13
 Henry's Fork and Smith Fork Drainage,Smiths Fork Pass,G-14
-Henry's Fork and Smith Fork Drainage,,G-16
 Henry's Fork and Smith Fork Drainage,,G-29
 Henry's Fork and Smith Fork Drainage,,G-30
 Henry's Fork and Smith Fork Drainage,,G-34
@@ -270,7 +261,7 @@ Provo River Drainage,Buckeye,A-3
 Provo River Drainage,Carol,A-21
 Provo River Drainage,Clegg,A-47
 Provo River Drainage,Cliff,A-34
-Provo River Drainage,Clyde,A-34
+Provo River Drainage,Clyde,A-28
 Provo River Drainage,Crystal,A-51
 Provo River Drainage,Cutthroat (clint),A-40
 Provo River Drainage,Diamond,A-22
@@ -432,7 +423,7 @@ Swift Creek Drainage,Timothy East,X-16
 Swift Creek Drainage,Timothy West,X-19
 Swift Creek Drainage,Twin,X-49
 Swift Creek Drainage,White Miller,X-54
-Swift Creek Drainage,,X-22
+Swift Creek Drainage,,X-22 (alt)
 Swift Creek Drainage,,X-24
 Swift Creek Drainage,,X-25
 Swift Creek Drainage,,X-26
@@ -442,7 +433,6 @@ Uinta River Drainage,Allred,U-14
 Uinta River Drainage,Atwood,U-16
 Uinta River Drainage,B-29 Lake,U-18
 Uinta River Drainage,Beard,U-74
-Uinta River Drainage,Bollie,U-96
 Uinta River Drainage,Bowden,U-32
 Uinta River Drainage,Brook,U-54
 Uinta River Drainage,Carrot,U-17
@@ -491,7 +481,6 @@ Weber River Drainage,Anchor,W-29
 Weber River Drainage,Arrowhead,W-68
 Weber River Drainage,Bench,W-37
 Weber River Drainage,Carol,W-51
-Weber River Drainage,Castle,W-51
 Weber River Drainage,Castle,W-67
 Weber River Drainage,Cuberant #1,W-42
 Weber River Drainage,Cuberant #2,W-43
@@ -584,7 +573,7 @@ White Rocks Drainage,,WR-77
 Yellowstone Drainage,Bluebell,X-110
 Yellowstone Drainage,Doll,Y-16
 Yellowstone Drainage,Drift Reservoir,Y-41
-Yellowstone Drainage,Five Point Reservoir,Y-41
+Yellowstone Drainage,Five Point Reservoir,X-106
 Yellowstone Drainage,Gem,Y-34
 Yellowstone Drainage,Kings,Y-22
 Yellowstone Drainage,Little Superior,X-104

@@ -16,7 +16,7 @@
     <div class="container mx-auto px-4 py-6 max-w-4xl">
         <header class="text-center mb-8">
             <h1 class="text-3xl font-bold text-gray-800 mb-2">Uintas 💯</h1>
-            <p class="text-gray-600">672 lakes • 18 drainages</p>
+            <p class="text-gray-600">672 lakes • 17 drainages</p>
         </header>
 
         <div class="not-loaded">
@@ -44,7 +44,14 @@
                     <div class="text-center text-gray-500 mb-4">OR</div>
 
                     <!-- Filters -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Drainage</label>
+                            <select id="drainage-filter" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500">
+                                <option value="">All drainages</option>
+                            </select>
+                        </div>
+
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Fish Species</label>
                             <select id="species-filter" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500">
@@ -177,7 +184,7 @@
             // Load lakes
             const lakesResult = db.exec(`
                 SELECT id, letter_number, name, drainage, size_acres, max_depth_ft, 
-                       fish_species, fishing_pressure, jed_notes, status
+                       fish_species, fishing_pressure, jed_notes, status, junesucker_notes
                 FROM lakes
             `);
             
@@ -192,7 +199,8 @@
                     fish_species: row[6],
                     fishing_pressure: row[7],
                     jed_notes: row[8],
-                    status: row[9]
+                    status: row[9],
+                    junesucker_notes: row[10]
                 }));
                 
                 // Sort lakes using letter_number as name fallback for proper alphabetical ordering
@@ -232,9 +240,34 @@
                     map: row[2]
                 }));
             }
+
+            // Load photos
+            const photosResult = db.exec(`
+                SELECT lake_id, filename, downloaded_path FROM photos ORDER BY filename
+            `);
+            
+            if (photosResult.length > 0) {
+                window.photos = photosResult[0].values.map(row => ({
+                    lake_id: row[0],
+                    filename: row[1],
+                    downloaded_path: row[2]
+                }));
+            } else {
+                window.photos = [];
+            }
         }
 
         function initializeUI() {
+            // Populate drainage filter
+            const drainageFilter = document.getElementById('drainage-filter');
+            const drainages = [...new Set(lakes.map(lake => lake.drainage))].sort();
+            drainages.forEach(drainage => {
+                const option = document.createElement('option');
+                option.value = drainage;
+                option.textContent = drainage;
+                drainageFilter.appendChild(option);
+            });
+
             // Populate year filter
             const yearFilter = document.getElementById('year-filter');
             const currentYear = new Date().getFullYear();
@@ -252,7 +285,7 @@
             document.getElementById('close-modal').addEventListener('click', closeModal);
             
             // Filter state management
-            ['species-filter', 'depth-filter', 'year-filter'].forEach(id => {
+            ['drainage-filter', 'species-filter', 'depth-filter', 'year-filter'].forEach(id => {
                 document.getElementById(id).addEventListener('change', updateFilterButtonState);
             });
         }
@@ -304,12 +337,13 @@
         }
 
         function updateFilterButtonState() {
+            const drainage = document.getElementById('drainage-filter').value;
             const species = document.getElementById('species-filter').value;
             const maxDepth = document.getElementById('depth-filter').value;
             const lastStocked = document.getElementById('year-filter').value;
             
             const applyButton = document.getElementById('apply-filters');
-            const hasFilters = species || maxDepth || lastStocked;
+            const hasFilters = drainage || species || maxDepth || lastStocked;
             
             if (hasFilters) {
                 applyButton.disabled = false;
@@ -321,6 +355,7 @@
         }
 
         function clearFilters() {
+            document.getElementById('drainage-filter').value = '';
             document.getElementById('species-filter').value = '';
             document.getElementById('depth-filter').value = '';
             document.getElementById('year-filter').value = '';
@@ -332,11 +367,17 @@
         }
 
         function applyFilters() {
+            const drainage = document.getElementById('drainage-filter').value;
             const species = document.getElementById('species-filter').value;
             const maxDepth = document.getElementById('depth-filter').value;
             const lastStocked = document.getElementById('year-filter').value;
             
             let filteredLakes = [...lakes];
+            
+            // Filter by drainage
+            if (drainage) {
+                filteredLakes = filteredLakes.filter(lake => lake.drainage === drainage);
+            }
             
             // Filter by species
             if (species) {
@@ -360,13 +401,14 @@
                 filteredLakes = filteredLakes.filter(lake => {
                     const lakeStocking = stockingRecords.filter(s => s.lake_id === lake.id);
                     if (lakeStocking.length === 0) {
-                        // Include lakes with no stocking records
-                        return true;
+                        // Exclude lakes with no stocking records
+                        return false;
                     }
-                    // Check if any stocking record is from the specified year or later
-                    return lakeStocking.some(record => {
+                    // Check that ALL stocking records are from the specified year or earlier
+                    // (i.e., no stocking records after the specified year)
+                    return lakeStocking.every(record => {
                         const stockYear = parseInt(record.stock_date.split('-')[0]);
-                        return stockYear >= yearLimit;
+                        return stockYear <= yearLimit;
                     });
                 });
             }
@@ -486,6 +528,7 @@
             if (!lake) return;
 
             const lakeStocking = stockingRecords.filter(s => s.lake_id === lake.id);
+            const lakePhotos = window.photos ? window.photos.filter(p => p.lake_id === lake.id) : [];
             
             const modal = document.getElementById('lake-detail-modal');
             const title = document.getElementById('modal-title');
@@ -533,6 +576,24 @@
                         </div>
                     ` : '<p class="text-gray-600">No stocking records available</p>'}
                 </div>
+
+                <!-- Notes from Junesucker.com -->
+                ${lake.junesucker_notes ? `
+                    <div class="rounded-lg p-4 border border-slate-200">
+                        <h3 class="text-lg font-semibold mb-3">Notes from Junesucker.com</h3>
+                        ${lakePhotos.length > 0 ? `
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                ${lakePhotos.map(photo => `
+                                    <img src="${photo.downloaded_path}" 
+                                         alt="${lake.name || lake.letter_number} photo" 
+                                         class="w-full rounded-lg border border-slate-300 hover:scale-105 transition-transform cursor-pointer"
+                                         onclick="window.open('${photo.downloaded_path}', '_blank')">
+                                `).join('')}
+                            </div>
+                        ` : ''}
+                        <div class="text-gray-700 leading-relaxed">${lake.junesucker_notes.replace(/^## (.+)$/gm, '<h6 class="font-semibold text-base mt-4 mb-1">$1</h6>').replace(/\n/g, '<br>')}</div>
+                    </div>
+                ` : ''}
 
                 <!-- Fishing Reports (commented out - requires server-side persistence) -->
                 <!--
