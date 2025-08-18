@@ -12,6 +12,26 @@ Total Stocking Records: 2290
 --- BR-24 ---
   2022-06-28 | TIGER TROUT     |    257 fish | 2.65"  | SUMMIT
 
+--- BR-34 ---
+  2025-07-02 | TIGER TROUT     |    239 fish | 3.8"   | SUMMIT
+  2022-06-28 | TIGER TROUT     |    243 fish | 2.65"  | SUMMIT
+  2019-07-09 | TIGER TROUT     |    243 fish | 2.65"  | SUMMIT
+
+--- BR-35 ---
+  2025-07-02 | TIGER TROUT     |    137 fish | 3.8"   | SUMMIT
+  2023-07-14 | TIGER TROUT     |    132 fish | 2.83"  | SUMMIT
+
+--- BR-43 ---
+  2024-07-08 | TIGER TROUT     |    197 fish | 2.78"  | SUMMIT
+  2022-06-28 | TIGER TROUT     |    203 fish | 2.65"  | SUMMIT
+  2020-07-31 | TIGER TROUT     |    216 fish | 2.4"   | SUMMIT
+  2018-07-09 | TIGER TROUT     |    156 fish | 2.34"  | SUMMIT
+
+--- BR-44 ---
+  2024-07-08 | TIGER TROUT     |    348 fish | 2.78"  | SUMMIT
+  2021-06-30 | TIGER TROUT     |    346 fish | 2.69"  | SUMMIT
+  2018-07-09 | TIGER TROUT     |    254 fish | 2.34"  | SUMMIT
+
 --- BR-45 ---
   2024-07-08 | TIGER TROUT     |    360 fish | 2.78"  | SUMMIT
   2022-06-28 | TIGER TROUT     |    365 fish | 2.65"  | SUMMIT
@@ -30,6 +50,10 @@ Total Stocking Records: 2290
   2021-06-29 | BROOK TROUT     |    345 fish | 2.79"  | SUMMIT
   2020-07-31 | BROOK TROUT     |    363 fish | 2.47"  | SUMMIT
   2018-06-26 | BROOK TROUT     |   1150 fish | 2.88"  | SUMMIT
+
+--- BR-55 ---
+  2025-06-26 | BROOK TROUT     |    230 fish | 3.01"  | SUMMIT
+  2021-06-29 | BROOK TROUT     |    230 fish | 2.79"  | SUMMIT
 
 --- D-19 ---
   2025-06-26 | BROOK TROUT     |     40 fish | 3.01"  | DUCHESNE
@@ -62,19 +86,14 @@ Total Stocking Records: 2290
 --- DG-9 ---
   2021-09-22 | CUTTHROAT       |    984 fish | 1.9"   | DUCHESNE
 
+--- G-113 ---
+  2023-09-19 | CUTTHROAT       |    276 fish | 1.73"  | SUMMIT
+
 --- G-13 ---
   2024-06-28 | BROOK TROUT     |    801 fish | 2.91"  | SUMMIT
   2022-06-30 | BROOK TROUT     |    798 fish | 3.7"   | SUMMIT
   2020-07-06 | BROOK TROUT     |    797 fish | 3.49"  | SUMMIT
   2018-07-11 | BROOK TROUT     |    809 fish | 2.88"  | SUMMIT
-
---- G-14 ---
-  2025-07-02 | TIGER TROUT     |    849 fish | 3.8"   | SUMMIT
-  2024-07-08 | TIGER TROUT     |    928 fish | 2.78"  | SUMMIT
-  2023-07-14 | TIGER TROUT     |    847 fish | 2.83"  | SUMMIT
-  2022-06-28 | TIGER TROUT     |    878 fish | 2.65"  | SUMMIT
-  2020-07-31 | TIGER TROUT     |    846 fish | 2.4"   | SUMMIT
-  2019-07-15 | TIGER TROUT     |   1760 fish | 2.87"  | SUMMIT
 
 --- G-16 ---
   2025-07-02 | TIGER TROUT     |    849 fish | 3.8"   | SUMMIT
@@ -104,6 +123,37 @@ Total Stocking Records: 2290
   2022-07-06 | BROOK TROUT     |    426 fish | 3.62"  | SUMMIT
   2020-07-06 | BROOK TROUT     |    402 fish | 3.49"  | SUMMIT
   2018-07-11 | BROOK TROUT     |    399 fish | 2.88"  | SUMMIT
+
+--- G-64 ---
+  2024-07-08 | TIGER TROUT     |    336 fish | 2.78"  | SUMMIT
+  2022-06-28 | TIGER TROUT     |    351 fish | 2.65"  | SUMMIT
+  2020-07-31 | TIGER TROUT     |    342 fish | 2.4"   | SUMMIT
+  2018-07-09 | TIGER TROUT     |    273 fish | 2.34"  | SUMMIT
+
+--- G-67 ---
+  2022-09-26 | BROOK TROUT     |    774 fish | 3.03"  | SUMMIT
+  2018-07-11 | BROOK TROUT     |    777 fish | 2.88"  | SUMMIT
+
+--- G-71 ---
+  2024-07-09 | BROOK TROUT     |    306 fish | 2.9"   | SUMMIT
+  2021-06-30 | BROOK TROUT     |    311 fish | 2.79"  | SUMMIT
+  2018-07-11 | BROOK TROUT     |    315 fish | 2.88"  | SUMMIT
+
+--- G-74 ---
+  2024-07-09 | BROOK TROUT     |    296 fish | 2.9"   | SUMMIT
+  2021-06-30 | BROOK TROUT     |    299 fish | 2.79"  | SUMMIT
+  2018-07-11 | BROOK TROUT     |    305 fish | 2.88"  | SUMMIT
+
+--- G-80 ---
+  2025-06-26 | BROOK TROUT     |     90 fish | 3.01"  | SUMMIT
+  2021-06-30 | BROOK TROUT     |     92 fish | 2.79"  | SUMMIT
+
+--- G-82 ---
+  2022-09-26 | BROOK TROUT     |    189 fish | 3.03"  | SUMMIT
+  2018-07-11 | BROOK TROUT     |    189 fish | 2.88"  | SUMMIT
+
+--- GR-119 ---
+  2019-10-01 | GRAYLING ARCTIC |    323 fish | 2.39"  | SUMMIT
 
 --- GR-130 ---
   2024-07-15 | CUTTHROAT       |    942 fish | 2.26"  | SUMMIT
@@ -178,6 +228,19 @@ Total Stocking Records: 2290
 --- LF-8 ---
   2022-09-23 | CUTTHROAT       |    700 fish | 1.91"  | DUCHESNE
   2018-10-12 | CUTTHROAT       |    472 fish | 1.74"  | DUCHESNE
+
+--- P-11 ---
+  2025-06-25 | BROOK TROUT     |    230 fish | 3.01"  | SUMMIT
+  2024-07-03 | BROOK TROUT     |     51 fish | 2.9"   | SUMMIT
+  2023-07-13 | BROOK TROUT     |     52 fish | 2.68"  | SUMMIT
+  2022-06-27 | BROOK TROUT     |     48 fish | 2.75"  | SUMMIT
+
+--- RC-36 ---
+  2022-07-11 | BROOK TROUT     |    300 fish | 2.92"  | DUCHESNE
+  2018-07-10 | BROOK TROUT     |    305 fish | 2.88"  | DUCHESNE
+
+--- U-100 ---
+  2019-10-01 | GRAYLING ARCTIC |    323 fish | 2.39"  | DUCHESNE
 
 --- U-19 ---
   2022-07-06 | BROOK TROUT     |   1610 fish | 3.62"  | DUCHESNE
@@ -371,30 +434,6 @@ Total Stocking Records: 2290
   2021-09-21 | GRAYLING ARCTIC |    301 fish | 2.65"  | SUMMIT
   2020-09-21 | GRAYLING ARCTIC |    306 fish | 2.81"  | SUMMIT
 
---- BR-34 BR-34 ---
-  2025-07-02 | TIGER TROUT     |    239 fish | 3.8"   | SUMMIT
-  2022-06-28 | TIGER TROUT     |    243 fish | 2.65"  | SUMMIT
-  2019-07-09 | TIGER TROUT     |    243 fish | 2.65"  | SUMMIT
-
---- BR-35 BR-35 ---
-  2025-07-02 | TIGER TROUT     |    137 fish | 3.8"   | SUMMIT
-  2023-07-14 | TIGER TROUT     |    132 fish | 2.83"  | SUMMIT
-
---- BR-43 BR-43 ---
-  2024-07-08 | TIGER TROUT     |    197 fish | 2.78"  | SUMMIT
-  2022-06-28 | TIGER TROUT     |    203 fish | 2.65"  | SUMMIT
-  2020-07-31 | TIGER TROUT     |    216 fish | 2.4"   | SUMMIT
-  2018-07-09 | TIGER TROUT     |    156 fish | 2.34"  | SUMMIT
-
---- BR-44 BR-44 ---
-  2024-07-08 | TIGER TROUT     |    348 fish | 2.78"  | SUMMIT
-  2021-06-30 | TIGER TROUT     |    346 fish | 2.69"  | SUMMIT
-  2018-07-09 | TIGER TROUT     |    254 fish | 2.34"  | SUMMIT
-
---- BR-55 BR-55 ---
-  2025-06-26 | BROOK TROUT     |    230 fish | 3.01"  | SUMMIT
-  2021-06-29 | BROOK TROUT     |    230 fish | 2.79"  | SUMMIT
-
 --- Bear G-7 ---
   2024-06-28 | BROOK TROUT     |   2003 fish | 2.91"  | SUMMIT
   2022-06-30 | BROOK TROUT     |   1994 fish | 3.7"   | SUMMIT
@@ -518,7 +557,7 @@ Total Stocking Records: 2290
   2021-06-29 | BROOK TROUT     |    403 fish | 2.79"  | DUCHESNE
   2019-07-08 | BROOK TROUT     |    520 fish | 2.68"  | DUCHESNE
 
---- Bobs, G-73 ---
+--- Bobs G-73 ---
   2023-09-19 | CUTTHROAT       |   1326 fish | 1.73"  | SUMMIT
   2020-09-23 | CUTTHROAT       |    501 fish | 2.48"  | SUMMIT
   2020-07-31 | TIGER TROUT     |    504 fish | 2.4"   | SUMMIT
@@ -803,6 +842,15 @@ Total Stocking Records: 2290
   2022-07-06 | BROOK TROUT     |   1610 fish | 3.62"  | DUCHESNE
   2019-07-11 | BROOK TROUT     |   1170 fish | 2.68"  | DUCHESNE
 
+--- Castle D-14 ---
+  2024-09-23 | CUTTHROAT       |    196 fish | 1.48"  | DUCHESNE
+  2022-09-23 | CUTTHROAT       |    223 fish | 1.57"  | DUCHESNE
+  2019-07-09 | TIGER TROUT     |     95 fish | 2.65"  | DUCHESNE
+
+--- Castle G-11 ---
+  2024-07-08 | TIGER TROUT     |    603 fish | 2.78"  | SUMMIT
+  2020-07-31 | TIGER TROUT     |    612 fish | 2.4"   | SUMMIT
+
 --- Castle W-67 ---
   2024-09-24 | CUTTHROAT       |    823 fish | 2.4"   | SUMMIT
   2023-09-19 | CUTTHROAT       |    399 fish | 2.28"  | SUMMIT
@@ -815,15 +863,6 @@ Total Stocking Records: 2290
   2023-07-13 | BROOK TROUT     |    546 fish | 2.68"  | DUCHESNE
   2021-09-21 | GRAYLING ARCTIC |    301 fish | 2.65"  | DUCHESNE
   2018-06-27 | BROOK TROUT     |   1000 fish | 2.88"  | DUCHESNE
-
---- Castle, D-14 ---
-  2024-09-23 | CUTTHROAT       |    196 fish | 1.48"  | DUCHESNE
-  2022-09-23 | CUTTHROAT       |    223 fish | 1.57"  | DUCHESNE
-  2019-07-09 | TIGER TROUT     |     95 fish | 2.65"  | DUCHESNE
-
---- Castle, G-11 ---
-  2024-07-08 | TIGER TROUT     |    603 fish | 2.78"  | SUMMIT
-  2020-07-31 | TIGER TROUT     |    612 fish | 2.4"   | SUMMIT
 
 --- Chain 4 U-4 ---
   2024-09-23 | CUTTHROAT       |    681 fish | 1.85"  | DUCHESNE
@@ -885,7 +924,7 @@ Total Stocking Records: 2290
   2021-07-01 | TIGER TROUT     |   1993 fish | 3.28"  | DUCHESNE
   2021-07-01 | BROOK TROUT     |   1997 fish | 3.32"  | DUCHESNE
 
---- Clyde, A-28 ---
+--- Clyde A-28 ---
   2025-06-25 | BROOK TROUT     |   1600 fish | 3.01"  | SUMMIT
   2022-06-27 | BROOK TROUT     |   1596 fish | 2.75"  | SUMMIT
   2019-07-08 | BROOK TROUT     |   1196 fish | 2.68"  | SUMMIT
@@ -972,7 +1011,7 @@ Total Stocking Records: 2290
   2021-06-29 | BROOK TROUT     |   2001 fish | 2.79"  | DUCHESNE
   2018-06-26 | BROOK TROUT     |   2000 fish | 2.88"  | DUCHESNE
 
---- Dead Horse, G-77 ---
+--- Dead Horse G-77 ---
   2023-09-19 | CUTTHROAT       |   3203 fish | 1.73"  | SUMMIT
   2020-07-31 | TIGER TROUT     |   1602 fish | 2.4"   | SUMMIT
   2018-07-09 | TIGER TROUT     |   1209 fish | 2.34"  | SUMMIT
@@ -1012,7 +1051,7 @@ Total Stocking Records: 2290
 --- Divide U-59 ---
   2021-09-22 | CUTTHROAT       |   1883 fish | 1.9"   | DUCHESNE
 
---- Divide, #1, A-36 ---
+--- Divide, #1 A-36 ---
   2025-06-26 | BROOK TROUT     |    525 fish | 3.01"  | SUMMIT
   2023-07-14 | BROOK TROUT     |    520 fish | 2.68"  | SUMMIT
   2021-06-28 | BROOK TROUT     |    529 fish | 2.79"  | SUMMIT
@@ -1069,7 +1108,7 @@ Total Stocking Records: 2290
   2021-06-29 | BROOK TROUT     |    851 fish | 2.79"  | SUMMIT
   2019-07-09 | BROOK TROUT     |    845 fish | 2.68"  | SUMMIT
 
---- Everman, Z-36 ---
+--- Everman Z-36 ---
   2024-07-03 | BROOK TROUT     |    796 fish | 2.9"   | DUCHESNE
   2021-06-28 | BROOK TROUT     |    805 fish | 2.79"  | DUCHESNE
   2018-06-26 | BROOK TROUT     |    800 fish | 2.88"  | DUCHESNE
@@ -1108,7 +1147,7 @@ Total Stocking Records: 2290
   2022-09-23 | CUTTHROAT       |   3566 fish | 1.57"  | DUCHESNE
   2018-10-12 | CUTTHROAT       |   2478 fish | 1.74"  | DUCHESNE
 
---- Five Point Reservoir, X-106 ---
+--- Five Point Reservoir X-106 ---
   2024-09-23 | CUTTHROAT       |   3456 fish | 1.85"  | DUCHESNE
 
 --- Fox U-47 ---
@@ -1125,40 +1164,6 @@ Total Stocking Records: 2290
   2022-09-26 | BROOK TROUT     |    414 fish | 3.03"  | SUMMIT
   2020-07-31 | BROOK TROUT     |    413 fish | 2.47"  | SUMMIT
   2018-07-11 | BROOK TROUT     |    410 fish | 2.88"  | SUMMIT
-
---- G-113 G-113 ---
-  2023-09-19 | CUTTHROAT       |    276 fish | 1.73"  | SUMMIT
-
---- G-64 G-64 ---
-  2024-07-08 | TIGER TROUT     |    336 fish | 2.78"  | SUMMIT
-  2022-06-28 | TIGER TROUT     |    351 fish | 2.65"  | SUMMIT
-  2020-07-31 | TIGER TROUT     |    342 fish | 2.4"   | SUMMIT
-  2018-07-09 | TIGER TROUT     |    273 fish | 2.34"  | SUMMIT
-
---- G-67 G-67 ---
-  2022-09-26 | BROOK TROUT     |    774 fish | 3.03"  | SUMMIT
-  2018-07-11 | BROOK TROUT     |    777 fish | 2.88"  | SUMMIT
-
---- G-71 G-71 ---
-  2024-07-09 | BROOK TROUT     |    306 fish | 2.9"   | SUMMIT
-  2021-06-30 | BROOK TROUT     |    311 fish | 2.79"  | SUMMIT
-  2018-07-11 | BROOK TROUT     |    315 fish | 2.88"  | SUMMIT
-
---- G-74 G-74 ---
-  2024-07-09 | BROOK TROUT     |    296 fish | 2.9"   | SUMMIT
-  2021-06-30 | BROOK TROUT     |    299 fish | 2.79"  | SUMMIT
-  2018-07-11 | BROOK TROUT     |    305 fish | 2.88"  | SUMMIT
-
---- G-80 G-80 ---
-  2025-06-26 | BROOK TROUT     |     90 fish | 3.01"  | SUMMIT
-  2021-06-30 | BROOK TROUT     |     92 fish | 2.79"  | SUMMIT
-
---- G-82 G-82 ---
-  2022-09-26 | BROOK TROUT     |    189 fish | 3.03"  | SUMMIT
-  2018-07-11 | BROOK TROUT     |    189 fish | 2.88"  | SUMMIT
-
---- GR-119 GR-119 ---
-  2019-10-01 | GRAYLING ARCTIC |    323 fish | 2.39"  | SUMMIT
 
 --- Gail GR-115 ---
   2024-07-15 | CUTTHROAT       |    347 fish | 2.26"  | SUMMIT
@@ -1629,7 +1634,7 @@ Total Stocking Records: 2290
   2023-07-14 | BROOK TROUT     |    468 fish | 2.68"  | SUMMIT
   2020-07-30 | BROOK TROUT     |    495 fish | 2.47"  | SUMMIT
 
---- Little Lyman, G-25 ---
+--- Little Lyman G-25 ---
   2025-07-24 | RAINBOW         |    324 fish | 10.77" | SUMMIT
   2025-07-24 | RAINBOW         |    326 fish | 10.77" | SUMMIT
   2025-07-02 | BROOK TROUT     |   2998 fish | 2.97"  | SUMMIT
@@ -1759,7 +1764,7 @@ Total Stocking Records: 2290
   2025-07-07 | TIGER TROUT     |   1871 fish | 3.71"  | DUCHESNE
   2018-07-10 | TIGER TROUT     |   1872 fish | 2.35"  | DUCHESNE
 
---- Lyman, G-27 ---
+--- Lyman G-27 ---
   2025-07-02 | BROOK TROUT     |   2496 fish | 2.97"  | SUMMIT
   2024-07-17 | BROOK TROUT     |   1998 fish | 3.71"  | SUMMIT
   2024-06-24 | RAINBOW         |    756 fish | 11.16" | SUMMIT
@@ -2137,12 +2142,6 @@ Total Stocking Records: 2290
   2024-09-23 | CUTTHROAT       |    454 fish | 1.48"  | DUCHESNE
   2022-09-23 | CUTTHROAT       |    669 fish | 1.57"  | DUCHESNE
 
---- P-11 P-11 ---
-  2025-06-25 | BROOK TROUT     |    230 fish | 3.01"  | SUMMIT
-  2024-07-03 | BROOK TROUT     |     51 fish | 2.9"   | SUMMIT
-  2023-07-13 | BROOK TROUT     |     52 fish | 2.68"  | SUMMIT
-  2022-06-27 | BROOK TROUT     |     48 fish | 2.75"  | SUMMIT
-
 --- Packard Z-15 ---
   2024-07-03 | BROOK TROUT     |    898 fish | 2.9"   | DUCHESNE
   2021-06-28 | BROOK TROUT     |    897 fish | 2.79"  | DUCHESNE
@@ -2349,7 +2348,7 @@ Total Stocking Records: 2290
   2022-06-27 | BROOK TROUT     |    756 fish | 2.75"  | DUCHESNE
   2019-07-09 | BROOK TROUT     |   1131 fish | 2.68"  | DUCHESNE
 
---- QUARTER CORNER LG103 LG-103 ---
+--- QUARTER CORNER LG103 G-103 ---
   2025-06-03 | RAINBOW         |    920 fish | 10.77" | SUMMIT
   2024-05-30 | RAINBOW         |    900 fish | 10.77" | SUMMIT
   2023-06-07 | RAINBOW         |    899 fish | 10.6"  | SUMMIT
@@ -2368,20 +2367,8 @@ Total Stocking Records: 2290
   2023-09-19 | CUTTHROAT       |    936 fish | 1.45"  | DUCHESNE
   2020-07-06 | BROOK TROUT     |   4087 fish | 3.49"  | DUCHESNE
 
---- RASMUSSEN L NO1 WR35 NO-1 ---
-  2022-07-06 | BROOK TROUT     |   1536 fish | 3.62"  | DUCHESNE
-  2018-07-10 | BROOK TROUT     |   1533 fish | 2.88"  | DUCHESNE
-
---- RASMUSSEN L NO2 WR36 NO-2 ---
-  2022-07-06 | BROOK TROUT     |   1394 fish | 3.62"  | DUCHESNE
-  2018-07-10 | BROOK TROUT     |   1407 fish | 2.88"  | DUCHESNE
-
 --- RC #1 WR-2 ---
   2024-09-23 | CUTTHROAT       |    599 fish | 1.48"  | DUCHESNE
-
---- RC-36 RC-36 ---
-  2022-07-11 | BROOK TROUT     |    300 fish | 2.92"  | DUCHESNE
-  2018-07-10 | BROOK TROUT     |    305 fish | 2.88"  | DUCHESNE
 
 --- ROBB L WR-1 ---
   2024-06-26 | BROOK TROUT     |    320 fish | 2.93"  | DUCHESNE
@@ -2402,6 +2389,14 @@ Total Stocking Records: 2290
   2021-06-28 | BROOK TROUT     |    345 fish | 2.79"  | SUMMIT
   2018-07-09 | BROOK TROUT     |    357 fish | 2.88"  | SUMMIT
 
+--- Rassmussen #1 WR-35 ---
+  2022-07-06 | BROOK TROUT     |   1536 fish | 3.62"  | DUCHESNE
+  2018-07-10 | BROOK TROUT     |   1533 fish | 2.88"  | DUCHESNE
+
+--- Rassmussen #2 WR-36 ---
+  2022-07-06 | BROOK TROUT     |   1394 fish | 3.62"  | DUCHESNE
+  2018-07-10 | BROOK TROUT     |   1407 fish | 2.88"  | DUCHESNE
+
 --- Reader WR-66 ---
   2022-09-23 | CUTTHROAT       |    743 fish | 1.57"  | DUCHESNE
   2021-06-02 | CUTTHROAT       |   4004 fish | 4.28"  | DUCHESNE
@@ -2410,6 +2405,17 @@ Total Stocking Records: 2290
   2019-09-25 | CUTTHROAT       |   2250 fish | 1.61"  | DUCHESNE
   2019-09-23 | CUTTHROAT       |    749 fish | 1.61"  | DUCHESNE
   2019-09-23 | CUTTHROAT       |    524 fish | 1.61"  | DUCHESNE
+
+--- Red Castle G-15 ---
+  2025-07-02 | TIGER TROUT     |   4901 fish | 3.8"   | SUMMIT
+  2025-07-01 | TIGER TROUT     |    698 fish | 3.79"  | SUMMIT
+  2024-07-08 | TIGER TROUT     |   5603 fish | 2.78"  | SUMMIT
+  2023-07-14 | TIGER TROUT     |   5599 fish | 2.83"  | SUMMIT
+  2022-07-11 | BROOK TROUT     |   2200 fish | 2.92"  | SUMMIT
+  2022-06-28 | TIGER TROUT     |   5670 fish | 2.65"  | SUMMIT
+  2020-07-31 | TIGER TROUT     |   5616 fish | 2.4"   | SUMMIT
+  2019-07-15 | TIGER TROUT     |   7685 fish | 2.87"  | SUMMIT
+  2019-07-11 | TIGER TROUT     |   4050 fish | 2.65"  | SUMMIT
 
 --- Reids W-38 ---
   2025-06-26 | BROOK TROUT     |    250 fish | 3.01"  | SUMMIT
@@ -2535,6 +2541,14 @@ Total Stocking Records: 2290
   2021-06-29 | BROOK TROUT     |    253 fish | 2.79"  | SUMMIT
   2019-07-09 | BROOK TROUT     |    403 fish | 2.68"  | SUMMIT
 
+--- Smiths Fork Pass G-14 ---
+  2025-07-02 | TIGER TROUT     |    849 fish | 3.8"   | SUMMIT
+  2024-07-08 | TIGER TROUT     |    928 fish | 2.78"  | SUMMIT
+  2023-07-14 | TIGER TROUT     |    847 fish | 2.83"  | SUMMIT
+  2022-06-28 | TIGER TROUT     |    878 fish | 2.65"  | SUMMIT
+  2020-07-31 | TIGER TROUT     |    846 fish | 2.4"   | SUMMIT
+  2019-07-15 | TIGER TROUT     |   1760 fish | 2.87"  | SUMMIT
+
 --- Sonny X-12 ---
   2025-06-25 | BROOK TROUT     |    400 fish | 3.01"  | DUCHESNE
   2023-07-13 | BROOK TROUT     |    403 fish | 2.68"  | DUCHESNE
@@ -2569,7 +2583,7 @@ Total Stocking Records: 2290
 --- Stewart X-79 ---
   2021-09-22 | CUTTHROAT       |    942 fish | 1.9"   | DUCHESNE
 
---- Summit, GR-5 ---
+--- Summit GR-5 ---
   2020-09-21 | GRAYLING ARCTIC |    756 fish | 2.81"  | SUMMIT
 
 --- Survey RC-20 ---
@@ -2900,9 +2914,6 @@ Total Stocking Records: 2290
   2024-09-23 | CUTTHROAT       |    524 fish | 1.85"  | DUCHESNE
   2020-09-23 | CUTTHROAT       |    480 fish | 1.53"  | DUCHESNE
 
---- U-100 U-100 ---
-  2019-10-01 | GRAYLING ARCTIC |    323 fish | 2.39"  | DUCHESNE
-
 --- Uintah X-131 ---
   2025-07-07 | BROOK TROUT     |    632 fish | 3.53"  | DUCHESNE
   2021-06-29 | BROOK TROUT     |    633 fish | 2.79"  | DUCHESNE
@@ -2912,17 +2923,6 @@ Total Stocking Records: 2290
   2024-06-26 | BROOK TROUT     |   1102 fish | 2.93"  | DUCHESNE
   2021-07-01 | BROOK TROUT     |   1203 fish | 3.32"  | DUCHESNE
   2018-07-10 | BROOK TROUT     |   1208 fish | 2.88"  | DUCHESNE
-
---- Upper Red Castle G-15 ---
-  2025-07-02 | TIGER TROUT     |   4901 fish | 3.8"   | SUMMIT
-  2025-07-01 | TIGER TROUT     |    698 fish | 3.79"  | SUMMIT
-  2024-07-08 | TIGER TROUT     |   5603 fish | 2.78"  | SUMMIT
-  2023-07-14 | TIGER TROUT     |   5599 fish | 2.83"  | SUMMIT
-  2022-07-11 | BROOK TROUT     |   2200 fish | 2.92"  | SUMMIT
-  2022-06-28 | TIGER TROUT     |   5670 fish | 2.65"  | SUMMIT
-  2020-07-31 | TIGER TROUT     |   5616 fish | 2.4"   | SUMMIT
-  2019-07-15 | TIGER TROUT     |   7685 fish | 2.87"  | SUMMIT
-  2019-07-11 | TIGER TROUT     |   4050 fish | 2.65"  | SUMMIT
 
 --- Upper Rock WR-14 ---
   2023-09-19 | CUTTHROAT       |   1684 fish | 1.45"  | DUCHESNE

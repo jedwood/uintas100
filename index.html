@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uintas 💯</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+    <style>
+        .loading { display: none; }
+        .loaded .loading { display: block; }
+        .loaded .not-loaded { display: none; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+    <div class="container mx-auto px-4 py-6 max-w-4xl">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">Uintas 💯</h1>
+            <p class="text-gray-600">672 lakes • 18 drainages</p>
+        </header>
+
+        <div class="not-loaded">
+            <div class="text-center">
+                <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-slate-400 mx-auto mb-4"></div>
+                <p class="text-gray-600">Loading database...</p>
+            </div>
+        </div>
+
+        <div class="loading">
+            <!-- Main Content -->
+            <div class="space-y-6">
+                <!-- Search Section -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-xl font-semibold mb-4">Find a Lake</h2>
+                    
+                    <!-- Lake Name Search -->
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Lake Name or Designation</label>
+                        <input type="text" id="lake-search" placeholder="Start typing lake name or designation (e.g., Bear, G-7)" 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500">
+                        <div id="search-results" class="mt-2 bg-white border border-gray-200 rounded-md hidden max-h-60 overflow-y-auto"></div>
+                    </div>
+
+                    <div class="text-center text-gray-500 mb-4">OR</div>
+
+                    <!-- Filters -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Fish Species</label>
+                            <select id="species-filter" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500">
+                                <option value="">Any species</option>
+                                <option value="brook">Brook trout</option>
+                                <option value="tiger">Tiger trout</option>
+                                <option value="cutthroat">Cutthroat trout</option>
+                                <option value="rainbow">Rainbow trout</option>
+                                <option value="golden">Golden trout</option>
+                                <option value="grayling">Grayling</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Max Depth (feet)</label>
+                            <input type="number" id="depth-filter" placeholder="e.g., 50" min="0" max="200" 
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Last Stocked</label>
+                            <select id="year-filter" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500">
+                                <option value="">Any year</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 space-y-2">
+                        <button id="apply-filters" class="w-full bg-gray-300 text-gray-500 px-4 py-2 rounded-lg cursor-not-allowed transition-colors" disabled>
+                            Apply Filters
+                        </button>
+                        <button id="clear-filters" class="w-full text-slate-600 hover:text-slate-800 text-sm hidden transition-colors">
+                            Clear Filters
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Drainages Section -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-xl font-semibold mb-4">Browse by Drainage</h2>
+                    <div id="drainages-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                        <!-- Drainage links will be populated here -->
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div id="results-section" class="hidden">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-xl font-semibold mb-4">Results</h2>
+                        <div id="results-list" class="space-y-4">
+                            <!-- Results will be populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lake Detail Modal -->
+                <div id="lake-detail-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+                    <div class="flex items-center justify-center min-h-screen p-4">
+                        <div class="bg-white rounded-lg max-w-4xl w-full max-h-screen overflow-y-auto">
+                            <div class="p-6">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h2 id="modal-title" class="text-2xl font-bold"></h2>
+                                    <button id="close-modal" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+                                </div>
+                                <div id="modal-content" class="space-y-6">
+                                    <!-- Lake details will be populated here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let db = null;
+        let lakes = [];
+        let stockingRecords = [];
+
+        function getStatusButton(status, isDisplay = false) {
+            const buttonClass = isDisplay ? 
+                "inline-flex items-center px-2 py-1 border border-slate-300 rounded-md text-sm" :
+                "inline-flex items-center px-3 py-2 border border-slate-300 rounded-lg text-sm hover:bg-slate-50 transition-colors";
+            
+            switch(status) {
+                case 'CAUGHT':
+                    return `<span class="${buttonClass}">🎣</span>`;
+                case 'NONE':
+                    return `<span class="${buttonClass}"><span class="relative">🎣<span class="absolute -top-0.5 -right-0.5 text-xs">🚫</span></span></span>`;
+                case 'OTHERS':
+                    return `<span class="${buttonClass}">👥🎣</span>`;
+                default:
+                    return status;
+            }
+        }
+
+        // Initialize the app
+        async function initApp() {
+            try {
+                // Load sql.js
+                const SQL = await initSqlJs({
+                    locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/${file}`
+                });
+
+                // Load database file
+                const response = await fetch('uinta_lakes.db');
+                const buffer = await response.arrayBuffer();
+                const uint8Array = new Uint8Array(buffer);
+                
+                db = new SQL.Database(uint8Array);
+
+                // Load all data into memory for fast filtering
+                await loadData();
+                
+                // Initialize UI
+                initializeUI();
+                populateDrainages();
+                
+                // Mark as loaded
+                document.body.classList.add('loaded');
+                
+            } catch (error) {
+                console.error('Failed to initialize app:', error);
+                alert('Failed to load database. Please check that uinta_lakes.db is accessible.');
+            }
+        }
+
+        async function loadData() {
+            // Load lakes
+            const lakesResult = db.exec(`
+                SELECT id, letter_number, name, drainage, size_acres, max_depth_ft, 
+                       fish_species, fishing_pressure, jed_notes, status
+                FROM lakes
+            `);
+            
+            if (lakesResult.length > 0) {
+                lakes = lakesResult[0].values.map(row => ({
+                    id: row[0],
+                    letter_number: row[1],
+                    name: row[2],
+                    drainage: row[3],
+                    size_acres: row[4],
+                    max_depth_ft: row[5],
+                    fish_species: row[6],
+                    fishing_pressure: row[7],
+                    jed_notes: row[8],
+                    status: row[9]
+                }));
+                
+                // Sort lakes using letter_number as name fallback for proper alphabetical ordering
+                lakes.sort((a, b) => {
+                    const nameA = (a.name || a.letter_number || '').toLowerCase();
+                    const nameB = (b.name || b.letter_number || '').toLowerCase();
+                    return nameA.localeCompare(nameB);
+                });
+            }
+
+            // Load stocking records
+            const stockingResult = db.exec(`
+                SELECT lake_id, species, quantity, length, stock_date, county
+                FROM stocking_records ORDER BY stock_date DESC
+            `);
+            
+            if (stockingResult.length > 0) {
+                stockingRecords = stockingResult[0].values.map(row => ({
+                    lake_id: row[0],
+                    species: row[1],
+                    quantity: row[2],
+                    length: row[3],
+                    stock_date: row[4],
+                    county: row[5]
+                }));
+            }
+
+            // Load drainage info
+            const drainagesResult = db.exec(`
+                SELECT name, info, map FROM drainages ORDER BY name
+            `);
+            
+            if (drainagesResult.length > 0) {
+                window.drainages = drainagesResult[0].values.map(row => ({
+                    name: row[0],
+                    info: row[1],
+                    map: row[2]
+                }));
+            }
+        }
+
+        function initializeUI() {
+            // Populate year filter
+            const yearFilter = document.getElementById('year-filter');
+            const currentYear = new Date().getFullYear();
+            for (let year = currentYear; year >= 2018; year--) {
+                const option = document.createElement('option');
+                option.value = year;
+                option.textContent = year;
+                yearFilter.appendChild(option);
+            }
+
+            // Event listeners
+            document.getElementById('lake-search').addEventListener('input', handleLakeSearch);
+            document.getElementById('apply-filters').addEventListener('click', applyFilters);
+            document.getElementById('clear-filters').addEventListener('click', clearFilters);
+            document.getElementById('close-modal').addEventListener('click', closeModal);
+            
+            // Filter state management
+            ['species-filter', 'depth-filter', 'year-filter'].forEach(id => {
+                document.getElementById(id).addEventListener('change', updateFilterButtonState);
+            });
+        }
+
+        function populateDrainages() {
+            const drainagesList = document.getElementById('drainages-list');
+            const drainages = [...new Set(lakes.map(lake => lake.drainage))].sort();
+            
+            drainages.forEach(drainage => {
+                const link = document.createElement('a');
+                link.href = '#';
+                link.className = 'block p-3 bg-slate-100 hover:bg-slate-200 rounded-lg text-slate-800 hover:text-slate-900 transition-colors';
+                link.textContent = drainage;
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showDrainageLakes(drainage);
+                });
+                drainagesList.appendChild(link);
+            });
+        }
+
+        function handleLakeSearch(e) {
+            const query = e.target.value.toLowerCase().trim();
+            const resultsDiv = document.getElementById('search-results');
+            
+            if (query.length < 2) {
+                resultsDiv.classList.add('hidden');
+                return;
+            }
+
+            const matches = lakes.filter(lake => {
+                const name = (lake.name || '').toLowerCase();
+                const designation = lake.letter_number.toLowerCase();
+                return name.includes(query) || designation.includes(query);
+            }).slice(0, 10);
+
+            if (matches.length > 0) {
+                resultsDiv.innerHTML = matches.map(lake => `
+                    <div class="p-2 hover:bg-slate-50 cursor-pointer border-b last:border-b-0 transition-colors" 
+                         onclick="showLakeDetail('${lake.letter_number}')">
+                        <div class="font-medium">${lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number}</div>
+                        <div class="text-sm text-gray-600">${lake.drainage}</div>
+                    </div>
+                `).join('');
+                resultsDiv.classList.remove('hidden');
+            } else {
+                resultsDiv.classList.add('hidden');
+            }
+        }
+
+        function updateFilterButtonState() {
+            const species = document.getElementById('species-filter').value;
+            const maxDepth = document.getElementById('depth-filter').value;
+            const lastStocked = document.getElementById('year-filter').value;
+            
+            const applyButton = document.getElementById('apply-filters');
+            const hasFilters = species || maxDepth || lastStocked;
+            
+            if (hasFilters) {
+                applyButton.disabled = false;
+                applyButton.className = "w-full bg-slate-700 text-white px-4 py-2 rounded-lg hover:bg-slate-800 cursor-pointer transition-colors";
+            } else {
+                applyButton.disabled = true;
+                applyButton.className = "w-full bg-gray-300 text-gray-500 px-4 py-2 rounded-lg cursor-not-allowed transition-colors";
+            }
+        }
+
+        function clearFilters() {
+            document.getElementById('species-filter').value = '';
+            document.getElementById('depth-filter').value = '';
+            document.getElementById('year-filter').value = '';
+            
+            document.getElementById('clear-filters').classList.add('hidden');
+            document.getElementById('results-section').classList.add('hidden');
+            
+            updateFilterButtonState();
+        }
+
+        function applyFilters() {
+            const species = document.getElementById('species-filter').value;
+            const maxDepth = document.getElementById('depth-filter').value;
+            const lastStocked = document.getElementById('year-filter').value;
+            
+            let filteredLakes = [...lakes];
+            
+            // Filter by species
+            if (species) {
+                filteredLakes = filteredLakes.filter(lake => {
+                    const fishSpecies = (lake.fish_species || '').toLowerCase();
+                    return fishSpecies.includes(species.toLowerCase());
+                });
+            }
+            
+            // Filter by max depth
+            if (maxDepth) {
+                const depthLimit = parseInt(maxDepth);
+                filteredLakes = filteredLakes.filter(lake => 
+                    lake.max_depth_ft && lake.max_depth_ft <= depthLimit
+                );
+            }
+            
+            // Filter by last stocked year
+            if (lastStocked) {
+                const yearLimit = parseInt(lastStocked);
+                filteredLakes = filteredLakes.filter(lake => {
+                    const lakeStocking = stockingRecords.filter(s => s.lake_id === lake.id);
+                    if (lakeStocking.length === 0) {
+                        // Include lakes with no stocking records
+                        return true;
+                    }
+                    // Check if any stocking record is from the specified year or later
+                    return lakeStocking.some(record => {
+                        const stockYear = parseInt(record.stock_date.split('-')[0]);
+                        return stockYear >= yearLimit;
+                    });
+                });
+            }
+            
+            // Add stocking year info to results
+            const lakesWithStockingInfo = filteredLakes.map(lake => {
+                const lakeStocking = stockingRecords.filter(s => s.lake_id === lake.id);
+                const stockYears = [...new Set(lakeStocking.map(s => s.stock_date.split('-')[0]))].sort().reverse();
+                return {
+                    ...lake,
+                    stockingYears: stockYears.length > 0 ? stockYears.join(', ') : 'not stocked'
+                };
+            });
+            
+            displayFilteredResults(lakesWithStockingInfo);
+            
+            // Show clear button and reset apply button
+            document.getElementById('clear-filters').classList.remove('hidden');
+            updateFilterButtonState();
+        }
+        
+        function displayFilteredResults(results) {
+            const resultsSection = document.getElementById('results-section');
+            const resultsList = document.getElementById('results-list');
+            
+            resultsList.innerHTML = `
+                <h3 class="text-lg font-semibold mb-4">Filtered Results (${results.length} lakes)</h3>
+                ${results.map(lake => `
+                    <div class="border border-slate-200 rounded-lg p-4 hover:bg-slate-50 cursor-pointer transition-colors"
+                         onclick="showLakeDetail('${lake.letter_number}')">
+                        <div class="font-medium text-lg">${lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number}</div>
+                        <div class="text-sm text-gray-600 mt-1">
+                            ${lake.size_acres ? `${lake.size_acres} acres` : ''} 
+                            ${lake.max_depth_ft ? `• ${lake.max_depth_ft} ft deep` : ''}
+                            ${lake.fishing_pressure ? `• ${lake.fishing_pressure} pressure` : ''}
+                            • (${lake.stockingYears})
+                        </div>
+                    </div>
+                `).join('')}
+            `;
+            
+            resultsSection.classList.remove('hidden');
+            resultsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showDrainageLakes(drainage) {
+            const drainageLakes = lakes.filter(lake => lake.drainage === drainage);
+            const drainageInfo = window.drainages?.find(d => d.name === drainage);
+            
+            const resultsSection = document.getElementById('results-section');
+            const resultsList = document.getElementById('results-list');
+            
+            let drainageContent = '';
+            if (drainageInfo) {
+                // Convert markdown-style content to HTML
+                const infoHtml = drainageInfo.info
+                    .replace(/\n\n/g, '</p><p class="mb-4">')
+                    .replace(/^/, '<p class="mb-4">')
+                    .replace(/$/, '</p>');
+                
+                drainageContent = `
+                    <div class="mb-6 border border-slate-200 rounded-lg p-6">
+                        <h2 class="text-2xl font-bold mb-4">${drainage}</h2>
+                        ${drainageInfo.map ? `<img src="${drainageInfo.map}" alt="${drainage} Map" class="w-full max-w-2xl mx-auto mb-4 rounded-lg border border-slate-200">` : ''}
+                        <div class="text-gray-700 leading-relaxed">
+                            ${infoHtml}
+                        </div>
+                    </div>
+                `;
+            }
+            
+            resultsList.innerHTML = `
+                ${drainageContent}
+                <h3 class="text-lg font-semibold mb-4">Lakes in ${drainage} (${drainageLakes.length} lakes)</h3>
+                ${drainageLakes.map(lake => `
+                    <div class="border border-slate-200 rounded-lg p-4 hover:bg-slate-50 cursor-pointer transition-colors"
+                         onclick="showLakeDetail('${lake.letter_number}')">
+                        <div class="font-medium text-lg">${lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number}</div>
+                        <div class="text-sm text-gray-600 mt-1">
+                            ${lake.size_acres ? `${lake.size_acres} acres` : ''} 
+                            ${lake.max_depth_ft ? `• ${lake.max_depth_ft} ft deep` : ''}
+                            ${lake.fishing_pressure ? `• ${lake.fishing_pressure} pressure` : ''}
+                        </div>
+                    </div>
+                `).join('')}
+            `;
+            
+            resultsSection.classList.remove('hidden');
+            resultsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function displayResults(results, title) {
+            const resultsSection = document.getElementById('results-section');
+            const resultsList = document.getElementById('results-list');
+            
+            resultsList.innerHTML = `
+                <h3 class="text-lg font-semibold mb-4">${title} (${results.length} lakes)</h3>
+                ${results.map(lake => `
+                    <div class="border border-slate-200 rounded-lg p-4 hover:bg-slate-50 cursor-pointer transition-colors"
+                         onclick="showLakeDetail('${lake.letter_number}')">
+                        <div class="font-medium text-lg">${lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number}</div>
+                        <div class="text-sm text-gray-600 mt-1">
+                            ${lake.size_acres ? `${lake.size_acres} acres` : ''} 
+                            ${lake.max_depth_ft ? `• ${lake.max_depth_ft} ft deep` : ''}
+                            ${lake.fishing_pressure ? `• ${lake.fishing_pressure} pressure` : ''}
+                        </div>
+                    </div>
+                `).join('')}
+            `;
+            
+            resultsSection.classList.remove('hidden');
+            resultsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showLakeDetail(letterNumber) {
+            const lake = lakes.find(l => l.letter_number === letterNumber);
+            if (!lake) return;
+
+            const lakeStocking = stockingRecords.filter(s => s.lake_id === lake.id);
+            
+            const modal = document.getElementById('lake-detail-modal');
+            const title = document.getElementById('modal-title');
+            const content = document.getElementById('modal-content');
+            
+            title.textContent = lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number;
+            
+            content.innerHTML = `
+                <!-- Lake Info -->
+                <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
+                    <h3 class="text-lg font-semibold mb-3">Lake Information</h3>
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div><span class="font-medium">Drainage:</span> ${lake.drainage}</div>
+                        <div><span class="font-medium">Size:</span> ${lake.size_acres ? `${lake.size_acres} acres` : 'Unknown'}</div>
+                        <div><span class="font-medium">Max Depth:</span> ${lake.max_depth_ft ? `${lake.max_depth_ft} ft` : 'Unknown'}</div>
+                        <div><span class="font-medium">Fishing Pressure:</span> ${lake.fishing_pressure || 'Unknown'}</div>
+                        <div class="col-span-2"><span class="font-medium">Fish Species:</span> ${lake.fish_species || 'Unknown'}</div>
+                        ${lake.status ? `<div class="col-span-2"><span class="font-medium">Status:</span> ${getStatusButton(lake.status, true)}</div>` : ''}
+                        ${lake.jed_notes ? `<div class="col-span-2"><span class="font-medium">Jed's Notes:</span> ${lake.jed_notes}</div>` : ''}
+                    </div>
+                </div>
+
+                <!-- Stocking Records -->
+                <div class="rounded-lg p-4 border border-slate-200">
+                    <h3 class="text-lg font-semibold mb-3">Stocking Records</h3>
+                    ${lakeStocking.length > 0 ? `
+                        <div class="space-y-2">
+                            ${lakeStocking.map(record => {
+                                const date = new Date(record.stock_date);
+                                const year = date.getFullYear();
+                                const month = date.toLocaleDateString('en-US', { month: 'short' });
+                                const day = date.getDate();
+                                let speciesClean = record.species.toLowerCase().replace(' trout', '').replace(/\b\w/g, l => l.toUpperCase());
+                                if (speciesClean === 'Brook') {
+                                    speciesClean = 'Brookies';
+                                } else if (!speciesClean.endsWith('s')) {
+                                    speciesClean += 's';
+                                }
+                                return `
+                                <div class="text-sm p-2 text-gray-700">
+                                    ${year} ${month} ${day} - ${record.quantity} ${speciesClean}, ${record.length || '?'}"
+                                </div>
+                                `;
+                            }).join('')}
+                        </div>
+                    ` : '<p class="text-gray-600">No stocking records available</p>'}
+                </div>
+
+                <!-- Fishing Reports (commented out - requires server-side persistence) -->
+                <!--
+                <div class="rounded-lg p-4 border border-slate-200">
+                    <h3 class="text-lg font-semibold mb-3">Fishing Reports</h3>
+                    <p class="text-gray-600 mb-3">No fishing reports yet</p>
+                </div>
+                -->
+
+                <!-- Jed's Notes (commented out - requires server-side persistence) -->
+                <!--
+                <div class="rounded-lg p-4 border border-slate-200">
+                    <h3 class="text-lg font-semibold mb-3">Jed's Notes</h3>
+                </div>
+                -->
+            `;
+            
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('lake-detail-modal').classList.add('hidden');
+        }
+
+        // Note: Fishing reports and lake editing features commented out
+        // They require server-side persistence which isn't available in this static web app
+
+        // Initialize when page loads
+        window.addEventListener('load', initApp);
+    </script>
+</body>
+</html>

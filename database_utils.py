@@ -61,6 +61,16 @@ def create_database(db_path="uinta_lakes.db"):
         )
     ''')
     
+    # Drainages table
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS drainages (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT UNIQUE,
+            info TEXT,
+            map TEXT
+        )
+    ''')
+    
     # Add new columns for Norrick data if they don't exist
     try:
         cursor.execute('ALTER TABLE lakes ADD COLUMN size_acres REAL')
@@ -179,35 +189,6 @@ def find_matching_lake(cursor, water_name):
     
     return None, "none", "No match found"
 
-
-def load_lake_data(conn):
-    """Load lake data from lake_data.csv into database"""
-    cursor = conn.cursor()
-    
-    with open('data/lake_data.csv', 'r') as f:
-        reader = csv.DictReader(f)
-        
-        for row in reader:
-            drainage = row['drainage']
-            lake_name = row['lake_name'].strip() if row['lake_name'] else None
-            lake_designation = row['lake_designation'].strip() if row['lake_designation'] else None
-            
-            # Skip rows without designation (not in Uintas boundary per requirements)
-            if not lake_designation:
-                continue
-                
-            try:
-                cursor.execute('''
-                    INSERT INTO lakes (letter_number, name, drainage, basin)
-                    VALUES (?, ?, ?, ?)
-                ''', (lake_designation, lake_name, drainage, ''))
-            except sqlite3.IntegrityError:
-                # Handle duplicate letter_number (shouldn't happen but just in case)
-                print(f"Duplicate designation found: {lake_designation}")
-    
-    conn.commit()
-    print(f"Loaded lake data from lake_data.csv")
-
 def parse_norrick_depth(depth_str):
     """Parse depth field handling 'Unknown' and 'n/a' values"""
     if not depth_str or depth_str.lower() in ['unknown', 'n/a']:
@@ -225,80 +206,6 @@ def parse_norrick_size(size_str):
         return float(size_str)
     except (ValueError, TypeError):
         return None
-
-def load_norrick_data(conn):
-    """Load Norrick lake data from norrick_lakes.txt into database"""
-    cursor = conn.cursor()
-    updated_count = 0
-    new_count = 0
-    unmatched_count = 0
-    
-    with open('data/norrick_lakes.txt', 'r') as f:
-        lines = f.readlines()
-        
-        # Skip header line
-        for line in lines[1:]:
-            parts = line.strip().split('\t')
-            if len(parts) < 5:
-                continue
-                
-            lake_name_full = parts[0].strip()
-            size_acres = parse_norrick_size(parts[1])
-            max_depth_ft = parse_norrick_depth(parts[2])
-            fish_species = parts[3].strip()
-            fishing_pressure = parts[4].strip()
-            
-            # Extract letter-number designation from lake name
-            letter_number = extract_letter_number(lake_name_full)
-            
-            if letter_number:
-                # Check for multiple designations (skip problematic entries)
-                all_designations = re.findall(r'\b[A-Z]{1,3}\s*-\s*\d+\b', lake_name_full)
-                if len(all_designations) > 1:
-                    print(f"Skipping entry with multiple designations: {lake_name_full}")
-                    unmatched_count += 1
-                    continue
-                
-                # Try to find existing lake
-                cursor.execute('SELECT id, name FROM lakes WHERE letter_number = ?', (letter_number,))
-                result = cursor.fetchone()
-                
-                if result:
-                    # Update existing lake
-                    lake_id = result[0]
-                    cursor.execute('''
-                        UPDATE lakes 
-                        SET size_acres = ?, max_depth_ft = ?, fish_species = ?, 
-                            fishing_pressure = ?, data_source = ?
-                        WHERE id = ?
-                    ''', (size_acres, max_depth_ft, fish_species, fishing_pressure, 'Norrick', lake_id))
-                    updated_count += 1
-                else:
-                    # Create new lake entry with better name cleaning
-                    base_name = lake_name_full
-                    # Remove the letter-number designation from anywhere in the string
-                    base_name = re.sub(rf'\b{re.escape(letter_number)}\b,?\s*', '', base_name).strip()
-                    # Clean up extra spaces and commas
-                    base_name = re.sub(r'\s*,\s*$', '', base_name).strip()
-                    base_name = re.sub(r'^\s*,\s*', '', base_name).strip()
-                    
-                    if not base_name or base_name == letter_number:
-                        base_name = None  # No meaningful name
-                    
-                    cursor.execute('''
-                        INSERT INTO lakes (letter_number, name, drainage, basin, 
-                                         size_acres, max_depth_ft, fish_species, 
-                                         fishing_pressure, data_source)
-                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-                    ''', (letter_number, base_name, 'Unknown', '', size_acres, 
-                          max_depth_ft, fish_species, fishing_pressure, 'Norrick'))
-                    new_count += 1
-            else:
-                unmatched_count += 1
-                print(f"No letter-number found for: {lake_name_full}")
-    
-    conn.commit()
-    print(f"Norrick data loaded: {updated_count} updated, {new_count} new, {unmatched_count} unmatched")
 
 def dump_lake_data(conn, output_file="output/lake_dump.txt"):
     """Create a text dump of all lakes for review"""
@@ -429,152 +336,3 @@ def dump_combined_data(conn, output_file="output/combined_dump.txt"):
             f.write("\n")
     
     print(f"Combined dump written to {output_file}")
-
-def process_stocking_data(conn):
-    """Process stocking data and match with lakes"""
-    cursor = conn.cursor()
-    unmatched_records = []
-    
-    with open('data/utah_dwr_stocking_data.csv', 'r') as f:
-        reader = csv.DictReader(f)
-        
-        for row in reader:
-            water_name = row['water_name']
-            lake_id, confidence, notes = find_matching_lake(cursor, water_name)
-            
-            if lake_id:
-                # Convert date from MM/DD/YYYY to YYYY-MM-DD for comparison and storage
-                try:
-                    date_obj = datetime.strptime(row['stock_date'], '%m/%d/%Y')
-                    formatted_date = date_obj.strftime('%Y-%m-%d')
-                except:
-                    formatted_date = row['stock_date']
-                
-                # Check if record already exists
-                cursor.execute('''
-                    SELECT COUNT(*) FROM stocking_records 
-                    WHERE lake_id = ? AND species = ? AND quantity = ? AND stock_date = ? AND source_year = ?
-                ''', (
-                    lake_id,
-                    row['species'],
-                    int(row['quantity']) if row['quantity'].isdigit() else 0,
-                    formatted_date,
-                    int(row['source_year'])
-                ))
-                
-                if cursor.fetchone()[0] == 0:
-                    # Insert stocking record only if it doesn't exist
-                    cursor.execute('''
-                        INSERT INTO stocking_records (lake_id, county, species, quantity, length, stock_date, source_year)
-                        VALUES (?, ?, ?, ?, ?, ?, ?)
-                    ''', (
-                        lake_id,
-                        row['county'],
-                        row['species'],
-                        int(row['quantity']) if row['quantity'].isdigit() else 0,
-                        float(row['length']) if row['length'].replace('.', '').isdigit() else 0.0,
-                        formatted_date,
-                        int(row['source_year'])
-                    ))
-                                
-                
-            else:
-                # Check if it has letter-number format
-                letter_number = extract_letter_number(water_name)
-                if letter_number:
-                    # Create new lake record with better name cleaning
-                    base_name = water_name
-                    # Remove the letter-number designation from anywhere in the string
-                    base_name = re.sub(rf'\b{re.escape(letter_number)}\b,?\s*', '', base_name).strip()
-                    # Clean up extra spaces and commas
-                    base_name = re.sub(r'\s*,\s*$', '', base_name).strip()
-                    base_name = re.sub(r'^\s*,\s*', '', base_name).strip()
-                    
-                    if not base_name or base_name == letter_number:
-                        base_name = None  # No meaningful name
-                    
-                    cursor.execute('''
-                        INSERT INTO lakes (letter_number, name, drainage, basin)
-                        VALUES (?, ?, ?, ?)
-                    ''', (letter_number, base_name, 'Unknown', ''))
-                    
-                    new_lake_id = cursor.lastrowid
-                    
-                    # Convert date from MM/DD/YYYY to YYYY-MM-DD
-                    try:
-                        date_obj = datetime.strptime(row['stock_date'], '%m/%d/%Y')
-                        formatted_date = date_obj.strftime('%Y-%m-%d')
-                    except:
-                        formatted_date = row['stock_date']
-                    
-                    # Insert stocking record
-                    cursor.execute('''
-                        INSERT INTO stocking_records (lake_id, county, species, quantity, length, stock_date, source_year)
-                        VALUES (?, ?, ?, ?, ?, ?, ?)
-                    ''', (
-                        new_lake_id,
-                        row['county'],
-                        row['species'],
-                        int(row['quantity']) if row['quantity'].isdigit() else 0,
-                        float(row['length']) if row['length'].replace('.', '').isdigit() else 0.0,
-                        formatted_date,
-                        int(row['source_year'])
-                    ))
-                                        
-                    
-                else:
-                    # Add to unmatched list
-                    unmatched_records.append(row)                    
-    
-    conn.commit()
-    
-    # Save unmatched records
-    if unmatched_records:
-        with open('output/unmatched_stocking.csv', 'w', newline='') as f:
-            writer = csv.DictWriter(f, fieldnames=['water_name', 'county', 'species', 'quantity', 'length', 'stock_date', 'source_year'])
-            writer.writeheader()
-            writer.writerows(unmatched_records)
-    
-    print(f"Processed stocking data. {len(unmatched_records)} unmatched records saved to output/unmatched_stocking.csv")
-
-def main():
-    """Main execution function"""
-    print("Creating database...")
-    conn = create_database()    
-    
-    print("Loading lake data...")
-    load_lake_data(conn)
-    
-    print("Loading Norrick data...")
-    load_norrick_data(conn)
-    
-    print("Processing stocking data...")
-    process_stocking_data(conn)
-    
-    print("Creating enhanced lake dump...")
-    dump_lake_data(conn)
-    
-    print("Creating stocking data dump...")
-    dump_stocking_data(conn)
-    
-    print("Creating combined lake and stocking dump...")
-    dump_combined_data(conn)
-    
-    # Generate summary stats
-    cursor = conn.cursor()
-    
-    cursor.execute('SELECT COUNT(*) FROM lakes')
-    lake_count = cursor.fetchone()[0]
-    
-    cursor.execute('SELECT COUNT(*) FROM stocking_records')
-    stocking_count = cursor.fetchone()[0]
-    
-    print(f"\nDatabase processing complete!")
-    print(f"Lakes: {lake_count}")
-    print(f"Stocking records: {stocking_count}")
-    print(f"Lake dump created: lake_dump.txt")
-    
-    conn.close()
-
-if __name__ == "__main__":
-    main()

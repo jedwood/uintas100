@@ -180,6 +180,8 @@ We already have a method in the database.py called "process_stocking_data" that 
 
 I want this to be mobile-first and offline-first, and available as a simple web-app or PWA if that still allows offline access to the SQLite db. I prefer Tailwind CSS, and if we're going to need a JS framework then I prefer Svelte. Above all I want simplicity of architecture and I don't care about optimizing for web performance and such, as it will mostly only be used by me. So if we can e.g. load the whole SQLite file at the beginning and then skip using a JS framework entirely, that's great. But I do care about a great UX, and want fast performance once it's loaded.
 
+The home page should have the filters/controls listed below, and then a list of drainages that are links. When clicked, the drainage page should show pull in the info from the .md file that's in the drainages directory (let's get this info built into the app at build time rather than pulling dynamically from the .md file) and then a list of lakes for that drainage.
+
 ### filters 
 
 For this first prototype we'll keep it simple and have three functions: 
