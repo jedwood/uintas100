@@ -27,6 +27,8 @@ A comprehensive SQLite database of fishing locations in the Uinta Mountains, com
 - `drainage`: Watershed/drainage system
 - `size_acres`: Surface area in acres
 - `max_depth_ft`: Maximum depth in feet
+- `elevation_ft`: Elevation of the lake
+- `dwr_notes`: desriptions pulled from old DWR pamphlets
 - `fish_species`: Species present with reproduction notes
 - `fishing_pressure`: Fishing pressure category
 - `data_source`: Data provenance tracking
@@ -179,16 +181,56 @@ This database provides the most comprehensive fishing resource available for the
 
 # NEXT STEPS
 
-## 1- incorporate the individual .md pages in the "lake_pages" AND the lake photos in "photos" directly as data that goes into the respective record in the lakes table, within the "junesucker_notes" field, and then use that info to display below the other data on the lake detail view in the app. 
+## 1- Continue DWR PDF Lake Data Extraction Project
+
+  I was working on extracting historical lake data from scanned DWR pamphlets to enhance my Uinta Mountains
+  fishing database. Here's the current status:
+
+  What's Complete:
+
+  - ✅ Added elevation_ft and dwr_notes columns to lakes table
+  - ✅ Built extraction framework in process_dwr_pdf.py
+  - ✅ Successfully extracted & integrated many lakes from data/dwr-dry-gulch-and-uinta-trimmed.pdf and data/dwr-bear-blacks-fork-trimmed.pdf
+  - ✅ Data parsing works perfectly (extracts acres, elevation, depth from text)
+  - ✅ Review system creates output/dwr_extraction_review.txt for quality control
+  - ✅ Smart integration only updates missing database fields
+
+  Current Data File:
+
+  dwr_lake_data.py contains 15 manually extracted entries from Page 1. Example format:
+  {
+      'designation': 'DG-3',
+      'name': 'CROW',
+      'text': "Crow is an irregular shaped lake located in steep rocky terrain. It is 18 acres, 10,350 feet in 
+  elevation, with 26 feet maximum depth..."
+  }
+
+  ## Continue with other DWR pamphlets
+  1. dwr-duchesne-trimmed.pdf
+  2. dwr-provo-weber-trimmed.pdf
+  3. dwr-sheep-carter-burnt-fork-trimmed.pdf
+  4. dwr-smith-henry-beaver-trimmed.pdf
+  5. dwr-uintas-rock-creek-trimmed.pdf
+  6. dwr-yellowstone-lake-fork-swift-trimmed.pdf
+
+  Process:
+
+  - Automated PDF text extraction failed (scanned images, not searchable text)
+  - Manual extraction works perfectly - I read the PDF and type entries into dwr_lake_data.py
+  - Run python3 process_dwr_pdf.py to test extraction
+  - Run with integrate=True to add to database
+
+  Next Steps:
+
+  Please help me continue extracting lake data from these PDFs. The framework is ready - just
+  need to populate more entries in dwr_lake_data.py.
 
 ## 2- collect and create mapping info for each lake
 Evaluate Google Maps, check feasiability of including core vital info within map marker details panel. See also suggestions in Claude chat for "human in the loop" system to gather coordinates from lakes that I don't have that info for.
 
-## 3- consider scanning and processing tables from my paperback book that include elevation
+## 3- sync everything over to Apple Notes, both the one-time info and stocking updates
 
-## 4- sync everything over to Apple Notes, both the one-time info and stocking updates
-
-## 5- create a system for regularly fetching the latest stocking reports and syncing to db without duplicating/overlapping
+## 4- create a system for regularly fetching the latest stocking reports and syncing to db without duplicating/overlapping
 The URL to hit is https://dwrapps.utah.gov/fishstocking/FishAjax?y=2025&sort=watername&sortorder=ASC&sortspecific={county}&whichSpecific=county with the two counties being "Summit" and "Duchesne." That returns HTML table rows with no table or HTML wrappers, like:
 
 ```
