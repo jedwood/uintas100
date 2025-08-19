@@ -35,7 +35,10 @@
       "mcp__playwright__browser_tab_new",
       "mcp__playwright__browser_tab_list",
       "Bash(pkill:*)",
-      "mcp__playwright__browser_handle_dialog"
+      "mcp__playwright__browser_handle_dialog",
+      "Bash(grep:*)",
+      "Bash(crontab:*)",
+      "Bash(osascript:*)"
     ],
     "defaultMode": "acceptEdits",
     "additionalDirectories": [
