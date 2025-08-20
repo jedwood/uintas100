@@ -23,9 +23,9 @@
             tests.push({ name, testFn });
         }
         
-        function runTest(test) {
+        async function runTest(test) {
             try {
-                const result = test.testFn();
+                const result = await test.testFn();
                 return result === true ? 'pass' : (result === false ? 'fail' : 'pending');
             } catch (error) {
                 console.error(`Test "${test.name}" failed:`, error);
@@ -33,14 +33,33 @@
             }
         }
         
-        function displayResults() {
+        async function displayResults() {
             const container = document.getElementById('tests');
-            container.innerHTML = tests.map(test => {
-                const status = runTest(test);
-                return `<div class="test ${status}">
-                    <strong>${test.name}</strong>: ${status.toUpperCase()}
-                </div>`;
-            }).join('');
+            
+            // Show initial pending state
+            container.innerHTML = tests.map(test => `
+                <div class="test pending" id="test-${test.name.replace(/\s+/g, '-').toLowerCase()}">
+                    <strong>${test.name}</strong>: PENDING
+                </div>
+            `).join('');
+            
+            // Run tests one by one and update results
+            for (const test of tests) {
+                const testId = `test-${test.name.replace(/\s+/g, '-').toLowerCase()}`;
+                const testElement = document.getElementById(testId);
+                
+                try {
+                    const status = await runTest(test);
+                    testElement.className = `test ${status}`;
+                    testElement.innerHTML = `<strong>${test.name}</strong>: ${status.toUpperCase()}`;
+                } catch (error) {
+                    testElement.className = 'test fail';
+                    testElement.innerHTML = `<strong>${test.name}</strong>: FAIL (${error.message})`;
+                }
+                
+                // Small delay to show progression
+                await new Promise(resolve => setTimeout(resolve, 100));
+            }
         }
         
         // Define tests
@@ -61,9 +80,18 @@
             // Check if already registered
             if (navigator.serviceWorker.controller) return true;
             
-            // Wait for registration if in progress
-            const registration = await navigator.serviceWorker.getRegistration();
-            return registration !== undefined;
+            // Wait for registration to complete (up to 5 seconds)
+            for (let i = 0; i < 50; i++) {
+                const registration = await navigator.serviceWorker.getRegistration();
+                if (registration) {
+                    // Wait a bit more for activation
+                    await new Promise(resolve => setTimeout(resolve, 200));
+                    return true;
+                }
+                await new Promise(resolve => setTimeout(resolve, 100));
+            }
+            
+            return false;
         });
         
         addTest('Database Accessible', async () => {
@@ -93,22 +121,37 @@
             return hasViewport; // Just test basic one for this test page
         });
         
-        // Wait a moment then run tests
-        setTimeout(async () => {
-            // First register service worker if not already done
-            if ('serviceWorker' in navigator && !navigator.serviceWorker.controller) {
+        // Initialize tests when page loads
+        window.addEventListener('load', async () => {
+            // Show initial pending state
+            displayResults();
+            
+            // Register service worker first if needed
+            if ('serviceWorker' in navigator) {
                 try {
-                    await navigator.serviceWorker.register('./service-worker.js');
-                    console.log('Service worker registered for test');
+                    const registration = await navigator.serviceWorker.register('./service-worker.js');
+                    console.log('Service worker registered for test:', registration.scope);
+                    
+                    // Wait for service worker to activate
+                    if (registration.installing) {
+                        await new Promise(resolve => {
+                            registration.installing.addEventListener('statechange', function() {
+                                if (this.state === 'activated') {
+                                    resolve();
+                                }
+                            });
+                        });
+                    }
                 } catch (e) {
                     console.error('Service worker registration failed:', e);
                 }
             }
             
-            displayResults();
-        }, 1000);
-        
-        displayResults(); // Show initial state
+            // Wait a moment for everything to settle, then run tests
+            setTimeout(() => {
+                displayResults();
+            }, 500);
+        });
     </script>
 </body>
 </html>
