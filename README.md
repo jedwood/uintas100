@@ -2,6 +2,49 @@
 
 A comprehensive SQLite database of fishing locations in the Uinta Mountains, combining official stocking data with detailed physical lake characteristics.
 
+## Live Web App
+
+**🌐 Live Site**: https://jedwood.github.io/uintas100  
+**📁 Repository**: https://github.com/jedwood/uintas100
+
+The web app (`index.html`) provides a complete interface for searching and filtering lakes with real-time database queries using SQL.js. Features include lake search, drainage browsing, detailed lake modals with stocking history, and responsive design.
+
+### PWA (Progressive Web App) Features
+**✨ Offline Access**: The app works completely offline when added to iPhone home screen
+- Service Worker caches all data for indefinite offline access
+- SQLite database (672 lakes) cached locally  
+- All drainage images and app resources cached
+- No 7-day Safari eviction when installed to home screen
+
+**📱 iPhone Installation**: 
+1. Visit the site in Safari on your iPhone
+2. Tap the Share button (⎋)  
+3. Select "Add to Home Screen"
+4. The app will work offline indefinitely
+
+### 🔄 **IMPORTANT: Updating PWA After Code Changes**
+
+**When you update the database or HTML files, you MUST update the PWA cache version to push updates to installed apps:**
+
+1. **Before committing any changes**, update the cache version in `service-worker.js`:
+   ```javascript
+   const CACHE_NAME = 'uintas-v1'; // Change to 'uintas-v2', 'uintas-v3', etc.
+   ```
+
+2. **Automated approach** - Run this before committing:
+   ```bash
+   # Update cache version automatically
+   sed -i '' "s/uintas-v[0-9]*/uintas-v$(date +%s)/g" service-worker.js
+   ```
+
+3. **After pushing changes**, the PWA will automatically:
+   - Detect the cache version change
+   - Download new files in background
+   - Show "New version available! Refresh to update?" popup
+   - Update with new content after user confirms
+
+**Manual refresh for iPhone PWA**: If auto-update doesn't work, go to Settings → Safari → Clear History and Website Data, then reopen the PWA.
+
 ## Database Overview
 
 **File**: `uinta_lakes.db` (SQLite)  
