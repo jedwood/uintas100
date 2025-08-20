@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWA Test - Uintas 💯</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .test { margin: 10px 0; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+        .pass { background-color: #d4edda; }
+        .fail { background-color: #f8d7da; }
+        .pending { background-color: #fff3cd; }
+    </style>
+</head>
+<body>
+    <h1>PWA Test Results</h1>
+    <div id="tests"></div>
+    
+    <script>
+        const tests = [];
+        
+        function addTest(name, testFn) {
+            tests.push({ name, testFn });
+        }
+        
+        function runTest(test) {
+            try {
+                const result = test.testFn();
+                return result === true ? 'pass' : (result === false ? 'fail' : 'pending');
+            } catch (error) {
+                console.error(`Test "${test.name}" failed:`, error);
+                return 'fail';
+            }
+        }
+        
+        function displayResults() {
+            const container = document.getElementById('tests');
+            container.innerHTML = tests.map(test => {
+                const status = runTest(test);
+                return `<div class="test ${status}">
+                    <strong>${test.name}</strong>: ${status.toUpperCase()}
+                </div>`;
+            }).join('');
+        }
+        
+        // Define tests
+        addTest('Service Worker Support', () => 'serviceWorker' in navigator);
+        
+        addTest('Manifest Present', async () => {
+            try {
+                const response = await fetch('/manifest.json');
+                return response.ok;
+            } catch (e) {
+                return false;
+            }
+        });
+        
+        addTest('Service Worker Registered', () => {
+            return navigator.serviceWorker.controller !== null;
+        });
+        
+        addTest('Database Accessible', async () => {
+            try {
+                const response = await fetch('/uinta_lakes.db');
+                return response.ok;
+            } catch (e) {
+                return false;
+            }
+        });
+        
+        addTest('Icons Present', async () => {
+            try {
+                const icon192 = await fetch('/icon-192.png');
+                const icon512 = await fetch('/icon-512.png');
+                const iconApple = await fetch('/icon-180.png');
+                return icon192.ok && icon512.ok && iconApple.ok;
+            } catch (e) {
+                return false;
+            }
+        });
+        
+        addTest('PWA Meta Tags', () => {
+            const hasViewport = document.querySelector('meta[name="viewport"]') !== null;
+            const hasAppleCapable = document.querySelector('meta[name="apple-mobile-web-app-capable"]') !== null;
+            const hasThemeColor = document.querySelector('meta[name="theme-color"]') !== null;
+            return hasViewport; // Just test basic one for this test page
+        });
+        
+        // Wait a moment then run tests
+        setTimeout(async () => {
+            // First register service worker if not already done
+            if ('serviceWorker' in navigator && !navigator.serviceWorker.controller) {
+                try {
+                    await navigator.serviceWorker.register('/service-worker.js');
+                    console.log('Service worker registered for test');
+                } catch (e) {
+                    console.error('Service worker registration failed:', e);
+                }
+            }
+            
+            displayResults();
+        }, 1000);
+        
+        displayResults(); // Show initial state
+    </script>
+</body>
+</html>

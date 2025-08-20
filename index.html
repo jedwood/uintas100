@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uintas 💯</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Offline guide to 672 lakes in Utah's Uinta Mountains with fishing data and stocking records">
+    <meta name="theme-color" content="#334155">
+    
+    <!-- iOS PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Uintas 💯">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
     <style>
@@ -152,17 +169,42 @@
         // Initialize the app
         async function initApp() {
             try {
-                // Load sql.js
-                const SQL = await initSqlJs({
-                    locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/${file}`
-                });
+                // Load sql.js with fallback for offline
+                let SQL;
+                try {
+                    SQL = await initSqlJs({
+                        locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/${file}`
+                    });
+                } catch (cdnError) {
+                    console.warn('CDN failed, trying to load from cache:', cdnError);
+                    // Service worker should have cached these files
+                    throw cdnError;
+                }
 
-                // Load database file
-                const response = await fetch('uinta_lakes.db');
-                const buffer = await response.arrayBuffer();
-                const uint8Array = new Uint8Array(buffer);
+                // Load database file with better error handling
+                let buffer;
+                try {
+                    const response = await fetch('uinta_lakes.db');
+                    if (!response.ok) {
+                        throw new Error(`Database fetch failed: ${response.status}`);
+                    }
+                    buffer = await response.arrayBuffer();
+                } catch (fetchError) {
+                    console.error('Failed to load database:', fetchError);
+                    throw new Error('Database file not accessible. Make sure you are connected to the internet for the first load.');
+                }
                 
+                const uint8Array = new Uint8Array(buffer);
                 db = new SQL.Database(uint8Array);
+
+                // Verify database loaded correctly
+                try {
+                    const testQuery = db.exec('SELECT COUNT(*) as count FROM lakes');
+                    const lakeCount = testQuery[0].values[0][0];
+                    console.log(`Database loaded successfully: ${lakeCount} lakes`);
+                } catch (dbError) {
+                    throw new Error('Database appears corrupted or invalid');
+                }
 
                 // Load all data into memory for fast filtering
                 await loadData();
@@ -176,7 +218,14 @@
                 
             } catch (error) {
                 console.error('Failed to initialize app:', error);
-                alert('Failed to load database. Please check that uinta_lakes.db is accessible.');
+                
+                // Show user-friendly error message
+                const errorMsg = error.message.includes('Database file not accessible') 
+                    ? error.message 
+                    : 'Failed to load the lake database. Please refresh the page or check your connection.';
+                
+                document.querySelector('.not-loaded p').textContent = errorMsg;
+                document.querySelector('.animate-spin').style.display = 'none';
             }
         }
 
@@ -621,8 +670,72 @@
         // Note: Fishing reports and lake editing features commented out
         // They require server-side persistence which isn't available in this static web app
 
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('Service Worker registered successfully:', registration.scope);
+                        
+                        // Handle updates
+                        registration.addEventListener('updatefound', () => {
+                            const newWorker = registration.installing;
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    // New update available
+                                    if (confirm('New version available! Refresh to update?')) {
+                                        newWorker.postMessage({ type: 'SKIP_WAITING' });
+                                        window.location.reload();
+                                    }
+                                }
+                            });
+                        });
+                    })
+                    .catch(error => {
+                        console.log('Service Worker registration failed:', error);
+                    });
+            });
+        }
+
+        // Show install prompt for PWA (iOS doesn't support this, but good for other platforms)
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            
+            // Show install button or banner
+            console.log('PWA install prompt available');
+        });
+
+        // Detect if app is running as PWA
+        function isPWA() {
+            return window.navigator.standalone === true || window.matchMedia('(display-mode: standalone)').matches;
+        }
+
+        // Show iOS install instructions
+        function showIOSInstallInstructions() {
+            if (!isPWA() && /iPad|iPhone|iPod/.test(navigator.userAgent)) {
+                const banner = document.createElement('div');
+                banner.id = 'ios-install-banner';
+                banner.className = 'fixed top-0 left-0 right-0 bg-blue-600 text-white p-3 text-center text-sm z-50';
+                banner.innerHTML = `
+                    <div>📱 Add to Home Screen for offline access: Tap <strong>Share</strong> → <strong>Add to Home Screen</strong></div>
+                    <button onclick="document.getElementById('ios-install-banner').remove()" class="absolute right-2 top-2 text-xl">&times;</button>
+                `;
+                document.body.appendChild(banner);
+                
+                // Auto-hide after 10 seconds
+                setTimeout(() => {
+                    banner?.remove();
+                }, 10000);
+            }
+        }
+
         // Initialize when page loads
-        window.addEventListener('load', initApp);
+        window.addEventListener('load', () => {
+            initApp();
+            setTimeout(showIOSInstallInstructions, 2000); // Show after app loads
+        });
     </script>
 </body>
 </html>
