@@ -48,20 +48,27 @@
         
         addTest('Manifest Present', async () => {
             try {
-                const response = await fetch('/manifest.json');
+                const response = await fetch('./manifest.json');
                 return response.ok;
             } catch (e) {
                 return false;
             }
         });
         
-        addTest('Service Worker Registered', () => {
-            return navigator.serviceWorker.controller !== null;
+        addTest('Service Worker Registered', async () => {
+            if (!('serviceWorker' in navigator)) return false;
+            
+            // Check if already registered
+            if (navigator.serviceWorker.controller) return true;
+            
+            // Wait for registration if in progress
+            const registration = await navigator.serviceWorker.getRegistration();
+            return registration !== undefined;
         });
         
         addTest('Database Accessible', async () => {
             try {
-                const response = await fetch('/uinta_lakes.db');
+                const response = await fetch('./uinta_lakes.db');
                 return response.ok;
             } catch (e) {
                 return false;
@@ -70,9 +77,9 @@
         
         addTest('Icons Present', async () => {
             try {
-                const icon192 = await fetch('/icon-192.png');
-                const icon512 = await fetch('/icon-512.png');
-                const iconApple = await fetch('/icon-180.png');
+                const icon192 = await fetch('./icon-192.png');
+                const icon512 = await fetch('./icon-512.png');
+                const iconApple = await fetch('./icon-180.png');
                 return icon192.ok && icon512.ok && iconApple.ok;
             } catch (e) {
                 return false;
@@ -91,7 +98,7 @@
             // First register service worker if not already done
             if ('serviceWorker' in navigator && !navigator.serviceWorker.controller) {
                 try {
-                    await navigator.serviceWorker.register('/service-worker.js');
+                    await navigator.serviceWorker.register('./service-worker.js');
                     console.log('Service worker registered for test');
                 } catch (e) {
                     console.error('Service worker registration failed:', e);

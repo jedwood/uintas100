@@ -1,12 +1,12 @@
-const CACHE_NAME = 'uintas-v1';
+const CACHE_NAME = 'uintas-v1755733959';
 const MAX_CACHE_SIZE = 45 * 1024 * 1024; // Stay under iOS 50MB limit
 
 // Resources to cache immediately
 const urlsToCache = [
-    '/',
-    '/index.html',
-    '/uinta_lakes.db',
-    '/manifest.json',
+    './',
+    './index.html',
+    './uinta_lakes.db',
+    './manifest.json',
     // External resources
     'https://cdn.tailwindcss.com',
     'https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js',
@@ -62,7 +62,7 @@ async function handleFetch(request) {
                 return networkResponse;
             } catch (error) {
                 console.log('Service Worker: Network failed for navigation, trying cache');
-                const cachedResponse = await caches.match('/index.html');
+                const cachedResponse = await caches.match('./index.html') || await caches.match('/index.html');
                 return cachedResponse || new Response('Offline - Please check your connection', {
                     status: 503,
                     statusText: 'Service Unavailable'
