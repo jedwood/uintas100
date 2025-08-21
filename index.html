@@ -54,7 +54,8 @@
                     <div class="mb-4">
                         <label class="block text-sm font-medium text-gray-700 mb-2">Lake Name or Designation</label>
                         <input type="text" id="lake-search" placeholder="Start typing lake name or designation (e.g., Bear, G-7)" 
-                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500">
+                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500"
+                               autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
                         <div id="search-results" class="mt-2 bg-white border border-gray-200 rounded-md hidden max-h-60 overflow-y-auto"></div>
                     </div>
 
@@ -233,7 +234,7 @@
             // Load lakes
             const lakesResult = db.exec(`
                 SELECT id, letter_number, name, drainage, size_acres, max_depth_ft, 
-                       fish_species, fishing_pressure, jed_notes, status, junesucker_notes
+                       elevation_ft, fish_species, fishing_pressure, jed_notes, status, junesucker_notes
                 FROM lakes
             `);
             
@@ -245,11 +246,12 @@
                     drainage: row[3],
                     size_acres: row[4],
                     max_depth_ft: row[5],
-                    fish_species: row[6],
-                    fishing_pressure: row[7],
-                    jed_notes: row[8],
-                    status: row[9],
-                    junesucker_notes: row[10]
+                    elevation_ft: row[6],
+                    fish_species: row[7],
+                    fishing_pressure: row[8],
+                    jed_notes: row[9],
+                    status: row[10],
+                    junesucker_notes: row[11]
                 }));
                 
                 // Sort lakes using letter_number as name fallback for proper alphabetical ordering
@@ -492,6 +494,7 @@
                         <div class="text-sm text-gray-600 mt-1">
                             ${lake.size_acres ? `${lake.size_acres} acres` : ''} 
                             ${lake.max_depth_ft ? `• ${lake.max_depth_ft} ft deep` : ''}
+                            ${lake.elevation_ft ? `• ${lake.elevation_ft.toLocaleString()} ft elev` : ''}
                             ${lake.fishing_pressure ? `• ${lake.fishing_pressure} pressure` : ''}
                             • (${lake.stockingYears})
                         </div>
@@ -539,6 +542,7 @@
                         <div class="text-sm text-gray-600 mt-1">
                             ${lake.size_acres ? `${lake.size_acres} acres` : ''} 
                             ${lake.max_depth_ft ? `• ${lake.max_depth_ft} ft deep` : ''}
+                            ${lake.elevation_ft ? `• ${lake.elevation_ft.toLocaleString()} ft elev` : ''}
                             ${lake.fishing_pressure ? `• ${lake.fishing_pressure} pressure` : ''}
                         </div>
                     </div>
@@ -562,6 +566,7 @@
                         <div class="text-sm text-gray-600 mt-1">
                             ${lake.size_acres ? `${lake.size_acres} acres` : ''} 
                             ${lake.max_depth_ft ? `• ${lake.max_depth_ft} ft deep` : ''}
+                            ${lake.elevation_ft ? `• ${lake.elevation_ft.toLocaleString()} ft elev` : ''}
                             ${lake.fishing_pressure ? `• ${lake.fishing_pressure} pressure` : ''}
                         </div>
                     </div>
@@ -593,6 +598,7 @@
                         <div><span class="font-medium">Drainage:</span> ${lake.drainage}</div>
                         <div><span class="font-medium">Size:</span> ${lake.size_acres ? `${lake.size_acres} acres` : 'Unknown'}</div>
                         <div><span class="font-medium">Max Depth:</span> ${lake.max_depth_ft ? `${lake.max_depth_ft} ft` : 'Unknown'}</div>
+                        <div><span class="font-medium">Elevation:</span> ${lake.elevation_ft ? `${lake.elevation_ft.toLocaleString()} ft` : 'Unknown'}</div>
                         <div><span class="font-medium">Fishing Pressure:</span> ${lake.fishing_pressure || 'Unknown'}</div>
                         <div class="col-span-2"><span class="font-medium">Fish Species:</span> ${lake.fish_species || 'Unknown'}</div>
                         ${lake.status ? `<div class="col-span-2"><span class="font-medium">Status:</span> ${getStatusButton(lake.status, true)}</div>` : ''}
