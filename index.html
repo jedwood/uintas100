@@ -234,7 +234,7 @@
             // Load lakes
             const lakesResult = db.exec(`
                 SELECT id, letter_number, name, drainage, size_acres, max_depth_ft, 
-                       elevation_ft, fish_species, fishing_pressure, jed_notes, status, junesucker_notes
+                       elevation_ft, fish_species, fishing_pressure, jed_notes, status, junesucker_notes, dwr_notes
                 FROM lakes
             `);
             
@@ -251,7 +251,8 @@
                     fishing_pressure: row[8],
                     jed_notes: row[9],
                     status: row[10],
-                    junesucker_notes: row[11]
+                    junesucker_notes: row[11],
+                    dwr_notes: row[12]
                 }));
                 
                 // Sort lakes using letter_number as name fallback for proper alphabetical ordering
@@ -647,6 +648,14 @@
                             </div>
                         ` : ''}
                         <div class="text-gray-700 leading-relaxed">${lake.junesucker_notes.replace(/^## (.+)$/gm, '<h6 class="font-semibold text-base mt-4 mb-1">$1</h6>').replace(/\n/g, '<br>')}</div>
+                    </div>
+                ` : ''}
+
+                <!-- DWR Notes -->
+                ${lake.dwr_notes ? `
+                    <div class="rounded-lg p-4 border border-slate-200">
+                        <h3 class="text-lg font-semibold mb-3">Historical DWR Notes</h3>
+                        <div class="text-gray-700 leading-relaxed">${lake.dwr_notes.replace(/\n/g, '<br>')}</div>
                     </div>
                 ` : ''}
 

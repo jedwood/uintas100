@@ -92,10 +92,6 @@ def create_database(db_path="../uinta_lakes.db"):
     except sqlite3.OperationalError:
         pass
     
-    try:
-        cursor.execute('ALTER TABLE lakes ADD COLUMN data_source TEXT')
-    except sqlite3.OperationalError:
-        pass
     
     try:
         cursor.execute('ALTER TABLE lakes ADD COLUMN jed_notes TEXT')
@@ -273,8 +269,8 @@ def dump_lake_data(conn, output_file="../output/lake_dump.txt"):
     cursor = conn.cursor()
     
     cursor.execute('''
-        SELECT letter_number, name, drainage, size_acres, max_depth_ft, 
-               fish_species, fishing_pressure, data_source, jed_notes, status
+        SELECT letter_number, name, drainage, size_acres, max_depth_ft, elevation_ft,
+               fish_species, fishing_pressure, jed_notes, status, dwr_notes
         FROM lakes 
         ORDER BY drainage, letter_number
     ''')
@@ -288,7 +284,7 @@ def dump_lake_data(conn, output_file="../output/lake_dump.txt"):
         
         current_drainage = None
         for lake_data in lakes:
-            letter_number, name, drainage, size_acres, max_depth_ft, fish_species, fishing_pressure, data_source, jed_notes, status = lake_data
+            letter_number, name, drainage, size_acres, max_depth_ft, elevation_ft, fish_species, fishing_pressure, jed_notes, status, dwr_notes = lake_data
             
             if drainage != current_drainage:
                 current_drainage = drainage
@@ -297,12 +293,16 @@ def dump_lake_data(conn, output_file="../output/lake_dump.txt"):
             name_display = name if name else "(No name)"
             size_display = f"{size_acres:.1f}ac" if size_acres else "?ac"
             depth_display = f"{max_depth_ft}ft" if max_depth_ft else "?ft"
+            elevation_display = f"{elevation_ft}ft elev" if elevation_ft else "?ft elev"
             pressure_display = fishing_pressure if fishing_pressure else "?"
-            source_display = f"[{data_source}]" if data_source else ""
             status_display = f"[{status}]" if status else ""
             jed_notes_display = f" - {jed_notes}" if jed_notes else ""
             
-            f.write(f"{letter_number:8} | {name_display:25} | {size_display:8} | {depth_display:6} | {pressure_display:8} | {source_display}{status_display}{jed_notes_display}\n")
+            f.write(f"{letter_number:8} | {name_display:25} | {size_display:8} | {depth_display:6} | {elevation_display:10} | {pressure_display:8} | {status_display}{jed_notes_display}\n")
+            
+            # Add DWR notes on a separate line if they exist
+            if dwr_notes:
+                f.write(f"         DWR: {dwr_notes}\n")
     
     print(f"Lake dump written to {output_file}")
 
@@ -346,8 +346,8 @@ def dump_combined_data(conn, output_file="../output/combined_dump.txt"):
     cursor = conn.cursor()
     
     cursor.execute('''
-        SELECT l.letter_number, l.name, l.drainage, l.size_acres, l.max_depth_ft, 
-               l.fish_species, l.fishing_pressure, l.data_source, l.jed_notes, l.status
+        SELECT l.letter_number, l.name, l.drainage, l.size_acres, l.max_depth_ft, l.elevation_ft,
+               l.fish_species, l.fishing_pressure, l.jed_notes, l.status, l.dwr_notes
         FROM lakes l
         ORDER BY l.drainage, l.name, l.letter_number
     ''')
@@ -361,7 +361,7 @@ def dump_combined_data(conn, output_file="../output/combined_dump.txt"):
         
         current_drainage = None
         for lake_data in lakes:
-            letter_number, name, drainage, size_acres, max_depth_ft, fish_species, fishing_pressure, data_source, jed_notes, status = lake_data
+            letter_number, name, drainage, size_acres, max_depth_ft, elevation_ft, fish_species, fishing_pressure, jed_notes, status, dwr_notes = lake_data
             
             if drainage != current_drainage:
                 current_drainage = drainage
@@ -370,12 +370,16 @@ def dump_combined_data(conn, output_file="../output/combined_dump.txt"):
             name_display = name if name else "(No name)"
             size_display = f"{size_acres:.1f}ac" if size_acres else "?ac"
             depth_display = f"{max_depth_ft}ft" if max_depth_ft else "?ft"
+            elevation_display = f"{elevation_ft}ft elev" if elevation_ft else "?ft elev"
             pressure_display = fishing_pressure if fishing_pressure else "?"
-            source_display = f"[{data_source}]" if data_source else ""
             status_display = f"[{status}]" if status else ""
             jed_notes_display = f" - {jed_notes}" if jed_notes else ""
             
-            f.write(f"{letter_number:8} | {name_display:25} | {size_display:8} | {depth_display:6} | {pressure_display:8} | {source_display}{status_display}{jed_notes_display}\n")
+            f.write(f"{letter_number:8} | {name_display:25} | {size_display:8} | {depth_display:6} | {elevation_display:10} | {pressure_display:8} | {status_display}{jed_notes_display}\n")
+            
+            # Add DWR notes on a separate line if they exist
+            if dwr_notes:
+                f.write(f"         DWR: {dwr_notes}\n")
             
             # Get stocking records for this lake
             cursor.execute('''

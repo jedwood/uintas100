@@ -74,7 +74,6 @@ The web app (`index.html`) provides a complete interface for searching and filte
 - `dwr_notes`: desriptions pulled from old DWR pamphlets
 - `fish_species`: Species present with reproduction notes
 - `fishing_pressure`: Fishing pressure category
-- `data_source`: Data provenance tracking
 
 ### `stocking_records` table
 - Links to lakes via `lake_id`

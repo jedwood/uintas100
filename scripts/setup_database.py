@@ -82,9 +82,9 @@ def load_norrick_data(conn):
                     cursor.execute('''
                         UPDATE lakes 
                         SET size_acres = ?, max_depth_ft = ?, fish_species = ?, 
-                            fishing_pressure = ?, data_source = ?
+                            fishing_pressure = ?
                         WHERE id = ?
-                    ''', (size_acres, max_depth_ft, fish_species, fishing_pressure, 'Norrick', lake_id))
+                    ''', (size_acres, max_depth_ft, fish_species, fishing_pressure, lake_id))
                     updated_count += 1
                 else:
                     # Create new lake entry with better name cleaning
@@ -101,10 +101,10 @@ def load_norrick_data(conn):
                     cursor.execute('''
                         INSERT INTO lakes (letter_number, name, drainage, basin, 
                                          size_acres, max_depth_ft, fish_species, 
-                                         fishing_pressure, data_source)
-                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                                         fishing_pressure)
+                        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
                     ''', (letter_number, base_name, 'Unknown', '', size_acres, 
-                          max_depth_ft, fish_species, fishing_pressure, 'Norrick'))
+                          max_depth_ft, fish_species, fishing_pressure))
                     new_count += 1
             else:
                 unmatched_count += 1
