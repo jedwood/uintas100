@@ -17,7 +17,8 @@ def insert_stocking_record(cursor, lake_id, species, quantity, length, stock_dat
 
 def fetch_stocking_data(county):
     """Fetch stocking data for a given county."""
-    url = f"https://dwrapps.utah.gov/fishstocking/FishAjax?y=2025&sort=watername&sortorder=ASC&sortspecific={county}&whichSpecific=county"
+    current_year = datetime.now().year
+    url = f"https://dwrapps.utah.gov/fishstocking/FishAjax?y={current_year}&sort=watername&sortorder=ASC&sortspecific={county}&whichSpecific=county"
     try:
         response = requests.get(url)
         response.raise_for_status()
