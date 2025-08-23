@@ -1,0 +1,68 @@
+
+=== STOCKING UPDATE RUN: 2025-08-23 11:36:27 ===
+
+Processing Summit county...
+  NEW: BEAVER CR (32) - Rainbows x52 on 2025-08-05
+  NEW: BEAVER CR (32) - Rainbows x494 on 2025-08-21
+  NEW: BRIDGER L G-20 (173) - Rainbows x500 on 2025-08-13
+  NEW: LILLY L A-58 (281) - Rainbows x150 on 2025-08-04
+  NEW: LILLY L A-58 (281) - Tigers x330 on 2025-08-14
+  NEW: LOST L A-59 (287) - Tigers x10 on 2025-08-14
+  NEW: LOST L A-59 (287) - Tigers x590 on 2025-08-14
+  NEW: TEAPOT L A-60 (309) - Rainbows x224 on 2025-08-04
+  NEW: TEAPOT L A-60 (309) - Tigers x250 on 2025-08-06
+  NEW: TEAPOT L A-60 (309) - Rainbows x448 on 2025-08-18
+  NEW: TRIAL L A-61 (310) - Tigers x500 on 2025-08-06
+  NEW: TRIAL L A-61 (310) - Rainbows x1053 on 2025-08-11
+  NEW: TRIAL L A-61 (310) - Rainbows x546 on 2025-08-11
+  → 13 new records added for SUMMIT county
+  → 11 unmatched lakes in SUMMIT
+    - BEAR R
+    - DEER VALLEY LAKES
+    - ECHO RES
+    - HAYDEN FK
+    - PROVO R
+    - ROCKPORT RES
+    - SMITH-MOREHOUSE RES
+    - STATELINE RES
+    - STILLWATER FK
+    - WEBER R
+    - WHITNEY RES
+
+Processing Duchesne county...
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x150 on 2025-08-04
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x312 on 2025-08-11
+  NEW: BUTTERFLY L Z-1 (123) - Tigers x250 on 2025-08-14
+  NEW: MIRROR L Z-3 (151) - Rainbows x535 on 2025-08-05
+  NEW: MIRROR L Z-3 (151) - Rainbows x391 on 2025-08-05
+  NEW: MIRROR L Z-3 (151) - Rainbows x949 on 2025-08-18
+  NEW: MIRROR L Z-3 (151) - Tigers x627 on 2025-08-20
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x126 on 2025-08-05
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x253 on 2025-08-18
+  NEW: MOOSEHORN L Z-4 (152) - Tigers x361 on 2025-08-20
+  NEW: PASS L Z-5 (158) - Rainbows x126 on 2025-08-04
+  NEW: PASS L Z-5 (158) - Rainbows x144 on 2025-08-05
+  NEW: PASS L Z-5 (158) - Tigers x250 on 2025-08-06
+  → 13 new records added for DUCHESNE county
+  → 15 unmatched lakes in DUCHESNE
+    - BIG SANDWASH RES
+    - BROWNS DRAW RES
+    - DUCHESNE R
+    - DUCHESNE R, N FK
+    - LAKE CANYON L
+    - LAKE FK R
+    - MOON L
+    - RED CR RES
+    - ROCK CR
+    - STARVATION RES
+    - STRAWBERRY R
+    - UINTA POND
+    - UINTA R
+    - UPPER STILLWATER RES
+    - YELLOWSTONE R
+
+=== SUMMARY ===
+Total new records: 26
+Total unmatched lakes: 26
+CSV file updated: /Volumes/OLAF EXT/jedwoodx/repos/uintas/data/utah_dwr_stocking_data.csv
+Run completed at: 2025-08-23 11:36:27
