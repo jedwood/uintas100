@@ -312,3 +312,18 @@ Add trip reports here...
 2. **Automated scheduling** - Set up cron job to run `sync_flagged_notes_jxa.js`
 3. **Hashtag processing** - Parse `#update` tags from edited Apple Notes
 4. **Two-way sync workflow** - Complete bidirectional sync system
+5. **Create "About" page** - add a little "About" link at the bottom of the web app that displays a page with the following:
+- paragraph that says "I'm on a mission to catch a fish out of at least 100 different Uintas waters. I grew up in Provo fishing and camping all over, but somehow never in the Uintas. At the ripe age of 42 I spent a week on the Highline trail and realized what I've been missing."
+- A section with the title "Sources of Information & Inspiration" that then has subsections with links:
+  - Websites
+    - [Junesucker.com](https://junesucker.com/uintas)
+    - [DWR Stocking Reports](https://dwrapps.utah.gov/fishstocking/Fish)
+  - YouTube Channels
+    - [TroutHowler](https://www.youtube.com/@TroutHowler)
+    - [Utah Water Log](https://www.youtube.com/@UtahWaterLog)
+  - Books
+    - [Hiking Utah's High Uintas](https://www.amazon.com/Hiking-Utahs-Uintas-Andrew-Gillman/dp/1493075691)
+    - [High Uintas Adventures](https://www.amazon.com/High-Uintas-Adventures-Backcountry-Planner/dp/B08FPGJ214)
+  - Old DWR Pamphlets
+    {provide links to each of the files in `data/dwr_original_pamphlets` and name them by extrapolation from their file names. Note that they contain multiple drainages per file}
+

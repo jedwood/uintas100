@@ -8,7 +8,7 @@ The Uinta River Drainage has over 90 lakes and ponds. Over half of these lakes s
 
 The heaviest fishing pressure is at Kidney lakes, Chain lakes, Fox-Cresent lakes and Atwood lakes. If you're looking for peace and quite, you'll want to avoid these lakes during the mid-summer months.
 
-![Uinta River Drainage Map](unita-river-drainage.jpg)
+![Uinta River Drainage Map](uinta-river-drainage.jpg)
 
 ## Lakes
 
