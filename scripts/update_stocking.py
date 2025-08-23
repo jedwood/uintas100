@@ -11,6 +11,7 @@ import csv
 import re
 from datetime import datetime
 from database_utils import create_database, find_matching_lake, extract_letter_number, dump_stocking_data, dump_combined_data
+from species_utils import standardize_stocking_species
 
 def process_stocking_data(conn):
     """Process stocking data and match with lakes"""
@@ -34,13 +35,16 @@ def process_stocking_data(conn):
                 except:
                     formatted_date = row['stock_date']
                 
+                # Normalize species name
+                normalized_species = standardize_stocking_species(row['species'])
+                
                 # Check if record already exists (DUPLICATE PREVENTION)
                 cursor.execute('''
                     SELECT COUNT(*) FROM stocking_records 
                     WHERE lake_id = ? AND species = ? AND quantity = ? AND stock_date = ? AND source_year = ?
                 ''', (
                     lake_id,
-                    row['species'],
+                    normalized_species,
                     int(row['quantity']) if row['quantity'].isdigit() else 0,
                     formatted_date,
                     int(row['source_year'])
@@ -54,7 +58,7 @@ def process_stocking_data(conn):
                     ''', (
                         lake_id,
                         row['county'],
-                        row['species'],
+                        normalized_species,
                         int(row['quantity']) if row['quantity'].isdigit() else 0,
                         float(row['length']) if row['length'].replace('.', '').isdigit() else 0.0,
                         formatted_date,
@@ -93,6 +97,9 @@ def process_stocking_data(conn):
                     except:
                         formatted_date = row['stock_date']
                     
+                    # Normalize species name for new lake too
+                    normalized_species = standardize_stocking_species(row['species'])
+                    
                     # Insert stocking record
                     cursor.execute('''
                         INSERT INTO stocking_records (lake_id, county, species, quantity, length, stock_date, source_year)
@@ -100,7 +107,7 @@ def process_stocking_data(conn):
                     ''', (
                         new_lake_id,
                         row['county'],
-                        row['species'],
+                        normalized_species,
                         int(row['quantity']) if row['quantity'].isdigit() else 0,
                         float(row['length']) if row['length'].replace('.', '').isdigit() else 0.0,
                         formatted_date,

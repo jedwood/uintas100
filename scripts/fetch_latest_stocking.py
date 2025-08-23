@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import sqlite3
 from database_utils import create_database, extract_letter_number, stocking_record_exists, find_matching_lake
+from species_utils import standardize_stocking_species
 from datetime import datetime
 
 def insert_stocking_record(cursor, lake_id, species, quantity, length, stock_date, source_year, county):
@@ -38,7 +39,8 @@ def parse_and_insert_data(html_content, conn, cursor):
         if len(cols) == 6:
             water_name = cols[0].text.strip()
             county = cols[1].text.strip()
-            species = cols[2].text.strip()
+            raw_species = cols[2].text.strip()
+            species = standardize_stocking_species(raw_species)
             quantity = int(cols[3].text.strip())
             length = float(cols[4].text.strip())
             stock_date_str = cols[5].text.strip()

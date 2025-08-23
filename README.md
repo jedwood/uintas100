@@ -7,7 +7,7 @@ A comprehensive SQLite database of fishing locations in the Uinta Mountains, com
 **🌐 Live Site**: https://jedwood.github.io/uintas100  
 **📁 Repository**: https://github.com/jedwood/uintas100
 
-The web app (`index.html`) provides a complete interface for searching and filtering lakes with real-time database queries using SQL.js. Features include lake search, drainage browsing, detailed lake modals with stocking history, and responsive design.
+The web app (`index.html`) provides a complete interface for searching and filtering lakes with real-time database queries using SQL.js. Features include lake search, drainage browsing, detailed lake modals with stocking history, standardized fish species filtering, and responsive design.
 
 ### PWA (Progressive Web App) Features
 **✨ Offline Access**: The app works completely offline when added to iPhone home screen
@@ -48,19 +48,36 @@ The web app (`index.html`) provides a complete interface for searching and filte
 ## Database Overview
 
 **File**: `uinta_lakes.db` (SQLite)  
-**Total Lakes**: 669  
+**Total Lakes**: 672  
 **Total Drainages**: 17  
 **Stocking Records**: 2,290  
-**Data Sources**: Utah DWR stocking reports + Norrick physical data + Drainage system data
+**Data Sources**: Utah DWR stocking reports + Norrick physical data + Historical DWR lake pamphlets + Drainage system data
 
 ## Key Features
 
 - **Letter-number lake designations** (e.g., BR-25, X-64, G-15) for precise identification
-- **Physical characteristics**: Lake size (acres), maximum depth (feet)
-- **Fish species data**: Detailed species with stocking/natural reproduction status
+- **Physical characteristics**: Lake size (acres), maximum depth (feet), elevation
+- **Fish species data**: Standardized species names (Brookies, Cutthroats, Tigers, etc.) with comprehensive merging of historical and stocking data
 - **Fishing pressure ratings**: Low/Moderate/High/Very Low for trip planning
 - **Stocking history**: Multi-year stocking records with species, quantities, dates
 - **Drainage systems**: Comprehensive information on all 17 major drainage areas with access details and maps
+- **Historical DWR notes**: Detailed lake descriptions from original DWR survey pamphlets
+
+## Fish Species Standardization
+
+The database uses standardized species names for consistency across all data sources:
+
+- **Brookies** (Brook trout)
+- **Cutthroats** (Cutthroat trout)  
+- **Tigers** (Tiger trout)
+- **Rainbows** (Rainbow trout)
+- **Goldens** (Golden trout)
+- **Grayling** (Arctic grayling)
+- **Splake** (Splake)
+- **Tiger muskie** (Tiger muskie)
+- **Channel catfish** (Channel catfish)
+
+**Asterisk System**: Species with asterisks (*) appear in historical Norrick data but haven't been stocked since 2018, indicating potential treatment or natural changes. Example: "Brookies, Cutthroats*" means brook trout are currently stocked but cutthroat presence is historical only.
 
 ## Database Schema
 
@@ -70,9 +87,12 @@ The web app (`index.html`) provides a complete interface for searching and filte
 - `drainage`: Watershed/drainage system
 - `size_acres`: Surface area in acres
 - `max_depth_ft`: Maximum depth in feet
-- `elevation_ft`: Elevation of the lake
-- `dwr_notes`: desriptions pulled from old DWR pamphlets
-- `fish_species`: Species present with reproduction notes
+- `elevation_ft`: Elevation of the lake in feet
+- `dwr_notes`: Historical descriptions from DWR lake pamphlets
+- `fish_species`: Standardized species names (Brookies, Cutthroats, etc.) with asterisk indicators for historical-only species
+- `junesucker_notes`: June sucker habitat and conservation notes
+- `jed_notes`: Personal fishing notes and observations
+- `status`: Lake accessibility status
 - `fishing_pressure`: Fishing pressure category
 
 ### `stocking_records` table
@@ -91,6 +111,7 @@ The web app (`index.html`) provides a complete interface for searching and filte
 - **`setup_database.py`**: One-time database setup (lakes, Norrick data, drainages)
 - **`update_stocking.py`**: Stocking data import and updates
 - **`database_utils.py`**: Core database utility functions
+- **`species_utils.py`**: Shared species name normalization and formatting functions
 - **`lake_data.csv`**: Original lake designations and drainages (609 lakes)
 - **`utah_dwr_stocking_data.csv`**: DWR stocking data (3,361 records)
 - **`norrick_lakes.txt`**: Physical lake data (565+ records)
@@ -119,7 +140,7 @@ ORDER BY size_acres DESC;
 
 **Find high-pressure fishing destinations:**
 ```sql
-SELECT letter_number, name, size_acres, fish_species
+SELECT letter_number, name, size_acres, fish_species, elevation_ft
 FROM lakes 
 WHERE fishing_pressure = 'High' 
 ORDER BY size_acres DESC;
@@ -131,6 +152,15 @@ SELECT s.species, s.quantity, s.stock_date, s.source_year
 FROM stocking_records s 
 JOIN lakes l ON s.lake_id = l.id 
 WHERE l.letter_number = 'Z-1';
+-- Returns normalized species like "Brookies", "Tigers", "Cutthroats"
+```
+
+**Find lakes by fish species (using normalized names):**
+```sql
+SELECT letter_number, name, fish_species 
+FROM lakes 
+WHERE fish_species LIKE '%Brookies%' 
+ORDER BY name;
 ```
 
 **View all drainage systems:**
@@ -147,21 +177,31 @@ SELECT name, info FROM drainages WHERE name LIKE '%Bear River%';
 
 - **Largest lake**: Atwood (U-16) at 200 acres
 - **Deepest lake**: Crater (X-94) at 147 feet  
-- **Most common species**: Brook trout (naturally reproducing in many lakes)
+- **Most common species**: Brookies (naturally reproducing in many lakes)
 - **High-pressure lakes**: 89 premium destinations
 - **Remote options**: 224 low-pressure lakes
 
 ## Recent Updates
 
-- ✅ Integrated Norrick physical data (507 lakes enhanced)
-- ✅ Fixed missing-dash designations (e.g., "WR35" → "WR-35")  
-- ✅ Manual corrections: Amethyst=BR-28, Kermsuh=BR-20, Toomset=BR-25
-- ✅ Comprehensive data quality validation
-- ✅ **NEW**: Added complete drainage system data (17 drainages)
-  - Created `drainages` table with detailed descriptions and map references
-  - Generated individual markdown files for each drainage in `/drainages/`
-  - Linked existing drainage map images to database records
-  - Parsed and structured data from `all_drainages.md`
+- ✅ **Species Name Standardization**: Comprehensive normalization to "Brookies", "Cutthroats", "Tigers", etc.
+  - Updated 2,290 stocking records with normalized species names
+  - Updated 576 lakes with merged historical and stocking species data
+  - Added asterisk indicators (*) for species in historical data but not recently stocked
+  - Implemented shared species_utils.py for consistent normalization across all scripts
+- ✅ **Enhanced Fish Species Data**: Merged Norrick historical data with stocking records since 2018
+  - Intelligent filtering matches either historical or stocking data
+  - Display shows comprehensive species with provenance indicators
+  - Removed old manual species translation logic from web app
+- ✅ **DWR Historical Notes Integration**: Added "This lake does not sustain fish life" notes
+  - Updated 37 lakes with DWR sustainability information
+  - Enhanced lake detail views with historical context
+- ✅ **Data Quality Improvements**: 
+  - Removed unused `data_source` field from lakes table
+  - Cleaned up 6 erroneous lake names with spacing issues
+  - Fixed drainage references and separated combined drainages
+- ✅ **Complete Drainage System Data**: All 17 drainages with detailed descriptions and maps
+- ✅ **Complete DWR PDF Extraction**: 487 lake entries from 8 historical DWR pamphlets
+- ✅ **PWA Enhancements**: Offline functionality with automatic cache updates
 
 ## Quick Start
 
@@ -209,7 +249,7 @@ All 17 major drainage systems are now documented with individual markdown files:
 - **Lake Fork Drainage** (`lake-fork-drainage.md`)
 - **Provo River Drainage** (`provo-river-drainage.md`)
 - **Rock Creek Drainage** (`rock-creek-drainage.md`)
-- **Sheep Creek/Carter Creek Drainage** (`sheep-creek-carter-creek-drainage.md`)
+- **Sheep/Carter Creek Drainages** (`sheep-creek-carter-creek-drainage.md`)
 - **Smiths Fork Drainage** (`smiths-fork-drainage.md`)
 - **Swift Creek Drainage** (`swift-creek-drainage.md`)
 - **Uinta River Drainage** (`uinta-river-drainage.md`)
@@ -223,117 +263,15 @@ This database provides the most comprehensive fishing resource available for the
 
 # NEXT STEPS
 
-## 1- Continue DWR PDF Lake Data Extraction Project
+## 1- Lake Coordinate Mapping Project
 
-  I was working on extracting historical lake data from scanned DWR pamphlets to enhance my Uinta Mountains
-  fishing database. Here's the current status:
+Evaluate Google Maps integration and check feasibility of including core vital info within map marker details panel. Consider implementing a "human in the loop" system to gather GPS coordinates for lakes that don't have location data.
 
-  What's Complete:
+**Potential approaches:**
+- Google Maps API integration with custom markers
+- Crowdsourced coordinate collection system
+- Integration with existing USGS or DWR geographic data sources
 
-  - ✅ Added elevation_ft and dwr_notes columns to lakes table
-  - ✅ Built extraction framework in process_dwr_pdf.py
-  - ✅ Successfully extracted & integrated many lakes from data/dwr-dry-gulch-and-uinta-trimmed.pdf and data/dwr-bear-blacks-fork-trimmed.pdf
-  - ✅ Data parsing works perfectly (extracts acres, elevation, depth from text)
-  - ✅ Review system creates output/dwr_extraction_review.txt for quality control
-  - ✅ Smart integration only updates missing database fields
+## 2- Apple Notes Integration
 
-  Current Data File:
-
-  dwr_lake_data.py contains 15 manually extracted entries from Page 1. Example format:
-  {
-      'designation': 'DG-3',
-      'name': 'CROW',
-      'text': "Crow is an irregular shaped lake located in steep rocky terrain. It is 18 acres, 10,350 feet in 
-  elevation, with 26 feet maximum depth..."
-  }
-
-  ## Continue with other DWR pamphlets
-  1. dwr-duchesne-trimmed.pdf
-  2. dwr-provo-weber-trimmed.pdf
-  3. dwr-sheep-carter-burnt-fork-trimmed.pdf
-  4. dwr-smith-henry-beaver-trimmed.pdf
-  5. dwr-uintas-rock-creek-trimmed.pdf
-  6. dwr-yellowstone-lake-fork-swift-trimmed.pdf
-
-  Process:
-
-  - Automated PDF text extraction failed (scanned images, not searchable text)
-  - Manual extraction works perfectly - I read the PDF and type entries into dwr_lake_data.py
-  - Run python3 process_dwr_pdf.py to test extraction
-  - Run with integrate=True to add to database
-
-  ## PDF Extraction Workflow (COMPLETED FOR: Duchesne, Provo-Weber)
-
-  ### Step 1: OCR Text Extraction
-  Since DWR PDFs contain scanned images (not searchable text), use Tesseract OCR:
-
-  ```bash
-  # Convert PDF pages to high-resolution images
-  python3 -c "
-  import pymupdf
-  import os
-  pdf_path = 'data/dwr-[DRAINAGE-NAME]-trimmed.pdf'
-  doc = pymupdf.open(pdf_path)
-  os.makedirs('output/[drainage]_pages', exist_ok=True)
-  for page_num in range(len(doc)):
-      page = doc.load_page(page_num)
-      pix = page.get_pixmap(matrix=pymupdf.Matrix(2, 2))  # 2x zoom for better OCR
-      pix.save(f'output/[drainage]_pages/page_{page_num + 1}.png')
-  doc.close()
-  "
-
-  # Run OCR on all pages
-  for i in {1..N}; do  # N = number of pages
-      echo "=== PAGE $i ===" >> output/[drainage]_ocr_text.txt
-      tesseract "output/[drainage]_pages/page_$i.png" stdout >> output/[drainage]_ocr_text.txt 2>/dev/null
-  done
-  ```
-
-  ### Step 2: Manual Lake Entry Extraction
-  Read through the OCR text and extract each lake entry following this pattern:
-  - **LAKE NAME, DESIGNATION.** [Description with acres, elevation, depth, access, etc.]
-
-  Add entries to `dwr_lake_data.py` in this format:
-  ```python
-  {
-      'designation': 'A-61',
-      'name': 'TRIAL',
-      'text': "Trial Reservoir is a popular fishing water located ¾ mile west of the Mirror Lake Highway..."
-  },
-  ```
-
-  ### Step 3: Integration
-  ```bash
-  # Test extraction (dry run)
-  python3 process_dwr_pdf.py
-
-  # Integrate into database  
-  python3 process_dwr_pdf.py integrate=True
-  ```
-
-  ### Step 4: Verification
-  Query database to verify successful integration:
-  ```python
-  # Sample check - replace with specific lake names/designations
-  cursor.execute("SELECT letter_number, name, size_acres, elevation_ft FROM lakes WHERE name LIKE '%TRIAL%'")
-  ```
-
-  ## DWR PDF Processing Status: ✅ COMPLETE!
-  - [x] dwr-duchesne-trimmed.pdf (COMPLETED - 47 lakes)
-  - [x] dwr-provo-weber-trimmed.pdf (COMPLETED - 66 lakes)
-  - [x] dwr-dry-gulch-and-uinta-trimmed.pdf (COMPLETED - 61 lakes)
-  - [x] dwr-bear-blacks-fork-trimmed.pdf (COMPLETED - 60 lakes)
-  - [x] dwr-sheep-carter-burnt-fork-trimmed.pdf (COMPLETED - 69 lakes)
-  - [x] dwr-smith-henry-beaver-trimmed.pdf (COMPLETED - 70 lakes)
-  - [x] dwr-uintas-rock-creek-trimmed.pdf (COMPLETED - 64 lakes)
-  - [x] dwr-yellowstone-lake-fork-swift-trimmed.pdf (COMPLETED - 90 lakes)
-
-  **Final Status**: 487 total lake entries extracted from all 8 DWR drainage PDFs!
-  All entries successfully integrated into database with elevation, depth, and descriptive notes.
-  
-  This represents complete coverage of all major Uinta Mountains drainage systems from the historical DWR lake survey pamphlets.
-
-## 2- collect and create mapping info for each lake
-Evaluate Google Maps, check feasiability of including core vital info within map marker details panel. See also suggestions in Claude chat for "human in the loop" system to gather coordinates from lakes that I don't have that info for.
-
-## 3- sync everything over to Apple Notes, both the one-time info and stocking updates
+Sync lake information to Apple Notes, including both one-time static data and ongoing stocking updates. Current `sync_to_apple_notes_jxa.js` script provides foundation for automated note creation and updates.

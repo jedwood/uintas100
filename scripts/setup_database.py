@@ -10,6 +10,7 @@ import sqlite3
 import csv
 import re
 from database_utils import create_database, extract_letter_number, parse_norrick_depth, parse_norrick_size
+from species_utils import normalize_species_list, format_species_display
 
 def load_lake_data(conn):
     """Load lake data from lake_data.csv into database"""
@@ -58,8 +59,12 @@ def load_norrick_data(conn):
             lake_name_full = parts[0].strip()
             size_acres = parse_norrick_size(parts[1])
             max_depth_ft = parse_norrick_depth(parts[2])
-            fish_species = parts[3].strip()
+            raw_fish_species = parts[3].strip()
             fishing_pressure = parts[4].strip()
+            
+            # Normalize fish species to standardized names
+            normalized_species = normalize_species_list(raw_fish_species)
+            fish_species = format_species_display(normalized_species) if normalized_species else None
             
             # Extract letter-number designation from lake name
             letter_number = extract_letter_number(lake_name_full)
