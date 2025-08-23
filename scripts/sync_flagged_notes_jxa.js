@@ -1,4 +1,5 @@
-// JXA script to create sample lake notes with advanced formatting and improved update logic.
+// JXA script to sync only flagged database entries to Apple Notes
+// This script processes lakes where notes_needs_update = TRUE
 
 function run() {
     const app = Application.currentApplication();
@@ -8,7 +9,6 @@ function run() {
 
     // --- Configuration ---
     const dbPath = "/Volumes/OLAF EXT/jedwoodx/repos/uintas/uinta_lakes.db";
-    const lakeLetterNumbers = ["P-60"]; // Shingle Creek West
 
     // --- Helper Functions ---
     function runQuery(query) {
@@ -21,18 +21,53 @@ function run() {
         }
     }
 
-    function findNoteByName(folder, name) {
-        const notesInFolder = folder.notes();
-        for (let i = 0; i < notesInFolder.length; i++) {
-            if (notesInFolder[i].name() === name) {
-                return notesInFolder[i];
+    function findLakeNote(folder, lakeName, letterNumber) {
+        try {
+            const notesInFolder = folder.notes();
+            console.log(`Looking for lake ${letterNumber} note in folder with ${notesInFolder.length} notes`);
+            
+            // All possible note name variations
+            const possibleNames = [
+                `${lakeName} (${letterNumber})`,           // No emoji
+                `${lakeName} (${letterNumber}) 🎣`,        // CAUGHT
+                `${lakeName} (${letterNumber}) 🚫`         // OTHERS/NONE
+            ];
+            
+            for (let i = 0; i < notesInFolder.length; i++) {
+                const noteName = notesInFolder[i].name();
+                console.log(`  Checking note: '${noteName}'`);
+                
+                for (const possibleName of possibleNames) {
+                    if (noteName === possibleName) {
+                        console.log(`  Found matching note: '${possibleName}'`);
+                        return notesInFolder[i];
+                    }
+                }
             }
+            console.log(`  No matching note found`);
+            return null;
+        } catch (e) {
+            console.log(`Error in findLakeNote: ${e}`);
+            return null;
         }
-        return null;
     }
 
-    // --- Process Each Lake ---
-    lakeLetterNumbers.forEach(letterNumber => {
+    // --- Find Lakes Needing Updates ---
+    const flaggedLakesQuery = `SELECT letter_number FROM lakes WHERE notes_needs_update = TRUE;`;
+    const flaggedLakesResult = runQuery(flaggedLakesQuery);
+    
+    if (!flaggedLakesResult || flaggedLakesResult.trim() === "") {
+        console.log("No lakes flagged for updates.");
+        return "No updates needed.";
+    }
+
+    const flaggedLakes = flaggedLakesResult.split('||').filter(lake => lake.trim() !== "");
+    console.log(`Found ${flaggedLakes.length} lakes needing updates: ${flaggedLakes.join(', ')}`);
+
+    let updatedCount = 0;
+
+    // --- Process Each Flagged Lake ---
+    flaggedLakes.forEach(letterNumber => {
         console.log(`Processing ${letterNumber}...`);
 
         // --- Fetch Data ---
@@ -62,26 +97,34 @@ function run() {
             drainageFolder = newFolder;
         }
 
-        const lakeNoteName = `${lakeName} (${letterNumber})`;
-        let lakeNote = findNoteByName(drainageFolder, lakeNoteName);
-
-        if (lakeNote === null) {
-            console.log(`Note '${lakeNoteName}' not found. Creating new note.`);
-            const newNote = notes.Note({name: lakeNoteName});
-            drainageFolder.notes.push(newNote);
-            lakeNote = newNote;
-        } else {
-            console.log(`Note '${lakeNoteName}' found. Updating existing note.`);
-        }
-
-        // --- Build Bidirectional Note Body with Beautiful HTML Formatting ---
-        // Add emoji to title based on status
+        // Find existing note (searches all possible emoji variations)
+        let lakeNote = findLakeNote(drainageFolder, lakeName, letterNumber);
+        
+        // Build the note name with current status emoji
         let titleEmoji = "";
         if (lakeStatus === "CAUGHT") {
             titleEmoji = " 🎣";
         } else if (lakeStatus === "OTHERS" || lakeStatus === "NONE") {
             titleEmoji = " 🚫";
         }
+        const lakeNoteName = `${lakeName} (${letterNumber})${titleEmoji}`;
+
+        if (lakeNote === null) {
+            console.log(`Note not found. Creating new note: '${lakeNoteName}'`);
+            const newNote = notes.Note({name: lakeNoteName});
+            drainageFolder.notes.push(newNote);
+            lakeNote = newNote;
+        } else {
+            console.log(`Found existing note: '${lakeNote.name()}'`);
+            // Update the note name if emoji status changed
+            if (lakeNote.name() !== lakeNoteName) {
+                console.log(`Updating note name from '${lakeNote.name()}' to '${lakeNoteName}'`);
+                lakeNote.name = lakeNoteName;
+            }
+        }
+
+        // --- Build Bidirectional Note Body with Beautiful HTML Formatting ---
+        // (emoji logic moved above)
         
         let noteBody = `<h1>${lakeName} (${letterNumber})${titleEmoji}</h1><br>`;
         
@@ -90,13 +133,17 @@ function run() {
             noteBody += `<p><b>Status:</b> ${lakeStatus}</p>`;
         }
         
+        // Always include Jed's Notes section (even if empty) for editing
+        noteBody += "<br><h2>Jed's Notes</h2>";
         if (jedNotes) {
-            noteBody += "<br><h2>Jed's Notes</h2>";
             noteBody += `<p>${jedNotes.replace(/\n/g, '<br>')}</p><br>`;
+        } else {
+            noteBody += "<p><i>Add your notes here...</i></p><br>";
         }
         
+        // Always include Trip Reports section (even if empty) for editing
+        noteBody += "<h2>Trip Reports</h2>";
         if (tripReports) {
-            noteBody += "<h2>Trip Reports</h2>";
             const trips = tripReports.split('\n');
             noteBody += "<ul>";
             trips.forEach(trip => {
@@ -105,6 +152,8 @@ function run() {
                 }
             });
             noteBody += "</ul><br>";
+        } else {
+            noteBody += "<p><i>Add trip reports here...</i></p><br>";
         }
         
         // Add delimiter - use a clearer visual separator
@@ -128,7 +177,7 @@ function run() {
             formattedJunesuckerNotes = formattedJunesuckerNotes.replace(/\n/g, '<br>');
             // Remove the leading <br><br> from the very first subheader (keep just one <br>)
             formattedJunesuckerNotes = formattedJunesuckerNotes.replace(/^<br><br><b>/, '<b>');
-            noteBody += formattedJunesuckerNotes + "<br>";
+            noteBody += formattedJunesuckerNotes + "<br><br>";
         }
 
         noteBody += "<h2>Stocking Records</h2>";
@@ -151,7 +200,13 @@ function run() {
         }
 
         lakeNote.body = noteBody;
+        updatedCount++;
+
+        // --- Clear the flag ---
+        const clearFlagQuery = `UPDATE lakes SET notes_needs_update = FALSE WHERE letter_number = '${letterNumber}';`;
+        runQuery(clearFlagQuery);
+        console.log(`Cleared update flag for ${letterNumber}`);
     });
 
-    return "JXA script for advanced notes finished.";
+    return `Updated ${updatedCount} lake notes.`;
 }

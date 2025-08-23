@@ -67,6 +67,9 @@ def parse_and_insert_data(html_content, conn, cursor, county, csv_writer, log_fi
                 insert_stocking_record(cursor, lake_id, species, quantity, length, stock_date, source_year, county)
                 new_records += 1
                 
+                # Flag lake for Apple Notes update when new stocking record added
+                cursor.execute("UPDATE lakes SET notes_needs_update = TRUE WHERE id = ?", (lake_id,))
+                
                 # Add to CSV records list
                 new_csv_records.append({
                     'water_name': water_name,

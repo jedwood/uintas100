@@ -272,6 +272,43 @@ Evaluate Google Maps integration and check feasibility of including core vital i
 - Crowdsourced coordinate collection system
 - Integration with existing USGS or DWR geographic data sources
 
-## 2- Apple Notes Integration
+## 2- Apple Notes Integration ✅ **IN PROGRESS**
 
-Sync lake information to Apple Notes, including both one-time static data and ongoing stocking updates. Current `sync_to_apple_notes_jxa.js` script provides foundation for automated note creation and updates.
+**🎯 Status**: Database → Apple Notes sync **COMPLETE**. Notes → Database sync pending.
+
+### **Current Functionality**
+- **Automated note creation** with beautiful HTML formatting 
+- **Surgical updates** - only processes lakes flagged in database (`notes_needs_update = TRUE`)
+- **Smart duplicate prevention** - finds existing notes across all emoji variations
+- **Comprehensive content** - includes all lake data, stocking records, DWR notes, Junesucker notes
+- **Bidirectional structure** - editable sections above delimiter, auto-generated below
+- **Auto-flagging system** - SQLite triggers automatically flag lakes when data changes
+
+### **Apple Notes Structure**
+```
+Lake Name (A-42) 🎣        ← Status emoji (🎣=CAUGHT, 🚫=OTHERS/NONE)
+
+Status: CAUGHT
+Jed's Notes                 ← Always visible for editing
+Add your notes here...
+
+Trip Reports               ← Always visible for editing  
+Add trip reports here...
+
+═══════════════════════    ← Visual delimiter
+
+• Size, elevation, species  ← Auto-generated from database
+• Stocking records         ← Updates automatically  
+• Junesucker/DWR notes     ← Reference information
+```
+
+### **Scripts**
+- `sync_flagged_notes_jxa.js` - Processes flagged lakes and creates/updates Apple Notes
+- `fetch_latest_stocking.py` - Auto-flags lakes when new stocking data added
+- SQLite triggers auto-flag lakes on any data changes
+
+### **Next Steps**
+1. **Notes → Database parsing** - Parse Apple Notes content back to database
+2. **Automated scheduling** - Set up cron job to run `sync_flagged_notes_jxa.js`
+3. **Hashtag processing** - Parse `#update` tags from edited Apple Notes
+4. **Two-way sync workflow** - Complete bidirectional sync system
