@@ -99,6 +99,11 @@ def create_database(db_path="../uinta_lakes.db"):
         pass
     
     try:
+        cursor.execute('ALTER TABLE lakes ADD COLUMN no_fish BOOLEAN DEFAULT 0')
+    except sqlite3.OperationalError:
+        pass
+    
+    try:
         cursor.execute('ALTER TABLE lakes ADD COLUMN status TEXT CHECK(status IN ("CAUGHT", "NONE", "OTHERS"))')
     except sqlite3.OperationalError:
         pass

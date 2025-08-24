@@ -159,7 +159,7 @@
                 case 'CAUGHT':
                     return `<span class="${buttonClass}">🎣</span>`;
                 case 'NONE':
-                    return `<span class="${buttonClass}"><span class="relative">🎣<span class="absolute -top-0.5 -right-0.5 text-xs">🚫</span></span></span>`;
+                    return `<span class="${buttonClass}">✖️</span>`;
                 case 'OTHERS':
                     return `<span class="${buttonClass}">👥🎣</span>`;
                 default:
@@ -486,21 +486,40 @@
             const resultsSection = document.getElementById('results-section');
             const resultsList = document.getElementById('results-list');
             
+            // Separate no_fish records
+            const withFish = results.filter(lake => !lake.no_fish);
+            const noFish = results.filter(lake => lake.no_fish);
+            
+            const renderLakeCard = (lake) => {
+                const noFishEmoji = lake.no_fish ? ' 🚫' : '';
+                const opacityClass = lake.no_fish ? 'opacity-60' : '';
+                const drainageShort = lake.drainage ? lake.drainage.replace(' Drainage', '') : '';
+                
+                return `
+                <div class="border border-slate-200 rounded-lg p-4 hover:bg-slate-50 cursor-pointer transition-colors ${opacityClass}"
+                     onclick="showLakeDetail('${lake.letter_number}')">
+                    <div class="font-medium text-lg">${lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number}${noFishEmoji}</div>
+                    <div class="text-sm text-gray-600 mt-1">
+                        ${lake.fish_species || ''}
+                        ${drainageShort ? `${lake.fish_species ? ' • ' : ''}${drainageShort}` : ''}
+                        ${lake.size_acres ? ` • ${lake.size_acres} acres` : ''} 
+                        ${lake.max_depth_ft ? ` • ${lake.max_depth_ft} ft deep` : ''}
+                        ${lake.elevation_ft ? ` • ${lake.elevation_ft.toLocaleString()} ft elev` : ''}
+                        • (${lake.stockingYears})
+                    </div>
+                </div>
+                `;
+            };
+            
             resultsList.innerHTML = `
                 <h3 class="text-lg font-semibold mb-4">Filtered Results (${results.length} lakes)</h3>
-                ${results.map(lake => `
-                    <div class="border border-slate-200 rounded-lg p-4 hover:bg-slate-50 cursor-pointer transition-colors"
-                         onclick="showLakeDetail('${lake.letter_number}')">
-                        <div class="font-medium text-lg">${lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number}</div>
-                        <div class="text-sm text-gray-600 mt-1">
-                            ${lake.size_acres ? `${lake.size_acres} acres` : ''} 
-                            ${lake.max_depth_ft ? `• ${lake.max_depth_ft} ft deep` : ''}
-                            ${lake.elevation_ft ? `• ${lake.elevation_ft.toLocaleString()} ft elev` : ''}
-                            ${lake.fishing_pressure ? `• ${lake.fishing_pressure} pressure` : ''}
-                            • (${lake.stockingYears})
-                        </div>
+                ${withFish.map(renderLakeCard).join('')}
+                ${noFish.length > 0 ? `
+                    <div class="mt-6 pt-4 border-t border-gray-300">
+                        <h4 class="text-md font-medium mb-3 text-gray-600">Lakes with No Fish (${noFish.length})</h4>
+                        ${noFish.map(renderLakeCard).join('')}
                     </div>
-                `).join('')}
+                ` : ''}
             `;
             
             resultsSection.classList.remove('hidden');
@@ -510,6 +529,10 @@
         function showDrainageLakes(drainage) {
             const drainageLakes = lakes.filter(lake => lake.drainage === drainage);
             const drainageInfo = window.drainages?.find(d => d.name === drainage);
+            
+            // Separate no_fish records
+            const withFish = drainageLakes.filter(lake => !lake.no_fish);
+            const noFish = drainageLakes.filter(lake => lake.no_fish);
             
             const resultsSection = document.getElementById('results-section');
             const resultsList = document.getElementById('results-list');
@@ -533,21 +556,38 @@
                 `;
             }
             
+            const renderDrainageLakeCard = (lake) => {
+                const noFishEmoji = lake.no_fish ? ' 🚫' : '';
+                const opacityClass = lake.no_fish ? 'opacity-60' : '';
+                const lakeStocking = stockingRecords.filter(s => s.lake_id === lake.id);
+                const stockYears = [...new Set(lakeStocking.map(s => s.stock_date.split('-')[0]))].sort().reverse();
+                const stockingInfo = stockYears.length > 0 ? stockYears.join(', ') : 'not stocked';
+                
+                return `
+                <div class="border border-slate-200 rounded-lg p-4 hover:bg-slate-50 cursor-pointer transition-colors ${opacityClass}"
+                     onclick="showLakeDetail('${lake.letter_number}')">
+                    <div class="font-medium text-lg">${lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number}${noFishEmoji}</div>
+                    <div class="text-sm text-gray-600 mt-1">
+                        ${lake.fish_species || ''}
+                        ${lake.size_acres ? `${lake.fish_species ? ' • ' : ''}${lake.size_acres} acres` : ''} 
+                        ${lake.max_depth_ft ? ` • ${lake.max_depth_ft} ft deep` : ''}
+                        ${lake.elevation_ft ? ` • ${lake.elevation_ft.toLocaleString()} ft elev` : ''}
+                        • (${stockingInfo})
+                    </div>
+                </div>
+                `;
+            };
+            
             resultsList.innerHTML = `
                 ${drainageContent}
                 <h3 class="text-lg font-semibold mb-4">Lakes in ${drainage} (${drainageLakes.length} lakes)</h3>
-                ${drainageLakes.map(lake => `
-                    <div class="border border-slate-200 rounded-lg p-4 hover:bg-slate-50 cursor-pointer transition-colors"
-                         onclick="showLakeDetail('${lake.letter_number}')">
-                        <div class="font-medium text-lg">${lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number}</div>
-                        <div class="text-sm text-gray-600 mt-1">
-                            ${lake.size_acres ? `${lake.size_acres} acres` : ''} 
-                            ${lake.max_depth_ft ? `• ${lake.max_depth_ft} ft deep` : ''}
-                            ${lake.elevation_ft ? `• ${lake.elevation_ft.toLocaleString()} ft elev` : ''}
-                            ${lake.fishing_pressure ? `• ${lake.fishing_pressure} pressure` : ''}
-                        </div>
+                ${withFish.map(renderDrainageLakeCard).join('')}
+                ${noFish.length > 0 ? `
+                    <div class="mt-6 pt-4 border-t border-gray-300">
+                        <h4 class="text-md font-medium mb-3 text-gray-600">Lakes with No Fish (${noFish.length})</h4>
+                        ${noFish.map(renderDrainageLakeCard).join('')}
                     </div>
-                `).join('')}
+                ` : ''}
             `;
             
             resultsSection.classList.remove('hidden');
@@ -558,20 +598,43 @@
             const resultsSection = document.getElementById('results-section');
             const resultsList = document.getElementById('results-list');
             
+            // Separate no_fish records
+            const withFish = results.filter(lake => !lake.no_fish);
+            const noFish = results.filter(lake => lake.no_fish);
+            
+            const renderGeneralLakeCard = (lake) => {
+                const noFishEmoji = lake.no_fish ? ' 🚫' : '';
+                const opacityClass = lake.no_fish ? 'opacity-60' : '';
+                const drainageShort = lake.drainage ? lake.drainage.replace(' Drainage', '') : '';
+                const lakeStocking = stockingRecords.filter(s => s.lake_id === lake.id);
+                const stockYears = [...new Set(lakeStocking.map(s => s.stock_date.split('-')[0]))].sort().reverse();
+                const stockingInfo = stockYears.length > 0 ? stockYears.join(', ') : 'not stocked';
+                
+                return `
+                <div class="border border-slate-200 rounded-lg p-4 hover:bg-slate-50 cursor-pointer transition-colors ${opacityClass}"
+                     onclick="showLakeDetail('${lake.letter_number}')">
+                    <div class="font-medium text-lg">${lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number}${noFishEmoji}</div>
+                    <div class="text-sm text-gray-600 mt-1">
+                        ${lake.fish_species || ''}
+                        ${drainageShort ? `${lake.fish_species ? ' • ' : ''}${drainageShort}` : ''}
+                        ${lake.size_acres ? ` • ${lake.size_acres} acres` : ''} 
+                        ${lake.max_depth_ft ? ` • ${lake.max_depth_ft} ft deep` : ''}
+                        ${lake.elevation_ft ? ` • ${lake.elevation_ft.toLocaleString()} ft elev` : ''}
+                        • (${stockingInfo})
+                    </div>
+                </div>
+                `;
+            };
+            
             resultsList.innerHTML = `
                 <h3 class="text-lg font-semibold mb-4">${title} (${results.length} lakes)</h3>
-                ${results.map(lake => `
-                    <div class="border border-slate-200 rounded-lg p-4 hover:bg-slate-50 cursor-pointer transition-colors"
-                         onclick="showLakeDetail('${lake.letter_number}')">
-                        <div class="font-medium text-lg">${lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number}</div>
-                        <div class="text-sm text-gray-600 mt-1">
-                            ${lake.size_acres ? `${lake.size_acres} acres` : ''} 
-                            ${lake.max_depth_ft ? `• ${lake.max_depth_ft} ft deep` : ''}
-                            ${lake.elevation_ft ? `• ${lake.elevation_ft.toLocaleString()} ft elev` : ''}
-                            ${lake.fishing_pressure ? `• ${lake.fishing_pressure} pressure` : ''}
-                        </div>
+                ${withFish.map(renderGeneralLakeCard).join('')}
+                ${noFish.length > 0 ? `
+                    <div class="mt-6 pt-4 border-t border-gray-300">
+                        <h4 class="text-md font-medium mb-3 text-gray-600">Lakes with No Fish (${noFish.length})</h4>
+                        ${noFish.map(renderGeneralLakeCard).join('')}
                     </div>
-                `).join('')}
+                ` : ''}
             `;
             
             resultsSection.classList.remove('hidden');

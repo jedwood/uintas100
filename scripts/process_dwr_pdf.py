@@ -172,16 +172,39 @@ def parse_dwr_text(pdf_path):
     
     return entries
 
+def map_designation_to_drainage(designation):
+    """Map lake designation to drainage based on prefix patterns"""
+    prefix = designation.split('-')[0] if '-' in designation else designation[:2]
+    
+    drainage_map = {
+        'BR': 'Bear River Drainage',
+        'D': 'Duchesne River Drainage', 
+        'G': 'Henrys Fork Drainage',
+        'GR': 'Sheep/Carter Creek Drainages',
+        'LF': 'Lake Fork Drainage',
+        'X': 'Rock Creek Drainage',
+        'W': 'Weber River Drainage'
+    }
+    
+    return drainage_map.get(prefix, 'Unknown Drainage')
+
 def integrate_dwr_data(conn, lake_entries):
     """Integrate DWR data into the existing lakes database"""
     cursor = conn.cursor()
     
     updated_count = 0
-    not_found_count = 0
+    created_count = 0
+    no_fish_count = 0
     
     for entry in lake_entries:
         designation = entry['designation']
         text = entry['text']
+        name = entry.get('name')
+        
+        # Check if text indicates no fish
+        no_fish = 'does not sustain' in text.lower()
+        if no_fish:
+            no_fish_count += 1
         
         # Check if lake exists in database
         cursor.execute('SELECT id, size_acres, max_depth_ft, elevation_ft FROM lakes WHERE letter_number = ?', 
@@ -189,8 +212,18 @@ def integrate_dwr_data(conn, lake_entries):
         result = cursor.fetchone()
         
         if not result:
-            print(f"Lake {designation} not found in database")
-            not_found_count += 1
+            # Create new lake entry
+            drainage = map_designation_to_drainage(designation)
+            extracted_data = extract_lake_data(text)
+            
+            cursor.execute('''
+                INSERT INTO lakes (letter_number, name, drainage, basin, size_acres, max_depth_ft, 
+                                 elevation_ft, dwr_notes, no_fish)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ''', (designation, name, drainage, '', extracted_data['size_acres'], 
+                  extracted_data['max_depth_ft'], extracted_data['elevation_ft'], text, no_fish))
+            created_count += 1
+            print(f"Created new lake {designation}: {extracted_data}")
             continue
             
         lake_id, current_size, current_depth, current_elevation = result
@@ -202,12 +235,14 @@ def integrate_dwr_data(conn, lake_entries):
         updates = []
         values = []
         
-        # Always add DWR notes
+        # Always add DWR notes and no_fish status
         updates.append('dwr_notes = ?')
         values.append(text)
+        updates.append('no_fish = ?')
+        values.append(no_fish)
         
-        # Always add elevation (we don't have any currently)
-        if extracted_data['elevation_ft']:
+        # Only update elevation (we don't have any currently)
+        if not current_elevation and extracted_data['elevation_ft']:
             updates.append('elevation_ft = ?')
             values.append(extracted_data['elevation_ft'])
         
@@ -229,7 +264,7 @@ def integrate_dwr_data(conn, lake_entries):
             print(f"Updated {designation}: {extracted_data}")
     
     conn.commit()
-    print(f"\nIntegration complete: {updated_count} updated, {not_found_count} not found")
+    print(f"\nIntegration complete: {updated_count} updated, {created_count} created, {no_fish_count} marked as no fish")
 
 def main(use_manual_data=True, integrate=False):
     """Process DWR PDF data and integrate into database"""
