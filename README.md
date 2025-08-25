@@ -328,7 +328,21 @@ Then run: `osascript scripts/sync_db_to_notes_jxa.js`
 
 ### **Next Steps**
 
-## 1- **Create "About" page** - add a little "About" link at the bottom of the web app that displays a page with the following:
+## 1- **Create a "fun facts" page that draws from the fun_facts.txt file, but let's keep it pared down and only include the following
+
+"There are around 500 lakes in the Uintas with fish in them, and a couple hundred without. Many are stocked regularly, some were stocked years ago and have established naturally reproducing populations, some have no fish and likely never have, and some were once stocked but they gave up due to frequent winter kill."
+
+### Deep and High
+- Deepest: {deepest}
+- Highest elevation: {highest}
+
+### Popular names
+{list out all the duplicates}, and include a very brief note separate note about there being an X-22 in two drainages
+
+### 2025 Stocking Totals
+{Fish species: {rounded to nearest 1000}} (don't include the phrase "fish stocked")
+
+## 2- **Create "About" page** - add a little "About" link at the bottom of the web app that displays a page with the following:
 - paragraph that says "I'm on a mission to catch a fish out of at least 100 different Uintas waters. I grew up in Provo fishing and camping all over, but somehow never in the Uintas. At the ripe age of 42 I spent a week on the Highline trail and realized what I've been missing."
 - A section with the title "Sources of Information & Inspiration" that then has subsections with links:
   - Websites

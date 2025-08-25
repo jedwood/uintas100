@@ -1,0 +1,89 @@
+# Uinta Mountains Fishing Database - Fun Facts
+
+## Record Holders
+
+### Highest Elevation Fishable Lakes
+1. **U-74 Beard** - 11,740 ft (Uinta River Drainage) - *Highest elevation natural lake*
+2. **Y-5** (unnamed) - 11,685 ft (Yellowstone Drainage)  
+3. **Y-4** (unnamed) - 11,679 ft (Yellowstone Drainage)
+4. **Y-2** (unnamed) - 11,670 ft (Yellowstone Drainage)
+5. **U-15 Roberts** - 11,550 ft (Uinta River Drainage)
+
+### Deepest Fishable Lakes
+1. **X-94 Crater** - 147 ft (Lake Fork Drainage) - *Deepest lake overall*
+2. **X-35 Kidney** - 112 ft (Lake Fork Drainage)
+3. **G-15 Red Castle** - 103 ft (Smiths Fork Drainage)
+4. **A-29 Wall** - 97 ft (Provo River Drainage)
+5. **GR-2 Tamarack** - 90 ft (Sheep/Carter Creek Drainages)
+6. **A-18 Big Elk** - 85 ft (Provo River Drainage)
+7. **G-16 Upper Red Castle** - 72 ft (Smiths Fork Drainage)
+8. **A-23 Washington** - 70 ft (Provo River Drainage)
+9. **G-5 Cliff** - 69 ft (Henrys Fork Drainage)
+10. **A-61 Trial** - 68 ft (Provo River Drainage)
+
+### 2025 Fish Stocking by Species
+- **Brookies**: Over 96,000 fish stocked (most popular species)
+- **Rainbows**: Over 63,300 fish stocked
+- **Tigers**: Over 28,100 fish stocked
+- **Cutthroats**: Over 26,800 fish stocked
+- **Grayling**: Over 3,900 fish stocked
+
+*Note: Numbers rounded up to nearest 100 as stocking report may not include all lakes in our database*
+
+## Data Mysteries & Quirks
+
+### Lakes Missing Elevation Data
+163 fishable lakes in our database are missing elevation data! This represents about 24% of all fishable waters. Some notable examples include:
+- Faith (A-16) and Hope (A-54) in Provo River Drainage
+- Multiple Red Castle lakes (G-12, G-16, G-17) 
+- Numerous Ashley Creek Drainage lakes (DF-1 Blue, DF-11 East Kibah, etc.)
+- Many Weber River Drainage lakes in the W-series
+
+### The Great Name Game - Duplicate Lake Names
+
+**Most Duplicated Name**: **Hidden** - 6 different lakes!
+- GR-149, DG-27, A-15, GR-7, GR-112, WR-63
+
+**Runner-up**: **Island** - 4 different lakes
+- GR-132, G-9, X-34, A-57
+
+**Triple Duplicates** (3 lakes each):
+- **Beaver**: BR-10, GR-147, A-17
+- **Blue**: DF-1, Z-32, A-5
+- **Castle**: W-67, D-14, G-11
+- **Cliff**: G-5, A-34, WR-49
+- **Fish**: GR-125, W-47, GR-57
+- **Lily Pad**: X-2, U-8, GR-111
+- **Lost**: A-59, Z-29, GR-4
+
+**Double Duplicates** (2 lakes each):
+Bear, Brook, Carol, Crater, Cleveland, Crystal, Dean, Diamond, Dollar, Duck, Everman, Gem, Gilbert, Hell Hole, Horseshoe, Jean, Lambert, Lilly, Lily, Little Elk, Marsh, Milk, Mud, Olsen, Porcupine, Rainbow, Round, Sand, Twin
+
+### The Only Duplicated Designation
+**X-22** appears twice:
+- **X-22 Pinto** (Rock Creek Drainage)
+- **X-22 (alt)** (unnamed, Swift Creek Drainage)
+
+This is the only letter-number designation that appears more than once in the database!
+
+## Database Statistics Summary
+- **Total Lakes**: 672
+- **Fishable Lakes**: ~509 (lakes not marked as "no_fish")
+- **Lakes with Elevation Data**: ~346 fishable lakes
+- **Lakes Missing Elevation**: 163 fishable lakes (24%)
+- **Total Drainages**: 17
+- **Most Common Lake Name**: Hidden (6 occurrences)
+- **Unique Designations**: 671 (only X-22 appears twice)
+- **Deepest Lake**: X-94 Crater at 147 feet
+- **Highest Lake**: U-74 Beard at 11,740 feet
+- **Most Stocked Species (2025)**: Brookies with over 96,000 fish
+
+## Fun Naming Patterns
+- **Animal Names**: Bear, Beaver, Duck, Deer, Elk, Moose, Sheep, etc.
+- **People Names**: Jean, Carol, Dean, Gilbert, Lambert, Roberts, etc.  
+- **Descriptive Names**: Hidden, Lost, Round, Crystal, Diamond, etc.
+- **Color Names**: Blue, Red (Castle), etc.
+- **Geographic Features**: Cliff, Island, Wall, Crater, etc.
+- **Size References**: Little Elk, Big Elk, Upper/Lower variations
+
+This database represents one of the most comprehensive fishing resources available for the Uinta Mountains, combining official DWR stocking data with detailed physical characteristics and historical information!

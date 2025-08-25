@@ -1,0 +1,163 @@
+A-16|Faith|Provo River Drainage
+A-54|Hope|Provo River Drainage
+BR-22||Bear River Drainage
+BR-50||Bear River Drainage
+BR-55||Bear River Drainage
+D-20|Emerald|Duchesne River Drainage
+D-36|Everman|Duchesne River Drainage
+DF-1|Blue|Ashley Creek Drainage
+DF-11|East Kibah|Ashley Creek Drainage
+DF-12|Finger Kibah|Ashley Creek Drainage
+DF-14|West Kibah|Ashley Creek Drainage
+DF-15|North Kibah|Ashley Creek Drainage
+DF-16|Island Kibah|Ashley Creek Drainage
+DF-17|Little Elk|Ashley Creek Drainage
+DF-18|Paul|Ashley Creek Drainage
+DF-2|Moap|Ashley Creek Drainage
+DF-4||Ashley Creek Drainage
+G-103|QUARTER CORNER LG103|Blacks Fork Drainage
+G-113||Blacks Fork Drainage
+G-12|Lower Red Castle|Smiths Fork Drainage
+G-16|Upper Red Castle|Smiths Fork Drainage
+G-17|East Red Castle|Smiths Fork Drainage
+G-29||Henrys Fork Drainage
+G-55||Smiths Fork Drainage
+GR-104||Ashley Creek Drainage
+GR-111|LILY PAD|Sheep/Carter Creek Drainages
+GR-119||Ashley Creek Drainage
+GR-13||Ashley Creek Drainage
+GR-137||Burnt Fork Drainage
+GR-14||Sheep/Carter Creek Drainages
+GR-143|Hoop Lake|Burnt Fork Drainage
+GR-17|Candy|Sheep/Carter Creek Drainages
+GR-28|Upper Potter|Sheep/Carter Creek Drainages
+GR-29|Lower Teepee|Sheep/Carter Creek Drainages
+GR-3|Spirit Lake|Sheep/Carter Creek Drainages
+GR-34|Lakeshore|Ashley Creek Drainage
+GR-35|Ashley Twin Reservoir|Ashley Creek Drainage
+GR-36|Wilde|Ashley Creek Drainage
+GR-38|Deadman|Ashley Creek Drainage
+GR-39|Marsh|Ashley Creek Drainage
+GR-40|Hacking|Ashley Creek Drainage
+GR-42|Goose #1|Ashley Creek Drainage
+GR-43|Goose #2|Ashley Creek Drainage
+GR-45|Sandy|Ashley Creek Drainage
+GR-46|Hooper|Ashley Creek Drainage
+GR-47|Mud|Ashley Creek Drainage
+GR-48|Little Blue|Ashley Creek Drainage
+GR-49|South Twin (Dry Fork)|Ashley Creek Drainage
+GR-50|North Twin (Dry Fork)|Ashley Creek Drainage
+GR-51|Red Belly|Ashley Creek Drainage
+GR-52||Ashley Creek Drainage
+GR-57|Fish|Ashley Creek Drainage
+GR-59|Shaw|Ashley Creek Drainage
+GR-62|Bert|Ashley Creek Drainage
+GR-63|Chimney Rock|Ashley Creek Drainage
+LF-35||Lake Fork Drainage
+LF-44|East Slide|Lake Fork Drainage
+P-10||Provo River Drainage
+P-11||Provo River Drainage
+P-15||Provo River Drainage
+P-16|CHARITY L|Provo River Drainage
+P-6||Provo River Drainage
+P-9||Provo River Drainage
+RC-30|Gibby|Rock Creek Drainage
+RC-36||Rock Creek Drainage
+S-2||Swift Creek Drainage
+S-3||Swift Creek Drainage
+U-100||Uinta River Drainage
+U-22||Uinta River Drainage
+U-79||Uinta River Drainage
+U-91||Uinta River Drainage
+U-99|WALL L|Uinta River Drainage
+W-14||Weber River Drainage
+W-15||Weber River Drainage
+W-16||Weber River Drainage
+W-17||Weber River Drainage
+W-18||Weber River Drainage
+W-20|Divide #2|Weber River Drainage
+W-25|Erickson South|Weber River Drainage
+W-26|Erickson North|Weber River Drainage
+W-42|Cuberant #1|Weber River Drainage
+W-43|Cuberant #2|Weber River Drainage
+W-44|Cuberant #3|Weber River Drainage
+W-45|Cuberant #4|Weber River Drainage
+W-46|Cuberant #5|Weber River Drainage
+W-5||Weber River Drainage
+W-52||Weber River Drainage
+W-53||Weber River Drainage
+W-54||Weber River Drainage
+W-56||Weber River Drainage
+W-57||Weber River Drainage
+W-59||Weber River Drainage
+W-60||Weber River Drainage
+W-61||Weber River Drainage
+W-65|Yellowpine Upper|Weber River Drainage
+W-66|Yellowpine Lower|Weber River Drainage
+W-69|Shingle Mill Lake|Weber River Drainage
+WR-1|ROBB L|Weber River Drainage
+WR-12|Larvae|White Rocks Drainage
+WR-13|Pole Creek Lake|White Rocks Drainage
+WR-14|Upper Rock|White Rocks Drainage
+WR-16|Middle Rock|White Rocks Drainage
+WR-17|Lower Rock|White Rocks Drainage
+WR-18|Paradise Park Reservoir|White Rocks Drainage
+WR-19||White Rocks Drainage
+WR-2|RC #1|White Rocks Drainage
+WR-33|CIRQUE L|Weber River Drainage
+WR-34||White Rocks Drainage
+WR-35|Rassmussen #1|White Rocks Drainage
+WR-36|Rassmussen #2|White Rocks Drainage
+WR-37||White Rocks Drainage
+WR-4|Quent|White Rocks Drainage
+WR-40|Wooley|White Rocks Drainage
+WR-42|Sand|White Rocks Drainage
+WR-43|Dollar|White Rocks Drainage
+WR-44|Ted|White Rocks Drainage
+WR-45|Pearl|White Rocks Drainage
+WR-46|Whiterocks Reservoir Lake|White Rocks Drainage
+WR-48|Watkins|White Rocks Drainage
+WR-49|Cliff|White Rocks Drainage
+WR-5|Ogden|White Rocks Drainage
+WR-50|Workman|White Rocks Drainage
+WR-52|Papoose|White Rocks Drainage
+WR-53|Mocassin|White Rocks Drainage
+WR-54|Wigwam|White Rocks Drainage
+WR-55|Walk Up|White Rocks Drainage
+WR-56|Figure-Eight|White Rocks Drainage
+WR-57|Sharlee|White Rocks Drainage
+WR-58|Elbow|White Rocks Drainage
+WR-6|Point (Adams)|White Rocks Drainage
+WR-63|Hidden|White Rocks Drainage
+WR-64|Chepeta|White Rocks Drainage
+WR-65|Hell Hole|White Rocks Drainage
+WR-66|Reader|White Rocks Drainage
+WR-67|Horseshoe|White Rocks Drainage
+WR-7|Cleveland|White Rocks Drainage
+WR-73||White Rocks Drainage
+WR-74||White Rocks Drainage
+WR-75||White Rocks Drainage
+WR-76||White Rocks Drainage
+WR-77||White Rocks Drainage
+WR-8|Taylor|White Rocks Drainage
+WR-9||White Rocks Drainage
+X-129|Margie|Rock Creek Drainage
+X-16|Timothy East|Swift Creek Drainage
+X-17|Carrol Lower|Swift Creek Drainage
+X-18|Carrol Upper|Swift Creek Drainage
+X-19|Timothy West|Swift Creek Drainage
+X-20|Timothy Center|Swift Creek Drainage
+X-21|Carrol East|Swift Creek Drainage
+X-22 (alt)||Swift Creek Drainage
+X-39|Rudolph 1|Rock Creek Drainage
+X-40|Rudolph 2|Rock Creek Drainage
+X-41|Rudolph 3|Rock Creek Drainage
+X-45||Lake Fork Drainage
+X-5|Fern|Rock Creek Drainage
+X-50||Yellowstone Drainage
+X-87|Ottoson Upper|Lake Fork Drainage
+X-88|Ottoson Lower|Lake Fork Drainage
+X-96|Rock 1|Rock Creek Drainage
+X-97|Rock 2|Rock Creek Drainage
+Y-32||Yellowstone Drainage
+Y-33||Yellowstone Drainage
