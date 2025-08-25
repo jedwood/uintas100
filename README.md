@@ -77,7 +77,7 @@ The database uses standardized species names for consistency across all data sou
 - **Tiger muskie** (Tiger muskie)
 - **Channel catfish** (Channel catfish)
 
-**Asterisk System**: Species with asterisks (*) appear in historical Norrick data but haven't been stocked since 2018, indicating potential treatment or natural changes. Example: "Brookies, Cutthroats*" means brook trout are currently stocked but cutthroat presence is historical only.
+**Asterisk System**: Species with asterisks (*) appear in historical data but haven't been stocked since 2018, indicating potential treatment or natural changes. Example: "Brookies, Cutthroats*" means brook trout are currently stocked but cutthroat presence is historical only.
 
 ## Database Schema
 
@@ -94,6 +94,7 @@ The database uses standardized species names for consistency across all data sou
 - `jed_notes`: Personal fishing notes and observations
 - `status`: Lake accessibility status
 - `fishing_pressure`: Fishing pressure category
+= `no_fish`: for lakes that have explicit info from the DWR as not sustaining fish
 
 ### `stocking_records` table
 - Links to lakes via `lake_id`
@@ -261,58 +262,73 @@ Each file includes detailed access information, fishing characteristics, and for
 
 This database provides the most comprehensive fishing resource available for the Uinta Mountains, combining official stocking data with detailed physical lake characteristics and drainage system information for informed trip planning.
 
-# NEXT STEPS
+## Apple Notes Integration ✅ **COMPLETE**
 
-## 1- Lake Coordinate Mapping Project
+The system provides full bidirectional synchronization between the SQLite database and Apple Notes, allowing you to manage lake data, notes, and trip reports seamlessly across both platforms.
 
-Evaluate Google Maps integration and check feasibility of including core vital info within map marker details panel. Consider implementing a "human in the loop" system to gather GPS coordinates for lakes that don't have location data.
-
-**Potential approaches:**
-- Google Maps API integration with custom markers
-- Crowdsourced coordinate collection system
-- Integration with existing USGS or DWR geographic data sources
-
-## 2- Apple Notes Integration ✅ **IN PROGRESS**
-
-**🎯 Status**: Database → Apple Notes sync **COMPLETE**. Notes → Database sync pending.
-
-### **Current Functionality**
-- **Automated note creation** with beautiful HTML formatting 
-- **Surgical updates** - only processes lakes flagged in database (`notes_needs_update = TRUE`)
-- **Smart duplicate prevention** - finds existing notes across all emoji variations
-- **Comprehensive content** - includes all lake data, stocking records, DWR notes, Junesucker notes
-- **Bidirectional structure** - editable sections above delimiter, auto-generated below
-- **Auto-flagging system** - SQLite triggers automatically flag lakes when data changes
+### **Features**
+- **Automated bidirectional sync** - Changes flow both ways between database and Apple Notes
+- **Visual status indicators** - Emoji system for quick lake status identification
+- **Surgical updates** - Only processes lakes flagged for updates (efficient performance)
+- **Smart duplicate prevention** - Advanced search prevents duplicate note creation
+- **Comprehensive content** - Includes all lake data, stocking records, DWR notes, Junesucker notes
+- **Organized structure** - Notes organized by drainage in dedicated "Uintas 💯" folder
 
 ### **Apple Notes Structure**
 ```
-Lake Name (A-42) 🎣        ← Status emoji (🎣=CAUGHT, 🚫=OTHERS/NONE)
+Lake Name (A-42) 🎣        ← Status emoji in title
+                             🎣=CAUGHT, ✖️=OTHERS/NONE, 🚫=NO_FISH
 
-Status: CAUGHT
-Jed's Notes                 ← Always visible for editing
+Status: CAUGHT             ← Editable status field
+Jed's Notes               ← Always visible for editing
 Add your notes here...
 
-Trip Reports               ← Always visible for editing  
+Trip Reports              ← Always visible for editing  
 Add trip reports here...
 
-═══════════════════════    ← Visual delimiter
+═══════════════════════   ← Visual delimiter
 
-• Size, elevation, species  ← Auto-generated from database
-• Stocking records         ← Updates automatically  
-• Junesucker/DWR notes     ← Reference information
+• Size, elevation, species ← Auto-generated from database
+• Stocking records        ← Updates automatically  
+• Junesucker/DWR notes    ← Reference information
 ```
 
-### **Scripts**
-- `sync_flagged_notes_jxa.js` - Processes flagged lakes and creates/updates Apple Notes
-- `fetch_latest_stocking.py` - Auto-flags lakes when new stocking data added
-- SQLite triggers auto-flag lakes on any data changes
+### **Status Emoji System**
+- **🎣** = Fish caught at this lake
+- **✖️** = Status marked as OTHERS or NONE
+- **🚫** = Lake does not sustain fish (DWR confirmed)
+- **No emoji** = No status assigned
+
+### **Sync Scripts**
+- **`sync_notes_to_db_jxa.js`** - Scans Apple Notes for `*update` tags and syncs changes back to database
+- **`sync_db_to_notes_jxa.js`** - Processes flagged lakes (`notes_needs_update = TRUE`) and creates/updates Apple Notes
+- **`fetch_latest_stocking.py`** - Auto-flags lakes when new stocking data is added
+
+### **Automated Scheduling**
+Cron jobs run every 6 hours to maintain synchronization:
+```bash
+# Check for user updates in Apple Notes (every 6 hours)
+0 */6 * * * osascript sync_notes_to_db_jxa.js
+
+# Push flagged database changes to Apple Notes (15 minutes after)
+15 */6 * * * osascript sync_db_to_notes_jxa.js
+```
+
+### **Manual Sync Usage**
+To manually trigger updates, add `*update` to any Apple Note and run:
+```bash
+osascript scripts/sync_notes_to_db_jxa.js
+```
+
+To flag specific lakes for Apple Notes updates:
+```sql
+UPDATE lakes SET notes_needs_update = TRUE WHERE letter_number = 'G-15';
+```
+Then run: `osascript scripts/sync_db_to_notes_jxa.js`
 
 ### **Next Steps**
-1. **Notes → Database parsing** - Parse Apple Notes content back to database
-2. **Automated scheduling** - Set up cron job to run `sync_flagged_notes_jxa.js`
-3. **Hashtag processing** - Parse `#update` tags from edited Apple Notes
-4. **Two-way sync workflow** - Complete bidirectional sync system
-5. **Create "About" page** - add a little "About" link at the bottom of the web app that displays a page with the following:
+
+## 1- **Create "About" page** - add a little "About" link at the bottom of the web app that displays a page with the following:
 - paragraph that says "I'm on a mission to catch a fish out of at least 100 different Uintas waters. I grew up in Provo fishing and camping all over, but somehow never in the Uintas. At the ripe age of 42 I spent a week on the Highline trail and realized what I've been missing."
 - A section with the title "Sources of Information & Inspiration" that then has subsections with links:
   - Websites
@@ -327,3 +343,15 @@ Add trip reports here...
   - Old DWR Pamphlets
     {provide links to each of the files in `data/dwr_original_pamphlets` and name them by extrapolation from their file names. Note that they contain multiple drainages per file}
 
+## 2- **Enhance the filters in the web app** - right now, if I have a species selected and I use the "Last Stocked" filter as well, the results are not totally accurate. For example, if I select "Tigers" for the "Fish Species", and "2022" for the "Last Stocked", Hessie (G-18) does _not_ show up as a match, even though the last stocking of Tigers was in 2020. It's getting filtered out because in 2023 it was stocked with Cutthroats. The interaction of those two filters being selected needs to treat the year filter with the AND of the species. Does that make sense?
+
+# SOMEDAY
+
+## 1- Lake Coordinate Mapping Project
+
+Evaluate Google Maps integration and check feasibility of including core vital info within map marker details panel. Consider implementing a "human in the loop" system to gather GPS coordinates for lakes that don't have location data.
+
+**Potential approaches:**
+- Google Maps API integration with custom markers
+- Crowdsourced coordinate collection system
+- Integration with existing USGS or DWR geographic data sources

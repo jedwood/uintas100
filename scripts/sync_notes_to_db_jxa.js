@@ -53,16 +53,20 @@ function run() {
 
         const editableContent = parts[0];
         
-        // Parse status - handle multiple formats
+        // Parse status - handle multiple formats including empty values
         let status = null;
-        const statusMatch = editableContent.match(/<b>Status:<\/b>\s*([^<\n]+)/i) || 
-                           editableContent.match(/Status:\s*([^\n<]+)/i) ||
-                           editableContent.match(/>Status:([^<]+)</i);
+        const statusMatch = editableContent.match(/<b>Status:<\/b>\s*([^<\n]*)/i) || 
+                           editableContent.match(/Status:\s*([^\n<]*)/i) ||
+                           editableContent.match(/>Status:([^<]*)</i);
         if (statusMatch) {
-            status = statusMatch[1].trim().toUpperCase();
-            // Validate status values
-            if (!["CAUGHT", "NONE", "OTHERS"].includes(status)) {
+            const statusValue = statusMatch[1].trim().toUpperCase();
+            // Handle empty status (user can clear it to remove status)
+            if (statusValue === "") {
                 status = null;
+            } else if (["CAUGHT", "NONE", "OTHERS"].includes(statusValue)) {
+                status = statusValue;
+            } else {
+                status = null; // Invalid status, don't update database
             }
         }
 

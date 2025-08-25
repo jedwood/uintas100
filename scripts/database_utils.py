@@ -151,8 +151,8 @@ def assign_drainage_by_designation(letter_number):
         'W': 'Weber River Drainage',
         'WR': 'Weber River Drainage',
         'U': 'Uinta River Drainage',
-        'DF': 'Duchesne Drainage',
-        'D': 'Duchesne Drainage',
+        'DF': 'Duchesne River Drainage',
+        'D': 'Duchesne River Drainage',
         'X': 'Yellowstone Drainage',
         'RC': 'Rock Creek Drainage',
         'GR': 'Ashley Creek Drainage'
