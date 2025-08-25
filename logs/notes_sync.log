@@ -1,0 +1,30 @@
+
+
+[2025-08-25 19:14:49] Starting Notes → Database sync
+
+[2025-08-25 19:14:49] Using Notes search to find all notes containing '*update'
+
+[2025-08-25 19:15:12] Starting Notes → Database sync
+
+[2025-08-25 19:15:12] Using Notes search to find all notes containing '*update'
+
+[2025-08-25 19:15:18] Found 1 total notes containing '*update' across all folders
+
+[2025-08-25 19:15:19] Found *update in Uintas note: Toomset (BR-25) (BR-25)
+
+[2025-08-25 19:15:19] Found 1 notes with *update tag
+
+[2025-08-25 19:15:19] Processing note: Toomset (BR-25) (BR-25)
+
+[2025-08-25 19:15:19]   Parsing note body for BR-25...
+
+[2025-08-25 19:15:19]   Status: CAUGHT
+
+[2025-08-25 19:15:19]   Jed's Notes: Pretty nice spot for camping....
+
+[2025-08-25 19:15:19]   Trip Reports: 2024 Oct: caught several that were small to medium...
+
+[2025-08-25 19:15:20]   Successfully updated database for BR-25
+
+[2025-08-25 19:15:20] Completed sync: 1 successful, 0 errors
+

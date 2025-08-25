@@ -106,7 +106,7 @@ def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     project_dir = os.path.dirname(script_dir)
     csv_path = os.path.join(project_dir, 'data', 'utah_dwr_stocking_data.csv')
-    log_path = os.path.join(project_dir, 'output', 'stocking_update.log')
+    log_path = os.path.join(project_dir, 'logs', 'stocking_update.log')
     
     # Ensure output directory exists
     os.makedirs(os.path.dirname(log_path), exist_ok=True)

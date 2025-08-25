@@ -38,7 +38,12 @@
       "mcp__playwright__browser_handle_dialog",
       "Bash(grep:*)",
       "Bash(crontab:*)",
-      "Bash(osascript:*)"
+      "Bash(osascript:*)",
+      "mcp__github__create_repository",
+      "mcp__github__get_me",
+      "Bash(git remote add:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "defaultMode": "acceptEdits",
     "additionalDirectories": [

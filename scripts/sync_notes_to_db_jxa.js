@@ -9,7 +9,7 @@ function run() {
 
     // --- Configuration ---
     const dbPath = "/Volumes/OLAF EXT/jedwoodx/repos/uintas/uinta_lakes.db";
-    const logPath = "/Volumes/OLAF EXT/jedwoodx/repos/uintas/output/notes_sync.log";
+    const logPath = "/Volumes/OLAF EXT/jedwoodx/repos/uintas/logs/notes_sync.log";
     const mainFolderName = "Uintas 💯";
 
     // --- Helper Functions ---

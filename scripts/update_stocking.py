@@ -123,7 +123,7 @@ def process_stocking_data(conn):
     
     # Save unmatched records
     if unmatched_records:
-        with open('../output/unmatched_stocking.csv', 'w', newline='') as f:
+        with open('../logs/unmatched_stocking.csv', 'w', newline='') as f:
             writer = csv.DictWriter(f, fieldnames=['water_name', 'county', 'species', 'quantity', 'length', 'stock_date', 'source_year'])
             writer.writeheader()
             writer.writerows(unmatched_records)
@@ -131,7 +131,7 @@ def process_stocking_data(conn):
     print(f"Stocking update complete:")
     print(f"  New records added: {new_records_count}")
     print(f"  Duplicates skipped: {duplicate_count}")
-    print(f"  Unmatched records: {len(unmatched_records)} (saved to ../output/unmatched_stocking.csv)")
+    print(f"  Unmatched records: {len(unmatched_records)} (saved to ../logs/unmatched_stocking.csv)")
 
 def main():
     """Update stocking data only"""

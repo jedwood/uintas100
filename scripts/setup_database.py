@@ -97,7 +97,7 @@ def load_norrick_data(conn):
                     # Remove the letter-number designation from anywhere in the string
                     base_name = re.sub(rf'\b{re.escape(letter_number)}\b,?\s*', '', base_name).strip()
                     # Clean up extra spaces and commas
-                    base_name = re.sub(r'\s*,\s*, '', base_name).strip()
+                    base_name = re.sub(r'\s*,\s*', '', base_name).strip()
                     base_name = re.sub(r'^\s*,\s*', '', base_name).strip()
                     
                     if not base_name or base_name == letter_number:

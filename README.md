@@ -116,8 +116,8 @@ The database uses standardized species names for consistency across all data sou
 - **`lake_data.csv`**: Original lake designations and drainages (609 lakes)
 - **`utah_dwr_stocking_data.csv`**: DWR stocking data (3,361 records)
 - **`norrick_lakes.txt`**: Physical lake data (565+ records)
-- **`lake_dump.txt`**: Human-readable database export
-- **`unmatched_stocking.csv`**: Non-Uintas stocking records (correctly filtered)
+- **`logs/lake_dump.txt`**: Human-readable database export
+- **`logs/unmatched_stocking.csv`**: Non-Uintas stocking records (correctly filtered)
 - **`all_drainages.md`**: Source data for drainage system information (processed)
 - **`drainages/`**: Individual drainage markdown files and map images
 - **`lake_pages/`**: Individual lake information pages

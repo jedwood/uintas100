@@ -9,7 +9,7 @@ result=$(osascript "$(dirname "$0")/sync_notes_to_db_jxa.js")
 echo "$result"
 
 # Check if log file exists and show recent entries
-log_file="$(dirname "$0")/../output/notes_sync.log"
+log_file="$(dirname "$0")/../logs/notes_sync.log"
 if [[ -f "$log_file" ]]; then
     echo ""
     echo "Recent log entries:"

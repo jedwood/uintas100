@@ -269,7 +269,7 @@ def stocking_record_exists(cursor, lake_id, species, quantity, stock_date):
     cursor.execute(query, (lake_id, species, quantity, stock_date))
     return cursor.fetchone() is not None
 
-def dump_lake_data(conn, output_file="../output/lake_dump.txt"):
+def dump_lake_data(conn, output_file="../logs/lake_dump.txt"):
     """Create a text dump of all lakes for review"""
     cursor = conn.cursor()
     
@@ -311,7 +311,7 @@ def dump_lake_data(conn, output_file="../output/lake_dump.txt"):
     
     print(f"Lake dump written to {output_file}")
 
-def dump_stocking_data(conn, output_file="../output/stocking_dump.txt"):
+def dump_stocking_data(conn, output_file="../logs/stocking_dump.txt"):
     """Create a text dump of all stocking records for review"""
     cursor = conn.cursor()
     
@@ -346,7 +346,7 @@ def dump_stocking_data(conn, output_file="../output/stocking_dump.txt"):
     
     print(f"Stocking dump written to {output_file}")
 
-def dump_combined_data(conn, output_file="../output/combined_dump.txt"):
+def dump_combined_data(conn, output_file="../logs/combined_dump.txt"):
     """Create a combined dump of lakes with their stocking records"""
     cursor = conn.cursor()
     

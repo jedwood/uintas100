@@ -1,0 +1,3077 @@
+UINTA MOUNTAINS STOCKING RECORDS DUMP
+==================================================
+
+Total Stocking Records: 2290
+
+
+--- BR-2 ---
+  2025-06-26 | BROOK TROUT     |    100 fish | 3.01"  | SUMMIT
+  2022-06-27 | BROOK TROUT     |     96 fish | 2.75"  | SUMMIT
+  2019-07-09 | BROOK TROUT     |    104 fish | 2.68"  | SUMMIT
+
+--- BR-24 ---
+  2022-06-28 | TIGER TROUT     |    257 fish | 2.65"  | SUMMIT
+
+--- BR-34 ---
+  2025-07-02 | TIGER TROUT     |    239 fish | 3.8"   | SUMMIT
+  2022-06-28 | TIGER TROUT     |    243 fish | 2.65"  | SUMMIT
+  2019-07-09 | TIGER TROUT     |    243 fish | 2.65"  | SUMMIT
+
+--- BR-35 ---
+  2025-07-02 | TIGER TROUT     |    137 fish | 3.8"   | SUMMIT
+  2023-07-14 | TIGER TROUT     |    132 fish | 2.83"  | SUMMIT
+
+--- BR-43 ---
+  2024-07-08 | TIGER TROUT     |    197 fish | 2.78"  | SUMMIT
+  2022-06-28 | TIGER TROUT     |    203 fish | 2.65"  | SUMMIT
+  2020-07-31 | TIGER TROUT     |    216 fish | 2.4"   | SUMMIT
+  2018-07-09 | TIGER TROUT     |    156 fish | 2.34"  | SUMMIT
+
+--- BR-44 ---
+  2024-07-08 | TIGER TROUT     |    348 fish | 2.78"  | SUMMIT
+  2021-06-30 | TIGER TROUT     |    346 fish | 2.69"  | SUMMIT
+  2018-07-09 | TIGER TROUT     |    254 fish | 2.34"  | SUMMIT
+
+--- BR-45 ---
+  2024-07-08 | TIGER TROUT     |    360 fish | 2.78"  | SUMMIT
+  2022-06-28 | TIGER TROUT     |    365 fish | 2.65"  | SUMMIT
+  2020-07-31 | TIGER TROUT     |    360 fish | 2.4"   | SUMMIT
+  2018-07-09 | TIGER TROUT     |    273 fish | 2.34"  | SUMMIT
+
+--- BR-46 ---
+  2025-06-26 | BROOK TROUT     |   1200 fish | 3.01"  | SUMMIT
+  2022-09-26 | BROOK TROUT     |   1197 fish | 3.03"  | SUMMIT
+
+--- BR-50 ---
+  2025-06-26 | BROOK TROUT     |    350 fish | 3.01"  | SUMMIT
+  2024-07-02 | BROOK TROUT     |    347 fish | 2.9"   | SUMMIT
+  2023-07-13 | BROOK TROUT     |    351 fish | 2.68"  | SUMMIT
+  2022-06-27 | BROOK TROUT     |    348 fish | 2.75"  | SUMMIT
+  2021-06-29 | BROOK TROUT     |    345 fish | 2.79"  | SUMMIT
+  2020-07-31 | BROOK TROUT     |    363 fish | 2.47"  | SUMMIT
+  2018-06-26 | BROOK TROUT     |   1150 fish | 2.88"  | SUMMIT
+
+--- BR-55 ---
+  2025-06-26 | BROOK TROUT     |    230 fish | 3.01"  | SUMMIT
+  2021-06-29 | BROOK TROUT     |    230 fish | 2.79"  | SUMMIT
+
+--- D-19 ---
+  2025-06-26 | BROOK TROUT     |     40 fish | 3.01"  | DUCHESNE
+  2024-07-02 | BROOK TROUT     |     41 fish | 2.9"   | DUCHESNE
+  2023-07-13 | BROOK TROUT     |     39 fish | 2.68"  | DUCHESNE
+  2022-06-27 | BROOK TROUT     |     36 fish | 2.75"  | DUCHESNE
+
+--- D-26 ---
+  2023-07-13 | BROOK TROUT     |    299 fish | 2.68"  | DUCHESNE
+  2020-07-31 | BROOK TROUT     |    297 fish | 2.47"  | DUCHESNE
+
+--- DG-10 ---
+  2021-09-22 | CUTTHROAT       |    984 fish | 1.9"   | DUCHESNE
+
+--- DG-14 ---
+  2021-09-22 | CUTTHROAT       |    214 fish | 1.9"   | DUCHESNE
+
+--- DG-15 ---
+  2021-09-22 | CUTTHROAT       |    214 fish | 1.9"   | DUCHESNE
+
+--- DG-16 ---
+  2021-09-22 | CUTTHROAT       |    214 fish | 1.9"   | DUCHESNE
+
+--- DG-17 ---
+  2021-09-22 | CUTTHROAT       |    428 fish | 1.9"   | DUCHESNE
+
+--- DG-6 ---
+  2021-09-22 | CUTTHROAT       |    599 fish | 1.9"   | DUCHESNE
+
+--- DG-9 ---
+  2021-09-22 | CUTTHROAT       |    984 fish | 1.9"   | DUCHESNE
+
+--- G-113 ---
+  2023-09-19 | CUTTHROAT       |    276 fish | 1.73"  | SUMMIT
+
+--- G-13 ---
+  2024-06-28 | BROOK TROUT     |    801 fish | 2.91"  | SUMMIT
+  2022-06-30 | BROOK TROUT     |    798 fish | 3.7"   | SUMMIT
+  2020-07-06 | BROOK TROUT     |    797 fish | 3.49"  | SUMMIT
+  2018-07-11 | BROOK TROUT     |    809 fish | 2.88"  | SUMMIT
+
+--- G-52 ---
+  2024-06-28 | BROOK TROUT     |    304 fish | 2.91"  | SUMMIT
+  2022-06-30 | BROOK TROUT     |    370 fish | 3.7"   | SUMMIT
+  2020-07-06 | BROOK TROUT     |    302 fish | 3.49"  | SUMMIT
+  2018-07-11 | BROOK TROUT     |    305 fish | 2.88"  | SUMMIT
+
+--- G-56 ---
+  2024-06-28 | BROOK TROUT     |    146 fish | 2.91"  | SUMMIT
+  2021-07-01 | BROOK TROUT     |    152 fish | 3.32"  | SUMMIT
+  2018-07-11 | BROOK TROUT     |    158 fish | 2.88"  | SUMMIT
+
+--- G-60 ---
+  2024-07-08 | TIGER TROUT     |    255 fish | 2.78"  | SUMMIT
+  2021-06-30 | TIGER TROUT     |    256 fish | 2.69"  | SUMMIT
+  2018-07-09 | TIGER TROUT     |    195 fish | 2.34"  | SUMMIT
+
+--- G-61 ---
+  2024-06-28 | BROOK TROUT     |    401 fish | 2.91"  | SUMMIT
+  2022-07-06 | BROOK TROUT     |    426 fish | 3.62"  | SUMMIT
+  2020-07-06 | BROOK TROUT     |    402 fish | 3.49"  | SUMMIT
+  2018-07-11 | BROOK TROUT     |    399 fish | 2.88"  | SUMMIT
+
+--- G-64 ---
+  2024-07-08 | TIGER TROUT     |    336 fish | 2.78"  | SUMMIT
+  2022-06-28 | TIGER TROUT     |    351 fish | 2.65"  | SUMMIT
+  2020-07-31 | TIGER TROUT     |    342 fish | 2.4"   | SUMMIT
+  2018-07-09 | TIGER TROUT     |    273 fish | 2.34"  | SUMMIT
+
+--- G-67 ---
+  2022-09-26 | BROOK TROUT     |    774 fish | 3.03"  | SUMMIT
+  2018-07-11 | BROOK TROUT     |    777 fish | 2.88"  | SUMMIT
+
+--- G-71 ---
+  2024-07-09 | BROOK TROUT     |    306 fish | 2.9"   | SUMMIT
+  2021-06-30 | BROOK TROUT     |    311 fish | 2.79"  | SUMMIT
+  2018-07-11 | BROOK TROUT     |    315 fish | 2.88"  | SUMMIT
+
+--- G-74 ---
+  2024-07-09 | BROOK TROUT     |    296 fish | 2.9"   | SUMMIT
+  2021-06-30 | BROOK TROUT     |    299 fish | 2.79"  | SUMMIT
+  2018-07-11 | BROOK TROUT     |    305 fish | 2.88"  | SUMMIT
+
+--- G-80 ---
+  2025-06-26 | BROOK TROUT     |     90 fish | 3.01"  | SUMMIT
+  2021-06-30 | BROOK TROUT     |     92 fish | 2.79"  | SUMMIT
+
+--- G-82 ---
+  2022-09-26 | BROOK TROUT     |    189 fish | 3.03"  | SUMMIT
+  2018-07-11 | BROOK TROUT     |    189 fish | 2.88"  | SUMMIT
+
+--- GR-119 ---
+  2019-10-01 | GRAYLING ARCTIC |    323 fish | 2.39"  | SUMMIT
+
+--- GR-130 ---
+  2024-07-15 | CUTTHROAT       |    942 fish | 2.26"  | SUMMIT
+  2023-09-19 | CUTTHROAT       |    939 fish | 1.73"  | SUMMIT
+  2020-09-23 | CUTTHROAT       |    944 fish | 2.48"  | SUMMIT
+
+--- GR-145 ---
+  2020-09-21 | GRAYLING ARCTIC |   1098 fish | 2.81"  | SUMMIT
+
+--- GR-152 ---
+  2024-06-26 | BROOK TROUT     |    497 fish | 2.93"  | SUMMIT
+  2022-06-29 | BROOK TROUT     |    516 fish | 2.75"  | SUMMIT
+
+--- GR-154 ---
+  2022-06-29 | BROOK TROUT     |    216 fish | 2.75"  | SUMMIT
+  2018-07-11 | BROOK TROUT     |    200 fish | 2.88"  | SUMMIT
+
+--- GR-155 ---
+  2025-07-01 | BROOK TROUT     |    202 fish | 3.4"   | SUMMIT
+  2022-06-29 | BROOK TROUT     |    216 fish | 2.75"  | SUMMIT
+  2019-07-11 | BROOK TROUT     |    195 fish | 2.68"  | SUMMIT
+
+--- GR-160 ---
+  2025-06-26 | BROOK TROUT     |    250 fish | 3.01"  | SUMMIT
+  2024-06-28 | BROOK TROUT     |    255 fish | 2.91"  | SUMMIT
+  2023-07-21 | BROOK TROUT     |    248 fish | 3.0"   | SUMMIT
+  2022-06-29 | BROOK TROUT     |    264 fish | 2.75"  | SUMMIT
+  2021-07-01 | BROOK TROUT     |    251 fish | 3.32"  | SUMMIT
+  2020-07-06 | BROOK TROUT     |    248 fish | 3.49"  | SUMMIT
+
+--- GR-161 ---
+  2024-09-25 | GRAYLING ARCTIC |    199 fish | 2.47"  | SUMMIT
+  2021-09-21 | GRAYLING ARCTIC |    194 fish | 2.65"  | SUMMIT
+  2020-09-21 | GRAYLING ARCTIC |    198 fish | 2.81"  | SUMMIT
+
+--- GR-162 ---
+  2025-07-01 | BROOK TROUT     |    701 fish | 3.4"   | SUMMIT
+  2023-07-21 | BROOK TROUT     |    697 fish | 3.0"   | SUMMIT
+  2021-07-01 | BROOK TROUT     |    701 fish | 3.32"  | SUMMIT
+  2019-07-11 | BROOK TROUT     |    520 fish | 2.68"  | SUMMIT
+
+--- GR-163 ---
+  2024-09-25 | GRAYLING ARCTIC |    299 fish | 2.47"  | SUMMIT
+  2021-09-21 | GRAYLING ARCTIC |    301 fish | 2.65"  | SUMMIT
+  2020-09-21 | GRAYLING ARCTIC |    306 fish | 2.81"  | SUMMIT
+
+--- GR-164 ---
+  2024-09-25 | GRAYLING ARCTIC |    299 fish | 2.47"  | SUMMIT
+
+--- GR-172 ---
+  2024-09-25 | GRAYLING ARCTIC |    148 fish | 2.47"  | SUMMIT
+  2021-09-21 | GRAYLING ARCTIC |    151 fish | 2.65"  | SUMMIT
+  2020-09-21 | GRAYLING ARCTIC |    144 fish | 2.81"  | SUMMIT
+
+--- GR-173 ---
+  2024-06-28 | BROOK TROUT     |    401 fish | 2.91"  | SUMMIT
+  2022-06-29 | BROOK TROUT     |    408 fish | 2.75"  | SUMMIT
+  2020-07-06 | BROOK TROUT     |    402 fish | 3.49"  | SUMMIT
+  2018-07-11 | BROOK TROUT     |    399 fish | 2.88"  | SUMMIT
+
+--- LF-16 ---
+  2021-07-01 | BROOK TROUT     |    298 fish | 3.32"  | DUCHESNE
+
+--- LF-37 ---
+  2023-07-21 | BROOK TROUT     |    296 fish | 3.0"   | DUCHESNE
+  2020-07-06 | BROOK TROUT     |    300 fish | 3.15"  | DUCHESNE
+
+--- LF-43 ---
+  2024-06-26 | BROOK TROUT     |    249 fish | 2.93"  | DUCHESNE
+  2021-07-01 | BROOK TROUT     |    251 fish | 3.32"  | DUCHESNE
+
+--- LF-8 ---
+  2022-09-23 | CUTTHROAT       |    700 fish | 1.91"  | DUCHESNE
+  2018-10-12 | CUTTHROAT       |    472 fish | 1.74"  | DUCHESNE
+
+--- P-11 ---
+  2025-06-25 | BROOK TROUT     |    230 fish | 3.01"  | SUMMIT
+  2024-07-03 | BROOK TROUT     |     51 fish | 2.9"   | SUMMIT
+  2023-07-13 | BROOK TROUT     |     52 fish | 2.68"  | SUMMIT
+  2022-06-27 | BROOK TROUT     |     48 fish | 2.75"  | SUMMIT
+
+--- RC-36 ---
+  2022-07-11 | BROOK TROUT     |    300 fish | 2.92"  | DUCHESNE
+  2018-07-10 | BROOK TROUT     |    305 fish | 2.88"  | DUCHESNE
+
+--- U-100 ---
+  2019-10-01 | GRAYLING ARCTIC |    323 fish | 2.39"  | DUCHESNE
+
+--- U-19 ---
+  2022-07-06 | BROOK TROUT     |   1610 fish | 3.62"  | DUCHESNE
+
+--- U-37 ---
+  2023-07-21 | BROOK TROUT     |    649 fish | 3.0"   | DUCHESNE
+  2019-07-11 | BROOK TROUT     |    507 fish | 2.68"  | DUCHESNE
+
+--- U-38 ---
+  2023-09-19 | CUTTHROAT       |    842 fish | 1.45"  | DUCHESNE
+  2018-10-12 | CUTTHROAT       |    590 fish | 1.74"  | DUCHESNE
+
+--- U-39 ---
+  2020-09-21 | GRAYLING ARCTIC |    558 fish | 2.81"  | DUCHESNE
+
+--- U-42 ---
+  2023-09-19 | CUTTHROAT       |    748 fish | 1.45"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |    758 fish | 1.7"   | DUCHESNE
+
+--- U-45 ---
+  2023-09-19 | CUTTHROAT       |    468 fish | 1.45"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |    506 fish | 1.7"   | DUCHESNE
+
+--- U-50 ---
+  2025-06-30 | BROOK TROUT     |    900 fish | 3.4"   | DUCHESNE
+  2022-06-30 | BROOK TROUT     |    902 fish | 3.7"   | DUCHESNE
+  2019-07-11 | BROOK TROUT     |    702 fish | 2.68"  | DUCHESNE
+
+--- U-75 ---
+  2024-09-23 | CUTTHROAT       |    524 fish | 1.85"  | DUCHESNE
+
+--- U-89 ---
+  2022-07-06 | BROOK TROUT     |    642 fish | 3.62"  | DUCHESNE
+
+--- U-93 ---
+  2023-09-19 | CUTTHROAT       |    561 fish | 1.45"  | DUCHESNE
+  2018-10-12 | CUTTHROAT       |    413 fish | 1.74"  | DUCHESNE
+
+--- W-16 ---
+  2024-07-02 | BROOK TROUT     |    398 fish | 2.9"   | SUMMIT
+  2021-06-29 | BROOK TROUT     |    403 fish | 2.79"  | SUMMIT
+  2018-06-27 | BROOK TROUT     |    400 fish | 2.88"  | SUMMIT
+
+--- W-52 ---
+  2024-07-02 | BROOK TROUT     |    357 fish | 2.9"   | SUMMIT
+  2020-07-30 | BROOK TROUT     |    363 fish | 2.47"  | SUMMIT
+
+--- W-57 ---
+  2019-07-09 | BROOK TROUT     |    299 fish | 2.68"  | SUMMIT
+
+--- W-59 ---
+  2025-06-25 | BROOK TROUT     |    200 fish | 3.01"  | SUMMIT
+  2022-09-26 | BROOK TROUT     |    153 fish | 3.03"  | SUMMIT
+
+--- W-62 ---
+  2025-06-25 | BROOK TROUT     |    200 fish | 3.01"  | SUMMIT
+  2022-06-27 | BROOK TROUT     |    204 fish | 2.75"  | SUMMIT
+  2019-07-09 | BROOK TROUT     |    195 fish | 2.68"  | SUMMIT
+
+--- WR-19 ---
+  2024-06-26 | MUSKIE TIGER    |    150 fish | 5.93"  | DUCHESNE
+  2022-07-06 | MUSKIE TIGER    |    100 fish | 3.39"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |    506 fish | 1.7"   | DUCHESNE
+
+--- WR-34 ---
+  2024-09-23 | CUTTHROAT       |    898 fish | 1.48"  | DUCHESNE
+  2018-10-12 | CUTTHROAT       |    649 fish | 1.74"  | DUCHESNE
+
+--- WR-73 ---
+  2023-09-19 | CUTTHROAT       |    842 fish | 1.45"  | DUCHESNE
+  2018-10-12 | CUTTHROAT       |    590 fish | 1.74"  | DUCHESNE
+
+--- WR-74 ---
+  2022-09-23 | CUTTHROAT       |    223 fish | 1.57"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |    253 fish | 1.7"   | DUCHESNE
+
+--- WR-75 ---
+  2023-09-19 | CUTTHROAT       |    281 fish | 1.45"  | DUCHESNE
+  2018-10-12 | CUTTHROAT       |    236 fish | 1.74"  | DUCHESNE
+
+--- WR-77 ---
+  2024-06-26 | BROOK TROUT     |    166 fish | 2.93"  | DUCHESNE
+  2022-07-06 | BROOK TROUT     |    327 fish | 3.62"  | DUCHESNE
+
+--- WR-9 ---
+  2024-06-26 | BROOK TROUT     |    249 fish | 2.93"  | DUCHESNE
+  2021-07-01 | BROOK TROUT     |    251 fish | 3.32"  | DUCHESNE
+  2018-07-10 | BROOK TROUT     |    252 fish | 2.88"  | DUCHESNE
+
+--- X-105 ---
+  2021-09-22 | CUTTHROAT       |    984 fish | 1.9"   | DUCHESNE
+
+--- X-24 ---
+  2022-09-23 | CUTTHROAT       |   1566 fish | 1.91"  | DUCHESNE
+
+--- X-25 ---
+  2022-09-23 | CUTTHROAT       |   1689 fish | 1.91"  | DUCHESNE
+
+--- X-26 ---
+  2025-07-01 | BROOK TROUT     |    397 fish | 3.4"   | DUCHESNE
+  2021-07-01 | BROOK TROUT     |    397 fish | 3.32"  | DUCHESNE
+
+--- X-51 ---
+  2022-09-23 | CUTTHROAT       |    412 fish | 1.91"  | DUCHESNE
+  2018-10-12 | CUTTHROAT       |    295 fish | 1.74"  | DUCHESNE
+
+--- X-57 ---
+  2022-07-06 | BROOK TROUT     |    938 fish | 3.62"  | DUCHESNE
+
+--- X-60 ---
+  2021-09-22 | CUTTHROAT       |    813 fish | 1.9"   | DUCHESNE
+
+--- X-61 ---
+  2022-09-23 | CUTTHROAT       |    371 fish | 1.91"  | DUCHESNE
+  2018-10-12 | CUTTHROAT       |    295 fish | 1.74"  | DUCHESNE
+
+--- X-62 ---
+  2022-09-23 | CUTTHROAT       |    453 fish | 1.91"  | DUCHESNE
+  2018-10-12 | CUTTHROAT       |    295 fish | 1.74"  | DUCHESNE
+
+--- X-78 ---
+  2021-09-22 | CUTTHROAT       |   1712 fish | 1.9"   | DUCHESNE
+
+--- X-84 ---
+  2025-07-01 | BROOK TROUT     |    319 fish | 3.4"   | DUCHESNE
+  2022-07-06 | BROOK TROUT     |    506 fish | 3.62"  | DUCHESNE
+  2019-07-11 | BROOK TROUT     |    377 fish | 2.68"  | DUCHESNE
+
+--- X-85 ---
+  2025-07-01 | BROOK TROUT     |    389 fish | 3.4"   | DUCHESNE
+  2020-07-06 | BROOK TROUT     |    473 fish | 3.15"  | DUCHESNE
+
+--- X-86 ---
+  2023-07-21 | BROOK TROUT     |    697 fish | 3.0"   | DUCHESNE
+  2020-07-06 | BROOK TROUT     |    701 fish | 3.15"  | DUCHESNE
+
+--- X-89 ---
+  2023-09-19 | CUTTHROAT       |    374 fish | 1.45"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |    379 fish | 1.7"   | DUCHESNE
+
+--- Y-19 ---
+  2022-07-06 | BROOK TROUT     |    555 fish | 3.62"  | DUCHESNE
+
+--- Y-20 ---
+  2020-07-06 | BROOK TROUT     |    373 fish | 3.15"  | DUCHESNE
+
+--- Y-36 ---
+  2022-07-06 | BROOK TROUT     |    753 fish | 3.62"  | DUCHESNE
+  2018-07-10 | BROOK TROUT     |    704 fish | 2.88"  | DUCHESNE
+
+--- Y-37 ---
+  2022-07-06 | BROOK TROUT     |   1037 fish | 3.62"  | DUCHESNE
+  2018-07-10 | BROOK TROUT     |    977 fish | 2.88"  | DUCHESNE
+
+--- Abes W-30 ---
+  2023-09-19 | CUTTHROAT       |   1999 fish | 2.28"  | SUMMIT
+  2019-09-26 | CUTTHROAT       |   4021 fish | 2.35"  | SUMMIT
+
+--- Alexander A-1 ---
+  2025-06-25 | BROOK TROUT     |   2300 fish | 3.01"  | SUMMIT
+  2023-07-13 | BROOK TROUT     |   2301 fish | 2.68"  | SUMMIT
+  2021-06-28 | BROOK TROUT     |   2300 fish | 2.79"  | SUMMIT
+  2019-07-08 | BROOK TROUT     |   1378 fish | 2.68"  | SUMMIT
+
+--- Ameba X-90 ---
+  2022-09-23 | CUTTHROAT       |    594 fish | 1.57"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |    569 fish | 1.7"   | DUCHESNE
+
+--- Amlen X-99 ---
+  2022-06-29 | BROOK TROUT     |    612 fish | 2.75"  | DUCHESNE
+  2018-06-27 | BROOK TROUT     |    600 fish | 2.88"  | DUCHESNE
+
+--- Arta RC-23 ---
+  2023-09-19 | CUTTHROAT       |    561 fish | 1.45"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |    569 fish | 1.7"   | DUCHESNE
+  2018-10-12 | CUTTHROAT       |    354 fish | 1.74"  | DUCHESNE
+
+--- Aspen X-63 ---
+  2022-07-06 | BROOK TROUT     |    851 fish | 3.62"  | DUCHESNE
+  2018-07-09 | BROOK TROUT     |    798 fish | 2.88"  | DUCHESNE
+
+--- Atwine X-64 ---
+  2024-06-26 | BROOK TROUT     |   1350 fish | 2.93"  | DUCHESNE
+  2021-07-01 | BROOK TROUT     |   1355 fish | 3.32"  | DUCHESNE
+  2018-07-09 | BROOK TROUT     |   1355 fish | 2.88"  | DUCHESNE
+
+--- Audrey RC-45 ---
+  2022-07-11 | BROOK TROUT     |   1000 fish | 2.92"  | DUCHESNE
+
+--- Azure A-11 ---
+  2021-09-21 | GRAYLING ARCTIC |    301 fish | 2.65"  | SUMMIT
+  2020-09-21 | GRAYLING ARCTIC |    306 fish | 2.81"  | SUMMIT
+
+--- Bear G-7 ---
+  2024-06-28 | BROOK TROUT     |   2003 fish | 2.91"  | SUMMIT
+  2022-06-30 | BROOK TROUT     |   1994 fish | 3.7"   | SUMMIT
+  2020-07-06 | BROOK TROUT     |   2010 fish | 3.49"  | SUMMIT
+  2018-07-10 | BROOK TROUT     |   2006 fish | 2.88"  | SUMMIT
+
+--- Beard U-74 ---
+  2022-07-06 | BROOK TROUT     |    481 fish | 3.62"  | DUCHESNE
+
+--- Beaver A-17 ---
+  2024-07-03 | BROOK TROUT     |    265 fish | 2.9"   | SUMMIT
+  2022-06-27 | BROOK TROUT     |    276 fish | 2.75"  | SUMMIT
+  2020-07-31 | BROOK TROUT     |    281 fish | 2.47"  | SUMMIT
+  2018-07-09 | BROOK TROUT     |    273 fish | 2.88"  | SUMMIT
+
+--- Beaver BR-10 ---
+  2025-07-14 | RAINBOW         |     99 fish | 10.44" | SUMMIT
+  2025-07-07 | RAINBOW         |    100 fish | 10.77" | SUMMIT
+  2025-07-01 | RAINBOW         |     98 fish | 10.14" | SUMMIT
+  2025-07-01 | TIGER TROUT     |    305 fish | 11.08" | SUMMIT
+  2025-07-01 | RAINBOW         |    996 fish | 10.14" | SUMMIT
+  2025-06-24 | CUTTHROAT       |  14165 fish | 8.56"  | SUMMIT
+  2025-06-23 | RAINBOW         |    110 fish | 10.44" | SUMMIT
+  2024-12-13 | CUTTHROAT       |    571 fish | 10.27" | SUMMIT
+  2024-08-05 | RAINBOW         |    115 fish | 10.28" | SUMMIT
+  2024-07-22 | RAINBOW         |    230 fish | 10.28" | SUMMIT
+  2024-07-15 | RAINBOW         |    115 fish | 10.28" | SUMMIT
+  2024-07-01 | RAINBOW         |    101 fish | 11.16" | SUMMIT
+  2024-06-30 | RAINBOW         |   1029 fish | 12.74" | SUMMIT
+  2024-06-20 | RAINBOW         |    202 fish | 11.16" | SUMMIT
+  2023-08-23 | RAINBOW         |     98 fish | 12.13" | SUMMIT
+  2023-08-07 | RAINBOW         |    101 fish | 12.13" | SUMMIT
+  2023-07-25 | RAINBOW         |    102 fish | 11.99" | SUMMIT
+  2023-07-17 | RAINBOW         |    102 fish | 11.26" | SUMMIT
+  2023-07-05 | RAINBOW         |    105 fish | 11.26" | SUMMIT
+  2023-07-03 | RAINBOW         |   1505 fish | 11.26" | SUMMIT
+  2022-08-22 | RAINBOW         |    101 fish | 10.28" | SUMMIT
+  2022-07-21 | RAINBOW         |    103 fish | 10.0"  | SUMMIT
+  2022-07-04 | RAINBOW         |     98 fish | 10.07" | SUMMIT
+  2022-06-06 | RAINBOW         |     99 fish | 9.41"  | SUMMIT
+  2022-06-02 | RAINBOW         |    112 fish | 9.21"  | SUMMIT
+  2022-06-02 | RAINBOW         |   1504 fish | 9.21"  | SUMMIT
+  2021-08-02 | RAINBOW         |    250 fish | 10.14" | SUMMIT
+  2021-07-20 | RAINBOW         |    259 fish | 10.14" | SUMMIT
+  2021-07-11 | RAINBOW         |    170 fish | 9.32"  | SUMMIT
+  2021-07-06 | RAINBOW         |     99 fish | 9.32"  | SUMMIT
+  2021-06-28 | RAINBOW         |    247 fish | 9.32"  | SUMMIT
+  2021-06-14 | RAINBOW         |    250 fish | 9.32"  | SUMMIT
+  2021-06-10 | RAINBOW         |   1498 fish | 9.29"  | SUMMIT
+  2021-06-01 | RAINBOW         |    248 fish | 9.68"  | SUMMIT
+  2020-08-17 | RAINBOW         |    201 fish | 9.12"  | SUMMIT
+  2020-08-04 | RAINBOW         |    193 fish | 8.94"  | SUMMIT
+  2020-07-24 | RAINBOW         |    196 fish | 11.99" | SUMMIT
+  2020-07-24 | RAINBOW         |   1001 fish | 11.99" | SUMMIT
+  2020-07-06 | RAINBOW         |    202 fish | 9.21"  | SUMMIT
+  2020-06-17 | RAINBOW         |    200 fish | 10.0"  | SUMMIT
+  2020-06-10 | RAINBOW         |   1000 fish | 10.0"  | SUMMIT
+  2019-08-05 | RAINBOW         |    200 fish | 10.52" | SUMMIT
+  2019-07-29 | RAINBOW         |    199 fish | 9.63"  | SUMMIT
+  2019-07-15 | RAINBOW         |    200 fish | 9.87"  | SUMMIT
+  2019-07-10 | RAINBOW         |    205 fish | 10.12" | SUMMIT
+  2019-07-01 | RAINBOW         |    208 fish | 9.75"  | SUMMIT
+  2019-06-25 | RAINBOW         |   1998 fish | 9.75"  | SUMMIT
+  2018-07-16 | RAINBOW         |    200 fish | 9.57"  | SUMMIT
+  2018-07-02 | RAINBOW         |    198 fish | 9.64"  | SUMMIT
+  2018-06-18 | RAINBOW         |    200 fish | 9.65"  | SUMMIT
+  2018-06-06 | RAINBOW         |   2002 fish | 9.65"  | SUMMIT
+  2018-06-04 | RAINBOW         |    206 fish | 9.65"  | SUMMIT
+
+--- Bedground Z-46 ---
+  2024-09-23 | GRAYLING ARCTIC |    299 fish | 2.47"  | DUCHESNE
+  2021-09-21 | GRAYLING ARCTIC |    301 fish | 2.65"  | DUCHESNE
+
+--- Bennion GR-134 ---
+  2021-07-01 | BROOK TROUT     |    771 fish | 3.32"  | SUMMIT
+
+--- Beth A-6 ---
+  2025-06-25 | BROOK TROUT     |    300 fish | 3.01"  | SUMMIT
+  2024-07-03 | BROOK TROUT     |    296 fish | 2.9"   | SUMMIT
+  2023-07-13 | BROOK TROUT     |    299 fish | 2.68"  | SUMMIT
+  2022-06-29 | BROOK TROUT     |    312 fish | 2.75"  | SUMMIT
+  2021-06-28 | BROOK TROUT     |    299 fish | 2.79"  | SUMMIT
+  2019-07-08 | BROOK TROUT     |    377 fish | 2.68"  | SUMMIT
+
+--- Betsey X-7 ---
+  2023-09-19 | CUTTHROAT       |   1965 fish | 1.45"  | DUCHESNE
+  2023-09-19 | CUTTHROAT       |   1984 fish | 1.65"  | DUCHESNE
+  2021-09-22 | CUTTHROAT       |   4023 fish | 1.9"   | DUCHESNE
+  2019-09-23 | CUTTHROAT       |   3982 fish | 1.7"   | DUCHESNE
+
+--- Big Dog X-32 ---
+  2024-09-23 | GRAYLING ARCTIC |    299 fish | 2.47"  | DUCHESNE
+
+--- Big Elk A-18 ---
+  2025-07-02 | TIGER TROUT     |    650 fish | 3.8"   | SUMMIT
+  2024-07-08 | TIGER TROUT     |    650 fish | 2.78"  | SUMMIT
+  2023-07-14 | TIGER TROUT     |    649 fish | 2.83"  | SUMMIT
+  2022-06-28 | TIGER TROUT     |    662 fish | 2.65"  | SUMMIT
+  2019-07-09 | TIGER TROUT     |    203 fish | 2.65"  | SUMMIT
+
+--- Black X-132 ---
+  2022-06-29 | BROOK TROUT     |   1188 fish | 2.75"  | DUCHESNE
+
+--- Blue A-5 ---
+  2025-06-25 | BROOK TROUT     |    400 fish | 3.01"  | SUMMIT
+  2024-07-03 | BROOK TROUT     |    398 fish | 2.9"   | SUMMIT
+  2023-07-13 | BROOK TROUT     |    403 fish | 2.68"  | SUMMIT
+  2022-06-29 | BROOK TROUT     |    396 fish | 2.75"  | SUMMIT
+  2020-07-31 | BROOK TROUT     |    611 fish | 2.47"  | SUMMIT
+
+--- Blue Z-32 ---
+  2025-07-02 | TIGER TROUT     |   1396 fish | 3.8"   | DUCHESNE
+  2022-06-28 | TIGER TROUT     |   1418 fish | 2.65"  | DUCHESNE
+  2019-07-15 | TIGER TROUT     |   1399 fish | 2.87"  | DUCHESNE
+
+--- Blythe Z-20 ---
+  2025-06-26 | BROOK TROUT     |    400 fish | 3.01"  | DUCHESNE
+  2024-07-02 | BROOK TROUT     |    398 fish | 2.9"   | DUCHESNE
+  2023-07-13 | BROOK TROUT     |    403 fish | 2.68"  | DUCHESNE
+  2022-06-27 | BROOK TROUT     |    396 fish | 2.75"  | DUCHESNE
+  2021-06-29 | BROOK TROUT     |    403 fish | 2.79"  | DUCHESNE
+  2019-07-08 | BROOK TROUT     |    520 fish | 2.68"  | DUCHESNE
+
+--- Bobs G-73 ---
+  2023-09-19 | CUTTHROAT       |   1326 fish | 1.73"  | SUMMIT
+  2020-09-23 | CUTTHROAT       |    501 fish | 2.48"  | SUMMIT
+  2020-07-31 | TIGER TROUT     |    504 fish | 2.4"   | SUMMIT
+  2018-07-09 | TIGER TROUT     |    371 fish | 2.34"  | SUMMIT
+
+--- Bollie U-96 ---
+  2023-09-19 | CUTTHROAT       |    936 fish | 1.45"  | DUCHESNE
+  2018-10-12 | CUTTHROAT       |    708 fish | 1.74"  | DUCHESNE
+
+--- Bonnie Z-6 ---
+  2025-06-26 | BROOK TROUT     |    600 fish | 3.01"  | DUCHESNE
+  2024-07-02 | BROOK TROUT     |    602 fish | 2.9"   | DUCHESNE
+  2023-07-13 | BROOK TROUT     |    598 fish | 2.68"  | DUCHESNE
+  2022-06-27 | BROOK TROUT     |    600 fish | 2.75"  | DUCHESNE
+  2021-06-29 | BROOK TROUT     |    598 fish | 2.79"  | DUCHESNE
+  2020-07-31 | BROOK TROUT     |    611 fish | 2.47"  | DUCHESNE
+  2019-07-08 | BROOK TROUT     |    455 fish | 2.68"  | DUCHESNE
+  2018-06-27 | BROOK TROUT     |    600 fish | 2.88"  | DUCHESNE
+
+--- Booker A-35 ---
+  2024-07-03 | BROOK TROUT     |    398 fish | 2.9"   | SUMMIT
+  2021-06-28 | BROOK TROUT     |    403 fish | 2.79"  | SUMMIT
+
+--- Bourbon lake (Gold Hill) BR-1 ---
+  2025-06-26 | BROOK TROUT     |     35 fish | 3.01"  | SUMMIT
+  2024-07-02 | BROOK TROUT     |    500 fish | 2.9"   | SUMMIT
+  2023-07-13 | BROOK TROUT     |     52 fish | 2.68"  | SUMMIT
+  2022-06-27 | BROOK TROUT     |     48 fish | 2.75"  | SUMMIT
+  2021-06-29 | BROOK TROUT     |     46 fish | 2.79"  | SUMMIT
+  2020-07-31 | BROOK TROUT     |     50 fish | 2.47"  | SUMMIT
+
+--- Bowden U-32 ---
+  2022-07-06 | BROOK TROUT     |    450 fish | 3.62"  | DUCHESNE
+  2018-07-10 | BROOK TROUT     |    452 fish | 2.88"  | DUCHESNE
+
+--- Bridger G-20 ---
+  2025-07-24 | RAINBOW         |    750 fish | 10.77" | SUMMIT
+  2025-07-24 | RAINBOW         |    748 fish | 10.77" | SUMMIT
+  2025-06-30 | RAINBOW         |   1500 fish | 10.14" | SUMMIT
+  2025-06-30 | BROOK TROUT     |   2101 fish | 3.01"  | SUMMIT
+  2025-06-03 | RAINBOW         |   1500 fish | 10.77" | SUMMIT
+  2024-07-17 | BROOK TROUT     |   2091 fish | 3.71"  | SUMMIT
+  2024-07-11 | RAINBOW         |   2300 fish | 10.0"  | SUMMIT
+  2024-06-24 | RAINBOW         |   1544 fish | 11.16" | SUMMIT
+  2024-05-29 | RAINBOW         |   1800 fish | 10.77" | SUMMIT
+  2023-08-09 | BROOK TROUT     |   2100 fish | 3.72"  | SUMMIT
+  2023-07-31 | RAINBOW         |   1650 fish | 11.99" | SUMMIT
+  2023-07-11 | RAINBOW         |    998 fish | 11.26" | SUMMIT
+  2023-06-26 | RAINBOW         |   1532 fish | 10.96" | SUMMIT
+  2023-06-07 | RAINBOW         |   1569 fish | 10.6"  | SUMMIT
+  2023-06-06 | RAINBOW         |    903 fish | 10.6"  | SUMMIT
+  2022-07-28 | RAINBOW         |   1000 fish | 10.0"  | SUMMIT
+  2022-07-12 | RAINBOW         |   1502 fish | 10.07" | SUMMIT
+  2022-06-30 | RAINBOW         |   1500 fish | 9.41"  | SUMMIT
+  2022-05-23 | RAINBOW         |   1218 fish | 9.52"  | SUMMIT
+  2022-05-23 | BROOK TROUT     |   2108 fish | 2.33"  | SUMMIT
+  2021-07-26 | RAINBOW         |   1500 fish | 10.14" | SUMMIT
+  2021-07-13 | RAINBOW         |   1502 fish | 9.32"  | SUMMIT
+  2021-07-13 | BROOK TROUT     |   2106 fish | 2.68"  | SUMMIT
+  2021-06-22 | RAINBOW         |   1502 fish | 9.32"  | SUMMIT
+  2021-05-25 | RAINBOW         |   1496 fish | 9.03"  | SUMMIT
+  2020-08-17 | RAINBOW         |   2000 fish | 9.12"  | SUMMIT
+  2020-08-03 | RAINBOW         |   1505 fish | 8.94"  | SUMMIT
+  2020-07-24 | RAINBOW         |   1617 fish | 8.66"  | SUMMIT
+  2020-07-24 | BROOK TROUT     |   2106 fish | 2.49"  | SUMMIT
+  2020-07-09 | RAINBOW         |    999 fish | 9.75"  | SUMMIT
+  2020-06-23 | RAINBOW         |   1002 fish | 9.83"  | SUMMIT
+  2020-05-15 | RAINBOW         |    991 fish | 9.09"  | SUMMIT
+  2019-08-05 | RAINBOW         |   1400 fish | 10.52" | SUMMIT
+  2019-07-22 | RAINBOW         |   1501 fish | 9.63"  | SUMMIT
+  2019-07-09 | RAINBOW         |   1499 fish | 10.12" | SUMMIT
+  2019-07-09 | BROOK TROUT     |   1690 fish | 2.68"  | SUMMIT
+  2019-06-24 | RAINBOW         |   1593 fish | 9.55"  | SUMMIT
+  2019-06-10 | RAINBOW         |   2108 fish | 9.03"  | SUMMIT
+  2018-08-08 | RAINBOW         |   1509 fish | 9.61"  | SUMMIT
+  2018-07-16 | RAINBOW         |   1500 fish | 9.57"  | SUMMIT
+  2018-07-03 | RAINBOW         |   1500 fish | 9.57"  | SUMMIT
+  2018-06-18 | RAINBOW         |   1502 fish | 9.65"  | SUMMIT
+  2018-05-30 | BROOK TROUT     |   2156 fish | 2.65"  | SUMMIT
+  2018-05-30 | RAINBOW         |   1989 fish | 9.17"  | SUMMIT
+
+--- Brinkley RC-4 ---
+  2023-07-21 | BROOK TROUT     |    602 fish | 3.0"   | DUCHESNE
+  2019-07-09 | BROOK TROUT     |    455 fish | 2.68"  | DUCHESNE
+
+--- Brook A-20 ---
+  2024-07-03 | BROOK TROUT     |     71 fish | 2.9"   | SUMMIT
+  2022-06-27 | BROOK TROUT     |     72 fish | 2.75"  | SUMMIT
+  2020-07-31 | BROOK TROUT     |     99 fish | 2.47"  | SUMMIT
+  2018-07-09 | BROOK TROUT     |    105 fish | 2.88"  | SUMMIT
+
+--- Brook U-54 ---
+  2023-07-21 | BROOK TROUT     |   1003 fish | 3.0"   | DUCHESNE
+  2020-07-06 | BROOK TROUT     |   1005 fish | 3.49"  | DUCHESNE
+
+--- Brown Duck X-31 ---
+  2022-09-23 | CUTTHROAT       |   2719 fish | 1.91"  | DUCHESNE
+  2022-07-06 | MUSKIE TIGER    |    150 fish | 3.39"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |   2718 fish | 1.7"   | DUCHESNE
+
+--- Buckeye A-3 ---
+  2025-06-25 | BROOK TROUT     |    170 fish | 3.01"  | SUMMIT
+  2024-07-03 | BROOK TROUT     |    173 fish | 2.9"   | SUMMIT
+  2023-07-13 | BROOK TROUT     |    169 fish | 2.68"  | SUMMIT
+  2022-06-29 | BROOK TROUT     |    168 fish | 2.75"  | SUMMIT
+  2021-06-28 | BROOK TROUT     |    173 fish | 2.79"  | SUMMIT
+  2020-07-31 | BROOK TROUT     |    182 fish | 2.47"  | SUMMIT
+  2018-06-27 | BROOK TROUT     |    500 fish | 2.88"  | SUMMIT
+
+--- Bud Z-2 ---
+  2025-06-26 | BROOK TROUT     |    560 fish | 3.01"  | DUCHESNE
+  2024-07-02 | BROOK TROUT     |    561 fish | 2.9"   | DUCHESNE
+  2023-07-13 | BROOK TROUT     |    559 fish | 2.68"  | DUCHESNE
+  2022-06-27 | BROOK TROUT     |    564 fish | 2.75"  | DUCHESNE
+  2021-06-28 | BROOK TROUT     |    564 fish | 2.79"  | DUCHESNE
+  2020-07-31 | BROOK TROUT     |    561 fish | 2.47"  | DUCHESNE
+  2019-07-08 | BROOK TROUT     |    416 fish | 2.68"  | DUCHESNE
+  2018-06-27 | BROOK TROUT     |    560 fish | 2.88"  | DUCHESNE
+
+--- Butterfly Z-1 ---
+  2025-07-29 | RAINBOW         |    351 fish | 12.44" | DUCHESNE
+  2025-07-21 | RAINBOW         |    350 fish | 10.77" | DUCHESNE
+  2025-07-14 | RAINBOW         |    352 fish | 10.44" | DUCHESNE
+  2025-07-11 | BROOK TROUT     |   1359 fish | 3.6"   | DUCHESNE
+  2025-07-10 | TIGER TROUT     |    300 fish | 11.08" | DUCHESNE
+  2025-07-09 | RAINBOW         |    350 fish | 10.77" | DUCHESNE
+  2025-07-07 | RAINBOW         |    350 fish | 10.77" | DUCHESNE
+  2025-06-25 | TIGER TROUT     |    298 fish | 11.08" | DUCHESNE
+  2025-06-24 | RAINBOW         |    348 fish | 10.14" | DUCHESNE
+  2025-06-17 | RAINBOW         |    277 fish | 10.6"  | DUCHESNE
+  2025-06-17 | RAINBOW         |     78 fish | 10.6"  | DUCHESNE
+  2024-10-21 | TIGER TROUT     |    280 fish | 12.13" | DUCHESNE
+  2024-08-28 | RAINBOW         |    309 fish | 11.02" | DUCHESNE
+  2024-08-14 | RAINBOW         |    311 fish | 10.28" | DUCHESNE
+  2024-08-12 | TIGER TROUT     |    213 fish | 10.55" | DUCHESNE
+  2024-08-05 | RAINBOW         |    311 fish | 10.28" | DUCHESNE
+  2024-07-31 | TIGER TROUT     |    318 fish | 10.56" | DUCHESNE
+  2024-07-29 | RAINBOW         |    322 fish | 10.28" | DUCHESNE
+  2024-07-23 | RAINBOW         |    299 fish | 10.28" | DUCHESNE
+  2024-07-15 | TIGER TROUT     |    306 fish | 10.21" | DUCHESNE
+  2024-07-15 | RAINBOW         |    300 fish | 10.0"  | DUCHESNE
+  2024-07-08 | RAINBOW         |    325 fish | 10.0"  | DUCHESNE
+  2024-07-08 | TIGER TROUT     |    300 fish | 10.0"  | DUCHESNE
+  2024-07-03 | TIGER TROUT     |    300 fish | 10.0"  | DUCHESNE
+  2024-07-02 | RAINBOW         |    300 fish | 10.0"  | DUCHESNE
+  2024-06-20 | TIGER TROUT     |    302 fish | 9.87"  | DUCHESNE
+  2024-06-19 | RAINBOW         |    299 fish | 12.25" | DUCHESNE
+  2023-08-28 | RAINBOW         |    200 fish | 12.13" | DUCHESNE
+  2023-08-22 | TIGER TROUT     |    300 fish | 9.41"  | DUCHESNE
+  2023-08-21 | RAINBOW         |    200 fish | 12.13" | DUCHESNE
+  2023-08-14 | TIGER TROUT     |    201 fish | 9.41"  | DUCHESNE
+  2023-08-14 | RAINBOW         |    300 fish | 11.65" | DUCHESNE
+  2023-08-07 | RAINBOW         |    315 fish | 12.13" | DUCHESNE
+  2023-08-02 | RAINBOW         |    301 fish | 12.13" | DUCHESNE
+  2023-08-01 | RAINBOW         |    302 fish | 9.52"  | DUCHESNE
+  2023-07-25 | RAINBOW         |    305 fish | 11.99" | DUCHESNE
+  2023-07-18 | RAINBOW         |    301 fish | 11.26" | DUCHESNE
+  2023-07-18 | TIGER TROUT     |    304 fish | 9.21"  | DUCHESNE
+  2023-07-17 | BROOK TROUT     |    494 fish | 2.68"  | DUCHESNE
+  2023-07-11 | RAINBOW         |    298 fish | 11.26" | DUCHESNE
+  2023-07-05 | TIGER TROUT     |    304 fish | 9.21"  | DUCHESNE
+  2023-07-03 | RAINBOW         |    306 fish | 11.26" | DUCHESNE
+  2023-06-29 | RAINBOW         |    296 fish | 11.6"  | DUCHESNE
+  2023-06-29 | TIGER TROUT     |    300 fish | 9.41"  | DUCHESNE
+  2022-08-29 | RAINBOW         |    200 fish | 10.28" | DUCHESNE
+  2022-08-23 | RAINBOW         |    200 fish | 10.28" | DUCHESNE
+  2022-08-16 | TIGER TROUT     |    302 fish | 9.63"  | DUCHESNE
+  2022-08-15 | RAINBOW         |    300 fish | 10.0"  | DUCHESNE
+  2022-08-08 | RAINBOW         |    300 fish | 10.0"  | DUCHESNE
+  2022-08-02 | TIGER TROUT     |    300 fish | 9.41"  | DUCHESNE
+  2022-08-01 | RAINBOW         |    300 fish | 10.0"  | DUCHESNE
+  2022-07-26 | RAINBOW         |    300 fish | 10.0"  | DUCHESNE
+  2022-07-19 | RAINBOW         |    301 fish | 10.07" | DUCHESNE
+  2022-07-18 | TIGER TROUT     |    300 fish | 9.41"  | DUCHESNE
+  2022-07-11 | RAINBOW         |    301 fish | 10.07" | DUCHESNE
+  2022-07-11 | TIGER TROUT     |    302 fish | 9.52"  | DUCHESNE
+  2022-07-06 | TIGER TROUT     |     99 fish | 9.52"  | DUCHESNE
+  2022-07-05 | RAINBOW         |    306 fish | 10.07" | DUCHESNE
+  2022-07-04 | BROOK TROUT     |    500 fish | 2.92"  | DUCHESNE
+  2022-06-22 | TIGER TROUT     |    500 fish | 9.36"  | DUCHESNE
+  2022-06-14 | RAINBOW         |    300 fish | 9.41"  | DUCHESNE
+  2021-08-30 | RAINBOW         |    210 fish | 12.13" | DUCHESNE
+  2021-08-23 | RAINBOW         |    193 fish | 12.13" | DUCHESNE
+  2021-08-17 | RAINBOW         |    301 fish | 12.13" | DUCHESNE
+  2021-08-16 | TIGER TROUT     |    499 fish | 9.21"  | DUCHESNE
+  2021-08-09 | RAINBOW         |    300 fish | 10.14" | DUCHESNE
+  2021-08-02 | TIGER TROUT     |    299 fish | 9.26"  | DUCHESNE
+  2021-08-02 | RAINBOW         |    300 fish | 10.14" | DUCHESNE
+  2021-07-26 | RAINBOW         |    300 fish | 10.14" | DUCHESNE
+  2021-07-20 | TIGER TROUT     |    308 fish | 9.63"  | DUCHESNE
+  2021-07-19 | RAINBOW         |    312 fish | 9.32"  | DUCHESNE
+  2021-07-12 | RAINBOW         |    300 fish | 9.32"  | DUCHESNE
+  2021-07-07 | BROOK TROUT     |    147 fish | 13.96" | DUCHESNE
+  2021-07-07 | RAINBOW         |    340 fish | 9.32"  | DUCHESNE
+  2021-07-06 | TIGER TROUT     |    300 fish | 9.41"  | DUCHESNE
+  2021-07-01 | BROOK TROUT     |    495 fish | 2.79"  | DUCHESNE
+  2021-06-21 | RAINBOW         |    300 fish | 9.32"  | DUCHESNE
+  2021-06-09 | TIGER TROUT     |    303 fish | 9.41"  | DUCHESNE
+  2021-06-09 | RAINBOW         |    300 fish | 9.29"  | DUCHESNE
+  2020-09-09 | TIGER TROUT     |    400 fish | 8.66"  | DUCHESNE
+  2020-09-08 | RAINBOW         |    399 fish | 8.94"  | DUCHESNE
+  2020-09-01 | RAINBOW         |    400 fish | 9.31"  | DUCHESNE
+  2020-08-31 | TIGER TROUT     |    400 fish | 9.31"  | DUCHESNE
+  2020-08-24 | RAINBOW         |    300 fish | 9.12"  | DUCHESNE
+  2020-08-24 | TIGER TROUT     |    299 fish | 9.03"  | DUCHESNE
+  2020-08-17 | RAINBOW         |    300 fish | 9.12"  | DUCHESNE
+  2020-08-10 | TIGER TROUT     |    400 fish | 8.31"  | DUCHESNE
+  2020-08-10 | RAINBOW         |    399 fish | 8.94"  | DUCHESNE
+  2020-08-03 | RAINBOW         |    403 fish | 8.94"  | DUCHESNE
+  2020-08-03 | BROOK TROUT     |    117 fish | 3.66"  | DUCHESNE
+  2020-07-28 | TIGER TROUT     |    391 fish | 8.31"  | DUCHESNE
+  2020-07-27 | RAINBOW         |    399 fish | 11.99" | DUCHESNE
+  2020-07-27 | BROOK TROUT     |    486 fish | 2.49"  | DUCHESNE
+  2020-07-26 | TIGER TROUT     |    435 fish | 8.31"  | DUCHESNE
+  2020-07-24 | RAINBOW         |    399 fish | 11.99" | DUCHESNE
+  2020-07-06 | RAINBOW         |    400 fish | 9.21"  | DUCHESNE
+  2020-06-17 | RAINBOW         |    400 fish | 10.0"  | DUCHESNE
+  2019-09-03 | RAINBOW         |    400 fish | 9.87"  | DUCHESNE
+  2019-08-26 | RAINBOW         |    200 fish | 9.87"  | DUCHESNE
+  2019-08-19 | RAINBOW         |    400 fish | 10.77" | DUCHESNE
+  2019-08-12 | TIGER TROUT     |    400 fish | 9.75"  | DUCHESNE
+  2019-08-12 | RAINBOW         |    400 fish | 10.52" | DUCHESNE
+  2019-08-05 | RAINBOW         |    400 fish | 10.52" | DUCHESNE
+  2019-07-30 | TIGER TROUT     |    465 fish | 9.63"  | DUCHESNE
+  2019-07-29 | RAINBOW         |    400 fish | 9.63"  | DUCHESNE
+  2019-07-23 | TIGER TROUT     |    401 fish | 10.14" | DUCHESNE
+  2019-07-23 | RAINBOW         |    400 fish | 9.63"  | DUCHESNE
+  2019-07-17 | TIGER TROUT     |    399 fish | 8.94"  | DUCHESNE
+  2019-07-16 | RAINBOW         |    400 fish | 10.0"  | DUCHESNE
+  2019-07-08 | RAINBOW         |    400 fish | 10.12" | DUCHESNE
+  2019-07-08 | TIGER TROUT     |    399 fish | 8.7"   | DUCHESNE
+  2019-07-02 | TIGER TROUT     |    299 fish | 8.28"  | DUCHESNE
+  2019-07-01 | RAINBOW         |    405 fish | 9.75"  | DUCHESNE
+  2018-08-27 | RAINBOW         |    504 fish | 10.6"  | DUCHESNE
+  2018-08-20 | RAINBOW         |    499 fish | 10.34" | DUCHESNE
+  2018-08-13 | RAINBOW         |    499 fish | 9.61"  | DUCHESNE
+  2018-08-06 | RAINBOW         |    299 fish | 9.61"  | DUCHESNE
+  2018-07-31 | TIGER TROUT     |    338 fish | 10.36" | DUCHESNE
+  2018-07-30 | RAINBOW         |    300 fish | 9.77"  | DUCHESNE
+  2018-07-23 | RAINBOW         |    306 fish | 10.21" | DUCHESNE
+  2018-07-17 | RAINBOW         |    301 fish | 10.21" | DUCHESNE
+  2018-07-11 | TIGER TROUT     |    398 fish | 10.36" | DUCHESNE
+  2018-07-10 | RAINBOW         |    300 fish | 9.63"  | DUCHESNE
+  2018-07-02 | RAINBOW         |    399 fish | 9.64"  | DUCHESNE
+  2018-07-02 | RAINBOW         |    377 fish | 9.64"  | DUCHESNE
+  2018-06-28 | TIGER TROUT     |    300 fish | 9.63"  | DUCHESNE
+  2018-06-25 | RAINBOW         |    299 fish | 9.64"  | DUCHESNE
+  2018-06-21 | RAINBOW         |    301 fish | 9.64"  | DUCHESNE
+  2018-06-11 | RAINBOW         |    300 fish | 9.65"  | DUCHESNE
+  2018-06-11 | TIGER TROUT     |    398 fish | 9.63"  | DUCHESNE
+  2018-06-05 | RAINBOW         |    297 fish | 9.65"  | DUCHESNE
+  2018-05-30 | BROOK TROUT     |    508 fish | 2.53"  | DUCHESNE
+
+--- CHARITY L P-16 ---
+  2024-07-03 | BROOK TROUT     |    204 fish | 2.9"   | SUMMIT
+  2022-06-27 | BROOK TROUT     |    204 fish | 2.75"  | SUMMIT
+  2019-07-08 | BROOK TROUT     |    195 fish | 2.68"  | SUMMIT
+
+--- CIRQUE L WR-33 ---
+  2019-10-01 | GRAYLING ARCTIC |    706 fish | 2.39"  | DUCHESNE
+
+--- Cabin RC-42 ---
+  2022-09-23 | CUTTHROAT       |    520 fish | 1.57"  | DUCHESNE
+  2018-10-12 | CUTTHROAT       |    354 fish | 1.74"  | DUCHESNE
+
+--- Carol W-51 ---
+  2024-07-02 | BROOK TROUT     |    265 fish | 2.9"   | SUMMIT
+  2022-06-27 | BROOK TROUT     |    276 fish | 2.75"  | SUMMIT
+  2020-07-30 | BROOK TROUT     |    281 fish | 2.47"  | SUMMIT
+  2018-06-26 | BROOK TROUT     |    270 fish | 2.88"  | SUMMIT
+
+--- Carrol East X-21 ---
+  2022-09-23 | CUTTHROAT       |    783 fish | 1.91"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |    822 fish | 1.7"   | DUCHESNE
+
+--- Carrol Upper X-18 ---
+  2022-06-30 | BROOK TROUT     |   3503 fish | 3.7"   | DUCHESNE
+  2018-10-12 | CUTTHROAT       |    590 fish | 1.74"  | DUCHESNE
+
+--- Carrot U-17 ---
+  2025-07-01 | BROOK TROUT     |   1502 fish | 3.4"   | DUCHESNE
+  2022-07-06 | BROOK TROUT     |   1610 fish | 3.62"  | DUCHESNE
+  2019-07-11 | BROOK TROUT     |   1170 fish | 2.68"  | DUCHESNE
+
+--- Castle D-14 ---
+  2024-09-23 | CUTTHROAT       |    196 fish | 1.48"  | DUCHESNE
+  2022-09-23 | CUTTHROAT       |    223 fish | 1.57"  | DUCHESNE
+  2019-07-09 | TIGER TROUT     |     95 fish | 2.65"  | DUCHESNE
+
+--- Castle G-11 ---
+  2024-07-08 | TIGER TROUT     |    603 fish | 2.78"  | SUMMIT
+  2020-07-31 | TIGER TROUT     |    612 fish | 2.4"   | SUMMIT
+
+--- Castle W-67 ---
+  2024-09-24 | CUTTHROAT       |    823 fish | 2.4"   | SUMMIT
+  2023-09-19 | CUTTHROAT       |    399 fish | 2.28"  | SUMMIT
+  2022-09-19 | CUTTHROAT       |    653 fish | 2.51"  | SUMMIT
+  2022-09-19 | CUTTHROAT       |    159 fish | 2.43"  | SUMMIT
+  2019-07-09 | TIGER TROUT     |   1202 fish | 2.65"  | SUMMIT
+
+--- Chain 4 U-4 ---
+  2024-09-23 | CUTTHROAT       |    681 fish | 1.85"  | DUCHESNE
+  2023-09-19 | CUTTHROAT       |    655 fish | 1.45"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |    695 fish | 1.7"   | DUCHESNE
+  2018-10-12 | CUTTHROAT       |   1593 fish | 1.74"  | DUCHESNE
+
+--- Chepeta WR-64 ---
+  2022-09-23 | CUTTHROAT       |   9213 fish | 1.57"  | DUCHESNE
+  2022-06-30 | BROOK TROUT     |   1838 fish | 3.7"   | DUCHESNE
+  2018-10-12 | CUTTHROAT       |   4366 fish | 1.74"  | DUCHESNE
+
+--- China G-21 ---
+  2025-07-01 | BROOK TROUT     |   2499 fish | 3.4"   | SUMMIT
+  2024-06-28 | BROOK TROUT     |   3885 fish | 2.91"  | SUMMIT
+  2023-07-21 | BROOK TROUT     |   3916 fish | 3.0"   | SUMMIT
+  2022-06-30 | BROOK TROUT     |   4000 fish | 3.7"   | SUMMIT
+  2021-09-21 | GRAYLING ARCTIC |   3999 fish | 2.65"  | SUMMIT
+  2021-07-01 | BROOK TROUT     |   6412 fish | 3.32"  | SUMMIT
+  2020-09-21 | GRAYLING ARCTIC |   3096 fish | 2.81"  | SUMMIT
+  2020-07-06 | BROOK TROUT     |   7771 fish | 3.15"  | SUMMIT
+  2019-10-01 | GRAYLING ARCTIC |   4028 fish | 2.39"  | SUMMIT
+  2019-07-09 | BROOK TROUT     |   5850 fish | 2.68"  | SUMMIT
+  2018-10-15 | GRAYLING ARCTIC |   7513 fish | 3.31"  | SUMMIT
+  2018-07-09 | BROOK TROUT     |   7802 fish | 2.88"  | SUMMIT
+
+--- Clegg A-47 ---
+  2025-06-26 | BROOK TROUT     |    250 fish | 3.01"  | SUMMIT
+  2024-07-03 | BROOK TROUT     |    255 fish | 2.9"   | SUMMIT
+  2023-07-13 | BROOK TROUT     |    247 fish | 2.68"  | SUMMIT
+  2022-06-27 | BROOK TROUT     |    252 fish | 2.75"  | SUMMIT
+  2021-06-28 | BROOK TROUT     |    253 fish | 2.79"  | SUMMIT
+  2018-06-27 | BROOK TROUT     |    500 fish | 2.88"  | SUMMIT
+
+--- Clements X-74 ---
+  2022-09-23 | CUTTHROAT       |   5424 fish | 1.57"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |   3918 fish | 1.7"   | DUCHESNE
+
+--- Cleveland WR-7 ---
+  2021-07-01 | BROOK TROUT     |   2406 fish | 3.32"  | DUCHESNE
+
+--- Cliff A-34 ---
+  2024-09-24 | CUTTHROAT       |   1008 fish | 2.4"   | SUMMIT
+  2022-06-28 | TIGER TROUT     |    621 fish | 2.65"  | SUMMIT
+  2021-06-30 | TIGER TROUT     |    602 fish | 2.69"  | SUMMIT
+  2020-07-31 | TIGER TROUT     |    900 fish | 2.4"   | SUMMIT
+  2019-07-09 | TIGER TROUT     |    905 fish | 2.65"  | SUMMIT
+  2018-07-09 | TIGER TROUT     |    761 fish | 2.34"  | SUMMIT
+
+--- Cliff G-5 ---
+  2025-06-30 | CUTTHROAT       |   2771 fish | 1.84"  | SUMMIT
+  2025-06-30 | CUTTHROAT       |    399 fish | 2.69"  | SUMMIT
+  2023-07-14 | TIGER TROUT     |   1100 fish | 2.83"  | SUMMIT
+  2022-06-28 | TIGER TROUT     |   1107 fish | 2.65"  | SUMMIT
+  2020-07-31 | TIGER TROUT     |   3312 fish | 2.4"   | SUMMIT
+
+--- Cliff WR-49 ---
+  2025-06-30 | BROOK TROUT     |   1996 fish | 3.4"   | DUCHESNE
+  2021-07-01 | TIGER TROUT     |   1993 fish | 3.28"  | DUCHESNE
+  2021-07-01 | BROOK TROUT     |   1997 fish | 3.32"  | DUCHESNE
+
+--- Clyde A-28 ---
+  2025-06-25 | BROOK TROUT     |   1600 fish | 3.01"  | SUMMIT
+  2022-06-27 | BROOK TROUT     |   1596 fish | 2.75"  | SUMMIT
+  2019-07-08 | BROOK TROUT     |   1196 fish | 2.68"  | SUMMIT
+
+--- Coffin GR-144 ---
+  2024-07-15 | CUTTHROAT       |   2008 fish | 2.26"  | SUMMIT
+  2021-06-30 | TIGER TROUT     |   1997 fish | 2.69"  | SUMMIT
+  2018-07-10 | TIGER TROUT     |   2007 fish | 2.35"  | SUMMIT
+
+--- Columbine GR-116 ---
+  2022-07-06 | TIGER TROUT     |    427 fish | 3.69"  | SUMMIT
+  2018-07-10 | TIGER TROUT     |    854 fish | 3.29"  | SUMMIT
+
+--- Continent X-121 ---
+  2024-09-23 | CUTTHROAT       |   2695 fish | 1.48"  | DUCHESNE
+  2021-09-22 | CUTTHROAT       |   2739 fish | 1.9"   | DUCHESNE
+
+--- Craig U-85 ---
+  2018-10-12 | CUTTHROAT       |    354 fish | 1.74"  | DUCHESNE
+
+--- Crater X-94 ---
+  2024-07-09 | SPLAKE          |    706 fish | 2.94"  | DUCHESNE
+  2022-07-11 | SPLAKE          |    701 fish | 3.54"  | DUCHESNE
+  2021-07-01 | TIGER TROUT     |    697 fish | 3.28"  | DUCHESNE
+  2019-09-26 | SPLAKE          |    700 fish | 4.57"  | DUCHESNE
+  2018-07-10 | TIGER TROUT     |    714 fish | 2.35"  | DUCHESNE
+
+--- Crescent U-48 ---
+  2023-09-19 | CUTTHROAT       |   4678 fish | 1.45"  | DUCHESNE
+  2018-10-12 | CUTTHROAT       |   3776 fish | 1.74"  | DUCHESNE
+
+--- Crow DG-3 ---
+  2023-09-19 | CUTTHROAT       |   1777 fish | 1.45"  | DUCHESNE
+  2018-10-12 | CUTTHROAT       |   1298 fish | 1.74"  | DUCHESNE
+
+--- Crystal A-51 ---
+  2025-06-25 | BROOK TROUT     |   1000 fish | 3.01"  | SUMMIT
+  2024-07-03 | BROOK TROUT     |   1000 fish | 2.9"   | SUMMIT
+  2023-07-13 | BROOK TROUT     |   1001 fish | 2.68"  | SUMMIT
+  2022-06-27 | BROOK TROUT     |    996 fish | 2.75"  | SUMMIT
+  2021-06-28 | BROOK TROUT     |   1000 fish | 2.79"  | SUMMIT
+  2020-08-03 | BROOK TROUT     |    252 fish | 3.66"  | SUMMIT
+  2020-07-30 | BROOK TROUT     |   1006 fish | 2.47"  | SUMMIT
+  2019-07-08 | BROOK TROUT     |    754 fish | 2.68"  | SUMMIT
+  2018-07-09 | BROOK TROUT     |   1008 fish | 2.88"  | SUMMIT
+
+--- Cuberant #1 W-42 ---
+  2024-07-02 | BROOK TROUT     |    398 fish | 2.9"   | SUMMIT
+  2021-06-29 | BROOK TROUT     |    403 fish | 2.79"  | SUMMIT
+  2018-07-09 | BROOK TROUT     |    399 fish | 2.88"  | SUMMIT
+
+--- Cuberant #3 W-44 ---
+  2022-06-27 | BROOK TROUT     |    396 fish | 2.75"  | SUMMIT
+  2018-06-27 | BROOK TROUT     |    400 fish | 2.88"  | SUMMIT
+
+--- Cuberant #4 W-45 ---
+  2024-09-24 | CUTTHROAT       |   3334 fish | 2.4"   | SUMMIT
+  2022-06-28 | TIGER TROUT     |   2214 fish | 2.65"  | SUMMIT
+  2020-09-21 | TIGER TROUT     |   2200 fish | 3.15"  | SUMMIT
+  2018-07-09 | TIGER TROUT     |   1599 fish | 2.34"  | SUMMIT
+
+--- Cutthroat BR-37 ---
+  2024-07-02 | BROOK TROUT     |    398 fish | 2.9"   | SUMMIT
+  2022-06-28 | TIGER TROUT     |    419 fish | 2.65"  | SUMMIT
+  2019-10-21 | CUTTHROAT       |    150 fish | 2.56"  | DUCHESNE
+  2019-07-09 | TIGER TROUT     |    405 fish | 2.65"  | SUMMIT
+
+--- Dale Z-39 ---
+  2024-06-28 | BROOK TROUT     |   1469 fish | 2.91"  | DUCHESNE
+  2021-06-30 | BROOK TROUT     |   1495 fish | 2.79"  | DUCHESNE
+  2018-06-26 | BROOK TROUT     |   1500 fish | 2.88"  | DUCHESNE
+
+--- Davis North U-46 ---
+  2023-07-21 | BROOK TROUT     |    401 fish | 3.0"   | DUCHESNE
+  2019-07-11 | BROOK TROUT     |    312 fish | 2.68"  | DUCHESNE
+
+--- Davis South U-34 ---
+  2023-07-21 | BROOK TROUT     |    621 fish | 3.0"   | DUCHESNE
+  2019-07-11 | BROOK TROUT     |    195 fish | 2.68"  | DUCHESNE
+  2019-07-11 | BROOK TROUT     |    420 fish | 3.97"  | DUCHESNE
+
+--- Daynes Z-38 ---
+  2024-06-28 | BROOK TROUT     |   2003 fish | 2.91"  | DUCHESNE
+  2021-06-29 | BROOK TROUT     |   2001 fish | 2.79"  | DUCHESNE
+  2018-06-26 | BROOK TROUT     |   2000 fish | 2.88"  | DUCHESNE
+
+--- Dead Horse G-77 ---
+  2023-09-19 | CUTTHROAT       |   3203 fish | 1.73"  | SUMMIT
+  2020-07-31 | TIGER TROUT     |   1602 fish | 2.4"   | SUMMIT
+  2018-07-09 | TIGER TROUT     |   1209 fish | 2.34"  | SUMMIT
+
+--- Deadman GR-38 ---
+  2023-11-16 | CUTTHROAT       |    200 fish | 3.22"  | SUMMIT
+  2023-05-31 | CUTTHROAT       |    155 fish | 8.69"  | SUMMIT
+  2022-09-19 | BROOK TROUT     |    114 fish | 16.99" | SUMMIT
+  2022-08-25 | BROOK TROUT     |    500 fish | 4.64"  | SUMMIT
+  2022-06-07 | CUTTHROAT       |   1002 fish | 7.58"  | SUMMIT
+  2021-09-14 | CUTTHROAT       |    252 fish | 3.24"  | SUMMIT
+
+--- Dean W-35 ---
+  2024-09-25 | GRAYLING ARCTIC |    448 fish | 2.47"  | SUMMIT
+  2023-07-13 | BROOK TROUT     |    650 fish | 2.68"  | SUMMIT
+  2020-07-30 | BROOK TROUT     |    908 fish | 2.47"  | SUMMIT
+  2018-10-15 | GRAYLING ARCTIC |    902 fish | 3.31"  | SUMMIT
+
+--- Dean Z-40 ---
+  2024-06-28 | BROOK TROUT     |   1603 fish | 2.91"  | DUCHESNE
+  2021-06-30 | BROOK TROUT     |   1599 fish | 2.79"  | DUCHESNE
+  2018-06-26 | BROOK TROUT     |   1600 fish | 2.88"  | DUCHESNE
+
+--- Deer X-55 ---
+  2022-09-23 | CUTTHROAT       |   1483 fish | 1.91"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |   1011 fish | 1.7"   | DUCHESNE
+
+--- Diamond A-22 ---
+  2024-07-03 | BROOK TROUT     |    296 fish | 2.9"   | SUMMIT
+  2021-06-28 | BROOK TROUT     |    299 fish | 2.79"  | SUMMIT
+  2018-06-27 | BROOK TROUT     |    300 fish | 2.88"  | SUMMIT
+
+--- Diamond X-43 ---
+  2023-07-21 | BROOK TROUT     |   1299 fish | 3.0"   | DUCHESNE
+  2019-07-09 | BROOK TROUT     |   1014 fish | 2.68"  | DUCHESNE
+
+--- Divide U-59 ---
+  2021-09-22 | CUTTHROAT       |   1883 fish | 1.9"   | DUCHESNE
+
+--- Divide, #1 A-36 ---
+  2025-06-26 | BROOK TROUT     |    525 fish | 3.01"  | SUMMIT
+  2023-07-14 | BROOK TROUT     |    520 fish | 2.68"  | SUMMIT
+  2021-06-28 | BROOK TROUT     |    529 fish | 2.79"  | SUMMIT
+  2019-07-09 | BROOK TROUT     |    390 fish | 2.68"  | SUMMIT
+
+--- Doc's X-15 ---
+  2025-07-07 | BROOK TROUT     |   1098 fish | 3.53"  | DUCHESNE
+  2021-06-30 | BROOK TROUT     |   1104 fish | 2.79"  | DUCHESNE
+
+--- Dollar Lake G-2 ---
+  2023-07-14 | TIGER TROUT     |   1001 fish | 2.83"  | SUMMIT
+  2020-07-31 | TIGER TROUT     |   1008 fish | 2.4"   | SUMMIT
+  2018-07-09 | TIGER TROUT     |    741 fish | 2.34"  | SUMMIT
+
+--- Drift Reservoir Y-41 ---
+  2022-06-30 | BROOK TROUT     |    740 fish | 3.7"   | DUCHESNE
+  2018-07-10 | BROOK TROUT     |    746 fish | 2.88"  | DUCHESNE
+
+--- East Red Castle G-17 ---
+  2025-06-30 | TIGER TROUT     |    698 fish | 3.69"  | SUMMIT
+  2024-07-08 | TIGER TROUT     |    696 fish | 2.78"  | SUMMIT
+  2023-07-14 | TIGER TROUT     |    704 fish | 2.83"  | SUMMIT
+  2022-06-28 | TIGER TROUT     |    716 fish | 2.65"  | SUMMIT
+  2020-07-31 | TIGER TROUT     |    702 fish | 2.4"   | SUMMIT
+  2019-07-15 | TIGER TROUT     |   1399 fish | 2.87"  | SUMMIT
+
+--- East Slide LF-44 ---
+  2022-07-06 | BROOK TROUT     |    321 fish | 3.62"  | DUCHESNE
+
+--- Elbow WR-58 ---
+  2024-06-26 | BROOK TROUT     |   2606 fish | 2.93"  | DUCHESNE
+  2020-07-06 | BROOK TROUT     |   3243 fish | 3.49"  | DUCHESNE
+
+--- Elkhorn W-64 ---
+  2023-07-13 | BROOK TROUT     |    104 fish | 2.68"  | SUMMIT
+  2020-07-30 | BROOK TROUT     |    115 fish | 2.47"  | SUMMIT
+
+--- Emerald D-20 ---
+  2025-06-26 | BROOK TROUT     |     53 fish | 3.01"  | DUCHESNE
+  2024-07-02 | BROOK TROUT     |     41 fish | 2.9"   | DUCHESNE
+  2023-07-13 | BROOK TROUT     |     52 fish | 2.68"  | DUCHESNE
+  2022-06-27 | BROOK TROUT     |     36 fish | 2.75"  | DUCHESNE
+  2021-06-29 | BROOK TROUT     |     35 fish | 2.79"  | DUCHESNE
+  2020-07-31 | BROOK TROUT     |     50 fish | 2.47"  | DUCHESNE
+  2018-06-27 | BROOK TROUT     |     75 fish | 2.88"  | DUCHESNE
+
+--- Erickson North W-26 ---
+  2025-06-25 | BROOK TROUT     |    500 fish | 3.01"  | SUMMIT
+  2023-07-13 | BROOK TROUT     |    494 fish | 2.68"  | SUMMIT
+  2020-07-30 | BROOK TROUT     |    462 fish | 2.47"  | SUMMIT
+
+--- Erickson South W-25 ---
+  2023-07-13 | BROOK TROUT     |    845 fish | 2.68"  | SUMMIT
+  2021-06-29 | BROOK TROUT     |    851 fish | 2.79"  | SUMMIT
+  2019-07-09 | BROOK TROUT     |    845 fish | 2.68"  | SUMMIT
+
+--- Everman Z-36 ---
+  2024-07-03 | BROOK TROUT     |    796 fish | 2.9"   | DUCHESNE
+  2021-06-28 | BROOK TROUT     |    805 fish | 2.79"  | DUCHESNE
+  2018-06-26 | BROOK TROUT     |    800 fish | 2.88"  | DUCHESNE
+
+--- Faith A-16 ---
+  2025-06-26 | BROOK TROUT     |    100 fish | 3.01"  | SUMMIT
+  2024-07-03 | BROOK TROUT     |    102 fish | 2.9"   | SUMMIT
+  2023-07-14 | BROOK TROUT     |    104 fish | 2.68"  | SUMMIT
+  2022-06-27 | BROOK TROUT     |     48 fish | 2.75"  | SUMMIT
+  2021-06-28 | BROOK TROUT     |     46 fish | 2.79"  | SUMMIT
+  2020-07-30 | BROOK TROUT     |     50 fish | 2.47"  | SUMMIT
+  2018-07-09 | BROOK TROUT     |    147 fish | 2.88"  | SUMMIT
+
+--- Farmers X-23 ---
+  2025-07-07 | BROOK TROUT     |   6156 fish | 3.53"  | DUCHESNE
+  2020-07-06 | BROOK TROUT     |   6261 fish | 3.15"  | DUCHESNE
+
+--- Farney X-14 ---
+  2021-09-21 | GRAYLING ARCTIC |   2000 fish | 2.65"  | DUCHESNE
+  2019-09-26 | GRAYLING ARCTIC |   2498 fish | 2.29"  | DUCHESNE
+
+--- Fern X-5 ---
+  2023-07-21 | BROOK TROUT     |   1452 fish | 3.0"   | DUCHESNE
+  2021-06-30 | BROOK TROUT     |   1449 fish | 2.79"  | DUCHESNE
+
+--- Fire A-14 ---
+  2022-09-19 | CUTTHROAT       |   1524 fish | 2.51"  | SUMMIT
+  2019-09-26 | CUTTHROAT       |   2011 fish | 2.35"  | SUMMIT
+
+--- Fish GR-125 ---
+  2025-07-01 | BROOK TROUT     |   4600 fish | 3.4"   | SUMMIT
+  2022-06-30 | BROOK TROUT     |   4589 fish | 3.7"   | SUMMIT
+  2019-07-11 | BROOK TROUT     |   3003 fish | 2.68"  | SUMMIT
+
+--- Fish Hatchery X-6 ---
+  2022-09-23 | CUTTHROAT       |   3566 fish | 1.57"  | DUCHESNE
+  2018-10-12 | CUTTHROAT       |   2478 fish | 1.74"  | DUCHESNE
+
+--- Five Point Reservoir X-106 ---
+  2024-09-23 | CUTTHROAT       |   3456 fish | 1.85"  | DUCHESNE
+
+--- Fox U-47 ---
+  2025-07-07 | BROOK TROUT     |   5364 fish | 3.53"  | DUCHESNE
+  2025-06-30 | BROOK TROUT     |   2427 fish | 3.4"   | DUCHESNE
+  2022-06-30 | BROOK TROUT     |   8104 fish | 3.7"   | DUCHESNE
+  2019-07-11 | BROOK TROUT     |   5499 fish | 2.68"  | DUCHESNE
+
+--- G- 40 G-40 ---
+  2022-06-30 | BROOK TROUT     |    301 fish | 3.7"   | SUMMIT
+
+--- G- 68 G-68 ---
+  2024-07-09 | BROOK TROUT     |    408 fish | 2.9"   | SUMMIT
+  2022-09-26 | BROOK TROUT     |    414 fish | 3.03"  | SUMMIT
+  2020-07-31 | BROOK TROUT     |    413 fish | 2.47"  | SUMMIT
+  2018-07-11 | BROOK TROUT     |    410 fish | 2.88"  | SUMMIT
+
+--- Gail GR-115 ---
+  2024-07-15 | CUTTHROAT       |    347 fish | 2.26"  | SUMMIT
+  2020-09-23 | CUTTHROAT       |    341 fish | 2.48"  | SUMMIT
+
+--- Gates LF-34 ---
+  2022-07-06 | BROOK TROUT     |    265 fish | 3.62"  | DUCHESNE
+
+--- Gem Z-18 ---
+  2024-07-03 | BROOK TROUT     |    204 fish | 2.9"   | DUCHESNE
+  2022-06-27 | BROOK TROUT     |    204 fish | 2.75"  | DUCHESNE
+  2019-07-09 | TIGER TROUT     |    297 fish | 2.65"  | DUCHESNE
+
+--- Gibby RC-30 ---
+  2022-09-23 | CUTTHROAT       |    288 fish | 1.91"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |    316 fish | 1.7"   | DUCHESNE
+
+--- Gilbert U-82 ---
+  2023-09-19 | CUTTHROAT       |   1123 fish | 1.45"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |   1074 fish | 1.7"   | DUCHESNE
+
+--- Gladys X-128 ---
+  2025-07-07 | BROOK TROUT     |    750 fish | 3.53"  | DUCHESNE
+  2021-06-29 | BROOK TROUT     |    748 fish | 2.79"  | DUCHESNE
+
+--- Governor Dern Z-24 ---
+  2022-06-29 | BROOK TROUT     |   3660 fish | 2.75"  | DUCHESNE
+  2018-06-26 | BROOK TROUT     |   3600 fish | 2.88"  | DUCHESNE
+
+--- GranDaddy X-9 ---
+  2022-09-23 | CUTTHROAT       |  17304 fish | 1.91"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |  17254 fish | 1.7"   | DUCHESNE
+
+--- Grayling X-56 ---
+  2019-10-01 | GRAYLING ARCTIC |    853 fish | 2.39"  | DUCHESNE
+
+--- Hayden Lake BR-36 ---
+  2022-06-28 | TIGER TROUT     |    473 fish | 2.65"  | SUMMIT
+  2019-07-09 | TIGER TROUT     |    446 fish | 2.65"  | SUMMIT
+
+--- Haystack A-9 ---
+  2025-06-26 | BROOK TROUT     |    346 fish | 3.01"  | SUMMIT
+  2025-06-25 | BROOK TROUT     |    554 fish | 3.01"  | SUMMIT
+  2023-07-13 | BROOK TROUT     |    897 fish | 2.68"  | SUMMIT
+  2021-06-28 | BROOK TROUT     |    897 fish | 2.79"  | SUMMIT
+  2019-07-08 | BROOK TROUT     |    676 fish | 2.68"  | SUMMIT
+
+--- Heart X-13 ---
+  2023-09-19 | CUTTHROAT       |    561 fish | 1.45"  | DUCHESNE
+  2021-09-22 | CUTTHROAT       |    556 fish | 1.9"   | DUCHESNE
+  2019-09-23 | CUTTHROAT       |    569 fish | 1.7"   | DUCHESNE
+
+--- Helen X-126 ---
+  2021-06-29 | BROOK TROUT     |    840 fish | 2.79"  | DUCHESNE
+
+--- Hell Hole WR-65 ---
+  2022-09-23 | CUTTHROAT       |    372 fish | 1.57"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |    300 fish | 1.61"  | DUCHESNE
+
+--- Heller Reservoir DG-28 ---
+  2022-09-23 | CUTTHROAT       |    989 fish | 1.91"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |   1011 fish | 1.7"   | DUCHESNE
+
+--- Hessie G-18 ---
+  2023-09-19 | CUTTHROAT       |   2651 fish | 1.73"  | SUMMIT
+  2020-07-31 | TIGER TROUT     |   1319 fish | 2.4"   | SUMMIT
+  2018-07-09 | TIGER TROUT     |    819 fish | 2.34"  | SUMMIT
+
+--- Hidden A-15 ---
+  2024-07-03 | BROOK TROUT     |    796 fish | 2.9"   | SUMMIT
+  2022-06-27 | BROOK TROUT     |    804 fish | 2.75"  | SUMMIT
+  2020-07-31 | BROOK TROUT     |    809 fish | 2.47"  | SUMMIT
+
+--- Hidden DG-27 ---
+  2022-07-06 | BROOK TROUT     |   1283 fish | 3.62"  | DUCHESNE
+  2018-07-10 | BROOK TROUT     |   1208 fish | 2.88"  | DUCHESNE
+
+--- Hidden GR-112 ---
+  2023-09-19 | CUTTHROAT       |    276 fish | 1.73"  | SUMMIT
+  2020-09-23 | CUTTHROAT       |    300 fish | 2.48"  | SUMMIT
+
+--- Hidden GR-149 ---
+  2022-06-29 | BROOK TROUT     |    708 fish | 2.75"  | SUMMIT
+
+--- Hidden WR-63 ---
+  2023-09-19 | CUTTHROAT       |   1029 fish | 1.45"  | DUCHESNE
+  2022-09-23 | CUTTHROAT       |    966 fish | 1.57"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |    974 fish | 1.61"  | DUCHESNE
+
+--- Hook X-81 ---
+  2021-07-01 | BROOK TROUT     |   1051 fish | 3.32"  | DUCHESNE
+
+--- Hoop Lake GR-143 ---
+  2025-07-08 | RAINBOW         |   8006 fish | 3.1"   | SUMMIT
+  2025-06-02 | RAINBOW         |   1159 fish | 10.96" | SUMMIT
+  2025-06-02 | RAINBOW         |    680 fish | 11.37" | SUMMIT
+  2025-06-02 | TIGER TROUT     |    504 fish | 10.07" | SUMMIT
+  2025-06-02 | RAINBOW         |    760 fish | 10.96" | SUMMIT
+  2024-06-17 | RAINBOW         |    408 fish | 12.25" | SUMMIT
+  2024-06-17 | TIGER TROUT     |    600 fish | 9.41"  | SUMMIT
+  2024-06-17 | RAINBOW         |   7975 fish | 4.42"  | SUMMIT
+  2024-05-28 | RAINBOW         |   2240 fish | 12.13" | SUMMIT
+  2023-06-20 | TIGER TROUT     |    540 fish | 9.41"  | SUMMIT
+  2023-06-20 | RAINBOW         |   7333 fish | 3.91"  | SUMMIT
+  2023-06-12 | RAINBOW         |   2688 fish | 11.6"  | SUMMIT
+  2022-05-24 | TIGER TROUT     |    504 fish | 8.86"  | SUMMIT
+  2022-05-24 | RAINBOW         |   2610 fish | 9.52"  | SUMMIT
+  2022-05-17 | RAINBOW         |  11026 fish | 2.96"  | SUMMIT
+  2021-10-18 | GRAYLING ARCTIC |  20746 fish | 3.65"  | SUMMIT
+  2021-09-21 | GRAYLING ARCTIC |   1011 fish | 2.65"  | SUMMIT
+  2021-06-21 | RAINBOW         |   1298 fish | 9.32"  | SUMMIT
+  2021-06-02 | RAINBOW         |   2583 fish | 9.55"  | SUMMIT
+  2021-05-25 | RAINBOW         |   7998 fish | 3.87"  | SUMMIT
+  2021-05-18 | TIGER TROUT     |    510 fish | 9.03"  | SUMMIT
+  2021-05-18 | RAINBOW         |   1360 fish | 9.03"  | SUMMIT
+  2020-09-21 | GRAYLING ARCTIC |   1008 fish | 2.81"  | SUMMIT
+  2020-07-28 | RAINBOW         |   6920 fish | 5.25"  | SUMMIT
+  2020-07-26 | TIGER TROUT     |    522 fish | 8.31"  | SUMMIT
+  2020-07-26 | RAINBOW         |   1523 fish | 11.99" | SUMMIT
+  2020-05-15 | RAINBOW         |   1484 fish | 9.09"  | SUMMIT
+  2019-09-26 | GRAYLING ARCTIC |    999 fish | 2.29"  | SUMMIT
+  2019-09-04 | TIGER TROUT     |    632 fish | 9.87"  | SUMMIT
+  2019-06-11 | TIGER TROUT     |    514 fish | 7.86"  | SUMMIT
+  2019-06-11 | RAINBOW         |   8010 fish | 5.18"  | SUMMIT
+  2019-06-11 | RAINBOW         |   3502 fish | 9.03"  | SUMMIT
+  2018-10-15 | GRAYLING ARCTIC |   3014 fish | 3.31"  | SUMMIT
+  2018-05-15 | RAINBOW         |   7964 fish | 3.84"  | SUMMIT
+  2018-05-15 | TIGER TROUT     |    500 fish | 9.09"  | SUMMIT
+  2018-05-15 | RAINBOW         |   3498 fish | 8.91"  | SUMMIT
+
+--- Hoover Z-10 ---
+  2025-06-25 | BROOK TROUT     |   1400 fish | 3.01"  | DUCHESNE
+  2023-07-13 | BROOK TROUT     |   1404 fish | 2.68"  | DUCHESNE
+  2021-06-28 | BROOK TROUT     |   1403 fish | 2.79"  | DUCHESNE
+  2019-07-08 | BROOK TROUT     |   1053 fish | 2.68"  | DUCHESNE
+
+--- Horseshoe RC-38 ---
+  2021-06-30 | BROOK TROUT     |    150 fish | 2.79"  | DUCHESNE
+
+--- Horseshoe WR-67 ---
+  2023-09-19 | CUTTHROAT       |    936 fish | 1.45"  | DUCHESNE
+  2022-09-23 | CUTTHROAT       |    892 fish | 1.57"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |    899 fish | 1.61"  | DUCHESNE
+
+--- Hourglass A-48 ---
+  2023-09-19 | CUTTHROAT       |    750 fish | 2.28"  | SUMMIT
+  2021-09-21 | CUTTHROAT       |    747 fish | 2.46"  | SUMMIT
+  2019-09-26 | CUTTHROAT       |    751 fish | 2.35"  | SUMMIT
+
+--- Ibantik W-24 ---
+  2023-07-13 | BROOK TROUT     |    494 fish | 2.68"  | SUMMIT
+
+--- Island A-57 ---
+  2024-09-24 | CUTTHROAT       |   3046 fish | 2.4"   | SUMMIT
+  2023-09-19 | CUTTHROAT       |   3023 fish | 2.28"  | SUMMIT
+  2020-09-22 | CUTTHROAT       |   6998 fish | 2.13"  | SUMMIT
+  2020-07-31 | TIGER TROUT     |   3006 fish | 2.4"   | SUMMIT
+  2018-07-09 | TIGER TROUT     |   2204 fish | 2.34"  | SUMMIT
+
+--- Island G-9 ---
+  2023-07-14 | TIGER TROUT     |   1001 fish | 2.83"  | SUMMIT
+  2020-07-31 | TIGER TROUT     |   1008 fish | 2.4"   | SUMMIT
+
+--- Island X-34 ---
+  2022-09-23 | CUTTHROAT       |   1648 fish | 1.91"  | DUCHESNE
+  2018-10-12 | CUTTHROAT       |   1180 fish | 1.74"  | DUCHESNE
+
+--- Jack X-133 ---
+  2022-06-29 | BROOK TROUT     |    216 fish | 2.75"  | DUCHESNE
+  2018-06-27 | BROOK TROUT     |    200 fish | 2.88"  | DUCHESNE
+
+--- Jacks A-13 ---
+  2024-07-03 | BROOK TROUT     |    122 fish | 2.9"   | SUMMIT
+  2022-06-27 | BROOK TROUT     |    120 fish | 2.75"  | SUMMIT
+  2020-07-31 | BROOK TROUT     |    132 fish | 2.47"  | SUMMIT
+  2018-07-09 | BROOK TROUT     |    126 fish | 2.88"  | SUMMIT
+
+--- James A-31 ---
+  2024-07-03 | BROOK TROUT     |    204 fish | 2.9"   | SUMMIT
+  2022-06-27 | BROOK TROUT     |    204 fish | 2.75"  | SUMMIT
+  2020-07-30 | BROOK TROUT     |    198 fish | 2.47"  | SUMMIT
+  2018-07-09 | BROOK TROUT     |    200 fish | 2.88"  | SUMMIT
+
+--- Jean W-58 ---
+  2024-09-25 | GRAYLING ARCTIC |    148 fish | 2.47"  | SUMMIT
+  2021-09-21 | GRAYLING ARCTIC |    151 fish | 2.65"  | SUMMIT
+  2020-09-21 | GRAYLING ARCTIC |    144 fish | 2.81"  | SUMMIT
+
+--- Jean Z-41 ---
+  2023-07-21 | BROOK TROUT     |   2006 fish | 3.0"   | DUCHESNE
+  2021-06-30 | BROOK TROUT     |   2001 fish | 2.79"  | DUCHESNE
+
+--- Jerry W-28 ---
+  2024-07-02 | BROOK TROUT     |    398 fish | 2.9"   | SUMMIT
+  2022-06-27 | BROOK TROUT     |    396 fish | 2.75"  | SUMMIT
+  2020-07-30 | BROOK TROUT     |    396 fish | 2.47"  | SUMMIT
+  2018-06-26 | BROOK TROUT     |    400 fish | 2.88"  | SUMMIT
+
+--- Jesson GR-1 ---
+  2025-06-30 | CUTTHROAT       |   1904 fish | 2.69"  | SUMMIT
+  2024-06-26 | TIGER TROUT     |    634 fish | 3.64"  | SUMMIT
+  2023-09-19 | CUTTHROAT       |   1823 fish | 1.73"  | SUMMIT
+  2021-07-01 | TIGER TROUT     |    632 fish | 3.28"  | SUMMIT
+  2020-09-23 | CUTTHROAT       |   1906 fish | 2.48"  | SUMMIT
+  2018-07-10 | TIGER TROUT     |   1232 fish | 3.29"  | SUMMIT
+  2018-07-10 | TIGER TROUT     |   1583 fish | 2.35"  | SUMMIT
+
+--- Jewel BR-38 ---
+  2020-07-31 | TIGER TROUT     |    126 fish | 2.4"   | SUMMIT
+  2018-07-09 | TIGER TROUT     |    234 fish | 2.34"  | SUMMIT
+
+--- Jill X-111 ---
+  2022-06-29 | BROOK TROUT     |    288 fish | 2.75"  | DUCHESNE
+  2018-06-27 | BROOK TROUT     |    270 fish | 2.88"  | DUCHESNE
+
+--- Joan Z-19 ---
+  2024-07-03 | BROOK TROUT     |    500 fish | 2.9"   | DUCHESNE
+  2022-06-27 | BROOK TROUT     |    504 fish | 2.75"  | DUCHESNE
+
+--- John A-30 ---
+  2024-07-03 | BROOK TROUT     |    296 fish | 2.9"   | SUMMIT
+  2021-06-28 | BROOK TROUT     |    299 fish | 2.79"  | SUMMIT
+  2018-07-09 | BROOK TROUT     |    305 fish | 2.88"  | SUMMIT
+
+--- Jordan Z-35 ---
+  2024-07-03 | BROOK TROUT     |   1795 fish | 2.9"   | DUCHESNE
+  2022-06-29 | BROOK TROUT     |   1824 fish | 2.75"  | DUCHESNE
+  2020-07-31 | BROOK TROUT     |   1815 fish | 2.47"  | DUCHESNE
+  2018-06-26 | BROOK TROUT     |   2300 fish | 2.88"  | DUCHESNE
+
+--- Judy GR-25 ---
+  2023-09-19 | TIGER TROUT     |    199 fish | 3.95"  | SUMMIT
+  2023-07-21 | TIGER TROUT     |    350 fish | 2.7"   | SUMMIT
+  2019-07-11 | TIGER TROUT     |    351 fish | 2.65"  | SUMMIT
+
+--- Junior A-56 ---
+  2024-09-24 | CUTTHROAT       |    329 fish | 2.4"   | SUMMIT
+  2023-09-19 | CUTTHROAT       |    300 fish | 2.28"  | SUMMIT
+  2020-09-22 | CUTTHROAT       |    600 fish | 2.13"  | SUMMIT
+  2020-07-31 | TIGER TROUT     |    306 fish | 2.4"   | SUMMIT
+  2018-07-09 | TIGER TROUT     |    234 fish | 2.34"  | SUMMIT
+
+--- Kabell GR-140 ---
+  2025-06-30 | CUTTHROAT       |   1476 fish | 2.69"  | SUMMIT
+  2020-09-23 | CUTTHROAT       |   1475 fish | 2.48"  | SUMMIT
+
+--- Kamas W-40 ---
+  2025-07-02 | TIGER TROUT     |    900 fish | 3.8"   | SUMMIT
+  2023-07-14 | TIGER TROUT     |    902 fish | 2.83"  | SUMMIT
+  2021-06-30 | TIGER TROUT     |   1306 fish | 2.69"  | SUMMIT
+  2018-07-09 | TIGER TROUT     |    956 fish | 2.34"  | SUMMIT
+
+--- Kidney X-35 ---
+  2024-09-23 | CUTTHROAT       |  17962 fish | 1.85"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |  18960 fish | 1.7"   | DUCHESNE
+
+--- Kidney West U-26 ---
+  2025-07-01 | BROOK TROUT     |   2997 fish | 3.4"   | DUCHESNE
+  2022-07-06 | BROOK TROUT     |   2992 fish | 3.62"  | DUCHESNE
+
+--- Kings Y-22 ---
+  2023-09-19 | CUTTHROAT       |   1029 fish | 1.45"  | DUCHESNE
+  2018-10-12 | CUTTHROAT       |    708 fish | 1.74"  | DUCHESNE
+
+--- Lambert A-2 ---
+  2024-07-03 | BROOK TROUT     |    153 fish | 2.9"   | SUMMIT
+  2022-06-29 | BROOK TROUT     |    168 fish | 2.75"  | SUMMIT
+  2019-07-08 | BROOK TROUT     |    195 fish | 2.68"  | SUMMIT
+
+--- Lambert LF-21 ---
+  2024-06-26 | BROOK TROUT     |    699 fish | 2.93"  | DUCHESNE
+  2020-07-06 | BROOK TROUT     |    701 fish | 3.15"  | DUCHESNE
+
+--- Larvae WR-12 ---
+  2024-06-26 | BROOK TROUT     |    403 fish | 2.93"  | DUCHESNE
+  2022-07-06 | BROOK TROUT     |    580 fish | 3.62"  | DUCHESNE
+  2020-07-27 | BROOK TROUT     |    580 fish | 4.0"   | DUCHESNE
+
+--- Leconte Z-33 ---
+  2024-09-23 | CUTTHROAT       |   1404 fish | 1.48"  | DUCHESNE
+  2022-09-23 | CUTTHROAT       |   1412 fish | 1.57"  | DUCHESNE
+  2019-09-26 | GRAYLING ARCTIC |   2498 fish | 2.29"  | DUCHESNE
+  2018-07-09 | TIGER TROUT     |    702 fish | 2.34"  | DUCHESNE
+
+--- Ledge X-113 ---
+  2024-09-23 | CUTTHROAT       |    310 fish | 1.48"  | DUCHESNE
+  2019-07-09 | BROOK TROUT     |    247 fish | 2.68"  | DUCHESNE
+
+--- Lightning X-127 ---
+  2022-06-29 | BROOK TROUT     |    708 fish | 2.75"  | DUCHESNE
+  2018-06-27 | BROOK TROUT     |    700 fish | 2.88"  | DUCHESNE
+
+--- Lillian A-43 ---
+  2025-06-25 | BROOK TROUT     |    200 fish | 3.01"  | SUMMIT
+  2024-07-03 | BROOK TROUT     |    204 fish | 2.9"   | SUMMIT
+  2023-07-13 | BROOK TROUT     |    195 fish | 2.68"  | SUMMIT
+  2022-06-27 | BROOK TROUT     |    300 fish | 2.75"  | SUMMIT
+  2020-07-31 | BROOK TROUT     |    314 fish | 2.47"  | SUMMIT
+  2018-07-09 | BROOK TROUT     |    305 fish | 2.88"  | SUMMIT
+
+--- Lilly A-58 ---
+  2025-07-29 | RAINBOW         |    299 fish | 12.44" | SUMMIT
+  2025-07-14 | RAINBOW         |    299 fish | 10.44" | SUMMIT
+  2025-07-08 | RAINBOW         |    424 fish | 10.77" | SUMMIT
+  2025-06-25 | TIGER TROUT     |    250 fish | 11.08" | SUMMIT
+  2025-06-24 | RAINBOW         |    151 fish | 10.14" | SUMMIT
+  2025-06-17 | RAINBOW         |    500 fish | 10.6"  | SUMMIT
+  2024-08-28 | RAINBOW         |    309 fish | 11.02" | SUMMIT
+  2024-08-19 | TIGER TROUT     |    213 fish | 10.55" | SUMMIT
+  2024-08-14 | RAINBOW         |    161 fish | 10.28" | SUMMIT
+  2024-08-05 | RAINBOW         |    161 fish | 10.28" | SUMMIT
+  2024-07-31 | TIGER TROUT     |    170 fish | 10.56" | SUMMIT
+  2024-07-29 | RAINBOW         |    207 fish | 10.28" | SUMMIT
+  2024-07-15 | TIGER TROUT     |    259 fish | 10.21" | SUMMIT
+  2024-07-15 | RAINBOW         |    300 fish | 10.0"  | SUMMIT
+  2024-07-08 | TIGER TROUT     |    250 fish | 10.0"  | SUMMIT
+  2024-07-03 | TIGER TROUT     |    250 fish | 10.0"  | SUMMIT
+  2024-07-01 | RAINBOW         |    306 fish | 11.16" | SUMMIT
+  2024-06-25 | RAINBOW         |    360 fish | 11.16" | SUMMIT
+  2024-06-20 | TIGER TROUT     |    252 fish | 9.87"  | SUMMIT
+  2024-06-19 | RAINBOW         |    299 fish | 12.25" | SUMMIT
+  2023-08-28 | RAINBOW         |    301 fish | 12.13" | SUMMIT
+  2023-08-22 | TIGER TROUT     |    300 fish | 9.41"  | SUMMIT
+  2023-08-21 | RAINBOW         |    301 fish | 12.13" | SUMMIT
+  2023-08-14 | TIGER TROUT     |    150 fish | 9.41"  | SUMMIT
+  2023-08-14 | RAINBOW         |    150 fish | 11.65" | SUMMIT
+  2023-08-02 | RAINBOW         |    200 fish | 12.13" | SUMMIT
+  2023-08-01 | RAINBOW         |    252 fish | 9.52"  | SUMMIT
+  2023-07-18 | TIGER TROUT     |    250 fish | 9.21"  | SUMMIT
+  2023-07-17 | RAINBOW         |    301 fish | 11.26" | SUMMIT
+  2023-07-05 | TIGER TROUT     |    256 fish | 9.21"  | SUMMIT
+  2023-07-03 | RAINBOW         |    306 fish | 11.26" | SUMMIT
+  2023-06-29 | RAINBOW         |    296 fish | 11.6"  | SUMMIT
+  2023-06-29 | TIGER TROUT     |    252 fish | 9.41"  | SUMMIT
+  2022-08-16 | TIGER TROUT     |    252 fish | 9.63"  | SUMMIT
+  2022-08-15 | RAINBOW         |    150 fish | 10.0"  | SUMMIT
+  2022-08-02 | TIGER TROUT     |    150 fish | 9.41"  | SUMMIT
+  2022-08-01 | RAINBOW         |    200 fish | 10.0"  | SUMMIT
+  2022-07-19 | RAINBOW         |    301 fish | 10.07" | SUMMIT
+  2022-07-18 | TIGER TROUT     |    252 fish | 9.41"  | SUMMIT
+  2022-07-11 | TIGER TROUT     |    252 fish | 9.52"  | SUMMIT
+  2022-07-06 | TIGER TROUT     |    249 fish | 9.52"  | SUMMIT
+  2022-07-05 | RAINBOW         |    306 fish | 10.07" | SUMMIT
+  2022-06-22 | TIGER TROUT     |    250 fish | 9.36"  | SUMMIT
+  2022-06-21 | RAINBOW         |    304 fish | 9.21"  | SUMMIT
+  2022-06-14 | RAINBOW         |    300 fish | 9.41"  | SUMMIT
+  2021-08-17 | RAINBOW         |    150 fish | 12.13" | SUMMIT
+  2021-08-02 | TIGER TROUT     |    158 fish | 9.26"  | SUMMIT
+  2021-08-02 | RAINBOW         |    199 fish | 10.14" | SUMMIT
+  2021-07-20 | TIGER TROUT     |    249 fish | 9.63"  | SUMMIT
+  2021-07-19 | RAINBOW         |    312 fish | 9.32"  | SUMMIT
+  2021-07-07 | RAINBOW         |    300 fish | 9.32"  | SUMMIT
+  2021-07-06 | TIGER TROUT     |    252 fish | 9.41"  | SUMMIT
+  2021-06-23 | TIGER TROUT     |    252 fish | 9.41"  | SUMMIT
+  2021-06-21 | RAINBOW         |    284 fish | 9.32"  | SUMMIT
+  2021-06-09 | RAINBOW         |    300 fish | 9.29"  | SUMMIT
+  2021-06-09 | TIGER TROUT     |    252 fish | 9.41"  | SUMMIT
+  2020-09-09 | TIGER TROUT     |    300 fish | 8.66"  | SUMMIT
+  2020-09-01 | RAINBOW         |    372 fish | 9.31"  | SUMMIT
+  2020-08-31 | TIGER TROUT     |    130 fish | 9.31"  | SUMMIT
+  2020-08-24 | TIGER TROUT     |    398 fish | 9.03"  | SUMMIT
+  2020-08-24 | RAINBOW         |    198 fish | 9.12"  | SUMMIT
+  2020-08-17 | RAINBOW         |    201 fish | 9.12"  | SUMMIT
+  2020-08-10 | TIGER TROUT     |    400 fish | 8.31"  | SUMMIT
+  2020-08-10 | RAINBOW         |    210 fish | 8.94"  | SUMMIT
+  2020-08-03 | RAINBOW         |    210 fish | 8.94"  | SUMMIT
+  2020-07-28 | TIGER TROUT     |    391 fish | 8.31"  | SUMMIT
+  2020-07-27 | RAINBOW         |    305 fish | 11.99" | SUMMIT
+  2020-07-26 | TIGER TROUT     |    435 fish | 8.31"  | SUMMIT
+  2020-07-24 | RAINBOW         |    203 fish | 11.99" | SUMMIT
+  2020-07-14 | RAINBOW         |    200 fish | 9.52"  | SUMMIT
+  2020-07-06 | RAINBOW         |    202 fish | 9.21"  | SUMMIT
+  2020-06-23 | RAINBOW         |    200 fish | 10.0"  | SUMMIT
+  2020-06-09 | RAINBOW         |    200 fish | 10.0"  | SUMMIT
+  2019-08-26 | RAINBOW         |    270 fish | 9.87"  | SUMMIT
+  2019-08-19 | RAINBOW         |    200 fish | 10.77" | SUMMIT
+  2019-08-12 | TIGER TROUT     |    130 fish | 9.75"  | SUMMIT
+  2019-08-12 | RAINBOW         |    200 fish | 10.52" | SUMMIT
+  2019-08-07 | RAINBOW         |    200 fish | 10.52" | SUMMIT
+  2019-07-30 | TIGER TROUT     |    465 fish | 9.63"  | SUMMIT
+  2019-07-29 | RAINBOW         |    202 fish | 9.63"  | SUMMIT
+  2019-07-22 | RAINBOW         |    300 fish | 9.63"  | SUMMIT
+  2019-07-17 | TIGER TROUT     |    399 fish | 8.94"  | SUMMIT
+  2019-07-15 | RAINBOW         |    200 fish | 9.87"  | SUMMIT
+  2019-07-08 | TIGER TROUT     |    201 fish | 8.7"   | SUMMIT
+  2019-07-08 | RAINBOW         |    205 fish | 10.12" | SUMMIT
+  2019-07-02 | TIGER TROUT     |    400 fish | 8.28"  | SUMMIT
+  2019-07-01 | RAINBOW         |    299 fish | 10.32" | SUMMIT
+  2018-08-27 | RAINBOW         |    399 fish | 10.6"  | SUMMIT
+  2018-08-20 | RAINBOW         |    400 fish | 10.34" | SUMMIT
+  2018-08-13 | RAINBOW         |    400 fish | 9.61"  | SUMMIT
+  2018-08-06 | RAINBOW         |    271 fish | 9.61"  | SUMMIT
+  2018-07-31 | TIGER TROUT     |    162 fish | 10.36" | SUMMIT
+  2018-07-31 | RAINBOW         |    201 fish | 9.77"  | SUMMIT
+  2018-07-17 | RAINBOW         |    200 fish | 10.21" | SUMMIT
+  2018-07-10 | RAINBOW         |    199 fish | 9.63"  | SUMMIT
+  2018-07-02 | RAINBOW         |    201 fish | 9.64"  | SUMMIT
+  2018-06-27 | TIGER TROUT     |    230 fish | 9.63"  | SUMMIT
+  2018-06-25 | RAINBOW         |    198 fish | 9.64"  | SUMMIT
+  2018-06-18 | RAINBOW         |    200 fish | 9.65"  | SUMMIT
+  2018-06-11 | RAINBOW         |    200 fish | 9.65"  | SUMMIT
+  2018-06-11 | TIGER TROUT     |    398 fish | 9.63"  | SUMMIT
+  2018-06-05 | RAINBOW         |    200 fish | 9.65"  | SUMMIT
+  2018-05-30 | RAINBOW         |    200 fish | 9.65"  | SUMMIT
+
+--- Lilly BR-11 ---
+  2025-07-07 | RAINBOW         |    850 fish | 10.77" | SUMMIT
+  2025-07-03 | RAINBOW         |    849 fish | 10.52" | SUMMIT
+  2025-06-09 | RAINBOW         |    453 fish | 11.83" | SUMMIT
+  2024-07-23 | RAINBOW         |    747 fish | 10.28" | SUMMIT
+  2024-07-02 | RAINBOW         |    864 fish | 10.14" | SUMMIT
+  2024-06-05 | RAINBOW         |   1075 fish | 10.52" | SUMMIT
+  2023-07-31 | RAINBOW         |    751 fish | 11.99" | SUMMIT
+  2023-07-12 | RAINBOW         |    858 fish | 11.26" | SUMMIT
+  2022-07-28 | RAINBOW         |    750 fish | 10.0"  | SUMMIT
+  2022-06-22 | RAINBOW         |   1021 fish | 10.96" | SUMMIT
+  2022-06-02 | RAINBOW         |   1020 fish | 9.41"  | SUMMIT
+  2022-06-02 | RAINBOW         |    864 fish | 9.21"  | SUMMIT
+  2021-07-27 | RAINBOW         |    751 fish | 10.14" | SUMMIT
+  2021-06-14 | RAINBOW         |    927 fish | 9.32"  | SUMMIT
+  2021-05-24 | RAINBOW         |   1156 fish | 9.03"  | SUMMIT
+  2020-07-24 | RAINBOW         |   1102 fish | 11.99" | SUMMIT
+  2020-07-02 | RAINBOW         |   1200 fish | 9.21"  | SUMMIT
+  2020-06-01 | RAINBOW         |   1199 fish | 9.95"  | SUMMIT
+  2019-07-22 | RAINBOW         |   1100 fish | 9.63"  | SUMMIT
+  2019-07-01 | RAINBOW         |   1404 fish | 9.75"  | SUMMIT
+  2019-06-17 | RAINBOW         |   1201 fish | 8.97"  | SUMMIT
+  2018-07-30 | RAINBOW         |    201 fish | 9.77"  | SUMMIT
+  2018-07-19 | RAINBOW         |   1100 fish | 10.21" | SUMMIT
+  2018-06-25 | RAINBOW         |   1200 fish | 9.64"  | SUMMIT
+  2018-05-30 | RAINBOW         |   1204 fish | 9.65"  | SUMMIT
+
+--- Lily S-15 ---
+  2022-06-30 | BROOK TROUT     |   1994 fish | 3.7"   | DUCHESNE
+  2018-07-10 | BROOK TROUT     |   2006 fish | 2.88"  | DUCHESNE
+
+--- Lily U-23 ---
+  2022-07-06 | BROOK TROUT     |    802 fish | 3.62"  | DUCHESNE
+  2018-07-10 | BROOK TROUT     |    809 fish | 2.88"  | DUCHESNE
+
+--- Lily Lower A-25 ---
+  2025-06-25 | BROOK TROUT     |    150 fish | 3.01"  | SUMMIT
+  2024-07-03 | BROOK TROUT     |    153 fish | 2.9"   | SUMMIT
+  2023-07-14 | BROOK TROUT     |    156 fish | 2.68"  | SUMMIT
+  2022-06-29 | BROOK TROUT     |    156 fish | 2.75"  | SUMMIT
+  2021-06-28 | BROOK TROUT     |    150 fish | 2.79"  | SUMMIT
+  2020-07-30 | BROOK TROUT     |    149 fish | 2.47"  | SUMMIT
+  2018-06-27 | BROOK TROUT     |    300 fish | 2.88"  | SUMMIT
+
+--- Lily Pad X-2 ---
+  2023-07-21 | BROOK TROUT     |   1003 fish | 3.0"   | DUCHESNE
+  2021-06-30 | BROOK TROUT     |   1000 fish | 2.79"  | DUCHESNE
+
+--- Linda LF-36 ---
+  2025-07-07 | BROOK TROUT     |    403 fish | 3.53"  | DUCHESNE
+  2020-07-06 | BROOK TROUT     |    400 fish | 3.15"  | DUCHESNE
+
+--- Little Dog X-33 ---
+  2024-06-26 | BROOK TROUT     |    699 fish | 2.93"  | DUCHESNE
+  2021-07-01 | BROOK TROUT     |    701 fish | 3.32"  | DUCHESNE
+  2018-07-09 | BROOK TROUT     |    704 fish | 2.88"  | DUCHESNE
+
+--- Little Elk A-19 ---
+  2020-09-21 | GRAYLING ARCTIC |    594 fish | 2.81"  | SUMMIT
+  2019-09-26 | CUTTHROAT       |   1812 fish | 2.35"  | SUMMIT
+
+--- Little Hidden W-21 ---
+  2023-07-14 | BROOK TROUT     |    468 fish | 2.68"  | SUMMIT
+  2020-07-30 | BROOK TROUT     |    495 fish | 2.47"  | SUMMIT
+
+--- Little Lyman G-25 ---
+  2025-07-24 | RAINBOW         |    324 fish | 10.77" | SUMMIT
+  2025-07-24 | RAINBOW         |    326 fish | 10.77" | SUMMIT
+  2025-07-02 | BROOK TROUT     |   2998 fish | 2.97"  | SUMMIT
+  2025-07-02 | RAINBOW         |   1602 fish | 10.52" | SUMMIT
+  2024-07-23 | RAINBOW         |    656 fish | 10.28" | SUMMIT
+  2024-07-17 | BROOK TROUT     |   3494 fish | 3.71"  | SUMMIT
+  2024-06-24 | RAINBOW         |    864 fish | 11.16" | SUMMIT
+  2024-06-04 | RAINBOW         |    822 fish | 9.91"  | SUMMIT
+  2023-08-09 | BROOK TROUT     |   3500 fish | 3.72"  | SUMMIT
+  2023-08-09 | RAINBOW         |    651 fish | 12.13" | SUMMIT
+  2023-07-31 | RAINBOW         |      0 fish | 11.99" | SUMMIT
+  2023-07-11 | RAINBOW         |    805 fish | 11.26" | SUMMIT
+  2023-06-13 | RAINBOW         |    880 fish | 11.6"  | SUMMIT
+  2022-07-28 | RAINBOW         |    650 fish | 10.0"  | SUMMIT
+  2022-06-30 | RAINBOW         |    810 fish | 9.41"  | SUMMIT
+  2022-06-06 | RAINBOW         |    810 fish | 9.41"  | SUMMIT
+  2022-06-06 | BROOK TROUT     |   3496 fish | 2.54"  | SUMMIT
+  2021-07-26 | RAINBOW         |    650 fish | 10.14" | SUMMIT
+  2021-06-29 | BROOK TROUT     |   2795 fish | 2.68"  | SUMMIT
+  2021-06-29 | RAINBOW         |    803 fish | 9.32"  | SUMMIT
+  2021-05-26 | RAINBOW         |    802 fish | 9.03"  | SUMMIT
+  2020-07-24 | BROOK TROUT     |   2495 fish | 2.49"  | SUMMIT
+  2020-07-24 | RAINBOW         |   1407 fish | 11.99" | SUMMIT
+  2020-07-09 | RAINBOW         |    799 fish | 9.75"  | SUMMIT
+  2020-06-02 | RAINBOW         |    799 fish | 9.19"  | SUMMIT
+  2019-07-22 | RAINBOW         |   1400 fish | 9.63"  | SUMMIT
+  2019-07-09 | RAINBOW         |    798 fish | 10.12" | SUMMIT
+  2019-07-09 | BROOK TROUT     |   2002 fish | 2.68"  | SUMMIT
+  2019-06-24 | RAINBOW         |    850 fish | 9.55"  | SUMMIT
+  2018-07-17 | RAINBOW         |   1401 fish | 10.21" | SUMMIT
+  2018-06-28 | RAINBOW         |    801 fish | 9.64"  | SUMMIT
+  2018-05-29 | BROOK TROUT     |   2503 fish | 2.65"  | SUMMIT
+  2018-05-29 | RAINBOW         |    800 fish | 9.59"  | SUMMIT
+
+--- Lodgepole X-3 ---
+  2022-06-29 | BROOK TROUT     |   1716 fish | 2.75"  | DUCHESNE
+  2018-06-26 | BROOK TROUT     |   1700 fish | 2.88"  | DUCHESNE
+
+--- Lofty W-41 ---
+  2024-09-24 | CUTTHROAT       |    412 fish | 2.4"   | SUMMIT
+  2023-09-19 | CUTTHROAT       |    199 fish | 2.28"  | SUMMIT
+  2021-06-30 | TIGER TROUT     |    294 fish | 2.69"  | SUMMIT
+  2018-07-09 | TIGER TROUT     |    234 fish | 2.34"  | SUMMIT
+
+--- Lost A-59 ---
+  2025-07-21 | RAINBOW         |   1012 fish | 10.44" | SUMMIT
+  2025-07-11 | BROOK TROUT     |   4361 fish | 3.6"   | SUMMIT
+  2025-07-10 | TIGER TROUT     |    550 fish | 11.08" | SUMMIT
+  2025-07-08 | RAINBOW         |   1000 fish | 10.77" | SUMMIT
+  2025-06-25 | TIGER TROUT     |    550 fish | 11.08" | SUMMIT
+  2025-06-23 | RAINBOW         |   1496 fish | 10.44" | SUMMIT
+  2025-06-17 | RAINBOW         |    977 fish | 10.6"  | SUMMIT
+  2025-06-17 | RAINBOW         |     25 fish | 10.6"  | SUMMIT
+  2024-08-12 | TIGER TROUT     |    756 fish | 10.55" | SUMMIT
+  2024-07-31 | TIGER TROUT     |    657 fish | 10.56" | SUMMIT
+  2024-07-22 | RAINBOW         |    851 fish | 10.28" | SUMMIT
+  2024-07-16 | BROOK TROUT     |   1986 fish | 3.78"  | SUMMIT
+  2024-07-15 | TIGER TROUT     |    658 fish | 10.21" | SUMMIT
+  2024-07-01 | RAINBOW         |   1404 fish | 11.16" | SUMMIT
+  2024-06-26 | TIGER TROUT     |   1500 fish | 10.0"  | SUMMIT
+  2024-06-17 | RAINBOW         |   1156 fish | 12.25" | SUMMIT
+  2023-08-01 | RAINBOW         |    653 fish | 9.52"  | SUMMIT
+  2023-07-18 | TIGER TROUT     |    349 fish | 9.21"  | SUMMIT
+  2023-07-17 | BROOK TROUT     |   2002 fish | 2.68"  | SUMMIT
+  2023-07-17 | RAINBOW         |   1801 fish | 11.26" | SUMMIT
+  2023-06-29 | RAINBOW         |   1600 fish | 11.6"  | SUMMIT
+  2023-06-29 | TIGER TROUT     |   2400 fish | 9.41"  | SUMMIT
+  2022-07-18 | TIGER TROUT     |   1002 fish | 9.41"  | SUMMIT
+  2022-07-05 | RAINBOW         |   1397 fish | 10.07" | SUMMIT
+  2022-07-04 | BROOK TROUT     |   2000 fish | 2.92"  | SUMMIT
+  2022-06-27 | TIGER TROUT     |   1403 fish | 9.36"  | SUMMIT
+  2022-06-17 | TIGER TROUT     |    998 fish | 8.94"  | SUMMIT
+  2022-06-17 | RAINBOW         |   2010 fish | 9.41"  | SUMMIT
+  2021-07-27 | CUTTHROAT       |    142 fish | 15.22" | SUMMIT
+  2021-07-07 | BROOK TROUT     |    147 fish | 13.96" | SUMMIT
+  2021-07-07 | RAINBOW         |   1607 fish | 9.32"  | SUMMIT
+  2021-07-06 | TIGER TROUT     |    351 fish | 9.41"  | SUMMIT
+  2021-07-01 | BROOK TROUT     |   2001 fish | 2.79"  | SUMMIT
+  2021-06-23 | TIGER TROUT     |   1401 fish | 9.41"  | SUMMIT
+  2021-06-09 | RAINBOW         |   1997 fish | 9.29"  | SUMMIT
+  2021-06-09 | TIGER TROUT     |   1020 fish | 9.41"  | SUMMIT
+  2020-08-10 | TIGER TROUT     |   1501 fish | 8.31"  | SUMMIT
+  2020-08-03 | BROOK TROUT     |    497 fish | 3.66"  | SUMMIT
+  2020-07-28 | TIGER TROUT     |   1501 fish | 8.31"  | SUMMIT
+  2020-07-27 | BROOK TROUT     |   1993 fish | 2.49"  | SUMMIT
+  2020-07-25 | TIGER TROUT     |   1501 fish | 8.31"  | SUMMIT
+  2020-07-25 | RAINBOW         |   2001 fish | 11.99" | SUMMIT
+  2020-06-12 | RAINBOW         |   2500 fish | 9.52"  | SUMMIT
+  2019-07-30 | TIGER TROUT     |   1168 fish | 9.63"  | SUMMIT
+  2019-07-16 | TIGER TROUT     |   1001 fish | 8.94"  | SUMMIT
+  2019-07-16 | BROOK TROUT     |   1000 fish | 2.68"  | SUMMIT
+  2019-07-15 | RAINBOW         |   2000 fish | 10.0"  | SUMMIT
+  2019-07-08 | TIGER TROUT     |   1003 fish | 8.7"   | SUMMIT
+  2019-07-02 | TIGER TROUT     |   1500 fish | 8.28"  | SUMMIT
+  2019-07-01 | RAINBOW         |    852 fish | 10.32" | SUMMIT
+  2019-07-01 | RAINBOW         |   1651 fish | 10.32" | SUMMIT
+  2018-06-18 | RAINBOW         |   2002 fish | 9.65"  | SUMMIT
+  2018-05-30 | RAINBOW         |   2502 fish | 9.65"  | SUMMIT
+  2018-05-30 | BROOK TROUT     |   2002 fish | 2.53"  | SUMMIT
+
+--- Lost GR-4 ---
+  2023-09-19 | CUTTHROAT       |    221 fish | 1.73"  | SUMMIT
+  2020-09-23 | CUTTHROAT       |    488 fish | 2.48"  | SUMMIT
+
+--- Lost Z-29 ---
+  2024-06-28 | BROOK TROUT     |   1506 fish | 2.91"  | DUCHESNE
+  2021-06-30 | BROOK TROUT     |   1495 fish | 2.79"  | DUCHESNE
+  2018-06-26 | BROOK TROUT     |   1700 fish | 2.88"  | DUCHESNE
+
+--- Lovenia W-23 ---
+  2024-07-02 | BROOK TROUT     |    296 fish | 2.9"   | SUMMIT
+  2021-06-28 | BROOK TROUT     |    299 fish | 2.79"  | SUMMIT
+  2018-07-09 | BROOK TROUT     |    305 fish | 2.88"  | SUMMIT
+
+--- Lower Lily Pad DG-26 ---
+  2024-06-26 | BROOK TROUT     |    450 fish | 2.93"  | DUCHESNE
+  2021-07-01 | BROOK TROUT     |    450 fish | 3.32"  | DUCHESNE
+  2018-07-11 | BROOK TROUT     |    452 fish | 2.88"  | DUCHESNE
+
+--- Lower Red Castle G-12 ---
+  2025-06-26 | BROOK TROUT     |   2200 fish | 3.01"  | SUMMIT
+  2024-07-09 | BROOK TROUT     |   2203 fish | 2.9"   | SUMMIT
+  2023-07-14 | BROOK TROUT     |   2210 fish | 2.68"  | SUMMIT
+  2022-09-26 | BROOK TROUT     |   2196 fish | 3.03"  | SUMMIT
+
+--- Lower Rock WR-17 ---
+  2025-07-07 | TIGER TROUT     |   1871 fish | 3.71"  | DUCHESNE
+  2018-07-10 | TIGER TROUT     |   1872 fish | 2.35"  | DUCHESNE
+
+--- Lyman G-27 ---
+  2025-07-02 | BROOK TROUT     |   2496 fish | 2.97"  | SUMMIT
+  2024-07-17 | BROOK TROUT     |   1998 fish | 3.71"  | SUMMIT
+  2024-06-24 | RAINBOW         |    756 fish | 11.16" | SUMMIT
+  2024-06-04 | RAINBOW         |    771 fish | 9.91"  | SUMMIT
+  2023-08-09 | BROOK TROUT     |   2000 fish | 3.72"  | SUMMIT
+  2023-07-11 | RAINBOW         |    753 fish | 11.26" | SUMMIT
+  2023-06-13 | RAINBOW         |    832 fish | 11.6"  | SUMMIT
+  2022-06-30 | RAINBOW         |    750 fish | 9.41"  | SUMMIT
+  2022-06-06 | RAINBOW         |    750 fish | 9.41"  | SUMMIT
+  2022-06-06 | BROOK TROUT     |   2006 fish | 2.54"  | SUMMIT
+  2021-06-29 | RAINBOW         |    757 fish | 9.32"  | SUMMIT
+  2021-06-29 | BROOK TROUT     |   1001 fish | 2.68"  | SUMMIT
+  2021-05-26 | RAINBOW         |    748 fish | 9.03"  | SUMMIT
+  2020-07-24 | RAINBOW         |   1001 fish | 11.99" | SUMMIT
+  2020-07-24 | BROOK TROUT     |   1993 fish | 2.49"  | SUMMIT
+  2020-06-02 | RAINBOW         |   1030 fish | 9.19"  | SUMMIT
+  2019-07-09 | BROOK TROUT     |   1001 fish | 2.68"  | SUMMIT
+  2019-07-09 | TIGER TROUT     |    999 fish | 2.65"  | SUMMIT
+  2019-07-09 | RAINBOW         |   1000 fish | 10.12" | SUMMIT
+  2019-06-24 | RAINBOW         |   1062 fish | 9.55"  | SUMMIT
+  2018-06-28 | RAINBOW         |    999 fish | 9.64"  | SUMMIT
+  2018-05-29 | TIGER TROUT     |    999 fish | 2.34"  | SUMMIT
+  2018-05-29 | BROOK TROUT     |    999 fish | 2.65"  | SUMMIT
+  2018-05-29 | RAINBOW         |    998 fish | 9.59"  | SUMMIT
+
+--- Maba Z-8 ---
+  2025-06-26 | BROOK TROUT     |    300 fish | 3.01"  | DUCHESNE
+  2024-07-02 | BROOK TROUT     |    296 fish | 2.9"   | DUCHESNE
+  2023-07-13 | BROOK TROUT     |    299 fish | 2.68"  | DUCHESNE
+  2022-06-27 | BROOK TROUT     |    300 fish | 2.75"  | DUCHESNE
+  2021-06-28 | BROOK TROUT     |    299 fish | 2.79"  | DUCHESNE
+  2020-07-31 | BROOK TROUT     |    314 fish | 2.47"  | DUCHESNE
+  2018-06-27 | BROOK TROUT     |    600 fish | 2.88"  | DUCHESNE
+
+--- Margie X-129 ---
+  2022-06-29 | BROOK TROUT     |    768 fish | 2.75"  | DUCHESNE
+
+--- Margo Z-23 ---
+  2022-09-23 | CUTTHROAT       |   1112 fish | 1.91"  | DUCHESNE
+  2018-10-12 | CUTTHROAT       |   1180 fish | 1.74"  | DUCHESNE
+
+--- Marsell X-11 ---
+  2022-09-23 | CUTTHROAT       |   1635 fish | 1.57"  | DUCHESNE
+  2018-10-12 | CUTTHROAT       |   1121 fish | 1.74"  | DUCHESNE
+
+--- Marsh G-19 ---
+  2025-06-03 | RAINBOW         |   1900 fish | 10.77" | SUMMIT
+  2024-05-29 | RAINBOW         |   3800 fish | 10.77" | SUMMIT
+  2023-06-05 | RAINBOW         |   3800 fish | 10.77" | SUMMIT
+  2022-06-01 | RAINBOW         |   3840 fish | 9.21"  | SUMMIT
+  2021-05-25 | RAINBOW         |   3808 fish | 9.03"  | SUMMIT
+  2020-07-24 | RAINBOW         |   3080 fish | 8.66"  | SUMMIT
+  2020-06-01 | RAINBOW         |   2070 fish | 9.15"  | SUMMIT
+  2019-06-12 | RAINBOW         |   5017 fish | 8.97"  | SUMMIT
+  2018-05-30 | RAINBOW         |   4999 fish | 9.17"  | SUMMIT
+
+--- Marshall Z-11 ---
+  2025-06-25 | BROOK TROUT     |   1800 fish | 3.01"  | DUCHESNE
+  2023-07-13 | BROOK TROUT     |   1794 fish | 2.68"  | DUCHESNE
+  2021-06-30 | BROOK TROUT     |   1806 fish | 2.79"  | DUCHESNE
+  2019-07-08 | BROOK TROUT     |   1352 fish | 2.68"  | DUCHESNE
+
+--- Mcpheters BR-14 ---
+  2025-07-02 | TIGER TROUT     |    952 fish | 3.8"   | SUMMIT
+  2024-07-08 | TIGER TROUT     |    951 fish | 2.78"  | SUMMIT
+  2023-07-14 | TIGER TROUT     |    946 fish | 2.83"  | SUMMIT
+  2022-06-28 | TIGER TROUT     |    959 fish | 2.65"  | SUMMIT
+  2020-07-31 | TIGER TROUT     |   2880 fish | 2.4"   | SUMMIT
+  2018-07-09 | TIGER TROUT     |   2886 fish | 2.34"  | SUMMIT
+
+--- Meadow W-27 ---
+  2022-06-28 | TIGER TROUT     |   2214 fish | 2.65"  | SUMMIT
+  2018-07-09 | TIGER TROUT     |   1599 fish | 2.34"  | SUMMIT
+  2018-05-14 | CUTTHROAT       |    203 fish | 4.34"  | DUCHESNE
+
+--- Mid X-42 ---
+  2022-06-29 | BROOK TROUT     |    660 fish | 2.75"  | DUCHESNE
+  2018-07-10 | BROOK TROUT     |    651 fish | 2.88"  | DUCHESNE
+
+--- Middle Rock WR-16 ---
+  2023-09-19 | CUTTHROAT       |    468 fish | 1.45"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |    569 fish | 1.7"   | DUCHESNE
+  2018-10-12 | CUTTHROAT       |    413 fish | 1.74"  | DUCHESNE
+
+--- Milk Y-25 ---
+  2025-07-01 | BROOK TROUT     |   1751 fish | 3.4"   | DUCHESNE
+  2021-07-01 | BROOK TROUT     |   1752 fish | 3.32"  | DUCHESNE
+
+--- Mirror Z-3 ---
+  2025-07-28 | RAINBOW         |    650 fish | 12.44" | DUCHESNE
+  2025-07-28 | RAINBOW         |    247 fish | 12.44" | DUCHESNE
+  2025-07-21 | RAINBOW         |    900 fish | 10.77" | DUCHESNE
+  2025-07-14 | RAINBOW         |   1023 fish | 10.44" | DUCHESNE
+  2025-07-14 | RAINBOW         |    772 fish | 10.44" | DUCHESNE
+  2025-07-10 | TIGER TROUT     |    626 fish | 11.08" | DUCHESNE
+  2025-07-09 | BROOK TROUT     |   3551 fish | 3.55"  | DUCHESNE
+  2025-07-07 | RAINBOW         |    900 fish | 10.77" | DUCHESNE
+  2025-06-23 | TIGER TROUT     |    630 fish | 11.08" | DUCHESNE
+  2025-06-23 | RAINBOW         |    902 fish | 10.44" | DUCHESNE
+  2025-06-17 | RAINBOW         |    899 fish | 10.6"  | DUCHESNE
+  2024-10-21 | TIGER TROUT     |    364 fish | 12.13" | DUCHESNE
+  2024-08-28 | RAINBOW         |    757 fish | 11.02" | DUCHESNE
+  2024-08-19 | TIGER TROUT     |    511 fish | 10.55" | DUCHESNE
+  2024-08-12 | RAINBOW         |   1035 fish | 10.28" | DUCHESNE
+  2024-08-05 | RAINBOW         |    460 fish | 10.28" | DUCHESNE
+  2024-07-31 | TIGER TROUT     |    509 fish | 10.56" | DUCHESNE
+  2024-07-29 | RAINBOW         |    759 fish | 10.28" | DUCHESNE
+  2024-07-22 | RAINBOW         |    759 fish | 10.28" | DUCHESNE
+  2024-07-16 | BROOK TROUT     |   3501 fish | 3.78"  | DUCHESNE
+  2024-07-15 | RAINBOW         |    875 fish | 10.0"  | DUCHESNE
+  2024-07-08 | TIGER TROUT     |   1500 fish | 10.0"  | DUCHESNE
+  2024-07-08 | RAINBOW         |    800 fish | 10.0"  | DUCHESNE
+  2024-07-02 | RAINBOW         |    800 fish | 10.0"  | DUCHESNE
+  2024-06-26 | TIGER TROUT     |   1000 fish | 10.0"  | DUCHESNE
+  2024-06-25 | RAINBOW         |    810 fish | 11.16" | DUCHESNE
+  2024-06-20 | TIGER TROUT     |   1001 fish | 9.87"  | DUCHESNE
+  2024-06-19 | RAINBOW         |    748 fish | 12.25" | DUCHESNE
+  2023-09-13 | TIGER TROUT     |    814 fish | 10.44" | DUCHESNE
+  2023-08-28 | RAINBOW         |    721 fish | 12.13" | DUCHESNE
+  2023-08-22 | TIGER TROUT     |   1200 fish | 9.41"  | DUCHESNE
+  2023-08-21 | RAINBOW         |   1001 fish | 12.13" | DUCHESNE
+  2023-08-14 | RAINBOW         |    751 fish | 11.65" | DUCHESNE
+  2023-08-07 | RAINBOW         |    778 fish | 12.13" | DUCHESNE
+  2023-08-02 | RAINBOW         |    801 fish | 12.13" | DUCHESNE
+  2023-08-01 | RAINBOW         |    899 fish | 9.52"  | DUCHESNE
+  2023-07-25 | RAINBOW         |    754 fish | 11.99" | DUCHESNE
+  2023-07-18 | TIGER TROUT     |    896 fish | 9.21"  | DUCHESNE
+  2023-07-18 | RAINBOW         |    753 fish | 11.26" | DUCHESNE
+  2023-07-17 | BROOK TROUT     |   3900 fish | 2.68"  | DUCHESNE
+  2023-07-10 | RAINBOW         |    743 fish | 11.16" | DUCHESNE
+  2023-07-03 | RAINBOW         |    753 fish | 11.26" | DUCHESNE
+  2022-08-29 | RAINBOW         |   1000 fish | 10.28" | DUCHESNE
+  2022-08-23 | RAINBOW         |    451 fish | 10.28" | DUCHESNE
+  2022-08-16 | TIGER TROUT     |   1002 fish | 9.63"  | DUCHESNE
+  2022-08-15 | RAINBOW         |    750 fish | 10.0"  | DUCHESNE
+  2022-08-08 | RAINBOW         |    750 fish | 10.0"  | DUCHESNE
+  2022-08-02 | TIGER TROUT     |   1062 fish | 9.41"  | DUCHESNE
+  2022-08-01 | RAINBOW         |    800 fish | 10.0"  | DUCHESNE
+  2022-07-26 | RAINBOW         |    750 fish | 10.0"  | DUCHESNE
+  2022-07-21 | RAINBOW         |   1800 fish | 10.0"  | DUCHESNE
+  2022-07-19 | RAINBOW         |    750 fish | 10.07" | DUCHESNE
+  2022-07-11 | RAINBOW         |    752 fish | 10.07" | DUCHESNE
+  2022-07-05 | RAINBOW         |    760 fish | 10.07" | DUCHESNE
+  2022-07-04 | BROOK TROUT     |   3500 fish | 2.92"  | DUCHESNE
+  2022-06-27 | TIGER TROUT     |   1000 fish | 9.36"  | DUCHESNE
+  2022-06-27 | RAINBOW         |    752 fish | 9.21"  | DUCHESNE
+  2022-06-17 | TIGER TROUT     |   1024 fish | 9.21"  | DUCHESNE
+  2022-06-14 | RAINBOW         |    750 fish | 9.41"  | DUCHESNE
+  2021-08-23 | RAINBOW         |    697 fish | 12.13" | DUCHESNE
+  2021-08-17 | RAINBOW         |    518 fish | 12.13" | DUCHESNE
+  2021-08-16 | TIGER TROUT     |    752 fish | 9.21"  | DUCHESNE
+  2021-08-09 | RAINBOW         |    749 fish | 10.14" | DUCHESNE
+  2021-08-02 | RAINBOW         |    751 fish | 10.14" | DUCHESNE
+  2021-08-02 | TIGER TROUT     |   1008 fish | 9.26"  | DUCHESNE
+  2021-07-27 | RAINBOW         |    751 fish | 10.14" | DUCHESNE
+  2021-07-19 | RAINBOW         |    766 fish | 9.32"  | DUCHESNE
+  2021-07-12 | RAINBOW         |    751 fish | 9.32"  | DUCHESNE
+  2021-06-28 | TIGER TROUT     |   1002 fish | 9.41"  | DUCHESNE
+  2021-06-28 | RAINBOW         |    751 fish | 9.32"  | DUCHESNE
+  2021-06-28 | BROOK TROUT     |   3510 fish | 2.68"  | DUCHESNE
+  2021-06-21 | RAINBOW         |    766 fish | 9.32"  | DUCHESNE
+  2021-06-09 | RAINBOW         |    911 fish | 9.29"  | DUCHESNE
+  2021-06-09 | TIGER TROUT     |   1020 fish | 9.41"  | DUCHESNE
+  2020-09-09 | TIGER TROUT     |   1001 fish | 8.66"  | DUCHESNE
+  2020-09-08 | RAINBOW         |   1502 fish | 8.94"  | DUCHESNE
+  2020-08-31 | TIGER TROUT     |   1002 fish | 9.31"  | DUCHESNE
+  2020-08-31 | RAINBOW         |   2000 fish | 9.31"  | DUCHESNE
+  2020-08-24 | TIGER TROUT     |    496 fish | 9.03"  | DUCHESNE
+  2020-08-24 | RAINBOW         |   1502 fish | 9.12"  | DUCHESNE
+  2020-08-17 | RAINBOW         |   1000 fish | 9.12"  | DUCHESNE
+  2020-08-10 | TIGER TROUT     |   1000 fish | 8.31"  | DUCHESNE
+  2020-08-10 | RAINBOW         |   1068 fish | 8.94"  | DUCHESNE
+  2020-08-03 | BROOK TROUT     |   1287 fish | 3.66"  | DUCHESNE
+  2020-08-03 | RAINBOW         |    998 fish | 8.94"  | DUCHESNE
+  2020-07-28 | TIGER TROUT     |   1001 fish | 8.31"  | DUCHESNE
+  2020-07-28 | BROOK TROUT     |   3564 fish | 2.49"  | DUCHESNE
+  2020-07-28 | RAINBOW         |   1015 fish | 8.94"  | DUCHESNE
+  2020-07-23 | TIGER TROUT     |   1305 fish | 8.31"  | DUCHESNE
+  2020-07-23 | RAINBOW         |   1015 fish | 11.99" | DUCHESNE
+  2020-07-06 | RAINBOW         |    749 fish | 9.21"  | DUCHESNE
+  2020-06-23 | RAINBOW         |    750 fish | 10.0"  | DUCHESNE
+  2020-06-12 | RAINBOW         |    751 fish | 9.52"  | DUCHESNE
+  2019-09-04 | RAINBOW         |   1501 fish | 9.87"  | DUCHESNE
+  2019-08-26 | RAINBOW         |    749 fish | 9.87"  | DUCHESNE
+  2019-08-19 | RAINBOW         |   1000 fish | 10.77" | DUCHESNE
+  2019-08-19 | TIGER TROUT     |    503 fish | 9.75"  | DUCHESNE
+  2019-08-13 | TIGER TROUT     |    999 fish | 9.75"  | DUCHESNE
+  2019-08-12 | RAINBOW         |   1000 fish | 10.52" | DUCHESNE
+  2019-08-05 | RAINBOW         |   1000 fish | 10.52" | DUCHESNE
+  2019-07-30 | RAINBOW         |   1064 fish | 10.52" | DUCHESNE
+  2019-07-30 | TIGER TROUT     |   1000 fish | 9.63"  | DUCHESNE
+  2019-07-23 | TIGER TROUT     |    499 fish | 10.14" | DUCHESNE
+  2019-07-23 | RAINBOW         |   1000 fish | 9.63"  | DUCHESNE
+  2019-07-16 | BROOK TROUT     |   2002 fish | 2.68"  | DUCHESNE
+  2019-07-15 | RAINBOW         |    750 fish | 10.0"  | DUCHESNE
+  2019-07-08 | TIGER TROUT     |   1003 fish | 8.7"   | DUCHESNE
+  2019-07-08 | RAINBOW         |    747 fish | 10.12" | DUCHESNE
+  2019-07-02 | TIGER TROUT     |    999 fish | 8.28"  | DUCHESNE
+  2019-07-02 | RAINBOW         |    999 fish | 9.75"  | DUCHESNE
+  2018-08-27 | RAINBOW         |   1806 fish | 10.6"  | DUCHESNE
+  2018-08-20 | RAINBOW         |   1496 fish | 10.34" | DUCHESNE
+  2018-08-13 | RAINBOW         |   2002 fish | 9.61"  | DUCHESNE
+  2018-08-06 | RAINBOW         |   1001 fish | 9.61"  | DUCHESNE
+  2018-07-31 | TIGER TROUT     |   1058 fish | 10.36" | DUCHESNE
+  2018-07-30 | RAINBOW         |    748 fish | 9.77"  | DUCHESNE
+  2018-07-23 | RAINBOW         |    999 fish | 10.21" | DUCHESNE
+  2018-07-17 | RAINBOW         |    752 fish | 10.21" | DUCHESNE
+  2018-07-11 | TIGER TROUT     |   1004 fish | 10.36" | DUCHESNE
+  2018-07-11 | BROOK TROUT     |   3498 fish | 2.87"  | DUCHESNE
+  2018-07-10 | RAINBOW         |    756 fish | 9.63"  | DUCHESNE
+  2018-07-02 | RAINBOW         |    751 fish | 9.64"  | DUCHESNE
+  2018-06-28 | TIGER TROUT     |   1000 fish | 9.63"  | DUCHESNE
+  2018-06-25 | RAINBOW         |    756 fish | 9.64"  | DUCHESNE
+  2018-06-18 | RAINBOW         |    751 fish | 9.65"  | DUCHESNE
+  2018-06-11 | RAINBOW         |    751 fish | 9.65"  | DUCHESNE
+  2018-06-11 | TIGER TROUT     |    498 fish | 9.63"  | DUCHESNE
+  2018-06-05 | RAINBOW         |    748 fish | 9.65"  | DUCHESNE
+
+--- Mocassin WR-53 ---
+  2024-09-23 | CUTTHROAT       |    599 fish | 1.48"  | DUCHESNE
+
+--- Moosehorn Z-4 ---
+  2025-07-29 | RAINBOW         |    319 fish | 12.44" | DUCHESNE
+  2025-07-21 | RAINBOW         |    350 fish | 10.77" | DUCHESNE
+  2025-07-14 | RAINBOW         |    352 fish | 10.44" | DUCHESNE
+  2025-07-09 | RAINBOW         |    350 fish | 10.77" | DUCHESNE
+  2025-07-07 | RAINBOW         |    350 fish | 10.77" | DUCHESNE
+  2025-06-25 | TIGER TROUT     |    187 fish | 11.08" | DUCHESNE
+  2025-06-25 | TIGER TROUT     |    185 fish | 11.08" | DUCHESNE
+  2025-06-24 | RAINBOW         |    348 fish | 10.14" | DUCHESNE
+  2025-06-17 | RAINBOW         |    349 fish | 10.6"  | DUCHESNE
+  2024-08-14 | RAINBOW         |    207 fish | 10.28" | DUCHESNE
+  2024-08-12 | TIGER TROUT     |    341 fish | 10.55" | DUCHESNE
+  2024-08-05 | RAINBOW         |    311 fish | 10.28" | DUCHESNE
+  2024-07-31 | TIGER TROUT     |    360 fish | 10.56" | DUCHESNE
+  2024-07-29 | RAINBOW         |    322 fish | 10.28" | DUCHESNE
+  2024-07-23 | RAINBOW         |    299 fish | 10.28" | DUCHESNE
+  2024-07-15 | RAINBOW         |    300 fish | 10.0"  | DUCHESNE
+  2024-07-15 | TIGER TROUT     |    306 fish | 10.21" | DUCHESNE
+  2024-07-08 | RAINBOW         |    325 fish | 10.0"  | DUCHESNE
+  2024-07-02 | RAINBOW         |    300 fish | 10.0"  | DUCHESNE
+  2024-06-26 | TIGER TROUT     |    450 fish | 10.0"  | DUCHESNE
+  2024-06-25 | RAINBOW         |    360 fish | 11.16" | DUCHESNE
+  2023-08-28 | RAINBOW         |    301 fish | 12.13" | DUCHESNE
+  2023-08-21 | RAINBOW         |    301 fish | 12.13" | DUCHESNE
+  2023-08-14 | RAINBOW         |    300 fish | 11.65" | DUCHESNE
+  2023-08-14 | TIGER TROUT     |    342 fish | 9.41"  | DUCHESNE
+  2023-08-02 | RAINBOW         |    301 fish | 12.13" | DUCHESNE
+  2023-08-01 | RAINBOW         |    400 fish | 9.52"  | DUCHESNE
+  2023-07-25 | RAINBOW         |    305 fish | 11.99" | DUCHESNE
+  2023-07-18 | TIGER TROUT     |    304 fish | 9.21"  | DUCHESNE
+  2023-07-18 | RAINBOW         |    301 fish | 11.26" | DUCHESNE
+  2023-07-10 | RAINBOW         |    301 fish | 11.16" | DUCHESNE
+  2023-07-05 | TIGER TROUT     |    752 fish | 9.21"  | DUCHESNE
+  2023-07-03 | RAINBOW         |    306 fish | 11.26" | DUCHESNE
+  2022-08-15 | RAINBOW         |    300 fish | 10.0"  | DUCHESNE
+  2022-08-08 | RAINBOW         |    300 fish | 10.0"  | DUCHESNE
+  2022-08-02 | TIGER TROUT     |    240 fish | 9.41"  | DUCHESNE
+  2022-08-01 | RAINBOW         |    300 fish | 10.0"  | DUCHESNE
+  2022-07-26 | RAINBOW         |    300 fish | 10.0"  | DUCHESNE
+  2022-07-19 | RAINBOW         |    301 fish | 10.07" | DUCHESNE
+  2022-07-18 | TIGER TROUT     |    402 fish | 9.41"  | DUCHESNE
+  2022-07-11 | RAINBOW         |    301 fish | 10.07" | DUCHESNE
+  2022-07-06 | TIGER TROUT     |    397 fish | 9.52"  | DUCHESNE
+  2022-07-05 | RAINBOW         |    306 fish | 10.07" | DUCHESNE
+  2022-06-27 | RAINBOW         |    301 fish | 9.21"  | DUCHESNE
+  2022-06-27 | TIGER TROUT     |    403 fish | 9.36"  | DUCHESNE
+  2022-06-14 | RAINBOW         |    300 fish | 9.41"  | DUCHESNE
+  2021-08-17 | RAINBOW         |    301 fish | 12.13" | DUCHESNE
+  2021-08-16 | TIGER TROUT     |    240 fish | 9.21"  | DUCHESNE
+  2021-08-02 | RAINBOW         |    300 fish | 10.14" | DUCHESNE
+  2021-07-27 | RAINBOW         |    300 fish | 10.14" | DUCHESNE
+  2021-07-20 | TIGER TROUT     |    392 fish | 9.63"  | DUCHESNE
+  2021-07-19 | RAINBOW         |    312 fish | 9.32"  | DUCHESNE
+  2021-07-12 | RAINBOW         |    306 fish | 9.32"  | DUCHESNE
+  2021-06-28 | RAINBOW         |    303 fish | 9.32"  | DUCHESNE
+  2021-06-23 | TIGER TROUT     |    402 fish | 9.41"  | DUCHESNE
+  2021-06-21 | RAINBOW         |    300 fish | 9.32"  | DUCHESNE
+  2021-06-09 | RAINBOW         |    300 fish | 9.29"  | DUCHESNE
+  2021-06-09 | TIGER TROUT     |    405 fish | 9.41"  | DUCHESNE
+  2020-09-09 | TIGER TROUT     |    231 fish | 8.66"  | DUCHESNE
+  2020-09-01 | RAINBOW         |    400 fish | 9.31"  | DUCHESNE
+  2020-08-17 | RAINBOW         |    399 fish | 9.12"  | DUCHESNE
+  2020-08-10 | RAINBOW         |    403 fish | 8.94"  | DUCHESNE
+  2020-08-10 | TIGER TROUT     |    400 fish | 8.31"  | DUCHESNE
+  2020-08-03 | RAINBOW         |    403 fish | 8.94"  | DUCHESNE
+  2020-07-28 | TIGER TROUT     |    391 fish | 8.31"  | DUCHESNE
+  2020-07-27 | RAINBOW         |    399 fish | 11.99" | DUCHESNE
+  2020-07-26 | TIGER TROUT     |    435 fish | 8.31"  | DUCHESNE
+  2020-07-21 | RAINBOW         |    305 fish | 9.52"  | DUCHESNE
+  2020-06-29 | RAINBOW         |    400 fish | 9.21"  | DUCHESNE
+  2020-06-17 | RAINBOW         |    400 fish | 10.0"  | DUCHESNE
+  2019-09-03 | RAINBOW         |    151 fish | 9.87"  | DUCHESNE
+  2019-08-26 | RAINBOW         |    400 fish | 9.87"  | DUCHESNE
+  2019-08-19 | RAINBOW         |    400 fish | 10.77" | DUCHESNE
+  2019-08-12 | TIGER TROUT     |    529 fish | 9.75"  | DUCHESNE
+  2019-08-12 | RAINBOW         |    400 fish | 10.52" | DUCHESNE
+  2019-08-05 | RAINBOW         |    400 fish | 10.52" | DUCHESNE
+  2019-07-30 | TIGER TROUT     |    465 fish | 9.63"  | DUCHESNE
+  2019-07-29 | RAINBOW         |    400 fish | 9.63"  | DUCHESNE
+  2019-07-23 | RAINBOW         |    400 fish | 9.63"  | DUCHESNE
+  2019-07-23 | TIGER TROUT     |    600 fish | 10.14" | DUCHESNE
+  2019-07-17 | TIGER TROUT     |    399 fish | 8.94"  | DUCHESNE
+  2019-07-15 | RAINBOW         |    400 fish | 9.87"  | DUCHESNE
+  2019-07-08 | RAINBOW         |    400 fish | 10.12" | DUCHESNE
+  2018-08-27 | RAINBOW         |    399 fish | 10.6"  | DUCHESNE
+  2018-08-20 | RAINBOW         |    400 fish | 10.34" | DUCHESNE
+  2018-08-13 | RAINBOW         |    400 fish | 9.61"  | DUCHESNE
+  2018-08-06 | RAINBOW         |    400 fish | 9.61"  | DUCHESNE
+  2018-07-31 | TIGER TROUT     |    405 fish | 10.36" | DUCHESNE
+  2018-07-30 | RAINBOW         |    399 fish | 9.77"  | DUCHESNE
+  2018-07-23 | RAINBOW         |    400 fish | 10.21" | DUCHESNE
+  2018-07-17 | RAINBOW         |    400 fish | 10.21" | DUCHESNE
+  2018-07-02 | RAINBOW         |    399 fish | 9.64"  | DUCHESNE
+  2018-06-28 | TIGER TROUT     |    202 fish | 9.63"  | DUCHESNE
+  2018-06-21 | RAINBOW         |    399 fish | 9.64"  | DUCHESNE
+  2018-06-11 | TIGER TROUT     |    398 fish | 9.63"  | DUCHESNE
+  2018-06-05 | RAINBOW         |    398 fish | 9.65"  | DUCHESNE
+
+--- Morat #1 Z-31 ---
+  2022-09-23 | CUTTHROAT       |   1337 fish | 1.57"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |   1327 fish | 1.7"   | DUCHESNE
+
+--- Mud X-66 ---
+  2024-06-26 | BROOK TROUT     |    379 fish | 2.93"  | DUCHESNE
+  2021-07-01 | BROOK TROUT     |    374 fish | 3.32"  | DUCHESNE
+  2018-07-09 | BROOK TROUT     |    378 fish | 2.88"  | DUCHESNE
+
+--- Neil W-31 ---
+  2022-06-27 | BROOK TROUT     |     60 fish | 2.75"  | SUMMIT
+  2018-07-09 | BROOK TROUT     |     63 fish | 2.88"  | SUMMIT
+
+--- Notch W-36 ---
+  2025-06-26 | BROOK TROUT     |   1000 fish | 3.01"  | SUMMIT
+  2024-07-02 | BROOK TROUT     |   1499 fish | 2.9"   | SUMMIT
+  2023-07-13 | BROOK TROUT     |   1495 fish | 2.68"  | SUMMIT
+  2022-06-27 | BROOK TROUT     |   1500 fish | 2.75"  | SUMMIT
+  2021-06-28 | BROOK TROUT     |   1196 fish | 2.79"  | SUMMIT
+  2020-07-30 | BROOK TROUT     |   1502 fish | 2.47"  | SUMMIT
+  2018-06-27 | BROOK TROUT     |   3000 fish | 2.88"  | SUMMIT
+
+--- Ogden WR-5 ---
+  2024-09-23 | CUTTHROAT       |   1002 fish | 1.48"  | DUCHESNE
+  2021-09-22 | CUTTHROAT       |   1412 fish | 1.9"   | DUCHESNE
+
+--- Oke Doke U-5 ---
+  2023-09-19 | CUTTHROAT       |    655 fish | 1.45"  | DUCHESNE
+  2018-10-12 | CUTTHROAT       |    472 fish | 1.74"  | DUCHESNE
+
+--- Olsen W-32 ---
+  2025-06-25 | BROOK TROUT     |    700 fish | 3.01"  | SUMMIT
+  2023-07-13 | BROOK TROUT     |    702 fish | 2.68"  | SUMMIT
+  2021-06-29 | BROOK TROUT     |    702 fish | 2.79"  | SUMMIT
+  2018-06-26 | BROOK TROUT     |    700 fish | 2.88"  | SUMMIT
+
+--- Ostler BR-27 ---
+  2024-07-08 | TIGER TROUT     |   1404 fish | 2.78"  | SUMMIT
+  2021-06-30 | TIGER TROUT     |   1395 fish | 2.69"  | SUMMIT
+  2018-07-09 | TIGER TROUT     |    897 fish | 2.34"  | SUMMIT
+
+--- Ottoson Upper X-87 ---
+  2022-09-23 | CUTTHROAT       |    669 fish | 1.57"  | DUCHESNE
+  2018-10-12 | CUTTHROAT       |    708 fish | 1.74"  | DUCHESNE
+
+--- Oweep LF-30 ---
+  2024-10-01 | CUTTHROAT       |      0 fish | 1.52"  | DUCHESNE
+  2024-10-01 | CUTTHROAT       |   1155 fish | 6.06"  | DUCHESNE
+  2024-10-01 | CUTTHROAT       |   2149 fish | 1.59"  | DUCHESNE
+  2024-10-01 | CUTTHROAT       |    331 fish | 6.06"  | DUCHESNE
+  2024-10-01 | CUTTHROAT       |   1647 fish | 1.59"  | DUCHESNE
+  2024-10-01 | CUTTHROAT       |    984 fish | 1.52"  | DUCHESNE
+  2024-10-01 | CUTTHROAT       |   1035 fish | 6.06"  | DUCHESNE
+  2024-10-01 | CUTTHROAT       |   1158 fish | 6.06"  | DUCHESNE
+  2024-10-01 | CUTTHROAT       |    535 fish | 6.06"  | DUCHESNE
+  2024-09-23 | CUTTHROAT       |    454 fish | 1.48"  | DUCHESNE
+  2022-09-23 | CUTTHROAT       |    669 fish | 1.57"  | DUCHESNE
+
+--- Packard Z-15 ---
+  2024-07-03 | BROOK TROUT     |    898 fish | 2.9"   | DUCHESNE
+  2021-06-28 | BROOK TROUT     |    897 fish | 2.79"  | DUCHESNE
+  2018-06-27 | BROOK TROUT     |    900 fish | 2.88"  | DUCHESNE
+
+--- Palisade Z-28 ---
+  2025-07-07 | BROOK TROUT     |   1397 fish | 3.53"  | DUCHESNE
+  2022-06-29 | BROOK TROUT     |   1416 fish | 2.75"  | DUCHESNE
+  2019-07-09 | BROOK TROUT     |   1092 fish | 2.68"  | DUCHESNE
+
+--- Papoose WR-52 ---
+  2025-07-01 | BROOK TROUT     |    677 fish | 3.4"   | DUCHESNE
+
+--- Pass Z-5 ---
+  2025-07-28 | RAINBOW         |    403 fish | 12.44" | DUCHESNE
+  2025-07-21 | RAINBOW         |    400 fish | 10.77" | DUCHESNE
+  2025-07-14 | RAINBOW         |    396 fish | 10.44" | DUCHESNE
+  2025-07-11 | BROOK TROUT     |   1359 fish | 3.6"   | DUCHESNE
+  2025-07-10 | TIGER TROUT     |    349 fish | 11.08" | DUCHESNE
+  2025-07-07 | RAINBOW         |    300 fish | 10.77" | DUCHESNE
+  2025-07-07 | RAINBOW         |    100 fish | 10.77" | DUCHESNE
+  2025-06-23 | TIGER TROUT     |    347 fish | 11.08" | DUCHESNE
+  2025-06-23 | RAINBOW         |    396 fish | 10.44" | DUCHESNE
+  2025-06-17 | RAINBOW         |    500 fish | 10.6"  | DUCHESNE
+  2024-10-21 | TIGER TROUT     |    280 fish | 12.13" | DUCHESNE
+  2024-08-28 | RAINBOW         |    402 fish | 11.02" | DUCHESNE
+  2024-08-19 | TIGER TROUT     |    426 fish | 10.55" | DUCHESNE
+  2024-08-14 | RAINBOW         |    425 fish | 10.28" | DUCHESNE
+  2024-08-12 | TIGER TROUT     |    426 fish | 10.55" | DUCHESNE
+  2024-08-05 | RAINBOW         |    311 fish | 10.28" | DUCHESNE
+  2024-07-31 | TIGER TROUT     |    254 fish | 10.56" | DUCHESNE
+  2024-07-29 | RAINBOW         |    322 fish | 10.28" | DUCHESNE
+  2024-07-23 | RAINBOW         |    299 fish | 10.28" | DUCHESNE
+  2024-07-15 | TIGER TROUT     |    259 fish | 10.21" | DUCHESNE
+  2024-07-15 | RAINBOW         |    300 fish | 10.0"  | DUCHESNE
+  2024-07-10 | BROOK TROUT     |    510 fish | 2.9"   | DUCHESNE
+  2024-07-08 | RAINBOW         |    325 fish | 10.0"  | DUCHESNE
+  2024-07-03 | TIGER TROUT     |    500 fish | 10.0"  | DUCHESNE
+  2024-06-25 | RAINBOW         |    360 fish | 11.16" | DUCHESNE
+  2024-06-20 | TIGER TROUT     |    499 fish | 9.87"  | DUCHESNE
+  2024-06-19 | RAINBOW         |    299 fish | 12.25" | DUCHESNE
+  2023-08-28 | RAINBOW         |    400 fish | 12.13" | DUCHESNE
+  2023-08-22 | TIGER TROUT     |    300 fish | 9.41"  | DUCHESNE
+  2023-08-21 | RAINBOW         |    497 fish | 12.13" | DUCHESNE
+  2023-08-14 | TIGER TROUT     |    402 fish | 9.41"  | DUCHESNE
+  2023-08-14 | RAINBOW         |    300 fish | 11.65" | DUCHESNE
+  2023-08-02 | RAINBOW         |    301 fish | 12.13" | DUCHESNE
+  2023-08-01 | RAINBOW         |    502 fish | 9.52"  | DUCHESNE
+  2023-07-25 | RAINBOW         |    305 fish | 11.99" | DUCHESNE
+  2023-07-18 | RAINBOW         |    301 fish | 11.26" | DUCHESNE
+  2023-07-18 | TIGER TROUT     |    304 fish | 9.21"  | DUCHESNE
+  2023-07-17 | BROOK TROUT     |    494 fish | 2.68"  | DUCHESNE
+  2023-07-11 | RAINBOW         |    298 fish | 11.26" | DUCHESNE
+  2023-07-03 | RAINBOW         |    306 fish | 11.26" | DUCHESNE
+  2023-06-29 | TIGER TROUT     |    501 fish | 9.41"  | DUCHESNE
+  2023-06-29 | RAINBOW         |    296 fish | 11.6"  | DUCHESNE
+  2022-08-29 | RAINBOW         |    400 fish | 10.28" | DUCHESNE
+  2022-08-23 | RAINBOW         |    301 fish | 10.28" | DUCHESNE
+  2022-08-16 | TIGER TROUT     |    400 fish | 9.63"  | DUCHESNE
+  2022-08-15 | RAINBOW         |    300 fish | 10.0"  | DUCHESNE
+  2022-08-08 | RAINBOW         |    300 fish | 10.0"  | DUCHESNE
+  2022-08-01 | RAINBOW         |    300 fish | 10.0"  | DUCHESNE
+  2022-07-26 | RAINBOW         |    300 fish | 10.0"  | DUCHESNE
+  2022-07-19 | RAINBOW         |    301 fish | 10.07" | DUCHESNE
+  2022-07-18 | TIGER TROUT     |    501 fish | 9.41"  | DUCHESNE
+  2022-07-11 | RAINBOW         |    301 fish | 10.07" | DUCHESNE
+  2022-07-06 | TIGER TROUT     |    299 fish | 9.52"  | DUCHESNE
+  2022-07-05 | RAINBOW         |    306 fish | 10.07" | DUCHESNE
+  2022-07-04 | BROOK TROUT     |    500 fish | 2.92"  | DUCHESNE
+  2022-06-27 | RAINBOW         |    301 fish | 9.21"  | DUCHESNE
+  2022-06-22 | TIGER TROUT     |    702 fish | 9.36"  | DUCHESNE
+  2022-06-14 | RAINBOW         |    300 fish | 9.41"  | DUCHESNE
+  2021-08-30 | RAINBOW         |    308 fish | 12.13" | DUCHESNE
+  2021-08-23 | RAINBOW         |    294 fish | 12.13" | DUCHESNE
+  2021-08-17 | RAINBOW         |    301 fish | 12.13" | DUCHESNE
+  2021-08-16 | TIGER TROUT     |    400 fish | 9.21"  | DUCHESNE
+  2021-08-09 | RAINBOW         |    199 fish | 10.14" | DUCHESNE
+  2021-08-02 | RAINBOW         |    300 fish | 10.14" | DUCHESNE
+  2021-07-26 | RAINBOW         |    300 fish | 10.14" | DUCHESNE
+  2021-07-19 | RAINBOW         |    312 fish | 9.32"  | DUCHESNE
+  2021-07-12 | RAINBOW         |    300 fish | 9.32"  | DUCHESNE
+  2021-07-07 | BROOK TROUT     |    147 fish | 13.96" | DUCHESNE
+  2021-07-06 | TIGER TROUT     |    501 fish | 9.41"  | DUCHESNE
+  2021-06-28 | BROOK TROUT     |    507 fish | 2.68"  | DUCHESNE
+  2021-06-28 | RAINBOW         |    303 fish | 9.32"  | DUCHESNE
+  2021-06-23 | TIGER TROUT     |    501 fish | 9.41"  | DUCHESNE
+  2021-06-21 | RAINBOW         |    300 fish | 9.32"  | DUCHESNE
+  2021-06-09 | RAINBOW         |    300 fish | 9.29"  | DUCHESNE
+  2021-06-09 | TIGER TROUT     |    504 fish | 9.41"  | DUCHESNE
+  2020-09-09 | TIGER TROUT     |    551 fish | 8.66"  | DUCHESNE
+  2020-09-08 | RAINBOW         |    599 fish | 8.94"  | DUCHESNE
+  2020-09-01 | RAINBOW         |    601 fish | 9.31"  | DUCHESNE
+  2020-08-31 | TIGER TROUT     |    499 fish | 9.31"  | DUCHESNE
+  2020-08-24 | RAINBOW         |    597 fish | 9.12"  | DUCHESNE
+  2020-08-17 | RAINBOW         |    399 fish | 9.12"  | DUCHESNE
+  2020-08-10 | RAINBOW         |    399 fish | 8.94"  | DUCHESNE
+  2020-08-10 | TIGER TROUT     |    500 fish | 8.31"  | DUCHESNE
+  2020-08-03 | RAINBOW         |    403 fish | 8.94"  | DUCHESNE
+  2020-07-28 | TIGER TROUT     |    500 fish | 8.31"  | DUCHESNE
+  2020-07-27 | RAINBOW         |    399 fish | 11.99" | DUCHESNE
+  2020-07-27 | BROOK TROUT     |    486 fish | 2.49"  | DUCHESNE
+  2020-07-26 | TIGER TROUT     |    500 fish | 8.31"  | DUCHESNE
+  2020-07-24 | RAINBOW         |    399 fish | 11.99" | DUCHESNE
+  2020-07-14 | RAINBOW         |    400 fish | 9.52"  | DUCHESNE
+  2020-07-06 | RAINBOW         |    400 fish | 9.21"  | DUCHESNE
+  2020-06-23 | RAINBOW         |    400 fish | 10.0"  | DUCHESNE
+  2020-06-09 | RAINBOW         |    400 fish | 10.0"  | DUCHESNE
+  2019-09-03 | RAINBOW         |    598 fish | 9.87"  | DUCHESNE
+  2019-08-26 | RAINBOW         |    400 fish | 9.87"  | DUCHESNE
+  2019-08-19 | RAINBOW         |    400 fish | 10.77" | DUCHESNE
+  2019-08-12 | TIGER TROUT     |    548 fish | 9.75"  | DUCHESNE
+  2019-08-12 | RAINBOW         |    400 fish | 10.52" | DUCHESNE
+  2019-08-05 | RAINBOW         |    400 fish | 10.52" | DUCHESNE
+  2019-07-30 | TIGER TROUT     |    582 fish | 9.63"  | DUCHESNE
+  2019-07-29 | RAINBOW         |    400 fish | 9.63"  | DUCHESNE
+  2019-07-23 | RAINBOW         |    400 fish | 9.63"  | DUCHESNE
+  2019-07-17 | TIGER TROUT     |    501 fish | 8.94"  | DUCHESNE
+  2019-07-16 | BROOK TROUT     |    501 fish | 2.68"  | DUCHESNE
+  2019-07-15 | RAINBOW         |    400 fish | 10.0"  | DUCHESNE
+  2019-07-08 | TIGER TROUT     |    498 fish | 8.7"   | DUCHESNE
+  2019-07-08 | RAINBOW         |    398 fish | 10.12" | DUCHESNE
+  2019-07-02 | TIGER TROUT     |    502 fish | 8.28"  | DUCHESNE
+  2019-07-01 | RAINBOW         |    405 fish | 9.75"  | DUCHESNE
+  2018-08-27 | RAINBOW         |    798 fish | 10.6"  | DUCHESNE
+  2018-08-20 | RAINBOW         |    800 fish | 10.34" | DUCHESNE
+  2018-08-13 | RAINBOW         |    801 fish | 9.61"  | DUCHESNE
+  2018-08-06 | RAINBOW         |    499 fish | 9.61"  | DUCHESNE
+  2018-07-31 | TIGER TROUT     |    405 fish | 10.36" | DUCHESNE
+  2018-07-30 | RAINBOW         |    498 fish | 9.77"  | DUCHESNE
+  2018-07-23 | RAINBOW         |    505 fish | 10.21" | DUCHESNE
+  2018-07-17 | RAINBOW         |    400 fish | 10.21" | DUCHESNE
+  2018-07-11 | TIGER TROUT     |    500 fish | 10.36" | DUCHESNE
+  2018-07-10 | RAINBOW         |    398 fish | 9.63"  | DUCHESNE
+  2018-07-02 | RAINBOW         |    399 fish | 9.57"  | DUCHESNE
+  2018-06-28 | TIGER TROUT     |    501 fish | 9.63"  | DUCHESNE
+  2018-06-25 | RAINBOW         |    399 fish | 9.64"  | DUCHESNE
+  2018-06-21 | RAINBOW         |    399 fish | 9.64"  | DUCHESNE
+  2018-06-11 | TIGER TROUT     |    498 fish | 9.63"  | DUCHESNE
+  2018-06-05 | RAINBOW         |    398 fish | 9.65"  | DUCHESNE
+  2018-05-30 | BROOK TROUT     |    508 fish | 2.53"  | DUCHESNE
+
+--- Petit (Junior #5) A-26 ---
+  2025-06-25 | BROOK TROUT     |    130 fish | 3.01"  | SUMMIT
+  2024-07-03 | BROOK TROUT     |    133 fish | 2.9"   | SUMMIT
+  2023-07-14 | BROOK TROUT     |    130 fish | 2.68"  | SUMMIT
+  2022-06-27 | BROOK TROUT     |     60 fish | 2.75"  | SUMMIT
+  2021-06-28 | BROOK TROUT     |     69 fish | 2.79"  | SUMMIT
+  2020-07-30 | BROOK TROUT     |     66 fish | 2.47"  | SUMMIT
+  2018-06-27 | BROOK TROUT     |    200 fish | 2.88"  | SUMMIT
+
+--- Phinney X-119 ---
+  2021-06-29 | BROOK TROUT     |   1357 fish | 2.79"  | DUCHESNE
+
+--- Picture X-82 ---
+  2021-09-21 | GRAYLING ARCTIC |   2000 fish | 2.65"  | DUCHESNE
+
+--- Pine Island X-8 ---
+  2024-06-28 | BROOK TROUT     |   8378 fish | 2.91"  | DUCHESNE
+  2021-06-30 | BROOK TROUT     |   8395 fish | 2.79"  | DUCHESNE
+  2018-06-26 | BROOK TROUT     |   8400 fish | 2.88"  | DUCHESNE
+
+--- Pinto X-22 ---
+  2023-07-21 | BROOK TROUT     |   5100 fish | 3.0"   | DUCHESNE
+  2021-09-22 | CUTTHROAT       |    899 fish | 1.9"   | DUCHESNE
+  2021-06-30 | BROOK TROUT     |   5095 fish | 2.79"  | DUCHESNE
+
+--- Point (Adams) WR-6 ---
+  2025-07-01 | BROOK TROUT     |   1604 fish | 3.4"   | DUCHESNE
+  2020-07-06 | BROOK TROUT     |   1595 fish | 3.49"  | DUCHESNE
+
+--- Pole Creek Lake WR-13 ---
+  2025-06-30 | TIGER TROUT     |    500 fish | 3.69"  | DUCHESNE
+  2024-06-26 | TIGER TROUT     |    495 fish | 3.64"  | DUCHESNE
+  2023-09-19 | TIGER TROUT     |    249 fish | 3.95"  | DUCHESNE
+  2023-07-21 | TIGER TROUT     |    496 fish | 2.7"   | DUCHESNE
+  2022-07-06 | TIGER TROUT     |    501 fish | 3.69"  | DUCHESNE
+  2021-07-01 | TIGER TROUT     |    502 fish | 3.28"  | DUCHESNE
+  2021-06-10 | CHANNEL CATFISH |    250 fish | 13.57" | DUCHESNE
+  2020-07-06 | TIGER TROUT     |    496 fish | 3.2"   | DUCHESNE
+  2019-07-11 | TIGER TROUT     |    500 fish | 2.65"  | DUCHESNE
+  2018-07-10 | TIGER TROUT     |    502 fish | 2.35"  | DUCHESNE
+
+--- Porcupine LF-22 ---
+  2024-09-23 | CUTTHROAT       |    299 fish | 1.48"  | DUCHESNE
+
+--- Pot A-8 ---
+  2024-07-03 | BROOK TROUT     |    398 fish | 2.9"   | SUMMIT
+  2022-06-27 | BROOK TROUT     |    396 fish | 2.75"  | SUMMIT
+  2020-07-31 | BROOK TROUT     |    413 fish | 2.47"  | SUMMIT
+  2018-07-09 | BROOK TROUT     |    399 fish | 2.88"  | SUMMIT
+
+--- Powell Z-30 ---
+  2022-09-23 | CUTTHROAT       |   2675 fish | 1.57"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |   2718 fish | 1.7"   | DUCHESNE
+
+--- Priord BR-48 ---
+  2024-07-08 | TIGER TROUT     |   1195 fish | 2.78"  | SUMMIT
+  2021-06-30 | TIGER TROUT     |   1203 fish | 2.69"  | SUMMIT
+  2018-07-09 | TIGER TROUT     |    897 fish | 2.34"  | SUMMIT
+
+--- Pyramid Z-17 ---
+  2025-06-26 | BROOK TROUT     |   1500 fish | 3.01"  | DUCHESNE
+  2022-06-29 | BROOK TROUT     |    768 fish | 2.75"  | DUCHESNE
+  2022-06-27 | BROOK TROUT     |    756 fish | 2.75"  | DUCHESNE
+  2019-07-09 | BROOK TROUT     |   1131 fish | 2.68"  | DUCHESNE
+
+--- QUARTER CORNER LG103 G-103 ---
+  2025-06-03 | RAINBOW         |    920 fish | 10.77" | SUMMIT
+  2024-05-30 | RAINBOW         |    900 fish | 10.77" | SUMMIT
+  2023-06-07 | RAINBOW         |    899 fish | 10.6"  | SUMMIT
+  2022-05-23 | RAINBOW         |    928 fish | 9.52"  | SUMMIT
+  2021-09-21 | GRAYLING ARCTIC |    194 fish | 2.65"  | SUMMIT
+  2021-05-25 | RAINBOW         |    901 fish | 9.03"  | SUMMIT
+  2020-09-21 | GRAYLING ARCTIC |    198 fish | 2.81"  | SUMMIT
+  2020-06-01 | RAINBOW         |   1197 fish | 9.01"  | SUMMIT
+  2019-09-26 | GRAYLING ARCTIC |    200 fish | 2.29"  | SUMMIT
+  2019-06-10 | RAINBOW         |   1207 fish | 9.03"  | SUMMIT
+  2018-05-29 | RAINBOW         |   1199 fish | 9.59"  | SUMMIT
+
+--- Quent WR-4 ---
+  2025-07-01 | BROOK TROUT     |   1448 fish | 3.4"   | DUCHESNE
+  2025-06-30 | BROOK TROUT     |   1448 fish | 3.4"   | DUCHESNE
+  2023-09-19 | CUTTHROAT       |    936 fish | 1.45"  | DUCHESNE
+  2020-07-06 | BROOK TROUT     |   4087 fish | 3.49"  | DUCHESNE
+
+--- RC #1 WR-2 ---
+  2024-09-23 | CUTTHROAT       |    599 fish | 1.48"  | DUCHESNE
+
+--- ROBB L WR-1 ---
+  2024-06-26 | BROOK TROUT     |    320 fish | 2.93"  | DUCHESNE
+  2022-07-06 | BROOK TROUT     |    420 fish | 3.62"  | DUCHESNE
+
+--- Rainbow U-33 ---
+  2024-06-26 | TIGER TROUT     |    698 fish | 3.64"  | DUCHESNE
+  2023-07-21 | BROOK TROUT     |   3514 fish | 3.0"   | DUCHESNE
+  2022-07-06 | TIGER TROUT     |    398 fish | 3.69"  | DUCHESNE
+  2020-09-21 | BROOK TROUT     |   3496 fish | 2.97"  | DUCHESNE
+
+--- Rainbow Z-25 ---
+  2021-06-30 | BROOK TROUT     |   1403 fish | 2.79"  | DUCHESNE
+  2018-06-26 | BROOK TROUT     |   1000 fish | 2.88"  | DUCHESNE
+
+--- Ramona A-38 ---
+  2024-07-03 | BROOK TROUT     |    469 fish | 2.9"   | SUMMIT
+  2021-06-28 | BROOK TROUT     |    345 fish | 2.79"  | SUMMIT
+  2018-07-09 | BROOK TROUT     |    357 fish | 2.88"  | SUMMIT
+
+--- Rassmussen #1 WR-35 ---
+  2022-07-06 | BROOK TROUT     |   1536 fish | 3.62"  | DUCHESNE
+  2018-07-10 | BROOK TROUT     |   1533 fish | 2.88"  | DUCHESNE
+
+--- Rassmussen #2 WR-36 ---
+  2022-07-06 | BROOK TROUT     |   1394 fish | 3.62"  | DUCHESNE
+  2018-07-10 | BROOK TROUT     |   1407 fish | 2.88"  | DUCHESNE
+
+--- Reader WR-66 ---
+  2022-09-23 | CUTTHROAT       |    743 fish | 1.57"  | DUCHESNE
+  2021-06-02 | CUTTHROAT       |   4004 fish | 4.28"  | DUCHESNE
+  2020-09-23 | CUTTHROAT       |    240 fish | 1.53"  | DUCHESNE
+  2020-06-05 | CUTTHROAT       |   3478 fish | 4.26"  | DUCHESNE
+  2019-09-25 | CUTTHROAT       |   2250 fish | 1.61"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |    749 fish | 1.61"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |    524 fish | 1.61"  | DUCHESNE
+
+--- Red Castle G-15 ---
+  2025-07-02 | TIGER TROUT     |   4901 fish | 3.8"   | SUMMIT
+  2025-07-01 | TIGER TROUT     |    698 fish | 3.79"  | SUMMIT
+  2024-07-08 | TIGER TROUT     |   5603 fish | 2.78"  | SUMMIT
+  2023-07-14 | TIGER TROUT     |   5599 fish | 2.83"  | SUMMIT
+  2022-07-11 | BROOK TROUT     |   2200 fish | 2.92"  | SUMMIT
+  2022-06-28 | TIGER TROUT     |   5670 fish | 2.65"  | SUMMIT
+  2020-07-31 | TIGER TROUT     |   5616 fish | 2.4"   | SUMMIT
+  2019-07-15 | TIGER TROUT     |   7685 fish | 2.87"  | SUMMIT
+  2019-07-11 | TIGER TROUT     |   4050 fish | 2.65"  | SUMMIT
+
+--- Reids W-38 ---
+  2025-06-26 | BROOK TROUT     |    250 fish | 3.01"  | SUMMIT
+  2023-07-13 | BROOK TROUT     |    494 fish | 2.68"  | SUMMIT
+  2022-06-27 | BROOK TROUT     |    504 fish | 2.75"  | SUMMIT
+  2020-07-30 | BROOK TROUT     |    528 fish | 2.47"  | SUMMIT
+  2019-07-09 | BROOK TROUT     |    377 fish | 2.68"  | SUMMIT
+
+--- Roberts U-15 ---
+  2023-09-19 | CUTTHROAT       |   1216 fish | 1.45"  | DUCHESNE
+  2018-10-12 | CUTTHROAT       |    826 fish | 1.74"  | DUCHESNE
+
+--- Rock A-10 ---
+  2025-07-02 | TIGER TROUT     |    399 fish | 3.8"   | SUMMIT
+  2023-07-14 | TIGER TROUT     |    396 fish | 2.83"  | SUMMIT
+  2021-06-30 | TIGER TROUT     |    397 fish | 2.69"  | SUMMIT
+  2019-07-09 | TIGER TROUT     |    405 fish | 2.65"  | SUMMIT
+
+--- Rock 1 X-96 ---
+  2022-06-29 | BROOK TROUT     |    492 fish | 2.75"  | DUCHESNE
+  2018-07-09 | BROOK TROUT     |    483 fish | 2.88"  | DUCHESNE
+
+--- Rock 2 X-97 ---
+  2019-09-26 | GRAYLING ARCTIC |    599 fish | 2.29"  | DUCHESNE
+
+--- Rosalie X-130 ---
+  2022-06-29 | BROOK TROUT     |    828 fish | 2.75"  | DUCHESNE
+  2018-06-27 | BROOK TROUT     |    810 fish | 2.88"  | DUCHESNE
+
+--- Round GR-131 ---
+  2024-07-15 | CUTTHROAT       |   1710 fish | 2.26"  | SUMMIT
+  2020-09-23 | CUTTHROAT       |   1707 fish | 2.48"  | SUMMIT
+
+--- Rudolph 1 X-39 ---
+  2023-07-21 | BROOK TROUT     |   2206 fish | 3.0"   | DUCHESNE
+  2019-07-09 | BROOK TROUT     |   1469 fish | 2.68"  | DUCHESNE
+
+--- Rudolph 2 X-40 ---
+  2022-06-29 | BROOK TROUT     |    300 fish | 2.75"  | DUCHESNE
+  2018-07-09 | BROOK TROUT     |    294 fish | 2.88"  | DUCHESNE
+
+--- Ruth BR-40 ---
+  2025-06-26 | BROOK TROUT     |    500 fish | 3.01"  | SUMMIT
+  2024-07-02 | BROOK TROUT     |    500 fish | 2.9"   | SUMMIT
+  2023-07-13 | BROOK TROUT     |    494 fish | 2.68"  | SUMMIT
+  2022-06-27 | BROOK TROUT     |    504 fish | 2.75"  | SUMMIT
+  2021-06-29 | BROOK TROUT     |    495 fish | 2.79"  | SUMMIT
+  2020-07-31 | BROOK TROUT     |    512 fish | 2.47"  | SUMMIT
+  2019-07-09 | BROOK TROUT     |    650 fish | 2.68"  | SUMMIT
+  2018-06-26 | BROOK TROUT     |    500 fish | 2.88"  | SUMMIT
+
+--- Salamander lake BR-26 ---
+  2023-07-13 | BROOK TROUT     |    403 fish | 2.68"  | SUMMIT
+  2020-07-31 | BROOK TROUT     |    396 fish | 2.47"  | SUMMIT
+
+--- Scout Z-12 ---
+  2025-07-08 | RAINBOW         |    850 fish | 10.77" | DUCHESNE
+  2025-07-08 | BROOK TROUT     |   1003 fish | 2.84"  | DUCHESNE
+  2025-06-24 | RAINBOW         |    437 fish | 10.14" | DUCHESNE
+  2024-07-02 | BROOK TROUT     |   1000 fish | 2.9"   | DUCHESNE
+  2024-06-25 | RAINBOW         |    810 fish | 11.16" | DUCHESNE
+  2023-07-13 | BROOK TROUT     |   1001 fish | 2.68"  | DUCHESNE
+  2022-06-29 | BROOK TROUT     |   1008 fish | 2.75"  | DUCHESNE
+  2020-07-31 | BROOK TROUT     |   1006 fish | 2.47"  | DUCHESNE
+  2019-08-05 | RAINBOW         |    400 fish | 10.52" | DUCHESNE
+  2019-07-29 | RAINBOW         |    339 fish | 9.63"  | DUCHESNE
+  2019-07-23 | RAINBOW         |    400 fish | 9.63"  | DUCHESNE
+  2019-07-16 | RAINBOW         |    400 fish | 10.0"  | DUCHESNE
+  2019-07-16 | BROOK TROUT     |    494 fish | 2.68"  | DUCHESNE
+  2019-07-08 | RAINBOW         |    398 fish | 10.12" | DUCHESNE
+  2019-07-02 | RAINBOW         |    400 fish | 9.75"  | DUCHESNE
+  2018-08-06 | RAINBOW         |    400 fish | 9.61"  | DUCHESNE
+  2018-07-30 | RAINBOW         |    340 fish | 9.77"  | DUCHESNE
+  2018-07-17 | RAINBOW         |    400 fish | 10.21" | DUCHESNE
+  2018-07-09 | TIGER TROUT     |    406 fish | 9.63"  | DUCHESNE
+  2018-07-09 | BROOK TROUT     |   1000 fish | 2.92"  | DUCHESNE
+  2018-07-09 | RAINBOW         |    398 fish | 9.63"  | DUCHESNE
+  2018-07-02 | RAINBOW         |    396 fish | 9.64"  | DUCHESNE
+  2018-06-25 | RAINBOW         |    399 fish | 9.64"  | DUCHESNE
+  2018-06-25 | TIGER TROUT     |    398 fish | 9.63"  | DUCHESNE
+
+--- Scow BR-12 ---
+  2025-06-26 | BROOK TROUT     |   1700 fish | 3.01"  | SUMMIT
+  2023-07-13 | BROOK TROUT     |   1703 fish | 2.68"  | SUMMIT
+  2021-06-30 | BROOK TROUT     |   1702 fish | 2.79"  | SUMMIT
+  2019-07-09 | BROOK TROUT     |   1274 fish | 2.68"  | SUMMIT
+
+--- Sea Lion RC-11 ---
+  2022-09-23 | CUTTHROAT       |    783 fish | 1.91"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |    758 fish | 1.7"   | DUCHESNE
+
+--- Shadow A-52 ---
+  2025-06-25 | BROOK TROUT     |    700 fish | 3.01"  | SUMMIT
+  2024-07-03 | BROOK TROUT     |    704 fish | 2.9"   | SUMMIT
+  2023-07-14 | BROOK TROUT     |    702 fish | 2.68"  | SUMMIT
+  2022-06-27 | BROOK TROUT     |    696 fish | 2.75"  | SUMMIT
+  2021-06-28 | BROOK TROUT     |    702 fish | 2.79"  | SUMMIT
+  2020-07-30 | BROOK TROUT     |    710 fish | 2.47"  | SUMMIT
+  2018-06-27 | BROOK TROUT     |   1400 fish | 2.88"  | SUMMIT
+
+--- Shaler Z-34 ---
+  2024-09-23 | CUTTHROAT       |   1301 fish | 1.48"  | DUCHESNE
+  2022-09-23 | CUTTHROAT       |   1263 fish | 1.57"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |   1327 fish | 1.7"   | DUCHESNE
+
+--- Shamrock X-98 ---
+  2022-06-29 | BROOK TROUT     |   1848 fish | 2.75"  | DUCHESNE
+  2018-06-27 | BROOK TROUT     |   1820 fish | 2.88"  | DUCHESNE
+
+--- Sharlee WR-57 ---
+  2023-09-19 | CUTTHROAT       |    655 fish | 1.45"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |    674 fish | 1.61"  | DUCHESNE
+
+--- Shingle Creek East A-39 ---
+  2024-07-08 | TIGER TROUT     |    255 fish | 2.78"  | SUMMIT
+  2022-06-28 | TIGER TROUT     |    257 fish | 2.65"  | SUMMIT
+  2020-07-31 | TIGER TROUT     |    414 fish | 2.4"   | SUMMIT
+  2018-07-09 | TIGER TROUT     |    332 fish | 2.34"  | SUMMIT
+
+--- Shingle Creek West P-60 ---
+  2024-07-03 | BROOK TROUT     |    255 fish | 2.9"   | SUMMIT
+  2022-06-27 | BROOK TROUT     |    252 fish | 2.75"  | SUMMIT
+  2021-06-29 | BROOK TROUT     |    253 fish | 2.79"  | SUMMIT
+  2019-07-09 | BROOK TROUT     |    403 fish | 2.68"  | SUMMIT
+
+--- Smiths Fork Pass G-14 ---
+  2025-07-02 | TIGER TROUT     |    849 fish | 3.8"   | SUMMIT
+  2024-07-08 | TIGER TROUT     |    928 fish | 2.78"  | SUMMIT
+  2023-07-14 | TIGER TROUT     |    847 fish | 2.83"  | SUMMIT
+  2022-06-28 | TIGER TROUT     |    878 fish | 2.65"  | SUMMIT
+  2020-07-31 | TIGER TROUT     |    846 fish | 2.4"   | SUMMIT
+  2019-07-15 | TIGER TROUT     |   1760 fish | 2.87"  | SUMMIT
+
+--- Sonny X-12 ---
+  2025-06-25 | BROOK TROUT     |    400 fish | 3.01"  | DUCHESNE
+  2023-07-13 | BROOK TROUT     |    403 fish | 2.68"  | DUCHESNE
+  2022-06-29 | BROOK TROUT     |    408 fish | 2.75"  | DUCHESNE
+  2021-06-28 | BROOK TROUT     |    403 fish | 2.79"  | DUCHESNE
+  2018-06-26 | BROOK TROUT     |    400 fish | 2.88"  | DUCHESNE
+
+--- Spectacle (Hourglass) A-44 ---
+  2025-06-25 | BROOK TROUT     |    330 fish | 3.01"  | SUMMIT
+  2024-07-03 | BROOK TROUT     |    326 fish | 2.9"   | SUMMIT
+  2023-07-13 | BROOK TROUT     |    325 fish | 2.68"  | SUMMIT
+  2022-06-29 | BROOK TROUT     |    348 fish | 2.75"  | SUMMIT
+  2021-06-28 | BROOK TROUT     |    334 fish | 2.79"  | SUMMIT
+  2020-07-30 | BROOK TROUT     |    330 fish | 2.47"  | SUMMIT
+  2018-06-27 | BROOK TROUT     |   1000 fish | 2.88"  | SUMMIT
+
+--- Spider X-109 ---
+  2025-07-01 | BROOK TROUT     |   2000 fish | 3.4"   | DUCHESNE
+  2022-07-06 | BROOK TROUT     |   2129 fish | 3.62"  | DUCHESNE
+  2019-07-11 | BROOK TROUT     |   1560 fish | 2.68"  | DUCHESNE
+
+--- Squaw X-95 ---
+  2022-06-29 | BROOK TROUT     |   1056 fish | 2.75"  | DUCHESNE
+
+--- Star A-42 ---
+  2024-07-08 | TIGER TROUT     |   1404 fish | 2.78"  | SUMMIT
+  2022-06-28 | TIGER TROUT     |    662 fish | 2.65"  | SUMMIT
+  2021-06-30 | TIGER TROUT     |   1306 fish | 2.69"  | SUMMIT
+  2020-07-31 | TIGER TROUT     |    666 fish | 2.4"   | SUMMIT
+  2018-07-09 | TIGER TROUT     |   1443 fish | 2.34"  | SUMMIT
+
+--- Stewart X-79 ---
+  2021-09-22 | CUTTHROAT       |    942 fish | 1.9"   | DUCHESNE
+
+--- Summit GR-5 ---
+  2020-09-21 | GRAYLING ARCTIC |    756 fish | 2.81"  | SUMMIT
+
+--- Survey RC-20 ---
+  2025-07-07 | BROOK TROUT     |   1001 fish | 3.53"  | DUCHESNE
+  2024-06-28 | BROOK TROUT     |     97 fish | 2.91"  | DUCHESNE
+  2021-06-30 | BROOK TROUT     |   1000 fish | 2.79"  | DUCHESNE
+  2018-06-26 | BROOK TROUT     |   1000 fish | 2.88"  | DUCHESNE
+
+--- Tamarack GR-2 ---
+  2025-06-30 | CUTTHROAT       |   6004 fish | 1.84"  | SUMMIT
+  2024-07-15 | CUTTHROAT       |   6840 fish | 2.26"  | SUMMIT
+  2024-07-01 | CUTTHROAT       |    600 fish | 5.6"   | SUMMIT
+  2024-06-26 | TIGER TROUT     |   1998 fish | 3.64"  | SUMMIT
+  2023-09-19 | CUTTHROAT       |   5965 fish | 1.73"  | SUMMIT
+  2021-07-01 | TIGER TROUT     |   1993 fish | 3.28"  | SUMMIT
+  2020-09-23 | CUTTHROAT       |   6750 fish | 2.48"  | SUMMIT
+  2018-10-12 | CUTTHROAT       |   4148 fish | 2.09"  | SUMMIT
+  2018-07-10 | TIGER TROUT     |   2007 fish | 2.35"  | SUMMIT
+
+--- Taylor WR-8 ---
+  2022-06-30 | BROOK TROUT     |   2497 fish | 3.7"   | DUCHESNE
+
+--- Teal BR-32 ---
+  2025-07-02 | TIGER TROUT     |    701 fish | 3.8"   | SUMMIT
+  2022-06-28 | TIGER TROUT     |    716 fish | 2.65"  | SUMMIT
+  2019-07-09 | TIGER TROUT     |   1404 fish | 2.65"  | SUMMIT
+
+--- Teapot A-60 ---
+  2025-07-14 | RAINBOW         |    451 fish | 10.44" | SUMMIT
+  2025-07-11 | BROOK TROUT     |   1359 fish | 3.6"   | SUMMIT
+  2025-07-10 | TIGER TROUT     |    349 fish | 11.08" | SUMMIT
+  2025-07-08 | RAINBOW         |    450 fish | 10.77" | SUMMIT
+  2025-07-03 | RAINBOW         |    452 fish | 10.52" | SUMMIT
+  2025-06-23 | TIGER TROUT     |    347 fish | 11.08" | SUMMIT
+  2025-06-17 | RAINBOW         |    452 fish | 10.6"  | SUMMIT
+  2024-08-28 | RAINBOW         |    505 fish | 11.02" | SUMMIT
+  2024-08-19 | TIGER TROUT     |    213 fish | 10.55" | SUMMIT
+  2024-08-14 | RAINBOW         |    311 fish | 10.28" | SUMMIT
+  2024-08-12 | TIGER TROUT     |    511 fish | 10.55" | SUMMIT
+  2024-08-05 | RAINBOW         |    207 fish | 10.28" | SUMMIT
+  2024-07-31 | TIGER TROUT     |    212 fish | 10.56" | SUMMIT
+  2024-07-29 | RAINBOW         |    322 fish | 10.28" | SUMMIT
+  2024-07-16 | BROOK TROUT     |    502 fish | 3.78"  | SUMMIT
+  2024-07-15 | RAINBOW         |    625 fish | 10.0"  | SUMMIT
+  2024-07-15 | TIGER TROUT     |    212 fish | 10.21" | SUMMIT
+  2024-07-10 | BROOK TROUT     |    510 fish | 2.9"   | SUMMIT
+  2024-07-10 | RAINBOW         |    500 fish | 10.0"  | SUMMIT
+  2024-07-03 | TIGER TROUT     |    500 fish | 10.0"  | SUMMIT
+  2024-07-02 | RAINBOW         |    500 fish | 10.0"  | SUMMIT
+  2024-06-20 | TIGER TROUT     |    499 fish | 9.87"  | SUMMIT
+  2024-06-19 | RAINBOW         |    503 fish | 12.25" | SUMMIT
+  2023-08-28 | RAINBOW         |    400 fish | 12.13" | SUMMIT
+  2023-08-21 | RAINBOW         |    400 fish | 12.13" | SUMMIT
+  2023-08-14 | TIGER TROUT     |    501 fish | 9.41"  | SUMMIT
+  2023-08-07 | RAINBOW         |    315 fish | 12.13" | SUMMIT
+  2023-08-01 | RAINBOW         |    502 fish | 9.52"  | SUMMIT
+  2023-07-25 | RAINBOW         |    254 fish | 11.99" | SUMMIT
+  2023-07-18 | TIGER TROUT     |    400 fish | 9.21"  | SUMMIT
+  2023-07-17 | RAINBOW         |    250 fish | 11.26" | SUMMIT
+  2023-07-17 | BROOK TROUT     |    494 fish | 2.68"  | SUMMIT
+  2023-07-10 | RAINBOW         |    250 fish | 11.16" | SUMMIT
+  2023-07-03 | RAINBOW         |    254 fish | 11.26" | SUMMIT
+  2023-06-29 | RAINBOW         |    504 fish | 11.6"  | SUMMIT
+  2023-06-29 | TIGER TROUT     |    501 fish | 9.41"  | SUMMIT
+  2022-08-29 | RAINBOW         |    501 fish | 10.28" | SUMMIT
+  2022-08-16 | TIGER TROUT     |    501 fish | 9.63"  | SUMMIT
+  2022-08-15 | RAINBOW         |    300 fish | 10.0"  | SUMMIT
+  2022-08-08 | RAINBOW         |    300 fish | 10.0"  | SUMMIT
+  2022-07-19 | RAINBOW         |    250 fish | 10.07" | SUMMIT
+  2022-07-18 | TIGER TROUT     |    402 fish | 9.41"  | SUMMIT
+  2022-07-06 | TIGER TROUT     |    499 fish | 9.52"  | SUMMIT
+  2022-07-05 | RAINBOW         |    502 fish | 10.07" | SUMMIT
+  2022-07-04 | BROOK TROUT     |    500 fish | 2.92"  | SUMMIT
+  2022-06-22 | TIGER TROUT     |    500 fish | 9.36"  | SUMMIT
+  2022-06-21 | RAINBOW         |    512 fish | 9.21"  | SUMMIT
+  2022-06-14 | RAINBOW         |    510 fish | 9.41"  | SUMMIT
+  2021-08-30 | RAINBOW         |    259 fish | 12.13" | SUMMIT
+  2021-08-23 | RAINBOW         |    297 fish | 12.13" | SUMMIT
+  2021-08-16 | TIGER TROUT     |    509 fish | 9.21"  | SUMMIT
+  2021-08-09 | RAINBOW         |    300 fish | 10.14" | SUMMIT
+  2021-08-02 | TIGER TROUT     |    299 fish | 9.26"  | SUMMIT
+  2021-07-27 | RAINBOW         |    250 fish | 10.14" | SUMMIT
+  2021-07-27 | CUTTHROAT       |     49 fish | 15.22" | SUMMIT
+  2021-07-19 | RAINBOW         |    263 fish | 9.32"  | SUMMIT
+  2021-07-07 | RAINBOW         |    253 fish | 9.32"  | SUMMIT
+  2021-07-06 | TIGER TROUT     |    501 fish | 9.41"  | SUMMIT
+  2021-07-01 | BROOK TROUT     |    495 fish | 2.79"  | SUMMIT
+  2021-06-23 | TIGER TROUT     |    402 fish | 9.41"  | SUMMIT
+  2021-06-21 | RAINBOW         |    501 fish | 9.32"  | SUMMIT
+  2021-06-09 | RAINBOW         |    499 fish | 9.29"  | SUMMIT
+  2021-06-09 | TIGER TROUT     |    504 fish | 9.41"  | SUMMIT
+  2020-09-09 | TIGER TROUT     |    551 fish | 8.66"  | SUMMIT
+  2020-09-01 | RAINBOW         |    499 fish | 9.31"  | SUMMIT
+  2020-08-31 | TIGER TROUT     |    400 fish | 9.31"  | SUMMIT
+  2020-08-24 | TIGER TROUT     |    299 fish | 9.03"  | SUMMIT
+  2020-08-24 | RAINBOW         |    300 fish | 9.12"  | SUMMIT
+  2020-08-17 | RAINBOW         |    300 fish | 9.12"  | SUMMIT
+  2020-08-10 | TIGER TROUT     |    400 fish | 8.31"  | SUMMIT
+  2020-08-10 | RAINBOW         |    298 fish | 8.94"  | SUMMIT
+  2020-08-03 | BROOK TROUT     |    117 fish | 3.66"  | SUMMIT
+  2020-08-03 | RAINBOW         |    298 fish | 8.94"  | SUMMIT
+  2020-07-28 | TIGER TROUT     |    500 fish | 8.31"  | SUMMIT
+  2020-07-27 | RAINBOW         |    305 fish | 11.99" | SUMMIT
+  2020-07-27 | BROOK TROUT     |    486 fish | 2.49"  | SUMMIT
+  2020-07-26 | TIGER TROUT     |    435 fish | 8.31"  | SUMMIT
+  2020-07-24 | RAINBOW         |    450 fish | 11.99" | SUMMIT
+  2020-07-21 | RAINBOW         |    305 fish | 9.52"  | SUMMIT
+  2020-07-14 | RAINBOW         |    249 fish | 9.52"  | SUMMIT
+  2020-07-06 | RAINBOW         |    250 fish | 9.21"  | SUMMIT
+  2020-06-23 | RAINBOW         |    250 fish | 10.0"  | SUMMIT
+  2020-06-09 | RAINBOW         |    250 fish | 10.0"  | SUMMIT
+  2019-09-03 | RAINBOW         |    299 fish | 9.87"  | SUMMIT
+  2019-08-26 | RAINBOW         |    299 fish | 9.87"  | SUMMIT
+  2019-08-19 | RAINBOW         |    300 fish | 10.77" | SUMMIT
+  2019-08-12 | TIGER TROUT     |    548 fish | 9.75"  | SUMMIT
+  2019-08-12 | RAINBOW         |    301 fish | 10.52" | SUMMIT
+  2019-08-07 | RAINBOW         |    301 fish | 10.52" | SUMMIT
+  2019-07-30 | TIGER TROUT     |    582 fish | 9.63"  | SUMMIT
+  2019-07-29 | RAINBOW         |    300 fish | 9.63"  | SUMMIT
+  2019-07-23 | TIGER TROUT     |    401 fish | 10.14" | SUMMIT
+  2019-07-22 | RAINBOW         |    451 fish | 9.63"  | SUMMIT
+  2019-07-17 | TIGER TROUT     |    399 fish | 8.94"  | SUMMIT
+  2019-07-16 | BROOK TROUT     |    501 fish | 2.68"  | SUMMIT
+  2019-07-15 | RAINBOW         |    502 fish | 9.87"  | SUMMIT
+  2019-07-08 | TIGER TROUT     |    399 fish | 8.7"   | SUMMIT
+  2019-07-08 | RAINBOW         |    506 fish | 10.12" | SUMMIT
+  2019-07-02 | TIGER TROUT     |    299 fish | 8.28"  | SUMMIT
+  2019-07-01 | RAINBOW         |    501 fish | 10.32" | SUMMIT
+  2018-08-27 | RAINBOW         |    599 fish | 10.6"  | SUMMIT
+  2018-08-20 | RAINBOW         |    601 fish | 10.34" | SUMMIT
+  2018-08-13 | RAINBOW         |    601 fish | 9.61"  | SUMMIT
+  2018-08-06 | RAINBOW         |    248 fish | 9.61"  | SUMMIT
+  2018-07-31 | TIGER TROUT     |    241 fish | 10.36" | SUMMIT
+  2018-07-30 | RAINBOW         |    300 fish | 9.77"  | SUMMIT
+  2018-07-23 | RAINBOW         |    447 fish | 10.21" | SUMMIT
+  2018-07-17 | RAINBOW         |    200 fish | 10.21" | SUMMIT
+  2018-07-11 | TIGER TROUT     |    398 fish | 10.36" | SUMMIT
+  2018-07-10 | RAINBOW         |    246 fish | 9.63"  | SUMMIT
+  2018-07-02 | RAINBOW         |    499 fish | 9.64"  | SUMMIT
+  2018-06-27 | TIGER TROUT     |    300 fish | 9.63"  | SUMMIT
+  2018-06-25 | RAINBOW         |    251 fish | 9.64"  | SUMMIT
+  2018-06-18 | RAINBOW         |    250 fish | 9.65"  | SUMMIT
+  2018-06-11 | RAINBOW         |    250 fish | 9.65"  | SUMMIT
+  2018-06-11 | TIGER TROUT     |    398 fish | 9.63"  | SUMMIT
+  2018-06-05 | RAINBOW         |    250 fish | 9.65"  | SUMMIT
+
+--- Thompson RC-8 ---
+  2021-06-30 | BROOK TROUT     |   1403 fish | 2.79"  | DUCHESNE
+
+--- Timothy East X-16 ---
+  2021-07-01 | BROOK TROUT     |    993 fish | 3.32"  | DUCHESNE
+
+--- Timothy West X-19 ---
+  2021-07-01 | BROOK TROUT     |   1495 fish | 3.32"  | DUCHESNE
+
+--- Toquer LF-25 ---
+  2024-09-23 | CUTTHROAT       |    444 fish | 1.48"  | DUCHESNE
+
+--- Trial A-61 ---
+  2025-07-30 | TIGER TROUT     |    500 fish | 11.26" | SUMMIT
+  2025-07-28 | RAINBOW         |    748 fish | 12.44" | SUMMIT
+  2025-07-23 | BROOK TROUT     |    916 fish | 3.19"  | SUMMIT
+  2025-07-21 | RAINBOW         |   1254 fish | 10.44" | SUMMIT
+  2025-07-21 | RAINBOW         |    242 fish | 10.44" | SUMMIT
+  2025-07-11 | BROOK TROUT     |    759 fish | 3.6"   | SUMMIT
+  2025-07-10 | TIGER TROUT     |    500 fish | 11.08" | SUMMIT
+  2025-07-07 | RAINBOW         |    750 fish | 10.77" | SUMMIT
+  2025-07-01 | RAINBOW         |   1500 fish | 10.14" | SUMMIT
+  2025-06-23 | RAINBOW         |   1606 fish | 10.44" | SUMMIT
+  2025-06-23 | TIGER TROUT     |    504 fish | 11.08" | SUMMIT
+  2024-10-21 | TIGER TROUT     |    364 fish | 12.13" | SUMMIT
+  2024-08-28 | RAINBOW         |    505 fish | 11.02" | SUMMIT
+  2024-08-19 | TIGER TROUT     |    916 fish | 10.55" | SUMMIT
+  2024-08-12 | RAINBOW         |   1150 fish | 10.28" | SUMMIT
+  2024-08-12 | TIGER TROUT     |    628 fish | 10.55" | SUMMIT
+  2024-08-05 | RAINBOW         |    506 fish | 10.28" | SUMMIT
+  2024-07-31 | TIGER TROUT     |    721 fish | 10.56" | SUMMIT
+  2024-07-29 | RAINBOW         |   1012 fish | 10.28" | SUMMIT
+  2024-07-16 | BROOK TROUT     |   1620 fish | 3.78"  | SUMMIT
+  2024-07-15 | TIGER TROUT     |    306 fish | 10.21" | SUMMIT
+  2024-07-15 | RAINBOW         |   1311 fish | 10.28" | SUMMIT
+  2024-07-03 | TIGER TROUT     |   1000 fish | 10.0"  | SUMMIT
+  2024-07-01 | BROOK TROUT     |    372 fish | 2.92"  | SUMMIT
+  2024-07-01 | RAINBOW         |   1530 fish | 11.16" | SUMMIT
+  2024-06-26 | RAINBOW         |   1260 fish | 11.16" | SUMMIT
+  2024-06-20 | TIGER TROUT     |   1001 fish | 9.87"  | SUMMIT
+  2024-06-17 | RAINBOW         |   1224 fish | 12.25" | SUMMIT
+  2023-09-13 | TIGER TROUT     |    770 fish | 10.44" | SUMMIT
+  2023-08-28 | RAINBOW         |    518 fish | 12.13" | SUMMIT
+  2023-08-22 | TIGER TROUT     |   1200 fish | 9.41"  | SUMMIT
+  2023-08-21 | RAINBOW         |    778 fish | 12.13" | SUMMIT
+  2023-08-14 | TIGER TROUT     |    600 fish | 9.41"  | SUMMIT
+  2023-08-08 | RAINBOW         |   1000 fish | 11.65" | SUMMIT
+  2023-08-02 | RAINBOW         |   1071 fish | 12.13" | SUMMIT
+  2023-08-01 | RAINBOW         |    502 fish | 9.52"  | SUMMIT
+  2023-07-18 | TIGER TROUT     |    992 fish | 9.21"  | SUMMIT
+  2023-07-17 | BROOK TROUT     |   2002 fish | 2.68"  | SUMMIT
+  2023-07-17 | RAINBOW         |   1001 fish | 11.26" | SUMMIT
+  2023-07-10 | RAINBOW         |   1204 fish | 11.16" | SUMMIT
+  2023-07-05 | TIGER TROUT     |   1008 fish | 9.21"  | SUMMIT
+  2023-07-03 | RAINBOW         |   1400 fish | 11.26" | SUMMIT
+  2023-06-29 | TIGER TROUT     |   1002 fish | 9.41"  | SUMMIT
+  2023-06-29 | RAINBOW         |   1504 fish | 11.6"  | SUMMIT
+  2022-08-29 | RAINBOW         |   1000 fish | 10.28" | SUMMIT
+  2022-08-23 | RAINBOW         |    301 fish | 10.28" | SUMMIT
+  2022-08-16 | TIGER TROUT     |   1002 fish | 9.63"  | SUMMIT
+  2022-08-15 | RAINBOW         |   1000 fish | 10.0"  | SUMMIT
+  2022-08-01 | RAINBOW         |   1000 fish | 10.0"  | SUMMIT
+  2022-07-21 | RAINBOW         |   1800 fish | 10.0"  | SUMMIT
+  2022-07-19 | RAINBOW         |   1000 fish | 10.07" | SUMMIT
+  2022-07-18 | TIGER TROUT     |   1002 fish | 9.41"  | SUMMIT
+  2022-07-06 | TIGER TROUT     |    998 fish | 9.52"  | SUMMIT
+  2022-07-05 | RAINBOW         |   1507 fish | 10.07" | SUMMIT
+  2022-07-04 | BROOK TROUT     |   2000 fish | 2.92"  | SUMMIT
+  2022-06-22 | TIGER TROUT     |   1000 fish | 9.36"  | SUMMIT
+  2022-06-21 | RAINBOW         |   1504 fish | 9.21"  | SUMMIT
+  2022-06-17 | TIGER TROUT     |   1344 fish | 9.21"  | SUMMIT
+  2022-06-14 | RAINBOW         |   1200 fish | 9.41"  | SUMMIT
+  2021-09-28 | GRAYLING ARCTIC |   4950 fish | 2.99"  | SUMMIT
+  2021-08-17 | RAINBOW         |    728 fish | 12.13" | SUMMIT
+  2021-08-02 | TIGER TROUT     |    851 fish | 9.26"  | SUMMIT
+  2021-08-02 | RAINBOW         |   1001 fish | 10.14" | SUMMIT
+  2021-07-27 | CUTTHROAT       |    182 fish | 15.22" | SUMMIT
+  2021-07-20 | TIGER TROUT     |    507 fish | 9.63"  | SUMMIT
+  2021-07-20 | TIGER TROUT     |    510 fish | 9.03"  | SUMMIT
+  2021-07-19 | RAINBOW         |   1020 fish | 9.32"  | SUMMIT
+  2021-07-06 | TIGER TROUT     |    999 fish | 9.41"  | SUMMIT
+  2021-07-06 | RAINBOW         |   1499 fish | 9.32"  | SUMMIT
+  2021-07-01 | BROOK TROUT     |   2001 fish | 2.79"  | SUMMIT
+  2021-06-23 | TIGER TROUT     |   1002 fish | 9.41"  | SUMMIT
+  2021-06-21 | RAINBOW         |   1530 fish | 9.32"  | SUMMIT
+  2021-06-10 | TIGER TROUT     |   1059 fish | 9.41"  | SUMMIT
+  2021-06-10 | RAINBOW         |   1201 fish | 9.29"  | SUMMIT
+  2020-09-29 | GRAYLING ARCTIC |   5400 fish | 2.81"  | SUMMIT
+  2020-09-21 | GRAYLING ARCTIC |   1998 fish | 2.81"  | SUMMIT
+  2020-09-09 | TIGER TROUT     |   1001 fish | 8.66"  | SUMMIT
+  2020-09-08 | RAINBOW         |   1001 fish | 8.94"  | SUMMIT
+  2020-09-01 | RAINBOW         |   2000 fish | 9.31"  | SUMMIT
+  2020-08-31 | TIGER TROUT     |    750 fish | 9.31"  | SUMMIT
+  2020-08-24 | RAINBOW         |   1502 fish | 9.12"  | SUMMIT
+  2020-08-24 | TIGER TROUT     |   1037 fish | 9.03"  | SUMMIT
+  2020-08-17 | RAINBOW         |    851 fish | 9.12"  | SUMMIT
+  2020-08-10 | RAINBOW         |    998 fish | 8.94"  | SUMMIT
+  2020-08-10 | TIGER TROUT     |   1000 fish | 8.31"  | SUMMIT
+  2020-08-03 | BROOK TROUT     |    497 fish | 3.66"  | SUMMIT
+  2020-08-03 | RAINBOW         |    998 fish | 8.94"  | SUMMIT
+  2020-07-28 | TIGER TROUT     |   1000 fish | 8.31"  | SUMMIT
+  2020-07-27 | RAINBOW         |   1001 fish | 11.99" | SUMMIT
+  2020-07-27 | BROOK TROUT     |   2495 fish | 2.49"  | SUMMIT
+  2020-07-23 | TIGER TROUT     |   1001 fish | 8.31"  | SUMMIT
+  2020-07-23 | RAINBOW         |   1001 fish | 11.99" | SUMMIT
+  2020-07-21 | RAINBOW         |   1001 fish | 9.52"  | SUMMIT
+  2020-07-06 | RAINBOW         |    749 fish | 9.21"  | SUMMIT
+  2020-06-29 | RAINBOW         |    752 fish | 9.21"  | SUMMIT
+  2020-06-17 | RAINBOW         |    750 fish | 10.0"  | SUMMIT
+  2020-06-12 | RAINBOW         |   1001 fish | 9.52"  | SUMMIT
+  2019-10-01 | GRAYLING ARCTIC |   4116 fish | 2.39"  | SUMMIT
+  2019-10-01 | GRAYLING ARCTIC |    706 fish | 2.39"  | SUMMIT
+  2019-09-03 | RAINBOW         |    499 fish | 9.87"  | SUMMIT
+  2019-08-26 | RAINBOW         |   1001 fish | 9.87"  | SUMMIT
+  2019-08-19 | TIGER TROUT     |    851 fish | 9.75"  | SUMMIT
+  2019-08-19 | RAINBOW         |    750 fish | 10.77" | SUMMIT
+  2019-08-13 | TIGER TROUT     |    999 fish | 9.75"  | SUMMIT
+  2019-08-12 | RAINBOW         |   1000 fish | 10.52" | SUMMIT
+  2019-08-05 | RAINBOW         |   1000 fish | 10.52" | SUMMIT
+  2019-07-30 | TIGER TROUT     |   1000 fish | 9.63"  | SUMMIT
+  2019-07-30 | RAINBOW         |   1000 fish | 10.52" | SUMMIT
+  2019-07-22 | RAINBOW         |   1140 fish | 9.63"  | SUMMIT
+  2019-07-17 | TIGER TROUT     |   1001 fish | 8.94"  | SUMMIT
+  2019-07-16 | BROOK TROUT     |   1001 fish | 2.68"  | SUMMIT
+  2019-07-15 | RAINBOW         |   1001 fish | 9.87"  | SUMMIT
+  2019-07-08 | TIGER TROUT     |    498 fish | 8.7"   | SUMMIT
+  2019-07-08 | RAINBOW         |    747 fish | 10.12" | SUMMIT
+  2019-07-02 | TIGER TROUT     |    999 fish | 8.28"  | SUMMIT
+  2019-07-01 | RAINBOW         |   1558 fish | 9.75"  | SUMMIT
+  2018-08-13 | RAINBOW         |   2002 fish | 9.61"  | SUMMIT
+  2018-07-23 | RAINBOW         |    517 fish | 10.21" | SUMMIT
+  2018-07-11 | TIGER TROUT     |    999 fish | 10.36" | SUMMIT
+  2018-07-10 | RAINBOW         |   1243 fish | 9.63"  | SUMMIT
+  2018-07-02 | RAINBOW         |   1501 fish | 9.64"  | SUMMIT
+  2018-06-27 | TIGER TROUT     |   1000 fish | 9.63"  | SUMMIT
+  2018-06-25 | RAINBOW         |    748 fish | 9.64"  | SUMMIT
+  2018-06-11 | TIGER TROUT     |    498 fish | 9.63"  | SUMMIT
+  2018-06-11 | RAINBOW         |   1501 fish | 9.65"  | SUMMIT
+  2018-06-05 | RAINBOW         |    598 fish | 9.65"  | SUMMIT
+  2018-05-30 | BROOK TROUT     |   2002 fish | 2.53"  | SUMMIT
+
+--- Trident A-41 ---
+  2025-06-25 | BROOK TROUT     |    100 fish | 3.01"  | SUMMIT
+  2024-07-03 | BROOK TROUT     |    102 fish | 2.9"   | SUMMIT
+  2023-07-13 | BROOK TROUT     |    104 fish | 2.68"  | SUMMIT
+  2022-06-29 | BROOK TROUT     |    108 fish | 2.75"  | SUMMIT
+  2021-06-28 | BROOK TROUT     |    104 fish | 2.79"  | SUMMIT
+  2020-07-30 | BROOK TROUT     |    115 fish | 2.47"  | SUMMIT
+
+--- Tungsten X-107 ---
+  2023-09-19 | CUTTHROAT       |   1029 fish | 1.45"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |   1011 fish | 1.7"   | DUCHESNE
+
+--- Twin X-49 ---
+  2024-09-23 | CUTTHROAT       |    702 fish | 1.48"  | DUCHESNE
+  2024-06-26 | MUSKIE TIGER    |    165 fish | 5.93"  | DUCHESNE
+  2019-09-23 | CUTTHROAT       |    695 fish | 1.7"   | DUCHESNE
+
+--- Twin X-77 ---
+  2024-09-23 | GRAYLING ARCTIC |    326 fish | 2.47"  | DUCHESNE
+  2019-10-01 | GRAYLING ARCTIC |   1205 fish | 2.39"  | DUCHESNE
+
+--- Twin Lower A-33 ---
+  2024-07-08 | TIGER TROUT     |    302 fish | 2.78"  | SUMMIT
+  2021-06-30 | TIGER TROUT     |    294 fish | 2.69"  | SUMMIT
+  2018-07-09 | TIGER TROUT     |    234 fish | 2.34"  | SUMMIT
+
+--- Twin Upper A-32 ---
+  2024-07-03 | BROOK TROUT     |    449 fish | 2.9"   | SUMMIT
+  2022-06-27 | BROOK TROUT     |    456 fish | 2.75"  | SUMMIT
+  2018-07-09 | BROOK TROUT     |    903 fish | 2.88"  | SUMMIT
+
+--- U- 22 U-22 ---
+  2024-06-26 | BROOK TROUT     |    604 fish | 2.93"  | DUCHESNE
+  2021-07-01 | BROOK TROUT     |    602 fish | 3.32"  | DUCHESNE
+  2018-07-10 | BROOK TROUT     |    599 fish | 2.88"  | DUCHESNE
+
+--- U- 79 U-79 ---
+  2022-06-30 | BROOK TROUT     |    798 fish | 3.7"   | DUCHESNE
+
+--- U- 91 U-91 ---
+  2024-09-23 | CUTTHROAT       |    524 fish | 1.85"  | DUCHESNE
+  2020-09-23 | CUTTHROAT       |    480 fish | 1.53"  | DUCHESNE
+
+--- Uintah X-131 ---
+  2025-07-07 | BROOK TROUT     |    632 fish | 3.53"  | DUCHESNE
+  2021-06-29 | BROOK TROUT     |    633 fish | 2.79"  | DUCHESNE
+
+--- Upper Lily Pad DG-25 ---
+  2024-06-28 | BROOK TROUT     |    109 fish | 2.91"  | DUCHESNE
+  2024-06-26 | BROOK TROUT     |   1102 fish | 2.93"  | DUCHESNE
+  2021-07-01 | BROOK TROUT     |   1203 fish | 3.32"  | DUCHESNE
+  2018-07-10 | BROOK TROUT     |   1208 fish | 2.88"  | DUCHESNE
+
+--- Upper Red Castle G-16 ---
+  2025-07-02 | TIGER TROUT     |    849 fish | 3.8"   | SUMMIT
+  2024-07-08 | TIGER TROUT     |    847 fish | 2.78"  | SUMMIT
+  2023-07-14 | TIGER TROUT     |    847 fish | 2.83"  | SUMMIT
+  2022-07-11 | TIGER TROUT     |    850 fish | 2.92"  | SUMMIT
+  2020-07-31 | TIGER TROUT     |   2556 fish | 2.4"   | SUMMIT
+
+--- Upper Rock WR-14 ---
+  2023-09-19 | CUTTHROAT       |   1684 fish | 1.45"  | DUCHESNE
+  2018-10-12 | CUTTHROAT       |   2016 fish | 1.76"  | DUCHESNE
+
+--- Verlie U-41 ---
+  2019-07-11 | BROOK TROUT     |    416 fish | 2.68"  | DUCHESNE
+
+--- WALL L U-99 ---
+  2020-09-21 | GRAYLING ARCTIC |    504 fish | 2.81"  | DUCHESNE
+
+--- Walk Up WR-55 ---
+  2022-07-06 | BROOK TROUT     |   1832 fish | 3.62"  | DUCHESNE
+
+--- Wall A-29 ---
+  2025-07-02 | TIGER TROUT     |   1852 fish | 3.8"   | SUMMIT
+  2024-07-08 | TIGER TROUT     |   1844 fish | 2.78"  | SUMMIT
+  2023-07-14 | TIGER TROUT     |   1848 fish | 2.83"  | SUMMIT
+  2022-06-28 | TIGER TROUT     |   1863 fish | 2.65"  | SUMMIT
+  2021-06-30 | TIGER TROUT     |   1856 fish | 2.69"  | SUMMIT
+  2020-07-31 | TIGER TROUT     |   1854 fish | 2.4"   | SUMMIT
+  2018-07-09 | TIGER TROUT     |   2340 fish | 2.34"  | SUMMIT
+
+--- Washington A-23 ---
+  2025-07-23 | BROOK TROUT     |   1004 fish | 3.19"  | SUMMIT
+  2025-07-15 | RAINBOW         |   1045 fish | 10.44" | SUMMIT
+  2025-07-11 | BROOK TROUT     |   1003 fish | 3.6"   | SUMMIT
+  2025-07-01 | RAINBOW         |   1500 fish | 10.14" | SUMMIT
+  2025-06-23 | RAINBOW         |   1496 fish | 10.44" | SUMMIT
+  2025-06-19 | GRAYLING ARCTIC |    614 fish | 7.81"  | SUMMIT
+  2025-06-19 | GRAYLING ARCTIC |   1652 fish | 6.77"  | SUMMIT
+  2025-06-19 | GRAYLING ARCTIC |   1636 fish | 7.25"  | SUMMIT
+  2024-07-16 | BROOK TROUT     |   2090 fish | 3.78"  | SUMMIT
+  2024-07-03 | TIGER TROUT     |    800 fish | 10.0"  | SUMMIT
+  2024-06-26 | RAINBOW         |   1170 fish | 11.16" | SUMMIT
+  2024-06-20 | TIGER TROUT     |    499 fish | 9.87"  | SUMMIT
+  2024-06-19 | RAINBOW         |    571 fish | 12.25" | SUMMIT
+  2023-08-14 | TIGER TROUT     |    504 fish | 9.41"  | SUMMIT
+  2023-08-01 | RAINBOW         |    502 fish | 9.52"  | SUMMIT
+  2023-07-18 | TIGER TROUT     |    400 fish | 9.21"  | SUMMIT
+  2023-07-17 | BROOK TROUT     |   2002 fish | 2.68"  | SUMMIT
+  2023-07-10 | RAINBOW         |   1102 fish | 11.16" | SUMMIT
+  2023-07-05 | TIGER TROUT     |    608 fish | 9.21"  | SUMMIT
+  2023-07-03 | RAINBOW         |   1505 fish | 11.26" | SUMMIT
+  2023-06-29 | TIGER TROUT     |    501 fish | 9.41"  | SUMMIT
+  2023-06-29 | RAINBOW         |   1504 fish | 11.6"  | SUMMIT
+  2022-08-02 | TIGER TROUT     |    501 fish | 9.41"  | SUMMIT
+  2022-07-18 | RAINBOW         |   1502 fish | 10.07" | SUMMIT
+  2022-07-18 | TIGER TROUT     |    498 fish | 9.41"  | SUMMIT
+  2022-07-06 | TIGER TROUT     |   1572 fish | 9.52"  | SUMMIT
+  2022-07-05 | RAINBOW         |   1507 fish | 10.07" | SUMMIT
+  2022-07-04 | BROOK TROUT     |   2000 fish | 2.92"  | SUMMIT
+  2021-09-28 | GRAYLING ARCTIC |   4950 fish | 2.99"  | SUMMIT
+  2021-07-27 | CUTTHROAT       |    275 fish | 15.22" | SUMMIT
+  2021-07-20 | TIGER TROUT     |    504 fish | 9.63"  | SUMMIT
+  2021-07-06 | RAINBOW         |   1499 fish | 9.32"  | SUMMIT
+  2021-07-06 | TIGER TROUT     |    600 fish | 9.41"  | SUMMIT
+  2021-07-01 | BROOK TROUT     |   2001 fish | 2.79"  | SUMMIT
+  2021-06-23 | TIGER TROUT     |    501 fish | 9.41"  | SUMMIT
+  2021-06-21 | RAINBOW         |   1499 fish | 9.32"  | SUMMIT
+  2021-06-10 | RAINBOW         |   1123 fish | 9.29"  | SUMMIT
+  2021-06-10 | TIGER TROUT     |   1095 fish | 9.41"  | SUMMIT
+  2020-09-29 | GRAYLING ARCTIC |   5130 fish | 2.81"  | SUMMIT
+  2020-09-09 | TIGER TROUT     |    601 fish | 8.66"  | SUMMIT
+  2020-08-24 | TIGER TROUT     |    598 fish | 9.03"  | SUMMIT
+  2020-08-17 | RAINBOW         |    749 fish | 9.12"  | SUMMIT
+  2020-08-10 | TIGER TROUT     |    600 fish | 8.31"  | SUMMIT
+  2020-08-03 | RAINBOW         |    753 fish | 8.94"  | SUMMIT
+  2020-07-28 | TIGER TROUT     |   1000 fish | 8.31"  | SUMMIT
+  2020-07-27 | BROOK TROUT     |   1993 fish | 2.49"  | SUMMIT
+  2020-07-24 | RAINBOW         |    986 fish | 11.99" | SUMMIT
+  2020-07-24 | TIGER TROUT     |    609 fish | 8.31"  | SUMMIT
+  2020-07-21 | RAINBOW         |    798 fish | 9.52"  | SUMMIT
+  2020-07-06 | RAINBOW         |    749 fish | 9.21"  | SUMMIT
+  2020-06-09 | RAINBOW         |   1000 fish | 10.0"  | SUMMIT
+  2019-10-01 | GRAYLING ARCTIC |   4998 fish | 2.39"  | SUMMIT
+  2019-08-19 | TIGER TROUT     |    608 fish | 9.75"  | SUMMIT
+  2019-08-12 | TIGER TROUT     |    599 fish | 9.75"  | SUMMIT
+  2019-08-07 | RAINBOW         |    748 fish | 10.52" | SUMMIT
+  2019-07-30 | TIGER TROUT     |    700 fish | 9.63"  | SUMMIT
+  2019-07-23 | TIGER TROUT     |    600 fish | 10.14" | SUMMIT
+  2019-07-22 | RAINBOW         |    750 fish | 9.63"  | SUMMIT
+  2019-07-16 | BROOK TROUT     |   1001 fish | 2.68"  | SUMMIT
+  2019-07-15 | RAINBOW         |   1001 fish | 9.87"  | SUMMIT
+  2019-07-08 | RAINBOW         |   1000 fish | 10.12" | SUMMIT
+  2019-07-08 | TIGER TROUT     |    441 fish | 8.7"   | SUMMIT
+  2019-07-02 | TIGER TROUT     |    598 fish | 8.28"  | SUMMIT
+  2019-07-01 | RAINBOW         |   2076 fish | 9.75"  | SUMMIT
+  2018-08-13 | RAINBOW         |   1001 fish | 9.61"  | SUMMIT
+  2018-08-06 | RAINBOW         |    744 fish | 9.61"  | SUMMIT
+  2018-07-31 | TIGER TROUT     |    767 fish | 10.36" | SUMMIT
+  2018-07-31 | RAINBOW         |    748 fish | 9.77"  | SUMMIT
+  2018-07-17 | RAINBOW         |    999 fish | 10.21" | SUMMIT
+  2018-06-27 | TIGER TROUT     |    440 fish | 9.63"  | SUMMIT
+  2018-06-25 | RAINBOW         |    748 fish | 9.64"  | SUMMIT
+  2018-06-18 | RAINBOW         |    751 fish | 9.65"  | SUMMIT
+  2018-06-12 | RAINBOW         |    748 fish | 9.65"  | SUMMIT
+  2018-06-12 | TIGER TROUT     |    600 fish | 9.63"  | SUMMIT
+  2018-06-05 | RAINBOW         |    751 fish | 9.65"  | SUMMIT
+  2018-05-30 | BROOK TROUT     |   2002 fish | 2.53"  | SUMMIT
+
+--- Watson A-27 ---
+  2025-06-25 | BROOK TROUT     |    300 fish | 3.01"  | SUMMIT
+  2024-07-03 | BROOK TROUT     |    296 fish | 2.9"   | SUMMIT
+  2023-07-14 | BROOK TROUT     |    299 fish | 2.68"  | SUMMIT
+  2022-06-27 | BROOK TROUT     |    300 fish | 2.75"  | SUMMIT
+  2021-06-28 | BROOK TROUT     |    299 fish | 2.79"  | SUMMIT
+  2020-07-30 | BROOK TROUT     |    297 fish | 2.47"  | SUMMIT
+  2018-07-09 | BROOK TROUT     |    599 fish | 2.88"  | SUMMIT
+
+--- Weir A-50 ---
+  2019-09-26 | GRAYLING ARCTIC |    999 fish | 2.29"  | SUMMIT
+
+--- Whiskey Island Lake BR-3 ---
+  2021-09-21 | GRAYLING ARCTIC |   1011 fish | 2.65"  | SUMMIT
+  2020-09-21 | GRAYLING ARCTIC |   1008 fish | 2.81"  | SUMMIT
+  2019-09-26 | GRAYLING ARCTIC |    999 fish | 2.29"  | SUMMIT
+
+--- White Miller X-54 ---
+  2022-06-30 | BROOK TROUT     |   1098 fish | 3.7"   | DUCHESNE
+  2018-07-10 | BROOK TROUT     |   1103 fish | 2.88"  | DUCHESNE
+
+--- Wigwam WR-54 ---
+  2020-07-06 | BROOK TROUT     |    677 fish | 3.49"  | DUCHESNE
+
+--- Wilder Z-13 ---
+  2024-07-03 | BROOK TROUT     |    398 fish | 2.9"   | DUCHESNE
+  2021-06-28 | BROOK TROUT     |    403 fish | 2.79"  | DUCHESNE
+  2018-06-27 | BROOK TROUT     |    400 fish | 2.88"  | DUCHESNE
+
+--- Wyman Z-14 ---
+  2025-06-26 | BROOK TROUT     |    550 fish | 3.01"  | DUCHESNE
+  2023-07-13 | BROOK TROUT     |    546 fish | 2.68"  | DUCHESNE
+  2021-09-21 | GRAYLING ARCTIC |    301 fish | 2.65"  | DUCHESNE
+  2018-06-27 | BROOK TROUT     |   1000 fish | 2.88"  | DUCHESNE
+
+--- X- 50 X-50 ---
+  2021-09-21 | GRAYLING ARCTIC |    194 fish | 2.65"  | DUCHESNE
+
+--- Yellowpine Lower W-66 ---
+  2025-06-25 | BROOK TROUT     |    200 fish | 3.01"  | SUMMIT
+  2024-07-02 | BROOK TROUT     |    204 fish | 2.9"   | SUMMIT
+  2023-07-13 | BROOK TROUT     |    195 fish | 2.68"  | SUMMIT
+  2022-06-27 | BROOK TROUT     |    204 fish | 2.75"  | SUMMIT
+  2021-06-29 | BROOK TROUT     |    196 fish | 2.79"  | SUMMIT
+  2020-07-30 | BROOK TROUT     |    198 fish | 2.47"  | SUMMIT
+  2019-07-09 | BROOK TROUT     |    195 fish | 2.68"  | SUMMIT
+  2018-06-26 | BROOK TROUT     |    200 fish | 2.88"  | SUMMIT
+
+--- Yellowpine Upper W-65 ---
+  2024-07-02 | BROOK TROUT     |    296 fish | 2.9"   | SUMMIT
+  2022-06-27 | BROOK TROUT     |    300 fish | 2.75"  | SUMMIT
+  2020-07-30 | BROOK TROUT     |    297 fish | 2.47"  | SUMMIT
+  2018-06-26 | BROOK TROUT     |    300 fish | 2.88"  | SUMMIT
+
+--- Young X-100 ---
+  2022-09-23 | CUTTHROAT       |    372 fish | 1.57"  | DUCHESNE
+  2018-10-12 | CUTTHROAT       |    295 fish | 1.74"  | DUCHESNE
