@@ -234,7 +234,7 @@
             // Load lakes
             const lakesResult = db.exec(`
                 SELECT id, letter_number, name, drainage, size_acres, max_depth_ft, 
-                       elevation_ft, fish_species, fishing_pressure, jed_notes, status, junesucker_notes, dwr_notes
+                       elevation_ft, fish_species, fishing_pressure, jed_notes, status, junesucker_notes, dwr_notes, no_fish
                 FROM lakes
             `);
             
@@ -252,7 +252,8 @@
                     jed_notes: row[9],
                     status: row[10],
                     junesucker_notes: row[11],
-                    dwr_notes: row[12]
+                    dwr_notes: row[12],
+                    no_fish: row[13]
                 }));
                 
                 // Sort lakes using letter_number as name fallback for proper alphabetical ordering
