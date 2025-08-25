@@ -376,13 +376,18 @@
             }).slice(0, 10);
 
             if (matches.length > 0) {
-                resultsDiv.innerHTML = matches.map(lake => `
-                    <div class="p-2 hover:bg-slate-50 cursor-pointer border-b last:border-b-0 transition-colors" 
+                resultsDiv.innerHTML = matches.map(lake => {
+                    const noFishEmoji = lake.no_fish ? ' 🚫' : '';
+                    const opacityClass = lake.no_fish ? 'opacity-60' : '';
+                    
+                    return `
+                    <div class="p-2 hover:bg-slate-50 cursor-pointer border-b last:border-b-0 transition-colors ${opacityClass}" 
                          onclick="showLakeDetail('${lake.letter_number}')">
-                        <div class="font-medium">${lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number}</div>
+                        <div class="font-medium">${lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number}${noFishEmoji}</div>
                         <div class="text-sm text-gray-600">${lake.drainage}</div>
                     </div>
-                `).join('');
+                    `;
+                }).join('');
                 resultsDiv.classList.remove('hidden');
             } else {
                 resultsDiv.classList.add('hidden');
@@ -653,7 +658,8 @@
             const title = document.getElementById('modal-title');
             const content = document.getElementById('modal-content');
             
-            title.textContent = lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number;
+            const noFishEmoji = lake.no_fish ? ' 🚫' : '';
+            title.textContent = `${lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number}${noFishEmoji}`;
             
             content.innerHTML = `
                 <!-- Lake Info -->
