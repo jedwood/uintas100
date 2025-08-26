@@ -758,14 +758,16 @@
                 return `
                 <div class="border border-slate-200 rounded-lg p-4 hover:bg-slate-50 cursor-pointer transition-colors ${opacityClass}"
                      onclick="showLakeDetail('${lake.letter_number}')">
-                    <div class="font-medium text-lg">${lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number}${noFishEmoji}</div>
+                    <div class="font-medium text-lg">
+                        ${lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number}${noFishEmoji}
+                        ${drainageShort ? `    <span class="text-sm font-normal text-gray-600">${drainageShort}</span>` : ''}
+                        ${lake.fish_species ? ` <span class="text-sm font-normal text-gray-600">• ${lake.fish_species}</span>` : ''}
+                    </div>
                     <div class="text-sm text-gray-600 mt-1">
-                        ${lake.fish_species || ''}
-                        ${drainageShort ? `${lake.fish_species ? ' • ' : ''}${drainageShort}` : ''}
-                        ${lake.size_acres ? ` • ${lake.size_acres} acres` : ''} 
-                        ${lake.max_depth_ft ? ` • ${lake.max_depth_ft} ft deep` : ''}
-                        ${lake.elevation_ft ? ` • ${lake.elevation_ft.toLocaleString()} ft elev` : ''}
-                        ${lake.stockingYears !== 'not stocked' ? ` • (${lake.stockingYears})` : ''}
+                        ${lake.size_acres ? `${lake.size_acres} acres` : ''} 
+                        ${lake.max_depth_ft ? `${lake.size_acres ? ' • ' : ''}${lake.max_depth_ft} ft deep` : ''}
+                        ${lake.elevation_ft ? `${(lake.size_acres || lake.max_depth_ft) ? ' • ' : ''}${lake.elevation_ft.toLocaleString()} ft elev` : ''}
+                        ${lake.stockingYears !== 'not stocked' ? `${(lake.size_acres || lake.max_depth_ft || lake.elevation_ft) ? ' • ' : ''}(${lake.stockingYears})` : ''}
                     </div>
                 </div>
                 `;
