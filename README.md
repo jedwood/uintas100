@@ -328,36 +328,13 @@ Then run: `osascript scripts/sync_db_to_notes_jxa.js`
 
 ### **Next Steps**
 
-## 1- **Create a "fun facts" page that draws from the fun_facts.txt file, but let's keep it pared down and only include the following
+## 1- ** on the drainage buttons, add a numerical display after the title of the drainage showing how many lakes are in that drainage, separated by a  • 
 
-"There are around 500 lakes in the Uintas with fish in them, and a couple hundred without. Many are stocked regularly, some were stocked years ago and have established naturally reproducing populations, some have no fish and likely never have, and some were once stocked but they gave up due to frequent winter kill."
-
-### Deep and High
-- Deepest: {deepest}
-- Highest elevation: {highest}
-
-### Popular names
-{list out all the duplicates}, and include a very brief note separate note about there being an X-22 in two drainages
-
-### 2025 Stocking Totals
-{Fish species: {rounded to nearest 1000}} (don't include the phrase "fish stocked")
-
-## 2- **Create "About" page** - add a little "About" link at the bottom of the web app that displays a page with the following:
-- paragraph that says "I'm on a mission to catch a fish out of at least 100 different Uintas waters. I grew up in Provo fishing and camping all over, but somehow never in the Uintas. At the ripe age of 42 I spent a week on the Highline trail and realized what I've been missing."
-- A section with the title "Sources of Information & Inspiration" that then has subsections with links:
-  - Websites
-    - [Junesucker.com](https://junesucker.com/uintas)
-    - [DWR Stocking Reports](https://dwrapps.utah.gov/fishstocking/Fish)
-  - YouTube Channels
-    - [TroutHowler](https://www.youtube.com/@TroutHowler)
-    - [Utah Water Log](https://www.youtube.com/@UtahWaterLog)
-  - Books
-    - [Hiking Utah's High Uintas](https://www.amazon.com/Hiking-Utahs-Uintas-Andrew-Gillman/dp/1493075691)
-    - [High Uintas Adventures](https://www.amazon.com/High-Uintas-Adventures-Backcountry-Planner/dp/B08FPGJ214)
-  - Old DWR Pamphlets
-    {provide links to each of the files in `data/dwr_original_pamphlets` and name them by extrapolation from their file names. Note that they contain multiple drainages per file}
-
-## 2- **Enhance the filters in the web app** - right now, if I have a species selected and I use the "Last Stocked" filter as well, the results are not totally accurate. For example, if I select "Tigers" for the "Fish Species", and "2022" for the "Last Stocked", Hessie (G-18) does _not_ show up as a match, even though the last stocking of Tigers was in 2020. It's getting filtered out because in 2023 it was stocked with Cutthroats. The interaction of those two filters being selected needs to treat the year filter with the AND of the species. Does that make sense?
+## 2- **Enhance the filters in the web app** - 
+- right now, if I have a species selected and I use the "Last Stocked" filter as well, the results are not totally accurate. For example, if I select "Tigers" for the "Fish Species", and "2022" for the "Last Stocked", Hessie (G-18) does _not_ show up as a match, even though the last stocking of Tigers was in 2020. It's getting filtered out because in 2023 it was stocked with Cutthroats. The interaction of those two filters being selected needs to treat the year filter with the AND of the species. Does that make sense?
+- let's make the depth filter have both a min and max. Choose what you think is the most simple and user-friendly control for this
+- let's add an elevation filter, using same user-friendly controls as above
+- let's add a size filter, using same user-friendly controls as above
 
 # SOMEDAY
 
@@ -369,3 +346,8 @@ Evaluate Google Maps integration and check feasibility of including core vital i
 - Google Maps API integration with custom markers
 - Crowdsourced coordinate collection system
 - Integration with existing USGS or DWR geographic data sources
+
+## 2- Add info from my books
+- scan in simple additional drainage maps
+- scan in and OCR data tables to fill in missing elevation, size, depth values
+- hiking/camping/fishing info for each lake that we have info on.
