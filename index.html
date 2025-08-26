@@ -760,7 +760,7 @@
                      onclick="showLakeDetail('${lake.letter_number}')">
                     <div class="font-medium text-lg">
                         ${lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number}${noFishEmoji}
-                        ${drainageShort ? `    <span class="text-sm font-normal text-gray-600">${drainageShort}</span>` : ''}
+                        ${drainageShort ? ` <span class="text-sm font-normal text-gray-600 ml-3">${drainageShort}</span>` : ''}
                         ${lake.fish_species ? ` <span class="text-sm font-normal text-gray-600">• ${lake.fish_species}</span>` : ''}
                     </div>
                     <div class="text-sm text-gray-600 mt-1">
@@ -969,7 +969,7 @@
                                 `).join('')}
                             </div>
                         ` : ''}
-                        <div class="text-gray-700 leading-relaxed">${lake.junesucker_notes.replace(/^## (.+)$/gm, '<h6 class="font-semibold text-base mt-4 mb-1">$1</h6>').replace(/\n/g, '<br>')}</div>
+                        <div class="text-gray-700 leading-relaxed">${lake.junesucker_notes.replace(/^## (.+)$/gm, '<h6 class="font-semibold text-base mt-4 mb-1">$1</h6>').replace(/<\/h6>\n+/g, '</h6>').replace(/\n/g, '<br>')}</div>
                     </div>
                 ` : ''}
 

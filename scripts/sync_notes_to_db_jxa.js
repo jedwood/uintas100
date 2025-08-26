@@ -36,9 +36,25 @@ function run() {
     }
 
     function extractLakeIdentifier(noteName) {
-        // Extract letter-number from note name like "Lake Name (A-42) 🎣" or "Lake Name (A-42)"
-        const match = noteName.match(/\(([A-Z]+-?\d+)\)/);
-        return match ? match[1] : null;
+        // Extract letter-number from note name - try multiple patterns:
+        // 1. "Lake Name (A-42) 🎣" or "Lake Name (A-42)" 
+        // 2. Just "A-42" or "A-42 🎣"
+        // 3. "A-42 Lake Name" format
+        // Use word boundaries to prevent partial matches (X-1 shouldn't match X-11)
+        
+        // First try: parentheses format
+        let match = noteName.match(/\(([A-Z]+-?\d+)\)/);
+        if (match) return match[1];
+        
+        // Second try: standalone lake identifier (with or without emoji)
+        match = noteName.match(/^([A-Z]+-?\d+)(?:\s|$)/);
+        if (match) return match[1];
+        
+        // Third try: lake identifier with word boundaries anywhere in the name
+        match = noteName.match(/\b([A-Z]+-?\d+)\b/);
+        if (match) return match[1];
+        
+        return null;
     }
 
     function parseNoteContent(noteBody) {
@@ -288,6 +304,14 @@ function run() {
             
             // Parse the note content
             const noteBody = note.body();
+            
+            // VERBOSE LOGGING: Log complete note content for recovery
+            logMessage(`=== FULL NOTE CONTENT FOR ${letterNumber} (${noteName}) ===`);
+            logMessage(`RAW NOTE BODY START:`);
+            logMessage(noteBody);
+            logMessage(`RAW NOTE BODY END`);
+            logMessage(`=== END FULL NOTE CONTENT ===`);
+            
             logMessage(`  Parsing note body for ${letterNumber}...`);
             const parsedData = parseNoteContent(noteBody);
             
@@ -296,6 +320,21 @@ function run() {
                 errorCount++;
                 return;
             }
+            
+            // VERBOSE LOGGING: Show parsed data
+            logMessage(`=== PARSED DATA FOR ${letterNumber} ===`);
+            logMessage(`  PARSED STATUS: ${parsedData.status === null ? 'NULL' : parsedData.status}`);
+            logMessage(`  PARSED JED'S NOTES: ${parsedData.jedNotes === null ? 'NULL' : JSON.stringify(parsedData.jedNotes)}`);
+            logMessage(`  PARSED TRIP REPORTS: ${parsedData.tripReports === null ? 'NULL' : JSON.stringify(parsedData.tripReports)}`);
+            logMessage(`=== END PARSED DATA ===`);
+
+            // VERBOSE LOGGING: Log current database values before update
+            const currentDataQuery = `SELECT status, jed_notes, trip_reports FROM lakes WHERE letter_number = '${letterNumber}';`;
+            const currentData = runQuery(currentDataQuery);
+            logMessage(`=== CURRENT DATABASE VALUES FOR ${letterNumber} ===`);
+            logMessage(`DB QUERY: ${currentDataQuery}`);
+            logMessage(`DB RESULT: ${currentData}`);
+            logMessage(`=== END CURRENT DATABASE VALUES ===`);
 
             // Build update query
             const updateFields = [];
@@ -342,11 +381,28 @@ function run() {
             }
             actualQuery += ` WHERE letter_number = '${letterNumber}';`;
             
+            // VERBOSE LOGGING: Log the exact SQL query being executed
+            logMessage(`=== SQL UPDATE QUERY FOR ${letterNumber} ===`);
+            logMessage(`SQL QUERY: ${actualQuery}`);
+            logMessage(`=== END SQL UPDATE QUERY ===`);
+            
             const result = runQuery(actualQuery);
+            
+            // VERBOSE LOGGING: Log the result of the query
+            logMessage(`=== SQL QUERY RESULT FOR ${letterNumber} ===`);
+            logMessage(`RESULT: ${result}`);
+            logMessage(`=== END SQL QUERY RESULT ===`);
             
             // Remove *update tag from note
             const updatedBody = noteBody.replace(/\*update/g, '');
             note.body = updatedBody;
+            
+            // VERBOSE LOGGING: Log the modified note content after removing *update
+            logMessage(`=== MODIFIED NOTE CONTENT FOR ${letterNumber} ===`);
+            logMessage(`UPDATED NOTE BODY START:`);
+            logMessage(updatedBody);
+            logMessage(`UPDATED NOTE BODY END`);
+            logMessage(`=== END MODIFIED NOTE CONTENT ===`);
             
             logMessage(`  Successfully updated database for ${letterNumber}`);
             successCount++;

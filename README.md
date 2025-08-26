@@ -326,26 +326,51 @@ UPDATE lakes SET notes_needs_update = TRUE WHERE letter_number = 'G-15';
 ```
 Then run: `osascript scripts/sync_db_to_notes_jxa.js`
 
-### **Next Steps**
-
-## 1- ** on the drainage buttons, add a numerical display after the title of the drainage showing how many lakes are in that drainage, separated by a  • 
-
-## 2- **Enhance the filters in the web app** - 
-- right now, if I have a species selected and I use the "Last Stocked" filter as well, the results are not totally accurate. For example, if I select "Tigers" for the "Fish Species", and "2022" for the "Last Stocked", Hessie (G-18) does _not_ show up as a match, even though the last stocking of Tigers was in 2020. It's getting filtered out because in 2023 it was stocked with Cutthroats. The interaction of those two filters being selected needs to treat the year filter with the AND of the species. Does that make sense?
-- let's make the depth filter have both a min and max. Choose what you think is the most simple and user-friendly control for this
-- let's add an elevation filter, using same user-friendly controls as above
-- let's add a size filter, using same user-friendly controls as above
-
-# SOMEDAY
+# NEXT
 
 ## 1- Lake Coordinate Mapping Project
 
-Evaluate Google Maps integration and check feasibility of including core vital info within map marker details panel. Consider implementing a "human in the loop" system to gather GPS coordinates for lakes that don't have location data.
+### Prepare Google My Maps CSV Export with Drainage Groupings and Center Coordinates
 
-**Potential approaches:**
-- Google Maps API integration with custom markers
-- Crowdsourced coordinate collection system
-- Integration with existing USGS or DWR geographic data sources
+I need to create a CSV export for Google My Maps import. Since Google My Maps has a 10-layer limit but we have 18 drainages, we need to group drainages based on how they were organized in the old DWR pamphlets.
+
+Step 0: briefly research the current state of Google "My Maps" and/or Maps API. As a final product I want a map that will handle all ~700 of these lakes, that I can share with others, embed in the web app, and ideally use offline in my iPhone Google Maps app.
+
+Step 1: Parse DWR Pamphlet Groupings
+Look at the DWR pamphlet filenames in the project and determine which drainages were grouped together in each pamphlet. Create a mapping of drainage groups that will keep us under the 10-layer limit for Google My Maps.
+
+Step 2: Create Drainage Coordinates Stub File
+Create a JSON or CSV file called drainage_centers.json (or similar) with this structure:
+json{
+  "Ashley Creek": {"lat": null, "lng": null},
+  "Bear River": {"lat": null, "lng": null},
+  [... for all 18 drainages]
+}
+This will be a stub file that I'll manually populate with center coordinates for each drainage.
+
+Step 3: Create CSV Export Script
+Write a script that:
+
+- Reads the drainage center coordinates from the stub file
+- Queries the database for all lakes
+- Assigns each lake the coordinates of its drainage center
+- Groups drainages into layers based on the DWR pamphlet groupings
+- Exports a CSV suitable for Google My Maps import with these columns:
+
+- Name (lake name + designation)
+- Description (follow a similar pattern that we use for the Apple Notes creation: I want as much info in this description as we have, subject to Google Map limitations, which you'll need to research)
+- Latitude (from drainage center)
+- Longitude (from drainage center)
+- Layer (the drainage group name for organizing into separate layers)
+
+Requirements:
+
+- Handle cases where drainage center coordinates might be missing (skip or use default)
+- Make the Description field informative but concise for the map popup
+- Ensure the Layer field groups drainages logically for the 10-layer limit
+- Generate filename like uinta_lakes_for_mapping.csv
+
+The goal is to create a CSV I can import to Google My Maps, where each drainage group becomes a separate layer, and all lakes start positioned at their drainage center so I can drag them to precise locations while noting elevations.
 
 ## 2- Add info from my books
 - scan in simple additional drainage maps
