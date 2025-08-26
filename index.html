@@ -62,7 +62,7 @@
                     <div class="text-center text-gray-500 mb-4">OR</div>
 
                     <!-- Filters -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Drainage</label>
                             <select id="drainage-filter" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500">
@@ -83,18 +83,45 @@
                                 <option value="splake">Splake</option>
                             </select>
                         </div>
-                        
+
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Max Depth (feet)</label>
-                            <input type="number" id="depth-filter" placeholder="e.g., 50" min="0" max="200" 
-                                   class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Depth (feet)</label>
+                            <div class="flex gap-2">
+                                <input type="number" id="depth-min" placeholder="Min" min="0" max="200" 
+                                       class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 text-sm">
+                                <input type="number" id="depth-max" placeholder="Max" min="0" max="200" 
+                                       class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 text-sm">
+                            </div>
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Last Stocked</label>
-                            <select id="year-filter" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500">
-                                <option value="">Any year</option>
-                            </select>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Elevation (feet)</label>
+                            <div class="flex gap-2">
+                                <input type="number" id="elevation-min" placeholder="Min" min="8000" max="12000" 
+                                       class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 text-sm">
+                                <input type="number" id="elevation-max" placeholder="Max" min="8000" max="12000" 
+                                       class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 text-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Size (acres)</label>
+                            <div class="flex gap-2">
+                                <input type="number" id="size-min" placeholder="Min" min="0" max="300" 
+                                       class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 text-sm">
+                                <input type="number" id="size-max" placeholder="Max" min="0" max="300" 
+                                       class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 text-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Stocked Years</label>
+                            <div class="flex gap-2">
+                                <input type="number" id="year-min" placeholder="Min" min="2002" max="2025" 
+                                       class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 text-sm">
+                                <input type="number" id="year-max" placeholder="Max" min="2002" max="2025" 
+                                       class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 text-sm">
+                            </div>
                         </div>
                     </div>
 
@@ -165,38 +192,38 @@
                                             <div>
                                                 <h3 class="text-xl font-semibold text-gray-700 mb-3">Websites</h3>
                                                 <ul class="space-y-2 ml-4">
-                                                    <li><a href="https://junesucker.com/uintas" target="_blank" class="text-blue-600 underline hover:text-blue-800">Junesucker.com</a></li>
-                                                    <li><a href="https://dwrapps.utah.gov/fishstocking/Fish" target="_blank" class="text-blue-600 underline hover:text-blue-800">DWR Stocking Reports</a></li>
+                                                    <li><a href="https://junesucker.com/uintas" target="_blank" class="text-slate-700 underline hover:text-slate-900">Junesucker.com</a></li>
+                                                    <li><a href="https://dwrapps.utah.gov/fishstocking/Fish" target="_blank" class="text-slate-700 underline hover:text-slate-900">DWR Stocking Reports</a></li>
                                                 </ul>
                                             </div>
 
                                             <div>
                                                 <h3 class="text-xl font-semibold text-gray-700 mb-3">YouTube Channels</h3>
                                                 <ul class="space-y-2 ml-4">
-                                                    <li><a href="https://www.youtube.com/@TroutHowler" target="_blank" class="text-blue-600 underline hover:text-blue-800">TroutHowler</a></li>
-                                                    <li><a href="https://www.youtube.com/@UtahWaterLog" target="_blank" class="text-blue-600 underline hover:text-blue-800">Utah Water Log</a></li>
+                                                    <li><a href="https://www.youtube.com/@TroutHowler" target="_blank" class="text-slate-700 underline hover:text-slate-900">TroutHowler</a></li>
+                                                    <li><a href="https://www.youtube.com/@UtahWaterLog" target="_blank" class="text-slate-700 underline hover:text-slate-900">Utah Water Log</a></li>
                                                 </ul>
                                             </div>
 
                                             <div>
                                                 <h3 class="text-xl font-semibold text-gray-700 mb-3">Books</h3>
                                                 <ul class="space-y-2 ml-4">
-                                                    <li><a href="https://www.amazon.com/Hiking-Utahs-Uintas-Andrew-Gillman/dp/1493075691" target="_blank" class="text-blue-600 underline hover:text-blue-800">Hiking Utah's High Uintas</a></li>
-                                                    <li><a href="https://www.amazon.com/High-Uintas-Adventures-Backcountry-Planner/dp/B08FPGJ214" target="_blank" class="text-blue-600 underline hover:text-blue-800">High Uintas Adventures</a></li>
+                                                    <li><a href="https://www.amazon.com/Hiking-Utahs-Uintas-Andrew-Gillman/dp/1493075691" target="_blank" class="text-slate-700 underline hover:text-slate-900">Hiking Utah's High Uintas</a></li>
+                                                    <li><a href="https://www.amazon.com/High-Uintas-Adventures-Backcountry-Planner/dp/B08FPGJ214" target="_blank" class="text-slate-700 underline hover:text-slate-900">High Uintas Adventures</a></li>
                                                 </ul>
                                             </div>
 
                                             <div>
                                                 <h3 class="text-xl font-semibold text-gray-700 mb-3">Old DWR Pamphlets</h3>
                                                 <ul class="space-y-2 ml-4">
-                                                    <li><a href="data/dwr_original_pamphlets/dwr-bear-blacks-fork.pdf" target="_blank" class="text-blue-600 underline hover:text-blue-800">Bear River & Blacks Fork Drainages</a></li>
-                                                    <li><a href="data/dwr_original_pamphlets/dwr-dry-gulch-and-uinta.pdf" target="_blank" class="text-blue-600 underline hover:text-blue-800">Dry Gulch & Uinta River Drainages</a></li>
-                                                    <li><a href="data/dwr_original_pamphlets/dwr-duchesne.pdf" target="_blank" class="text-blue-600 underline hover:text-blue-800">Duchesne River Drainage</a></li>
-                                                    <li><a href="data/dwr_original_pamphlets/dwr-provo-weber.pdf" target="_blank" class="text-blue-600 underline hover:text-blue-800">Provo River & Weber River Drainages</a></li>
-                                                    <li><a href="data/dwr_original_pamphlets/dwr-sheep-carter-burnt-fork.pdf" target="_blank" class="text-blue-600 underline hover:text-blue-800">Sheep Creek, Carter Creek & Burnt Fork Drainages</a></li>
-                                                    <li><a href="data/dwr_original_pamphlets/dwr-smith-henry-beaver.pdf" target="_blank" class="text-blue-600 underline hover:text-blue-800">Smiths Fork, Henrys Fork & Beaver Creek Drainages</a></li>
-                                                    <li><a href="data/dwr_original_pamphlets/dwr-uintas-rock-creek.pdf" target="_blank" class="text-blue-600 underline hover:text-blue-800">Uinta River & Rock Creek Drainages</a></li>
-                                                    <li><a href="data/dwr_original_pamphlets/dwr-yellowstone-lake-fork-swift.pdf" target="_blank" class="text-blue-600 underline hover:text-blue-800">Yellowstone River, Lake Fork & Swift Creek Drainages</a></li>
+                                                    <li><a href="data/dwr_original_pamphlets/dwr-bear-blacks-fork.pdf" target="_blank" class="text-slate-700 underline hover:text-slate-900">Bear River & Blacks Fork Drainages</a></li>
+                                                    <li><a href="data/dwr_original_pamphlets/dwr-dry-gulch-and-uinta.pdf" target="_blank" class="text-slate-700 underline hover:text-slate-900">Dry Gulch & Uinta River Drainages</a></li>
+                                                    <li><a href="data/dwr_original_pamphlets/dwr-duchesne.pdf" target="_blank" class="text-slate-700 underline hover:text-slate-900">Duchesne River Drainage</a></li>
+                                                    <li><a href="data/dwr_original_pamphlets/dwr-provo-weber.pdf" target="_blank" class="text-slate-700 underline hover:text-slate-900">Provo River & Weber River Drainages</a></li>
+                                                    <li><a href="data/dwr_original_pamphlets/dwr-sheep-carter-burnt-fork.pdf" target="_blank" class="text-slate-700 underline hover:text-slate-900">Sheep Creek, Carter Creek & Burnt Fork Drainages</a></li>
+                                                    <li><a href="data/dwr_original_pamphlets/dwr-smith-henry-beaver.pdf" target="_blank" class="text-slate-700 underline hover:text-slate-900">Smiths Fork, Henrys Fork & Beaver Creek Drainages</a></li>
+                                                    <li><a href="data/dwr_original_pamphlets/dwr-uintas-rock-creek.pdf" target="_blank" class="text-slate-700 underline hover:text-slate-900">Uinta River & Rock Creek Drainages</a></li>
+                                                    <li><a href="data/dwr_original_pamphlets/dwr-yellowstone-lake-fork-swift.pdf" target="_blank" class="text-slate-700 underline hover:text-slate-900">Yellowstone River, Lake Fork & Swift Creek Drainages</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -291,6 +318,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="pb-8"></div>
                                     </div>
                                 </div>
                             </div>
@@ -482,15 +510,6 @@
                 drainageFilter.appendChild(option);
             });
 
-            // Populate year filter
-            const yearFilter = document.getElementById('year-filter');
-            const currentYear = new Date().getFullYear();
-            for (let year = currentYear; year >= 2018; year--) {
-                const option = document.createElement('option');
-                option.value = year;
-                option.textContent = year;
-                yearFilter.appendChild(option);
-            }
 
             // Event listeners
             document.getElementById('lake-search').addEventListener('input', handleLakeSearch);
@@ -501,8 +520,13 @@
             document.getElementById('close-about-modal').addEventListener('click', closeAboutModal);
             
             // Filter state management
-            ['drainage-filter', 'species-filter', 'depth-filter', 'year-filter'].forEach(id => {
+            ['drainage-filter', 'species-filter'].forEach(id => {
                 document.getElementById(id).addEventListener('change', updateFilterButtonState);
+            });
+            ['depth-min', 'depth-max', 'elevation-min', 'elevation-max', 'size-min', 'size-max', 'year-min', 'year-max'].forEach(id => {
+                const element = document.getElementById(id);
+                element.addEventListener('input', updateFilterButtonState);
+                element.addEventListener('change', updateFilterButtonState);
             });
         }
 
@@ -514,7 +538,8 @@
                 const link = document.createElement('a');
                 link.href = '#';
                 link.className = 'block p-3 bg-slate-100 hover:bg-slate-200 rounded-lg text-slate-800 hover:text-slate-900 transition-colors';
-                link.textContent = drainage;
+                const lakeCount = lakes.filter(lake => lake.drainage === drainage).length;
+                link.textContent = `${drainage} • ${lakeCount}`;
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
                     showDrainageLakes(drainage);
@@ -560,11 +585,19 @@
         function updateFilterButtonState() {
             const drainage = document.getElementById('drainage-filter').value;
             const species = document.getElementById('species-filter').value;
-            const maxDepth = document.getElementById('depth-filter').value;
-            const lastStocked = document.getElementById('year-filter').value;
+            const depthMin = document.getElementById('depth-min').value;
+            const depthMax = document.getElementById('depth-max').value;
+            const elevationMin = document.getElementById('elevation-min').value;
+            const elevationMax = document.getElementById('elevation-max').value;
+            const sizeMin = document.getElementById('size-min').value;
+            const sizeMax = document.getElementById('size-max').value;
+            const yearMin = document.getElementById('year-min').value;
+            const yearMax = document.getElementById('year-max').value;
             
             const applyButton = document.getElementById('apply-filters');
-            const hasFilters = drainage || species || maxDepth || lastStocked;
+            const hasFilters = drainage || species || depthMin || depthMax || 
+                             elevationMin || elevationMax || sizeMin || sizeMax || 
+                             yearMin || yearMax;
             
             if (hasFilters) {
                 applyButton.disabled = false;
@@ -578,8 +611,14 @@
         function clearFilters() {
             document.getElementById('drainage-filter').value = '';
             document.getElementById('species-filter').value = '';
-            document.getElementById('depth-filter').value = '';
-            document.getElementById('year-filter').value = '';
+            document.getElementById('depth-min').value = '';
+            document.getElementById('depth-max').value = '';
+            document.getElementById('elevation-min').value = '';
+            document.getElementById('elevation-max').value = '';
+            document.getElementById('size-min').value = '';
+            document.getElementById('size-max').value = '';
+            document.getElementById('year-min').value = '';
+            document.getElementById('year-max').value = '';
             
             document.getElementById('clear-filters').classList.add('hidden');
             document.getElementById('results-section').classList.add('hidden');
@@ -590,8 +629,14 @@
         function applyFilters() {
             const drainage = document.getElementById('drainage-filter').value;
             const species = document.getElementById('species-filter').value;
-            const maxDepth = document.getElementById('depth-filter').value;
-            const lastStocked = document.getElementById('year-filter').value;
+            const depthMin = document.getElementById('depth-min').value;
+            const depthMax = document.getElementById('depth-max').value;
+            const elevationMin = document.getElementById('elevation-min').value;
+            const elevationMax = document.getElementById('elevation-max').value;
+            const sizeMin = document.getElementById('size-min').value;
+            const sizeMax = document.getElementById('size-max').value;
+            const yearMin = document.getElementById('year-min').value;
+            const yearMax = document.getElementById('year-max').value;
             
             let filteredLakes = [...lakes];
             
@@ -600,37 +645,83 @@
                 filteredLakes = filteredLakes.filter(lake => lake.drainage === drainage);
             }
             
-            // Filter by species
-            if (species) {
+            // Filter by depth range
+            if (depthMin || depthMax) {
                 filteredLakes = filteredLakes.filter(lake => {
-                    const fishSpecies = (lake.fish_species || '').toLowerCase();
-                    return fishSpecies.includes(species.toLowerCase());
+                    if (!lake.max_depth_ft) return false;
+                    const depth = lake.max_depth_ft;
+                    const minCheck = !depthMin || depth >= parseInt(depthMin);
+                    const maxCheck = !depthMax || depth <= parseInt(depthMax);
+                    return minCheck && maxCheck;
                 });
             }
             
-            // Filter by max depth
-            if (maxDepth) {
-                const depthLimit = parseInt(maxDepth);
-                filteredLakes = filteredLakes.filter(lake => 
-                    lake.max_depth_ft && lake.max_depth_ft <= depthLimit
-                );
+            // Filter by elevation range
+            if (elevationMin || elevationMax) {
+                filteredLakes = filteredLakes.filter(lake => {
+                    if (!lake.elevation_ft) return false;
+                    const elevation = lake.elevation_ft;
+                    const minCheck = !elevationMin || elevation >= parseInt(elevationMin);
+                    const maxCheck = !elevationMax || elevation <= parseInt(elevationMax);
+                    return minCheck && maxCheck;
+                });
             }
             
-            // Filter by last stocked year
-            if (lastStocked) {
-                const yearLimit = parseInt(lastStocked);
+            // Filter by size range
+            if (sizeMin || sizeMax) {
+                filteredLakes = filteredLakes.filter(lake => {
+                    if (!lake.size_acres) return false;
+                    const size = lake.size_acres;
+                    const minCheck = !sizeMin || size >= parseFloat(sizeMin);
+                    const maxCheck = !sizeMax || size <= parseFloat(sizeMax);
+                    return minCheck && maxCheck;
+                });
+            }
+            
+            // Combined species and year filter - this fixes the main issue
+            if (species || yearMin || yearMax) {
                 filteredLakes = filteredLakes.filter(lake => {
                     const lakeStocking = stockingRecords.filter(s => s.lake_id === lake.id);
+                    
+                    // If no stocking records, only include if no species or year filters are set
                     if (lakeStocking.length === 0) {
-                        // Exclude lakes with no stocking records
-                        return false;
+                        // Check if lake has species in fish_species field (for non-stocked natural populations)
+                        if (species) {
+                            const fishSpecies = (lake.fish_species || '').toLowerCase();
+                            return fishSpecies.includes(species.toLowerCase());
+                        }
+                        return !yearMin && !yearMax; // Only include if no year filters
                     }
-                    // Check that ALL stocking records are from the specified year or earlier
-                    // (i.e., no stocking records after the specified year)
-                    return lakeStocking.every(record => {
-                        const stockYear = parseInt(record.stock_date.split('-')[0]);
-                        return stockYear <= yearLimit;
-                    });
+                    
+                    // Filter stocking records by species if specified
+                    let relevantStocking = lakeStocking;
+                    if (species) {
+                        relevantStocking = lakeStocking.filter(record => 
+                            record.species && record.species.toLowerCase().includes(species.toLowerCase())
+                        );
+                        // If no stocking records match the species, check fish_species field
+                        if (relevantStocking.length === 0) {
+                            const fishSpecies = (lake.fish_species || '').toLowerCase();
+                            if (!fishSpecies.includes(species.toLowerCase())) {
+                                return false;
+                            }
+                            // If fish_species matches but no stocking records, only include if no year filter
+                            return !yearMin && !yearMax;
+                        }
+                    }
+                    
+                    // Filter by year range
+                    if (yearMin || yearMax) {
+                        relevantStocking = relevantStocking.filter(record => {
+                            const stockYear = parseInt(record.stock_date.split('-')[0]);
+                            const minCheck = !yearMin || stockYear >= parseInt(yearMin);
+                            const maxCheck = !yearMax || stockYear <= parseInt(yearMax);
+                            return minCheck && maxCheck;
+                        });
+                        return relevantStocking.length > 0;
+                    }
+                    
+                    return true;
                 });
             }
             
