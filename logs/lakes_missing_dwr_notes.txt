@@ -1,0 +1,73 @@
+GR-119 - Ashley Creek Drainage - 4 stocking records
+GR-38 (Deadman) - Ashley Creek Drainage - 6 stocking records
+BR-50 - Bear River Drainage - 12 stocking records
+BR-55 - Bear River Drainage - 6 stocking records
+G-113 - Blacks Fork Drainage - 1 stocking records
+GR-129 - Burnt Fork Drainage - 1 stocking records
+GR-143 (Hoop Lake) - Burnt Fork Drainage - 82 stocking records
+D-45 - Duchesne River Drainage - 2 stocking records
+X-87 (Ottoson Upper) - Lake Fork Drainage - 4 stocking records
+P-11 - Provo River Drainage - 7 stocking records
+P-16 (Charity L) - Provo River Drainage - 6 stocking records
+RC-1 - Rock Creek Drainage - 1 stocking records
+RC-36 - Rock Creek Drainage - 5 stocking records
+X-39 (Rudolph 1) - Rock Creek Drainage - 6 stocking records
+X-40 (Rudolph 2) - Rock Creek Drainage - 6 stocking records
+X-5 (Fern) - Rock Creek Drainage - 8 stocking records
+X-96 (Rock 1) - Rock Creek Drainage - 6 stocking records
+X-97 (Rock 2) - Rock Creek Drainage - 6 stocking records
+G-12 (Lower Red Castle) - Smiths Fork Drainage - 5 stocking records
+G-16 (Upper Red Castle) - Smiths Fork Drainage - 8 stocking records
+G-17 (East Red Castle) - Smiths Fork Drainage - 12 stocking records
+X-16 (Timothy East) - Swift Creek Drainage - 5 stocking records
+X-18 (Carrol Upper) - Swift Creek Drainage - 5 stocking records
+X-19 (Timothy West) - Swift Creek Drainage - 5 stocking records
+X-21 (Carrol East) - Swift Creek Drainage - 4 stocking records
+U-100 - Uinta River Drainage - 4 stocking records
+U-22 - Uinta River Drainage - 6 stocking records
+U-79 - Uinta River Drainage - 6 stocking records
+U-91 - Uinta River Drainage - 6 stocking records
+U-99 (Wall L) - Uinta River Drainage - 4 stocking records
+W-25 (Erickson South) - Weber River Drainage - 10 stocking records
+W-26 (Erickson North) - Weber River Drainage - 9 stocking records
+W-42 (Cuberant #1) - Weber River Drainage - 7 stocking records
+W-44 (Cuberant #3) - Weber River Drainage - 5 stocking records
+W-45 (Cuberant #4) - Weber River Drainage - 9 stocking records
+W-65 (Yellowpine Upper) - Weber River Drainage - 12 stocking records
+W-66 (Yellowpine Lower) - Weber River Drainage - 23 stocking records
+WR-1 (Robb L) - Weber River Drainage - 6 stocking records
+WR-33 (Cirque L) - Weber River Drainage - 5 stocking records
+WR-12 (Larvae) - White Rocks Drainage - 8 stocking records
+WR-13 (Pole Creek Lake) - White Rocks Drainage - 31 stocking records
+WR-14 (Upper Rock) - White Rocks Drainage - 4 stocking records
+WR-16 (Middle Rock) - White Rocks Drainage - 5 stocking records
+WR-17 (Lower Rock) - White Rocks Drainage - 4 stocking records
+WR-19 - White Rocks Drainage - 6 stocking records
+WR-2 (RC #1) - White Rocks Drainage - 3 stocking records
+WR-34 - White Rocks Drainage - 4 stocking records
+WR-35 (Rassmussen #1) - White Rocks Drainage - 5 stocking records
+WR-36 (Rassmussen #2) - White Rocks Drainage - 5 stocking records
+WR-4 (Quent) - White Rocks Drainage - 7 stocking records
+WR-49 (Cliff) - White Rocks Drainage - 8 stocking records
+WR-5 (Ogden) - White Rocks Drainage - 5 stocking records
+WR-52 (Papoose) - White Rocks Drainage - 1 stocking records
+WR-53 (Mocassin) - White Rocks Drainage - 1 stocking records
+WR-54 (Wigwam) - White Rocks Drainage - 4 stocking records
+WR-55 (Walk Up) - White Rocks Drainage - 5 stocking records
+WR-57 (Sharlee) - White Rocks Drainage - 2 stocking records
+WR-58 (Elbow) - White Rocks Drainage - 5 stocking records
+WR-6 (Point (Adams)) - White Rocks Drainage - 5 stocking records
+WR-63 (Hidden) - White Rocks Drainage - 7 stocking records
+WR-64 (Chepeta) - White Rocks Drainage - 4 stocking records
+WR-65 (Hell Hole) - White Rocks Drainage - 2 stocking records
+WR-66 (Reader) - White Rocks Drainage - 7 stocking records
+WR-67 (Horseshoe) - White Rocks Drainage - 4 stocking records
+WR-7 (Cleveland) - White Rocks Drainage - 5 stocking records
+WR-73 - White Rocks Drainage - 4 stocking records
+WR-74 - White Rocks Drainage - 6 stocking records
+WR-75 - White Rocks Drainage - 4 stocking records
+WR-77 - White Rocks Drainage - 5 stocking records
+WR-8 (Taylor) - White Rocks Drainage - 4 stocking records
+WR-9 - White Rocks Drainage - 9 stocking records
+X-50 - Yellowstone Drainage - 3 stocking records
+Y-32 - Yellowstone Drainage - 1 stocking records
