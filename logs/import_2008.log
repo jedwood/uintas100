@@ -1,0 +1,431 @@
+=== IMPORTING 2008 STOCKING DATA ===
+Started at: 2025-08-25 18:38:49
+
+
+=== PROCESSING SUMMIT COUNTY ===
+  NEW: ALEXANDER L A-1 (250) - Brookies x1148 on 2008-07-08
+  NEW: ALEXANDER L A-1 (250) - Brookies x1226 on 2008-07-08
+  NEW: AZURE (LOCK) L A-11 (251) - Grayling x1000 on 2008-07-28
+  NEW: BEAR L G-7 (171) - Brookies x2000 on 2008-07-09
+  UNMATCHED: BEAR R, E FK - Rainbows x299
+  UNMATCHED: BEAR R, E FK - Rainbows x322
+  UNMATCHED: BEAR R, E FK - Rainbows x200
+  NEW: BEAVER CR (32) - Rainbows x200 on 2008-07-01
+  NEW: BEAVER CR (32) - Rainbows x200 on 2008-07-11
+  NEW: BEAVER CR (32) - Rainbows x49 on 2008-07-16
+  NEW: BEAVER CR (32) - Rainbows x200 on 2008-07-22
+  NEW: BEAVER CR (32) - Rainbows x199 on 2008-08-04
+  NEW: BEAVER CR (32) - Rainbows x49 on 2008-08-12
+  NEW: BEAVER L BR-10 (32) - Rainbows x2015 on 2008-06-25
+  NEW: BETH L A-6 (253) - Brookies x500 on 2008-07-08
+  NEW: BOBS L G-73 (600) - Tigers x1320 on 2008-07-09
+  NEW: BOURBON L BR-1 (33) - Brookies x200 on 2008-07-08
+  NEW: BRIDGER L G-20 (173) - Rainbows x2573 on 2008-06-02
+  NEW: BRIDGER L G-20 (173) - Rainbows x2000 on 2008-06-24
+  NEW: BRIDGER L G-20 (173) - Brookies x2156 on 2008-07-08
+  NEW: BRIDGER L G-20 (173) - Rainbows x2000 on 2008-07-16
+  NEW: BRIDGER L G-20 (173) - Rainbows x1426 on 2008-08-11
+  NEW: BROOK L A-20 (257) - Brookies x100 on 2008-07-08
+  NEW: BUCKEYE L A-3 (258) - Brookies x500 on 2008-07-08
+  NEW: CAROL L W-51 (478) - Brookies x270 on 2008-07-08
+  NEW: CASTLE L G-11 (624) - Tigers x600 on 2008-07-11
+  NEW: CHINA L G-21 (174) - Brookies x7800 on 2008-07-08
+  NEW: CLEGG L A-47 (260) - Brookies x249 on 2008-07-08
+  NEW: CLEGG L A-47 (260) - Brookies x247 on 2008-07-08
+  NEW: CLIFF L G-5 (175) - Tigers x8304 on 2008-07-15
+  NEW: COFFIN L GR-144 (65) - Tigers x4500 on 2008-07-09
+  NEW: CRYSTAL L A-51 (262) - Brookies x498 on 2008-07-08
+  NEW: CRYSTAL L A-51 (262) - Brookies x504 on 2008-07-08
+  NEW: DEADHORSE L G-77 (601) - Tigers x4404 on 2008-07-09
+  UNMATCHED: DEER VALLEY LAKES - Rainbows x801
+  NEW: DIVIDE L NO 1 A-36 (630) - Brookies x530 on 2008-07-08
+  UNMATCHED: ECHO RES - Rainbows x942
+  UNMATCHED: ECHO RES - Rainbows x2129
+  UNMATCHED: ECHO RES - Rainbows x3695
+  UNMATCHED: ECHO RES - Rainbows x3829
+  UNMATCHED: ECHO RES - Rainbows x6543
+  UNMATCHED: ECHO RES - Rainbows x3284
+  UNMATCHED: ECHO RES - Rainbows x3986
+  UNMATCHED: ECHO RES - Rainbows x7680
+  UNMATCHED: ECHO RES - Rainbows x7680
+  UNMATCHED: ECHO RES - Rainbows x4440
+  UNMATCHED: ECHO RES - Rainbows x2247
+  UNMATCHED: ECHO RES - Rainbows x2247
+  UNMATCHED: ECHO RES - Rainbows x3
+  UNMATCHED: ECHO RES - Rainbows x2420
+  UNMATCHED: ECHO RES - Rainbows x2420
+  UNMATCHED: ECHO RES - Rainbows x2420
+  UNMATCHED: ECHO RES - Rainbows x2247
+  NEW: ELKHORN L W-64 (487) - Brookies x100 on 2008-07-08
+  NEW: ERICKSON L,NORTH W26 (489) - Brookies x900 on 2008-07-08
+  NEW: FAITH L A-16 (266) - Brookies x150 on 2008-07-08
+  NEW: G- 13 (181) - Brookies x800 on 2008-07-08
+  NEW: G- 56 (194) - Brookies x150 on 2008-07-08
+  NEW: G- 68 (653) - Brookies x410 on 2008-07-15
+  NEW: G- 74 (611) - Brookies x300 on 2008-07-09
+  NEW: GR-145 (69) - Grayling x1100 on 2008-07-28
+  NEW: GR-162 (72) - Brookies x700 on 2008-07-10
+  NEW: GR-173 (76) - Brookies x400 on 2008-07-10
+  UNMATCHED: HAYDEN FK - Rainbows x299
+  UNMATCHED: HAYDEN FK - Rainbows x299
+  UNMATCHED: HAYDEN FK - Rainbows x300
+  NEW: HAYDEN L BR-36 (47) - Tigers x804 on 2008-07-09
+  NEW: HAYSTACK L A-9 (269) - Brookies x454 on 2008-07-08
+  NEW: HAYSTACK L A-9 (269) - Brookies x447 on 2008-07-08
+  NEW: HESSIE L G-18 (199) - Tigers x3300 on 2008-07-09
+  NEW: HIDDEN L (68) - Rainbows x510 on 2008-06-23
+  NEW: HIDDEN L A-15 (270) - Brookies x1000 on 2008-07-08
+  NEW: HOOP L (93) - Rainbows x1025 on 2008-06-12
+  NEW: HOOP L (93) - Rainbows x8011 on 2008-06-18
+  NEW: ISLAND L G-9 (200) - Tigers x996 on 2008-07-11
+  NEW: JACKS L A-13 (274) - Brookies x120 on 2008-07-08
+  NEW: JAMES L A-31 (275) - Brookies x200 on 2008-07-08
+  NEW: JEWELL L BR-38 (49) - Tigers x480 on 2008-07-09
+  UNMATCHED: KIMBALL CR - Brown Trout x2725
+  NEW: LILLIAN L A-43 (280) - Brookies x300 on 2008-07-08
+  NEW: LILLY L A-58 (281) - Rainbows x298 on 2008-06-23
+  NEW: LILLY L A-58 (281) - Rainbows x308 on 2008-07-01
+  NEW: LILLY L A-58 (281) - Rainbows x300 on 2008-07-11
+  NEW: LILLY L A-58 (281) - Rainbows x300 on 2008-07-16
+  NEW: LILLY L A-58 (281) - Rainbows x299 on 2008-07-22
+  NEW: LILLY L A-58 (281) - Rainbows x300 on 2008-07-29
+  NEW: LILLY L A-58 (281) - Rainbows x300 on 2008-08-04
+  NEW: LILLY L A-58 (281) - Rainbows x308 on 2008-08-12
+  NEW: LILLY L A-58 (281) - Rainbows x299 on 2008-08-18
+  NEW: LILLY L A-58 (281) - Rainbows x300 on 2008-08-25
+  NEW: LILLY L A-58 (281) - Rainbows x300 on 2008-09-02
+  NEW: LILLY L A-58 (281) - Rainbows x300 on 2008-09-08
+  NEW: LILY L BR-11 (51) - Rainbows x1100 on 2008-06-13
+  NEW: LILY L BR-11 (51) - Rainbows x1099 on 2008-07-03
+  NEW: LILY L LOWER A-25 (282) - Brookies x300 on 2008-07-08
+  NEW: LITTLE HIDDEN L W-21 (496) - Brookies x1000 on 2008-07-08
+  NEW: LOST L A-59 (287) - Rainbows x599 on 2008-06-23
+  NEW: LOST L A-59 (287) - Rainbows x1900 on 2008-06-24
+  NEW: LOST L A-59 (287) - Rainbows x2000 on 2008-07-07
+  NEW: LOST L A-59 (287) - Brookies x4000 on 2008-07-11
+  NEW: LOVENIA L W-23 (498) - Brookies x300 on 2008-07-08
+  NEW: LYMAN L, LOWER G-25 (618) - Rainbows x1201 on 2008-06-12
+  NEW: LYMAN L, LOWER G-25 (618) - Rainbows x1200 on 2008-07-09
+  NEW: LYMAN L, LOWER G-25 (618) - Brookies x3500 on 2008-07-09
+  NEW: LYMAN L, UPPER G-27 (619) - Rainbows x524 on 2008-06-12
+  NEW: LYMAN L, UPPER G-27 (619) - Brookies x1000 on 2008-07-09
+  NEW: LYMAN L, UPPER G-27 (619) - Rainbows x0 on 2008-07-09
+  NEW: MARSH L G-19 (202) - Rainbows x5145 on 2008-06-02
+  NEW: MCPHETERS L BR-14 (53) - Tigers x5796 on 2008-07-09
+  NEW: NOTCH L W-36 (501) - Brookies x3000 on 2008-07-08
+  NEW: OSTLER L BR-27 (56) - Tigers x2796 on 2008-07-09
+  NEW: PETIT L A-26 (295) - Brookies x200 on 2008-07-08
+  UNMATCHED: PROVO R - Rainbows x299
+  UNMATCHED: PROVO R - Rainbows x250
+  UNMATCHED: PROVO R - Rainbows x251
+  UNMATCHED: PROVO R - Rainbows x250
+  NEW: QUARTER CORNER LG103 (655) - Rainbows x1200 on 2008-06-13
+  NEW: RAMONA L A-38 (297) - Brookies x600 on 2008-07-08
+  NEW: RED CASTLE L G-15 (205) - Tigers x33696 on 2008-07-09
+  NEW: RED CASTLE,UPPER G16 (183) - Tigers x5198 on 2008-07-28
+  NEW: REIDS L W-38 (503) - Brookies x500 on 2008-07-08
+  UNMATCHED: ROCKPORT RES - Rainbows x3200
+  UNMATCHED: ROCKPORT RES - Rainbows x3200
+  UNMATCHED: ROCKPORT RES - Rainbows x3200
+  UNMATCHED: ROCKPORT RES - Rainbows x3060
+  UNMATCHED: ROCKPORT RES - Rainbows x3060
+  UNMATCHED: ROCKPORT RES - Rainbows x3060
+  UNMATCHED: ROCKPORT RES - Rainbows x3420
+  UNMATCHED: ROCKPORT RES - Rainbows x3420
+  UNMATCHED: ROCKPORT RES - Rainbows x3060
+  UNMATCHED: ROCKPORT RES - Rainbows x3240
+  UNMATCHED: ROCKPORT RES - Rainbows x3060
+  UNMATCHED: ROCKPORT RES - Rainbows x3060
+  UNMATCHED: ROCKPORT RES - Rainbows x3060
+  UNMATCHED: ROCKPORT RES - Rainbows x3240
+  UNMATCHED: ROCKPORT RES - Rainbows x2880
+  UNMATCHED: ROCKPORT RES - Rainbows x2880
+  UNMATCHED: ROCKPORT RES - Rainbows x2880
+  UNMATCHED: ROCKPORT RES - Rainbows x2880
+  UNMATCHED: ROCKPORT RES - Rainbows x3240
+  UNMATCHED: ROCKPORT RES - Rainbows x3060
+  UNMATCHED: ROCKPORT RES - Rainbows x3060
+  UNMATCHED: ROCKPORT RES - Rainbows x3060
+  UNMATCHED: ROCKPORT RES - Rainbows x3060
+  UNMATCHED: ROCKPORT RES - Rainbows x3060
+  UNMATCHED: ROCKPORT RES - Rainbows x3420
+  UNMATCHED: ROCKPORT RES - Tigers x28800
+  UNMATCHED: ROCKPORT RES - Tigers x16500
+  NEW: RUTH L BR-40 (58) - Brookies x247 on 2008-07-08
+  NEW: RUTH L BR-40 (58) - Brookies x249 on 2008-07-08
+  NEW: SCOW L BR-12 (61) - Brookies x1700 on 2008-07-09
+  NEW: SHADOW L A-52 (299) - Brookies x1400 on 2008-07-08
+  NEW: SHINGLE CR,EAST A-39 (301) - Tigers x396 on 2008-07-09
+  UNMATCHED: SMITH-MOREHOUSE RES - Rainbows x1575
+  UNMATCHED: SMITH-MOREHOUSE RES - Rainbows x963
+  UNMATCHED: SMITH-MOREHOUSE RES - Rainbows x1050
+  UNMATCHED: SMITH-MOREHOUSE RES - Rainbows x525
+  UNMATCHED: SMITH-MOREHOUSE RES - Rainbows x1456
+  UNMATCHED: SMITH-MOREHOUSE RES - Rainbows x1403
+  UNMATCHED: SMITH-MOREHOUSE RES - Rainbows x2000
+  UNMATCHED: SMITH-MOREHOUSE RES - Tigers x10080
+  UNMATCHED: SMITH-MOREHOUSE RES - Rainbows x1099
+  UNMATCHED: SMITH-MOREHOUSE RES - Rainbows x1402
+  UNMATCHED: SMITH-MOREHOUSE RES - Rainbows x1401
+  UNMATCHED: SMITH-MOREHOUSE RES - Grayling x10118
+  UNMATCHED: SMITH-MOREHOUSE RES - Rainbows x1607
+  UNMATCHED: SMITH-MOREHOUSE RES - Tigers x2346
+  NEW: SMITHS FK PASS L G14 (182) - Tigers x5196 on 2008-07-09
+  UNMATCHED: STATELINE RES - Rainbows x7020
+  UNMATCHED: STATELINE RES - Rainbows x1980
+  UNMATCHED: STILLWATER FK - Rainbows x644
+  UNMATCHED: STILLWATER FK - Rainbows x500
+  UNMATCHED: STILLWATER FK - Rainbows x499
+  UNMATCHED: STILLWATER FK - Rainbows x499
+  NEW: TEAPOT L A-60 (309) - Rainbows x500 on 2008-06-23
+  NEW: TEAPOT L A-60 (309) - Rainbows x506 on 2008-07-01
+  NEW: TEAPOT L A-60 (309) - Rainbows x500 on 2008-07-11
+  NEW: TEAPOT L A-60 (309) - Brookies x500 on 2008-07-11
+  NEW: TEAPOT L A-60 (309) - Rainbows x500 on 2008-07-16
+  NEW: TEAPOT L A-60 (309) - Rainbows x499 on 2008-07-22
+  NEW: TEAPOT L A-60 (309) - Rainbows x504 on 2008-07-28
+  NEW: TEAPOT L A-60 (309) - Rainbows x499 on 2008-08-04
+  NEW: TEAPOT L A-60 (309) - Rainbows x504 on 2008-08-12
+  NEW: TEAPOT L A-60 (309) - Rainbows x500 on 2008-08-18
+  NEW: TEAPOT L A-60 (309) - Rainbows x500 on 2008-08-25
+  NEW: TEAPOT L A-60 (309) - Rainbows x500 on 2008-09-02
+  NEW: TEAPOT L A-60 (309) - Rainbows x500 on 2008-09-08
+  NEW: TRIAL L A-61 (310) - Rainbows x400 on 2008-07-01
+  NEW: TRIAL L A-61 (310) - Rainbows x2001 on 2008-07-01
+  NEW: TRIAL L A-61 (310) - Rainbows x2000 on 2008-07-07
+  NEW: TRIAL L A-61 (310) - Brookies x8000 on 2008-07-11
+  NEW: TRIAL L A-61 (310) - Rainbows x2000 on 2008-07-14
+  NEW: TRIAL L A-61 (310) - Rainbows x400 on 2008-07-14
+  NEW: TRIAL L A-61 (310) - Rainbows x1999 on 2008-07-21
+  NEW: TRIAL L A-61 (310) - Rainbows x599 on 2008-07-28
+  NEW: TRIAL L A-61 (310) - Rainbows x2000 on 2008-07-28
+  NEW: TRIAL L A-61 (310) - Tigers x2783 on 2008-07-28
+  NEW: TRIAL L A-61 (310) - Rainbows x1001 on 2008-08-04
+  NEW: TRIAL L A-61 (310) - Rainbows x1009 on 2008-08-12
+  NEW: TRIAL L A-61 (310) - Rainbows x599 on 2008-08-12
+  NEW: TRIAL L A-61 (310) - Rainbows x1000 on 2008-08-19
+  NEW: TRIAL L A-61 (310) - Grayling x11554 on 2008-08-19
+  NEW: TRIAL L A-61 (310) - Rainbows x594 on 2008-08-25
+  NEW: TRIAL L A-61 (310) - Rainbows x807 on 2008-08-25
+  NEW: TRIAL L A-61 (310) - Rainbows x1000 on 2008-09-02
+  NEW: TRIAL L A-61 (310) - Rainbows x600 on 2008-09-08
+  NEW: TRIAL L A-61 (310) - Rainbows x1000 on 2008-09-08
+  NEW: TRIAL L A-61 (310) - Rainbows x1150 on 2008-09-09
+  NEW: W-52 (514) - Brookies x360 on 2008-07-08
+  NEW: W-53 (515) - Brookies x100 on 2008-07-08
+  NEW: WASHINGTON L A-23 (315) - Rainbows x1056 on 2008-07-01
+  NEW: WASHINGTON L A-23 (315) - Rainbows x1000 on 2008-07-07
+  NEW: WASHINGTON L A-23 (315) - Brookies x4000 on 2008-07-11
+  NEW: WASHINGTON L A-23 (315) - Rainbows x1000 on 2008-07-16
+  NEW: WASHINGTON L A-23 (315) - Rainbows x999 on 2008-07-21
+  NEW: WASHINGTON L A-23 (315) - Rainbows x1008 on 2008-07-28
+  NEW: WASHINGTON L A-23 (315) - Tigers x2625 on 2008-07-28
+  NEW: WASHINGTON L A-23 (315) - Grayling x11554 on 2008-08-19
+  NEW: WATSON L A-27 (316) - Brookies x600 on 2008-07-08
+  UNMATCHED: WEBER R - Rainbows x251
+  UNMATCHED: WEBER R - Rainbows x251
+  UNMATCHED: WEBER R - Rainbows x251
+  UNMATCHED: WEBER R - Rainbows x251
+  UNMATCHED: WEBER R - Rainbows x250
+  UNMATCHED: WEBER R - Rainbows x250
+  UNMATCHED: WHITNEY RES - Rainbows x2024
+  UNMATCHED: WHITNEY RES - Rainbows x2024
+  UNMATCHED: WHITNEY RES - Tigers x40040
+  UNMATCHED: WHITNEY RES - Cutthroats x29883
+  UNMATCHED: WHITNEY RES - Cutthroats x25401
+  NEW: YELLOWPINE,LOWER W66 (522) - Brookies x200 on 2008-07-08
+  NEW: YELLOWPINE,UPPER W65 (523) - Brookies x300 on 2008-07-08
+
+Summit Summary: 145 new records, 12 unmatched
+
+=== PROCESSING DUCHESNE COUNTY ===
+  NEW: AMOEBA L X-90 (206) - Cutthroats x595 on 2008-09-24
+  NEW: ANN L WR-74 (564) - Cutthroats x347 on 2008-09-24
+  NEW: BEARD L U-74 (430) - Brookies x450 on 2008-07-10
+  NEW: BECKY L WR-77 (567) - Brookies x330 on 2008-07-10
+  NEW: BETSEY L X-7 (325) - Cutthroats x3998 on 2008-09-24
+  UNMATCHED: BIG SANDWASH RES - Rainbows x2103
+  UNMATCHED: BIG SANDWASH RES - Rainbows x2103
+  UNMATCHED: BIG SANDWASH RES - Rainbows x30282
+  UNMATCHED: BIG SANDWASH RES - Rainbows x31215
+  UNMATCHED: BIG SANDWASH RES - Rainbows x7777
+  UNMATCHED: BIG SANDWASH RES - Rainbows x67
+  NEW: BOLLEY L U-96 (110) - Cutthroats x982 on 2008-09-24
+  NEW: BONNIE L Z-6 (120) - Brookies x600 on 2008-07-08
+  UNMATCHED: BROKEN ARROW CR (FARM CR - Cutthroats x500
+  NEW: BROOK L U-54 (432) - Brookies x1000 on 2008-07-10
+  UNMATCHED: BROWNS DRAW RES - Rainbows x30140
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x502 on 2008-06-23
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x250 on 2008-07-02
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x499 on 2008-07-03
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x500 on 2008-07-10
+  NEW: BUTTERFLY L Z-1 (123) - Brookies x1000 on 2008-07-11
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x249 on 2008-07-16
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x300 on 2008-07-16
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x598 on 2008-07-22
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x250 on 2008-07-28
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x600 on 2008-07-29
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x600 on 2008-08-04
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x499 on 2008-08-12
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x250 on 2008-08-12
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x500 on 2008-08-19
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x500 on 2008-08-25
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x500 on 2008-09-02
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x800 on 2008-09-08
+  NEW: CHAIN L NO 4 U-4 (437) - Cutthroats x704 on 2008-09-24
+  NEW: CONTINENT L X-121 (331) - Cutthroats x2301 on 2008-09-24
+  NEW: CRAIG L U-85 (438) - Cutthroats x476 on 2008-09-24
+  NEW: DEER L X-55 (411) - Cutthroats x1498 on 2008-09-24
+  NEW: DG- 6 (101) - Cutthroats x595 on 2008-09-24
+  NEW: DG- 9 (104) - Cutthroats x1002 on 2008-09-24
+  NEW: DG-14 (106) - Cutthroats x198 on 2008-09-24
+  NEW: DG-15 (107) - Cutthroats x198 on 2008-09-24
+  NEW: DG-16 (108) - Cutthroats x198 on 2008-09-24
+  NEW: DG-17 (109) - Cutthroats x436 on 2008-09-24
+  NEW: DIVIDE L U-59 (442) - Cutthroats x1905 on 2008-09-24
+  NEW: DRIFT RES Y-41 (570) - Brookies x1000 on 2008-07-10
+  UNMATCHED: DUCHESNE R, N FK - Rainbows x952
+  UNMATCHED: DUCHESNE R, N FK - Rainbows x951
+  UNMATCHED: DUCHESNE R, N FK - Rainbows x950
+  UNMATCHED: DUCHESNE R, N FK - Rainbows x499
+  NEW: EMERALD L D-20 (134) - Brookies x80 on 2008-07-08
+  NEW: EVERMAN L Z-36 (623) - Brookies x800 on 2008-07-08
+  NEW: FERN L X-5 (339) - Brookies x1450 on 2008-07-08
+  NEW: GIBBY L RC-30 (342) - Cutthroats x298 on 2008-09-24
+  NEW: GILBERT L U-82 (446) - Brookies x1100 on 2008-07-10
+  NEW: GILBERT L U-82 (446) - Cutthroats x1101 on 2008-09-24
+  NEW: GRANDADDY L X-9 (345) - Cutthroats x17499 on 2008-09-24
+  NEW: HEART L X-13 (346) - Cutthroats x565 on 2008-09-24
+  NEW: HELLER L DG-28 (113) - Cutthroats x1002 on 2008-09-24
+  NEW: HIDDEN L WR-63 (530) - Cutthroats x1209 on 2008-07-09
+  NEW: HOOVER L Z-10 (142) - Brookies x950 on 2008-07-08
+  NEW: HOOVER L Z-10 (142) - Brookies x943 on 2008-07-08
+  NEW: JEAN L Z-41 (351) - Brookies x2000 on 2008-07-08
+  NEW: KATY L WR-34 (559) - Cutthroats x903 on 2008-09-24
+  NEW: KINGS L Y-22 (572) - Cutthroats x1002 on 2008-09-24
+  UNMATCHED: LAKE FK R - Rainbows x448
+  UNMATCHED: LAKE FK R - Rainbows x450
+  NEW: LAMBERT L LF-21 (219) - Brookies x700 on 2008-07-10
+  NEW: LF-37 (223) - Brookies x300 on 2008-07-10
+  NEW: LILY PAD L X-2 (355) - Brookies x1000 on 2008-07-08
+  NEW: MIRROR L Z-3 (151) - Rainbows x500 on 2008-07-01
+  NEW: MIRROR L Z-3 (151) - Rainbows x2001 on 2008-07-01
+  NEW: MIRROR L Z-3 (151) - Rainbows x1000 on 2008-07-08
+  NEW: MIRROR L Z-3 (151) - Brookies x7500 on 2008-07-11
+  NEW: MIRROR L Z-3 (151) - Rainbows x2000 on 2008-07-14
+  NEW: MIRROR L Z-3 (151) - Rainbows x499 on 2008-07-14
+  NEW: MIRROR L Z-3 (151) - Rainbows x998 on 2008-07-21
+  NEW: MIRROR L Z-3 (151) - Rainbows x839 on 2008-07-28
+  NEW: MIRROR L Z-3 (151) - Rainbows x999 on 2008-07-28
+  NEW: MIRROR L Z-3 (151) - Rainbows x701 on 2008-07-29
+  NEW: MIRROR L Z-3 (151) - Rainbows x1301 on 2008-08-04
+  NEW: MIRROR L Z-3 (151) - Rainbows x499 on 2008-08-11
+  NEW: MIRROR L Z-3 (151) - Rainbows x1002 on 2008-08-11
+  NEW: MIRROR L Z-3 (151) - Rainbows x1000 on 2008-08-18
+  NEW: MIRROR L Z-3 (151) - Rainbows x999 on 2008-08-25
+  NEW: MIRROR L Z-3 (151) - Rainbows x1000 on 2008-08-25
+  NEW: MIRROR L Z-3 (151) - Rainbows x1300 on 2008-09-02
+  NEW: MIRROR L Z-3 (151) - Rainbows x400 on 2008-09-08
+  NEW: MIRROR L Z-3 (151) - Rainbows x1500 on 2008-09-08
+  UNMATCHED: MOON L - Rainbows x5505
+  UNMATCHED: MOON L - Splake x5029
+  UNMATCHED: MOON L - Tigers x5040
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x499 on 2008-07-02
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x352 on 2008-07-02
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x500 on 2008-07-11
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x500 on 2008-07-16
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x260 on 2008-07-16
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x499 on 2008-07-22
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x299 on 2008-07-28
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x600 on 2008-07-29
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x499 on 2008-08-04
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x301 on 2008-08-12
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x499 on 2008-08-12
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x500 on 2008-08-19
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x500 on 2008-08-25
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x500 on 2008-09-02
+  NEW: NELLIE L WR-75 (565) - Cutthroats x298 on 2008-09-24
+  NEW: OGDEN L WR-5 (535) - Cutthroats x1399 on 2008-09-24
+  NEW: OKEY DOKE L U-5 (453) - Cutthroats x655 on 2008-09-24
+  NEW: PACKARD L Z-15 (157) - Brookies x900 on 2008-07-08
+  NEW: PASS L Z-5 (158) - Rainbows x598 on 2008-07-02
+  NEW: PASS L Z-5 (158) - Rainbows x250 on 2008-07-02
+  NEW: PASS L Z-5 (158) - Rainbows x600 on 2008-07-08
+  NEW: PASS L Z-5 (158) - Brookies x500 on 2008-07-11
+  NEW: PASS L Z-5 (158) - Rainbows x249 on 2008-07-16
+  NEW: PASS L Z-5 (158) - Rainbows x500 on 2008-07-16
+  NEW: PASS L Z-5 (158) - Rainbows x200 on 2008-07-17
+  NEW: PASS L Z-5 (158) - Rainbows x598 on 2008-07-21
+  NEW: PASS L Z-5 (158) - Rainbows x250 on 2008-07-28
+  NEW: PASS L Z-5 (158) - Rainbows x499 on 2008-07-29
+  NEW: PASS L Z-5 (158) - Rainbows x600 on 2008-08-04
+  NEW: PASS L Z-5 (158) - Rainbows x250 on 2008-08-12
+  NEW: PASS L Z-5 (158) - Rainbows x600 on 2008-08-12
+  NEW: PASS L Z-5 (158) - Rainbows x600 on 2008-08-19
+  NEW: PASS L Z-5 (158) - Rainbows x499 on 2008-08-25
+  NEW: PASS L Z-5 (158) - Rainbows x299 on 2008-08-25
+  NEW: PASS L Z-5 (158) - Rainbows x601 on 2008-09-02
+  NEW: PASS L Z-5 (158) - Rainbows x900 on 2008-09-08
+  NEW: PENNY NICKELL L U-98 (454) - Cutthroats x595 on 2008-09-24
+  NEW: PINTO L X-22 (366) - Brookies x5100 on 2008-07-08
+  NEW: PIPPEN L U-9 (455) - Cutthroats x496 on 2008-09-24
+  NEW: POLE CR L (540) - Rainbows x1400 on 2008-06-18
+  NEW: POWELL L Z-30 (367) - Cutthroats x2698 on 2008-09-24
+  NEW: RASMUSSEN L NO1 WR35 (542) - Brookies x1500 on 2008-07-10
+  NEW: RASMUSSEN L NO2 WR36 (543) - Brookies x1400 on 2008-07-10
+  NEW: RC-36 (649) - Brookies x300 on 2008-07-10
+  UNMATCHED: RED CR RES - Rainbows x10001
+  UNMATCHED: RED CR RES - Rainbows x800
+  NEW: ROBERTS L U-15 (457) - Cutthroats x1200 on 2008-09-24
+  UNMATCHED: ROCK CR - Rainbows x1033
+  UNMATCHED: ROCK CR - Rainbows x1033
+  UNMATCHED: ROCK CR - Rainbows x1032
+  NEW: ROCK L, LOWER WR-17 (532) - Cutthroats x1002 on 2008-09-24
+  NEW: ROCK L, MIDDLE WR-16 (533) - Cutthroats x595 on 2008-09-24
+  NEW: ROCK L, UPPER WR-14 (550) - Cutthroats x2004 on 2008-09-24
+  NEW: SCOUT L Z-12 (160) - Rainbows x400 on 2008-07-02
+  NEW: SCOUT L Z-12 (160) - Brookies x997 on 2008-07-10
+  NEW: SCOUT L Z-12 (160) - Brookies x998 on 2008-07-10
+  NEW: SCOUT L Z-12 (160) - Rainbows x400 on 2008-07-10
+  NEW: SCOUT L Z-12 (160) - Rainbows x400 on 2008-07-17
+  NEW: SCOUT L Z-12 (160) - Rainbows x398 on 2008-07-22
+  NEW: SCOUT L Z-12 (160) - Rainbows x408 on 2008-07-29
+  NEW: SCOUT L Z-12 (160) - Rainbows x341 on 2008-08-04
+  NEW: SONNY L X-12 (164) - Brookies x400 on 2008-07-08
+  NEW: SQUAW L X-95 (380) - Brookies x1040 on 2008-07-10
+  NEW: STEWART L X-79 (234) - Cutthroats x952 on 2008-09-24
+  NEW: TAMARA L WR-73 (563) - Cutthroats x804 on 2008-09-24
+  UNMATCHED: TIMBER CYN CR - Cutthroats x2220
+  NEW: TUNGSTEN L X-107 (579) - Cutthroats x1349 on 2008-09-24
+  NEW: U- 38 (462) - Cutthroats x804 on 2008-09-24
+  NEW: U- 42 (464) - Cutthroats x754 on 2008-09-24
+  NEW: U- 45 (465) - Cutthroats x496 on 2008-09-24
+  NEW: U- 91 (664) - Cutthroats x516 on 2008-09-24
+  NEW: U- 93 (471) - Cutthroats x546 on 2008-09-24
+  UNMATCHED: UINTA R - Rainbows x1036
+  UNMATCHED: UINTA R - Rainbows x1033
+  UNMATCHED: UINTA R - Rainbows x1033
+  NEW: WALK-UP L WR-55 (551) - Brookies x1840 on 2008-07-10
+  NEW: WYMAN L Z-14 (125) - Brookies x1000 on 2008-07-08
+  NEW: X- 22 (366) - Cutthroats x903 on 2008-09-24
+  NEW: X- 24 (422) - Cutthroats x1577 on 2008-09-24
+  NEW: X- 25 (423) - Cutthroats x1696 on 2008-09-24
+  NEW: X- 60 (582) - Cutthroats x804 on 2008-09-24
+  NEW: X- 78 (243) - Cutthroats x1696 on 2008-09-24
+  NEW: X- 86 (248) - Brookies x700 on 2008-07-10
+  NEW: X- 89 (249) - Cutthroats x347 on 2008-09-24
+  NEW: X-105 (583) - Cutthroats x1002 on 2008-09-24
+  NEW: Y-36 (593) - Brookies x1050 on 2008-07-10
+  NEW: Y-37 (594) - Brookies x980 on 2008-07-10
+  UNMATCHED: YELLOWSTONE R - Rainbows x350
+  UNMATCHED: YELLOWSTONE R - Rainbows x351
+  UNMATCHED: YELLOWSTONE R - Rainbows x350
+
+Duchesne Summary: 152 new records, 11 unmatched
+
+=== 2008 IMPORT SUMMARY ===
+Total new records: 297
+Total unmatched lakes: 23
+Ambiguous matches: 0
+CSV file updated: /Volumes/OLAF EXT/jedwoodx/repos/uintas/data/utah_dwr_stocking_data.csv
+Run completed at: 2025-08-25 18:38:50

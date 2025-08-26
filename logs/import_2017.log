@@ -1,0 +1,417 @@
+=== IMPORTING 2017 STOCKING DATA ===
+Started at: 2025-08-25 17:19:51
+
+
+=== PROCESSING SUMMIT COUNTY ===
+  NEW: ALEXANDER L A-1 (250) - Brookies x2305 on 2017-07-12
+  UNMATCHED: BEAR R - Rainbows x399
+  UNMATCHED: BEAR R - Rainbows x300
+  UNMATCHED: BEAR R - Rainbows x100
+  UNMATCHED: BEAR R - Rainbows x100
+  UNMATCHED: BEAR R, E FK - Rainbows x300
+  UNMATCHED: BEAR R, E FK - Rainbows x299
+  UNMATCHED: BEAR R, E FK - Rainbows x299
+  NEW: BEAVER CR (32) - Rainbows x201 on 2017-06-28
+  NEW: BEAVER CR (32) - Rainbows x200 on 2017-07-05
+  NEW: BEAVER CR (32) - Rainbows x200 on 2017-07-19
+  NEW: BEAVER CR (32) - Rainbows x200 on 2017-07-25
+  NEW: BEAVER CR (32) - Rainbows x201 on 2017-08-07
+  NEW: BEAVER L BR-10 (32) - Rainbows x2000 on 2017-06-21
+  NEW: BETH L A-6 (253) - Brookies x503 on 2017-07-12
+  NEW: BLUE L A-5 (255) - Brookies x608 on 2017-07-12
+  NEW: BOOKER L A-35 (256) - Brookies x398 on 2017-07-12
+  NEW: BR-24 (38) - Tigers x248 on 2017-07-11
+  NEW: BR-55 (660) - Brookies x230 on 2017-07-12
+  NEW: BRIDGER L G-20 (173) - Rainbows x1999 on 2017-06-07
+  NEW: BRIDGER L G-20 (173) - Rainbows x1506 on 2017-06-19
+  NEW: BRIDGER L G-20 (173) - Rainbows x1499 on 2017-06-27
+  NEW: BRIDGER L G-20 (173) - Brookies x2095 on 2017-07-12
+  NEW: BRIDGER L G-20 (173) - Rainbows x1499 on 2017-07-17
+  NEW: BRIDGER L G-20 (173) - Rainbows x1499 on 2017-08-07
+  NEW: CHINA L G-21 (174) - Brookies x6929 on 2017-07-09
+  NEW: CLIFF L G-5 (175) - Tigers x3300 on 2017-06-29
+  NEW: COFFIN L GR-144 (65) - Tigers x2000 on 2017-06-29
+  NEW: CRYSTAL L A-51 (262) - Brookies x1006 on 2017-07-12
+  UNMATCHED: DEER VALLEY LAKES - Rainbows x377
+  UNMATCHED: DEER VALLEY LAKES - Rainbows x375
+  UNMATCHED: DEER VALLEY LAKES - Wiper x520
+  UNMATCHED: DEER VALLEY LAKES - Wiper x520
+  UNMATCHED: DEER VALLEY LAKES - Rainbows x375
+  UNMATCHED: DEER VALLEY LAKES - Rainbows x375
+  UNMATCHED: DEER VALLEY LAKES - Rainbows x749
+  UNMATCHED: DEER VALLEY LAKES - Rainbows x752
+  UNMATCHED: DEER VALLEY LAKES - Tigers x3041
+  NEW: DIVIDE L NO 1 A-36 (630) - Brookies x524 on 2017-07-12
+  NEW: DOLLAR L G-2 (176) - Tigers x1000 on 2017-06-29
+  UNMATCHED: ECHO RES - Walleye x77000
+  UNMATCHED: ECHO RES - Rainbows x4914
+  UNMATCHED: ECHO RES - Rainbows x4942
+  UNMATCHED: ECHO RES - Rainbows x5215
+  UNMATCHED: ECHO RES - Walleye x18350
+  UNMATCHED: ECHO RES - Rainbows x10292
+  UNMATCHED: ECHO RES - Rainbows x8772
+  UNMATCHED: ECHO RES - Rainbows x4644
+  UNMATCHED: ECHO RES - Rainbows x11232
+  NEW: ELKHORN L W-64 (487) - Brookies x105 on 2017-07-12
+  NEW: ERICKSON L,SOUTH W25 (488) - Brookies x859 on 2017-07-12
+  NEW: G- 40 (663) - Brookies x310 on 2017-07-09
+  NEW: G- 80 (614) - Brookies x84 on 2017-07-12
+  NEW: GR-119 (666) - Grayling x300 on 2017-09-20
+  NEW: GR-145 (69) - Grayling x907 on 2017-09-26
+  NEW: GR-162 (72) - Brookies x713 on 2017-07-09
+  UNMATCHED: HAYDEN FK - Rainbows x300
+  UNMATCHED: HAYDEN FK - Rainbows x301
+  UNMATCHED: HAYDEN FK - Rainbows x299
+  NEW: HOOP L (93) - Rainbows x3500 on 2017-06-08
+  NEW: HOOP L (93) - Rainbows x8010 on 2017-06-08
+  NEW: ISLAND L G-9 (200) - Tigers x1000 on 2017-06-29
+  NEW: LILLY L A-58 (281) - Rainbows x198 on 2017-06-26
+  NEW: LILLY L A-58 (281) - Tigers x200 on 2017-06-27
+  NEW: LILLY L A-58 (281) - Rainbows x298 on 2017-07-03
+  NEW: LILLY L A-58 (281) - Rainbows x200 on 2017-07-10
+  NEW: LILLY L A-58 (281) - Tigers x399 on 2017-07-12
+  NEW: LILLY L A-58 (281) - Tigers x399 on 2017-07-17
+  NEW: LILLY L A-58 (281) - Rainbows x301 on 2017-07-19
+  NEW: LILLY L A-58 (281) - Rainbows x200 on 2017-07-25
+  NEW: LILLY L A-58 (281) - Tigers x399 on 2017-07-31
+  NEW: LILLY L A-58 (281) - Rainbows x199 on 2017-07-31
+  NEW: LILLY L A-58 (281) - Rainbows x201 on 2017-08-07
+  NEW: LILLY L A-58 (281) - Tigers x131 on 2017-08-14
+  NEW: LILLY L A-58 (281) - Rainbows x271 on 2017-08-22
+  NEW: LILY L BR-11 (51) - Rainbows x1196 on 2017-06-05
+  NEW: LILY L BR-11 (51) - Rainbows x1200 on 2017-06-26
+  NEW: LILY L BR-11 (51) - Rainbows x1100 on 2017-07-26
+  NEW: LITTLE HIDDEN L W-21 (496) - Brookies x503 on 2017-07-12
+  NEW: LORENA L BR-46 (43) - Brookies x1194 on 2017-07-12
+  NEW: LOST L A-59 (287) - Rainbows x2503 on 2017-06-20
+  NEW: LOST L A-59 (287) - Rainbows x1998 on 2017-07-03
+  NEW: LOST L A-59 (287) - Brookies x1991 on 2017-07-12
+  NEW: LOST L A-59 (287) - Tigers x637 on 2017-08-28
+  NEW: LYMAN L, LOWER G-25 (618) - Rainbows x806 on 2017-06-12
+  NEW: LYMAN L, LOWER G-25 (618) - Rainbows x799 on 2017-06-27
+  NEW: LYMAN L, LOWER G-25 (618) - Brookies x3519 on 2017-07-09
+  NEW: LYMAN L, LOWER G-25 (618) - Rainbows x1400 on 2017-07-26
+  NEW: LYMAN L, UPPER G-27 (619) - Rainbows x1001 on 2017-06-12
+  NEW: LYMAN L, UPPER G-27 (619) - Rainbows x1000 on 2017-06-27
+  NEW: LYMAN L, UPPER G-27 (619) - Tigers x1000 on 2017-06-27
+  NEW: LYMAN L, UPPER G-27 (619) - Brookies x1023 on 2017-07-09
+  NEW: MARSH L G-19 (202) - Rainbows x4462 on 2017-06-07
+  NEW: MARSH L G-19 (202) - Rainbows x541 on 2017-06-07
+  NEW: P-11 (654) - Brookies x210 on 2017-07-12
+  UNMATCHED: PRICE DAM - Rainbows x75
+  UNMATCHED: PROVO R - Rainbows x250
+  UNMATCHED: PROVO R - Rainbows x250
+  UNMATCHED: PROVO R - Rainbows x250
+  UNMATCHED: PROVO R - Rainbows x250
+  NEW: QUARTER CORNER LG103 (655) - Rainbows x1208 on 2017-06-06
+  NEW: RED CASTLE L G-15 (205) - Tigers x8750 on 2017-06-28
+  NEW: RED CASTLE L G-15 (205) - Tigers x8032 on 2017-07-11
+  NEW: RED CASTLE,EAST G-17 (177) - Tigers x2098 on 2017-07-11
+  NEW: RED CASTLE,UPPER G16 (183) - Tigers x2567 on 2017-07-11
+  NEW: REIDS L W-38 (503) - Brookies x503 on 2017-07-12
+  NEW: ROCK L A-10 (298) - Tigers x400 on 2017-06-29
+  UNMATCHED: ROCKPORT RES - Rainbows x4004
+  UNMATCHED: ROCKPORT RES - Rainbows x9230
+  UNMATCHED: ROCKPORT RES - Rainbows x2345
+  UNMATCHED: ROCKPORT RES - Rainbows x21440
+  UNMATCHED: ROCKPORT RES - Rainbows x3518
+  UNMATCHED: ROCKPORT RES - Rainbows x7810
+  UNMATCHED: ROCKPORT RES - Rainbows x22720
+  UNMATCHED: ROCKPORT RES - Rainbows x3050
+  UNMATCHED: ROCKPORT RES - Rainbows x401
+  NEW: RUTH L BR-40 (58) - Brookies x503 on 2017-07-12
+  NEW: SALAMANDER L BR-26 (60) - Brookies x398 on 2017-07-12
+  NEW: SCOW L BR-12 (61) - Brookies x1697 on 2017-07-12
+  UNMATCHED: SMITH-MOREHOUSE RES - Kokanee x12382
+  UNMATCHED: SMITH-MOREHOUSE RES - Rainbows x2040
+  UNMATCHED: SMITH-MOREHOUSE RES - Rainbows x2040
+  UNMATCHED: SMITH-MOREHOUSE RES - Rainbows x1560
+  UNMATCHED: SMITH-MOREHOUSE RES - Rainbows x1798
+  UNMATCHED: SMITH-MOREHOUSE RES - Rainbows x1203
+  UNMATCHED: SMITH-MOREHOUSE RES - Rainbows x1267
+  UNMATCHED: SMITH-MOREHOUSE RES - Rainbows x1699
+  UNMATCHED: SMITH-MOREHOUSE RES - Rainbows x1500
+  UNMATCHED: SMITH-MOREHOUSE RES - Rainbows x1501
+  UNMATCHED: SMITH-MOREHOUSE RES - Rainbows x1000
+  UNMATCHED: SMITH-MOREHOUSE RES - Grayling x22200
+  NEW: SMITHS FK PASS L G14 (182) - Tigers x2608 on 2017-07-11
+  UNMATCHED: STATELINE RES - Rainbows x4160
+  UNMATCHED: STATELINE RES - Rainbows x3780
+  UNMATCHED: STATELINE RES - Rainbows x2140
+  UNMATCHED: STILLWATER FK - Rainbows x149
+  UNMATCHED: STILLWATER FK - Rainbows x399
+  UNMATCHED: STILLWATER FK - Rainbows x401
+  UNMATCHED: STILLWATER FK - Rainbows x400
+  UNMATCHED: STILLWATER FK - Rainbows x400
+  NEW: SUMMIT L GR-5 (642) - Grayling x949 on 2017-09-20
+  NEW: TAMARACK L GR-2 (406) - Tigers x1877 on 2017-07-11
+  NEW: TEAPOT L A-60 (309) - Rainbows x501 on 2017-06-26
+  NEW: TEAPOT L A-60 (309) - Tigers x300 on 2017-06-27
+  NEW: TEAPOT L A-60 (309) - Rainbows x500 on 2017-07-03
+  NEW: TEAPOT L A-60 (309) - Rainbows x250 on 2017-07-10
+  NEW: TEAPOT L A-60 (309) - Brookies x503 on 2017-07-12
+  NEW: TEAPOT L A-60 (309) - Tigers x602 on 2017-07-12
+  NEW: TEAPOT L A-60 (309) - Tigers x602 on 2017-07-17
+  NEW: TEAPOT L A-60 (309) - Rainbows x249 on 2017-07-19
+  NEW: TEAPOT L A-60 (309) - Rainbows x450 on 2017-07-25
+  NEW: TEAPOT L A-60 (309) - Rainbows x351 on 2017-07-31
+  NEW: TEAPOT L A-60 (309) - Tigers x451 on 2017-07-31
+  NEW: TEAPOT L A-60 (309) - Rainbows x351 on 2017-08-07
+  NEW: TEAPOT L A-60 (309) - Rainbows x251 on 2017-08-14
+  NEW: TEAPOT L A-60 (309) - Tigers x600 on 2017-08-14
+  NEW: TEAPOT L A-60 (309) - Rainbows x251 on 2017-08-22
+  NEW: TEAPOT L A-60 (309) - Rainbows x249 on 2017-08-28
+  UNMATCHED: TOMAHAWK - Rainbows x224
+  UNMATCHED: TOMAHAWK - Rainbows x100
+  NEW: TRIAL L A-61 (310) - Rainbows x1538 on 2017-06-27
+  NEW: TRIAL L A-61 (310) - Tigers x500 on 2017-06-27
+  NEW: TRIAL L A-61 (310) - Rainbows x1499 on 2017-07-03
+  NEW: TRIAL L A-61 (310) - Rainbows x750 on 2017-07-10
+  NEW: TRIAL L A-61 (310) - Brookies x4002 on 2017-07-12
+  NEW: TRIAL L A-61 (310) - Tigers x998 on 2017-07-12
+  NEW: TRIAL L A-61 (310) - Tigers x998 on 2017-07-17
+  NEW: TRIAL L A-61 (310) - Rainbows x748 on 2017-07-18
+  NEW: TRIAL L A-61 (310) - Rainbows x750 on 2017-07-25
+  NEW: TRIAL L A-61 (310) - Tigers x998 on 2017-07-31
+  NEW: TRIAL L A-61 (310) - Rainbows x750 on 2017-07-31
+  NEW: TRIAL L A-61 (310) - Rainbows x750 on 2017-08-08
+  NEW: TRIAL L A-61 (310) - Tigers x1000 on 2017-08-14
+  NEW: TRIAL L A-61 (310) - Rainbows x750 on 2017-08-14
+  NEW: TRIAL L A-61 (310) - Tigers x859 on 2017-08-17
+  NEW: TRIAL L A-61 (310) - Rainbows x1299 on 2017-08-28
+  NEW: TRIAL L A-61 (310) - Grayling x592 on 2017-09-25
+  NEW: TRIAL L A-61 (310) - Grayling x1998 on 2017-09-26
+  NEW: TRIDENT L A-41 (311) - Brookies x398 on 2017-07-12
+  NEW: WASHINGTON L A-23 (315) - Rainbows x1451 on 2017-06-27
+  NEW: WASHINGTON L A-23 (315) - Tigers x442 on 2017-06-27
+  NEW: WASHINGTON L A-23 (315) - Rainbows x999 on 2017-07-03
+  NEW: WASHINGTON L A-23 (315) - Rainbows x750 on 2017-07-10
+  NEW: WASHINGTON L A-23 (315) - Brookies x1991 on 2017-07-12
+  NEW: WASHINGTON L A-23 (315) - Tigers x602 on 2017-07-12
+  NEW: WASHINGTON L A-23 (315) - Tigers x602 on 2017-07-17
+  NEW: WASHINGTON L A-23 (315) - Rainbows x748 on 2017-07-18
+  NEW: WASHINGTON L A-23 (315) - Rainbows x250 on 2017-07-25
+  NEW: WASHINGTON L A-23 (315) - Rainbows x250 on 2017-07-31
+  NEW: WASHINGTON L A-23 (315) - Tigers x599 on 2017-07-31
+  NEW: WASHINGTON L A-23 (315) - Grayling x777 on 2017-09-26
+  UNMATCHED: WEBER R - Rainbows x100
+  UNMATCHED: WEBER R - Rainbows x201
+  UNMATCHED: WEBER R - Rainbows x201
+  UNMATCHED: WEBER R - Rainbows x200
+  UNMATCHED: WEBER R - Rainbows x100
+  UNMATCHED: WEBER R - Rainbows x200
+  UNMATCHED: WEBER R - Rainbows x200
+  UNMATCHED: WEBER R - Rainbows x100
+  UNMATCHED: WEBER R - Rainbows x200
+  UNMATCHED: WEBER R - Rainbows x201
+  UNMATCHED: WEBER R - Rainbows x201
+  UNMATCHED: WEBER R - Rainbows x100
+  UNMATCHED: WEBER R - Rainbows x99
+  UNMATCHED: WEBER R - Rainbows x200
+  UNMATCHED: WEBER R - Rainbows x200
+  NEW: WHISKEY ISLAND L BR3 (63) - Grayling x999 on 2017-09-26
+  UNMATCHED: WHITNEY RES - Rainbows x4233
+  UNMATCHED: WHITNEY RES - Tigers x12017
+  UNMATCHED: WHITNEY RES - Rainbows x2000
+  UNMATCHED: WHITNEY RES - Tigers x7992
+  UNMATCHED: WINDSOR POND - Rainbows x74
+  UNMATCHED: WINDSOR POND - Rainbows x125
+  UNMATCHED: WINDSOR POND - Rainbows x0
+  NEW: YELLOWPINE,LOWER W66 (522) - Brookies x210 on 2017-07-12
+
+Summit Summary: 129 new records, 15 unmatched
+
+=== PROCESSING DUCHESNE COUNTY ===
+  NEW: AUDRY L RC-45 (322) - Brookies x109 on 2017-07-09
+  NEW: BEARD L U-74 (430) - Brookies x465 on 2017-07-09
+  NEW: BECKY L WR-77 (567) - Brookies x341 on 2017-07-09
+  NEW: BEDGROUND L Z-46 (324) - Grayling x302 on 2017-09-25
+  NEW: BETSEY L X-7 (325) - Cutthroats x3998 on 2017-09-25
+  NEW: BIG DOG L X-32 (209) - Grayling x808 on 2017-09-25
+  UNMATCHED: BIG SANDWASH RES - Walleye x174100
+  UNMATCHED: BIG SANDWASH RES - Rainbows x9113
+  UNMATCHED: BIG SANDWASH RES - Rainbows x4678
+  UNMATCHED: BIG SANDWASH RES - Rainbows x2001
+  UNMATCHED: BIG SANDWASH RES - Brown Trout x2500
+  UNMATCHED: BIG SANDWASH RES - Rainbows x3497
+  UNMATCHED: BIG SANDWASH RES - Rainbows x3498
+  UNMATCHED: BIG SANDWASH RES - Brown Trout x7997
+  NEW: BLYTHE L Z-20 (119) - Brookies x691 on 2017-07-12
+  NEW: BONNIE L Z-6 (120) - Brookies x608 on 2017-07-12
+  NEW: BROOK L U-54 (432) - Brookies x1023 on 2017-07-09
+  UNMATCHED: BROWNS DRAW RES - Tigers x4300
+  UNMATCHED: BROWNS DRAW RES - Rainbows x19968
+  NEW: BUD L Z-2 (122) - Brookies x566 on 2017-07-12
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x399 on 2017-06-27
+  NEW: BUTTERFLY L Z-1 (123) - Tigers x300 on 2017-06-27
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x399 on 2017-07-05
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x399 on 2017-07-10
+  NEW: BUTTERFLY L Z-1 (123) - Brookies x503 on 2017-07-12
+  NEW: BUTTERFLY L Z-1 (123) - Tigers x399 on 2017-07-12
+  NEW: BUTTERFLY L Z-1 (123) - Tigers x399 on 2017-07-17
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x301 on 2017-07-17
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x300 on 2017-07-26
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x299 on 2017-07-31
+  NEW: BUTTERFLY L Z-1 (123) - Tigers x399 on 2017-07-31
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x299 on 2017-08-07
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x299 on 2017-08-14
+  NEW: BUTTERFLY L Z-1 (123) - Tigers x400 on 2017-08-14
+  NEW: BUTTERFLY L Z-1 (123) - Tigers x405 on 2017-08-17
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x399 on 2017-08-22
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x301 on 2017-08-28
+  NEW: CARROL L, UPPER X-18 (410) - Brookies x3519 on 2017-07-09
+  NEW: CIRQUE L WR-33 (661) - Grayling x681 on 2017-09-20
+  NEW: CRATER L X-94 (213) - Tigers x718 on 2017-07-11
+  NEW: D-19 (128) - Brookies x293 on 2017-07-12
+  NEW: D-26 (129) - Brookies x210 on 2017-07-12
+  NEW: DG- 6 (101) - Cutthroats x599 on 2017-09-25
+  NEW: DG- 9 (104) - Cutthroats x998 on 2017-09-25
+  NEW: DG-10 (105) - Cutthroats x998 on 2017-09-25
+  NEW: DG-14 (106) - Cutthroats x200 on 2017-09-25
+  NEW: DG-15 (107) - Cutthroats x200 on 2017-09-25
+  NEW: DG-16 (108) - Cutthroats x200 on 2017-09-25
+  NEW: DG-17 (109) - Cutthroats x443 on 2017-09-25
+  NEW: DIAMOND L U-39 (463) - Grayling x551 on 2017-09-20
+  NEW: DIVIDE L U-59 (442) - Cutthroats x1899 on 2017-09-25
+  NEW: EAST SLIDE L LF-44 (214) - Brookies x310 on 2017-07-09
+  NEW: FERN L X-5 (339) - Brookies x1446 on 2017-07-12
+  NEW: GATES L LF-34 (215) - Brookies x264 on 2017-07-09
+  NEW: GLADYS L X-128 (343) - Brookies x754 on 2017-07-12
+  NEW: GREEN MEADOW POND (499) - Cutthroats x389 on 2017-05-22
+  NEW: HEART L X-13 (346) - Cutthroats x569 on 2017-09-25
+  NEW: HELEN L X-126 (347) - Brookies x838 on 2017-07-12
+  NEW: HIDDEN L WR-63 (530) - Cutthroats x1323 on 2017-09-25
+  NEW: HOOVER L Z-10 (142) - Brookies x1404 on 2017-07-12
+  UNMATCHED: INDIAN CYN CR - Cutthroats x2022
+  NEW: JEAN L Z-41 (351) - Brookies x1991 on 2017-07-12
+  NEW: JOAN L Z-19 (145) - Brookies x1509 on 2017-07-12
+  UNMATCHED: LAKE CANYON L - Tigers x620
+  UNMATCHED: LAKE CANYON L - Cutthroats x900
+  NEW: LF-37 (223) - Brookies x310 on 2017-07-09
+  NEW: LILY PAD L X-2 (355) - Brookies x1006 on 2017-07-12
+  NEW: MARGIE L X-129 (358) - Brookies x754 on 2017-07-12
+  NEW: MARSHALL L Z-11 (150) - Brookies x1802 on 2017-07-12
+  NEW: MILK L Y-25 (574) - Brookies x1767 on 2017-07-09
+  NEW: MIRROR L Z-3 (151) - Rainbows x748 on 2017-06-26
+  NEW: MIRROR L Z-3 (151) - Tigers x500 on 2017-06-27
+  NEW: MIRROR L Z-3 (151) - Rainbows x999 on 2017-07-03
+  NEW: MIRROR L Z-3 (151) - Rainbows x750 on 2017-07-10
+  NEW: MIRROR L Z-3 (151) - Tigers x998 on 2017-07-12
+  NEW: MIRROR L Z-3 (151) - Brookies x3499 on 2017-07-12
+  NEW: MIRROR L Z-3 (151) - Tigers x998 on 2017-07-17
+  NEW: MIRROR L Z-3 (151) - Rainbows x750 on 2017-07-19
+  NEW: MIRROR L Z-3 (151) - Rainbows x1000 on 2017-07-25
+  NEW: MIRROR L Z-3 (151) - Rainbows x750 on 2017-07-31
+  NEW: MIRROR L Z-3 (151) - Tigers x998 on 2017-07-31
+  NEW: MIRROR L Z-3 (151) - Rainbows x750 on 2017-08-08
+  NEW: MIRROR L Z-3 (151) - Tigers x1000 on 2017-08-14
+  NEW: MIRROR L Z-3 (151) - Rainbows x750 on 2017-08-14
+  NEW: MIRROR L Z-3 (151) - Tigers x512 on 2017-08-17
+  NEW: MIRROR L Z-3 (151) - Rainbows x800 on 2017-08-22
+  NEW: MIRROR L Z-3 (151) - Rainbows x750 on 2017-08-28
+  NEW: MIRROR L Z-3 (151) - Rainbows x752 on 2017-09-07
+  UNMATCHED: MOON L - Tigers x20000
+  UNMATCHED: MOON L - Splake x10053
+  UNMATCHED: MOON L - Rainbows x6998
+  NEW: MOOSEHORN L Z-4 (152) - Tigers x200 on 2017-06-27
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x399 on 2017-06-27
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x399 on 2017-07-03
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x399 on 2017-07-10
+  NEW: MOOSEHORN L Z-4 (152) - Tigers x399 on 2017-07-12
+  NEW: MOOSEHORN L Z-4 (152) - Tigers x399 on 2017-07-17
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x401 on 2017-07-19
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x400 on 2017-07-25
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x400 on 2017-07-31
+  NEW: MOOSEHORN L Z-4 (152) - Tigers x399 on 2017-07-31
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x400 on 2017-08-08
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x400 on 2017-08-14
+  NEW: MOOSEHORN L Z-4 (152) - Tigers x531 on 2017-08-14
+  NEW: OGDEN L WR-5 (535) - Cutthroats x1397 on 2017-09-25
+  NEW: PASS L Z-5 (158) - Rainbows x401 on 2017-06-26
+  NEW: PASS L Z-5 (158) - Tigers x300 on 2017-06-27
+  NEW: PASS L Z-5 (158) - Rainbows x399 on 2017-07-03
+  NEW: PASS L Z-5 (158) - Rainbows x399 on 2017-07-10
+  NEW: PASS L Z-5 (158) - Brookies x503 on 2017-07-12
+  NEW: PASS L Z-5 (158) - Tigers x602 on 2017-07-12
+  NEW: PASS L Z-5 (158) - Tigers x602 on 2017-07-17
+  NEW: PASS L Z-5 (158) - Rainbows x401 on 2017-07-19
+  NEW: PASS L Z-5 (158) - Rainbows x400 on 2017-07-25
+  NEW: PASS L Z-5 (158) - Rainbows x400 on 2017-07-31
+  NEW: PASS L Z-5 (158) - Tigers x451 on 2017-07-31
+  NEW: PASS L Z-5 (158) - Rainbows x400 on 2017-08-08
+  NEW: PASS L Z-5 (158) - Tigers x400 on 2017-08-14
+  NEW: PASS L Z-5 (158) - Rainbows x400 on 2017-08-14
+  NEW: PASS L Z-5 (158) - Tigers x595 on 2017-08-17
+  NEW: PASS L Z-5 (158) - Rainbows x401 on 2017-08-22
+  NEW: PASS L Z-5 (158) - Rainbows x200 on 2017-08-28
+  NEW: PENNY NICKELL L U-98 (454) - Cutthroats x599 on 2017-09-25
+  NEW: PHINNEY L X-119 (364) - Brookies x1362 on 2017-07-12
+  NEW: PICTURE L X-82 (232) - Grayling x1600 on 2017-09-25
+  NEW: PINTO L X-22 (366) - Brookies x5092 on 2017-07-12
+  NEW: R C NO 1 LAKE WR-2 (544) - Cutthroats x1197 on 2017-09-25
+  NEW: RAINBOW L U-33 (456) - Brookies x3519 on 2017-07-09
+  UNMATCHED: RED CR RES - Rainbows x9994
+  UNMATCHED: RED CR RES - Tigers x4982
+  NEW: ROBB L WR-1 (656) - Brookies x434 on 2017-07-09
+  UNMATCHED: ROCK CR - Rainbows x1870
+  UNMATCHED: ROCK CR - Rainbows x1000
+  UNMATCHED: ROCK CR - Rainbows x500
+  NEW: ROCK II L X-97 (371) - Grayling x503 on 2017-09-25
+  NEW: SCOUT L Z-12 (160) - Rainbows x398 on 2017-06-26
+  NEW: SCOUT L Z-12 (160) - Rainbows x399 on 2017-07-05
+  NEW: SCOUT L Z-12 (160) - Rainbows x399 on 2017-07-10
+  NEW: SCOUT L Z-12 (160) - Brookies x1006 on 2017-07-12
+  NEW: SCOUT L Z-12 (160) - Rainbows x401 on 2017-07-19
+  NEW: SCOUT L Z-12 (160) - Rainbows x400 on 2017-07-25
+  NEW: SCOUT L Z-12 (160) - Rainbows x340 on 2017-07-31
+  NEW: SHALER L Z-34 (162) - Tigers x1300 on 2017-06-29
+  NEW: SHALER L Z-34 (162) - Cutthroats x1301 on 2017-09-25
+  NEW: SQUAW L X-95 (380) - Brookies x1054 on 2017-07-09
+  UNMATCHED: STARVATION RES - Kokanee x79868
+  UNMATCHED: STARVATION RES - Perch Yellow x530
+  UNMATCHED: STARVATION RES - Crappie Black x302
+  UNMATCHED: STARVATION RES - Rainbows x403
+  UNMATCHED: STARVATION RES - Rainbows x5300
+  UNMATCHED: STARVATION RES - Rainbows x3500
+  UNMATCHED: STARVATION RES - Rainbows x8200
+  UNMATCHED: STARVATION RES - Rainbows x8000
+  UNMATCHED: STARVATION RES - Crappie Black x100003
+  UNMATCHED: STARVATION RES - Rainbows x2160
+  UNMATCHED: STARVATION RES - Rainbows x4590
+  UNMATCHED: STARVATION RES - Rainbows x4523
+  UNMATCHED: STARVATION RES - Rainbows x2160
+  UNMATCHED: STARVATION RES - Rainbows x4320
+  UNMATCHED: STARVATION RES - Rainbows x4320
+  UNMATCHED: STARVATION RES - Rainbows x2160
+  UNMATCHED: STARVATION RES - Rainbows x4320
+  UNMATCHED: STARVATION RES - Rainbows x810
+  NEW: STEWART L X-79 (234) - Cutthroats x953 on 2017-09-25
+  UNMATCHED: STRAWBERRY R - Rainbows x502
+  UNMATCHED: STRAWBERRY R - Rainbows x500
+  NEW: TAYLOR L WR-8 (548) - Brookies x2511 on 2017-07-09
+  NEW: THOMPSON L RC-8 (382) - Brookies x1411 on 2017-07-09
+  NEW: TUNGSTEN L X-107 (579) - Cutthroats x998 on 2017-09-25
+  NEW: U- 19 (459) - Brookies x1519 on 2017-07-09
+  NEW: U- 79 (657) - Brookies x822 on 2017-07-09
+  NEW: U- 89 (470) - Brookies x620 on 2017-07-09
+  NEW: U-100 (662) - Grayling x790 on 2017-09-20
+  NEW: WALK-UP L WR-55 (551) - Brookies x1860 on 2017-07-09
+  NEW: X- 24 (422) - Cutthroats x1774 on 2017-09-25
+  NEW: X- 25 (423) - Cutthroats x1700 on 2017-09-25
+  NEW: X- 26 (424) - Brookies x419 on 2017-07-09
+  NEW: X- 50 (668) - Grayling x213 on 2017-09-25
+  NEW: X- 57 (580) - Brookies x899 on 2017-07-09
+  NEW: X- 60 (582) - Cutthroats x798 on 2017-09-25
+  NEW: X- 78 (243) - Cutthroats x1700 on 2017-09-25
+  NEW: X- 86 (248) - Brookies x713 on 2017-07-09
+  NEW: X-105 (583) - Cutthroats x1700 on 2017-09-25
+  NEW: Y-19 (587) - Brookies x543 on 2017-07-09
+
+Duchesne Summary: 143 new records, 9 unmatched
+
+=== 2017 IMPORT SUMMARY ===
+Total new records: 272
+Total unmatched lakes: 24
+Ambiguous matches: 0
+CSV file updated: /Volumes/OLAF EXT/jedwoodx/repos/uintas/data/utah_dwr_stocking_data.csv
+Run completed at: 2025-08-25 17:19:52

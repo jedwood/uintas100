@@ -1,0 +1,476 @@
+=== IMPORTING 2012 STOCKING DATA ===
+Started at: 2025-08-25 18:38:45
+
+
+=== PROCESSING SUMMIT COUNTY ===
+  NEW: ALEXANDER L A-1 (250) - Brookies x2300 on 2012-06-25
+  NEW: BAKER L BR-45 (42) - Tigers x363 on 2012-07-04
+  NEW: BEAR L G-7 (171) - Brookies x1996 on 2012-07-10
+  UNMATCHED: BEAR R, E FK - Rainbows x299
+  UNMATCHED: BEAR R, E FK - Rainbows x300
+  UNMATCHED: BEAR R, E FK - Rainbows x300
+  NEW: BEAVER CR (32) - Rainbows x202 on 2012-05-24
+  NEW: BEAVER CR (32) - Rainbows x200 on 2012-06-11
+  NEW: BEAVER CR (32) - Rainbows x201 on 2012-06-26
+  NEW: BEAVER CR (32) - Rainbows x200 on 2012-07-10
+  NEW: BEAVER CR (32) - Rainbows x100 on 2012-07-25
+  NEW: BEAVER CR (32) - Rainbows x101 on 2012-08-09
+  NEW: BEAVER L A-17 (252) - Brookies x260 on 2012-06-25
+  NEW: BEAVER L BR-10 (32) - Rainbows x2017 on 2012-05-23
+  NEW: BOBS L G-73 (600) - Tigers x1319 on 2012-07-04
+  NEW: BOURBON L BR-1 (33) - Brookies x195 on 2012-06-25
+  NEW: BR-24 (38) - Cutthroats x498 on 2012-09-24
+  NEW: BR-34 (658) - Cutthroats x500 on 2012-09-24
+  NEW: BR-43 (651) - Tigers x206 on 2012-07-04
+  NEW: BR-44 (597) - Tigers x351 on 2012-07-04
+  NEW: BR-50 (44) - Brookies x608 on 2012-06-25
+  NEW: BRIDGER L G-20 (173) - Rainbows x1999 on 2012-05-22
+  NEW: BRIDGER L G-20 (173) - Rainbows x1625 on 2012-06-05
+  NEW: BRIDGER L G-20 (173) - Rainbows x1499 on 2012-06-26
+  NEW: BRIDGER L G-20 (173) - Brookies x2400 on 2012-07-12
+  NEW: BRIDGER L G-20 (173) - Rainbows x1500 on 2012-07-18
+  NEW: BRIDGER L G-20 (173) - Rainbows x1375 on 2012-08-08
+  NEW: BROOK L A-20 (257) - Brookies x109 on 2012-06-25
+  NEW: BUCKEYE L A-3 (258) - Brookies x493 on 2012-08-06
+  NEW: CAROL L W-51 (478) - Brookies x260 on 2012-06-25
+  NEW: CASTLE L G-11 (624) - Tigers x605 on 2012-07-04
+  NEW: CHINA L G-21 (174) - Brookies x7812 on 2012-07-10
+  NEW: CLEGG L A-47 (260) - Brookies x499 on 2012-06-25
+  NEW: CLYDE L A-28 (629) - Brookies x1606 on 2012-06-25
+  NEW: COFFIN L GR-144 (65) - Tigers x4501 on 2012-07-04
+  NEW: CRYSTAL L A-51 (262) - Brookies x998 on 2012-06-25
+  NEW: CUBERANT NO 1 W-42 (480) - Brookies x391 on 2012-06-25
+  NEW: DEAN L W-35 (485) - Brookies x1497 on 2012-06-25
+  UNMATCHED: DEER VALLEY LAKES - Rainbows x399
+  UNMATCHED: DEER VALLEY LAKES - Rainbows x301
+  UNMATCHED: DEER VALLEY LAKES - Tigers x1015
+  UNMATCHED: DEER VALLEY LAKES - Rainbows x1499
+  NEW: DIAMOND L A-22 (264) - Brookies x304 on 2012-06-25
+  NEW: DIVIDE L NO 1 A-36 (630) - Brookies x521 on 2012-06-25
+  NEW: ELKHORN L W-64 (487) - Brookies x96 on 2012-08-06
+  NEW: ERICKSON L,SOUTH W25 (488) - Brookies x760 on 2012-06-25
+  NEW: FAITH L A-16 (266) - Brookies x151 on 2012-08-06
+  NEW: FIRE L A-14 (267) - Cutthroats x1999 on 2012-09-17
+  NEW: G- 13 (181) - Brookies x803 on 2012-07-10
+  NEW: G- 40 (663) - Brookies x304 on 2012-07-10
+  NEW: G- 51 (191) - Brookies x849 on 2012-08-06
+  NEW: G- 56 (194) - Brookies x151 on 2012-08-06
+  NEW: G- 60 (196) - Tigers x254 on 2012-07-04
+  NEW: G- 61 (197) - Brookies x397 on 2012-08-06
+  NEW: G- 64 (645) - Tigers x339 on 2012-07-04
+  NEW: G- 68 (653) - Brookies x412 on 2012-06-25
+  NEW: G- 68 (653) - Brookies x412 on 2012-07-10
+  NEW: G- 71 (609) - Brookies x304 on 2012-06-25
+  NEW: G- 71 (609) - Brookies x304 on 2012-07-10
+  NEW: G- 74 (611) - Brookies x301 on 2012-08-06
+  UNMATCHED: GR-129 - Brookies x493
+  NEW: GR-152 (80) - Brookies x493 on 2012-08-06
+  NEW: GR-162 (72) - Brookies x694 on 2012-07-10
+  NEW: GR-173 (76) - Brookies x391 on 2012-07-10
+  UNMATCHED: HAYDEN FK - Rainbows x300
+  UNMATCHED: HAYDEN FK - Rainbows x300
+  UNMATCHED: HAYDEN FK - Rainbows x300
+  NEW: HAYDEN L BR-36 (47) - Cutthroats x1501 on 2012-09-24
+  NEW: HAYSTACK L A-9 (269) - Brookies x890 on 2012-06-25
+  NEW: HESSIE L G-18 (199) - Tigers x1319 on 2012-07-04
+  NEW: HESSIE L G-18 (199) - Tigers x1320 on 2012-07-10
+  NEW: HIDDEN L A-15 (270) - Brookies x1000 on 2012-08-06
+  NEW: HOOP L (93) - Rainbows x8000 on 2012-05-21
+  NEW: HOOP L (93) - Rainbows x2001 on 2012-05-21
+  NEW: HOOP L (93) - Rainbows x1499 on 2012-06-26
+  NEW: ISLAND L A-57 (273) - Cutthroats x7001 on 2012-09-17
+  NEW: JAMES L A-31 (275) - Brookies x195 on 2012-06-25
+  NEW: JERRY L W-28 (494) - Brookies x397 on 2012-08-06
+  NEW: JEWELL L BR-38 (49) - Tigers x242 on 2012-07-04
+  NEW: JEWELL L BR-38 (49) - Cutthroats x500 on 2012-09-24
+  NEW: JOHN L A-30 (276) - Brookies x304 on 2012-06-25
+  NEW: JUNIOR L A-56 (277) - Cutthroats x600 on 2012-09-17
+  UNMATCHED: KIMBALL CR - Tigers x3045
+  NEW: LILLIAN L A-43 (280) - Brookies x304 on 2012-06-25
+  NEW: LILLY L A-58 (281) - Rainbows x202 on 2012-05-29
+  NEW: LILLY L A-58 (281) - Tigers x99 on 2012-06-02
+  NEW: LILLY L A-58 (281) - Rainbows x271 on 2012-06-11
+  NEW: LILLY L A-58 (281) - Tigers x260 on 2012-06-11
+  NEW: LILLY L A-58 (281) - Rainbows x201 on 2012-06-25
+  NEW: LILLY L A-58 (281) - Rainbows x200 on 2012-07-02
+  NEW: LILLY L A-58 (281) - Rainbows x200 on 2012-07-09
+  NEW: LILLY L A-58 (281) - Tigers x101 on 2012-07-11
+  NEW: LILLY L A-58 (281) - Rainbows x200 on 2012-07-16
+  NEW: LILLY L A-58 (281) - Tigers x101 on 2012-07-18
+  NEW: LILLY L A-58 (281) - Rainbows x200 on 2012-07-23
+  NEW: LILLY L A-58 (281) - Tigers x101 on 2012-07-26
+  NEW: LILLY L A-58 (281) - Rainbows x200 on 2012-07-31
+  NEW: LILLY L A-58 (281) - Tigers x101 on 2012-08-07
+  NEW: LILLY L A-58 (281) - Rainbows x202 on 2012-08-13
+  NEW: LILLY L A-58 (281) - Tigers x101 on 2012-08-20
+  NEW: LILLY L A-58 (281) - Tigers x301 on 2012-08-27
+  NEW: LILLY L A-58 (281) - Rainbows x302 on 2012-08-28
+  NEW: LILLY L A-58 (281) - Tigers x200 on 2012-09-07
+  NEW: LILLY L A-58 (281) - Tigers x101 on 2012-09-13
+  NEW: LILY L BR-11 (51) - Rainbows x1202 on 2012-05-22
+  NEW: LILY L BR-11 (51) - Rainbows x1202 on 2012-06-27
+  NEW: LILY L BR-11 (51) - Rainbows x1097 on 2012-07-17
+  NEW: LILY L LOWER A-25 (282) - Brookies x304 on 2012-06-25
+  NEW: LORENA L BR-46 (43) - Brookies x1206 on 2012-08-06
+  NEW: LOST L A-59 (287) - Rainbows x2505 on 2012-05-29
+  NEW: LOST L A-59 (287) - Brookies x1497 on 2012-06-25
+  NEW: LOST L A-59 (287) - Rainbows x1999 on 2012-06-27
+  NEW: LOST L A-59 (287) - Brookies x4000 on 2012-07-12
+  NEW: LOST L A-59 (287) - Brookies x3000 on 2012-08-06
+  NEW: LOVENIA L W-23 (498) - Brookies x301 on 2012-08-06
+  NEW: LYMAN L, LOWER G-25 (618) - Rainbows x1002 on 2012-05-22
+  NEW: LYMAN L, LOWER G-25 (618) - Rainbows x1000 on 2012-06-19
+  NEW: LYMAN L, LOWER G-25 (618) - Brookies x4000 on 2012-07-12
+  NEW: LYMAN L, LOWER G-25 (618) - Rainbows x1000 on 2012-07-18
+  NEW: LYMAN L, UPPER G-27 (619) - Rainbows x1002 on 2012-05-22
+  NEW: LYMAN L, UPPER G-27 (619) - Rainbows x1000 on 2012-06-19
+  NEW: LYMAN L, UPPER G-27 (619) - Brookies x1200 on 2012-07-12
+  NEW: MARSH L G-19 (202) - Rainbows x5009 on 2012-05-22
+  NEW: MCPHETERS L BR-14 (53) - Cutthroats x5999 on 2012-09-24
+  NEW: NOTCH L W-36 (501) - Brookies x2995 on 2012-06-25
+  NEW: OLSON L W-32 (502) - Brookies x699 on 2012-08-06
+  NEW: OSTLER L BR-27 (56) - Cutthroats x4000 on 2012-09-24
+  NEW: P-11 (654) - Brookies x206 on 2012-08-06
+  NEW: PETIT L A-26 (295) - Brookies x206 on 2012-08-06
+  NEW: POT L A-8 (296) - Brookies x397 on 2012-08-06
+  NEW: PRIORD L BR-48 (57) - Tigers x2396 on 2012-07-04
+  UNMATCHED: PROVO R - Rainbows x253
+  UNMATCHED: PROVO R - Rainbows x257
+  UNMATCHED: PROVO R - Rainbows x250
+  UNMATCHED: PROVO R - Rainbows x250
+  NEW: QUARTER CORNER LG103 (655) - Rainbows x1202 on 2012-05-22
+  NEW: RAMONA L A-38 (297) - Brookies x499 on 2012-06-25
+  NEW: RED CASTLE L G-15 (205) - Tigers x2105 on 2012-07-04
+  NEW: ROCK L A-10 (298) - Brookies x795 on 2012-08-06
+  UNMATCHED: ROCKPORT RES - Rainbows x30085
+  UNMATCHED: ROCKPORT RES - Rainbows x10350
+  UNMATCHED: ROCKPORT RES - Rainbows x37740
+  UNMATCHED: ROCKPORT RES - Rainbows x10778
+  UNMATCHED: ROCKPORT RES - Rainbows x12800
+  UNMATCHED: ROCKPORT RES - Rainbows x6700
+  UNMATCHED: ROCKPORT RES - Rainbows x7200
+  UNMATCHED: ROCKPORT RES - Rainbows x6400
+  UNMATCHED: ROCKPORT RES - Rainbows x12236
+  UNMATCHED: ROCKPORT RES - Rainbows x6480
+  UNMATCHED: ROCKPORT RES - Rainbows x12464
+  UNMATCHED: ROCKPORT RES - Rainbows x6232
+  NEW: RUTH L BR-40 (58) - Brookies x499 on 2012-06-25
+  NEW: SCOW L BR-12 (61) - Brookies x1693 on 2012-06-25
+  NEW: SHADOW L A-52 (299) - Brookies x1411 on 2012-06-25
+  NEW: SHINGLE CR,EAST A-39 (301) - Tigers x399 on 2012-07-04
+  UNMATCHED: SMITH-MOREHOUSE RES - Rainbows x2000
+  UNMATCHED: SMITH-MOREHOUSE RES - Rainbows x2000
+  UNMATCHED: SMITH-MOREHOUSE RES - Rainbows x2001
+  UNMATCHED: SMITH-MOREHOUSE RES - Rainbows x2001
+  UNMATCHED: SMITH-MOREHOUSE RES - Rainbows x2000
+  UNMATCHED: SMITH-MOREHOUSE RES - Rainbows x2002
+  UNMATCHED: SMITH-MOREHOUSE RES - Grayling x7250
+  NEW: SPECTACLE L A-44 (305) - Brookies x1411 on 2012-06-25
+  NEW: STAR L A-42 (307) - Tigers x1851 on 2012-07-04
+  UNMATCHED: STATELINE RES - Rainbows x9072
+  UNMATCHED: STATELINE RES - Rainbows x949
+  UNMATCHED: STILLWATER FK - Rainbows x501
+  UNMATCHED: STILLWATER FK - Rainbows x500
+  UNMATCHED: STILLWATER FK - Rainbows x500
+  UNMATCHED: STILLWATER FK - Rainbows x502
+  NEW: TEAL L BR-32 (62) - Cutthroats x1501 on 2012-09-24
+  NEW: TEAPOT L A-60 (309) - Rainbows x304 on 2012-05-29
+  NEW: TEAPOT L A-60 (309) - Tigers x150 on 2012-06-02
+  NEW: TEAPOT L A-60 (309) - Tigers x439 on 2012-06-11
+  NEW: TEAPOT L A-60 (309) - Rainbows x299 on 2012-06-11
+  NEW: TEAPOT L A-60 (309) - Rainbows x300 on 2012-06-25
+  NEW: TEAPOT L A-60 (309) - Rainbows x300 on 2012-07-02
+  NEW: TEAPOT L A-60 (309) - Rainbows x300 on 2012-07-09
+  NEW: TEAPOT L A-60 (309) - Tigers x149 on 2012-07-11
+  NEW: TEAPOT L A-60 (309) - Brookies x600 on 2012-07-12
+  NEW: TEAPOT L A-60 (309) - Rainbows x300 on 2012-07-16
+  NEW: TEAPOT L A-60 (309) - Tigers x150 on 2012-07-18
+  NEW: TEAPOT L A-60 (309) - Rainbows x300 on 2012-07-23
+  NEW: TEAPOT L A-60 (309) - Tigers x150 on 2012-07-26
+  NEW: TEAPOT L A-60 (309) - Rainbows x300 on 2012-07-31
+  NEW: TEAPOT L A-60 (309) - Brookies x2000 on 2012-08-06
+  NEW: TEAPOT L A-60 (309) - Rainbows x301 on 2012-08-06
+  NEW: TEAPOT L A-60 (309) - Tigers x150 on 2012-08-07
+  NEW: TEAPOT L A-60 (309) - Rainbows x299 on 2012-08-13
+  NEW: TEAPOT L A-60 (309) - Tigers x150 on 2012-08-20
+  NEW: TEAPOT L A-60 (309) - Rainbows x253 on 2012-08-21
+  NEW: TEAPOT L A-60 (309) - Tigers x400 on 2012-08-27
+  NEW: TEAPOT L A-60 (309) - Rainbows x300 on 2012-08-28
+  NEW: TEAPOT L A-60 (309) - Tigers x250 on 2012-09-07
+  NEW: TEAPOT L A-60 (309) - Tigers x150 on 2012-09-13
+  NEW: TRIAL L A-61 (310) - Rainbows x708 on 2012-05-29
+  NEW: TRIAL L A-61 (310) - Tigers x399 on 2012-06-02
+  NEW: TRIAL L A-61 (310) - Tigers x451 on 2012-06-11
+  NEW: TRIAL L A-61 (310) - Rainbows x698 on 2012-06-11
+  NEW: TRIAL L A-61 (310) - Rainbows x683 on 2012-06-19
+  NEW: TRIAL L A-61 (310) - Rainbows x701 on 2012-06-27
+  NEW: TRIAL L A-61 (310) - Tigers x3105 on 2012-06-27
+  NEW: TRIAL L A-61 (310) - Rainbows x700 on 2012-07-02
+  NEW: TRIAL L A-61 (310) - Rainbows x700 on 2012-07-09
+  NEW: TRIAL L A-61 (310) - Tigers x421 on 2012-07-11
+  NEW: TRIAL L A-61 (310) - Brookies x8800 on 2012-07-12
+  NEW: TRIAL L A-61 (310) - Rainbows x700 on 2012-07-17
+  NEW: TRIAL L A-61 (310) - Tigers x352 on 2012-07-18
+  NEW: TRIAL L A-61 (310) - Rainbows x700 on 2012-07-23
+  NEW: TRIAL L A-61 (310) - Tigers x350 on 2012-07-26
+  NEW: TRIAL L A-61 (310) - Rainbows x700 on 2012-07-31
+  NEW: TRIAL L A-61 (310) - Rainbows x699 on 2012-08-06
+  NEW: TRIAL L A-61 (310) - Brookies x3494 on 2012-08-06
+  NEW: TRIAL L A-61 (310) - Tigers x350 on 2012-08-07
+  NEW: TRIAL L A-61 (310) - Rainbows x700 on 2012-08-13
+  NEW: TRIAL L A-61 (310) - Tigers x350 on 2012-08-20
+  NEW: TRIAL L A-61 (310) - Rainbows x704 on 2012-08-21
+  NEW: TRIAL L A-61 (310) - Tigers x499 on 2012-08-27
+  NEW: TRIAL L A-61 (310) - Rainbows x260 on 2012-08-28
+  NEW: TRIAL L A-61 (310) - Tigers x550 on 2012-09-07
+  NEW: TRIAL L A-61 (310) - Tigers x348 on 2012-09-13
+  NEW: TWIN L, LOWER A-33 (312) - Tigers x303 on 2012-07-04
+  NEW: W-16 (511) - Brookies x391 on 2012-06-25
+  NEW: W-52 (514) - Brookies x369 on 2012-06-25
+  NEW: W-53 (515) - Brookies x109 on 2012-06-25
+  NEW: WASHINGTON L A-23 (315) - Tigers x350 on 2012-06-02
+  NEW: WASHINGTON L A-23 (315) - Rainbows x700 on 2012-06-06
+  NEW: WASHINGTON L A-23 (315) - Rainbows x683 on 2012-06-19
+  NEW: WASHINGTON L A-23 (315) - Tigers x4050 on 2012-06-27
+  NEW: WASHINGTON L A-23 (315) - Rainbows x701 on 2012-06-27
+  NEW: WASHINGTON L A-23 (315) - Rainbows x700 on 2012-07-02
+  NEW: WASHINGTON L A-23 (315) - Rainbows x700 on 2012-07-09
+  NEW: WASHINGTON L A-23 (315) - Tigers x351 on 2012-07-11
+  NEW: WASHINGTON L A-23 (315) - Brookies x4400 on 2012-07-12
+  NEW: WASHINGTON L A-23 (315) - Rainbows x700 on 2012-07-16
+  NEW: WASHINGTON L A-23 (315) - Tigers x350 on 2012-07-18
+  NEW: WASHINGTON L A-23 (315) - Rainbows x700 on 2012-07-23
+  NEW: WASHINGTON L A-23 (315) - Tigers x350 on 2012-07-26
+  NEW: WASHINGTON L A-23 (315) - Rainbows x700 on 2012-07-30
+  NEW: WASHINGTON L A-23 (315) - Brookies x2000 on 2012-08-06
+  NEW: WATSON L A-27 (316) - Brookies x608 on 2012-06-25
+  UNMATCHED: WEBER R - Rainbows x251
+  UNMATCHED: WEBER R - Rainbows x124
+  UNMATCHED: WEBER R - Rainbows x251
+  UNMATCHED: WEBER R - Rainbows x250
+  UNMATCHED: WEBER R - Rainbows x125
+  UNMATCHED: WEBER R - Rainbows x250
+  UNMATCHED: WEBER R - Rainbows x125
+  UNMATCHED: WEBER R - Rainbows x125
+  UNMATCHED: WEBER R - Rainbows x125
+  UNMATCHED: WEBER R - Rainbows x225
+  UNMATCHED: WEBER R - Rainbows x125
+  UNMATCHED: WEBER R - Rainbows x130
+  UNMATCHED: WEBER R - Rainbows x132
+  UNMATCHED: WEBER R - Rainbows x132
+  UNMATCHED: WEBER R - Rainbows x25
+  UNMATCHED: WEBER R - Rainbows x126
+  UNMATCHED: WHITNEY RES - Rainbows x4008
+  UNMATCHED: WHITNEY RES - Rainbows x3002
+  UNMATCHED: WHITNEY RES - Rainbows x1995
+  UNMATCHED: WHITNEY RES - Tigers x16000
+  UNMATCHED: WHITNEY RES - Tigers x8000
+  UNMATCHED: WHITNEY RES - Tigers x16000
+  UNMATCHED: WHITNEY RES - Cutthroats x40189
+  UNMATCHED: WHITNEY RES - Cutthroats x26685
+  NEW: YELLOWPINE,LOWER W66 (522) - Brookies x195 on 2012-06-25
+  NEW: YELLOWPINE,UPPER W65 (523) - Brookies x304 on 2012-06-25
+
+Summit Summary: 202 new records, 12 unmatched
+
+=== PROCESSING DUCHESNE COUNTY ===
+  NEW: ATWINE L X-64 (208) - Brookies x1345 on 2012-07-10
+  NEW: ATWOOD L U-16 (428) - Goldens x10301 on 2012-09-24
+  NEW: AUDRY L RC-45 (322) - Brookies x998 on 2012-06-25
+  NEW: BEARD L U-74 (430) - Brookies x456 on 2012-07-09
+  NEW: BECKY L WR-77 (567) - Brookies x326 on 2012-07-09
+  UNMATCHED: BIG SANDWASH RES - Rainbows x5120
+  UNMATCHED: BIG SANDWASH RES - Rainbows x5120
+  UNMATCHED: BIG SANDWASH RES - Rainbows x252
+  UNMATCHED: BIG SANDWASH RES - Rainbows x1210
+  UNMATCHED: BIG SANDWASH RES - Rainbows x2310
+  UNMATCHED: BIG SANDWASH RES - Rainbows x1209
+  UNMATCHED: BIG SANDWASH RES - Rainbows x1250
+  UNMATCHED: BIG SANDWASH RES - Rainbows x6015
+  NEW: BLUEBELL L X-110 (568) - Brookies x3298 on 2012-07-10
+  NEW: BONNIE L Z-6 (120) - Brookies x564 on 2012-06-25
+  UNMATCHED: BROWNS DRAW RES - Rainbows x35520
+  NEW: BUD L Z-2 (122) - Brookies x608 on 2012-06-25
+  NEW: BUTTERFLY L Z-1 (123) - Tigers x200 on 2012-06-02
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x300 on 2012-06-06
+  NEW: BUTTERFLY L Z-1 (123) - Tigers x200 on 2012-06-11
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x399 on 2012-06-11
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x300 on 2012-06-20
+  NEW: BUTTERFLY L Z-1 (123) - Brookies x521 on 2012-06-25
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x300 on 2012-06-27
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x300 on 2012-07-02
+  NEW: BUTTERFLY L Z-1 (123) - Tigers x200 on 2012-07-11
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x600 on 2012-07-16
+  NEW: BUTTERFLY L Z-1 (123) - Tigers x200 on 2012-07-18
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x300 on 2012-07-23
+  NEW: BUTTERFLY L Z-1 (123) - Tigers x200 on 2012-07-26
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x300 on 2012-07-31
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x301 on 2012-08-06
+  NEW: BUTTERFLY L Z-1 (123) - Brookies x2493 on 2012-08-06
+  NEW: BUTTERFLY L Z-1 (123) - Tigers x99 on 2012-08-07
+  NEW: BUTTERFLY L Z-1 (123) - Tigers x101 on 2012-08-07
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x299 on 2012-08-13
+  NEW: BUTTERFLY L Z-1 (123) - Tigers x600 on 2012-08-20
+  NEW: BUTTERFLY L Z-1 (123) - Rainbows x308 on 2012-08-21
+  NEW: BUTTERFLY L Z-1 (123) - Tigers x301 on 2012-08-27
+  NEW: BUTTERFLY L Z-1 (123) - Tigers x200 on 2012-09-07
+  NEW: BUTTERFLY L Z-1 (123) - Tigers x101 on 2012-09-13
+  NEW: CARROL L, UPPER X-18 (410) - Brookies x3494 on 2012-07-09
+  UNMATCHED: CEDARVIEW RES - Brookies x10695
+  UNMATCHED: CEDARVIEW RES - Rainbows x15006
+  NEW: CHAIN L NO 2 U-2 (435) - Brookies x1194 on 2012-07-09
+  NEW: CHAIN L NO 3 U-1 (436) - Brookies x3125 on 2012-07-09
+  NEW: D-19 (128) - Brookies x195 on 2012-06-25
+  NEW: D-26 (129) - Brookies x499 on 2012-06-25
+  NEW: DALE L Z-39 (332) - Brookies x1497 on 2012-06-25
+  NEW: DAYNES L Z-38 (333) - Brookies x1996 on 2012-06-25
+  NEW: DEAN L Z-40 (334) - Brookies x890 on 2012-06-25
+  NEW: DENISE L WR-9 (557) - Brookies x260 on 2012-07-09
+  UNMATCHED: DUCHESNE R, N FK - Rainbows x1084
+  UNMATCHED: DUCHESNE R, N FK - Rainbows x1000
+  UNMATCHED: DUCHESNE R, N FK - Rainbows x1200
+  NEW: EAST SLIDE L LF-44 (214) - Brookies x304 on 2012-07-10
+  NEW: EMERALD L D-20 (134) - Brookies x65 on 2012-06-25
+  NEW: EVERMAN L Z-36 (623) - Brookies x795 on 2012-08-06
+  NEW: GATES L LF-34 (215) - Brookies x260 on 2012-07-10
+  NEW: HOOVER L Z-10 (142) - Brookies x1411 on 2012-06-25
+  NEW: JACK L X-133 (350) - Brookies x130 on 2012-06-25
+  NEW: JOAN L Z-19 (145) - Brookies x1493 on 2012-08-06
+  NEW: JORDAN L Z-35 (146) - Brookies x2302 on 2012-08-06
+  UNMATCHED: LAKE FK R - Rainbows x433
+  UNMATCHED: LAKE FK R - Rainbows x306
+  UNMATCHED: LAKE FK R - Brookies x5394
+  UNMATCHED: LAKE FK R - Brookies x5301
+  NEW: LAMBERT L LF-21 (219) - Brookies x694 on 2012-07-10
+  NEW: LECONTE L Z-33 (147) - Tigers x1900 on 2012-07-04
+  NEW: LF-43 (224) - Brookies x260 on 2012-07-10
+  NEW: LILY PAD,LOWER DG-26 (115) - Brookies x456 on 2012-07-09
+  NEW: LILY PAD,UPPER DG-25 (116) - Brookies x1194 on 2012-07-09
+  NEW: LITTLE DOG L X-33 (227) - Brookies x694 on 2012-07-10
+  NEW: MABA L Z-8 (148) - Brookies x603 on 2012-08-06
+  NEW: MARGIE L X-129 (358) - Brookies x760 on 2012-06-25
+  NEW: MARSELL L X-11 (149) - Brookies x1801 on 2012-06-25
+  NEW: MIRROR L Z-3 (151) - Rainbows x759 on 2012-05-29
+  NEW: MIRROR L Z-3 (151) - Tigers x460 on 2012-06-02
+  NEW: MIRROR L Z-3 (151) - Rainbows x755 on 2012-06-11
+  NEW: MIRROR L Z-3 (151) - Rainbows x751 on 2012-06-20
+  NEW: MIRROR L Z-3 (151) - Rainbows x751 on 2012-06-25
+  NEW: MIRROR L Z-3 (151) - Brookies x7378 on 2012-06-25
+  NEW: MIRROR L Z-3 (151) - Rainbows x750 on 2012-07-02
+  NEW: MIRROR L Z-3 (151) - Rainbows x750 on 2012-07-09
+  NEW: MIRROR L Z-3 (151) - Tigers x400 on 2012-07-11
+  NEW: MIRROR L Z-3 (151) - Tigers x401 on 2012-07-18
+  NEW: MIRROR L Z-3 (151) - Rainbows x750 on 2012-07-18
+  NEW: MIRROR L Z-3 (151) - Rainbows x750 on 2012-07-23
+  NEW: MIRROR L Z-3 (151) - Tigers x401 on 2012-07-26
+  NEW: MIRROR L Z-3 (151) - Rainbows x750 on 2012-07-31
+  NEW: MIRROR L Z-3 (151) - Brookies x3000 on 2012-08-06
+  NEW: MIRROR L Z-3 (151) - Tigers x317 on 2012-08-07
+  NEW: MIRROR L Z-3 (151) - Tigers x398 on 2012-08-07
+  NEW: MIRROR L Z-3 (151) - Rainbows x1322 on 2012-08-09
+  NEW: MIRROR L Z-3 (151) - Tigers x400 on 2012-08-20
+  NEW: MIRROR L Z-3 (151) - Tigers x600 on 2012-08-27
+  NEW: MIRROR L Z-3 (151) - Rainbows x750 on 2012-08-28
+  NEW: MIRROR L Z-3 (151) - Tigers x600 on 2012-09-07
+  NEW: MIRROR L Z-3 (151) - Tigers x399 on 2012-09-13
+  UNMATCHED: MOON L - Rainbows x1375
+  UNMATCHED: MOON L - Rainbows x1375
+  UNMATCHED: MOON L - Tigers x9945
+  NEW: MOOSEHORN L Z-4 (152) - Tigers x200 on 2012-06-02
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x300 on 2012-06-06
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x370 on 2012-06-20
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x300 on 2012-07-02
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x300 on 2012-07-09
+  NEW: MOOSEHORN L Z-4 (152) - Tigers x200 on 2012-07-11
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x300 on 2012-07-17
+  NEW: MOOSEHORN L Z-4 (152) - Tigers x200 on 2012-07-18
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x300 on 2012-07-23
+  NEW: MOOSEHORN L Z-4 (152) - Tigers x200 on 2012-07-26
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x300 on 2012-07-31
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x301 on 2012-08-06
+  NEW: MOOSEHORN L Z-4 (152) - Tigers x165 on 2012-08-07
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x299 on 2012-08-13
+  NEW: MOOSEHORN L Z-4 (152) - Tigers x202 on 2012-08-20
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x308 on 2012-08-21
+  NEW: MOOSEHORN L Z-4 (152) - Tigers x200 on 2012-08-27
+  NEW: MOOSEHORN L Z-4 (152) - Rainbows x351 on 2012-08-28
+  NEW: MOOSEHORN L Z-4 (152) - Tigers x101 on 2012-09-07
+  NEW: MOOSEHORN L Z-4 (152) - Tigers x101 on 2012-09-13
+  NEW: MORAT 1 L Z-31 (153) - Tigers x1500 on 2012-07-04
+  NEW: MT EMMONS L U-13 (452) - Goldens x996 on 2012-09-24
+  NEW: MUD L X-66 (228) - Brookies x369 on 2012-07-10
+  NEW: PACKARD L Z-15 (157) - Brookies x904 on 2012-08-06
+  NEW: PASS L Z-5 (158) - Rainbows x304 on 2012-05-29
+  NEW: PASS L Z-5 (158) - Tigers x249 on 2012-06-02
+  NEW: PASS L Z-5 (158) - Rainbows x356 on 2012-06-11
+  NEW: PASS L Z-5 (158) - Tigers x299 on 2012-06-11
+  NEW: PASS L Z-5 (158) - Rainbows x351 on 2012-06-20
+  NEW: PASS L Z-5 (158) - Brookies x911 on 2012-06-25
+  NEW: PASS L Z-5 (158) - Rainbows x349 on 2012-06-27
+  NEW: PASS L Z-5 (158) - Rainbows x350 on 2012-07-02
+  NEW: PASS L Z-5 (158) - Rainbows x350 on 2012-07-09
+  NEW: PASS L Z-5 (158) - Tigers x200 on 2012-07-11
+  NEW: PASS L Z-5 (158) - Rainbows x350 on 2012-07-17
+  NEW: PASS L Z-5 (158) - Tigers x200 on 2012-07-18
+  NEW: PASS L Z-5 (158) - Rainbows x350 on 2012-07-23
+  NEW: PASS L Z-5 (158) - Rainbows x300 on 2012-07-23
+  NEW: PASS L Z-5 (158) - Tigers x200 on 2012-07-26
+  NEW: PASS L Z-5 (158) - Rainbows x350 on 2012-07-31
+  NEW: PASS L Z-5 (158) - Rainbows x352 on 2012-08-06
+  NEW: PASS L Z-5 (158) - Brookies x2493 on 2012-08-06
+  NEW: PASS L Z-5 (158) - Tigers x200 on 2012-08-07
+  NEW: PASS L Z-5 (158) - Rainbows x350 on 2012-08-13
+  NEW: PASS L Z-5 (158) - Tigers x291 on 2012-08-20
+  NEW: PASS L Z-5 (158) - Rainbows x99 on 2012-08-21
+  NEW: PASS L Z-5 (158) - Tigers x200 on 2012-08-27
+  NEW: PASS L Z-5 (158) - Tigers x200 on 2012-09-07
+  NEW: PASS L Z-5 (158) - Tigers x101 on 2012-09-13
+  NEW: PINE ISLAND L X-8 (365) - Brookies x8398 on 2012-06-25
+  NEW: POLE CR L (540) - Rainbows x578 on 2012-06-27
+  NEW: POLE CR L (540) - Rainbows x290 on 2012-07-23
+  UNMATCHED: RED CR RES - Rainbows x15660
+  UNMATCHED: RED CR RES - Tigers x5015
+  NEW: ROBB L WR-1 (656) - Brookies x412 on 2012-07-09
+  NEW: SCOUT L Z-12 (160) - Rainbows x349 on 2012-06-26
+  NEW: SCOUT L Z-12 (160) - Rainbows x300 on 2012-07-02
+  NEW: SCOUT L Z-12 (160) - Rainbows x350 on 2012-07-10
+  NEW: SCOUT L Z-12 (160) - Brookies x2000 on 2012-07-12
+  NEW: SCOUT L Z-12 (160) - Rainbows x350 on 2012-07-16
+  NEW: SCOUT L Z-12 (160) - Rainbows x350 on 2012-07-23
+  NEW: SCOUT L Z-12 (160) - Rainbows x650 on 2012-07-30
+  NEW: SCOUT L Z-12 (160) - Rainbows x242 on 2012-08-06
+  NEW: SONNY L X-12 (164) - Brookies x391 on 2012-06-25
+  NEW: SQUAW L X-95 (380) - Brookies x1042 on 2012-06-25
+  UNMATCHED: STARVATION RES - Rainbows x9938
+  UNMATCHED: STARVATION RES - Rainbows x8967
+  UNMATCHED: STARVATION RES - Rainbows x9283
+  UNMATCHED: STARVATION RES - Rainbows x9283
+  UNMATCHED: STARVATION RES - Rainbows x9246
+  UNMATCHED: STARVATION RES - Rainbows x5392
+  NEW: SURVEY L RC-20 (381) - Brookies x998 on 2012-06-25
+  NEW: TAYLOR L WR-8 (548) - Brookies x2496 on 2012-07-09
+  NEW: U- 19 (459) - Brookies x1497 on 2012-07-09
+  NEW: U- 19 (459) - Goldens x1511 on 2012-09-24
+  NEW: U- 22 (650) - Brookies x608 on 2012-07-09
+  NEW: U- 79 (657) - Brookies x803 on 2012-07-09
+  NEW: U- 89 (470) - Brookies x608 on 2012-07-09
+  UNMATCHED: UINTA R - Rainbows x641
+  UNMATCHED: UINTA R - Rainbows x641
+  UNMATCHED: UINTA R - Rainbows x640
+  UNMATCHED: UINTA R - Rainbows x700
+  NEW: WALK-UP L WR-55 (551) - Brookies x1845 on 2012-07-09
+  NEW: WILDER L Z-13 (168) - Brookies x391 on 2012-06-25
+  NEW: WYMAN L Z-14 (125) - Brookies x998 on 2012-06-25
+  NEW: X- 57 (580) - Brookies x890 on 2012-07-10
+  NEW: Y-19 (587) - Brookies x521 on 2012-07-10
+  UNMATCHED: YELLOWSTONE R - Rainbows x456
+  UNMATCHED: YELLOWSTONE R - Rainbows x455
+
+Duchesne Summary: 156 new records, 10 unmatched
+
+=== 2012 IMPORT SUMMARY ===
+Total new records: 358
+Total unmatched lakes: 22
+Ambiguous matches: 0
+CSV file updated: /Volumes/OLAF EXT/jedwoodx/repos/uintas/data/utah_dwr_stocking_data.csv
+Run completed at: 2025-08-25 18:38:46

@@ -1,0 +1,400 @@
+water_name,county,raw_species,standardized_species,quantity,length,stock_date,source_year,lake_id,match_type,match_details
+ALEXANDER L A-1,SUMMIT,BROOK TROUT,Brookies,2305,2.29,2017-07-12,2017,250,exact,Matched on letter-number: A-1
+BEAR R,SUMMIT,RAINBOW,Rainbows,399,10.03,2017-06-27,2017,,none,No match found
+BEAR R,SUMMIT,RAINBOW,Rainbows,300,10.6,2017-07-05,2017,,none,No match found
+BEAR R,SUMMIT,RAINBOW,Rainbows,100,10.98,2017-07-17,2017,,none,No match found
+BEAR R,SUMMIT,RAINBOW,Rainbows,100,10.68,2017-07-31,2017,,none,No match found
+"BEAR R, E FK",SUMMIT,RAINBOW,Rainbows,300,10.6,2017-07-05,2017,,none,No match found
+"BEAR R, E FK",SUMMIT,RAINBOW,Rainbows,299,10.98,2017-07-17,2017,,none,No match found
+"BEAR R, E FK",SUMMIT,RAINBOW,Rainbows,299,10.68,2017-07-31,2017,,none,No match found
+BEAVER CR,SUMMIT,RAINBOW,Rainbows,201,9.73,2017-06-28,2017,32,medium,Partial match: BEAVER CREEK <-> BEAVER
+BEAVER CR,SUMMIT,RAINBOW,Rainbows,200,10.96,2017-07-05,2017,32,medium,Partial match: BEAVER CREEK <-> BEAVER
+BEAVER CR,SUMMIT,RAINBOW,Rainbows,200,10.98,2017-07-19,2017,32,medium,Partial match: BEAVER CREEK <-> BEAVER
+BEAVER CR,SUMMIT,RAINBOW,Rainbows,200,10.77,2017-07-25,2017,32,medium,Partial match: BEAVER CREEK <-> BEAVER
+BEAVER CR,SUMMIT,RAINBOW,Rainbows,201,10.68,2017-08-07,2017,32,medium,Partial match: BEAVER CREEK <-> BEAVER
+BEAVER L BR-10,SUMMIT,RAINBOW,Rainbows,2000,10.24,2017-06-21,2017,32,exact,Matched on letter-number: BR-10
+BETH L A-6,SUMMIT,BROOK TROUT,Brookies,503,2.29,2017-07-12,2017,253,exact,Matched on letter-number: A-6
+BLUE L A-5,SUMMIT,BROOK TROUT,Brookies,608,2.29,2017-07-12,2017,255,exact,Matched on letter-number: A-5
+BOOKER L A-35,SUMMIT,BROOK TROUT,Brookies,398,2.29,2017-07-12,2017,256,exact,Matched on letter-number: A-35
+BR-24,SUMMIT,TIGER TROUT,Tigers,248,2.63,2017-07-11,2017,38,exact,Matched on letter-number: BR-24
+BR-55,SUMMIT,BROOK TROUT,Brookies,230,2.29,2017-07-12,2017,660,exact,Matched on letter-number: BR-55
+BRIDGER L G-20,SUMMIT,RAINBOW,Rainbows,1999,9.87,2017-06-07,2017,173,exact,Matched on letter-number: G-20
+BRIDGER L G-20,SUMMIT,RAINBOW,Rainbows,1506,10.01,2017-06-19,2017,173,exact,Matched on letter-number: G-20
+BRIDGER L G-20,SUMMIT,RAINBOW,Rainbows,1499,10.07,2017-06-27,2017,173,exact,Matched on letter-number: G-20
+BRIDGER L G-20,SUMMIT,BROOK TROUT,Brookies,2095,2.29,2017-07-12,2017,173,exact,Matched on letter-number: G-20
+BRIDGER L G-20,SUMMIT,RAINBOW,Rainbows,1499,10.98,2017-07-17,2017,173,exact,Matched on letter-number: G-20
+BRIDGER L G-20,SUMMIT,RAINBOW,Rainbows,1499,10.68,2017-08-07,2017,173,exact,Matched on letter-number: G-20
+CHINA L G-21,SUMMIT,BROOK TROUT,Brookies,6929,2.53,2017-07-09,2017,174,exact,Matched on letter-number: G-21
+CLIFF L G-5,SUMMIT,TIGER TROUT,Tigers,3300,2.71,2017-06-29,2017,175,exact,Matched on letter-number: G-5
+COFFIN L GR-144,SUMMIT,TIGER TROUT,Tigers,2000,2.71,2017-06-29,2017,65,exact,Matched on letter-number: GR-144
+CRYSTAL L A-51,SUMMIT,BROOK TROUT,Brookies,1006,2.29,2017-07-12,2017,262,exact,Matched on letter-number: A-51
+DEER VALLEY LAKES,SUMMIT,RAINBOW,Rainbows,377,8.9,2017-05-03,2017,,none,No match found
+DEER VALLEY LAKES,SUMMIT,RAINBOW,Rainbows,375,8.94,2017-05-24,2017,,none,No match found
+DEER VALLEY LAKES,SUMMIT,WIPER,Wiper,520,9.87,2017-06-01,2017,,none,No match found
+DEER VALLEY LAKES,SUMMIT,WIPER,Wiper,520,9.87,2017-06-01,2017,,none,No match found
+DEER VALLEY LAKES,SUMMIT,RAINBOW,Rainbows,375,8.94,2017-06-05,2017,,none,No match found
+DEER VALLEY LAKES,SUMMIT,RAINBOW,Rainbows,375,8.94,2017-06-20,2017,,none,No match found
+DEER VALLEY LAKES,SUMMIT,RAINBOW,Rainbows,749,9.54,2017-07-20,2017,,none,No match found
+DEER VALLEY LAKES,SUMMIT,RAINBOW,Rainbows,752,10.34,2017-08-07,2017,,none,No match found
+DEER VALLEY LAKES,SUMMIT,TIGER TROUT,Tigers,3041,6.35,2017-09-19,2017,,none,No match found
+DIVIDE L NO 1 A-36,SUMMIT,BROOK TROUT,Brookies,524,2.29,2017-07-12,2017,630,exact,Matched on letter-number: A-36
+DOLLAR L G-2,SUMMIT,TIGER TROUT,Tigers,1000,2.71,2017-06-29,2017,176,exact,Matched on letter-number: G-2
+ECHO RES,SUMMIT,WALLEYE,Walleye,77000,0.28,2017-04-14,2017,,none,No match found
+ECHO RES,SUMMIT,RAINBOW,Rainbows,4914,9.71,2017-04-14,2017,,none,No match found
+ECHO RES,SUMMIT,RAINBOW,Rainbows,4942,9.71,2017-04-14,2017,,none,No match found
+ECHO RES,SUMMIT,RAINBOW,Rainbows,5215,9.71,2017-04-14,2017,,none,No match found
+ECHO RES,SUMMIT,WALLEYE,Walleye,18350,0.28,2017-04-19,2017,,none,No match found
+ECHO RES,SUMMIT,RAINBOW,Rainbows,10292,9.31,2017-05-01,2017,,none,No match found
+ECHO RES,SUMMIT,RAINBOW,Rainbows,8772,9.9,2017-05-01,2017,,none,No match found
+ECHO RES,SUMMIT,RAINBOW,Rainbows,4644,9.9,2017-05-01,2017,,none,No match found
+ECHO RES,SUMMIT,RAINBOW,Rainbows,11232,9.54,2017-05-02,2017,,none,No match found
+ELKHORN L W-64,SUMMIT,BROOK TROUT,Brookies,105,2.29,2017-07-12,2017,487,exact,Matched on letter-number: W-64
+"ERICKSON L,SOUTH W25",SUMMIT,BROOK TROUT,Brookies,859,2.29,2017-07-12,2017,488,exact,Matched on letter-number: W-25
+G- 40,SUMMIT,BROOK TROUT,Brookies,310,2.53,2017-07-09,2017,663,exact,Matched on letter-number: G-40
+G- 80,SUMMIT,BROOK TROUT,Brookies,84,2.29,2017-07-12,2017,614,exact,Matched on letter-number: G-80
+GR-119,SUMMIT,GRAYLING ARCTIC,Grayling,300,2.79,2017-09-20,2017,666,exact,Matched on letter-number: GR-119
+GR-145,SUMMIT,GRAYLING ARCTIC,Grayling,907,2.79,2017-09-26,2017,69,exact,Matched on letter-number: GR-145
+GR-162,SUMMIT,BROOK TROUT,Brookies,713,2.53,2017-07-09,2017,72,exact,Matched on letter-number: GR-162
+HAYDEN FK,SUMMIT,RAINBOW,Rainbows,300,10.03,2017-06-27,2017,,none,No match found
+HAYDEN FK,SUMMIT,RAINBOW,Rainbows,301,10.98,2017-07-17,2017,,none,No match found
+HAYDEN FK,SUMMIT,RAINBOW,Rainbows,299,10.68,2017-07-31,2017,,none,No match found
+HOOP L,SUMMIT,RAINBOW,Rainbows,3500,9.87,2017-06-08,2017,93,high,Matched on normalized word name: HOOP LAKE
+HOOP L,SUMMIT,RAINBOW,Rainbows,8010,3.82,2017-06-08,2017,93,high,Matched on normalized word name: HOOP LAKE
+ISLAND L G-9,SUMMIT,TIGER TROUT,Tigers,1000,2.71,2017-06-29,2017,200,exact,Matched on letter-number: G-9
+LILLY L A-58,SUMMIT,RAINBOW,Rainbows,198,10.24,2017-06-26,2017,281,exact,Matched on letter-number: A-58
+LILLY L A-58,SUMMIT,TIGER TROUT,Tigers,200,8.98,2017-06-27,2017,281,exact,Matched on letter-number: A-58
+LILLY L A-58,SUMMIT,RAINBOW,Rainbows,298,10.96,2017-07-03,2017,281,exact,Matched on letter-number: A-58
+LILLY L A-58,SUMMIT,RAINBOW,Rainbows,200,10.6,2017-07-10,2017,281,exact,Matched on letter-number: A-58
+LILLY L A-58,SUMMIT,TIGER TROUT,Tigers,399,9.92,2017-07-12,2017,281,exact,Matched on letter-number: A-58
+LILLY L A-58,SUMMIT,TIGER TROUT,Tigers,399,9.92,2017-07-17,2017,281,exact,Matched on letter-number: A-58
+LILLY L A-58,SUMMIT,RAINBOW,Rainbows,301,10.98,2017-07-19,2017,281,exact,Matched on letter-number: A-58
+LILLY L A-58,SUMMIT,RAINBOW,Rainbows,200,10.77,2017-07-25,2017,281,exact,Matched on letter-number: A-58
+LILLY L A-58,SUMMIT,TIGER TROUT,Tigers,399,9.92,2017-07-31,2017,281,exact,Matched on letter-number: A-58
+LILLY L A-58,SUMMIT,RAINBOW,Rainbows,199,10.68,2017-07-31,2017,281,exact,Matched on letter-number: A-58
+LILLY L A-58,SUMMIT,RAINBOW,Rainbows,201,10.68,2017-08-07,2017,281,exact,Matched on letter-number: A-58
+LILLY L A-58,SUMMIT,TIGER TROUT,Tigers,131,10.63,2017-08-14,2017,281,exact,Matched on letter-number: A-58
+LILLY L A-58,SUMMIT,RAINBOW,Rainbows,271,11.44,2017-08-22,2017,281,exact,Matched on letter-number: A-58
+LILY L BR-11,SUMMIT,RAINBOW,Rainbows,1196,9.87,2017-06-05,2017,51,exact,Matched on letter-number: BR-11
+LILY L BR-11,SUMMIT,RAINBOW,Rainbows,1200,10.24,2017-06-26,2017,51,exact,Matched on letter-number: BR-11
+LILY L BR-11,SUMMIT,RAINBOW,Rainbows,1100,10.77,2017-07-26,2017,51,exact,Matched on letter-number: BR-11
+LITTLE HIDDEN L W-21,SUMMIT,BROOK TROUT,Brookies,503,2.29,2017-07-12,2017,496,exact,Matched on letter-number: W-21
+LORENA L BR-46,SUMMIT,BROOK TROUT,Brookies,1194,2.29,2017-07-12,2017,43,exact,Matched on letter-number: BR-46
+LOST L A-59,SUMMIT,RAINBOW,Rainbows,2503,10.01,2017-06-20,2017,287,exact,Matched on letter-number: A-59
+LOST L A-59,SUMMIT,RAINBOW,Rainbows,1998,9.75,2017-07-03,2017,287,exact,Matched on letter-number: A-59
+LOST L A-59,SUMMIT,BROOK TROUT,Brookies,1991,2.29,2017-07-12,2017,287,exact,Matched on letter-number: A-59
+LOST L A-59,SUMMIT,TIGER TROUT,Tigers,637,10.68,2017-08-28,2017,287,exact,Matched on letter-number: A-59
+"LYMAN L, LOWER G-25",SUMMIT,RAINBOW,Rainbows,806,9.87,2017-06-12,2017,618,exact,Matched on letter-number: G-25
+"LYMAN L, LOWER G-25",SUMMIT,RAINBOW,Rainbows,799,10.07,2017-06-27,2017,618,exact,Matched on letter-number: G-25
+"LYMAN L, LOWER G-25",SUMMIT,BROOK TROUT,Brookies,3519,2.53,2017-07-09,2017,618,exact,Matched on letter-number: G-25
+"LYMAN L, LOWER G-25",SUMMIT,RAINBOW,Rainbows,1400,10.77,2017-07-26,2017,618,exact,Matched on letter-number: G-25
+"LYMAN L, UPPER G-27",SUMMIT,RAINBOW,Rainbows,1001,9.87,2017-06-12,2017,619,exact,Matched on letter-number: G-27
+"LYMAN L, UPPER G-27",SUMMIT,RAINBOW,Rainbows,1000,10.07,2017-06-27,2017,619,exact,Matched on letter-number: G-27
+"LYMAN L, UPPER G-27",SUMMIT,TIGER TROUT,Tigers,1000,2.71,2017-06-27,2017,619,exact,Matched on letter-number: G-27
+"LYMAN L, UPPER G-27",SUMMIT,BROOK TROUT,Brookies,1023,2.53,2017-07-09,2017,619,exact,Matched on letter-number: G-27
+MARSH L G-19,SUMMIT,RAINBOW,Rainbows,4462,9.87,2017-06-07,2017,202,exact,Matched on letter-number: G-19
+MARSH L G-19,SUMMIT,RAINBOW,Rainbows,541,9.87,2017-06-07,2017,202,exact,Matched on letter-number: G-19
+P-11,SUMMIT,BROOK TROUT,Brookies,210,2.29,2017-07-12,2017,654,exact,Matched on letter-number: P-11
+PRICE DAM,SUMMIT,RAINBOW,Rainbows,75,10.01,2017-06-19,2017,,none,No match found
+PROVO R,SUMMIT,RAINBOW,Rainbows,250,10.03,2017-06-27,2017,,none,No match found
+PROVO R,SUMMIT,RAINBOW,Rainbows,250,10.6,2017-07-10,2017,,none,No match found
+PROVO R,SUMMIT,RAINBOW,Rainbows,250,10.77,2017-07-25,2017,,none,No match found
+PROVO R,SUMMIT,RAINBOW,Rainbows,250,10.68,2017-08-07,2017,,none,No match found
+QUARTER CORNER LG103,SUMMIT,RAINBOW,Rainbows,1208,10.6,2017-06-06,2017,655,exact,Matched on letter-number: G-103
+RED CASTLE L G-15,SUMMIT,TIGER TROUT,Tigers,8750,2.71,2017-06-28,2017,205,exact,Matched on letter-number: G-15
+RED CASTLE L G-15,SUMMIT,TIGER TROUT,Tigers,8032,2.63,2017-07-11,2017,205,exact,Matched on letter-number: G-15
+"RED CASTLE,EAST G-17",SUMMIT,TIGER TROUT,Tigers,2098,2.63,2017-07-11,2017,177,exact,Matched on letter-number: G-17
+"RED CASTLE,UPPER G16",SUMMIT,TIGER TROUT,Tigers,2567,2.63,2017-07-11,2017,183,exact,Matched on letter-number: G-16
+REIDS L W-38,SUMMIT,BROOK TROUT,Brookies,503,2.29,2017-07-12,2017,503,exact,Matched on letter-number: W-38
+ROCK L A-10,SUMMIT,TIGER TROUT,Tigers,400,2.71,2017-06-29,2017,298,exact,Matched on letter-number: A-10
+ROCKPORT RES,SUMMIT,RAINBOW,Rainbows,4004,10.44,2017-10-17,2017,,none,No match found
+ROCKPORT RES,SUMMIT,RAINBOW,Rainbows,9230,7.06,2017-10-17,2017,,none,No match found
+ROCKPORT RES,SUMMIT,RAINBOW,Rainbows,2345,7.2,2017-10-17,2017,,none,No match found
+ROCKPORT RES,SUMMIT,RAINBOW,Rainbows,21440,7.2,2017-10-17,2017,,none,No match found
+ROCKPORT RES,SUMMIT,RAINBOW,Rainbows,3518,7.2,2017-10-17,2017,,none,No match found
+ROCKPORT RES,SUMMIT,RAINBOW,Rainbows,7810,7.06,2017-10-17,2017,,none,No match found
+ROCKPORT RES,SUMMIT,RAINBOW,Rainbows,22720,7.06,2017-10-17,2017,,none,No match found
+ROCKPORT RES,SUMMIT,RAINBOW,Rainbows,3050,7.43,2017-10-18,2017,,none,No match found
+ROCKPORT RES,SUMMIT,RAINBOW,Rainbows,401,14.22,2017-11-13,2017,,none,No match found
+RUTH L BR-40,SUMMIT,BROOK TROUT,Brookies,503,2.29,2017-07-12,2017,58,exact,Matched on letter-number: BR-40
+SALAMANDER L BR-26,SUMMIT,BROOK TROUT,Brookies,398,2.29,2017-07-12,2017,60,exact,Matched on letter-number: BR-26
+SCOW L BR-12,SUMMIT,BROOK TROUT,Brookies,1697,2.29,2017-07-12,2017,61,exact,Matched on letter-number: BR-12
+SMITH-MOREHOUSE RES,SUMMIT,KOKANEE,Kokanee,12382,3.27,2017-05-14,2017,,none,No match found
+SMITH-MOREHOUSE RES,SUMMIT,RAINBOW,Rainbows,2040,9.93,2017-05-17,2017,,none,No match found
+SMITH-MOREHOUSE RES,SUMMIT,RAINBOW,Rainbows,2040,9.93,2017-05-22,2017,,none,No match found
+SMITH-MOREHOUSE RES,SUMMIT,RAINBOW,Rainbows,1560,9.87,2017-06-05,2017,,none,No match found
+SMITH-MOREHOUSE RES,SUMMIT,RAINBOW,Rainbows,1798,10.01,2017-06-20,2017,,none,No match found
+SMITH-MOREHOUSE RES,SUMMIT,RAINBOW,Rainbows,1203,9.73,2017-06-28,2017,,none,No match found
+SMITH-MOREHOUSE RES,SUMMIT,RAINBOW,Rainbows,1267,10.96,2017-07-05,2017,,none,No match found
+SMITH-MOREHOUSE RES,SUMMIT,RAINBOW,Rainbows,1699,10.98,2017-07-19,2017,,none,No match found
+SMITH-MOREHOUSE RES,SUMMIT,RAINBOW,Rainbows,1500,10.77,2017-07-25,2017,,none,No match found
+SMITH-MOREHOUSE RES,SUMMIT,RAINBOW,Rainbows,1501,10.68,2017-08-07,2017,,none,No match found
+SMITH-MOREHOUSE RES,SUMMIT,RAINBOW,Rainbows,1000,11.44,2017-08-21,2017,,none,No match found
+SMITH-MOREHOUSE RES,SUMMIT,GRAYLING ARCTIC,Grayling,22200,2.79,2017-09-19,2017,,none,No match found
+SMITHS FK PASS L G14,SUMMIT,TIGER TROUT,Tigers,2608,2.63,2017-07-11,2017,182,exact,Matched on letter-number: G-14
+STATELINE RES,SUMMIT,RAINBOW,Rainbows,4160,9.87,2017-06-05,2017,,none,No match found
+STATELINE RES,SUMMIT,RAINBOW,Rainbows,3780,10.6,2017-06-06,2017,,none,No match found
+STATELINE RES,SUMMIT,RAINBOW,Rainbows,2140,9.87,2017-06-07,2017,,none,No match found
+STILLWATER FK,SUMMIT,RAINBOW,Rainbows,149,10.03,2017-06-27,2017,,none,No match found
+STILLWATER FK,SUMMIT,RAINBOW,Rainbows,399,10.6,2017-07-05,2017,,none,No match found
+STILLWATER FK,SUMMIT,RAINBOW,Rainbows,401,10.98,2017-07-17,2017,,none,No match found
+STILLWATER FK,SUMMIT,RAINBOW,Rainbows,400,10.68,2017-07-31,2017,,none,No match found
+STILLWATER FK,SUMMIT,RAINBOW,Rainbows,400,11.02,2017-08-14,2017,,none,No match found
+SUMMIT L GR-5,SUMMIT,GRAYLING ARCTIC,Grayling,949,2.79,2017-09-20,2017,642,exact,Matched on letter-number: GR-5
+TAMARACK L GR-2,SUMMIT,TIGER TROUT,Tigers,1877,2.63,2017-07-11,2017,406,exact,Matched on letter-number: GR-2
+TEAPOT L A-60,SUMMIT,RAINBOW,Rainbows,501,10.24,2017-06-26,2017,309,exact,Matched on letter-number: A-60
+TEAPOT L A-60,SUMMIT,TIGER TROUT,Tigers,300,8.98,2017-06-27,2017,309,exact,Matched on letter-number: A-60
+TEAPOT L A-60,SUMMIT,RAINBOW,Rainbows,500,10.96,2017-07-03,2017,309,exact,Matched on letter-number: A-60
+TEAPOT L A-60,SUMMIT,RAINBOW,Rainbows,250,10.6,2017-07-10,2017,309,exact,Matched on letter-number: A-60
+TEAPOT L A-60,SUMMIT,BROOK TROUT,Brookies,503,2.29,2017-07-12,2017,309,exact,Matched on letter-number: A-60
+TEAPOT L A-60,SUMMIT,TIGER TROUT,Tigers,602,9.92,2017-07-12,2017,309,exact,Matched on letter-number: A-60
+TEAPOT L A-60,SUMMIT,TIGER TROUT,Tigers,602,9.92,2017-07-17,2017,309,exact,Matched on letter-number: A-60
+TEAPOT L A-60,SUMMIT,RAINBOW,Rainbows,249,10.98,2017-07-19,2017,309,exact,Matched on letter-number: A-60
+TEAPOT L A-60,SUMMIT,RAINBOW,Rainbows,450,10.77,2017-07-25,2017,309,exact,Matched on letter-number: A-60
+TEAPOT L A-60,SUMMIT,RAINBOW,Rainbows,351,10.68,2017-07-31,2017,309,exact,Matched on letter-number: A-60
+TEAPOT L A-60,SUMMIT,TIGER TROUT,Tigers,451,9.92,2017-07-31,2017,309,exact,Matched on letter-number: A-60
+TEAPOT L A-60,SUMMIT,RAINBOW,Rainbows,351,10.68,2017-08-07,2017,309,exact,Matched on letter-number: A-60
+TEAPOT L A-60,SUMMIT,RAINBOW,Rainbows,251,11.02,2017-08-14,2017,309,exact,Matched on letter-number: A-60
+TEAPOT L A-60,SUMMIT,TIGER TROUT,Tigers,600,10.63,2017-08-14,2017,309,exact,Matched on letter-number: A-60
+TEAPOT L A-60,SUMMIT,RAINBOW,Rainbows,251,11.44,2017-08-22,2017,309,exact,Matched on letter-number: A-60
+TEAPOT L A-60,SUMMIT,RAINBOW,Rainbows,249,11.44,2017-08-28,2017,309,exact,Matched on letter-number: A-60
+TOMAHAWK,SUMMIT,RAINBOW,Rainbows,224,9.93,2017-05-30,2017,,none,No match found
+TOMAHAWK,SUMMIT,RAINBOW,Rainbows,100,10.01,2017-06-19,2017,,none,No match found
+TRIAL L A-61,SUMMIT,RAINBOW,Rainbows,1538,10.03,2017-06-27,2017,310,exact,Matched on letter-number: A-61
+TRIAL L A-61,SUMMIT,TIGER TROUT,Tigers,500,8.98,2017-06-27,2017,310,exact,Matched on letter-number: A-61
+TRIAL L A-61,SUMMIT,RAINBOW,Rainbows,1499,9.75,2017-07-03,2017,310,exact,Matched on letter-number: A-61
+TRIAL L A-61,SUMMIT,RAINBOW,Rainbows,750,10.6,2017-07-10,2017,310,exact,Matched on letter-number: A-61
+TRIAL L A-61,SUMMIT,BROOK TROUT,Brookies,4002,2.29,2017-07-12,2017,310,exact,Matched on letter-number: A-61
+TRIAL L A-61,SUMMIT,TIGER TROUT,Tigers,998,9.92,2017-07-12,2017,310,exact,Matched on letter-number: A-61
+TRIAL L A-61,SUMMIT,TIGER TROUT,Tigers,998,9.92,2017-07-17,2017,310,exact,Matched on letter-number: A-61
+TRIAL L A-61,SUMMIT,RAINBOW,Rainbows,748,10.98,2017-07-18,2017,310,exact,Matched on letter-number: A-61
+TRIAL L A-61,SUMMIT,RAINBOW,Rainbows,750,10.77,2017-07-25,2017,310,exact,Matched on letter-number: A-61
+TRIAL L A-61,SUMMIT,TIGER TROUT,Tigers,998,9.92,2017-07-31,2017,310,exact,Matched on letter-number: A-61
+TRIAL L A-61,SUMMIT,RAINBOW,Rainbows,750,10.68,2017-07-31,2017,310,exact,Matched on letter-number: A-61
+TRIAL L A-61,SUMMIT,RAINBOW,Rainbows,750,11.02,2017-08-08,2017,310,exact,Matched on letter-number: A-61
+TRIAL L A-61,SUMMIT,TIGER TROUT,Tigers,1000,10.49,2017-08-14,2017,310,exact,Matched on letter-number: A-61
+TRIAL L A-61,SUMMIT,RAINBOW,Rainbows,750,11.02,2017-08-14,2017,310,exact,Matched on letter-number: A-61
+TRIAL L A-61,SUMMIT,TIGER TROUT,Tigers,859,10.63,2017-08-17,2017,310,exact,Matched on letter-number: A-61
+TRIAL L A-61,SUMMIT,RAINBOW,Rainbows,1299,11.44,2017-08-28,2017,310,exact,Matched on letter-number: A-61
+TRIAL L A-61,SUMMIT,GRAYLING ARCTIC,Grayling,592,2.79,2017-09-25,2017,310,exact,Matched on letter-number: A-61
+TRIAL L A-61,SUMMIT,GRAYLING ARCTIC,Grayling,1998,2.79,2017-09-26,2017,310,exact,Matched on letter-number: A-61
+TRIDENT L A-41,SUMMIT,BROOK TROUT,Brookies,398,2.29,2017-07-12,2017,311,exact,Matched on letter-number: A-41
+WASHINGTON L A-23,SUMMIT,RAINBOW,Rainbows,1451,10.03,2017-06-27,2017,315,exact,Matched on letter-number: A-23
+WASHINGTON L A-23,SUMMIT,TIGER TROUT,Tigers,442,8.98,2017-06-27,2017,315,exact,Matched on letter-number: A-23
+WASHINGTON L A-23,SUMMIT,RAINBOW,Rainbows,999,10.96,2017-07-03,2017,315,exact,Matched on letter-number: A-23
+WASHINGTON L A-23,SUMMIT,RAINBOW,Rainbows,750,10.6,2017-07-10,2017,315,exact,Matched on letter-number: A-23
+WASHINGTON L A-23,SUMMIT,BROOK TROUT,Brookies,1991,2.29,2017-07-12,2017,315,exact,Matched on letter-number: A-23
+WASHINGTON L A-23,SUMMIT,TIGER TROUT,Tigers,602,9.92,2017-07-12,2017,315,exact,Matched on letter-number: A-23
+WASHINGTON L A-23,SUMMIT,TIGER TROUT,Tigers,602,9.92,2017-07-17,2017,315,exact,Matched on letter-number: A-23
+WASHINGTON L A-23,SUMMIT,RAINBOW,Rainbows,748,10.98,2017-07-18,2017,315,exact,Matched on letter-number: A-23
+WASHINGTON L A-23,SUMMIT,RAINBOW,Rainbows,250,10.77,2017-07-25,2017,315,exact,Matched on letter-number: A-23
+WASHINGTON L A-23,SUMMIT,RAINBOW,Rainbows,250,10.68,2017-07-31,2017,315,exact,Matched on letter-number: A-23
+WASHINGTON L A-23,SUMMIT,TIGER TROUT,Tigers,599,9.92,2017-07-31,2017,315,exact,Matched on letter-number: A-23
+WASHINGTON L A-23,SUMMIT,GRAYLING ARCTIC,Grayling,777,2.79,2017-09-26,2017,315,exact,Matched on letter-number: A-23
+WEBER R,SUMMIT,RAINBOW,Rainbows,100,9.73,2017-06-28,2017,,none,No match found
+WEBER R,SUMMIT,RAINBOW,Rainbows,201,9.73,2017-06-28,2017,,none,No match found
+WEBER R,SUMMIT,RAINBOW,Rainbows,201,9.73,2017-06-28,2017,,none,No match found
+WEBER R,SUMMIT,RAINBOW,Rainbows,200,10.98,2017-07-19,2017,,none,No match found
+WEBER R,SUMMIT,RAINBOW,Rainbows,100,10.98,2017-07-19,2017,,none,No match found
+WEBER R,SUMMIT,RAINBOW,Rainbows,200,10.98,2017-07-19,2017,,none,No match found
+WEBER R,SUMMIT,RAINBOW,Rainbows,200,10.77,2017-07-25,2017,,none,No match found
+WEBER R,SUMMIT,RAINBOW,Rainbows,100,10.77,2017-07-25,2017,,none,No match found
+WEBER R,SUMMIT,RAINBOW,Rainbows,200,10.77,2017-07-25,2017,,none,No match found
+WEBER R,SUMMIT,RAINBOW,Rainbows,201,10.68,2017-08-07,2017,,none,No match found
+WEBER R,SUMMIT,RAINBOW,Rainbows,201,10.68,2017-08-07,2017,,none,No match found
+WEBER R,SUMMIT,RAINBOW,Rainbows,100,10.68,2017-08-07,2017,,none,No match found
+WEBER R,SUMMIT,RAINBOW,Rainbows,99,11.44,2017-08-21,2017,,none,No match found
+WEBER R,SUMMIT,RAINBOW,Rainbows,200,11.44,2017-08-21,2017,,none,No match found
+WEBER R,SUMMIT,RAINBOW,Rainbows,200,11.44,2017-08-21,2017,,none,No match found
+WHISKEY ISLAND L BR3,SUMMIT,GRAYLING ARCTIC,Grayling,999,2.79,2017-09-26,2017,63,exact,Matched on letter-number: BR-3
+WHITNEY RES,SUMMIT,RAINBOW,Rainbows,4233,10.01,2017-06-12,2017,,none,No match found
+WHITNEY RES,SUMMIT,TIGER TROUT,Tigers,12017,3.83,2017-06-26,2017,,none,No match found
+WHITNEY RES,SUMMIT,RAINBOW,Rainbows,2000,10.6,2017-07-11,2017,,none,No match found
+WHITNEY RES,SUMMIT,TIGER TROUT,Tigers,7992,4.3,2017-07-18,2017,,none,No match found
+WINDSOR POND,SUMMIT,RAINBOW,Rainbows,74,9.93,2017-05-30,2017,,none,No match found
+WINDSOR POND,SUMMIT,RAINBOW,Rainbows,125,10.01,2017-06-19,2017,,none,No match found
+WINDSOR POND,SUMMIT,RAINBOW,Rainbows,0,10.01,2017-06-19,2017,,none,No match found
+"YELLOWPINE,LOWER W66",SUMMIT,BROOK TROUT,Brookies,210,2.29,2017-07-12,2017,522,exact,Matched on letter-number: W-66
+AUDRY L RC-45,DUCHESNE,BROOK TROUT,Brookies,109,2.53,2017-07-09,2017,322,exact,Matched on letter-number: RC-45
+BEARD L U-74,DUCHESNE,BROOK TROUT,Brookies,465,2.53,2017-07-09,2017,430,exact,Matched on letter-number: U-74
+BECKY L WR-77,DUCHESNE,BROOK TROUT,Brookies,341,2.53,2017-07-09,2017,567,exact,Matched on letter-number: WR-77
+BEDGROUND L Z-46,DUCHESNE,GRAYLING ARCTIC,Grayling,302,2.79,2017-09-25,2017,324,exact,Matched on letter-number: Z-46
+BETSEY L X-7,DUCHESNE,CUTTHROAT,Cutthroats,3998,1.62,2017-09-25,2017,325,exact,Matched on letter-number: X-7
+BIG DOG L X-32,DUCHESNE,GRAYLING ARCTIC,Grayling,808,2.79,2017-09-25,2017,209,exact,Matched on letter-number: X-32
+BIG SANDWASH RES,DUCHESNE,WALLEYE,Walleye,174100,0.28,2017-04-05,2017,,none,No match found
+BIG SANDWASH RES,DUCHESNE,RAINBOW,Rainbows,9113,5.9,2017-05-01,2017,,none,No match found
+BIG SANDWASH RES,DUCHESNE,RAINBOW,Rainbows,4678,5.9,2017-05-01,2017,,none,No match found
+BIG SANDWASH RES,DUCHESNE,RAINBOW,Rainbows,2001,11.08,2017-05-28,2017,,none,No match found
+BIG SANDWASH RES,DUCHESNE,BROWN TROUT,Brown Trout,2500,2.36,2017-05-29,2017,,none,No match found
+BIG SANDWASH RES,DUCHESNE,RAINBOW,Rainbows,3497,7.0,2017-05-29,2017,,none,No match found
+BIG SANDWASH RES,DUCHESNE,RAINBOW,Rainbows,3498,7.47,2017-05-29,2017,,none,No match found
+BIG SANDWASH RES,DUCHESNE,BROWN TROUT,Brown Trout,7997,3.31,2017-06-28,2017,,none,No match found
+BLYTHE L Z-20,DUCHESNE,BROOK TROUT,Brookies,691,2.29,2017-07-12,2017,119,exact,Matched on letter-number: Z-20
+BONNIE L Z-6,DUCHESNE,BROOK TROUT,Brookies,608,2.29,2017-07-12,2017,120,exact,Matched on letter-number: Z-6
+BROOK L U-54,DUCHESNE,BROOK TROUT,Brookies,1023,2.53,2017-07-09,2017,432,exact,Matched on letter-number: U-54
+BROWNS DRAW RES,DUCHESNE,TIGER TROUT,Tigers,4300,3.15,2017-05-02,2017,,none,No match found
+BROWNS DRAW RES,DUCHESNE,RAINBOW,Rainbows,19968,2.89,2017-05-11,2017,,none,No match found
+BUD L Z-2,DUCHESNE,BROOK TROUT,Brookies,566,2.29,2017-07-12,2017,122,exact,Matched on letter-number: Z-2
+BUTTERFLY L Z-1,DUCHESNE,RAINBOW,Rainbows,399,10.03,2017-06-27,2017,123,exact,Matched on letter-number: Z-1
+BUTTERFLY L Z-1,DUCHESNE,TIGER TROUT,Tigers,300,8.98,2017-06-27,2017,123,exact,Matched on letter-number: Z-1
+BUTTERFLY L Z-1,DUCHESNE,RAINBOW,Rainbows,399,10.6,2017-07-05,2017,123,exact,Matched on letter-number: Z-1
+BUTTERFLY L Z-1,DUCHESNE,RAINBOW,Rainbows,399,10.6,2017-07-10,2017,123,exact,Matched on letter-number: Z-1
+BUTTERFLY L Z-1,DUCHESNE,BROOK TROUT,Brookies,503,2.29,2017-07-12,2017,123,exact,Matched on letter-number: Z-1
+BUTTERFLY L Z-1,DUCHESNE,TIGER TROUT,Tigers,399,9.92,2017-07-12,2017,123,exact,Matched on letter-number: Z-1
+BUTTERFLY L Z-1,DUCHESNE,TIGER TROUT,Tigers,399,9.92,2017-07-17,2017,123,exact,Matched on letter-number: Z-1
+BUTTERFLY L Z-1,DUCHESNE,RAINBOW,Rainbows,301,10.98,2017-07-17,2017,123,exact,Matched on letter-number: Z-1
+BUTTERFLY L Z-1,DUCHESNE,RAINBOW,Rainbows,300,10.77,2017-07-26,2017,123,exact,Matched on letter-number: Z-1
+BUTTERFLY L Z-1,DUCHESNE,RAINBOW,Rainbows,299,10.68,2017-07-31,2017,123,exact,Matched on letter-number: Z-1
+BUTTERFLY L Z-1,DUCHESNE,TIGER TROUT,Tigers,399,9.92,2017-07-31,2017,123,exact,Matched on letter-number: Z-1
+BUTTERFLY L Z-1,DUCHESNE,RAINBOW,Rainbows,299,10.68,2017-08-07,2017,123,exact,Matched on letter-number: Z-1
+BUTTERFLY L Z-1,DUCHESNE,RAINBOW,Rainbows,299,11.02,2017-08-14,2017,123,exact,Matched on letter-number: Z-1
+BUTTERFLY L Z-1,DUCHESNE,TIGER TROUT,Tigers,400,10.63,2017-08-14,2017,123,exact,Matched on letter-number: Z-1
+BUTTERFLY L Z-1,DUCHESNE,TIGER TROUT,Tigers,405,10.63,2017-08-17,2017,123,exact,Matched on letter-number: Z-1
+BUTTERFLY L Z-1,DUCHESNE,RAINBOW,Rainbows,399,11.44,2017-08-22,2017,123,exact,Matched on letter-number: Z-1
+BUTTERFLY L Z-1,DUCHESNE,RAINBOW,Rainbows,301,11.44,2017-08-28,2017,123,exact,Matched on letter-number: Z-1
+"CARROL L, UPPER X-18",DUCHESNE,BROOK TROUT,Brookies,3519,2.53,2017-07-09,2017,410,exact,Matched on letter-number: X-18
+CIRQUE L WR-33,DUCHESNE,GRAYLING ARCTIC,Grayling,681,2.79,2017-09-20,2017,661,exact,Matched on letter-number: WR-33
+CRATER L X-94,DUCHESNE,TIGER TROUT,Tigers,718,2.63,2017-07-11,2017,213,exact,Matched on letter-number: X-94
+D-19,DUCHESNE,BROOK TROUT,Brookies,293,2.29,2017-07-12,2017,128,exact,Matched on letter-number: D-19
+D-26,DUCHESNE,BROOK TROUT,Brookies,210,2.29,2017-07-12,2017,129,exact,Matched on letter-number: D-26
+DG- 6,DUCHESNE,CUTTHROAT,Cutthroats,599,1.62,2017-09-25,2017,101,exact,Matched on letter-number: DG-6
+DG- 9,DUCHESNE,CUTTHROAT,Cutthroats,998,1.62,2017-09-25,2017,104,exact,Matched on letter-number: DG-9
+DG-10,DUCHESNE,CUTTHROAT,Cutthroats,998,1.62,2017-09-25,2017,105,exact,Matched on letter-number: DG-10
+DG-14,DUCHESNE,CUTTHROAT,Cutthroats,200,1.62,2017-09-25,2017,106,exact,Matched on letter-number: DG-14
+DG-15,DUCHESNE,CUTTHROAT,Cutthroats,200,1.62,2017-09-25,2017,107,exact,Matched on letter-number: DG-15
+DG-16,DUCHESNE,CUTTHROAT,Cutthroats,200,1.62,2017-09-25,2017,108,exact,Matched on letter-number: DG-16
+DG-17,DUCHESNE,CUTTHROAT,Cutthroats,443,1.62,2017-09-25,2017,109,exact,Matched on letter-number: DG-17
+DIAMOND L U-39,DUCHESNE,GRAYLING ARCTIC,Grayling,551,2.79,2017-09-20,2017,463,exact,Matched on letter-number: U-39
+DIVIDE L U-59,DUCHESNE,CUTTHROAT,Cutthroats,1899,1.62,2017-09-25,2017,442,exact,Matched on letter-number: U-59
+EAST SLIDE L LF-44,DUCHESNE,BROOK TROUT,Brookies,310,2.53,2017-07-09,2017,214,exact,Matched on letter-number: LF-44
+FERN L X-5,DUCHESNE,BROOK TROUT,Brookies,1446,2.29,2017-07-12,2017,339,exact,Matched on letter-number: X-5
+GATES L LF-34,DUCHESNE,BROOK TROUT,Brookies,264,2.53,2017-07-09,2017,215,exact,Matched on letter-number: LF-34
+GLADYS L X-128,DUCHESNE,BROOK TROUT,Brookies,754,2.29,2017-07-12,2017,343,exact,Matched on letter-number: X-128
+GREEN MEADOW POND,DUCHESNE,CUTTHROAT,Cutthroats,389,5.1,2017-05-22,2017,499,medium,Partial match: GREEN MEADOW POND <-> MEADOW
+HEART L X-13,DUCHESNE,CUTTHROAT,Cutthroats,569,1.62,2017-09-25,2017,346,exact,Matched on letter-number: X-13
+HELEN L X-126,DUCHESNE,BROOK TROUT,Brookies,838,2.29,2017-07-12,2017,347,exact,Matched on letter-number: X-126
+HIDDEN L WR-63,DUCHESNE,CUTTHROAT,Cutthroats,1323,1.62,2017-09-25,2017,530,exact,Matched on letter-number: WR-63
+HOOVER L Z-10,DUCHESNE,BROOK TROUT,Brookies,1404,2.29,2017-07-12,2017,142,exact,Matched on letter-number: Z-10
+INDIAN CYN CR,DUCHESNE,CUTTHROAT,Cutthroats,2022,2.04,2017-10-16,2017,,none,No match found
+JEAN L Z-41,DUCHESNE,BROOK TROUT,Brookies,1991,2.29,2017-07-12,2017,351,exact,Matched on letter-number: Z-41
+JOAN L Z-19,DUCHESNE,BROOK TROUT,Brookies,1509,2.29,2017-07-12,2017,145,exact,Matched on letter-number: Z-19
+LAKE CANYON L,DUCHESNE,TIGER TROUT,Tigers,620,3.69,2017-05-26,2017,,none,No match found
+LAKE CANYON L,DUCHESNE,CUTTHROAT,Cutthroats,900,4.85,2017-05-26,2017,,none,No match found
+LF-37,DUCHESNE,BROOK TROUT,Brookies,310,2.53,2017-07-09,2017,223,exact,Matched on letter-number: LF-37
+LILY PAD L X-2,DUCHESNE,BROOK TROUT,Brookies,1006,2.29,2017-07-12,2017,355,exact,Matched on letter-number: X-2
+MARGIE L X-129,DUCHESNE,BROOK TROUT,Brookies,754,2.29,2017-07-12,2017,358,exact,Matched on letter-number: X-129
+MARSHALL L Z-11,DUCHESNE,BROOK TROUT,Brookies,1802,2.29,2017-07-12,2017,150,exact,Matched on letter-number: Z-11
+MILK L Y-25,DUCHESNE,BROOK TROUT,Brookies,1767,2.53,2017-07-09,2017,574,exact,Matched on letter-number: Y-25
+MIRROR L Z-3,DUCHESNE,RAINBOW,Rainbows,748,10.24,2017-06-26,2017,151,exact,Matched on letter-number: Z-3
+MIRROR L Z-3,DUCHESNE,TIGER TROUT,Tigers,500,8.98,2017-06-27,2017,151,exact,Matched on letter-number: Z-3
+MIRROR L Z-3,DUCHESNE,RAINBOW,Rainbows,999,10.96,2017-07-03,2017,151,exact,Matched on letter-number: Z-3
+MIRROR L Z-3,DUCHESNE,RAINBOW,Rainbows,750,10.6,2017-07-10,2017,151,exact,Matched on letter-number: Z-3
+MIRROR L Z-3,DUCHESNE,TIGER TROUT,Tigers,998,9.92,2017-07-12,2017,151,exact,Matched on letter-number: Z-3
+MIRROR L Z-3,DUCHESNE,BROOK TROUT,Brookies,3499,2.29,2017-07-12,2017,151,exact,Matched on letter-number: Z-3
+MIRROR L Z-3,DUCHESNE,TIGER TROUT,Tigers,998,9.92,2017-07-17,2017,151,exact,Matched on letter-number: Z-3
+MIRROR L Z-3,DUCHESNE,RAINBOW,Rainbows,750,10.98,2017-07-19,2017,151,exact,Matched on letter-number: Z-3
+MIRROR L Z-3,DUCHESNE,RAINBOW,Rainbows,1000,10.77,2017-07-25,2017,151,exact,Matched on letter-number: Z-3
+MIRROR L Z-3,DUCHESNE,RAINBOW,Rainbows,750,10.68,2017-07-31,2017,151,exact,Matched on letter-number: Z-3
+MIRROR L Z-3,DUCHESNE,TIGER TROUT,Tigers,998,9.92,2017-07-31,2017,151,exact,Matched on letter-number: Z-3
+MIRROR L Z-3,DUCHESNE,RAINBOW,Rainbows,750,11.02,2017-08-08,2017,151,exact,Matched on letter-number: Z-3
+MIRROR L Z-3,DUCHESNE,TIGER TROUT,Tigers,1000,10.63,2017-08-14,2017,151,exact,Matched on letter-number: Z-3
+MIRROR L Z-3,DUCHESNE,RAINBOW,Rainbows,750,11.02,2017-08-14,2017,151,exact,Matched on letter-number: Z-3
+MIRROR L Z-3,DUCHESNE,TIGER TROUT,Tigers,512,10.63,2017-08-17,2017,151,exact,Matched on letter-number: Z-3
+MIRROR L Z-3,DUCHESNE,RAINBOW,Rainbows,800,11.44,2017-08-22,2017,151,exact,Matched on letter-number: Z-3
+MIRROR L Z-3,DUCHESNE,RAINBOW,Rainbows,750,11.44,2017-08-28,2017,151,exact,Matched on letter-number: Z-3
+MIRROR L Z-3,DUCHESNE,RAINBOW,Rainbows,752,11.44,2017-09-07,2017,151,exact,Matched on letter-number: Z-3
+MOON L,DUCHESNE,TIGER TROUT,Tigers,20000,3.15,2017-05-02,2017,,none,No match found
+MOON L,DUCHESNE,SPLAKE,Splake,10053,3.47,2017-07-09,2017,,none,No match found
+MOON L,DUCHESNE,RAINBOW,Rainbows,6998,8.06,2017-10-03,2017,,none,No match found
+MOOSEHORN L Z-4,DUCHESNE,TIGER TROUT,Tigers,200,8.98,2017-06-27,2017,152,exact,Matched on letter-number: Z-4
+MOOSEHORN L Z-4,DUCHESNE,RAINBOW,Rainbows,399,10.03,2017-06-27,2017,152,exact,Matched on letter-number: Z-4
+MOOSEHORN L Z-4,DUCHESNE,RAINBOW,Rainbows,399,10.96,2017-07-03,2017,152,exact,Matched on letter-number: Z-4
+MOOSEHORN L Z-4,DUCHESNE,RAINBOW,Rainbows,399,10.6,2017-07-10,2017,152,exact,Matched on letter-number: Z-4
+MOOSEHORN L Z-4,DUCHESNE,TIGER TROUT,Tigers,399,9.92,2017-07-12,2017,152,exact,Matched on letter-number: Z-4
+MOOSEHORN L Z-4,DUCHESNE,TIGER TROUT,Tigers,399,9.92,2017-07-17,2017,152,exact,Matched on letter-number: Z-4
+MOOSEHORN L Z-4,DUCHESNE,RAINBOW,Rainbows,401,10.98,2017-07-19,2017,152,exact,Matched on letter-number: Z-4
+MOOSEHORN L Z-4,DUCHESNE,RAINBOW,Rainbows,400,10.77,2017-07-25,2017,152,exact,Matched on letter-number: Z-4
+MOOSEHORN L Z-4,DUCHESNE,RAINBOW,Rainbows,400,10.68,2017-07-31,2017,152,exact,Matched on letter-number: Z-4
+MOOSEHORN L Z-4,DUCHESNE,TIGER TROUT,Tigers,399,9.92,2017-07-31,2017,152,exact,Matched on letter-number: Z-4
+MOOSEHORN L Z-4,DUCHESNE,RAINBOW,Rainbows,400,11.02,2017-08-08,2017,152,exact,Matched on letter-number: Z-4
+MOOSEHORN L Z-4,DUCHESNE,RAINBOW,Rainbows,400,11.02,2017-08-14,2017,152,exact,Matched on letter-number: Z-4
+MOOSEHORN L Z-4,DUCHESNE,TIGER TROUT,Tigers,531,10.63,2017-08-14,2017,152,exact,Matched on letter-number: Z-4
+OGDEN L WR-5,DUCHESNE,CUTTHROAT,Cutthroats,1397,1.62,2017-09-25,2017,535,exact,Matched on letter-number: WR-5
+PASS L Z-5,DUCHESNE,RAINBOW,Rainbows,401,10.24,2017-06-26,2017,158,exact,Matched on letter-number: Z-5
+PASS L Z-5,DUCHESNE,TIGER TROUT,Tigers,300,8.98,2017-06-27,2017,158,exact,Matched on letter-number: Z-5
+PASS L Z-5,DUCHESNE,RAINBOW,Rainbows,399,10.96,2017-07-03,2017,158,exact,Matched on letter-number: Z-5
+PASS L Z-5,DUCHESNE,RAINBOW,Rainbows,399,10.6,2017-07-10,2017,158,exact,Matched on letter-number: Z-5
+PASS L Z-5,DUCHESNE,BROOK TROUT,Brookies,503,2.29,2017-07-12,2017,158,exact,Matched on letter-number: Z-5
+PASS L Z-5,DUCHESNE,TIGER TROUT,Tigers,602,9.92,2017-07-12,2017,158,exact,Matched on letter-number: Z-5
+PASS L Z-5,DUCHESNE,TIGER TROUT,Tigers,602,9.92,2017-07-17,2017,158,exact,Matched on letter-number: Z-5
+PASS L Z-5,DUCHESNE,RAINBOW,Rainbows,401,10.98,2017-07-19,2017,158,exact,Matched on letter-number: Z-5
+PASS L Z-5,DUCHESNE,RAINBOW,Rainbows,400,10.77,2017-07-25,2017,158,exact,Matched on letter-number: Z-5
+PASS L Z-5,DUCHESNE,RAINBOW,Rainbows,400,10.68,2017-07-31,2017,158,exact,Matched on letter-number: Z-5
+PASS L Z-5,DUCHESNE,TIGER TROUT,Tigers,451,9.92,2017-07-31,2017,158,exact,Matched on letter-number: Z-5
+PASS L Z-5,DUCHESNE,RAINBOW,Rainbows,400,11.02,2017-08-08,2017,158,exact,Matched on letter-number: Z-5
+PASS L Z-5,DUCHESNE,TIGER TROUT,Tigers,400,10.63,2017-08-14,2017,158,exact,Matched on letter-number: Z-5
+PASS L Z-5,DUCHESNE,RAINBOW,Rainbows,400,11.02,2017-08-14,2017,158,exact,Matched on letter-number: Z-5
+PASS L Z-5,DUCHESNE,TIGER TROUT,Tigers,595,10.63,2017-08-17,2017,158,exact,Matched on letter-number: Z-5
+PASS L Z-5,DUCHESNE,RAINBOW,Rainbows,401,11.44,2017-08-22,2017,158,exact,Matched on letter-number: Z-5
+PASS L Z-5,DUCHESNE,RAINBOW,Rainbows,200,11.44,2017-08-28,2017,158,exact,Matched on letter-number: Z-5
+PENNY NICKELL L U-98,DUCHESNE,CUTTHROAT,Cutthroats,599,1.62,2017-09-25,2017,454,exact,Matched on letter-number: U-98
+PHINNEY L X-119,DUCHESNE,BROOK TROUT,Brookies,1362,2.29,2017-07-12,2017,364,exact,Matched on letter-number: X-119
+PICTURE L X-82,DUCHESNE,GRAYLING ARCTIC,Grayling,1600,2.79,2017-09-25,2017,232,exact,Matched on letter-number: X-82
+PINTO L X-22,DUCHESNE,BROOK TROUT,Brookies,5092,2.29,2017-07-12,2017,366,exact,Matched on letter-number: X-22
+R C NO 1 LAKE WR-2,DUCHESNE,CUTTHROAT,Cutthroats,1197,1.62,2017-09-25,2017,544,exact,Matched on letter-number: WR-2
+RAINBOW L U-33,DUCHESNE,BROOK TROUT,Brookies,3519,2.53,2017-07-09,2017,456,exact,Matched on letter-number: U-33
+RED CR RES,DUCHESNE,RAINBOW,Rainbows,9994,4.04,2017-05-09,2017,,none,No match found
+RED CR RES,DUCHESNE,TIGER TROUT,Tigers,4982,3.09,2017-05-09,2017,,none,No match found
+ROBB L WR-1,DUCHESNE,BROOK TROUT,Brookies,434,2.53,2017-07-09,2017,656,exact,Matched on letter-number: WR-1
+ROCK CR,DUCHESNE,RAINBOW,Rainbows,1870,10.91,2017-06-15,2017,,none,No match found
+ROCK CR,DUCHESNE,RAINBOW,Rainbows,1000,8.24,2017-06-26,2017,,none,No match found
+ROCK CR,DUCHESNE,RAINBOW,Rainbows,500,11.89,2017-06-26,2017,,none,No match found
+ROCK II L X-97,DUCHESNE,GRAYLING ARCTIC,Grayling,503,2.79,2017-09-25,2017,371,exact,Matched on letter-number: X-97
+SCOUT L Z-12,DUCHESNE,RAINBOW,Rainbows,398,10.24,2017-06-26,2017,160,exact,Matched on letter-number: Z-12
+SCOUT L Z-12,DUCHESNE,RAINBOW,Rainbows,399,10.6,2017-07-05,2017,160,exact,Matched on letter-number: Z-12
+SCOUT L Z-12,DUCHESNE,RAINBOW,Rainbows,399,10.6,2017-07-10,2017,160,exact,Matched on letter-number: Z-12
+SCOUT L Z-12,DUCHESNE,BROOK TROUT,Brookies,1006,2.29,2017-07-12,2017,160,exact,Matched on letter-number: Z-12
+SCOUT L Z-12,DUCHESNE,RAINBOW,Rainbows,401,10.98,2017-07-19,2017,160,exact,Matched on letter-number: Z-12
+SCOUT L Z-12,DUCHESNE,RAINBOW,Rainbows,400,10.77,2017-07-25,2017,160,exact,Matched on letter-number: Z-12
+SCOUT L Z-12,DUCHESNE,RAINBOW,Rainbows,340,10.68,2017-07-31,2017,160,exact,Matched on letter-number: Z-12
+SHALER L Z-34,DUCHESNE,TIGER TROUT,Tigers,1300,2.71,2017-06-29,2017,162,exact,Matched on letter-number: Z-34
+SHALER L Z-34,DUCHESNE,CUTTHROAT,Cutthroats,1301,1.62,2017-09-25,2017,162,exact,Matched on letter-number: Z-34
+SQUAW L X-95,DUCHESNE,BROOK TROUT,Brookies,1054,2.53,2017-07-09,2017,380,exact,Matched on letter-number: X-95
+STARVATION RES,DUCHESNE,KOKANEE,Kokanee,79868,2.73,2017-03-27,2017,,none,No match found
+STARVATION RES,DUCHESNE,PERCH YELLOW,Perch Yellow,530,6.3,2017-04-19,2017,,none,No match found
+STARVATION RES,DUCHESNE,CRAPPIE BLACK,Crappie Black,302,10.77,2017-05-25,2017,,none,No match found
+STARVATION RES,DUCHESNE,RAINBOW,Rainbows,403,6.81,2017-09-08,2017,,none,No match found
+STARVATION RES,DUCHESNE,RAINBOW,Rainbows,5300,7.94,2017-09-27,2017,,none,No match found
+STARVATION RES,DUCHESNE,RAINBOW,Rainbows,3500,7.94,2017-09-27,2017,,none,No match found
+STARVATION RES,DUCHESNE,RAINBOW,Rainbows,8200,7.94,2017-09-27,2017,,none,No match found
+STARVATION RES,DUCHESNE,RAINBOW,Rainbows,8000,7.94,2017-09-27,2017,,none,No match found
+STARVATION RES,DUCHESNE,CRAPPIE BLACK,Crappie Black,100003,2.0,2017-10-26,2017,,none,No match found
+STARVATION RES,DUCHESNE,RAINBOW,Rainbows,2160,9.59,2017-12-05,2017,,none,No match found
+STARVATION RES,DUCHESNE,RAINBOW,Rainbows,4590,9.59,2017-12-05,2017,,none,No match found
+STARVATION RES,DUCHESNE,RAINBOW,Rainbows,4523,9.59,2017-12-05,2017,,none,No match found
+STARVATION RES,DUCHESNE,RAINBOW,Rainbows,2160,9.59,2017-12-06,2017,,none,No match found
+STARVATION RES,DUCHESNE,RAINBOW,Rainbows,4320,9.59,2017-12-06,2017,,none,No match found
+STARVATION RES,DUCHESNE,RAINBOW,Rainbows,4320,9.59,2017-12-06,2017,,none,No match found
+STARVATION RES,DUCHESNE,RAINBOW,Rainbows,2160,9.59,2017-12-06,2017,,none,No match found
+STARVATION RES,DUCHESNE,RAINBOW,Rainbows,4320,9.59,2017-12-06,2017,,none,No match found
+STARVATION RES,DUCHESNE,RAINBOW,Rainbows,810,9.59,2017-12-07,2017,,none,No match found
+STEWART L X-79,DUCHESNE,CUTTHROAT,Cutthroats,953,1.62,2017-09-25,2017,234,exact,Matched on letter-number: X-79
+STRAWBERRY R,DUCHESNE,RAINBOW,Rainbows,502,10.91,2017-06-15,2017,,none,No match found
+STRAWBERRY R,DUCHESNE,RAINBOW,Rainbows,500,9.31,2017-08-09,2017,,none,No match found
+TAYLOR L WR-8,DUCHESNE,BROOK TROUT,Brookies,2511,2.53,2017-07-09,2017,548,exact,Matched on letter-number: WR-8
+THOMPSON L RC-8,DUCHESNE,BROOK TROUT,Brookies,1411,2.53,2017-07-09,2017,382,exact,Matched on letter-number: RC-8
+TUNGSTEN L X-107,DUCHESNE,CUTTHROAT,Cutthroats,998,1.62,2017-09-25,2017,579,exact,Matched on letter-number: X-107
+U- 19,DUCHESNE,BROOK TROUT,Brookies,1519,2.53,2017-07-09,2017,459,exact,Matched on letter-number: U-19
+U- 79,DUCHESNE,BROOK TROUT,Brookies,822,2.53,2017-07-09,2017,657,exact,Matched on letter-number: U-79
+U- 89,DUCHESNE,BROOK TROUT,Brookies,620,2.53,2017-07-09,2017,470,exact,Matched on letter-number: U-89
+U-100,DUCHESNE,GRAYLING ARCTIC,Grayling,790,2.79,2017-09-20,2017,662,exact,Matched on letter-number: U-100
+WALK-UP L WR-55,DUCHESNE,BROOK TROUT,Brookies,1860,2.53,2017-07-09,2017,551,exact,Matched on letter-number: WR-55
+X- 24,DUCHESNE,CUTTHROAT,Cutthroats,1774,1.62,2017-09-25,2017,422,exact,Matched on letter-number: X-24
+X- 25,DUCHESNE,CUTTHROAT,Cutthroats,1700,1.62,2017-09-25,2017,423,exact,Matched on letter-number: X-25
+X- 26,DUCHESNE,BROOK TROUT,Brookies,419,2.53,2017-07-09,2017,424,exact,Matched on letter-number: X-26
+X- 50,DUCHESNE,GRAYLING ARCTIC,Grayling,213,2.79,2017-09-25,2017,668,exact,Matched on letter-number: X-50
+X- 57,DUCHESNE,BROOK TROUT,Brookies,899,2.53,2017-07-09,2017,580,exact,Matched on letter-number: X-57
+X- 60,DUCHESNE,CUTTHROAT,Cutthroats,798,1.62,2017-09-25,2017,582,exact,Matched on letter-number: X-60
+X- 78,DUCHESNE,CUTTHROAT,Cutthroats,1700,1.62,2017-09-25,2017,243,exact,Matched on letter-number: X-78
+X- 86,DUCHESNE,BROOK TROUT,Brookies,713,2.53,2017-07-09,2017,248,exact,Matched on letter-number: X-86
+X-105,DUCHESNE,CUTTHROAT,Cutthroats,1700,1.62,2017-09-25,2017,583,exact,Matched on letter-number: X-105
+Y-19,DUCHESNE,BROOK TROUT,Brookies,543,2.53,2017-07-09,2017,587,exact,Matched on letter-number: Y-19

@@ -1,0 +1,824 @@
+=== HISTORICAL STOCKING DATA TEST: 2017 ===
+Started at: 2025-08-25 17:15:28
+NOTE: Test run - no database insertions
+
+=== PROCESSING SUMMIT COUNTY ===
+  MATCH: ALEXANDER L A-1 -> Lake ID 250 (exact)
+    Brookies x2305 (2.29") on 2017-07-12
+  NO MATCH: BEAR R
+    Rainbows x399 (10.03") on 2017-06-27
+  NO MATCH: BEAR R
+    Rainbows x300 (10.6") on 2017-07-05
+  NO MATCH: BEAR R
+    Rainbows x100 (10.98") on 2017-07-17
+  NO MATCH: BEAR R
+    Rainbows x100 (10.68") on 2017-07-31
+  NO MATCH: BEAR R, E FK
+    Rainbows x300 (10.6") on 2017-07-05
+  NO MATCH: BEAR R, E FK
+    Rainbows x299 (10.98") on 2017-07-17
+  NO MATCH: BEAR R, E FK
+    Rainbows x299 (10.68") on 2017-07-31
+  MATCH: BEAVER CR -> Lake ID 32 (medium)
+    Rainbows x201 (9.73") on 2017-06-28
+  MATCH: BEAVER CR -> Lake ID 32 (medium)
+    Rainbows x200 (10.96") on 2017-07-05
+  MATCH: BEAVER CR -> Lake ID 32 (medium)
+    Rainbows x200 (10.98") on 2017-07-19
+  MATCH: BEAVER CR -> Lake ID 32 (medium)
+    Rainbows x200 (10.77") on 2017-07-25
+  MATCH: BEAVER CR -> Lake ID 32 (medium)
+    Rainbows x201 (10.68") on 2017-08-07
+  MATCH: BEAVER L BR-10 -> Lake ID 32 (exact)
+    Rainbows x2000 (10.24") on 2017-06-21
+  MATCH: BETH L A-6 -> Lake ID 253 (exact)
+    Brookies x503 (2.29") on 2017-07-12
+  MATCH: BLUE L A-5 -> Lake ID 255 (exact)
+    Brookies x608 (2.29") on 2017-07-12
+  MATCH: BOOKER L A-35 -> Lake ID 256 (exact)
+    Brookies x398 (2.29") on 2017-07-12
+  MATCH: BR-24 -> Lake ID 38 (exact)
+    Tigers x248 (2.63") on 2017-07-11
+  MATCH: BR-55 -> Lake ID 660 (exact)
+    Brookies x230 (2.29") on 2017-07-12
+  MATCH: BRIDGER L G-20 -> Lake ID 173 (exact)
+    Rainbows x1999 (9.87") on 2017-06-07
+  MATCH: BRIDGER L G-20 -> Lake ID 173 (exact)
+    Rainbows x1506 (10.01") on 2017-06-19
+  MATCH: BRIDGER L G-20 -> Lake ID 173 (exact)
+    Rainbows x1499 (10.07") on 2017-06-27
+  MATCH: BRIDGER L G-20 -> Lake ID 173 (exact)
+    Brookies x2095 (2.29") on 2017-07-12
+  MATCH: BRIDGER L G-20 -> Lake ID 173 (exact)
+    Rainbows x1499 (10.98") on 2017-07-17
+  MATCH: BRIDGER L G-20 -> Lake ID 173 (exact)
+    Rainbows x1499 (10.68") on 2017-08-07
+  MATCH: CHINA L G-21 -> Lake ID 174 (exact)
+    Brookies x6929 (2.53") on 2017-07-09
+  MATCH: CLIFF L G-5 -> Lake ID 175 (exact)
+    Tigers x3300 (2.71") on 2017-06-29
+  MATCH: COFFIN L GR-144 -> Lake ID 65 (exact)
+    Tigers x2000 (2.71") on 2017-06-29
+  MATCH: CRYSTAL L A-51 -> Lake ID 262 (exact)
+    Brookies x1006 (2.29") on 2017-07-12
+  NO MATCH: DEER VALLEY LAKES
+    Rainbows x377 (8.9") on 2017-05-03
+  NO MATCH: DEER VALLEY LAKES
+    Rainbows x375 (8.94") on 2017-05-24
+  NO MATCH: DEER VALLEY LAKES
+    Wiper x520 (9.87") on 2017-06-01
+  NO MATCH: DEER VALLEY LAKES
+    Wiper x520 (9.87") on 2017-06-01
+  NO MATCH: DEER VALLEY LAKES
+    Rainbows x375 (8.94") on 2017-06-05
+  NO MATCH: DEER VALLEY LAKES
+    Rainbows x375 (8.94") on 2017-06-20
+  NO MATCH: DEER VALLEY LAKES
+    Rainbows x749 (9.54") on 2017-07-20
+  NO MATCH: DEER VALLEY LAKES
+    Rainbows x752 (10.34") on 2017-08-07
+  NO MATCH: DEER VALLEY LAKES
+    Tigers x3041 (6.35") on 2017-09-19
+  MATCH: DIVIDE L NO 1 A-36 -> Lake ID 630 (exact)
+    Brookies x524 (2.29") on 2017-07-12
+  MATCH: DOLLAR L G-2 -> Lake ID 176 (exact)
+    Tigers x1000 (2.71") on 2017-06-29
+  NO MATCH: ECHO RES
+    Walleye x77000 (0.28") on 2017-04-14
+  NO MATCH: ECHO RES
+    Rainbows x4914 (9.71") on 2017-04-14
+  NO MATCH: ECHO RES
+    Rainbows x4942 (9.71") on 2017-04-14
+  NO MATCH: ECHO RES
+    Rainbows x5215 (9.71") on 2017-04-14
+  NO MATCH: ECHO RES
+    Walleye x18350 (0.28") on 2017-04-19
+  NO MATCH: ECHO RES
+    Rainbows x10292 (9.31") on 2017-05-01
+  NO MATCH: ECHO RES
+    Rainbows x8772 (9.9") on 2017-05-01
+  NO MATCH: ECHO RES
+    Rainbows x4644 (9.9") on 2017-05-01
+  NO MATCH: ECHO RES
+    Rainbows x11232 (9.54") on 2017-05-02
+  MATCH: ELKHORN L W-64 -> Lake ID 487 (exact)
+    Brookies x105 (2.29") on 2017-07-12
+  MATCH: ERICKSON L,SOUTH W25 -> Lake ID 488 (exact)
+    Brookies x859 (2.29") on 2017-07-12
+  MATCH: G- 40 -> Lake ID 663 (exact)
+    Brookies x310 (2.53") on 2017-07-09
+  MATCH: G- 80 -> Lake ID 614 (exact)
+    Brookies x84 (2.29") on 2017-07-12
+  MATCH: GR-119 -> Lake ID 666 (exact)
+    Grayling x300 (2.79") on 2017-09-20
+  MATCH: GR-145 -> Lake ID 69 (exact)
+    Grayling x907 (2.79") on 2017-09-26
+  MATCH: GR-162 -> Lake ID 72 (exact)
+    Brookies x713 (2.53") on 2017-07-09
+  NO MATCH: HAYDEN FK
+    Rainbows x300 (10.03") on 2017-06-27
+  NO MATCH: HAYDEN FK
+    Rainbows x301 (10.98") on 2017-07-17
+  NO MATCH: HAYDEN FK
+    Rainbows x299 (10.68") on 2017-07-31
+  MATCH: HOOP L -> Lake ID 93 (high)
+    Rainbows x3500 (9.87") on 2017-06-08
+  MATCH: HOOP L -> Lake ID 93 (high)
+    Rainbows x8010 (3.82") on 2017-06-08
+  MATCH: ISLAND L G-9 -> Lake ID 200 (exact)
+    Tigers x1000 (2.71") on 2017-06-29
+  MATCH: LILLY L A-58 -> Lake ID 281 (exact)
+    Rainbows x198 (10.24") on 2017-06-26
+  MATCH: LILLY L A-58 -> Lake ID 281 (exact)
+    Tigers x200 (8.98") on 2017-06-27
+  MATCH: LILLY L A-58 -> Lake ID 281 (exact)
+    Rainbows x298 (10.96") on 2017-07-03
+  MATCH: LILLY L A-58 -> Lake ID 281 (exact)
+    Rainbows x200 (10.6") on 2017-07-10
+  MATCH: LILLY L A-58 -> Lake ID 281 (exact)
+    Tigers x399 (9.92") on 2017-07-12
+  MATCH: LILLY L A-58 -> Lake ID 281 (exact)
+    Tigers x399 (9.92") on 2017-07-17
+  MATCH: LILLY L A-58 -> Lake ID 281 (exact)
+    Rainbows x301 (10.98") on 2017-07-19
+  MATCH: LILLY L A-58 -> Lake ID 281 (exact)
+    Rainbows x200 (10.77") on 2017-07-25
+  MATCH: LILLY L A-58 -> Lake ID 281 (exact)
+    Tigers x399 (9.92") on 2017-07-31
+  MATCH: LILLY L A-58 -> Lake ID 281 (exact)
+    Rainbows x199 (10.68") on 2017-07-31
+  MATCH: LILLY L A-58 -> Lake ID 281 (exact)
+    Rainbows x201 (10.68") on 2017-08-07
+  MATCH: LILLY L A-58 -> Lake ID 281 (exact)
+    Tigers x131 (10.63") on 2017-08-14
+  MATCH: LILLY L A-58 -> Lake ID 281 (exact)
+    Rainbows x271 (11.44") on 2017-08-22
+  MATCH: LILY L BR-11 -> Lake ID 51 (exact)
+    Rainbows x1196 (9.87") on 2017-06-05
+  MATCH: LILY L BR-11 -> Lake ID 51 (exact)
+    Rainbows x1200 (10.24") on 2017-06-26
+  MATCH: LILY L BR-11 -> Lake ID 51 (exact)
+    Rainbows x1100 (10.77") on 2017-07-26
+  MATCH: LITTLE HIDDEN L W-21 -> Lake ID 496 (exact)
+    Brookies x503 (2.29") on 2017-07-12
+  MATCH: LORENA L BR-46 -> Lake ID 43 (exact)
+    Brookies x1194 (2.29") on 2017-07-12
+  MATCH: LOST L A-59 -> Lake ID 287 (exact)
+    Rainbows x2503 (10.01") on 2017-06-20
+  MATCH: LOST L A-59 -> Lake ID 287 (exact)
+    Rainbows x1998 (9.75") on 2017-07-03
+  MATCH: LOST L A-59 -> Lake ID 287 (exact)
+    Brookies x1991 (2.29") on 2017-07-12
+  MATCH: LOST L A-59 -> Lake ID 287 (exact)
+    Tigers x637 (10.68") on 2017-08-28
+  MATCH: LYMAN L, LOWER G-25 -> Lake ID 618 (exact)
+    Rainbows x806 (9.87") on 2017-06-12
+  MATCH: LYMAN L, LOWER G-25 -> Lake ID 618 (exact)
+    Rainbows x799 (10.07") on 2017-06-27
+  MATCH: LYMAN L, LOWER G-25 -> Lake ID 618 (exact)
+    Brookies x3519 (2.53") on 2017-07-09
+  MATCH: LYMAN L, LOWER G-25 -> Lake ID 618 (exact)
+    Rainbows x1400 (10.77") on 2017-07-26
+  MATCH: LYMAN L, UPPER G-27 -> Lake ID 619 (exact)
+    Rainbows x1001 (9.87") on 2017-06-12
+  MATCH: LYMAN L, UPPER G-27 -> Lake ID 619 (exact)
+    Rainbows x1000 (10.07") on 2017-06-27
+  MATCH: LYMAN L, UPPER G-27 -> Lake ID 619 (exact)
+    Tigers x1000 (2.71") on 2017-06-27
+  MATCH: LYMAN L, UPPER G-27 -> Lake ID 619 (exact)
+    Brookies x1023 (2.53") on 2017-07-09
+  MATCH: MARSH L G-19 -> Lake ID 202 (exact)
+    Rainbows x4462 (9.87") on 2017-06-07
+  MATCH: MARSH L G-19 -> Lake ID 202 (exact)
+    Rainbows x541 (9.87") on 2017-06-07
+  MATCH: P-11 -> Lake ID 654 (exact)
+    Brookies x210 (2.29") on 2017-07-12
+  NO MATCH: PRICE DAM
+    Rainbows x75 (10.01") on 2017-06-19
+  NO MATCH: PROVO R
+    Rainbows x250 (10.03") on 2017-06-27
+  NO MATCH: PROVO R
+    Rainbows x250 (10.6") on 2017-07-10
+  NO MATCH: PROVO R
+    Rainbows x250 (10.77") on 2017-07-25
+  NO MATCH: PROVO R
+    Rainbows x250 (10.68") on 2017-08-07
+  MATCH: QUARTER CORNER LG103 -> Lake ID 655 (exact)
+    Rainbows x1208 (10.6") on 2017-06-06
+  MATCH: RED CASTLE L G-15 -> Lake ID 205 (exact)
+    Tigers x8750 (2.71") on 2017-06-28
+  MATCH: RED CASTLE L G-15 -> Lake ID 205 (exact)
+    Tigers x8032 (2.63") on 2017-07-11
+  MATCH: RED CASTLE,EAST G-17 -> Lake ID 177 (exact)
+    Tigers x2098 (2.63") on 2017-07-11
+  MATCH: RED CASTLE,UPPER G16 -> Lake ID 183 (exact)
+    Tigers x2567 (2.63") on 2017-07-11
+  MATCH: REIDS L W-38 -> Lake ID 503 (exact)
+    Brookies x503 (2.29") on 2017-07-12
+  MATCH: ROCK L A-10 -> Lake ID 298 (exact)
+    Tigers x400 (2.71") on 2017-06-29
+  NO MATCH: ROCKPORT RES
+    Rainbows x4004 (10.44") on 2017-10-17
+  NO MATCH: ROCKPORT RES
+    Rainbows x9230 (7.06") on 2017-10-17
+  NO MATCH: ROCKPORT RES
+    Rainbows x2345 (7.2") on 2017-10-17
+  NO MATCH: ROCKPORT RES
+    Rainbows x21440 (7.2") on 2017-10-17
+  NO MATCH: ROCKPORT RES
+    Rainbows x3518 (7.2") on 2017-10-17
+  NO MATCH: ROCKPORT RES
+    Rainbows x7810 (7.06") on 2017-10-17
+  NO MATCH: ROCKPORT RES
+    Rainbows x22720 (7.06") on 2017-10-17
+  NO MATCH: ROCKPORT RES
+    Rainbows x3050 (7.43") on 2017-10-18
+  NO MATCH: ROCKPORT RES
+    Rainbows x401 (14.22") on 2017-11-13
+  MATCH: RUTH L BR-40 -> Lake ID 58 (exact)
+    Brookies x503 (2.29") on 2017-07-12
+  MATCH: SALAMANDER L BR-26 -> Lake ID 60 (exact)
+    Brookies x398 (2.29") on 2017-07-12
+  MATCH: SCOW L BR-12 -> Lake ID 61 (exact)
+    Brookies x1697 (2.29") on 2017-07-12
+  NO MATCH: SMITH-MOREHOUSE RES
+    Kokanee x12382 (3.27") on 2017-05-14
+  NO MATCH: SMITH-MOREHOUSE RES
+    Rainbows x2040 (9.93") on 2017-05-17
+  NO MATCH: SMITH-MOREHOUSE RES
+    Rainbows x2040 (9.93") on 2017-05-22
+  NO MATCH: SMITH-MOREHOUSE RES
+    Rainbows x1560 (9.87") on 2017-06-05
+  NO MATCH: SMITH-MOREHOUSE RES
+    Rainbows x1798 (10.01") on 2017-06-20
+  NO MATCH: SMITH-MOREHOUSE RES
+    Rainbows x1203 (9.73") on 2017-06-28
+  NO MATCH: SMITH-MOREHOUSE RES
+    Rainbows x1267 (10.96") on 2017-07-05
+  NO MATCH: SMITH-MOREHOUSE RES
+    Rainbows x1699 (10.98") on 2017-07-19
+  NO MATCH: SMITH-MOREHOUSE RES
+    Rainbows x1500 (10.77") on 2017-07-25
+  NO MATCH: SMITH-MOREHOUSE RES
+    Rainbows x1501 (10.68") on 2017-08-07
+  NO MATCH: SMITH-MOREHOUSE RES
+    Rainbows x1000 (11.44") on 2017-08-21
+  NO MATCH: SMITH-MOREHOUSE RES
+    Grayling x22200 (2.79") on 2017-09-19
+  MATCH: SMITHS FK PASS L G14 -> Lake ID 182 (exact)
+    Tigers x2608 (2.63") on 2017-07-11
+  NO MATCH: STATELINE RES
+    Rainbows x4160 (9.87") on 2017-06-05
+  NO MATCH: STATELINE RES
+    Rainbows x3780 (10.6") on 2017-06-06
+  NO MATCH: STATELINE RES
+    Rainbows x2140 (9.87") on 2017-06-07
+  NO MATCH: STILLWATER FK
+    Rainbows x149 (10.03") on 2017-06-27
+  NO MATCH: STILLWATER FK
+    Rainbows x399 (10.6") on 2017-07-05
+  NO MATCH: STILLWATER FK
+    Rainbows x401 (10.98") on 2017-07-17
+  NO MATCH: STILLWATER FK
+    Rainbows x400 (10.68") on 2017-07-31
+  NO MATCH: STILLWATER FK
+    Rainbows x400 (11.02") on 2017-08-14
+  MATCH: SUMMIT L GR-5 -> Lake ID 642 (exact)
+    Grayling x949 (2.79") on 2017-09-20
+  MATCH: TAMARACK L GR-2 -> Lake ID 406 (exact)
+    Tigers x1877 (2.63") on 2017-07-11
+  MATCH: TEAPOT L A-60 -> Lake ID 309 (exact)
+    Rainbows x501 (10.24") on 2017-06-26
+  MATCH: TEAPOT L A-60 -> Lake ID 309 (exact)
+    Tigers x300 (8.98") on 2017-06-27
+  MATCH: TEAPOT L A-60 -> Lake ID 309 (exact)
+    Rainbows x500 (10.96") on 2017-07-03
+  MATCH: TEAPOT L A-60 -> Lake ID 309 (exact)
+    Rainbows x250 (10.6") on 2017-07-10
+  MATCH: TEAPOT L A-60 -> Lake ID 309 (exact)
+    Brookies x503 (2.29") on 2017-07-12
+  MATCH: TEAPOT L A-60 -> Lake ID 309 (exact)
+    Tigers x602 (9.92") on 2017-07-12
+  MATCH: TEAPOT L A-60 -> Lake ID 309 (exact)
+    Tigers x602 (9.92") on 2017-07-17
+  MATCH: TEAPOT L A-60 -> Lake ID 309 (exact)
+    Rainbows x249 (10.98") on 2017-07-19
+  MATCH: TEAPOT L A-60 -> Lake ID 309 (exact)
+    Rainbows x450 (10.77") on 2017-07-25
+  MATCH: TEAPOT L A-60 -> Lake ID 309 (exact)
+    Rainbows x351 (10.68") on 2017-07-31
+  MATCH: TEAPOT L A-60 -> Lake ID 309 (exact)
+    Tigers x451 (9.92") on 2017-07-31
+  MATCH: TEAPOT L A-60 -> Lake ID 309 (exact)
+    Rainbows x351 (10.68") on 2017-08-07
+  MATCH: TEAPOT L A-60 -> Lake ID 309 (exact)
+    Rainbows x251 (11.02") on 2017-08-14
+  MATCH: TEAPOT L A-60 -> Lake ID 309 (exact)
+    Tigers x600 (10.63") on 2017-08-14
+  MATCH: TEAPOT L A-60 -> Lake ID 309 (exact)
+    Rainbows x251 (11.44") on 2017-08-22
+  MATCH: TEAPOT L A-60 -> Lake ID 309 (exact)
+    Rainbows x249 (11.44") on 2017-08-28
+  NO MATCH: TOMAHAWK
+    Rainbows x224 (9.93") on 2017-05-30
+  NO MATCH: TOMAHAWK
+    Rainbows x100 (10.01") on 2017-06-19
+  MATCH: TRIAL L A-61 -> Lake ID 310 (exact)
+    Rainbows x1538 (10.03") on 2017-06-27
+  MATCH: TRIAL L A-61 -> Lake ID 310 (exact)
+    Tigers x500 (8.98") on 2017-06-27
+  MATCH: TRIAL L A-61 -> Lake ID 310 (exact)
+    Rainbows x1499 (9.75") on 2017-07-03
+  MATCH: TRIAL L A-61 -> Lake ID 310 (exact)
+    Rainbows x750 (10.6") on 2017-07-10
+  MATCH: TRIAL L A-61 -> Lake ID 310 (exact)
+    Brookies x4002 (2.29") on 2017-07-12
+  MATCH: TRIAL L A-61 -> Lake ID 310 (exact)
+    Tigers x998 (9.92") on 2017-07-12
+  MATCH: TRIAL L A-61 -> Lake ID 310 (exact)
+    Tigers x998 (9.92") on 2017-07-17
+  MATCH: TRIAL L A-61 -> Lake ID 310 (exact)
+    Rainbows x748 (10.98") on 2017-07-18
+  MATCH: TRIAL L A-61 -> Lake ID 310 (exact)
+    Rainbows x750 (10.77") on 2017-07-25
+  MATCH: TRIAL L A-61 -> Lake ID 310 (exact)
+    Tigers x998 (9.92") on 2017-07-31
+  MATCH: TRIAL L A-61 -> Lake ID 310 (exact)
+    Rainbows x750 (10.68") on 2017-07-31
+  MATCH: TRIAL L A-61 -> Lake ID 310 (exact)
+    Rainbows x750 (11.02") on 2017-08-08
+  MATCH: TRIAL L A-61 -> Lake ID 310 (exact)
+    Tigers x1000 (10.49") on 2017-08-14
+  MATCH: TRIAL L A-61 -> Lake ID 310 (exact)
+    Rainbows x750 (11.02") on 2017-08-14
+  MATCH: TRIAL L A-61 -> Lake ID 310 (exact)
+    Tigers x859 (10.63") on 2017-08-17
+  MATCH: TRIAL L A-61 -> Lake ID 310 (exact)
+    Rainbows x1299 (11.44") on 2017-08-28
+  MATCH: TRIAL L A-61 -> Lake ID 310 (exact)
+    Grayling x592 (2.79") on 2017-09-25
+  MATCH: TRIAL L A-61 -> Lake ID 310 (exact)
+    Grayling x1998 (2.79") on 2017-09-26
+  MATCH: TRIDENT L A-41 -> Lake ID 311 (exact)
+    Brookies x398 (2.29") on 2017-07-12
+  MATCH: WASHINGTON L A-23 -> Lake ID 315 (exact)
+    Rainbows x1451 (10.03") on 2017-06-27
+  MATCH: WASHINGTON L A-23 -> Lake ID 315 (exact)
+    Tigers x442 (8.98") on 2017-06-27
+  MATCH: WASHINGTON L A-23 -> Lake ID 315 (exact)
+    Rainbows x999 (10.96") on 2017-07-03
+  MATCH: WASHINGTON L A-23 -> Lake ID 315 (exact)
+    Rainbows x750 (10.6") on 2017-07-10
+  MATCH: WASHINGTON L A-23 -> Lake ID 315 (exact)
+    Brookies x1991 (2.29") on 2017-07-12
+  MATCH: WASHINGTON L A-23 -> Lake ID 315 (exact)
+    Tigers x602 (9.92") on 2017-07-12
+  MATCH: WASHINGTON L A-23 -> Lake ID 315 (exact)
+    Tigers x602 (9.92") on 2017-07-17
+  MATCH: WASHINGTON L A-23 -> Lake ID 315 (exact)
+    Rainbows x748 (10.98") on 2017-07-18
+  MATCH: WASHINGTON L A-23 -> Lake ID 315 (exact)
+    Rainbows x250 (10.77") on 2017-07-25
+  MATCH: WASHINGTON L A-23 -> Lake ID 315 (exact)
+    Rainbows x250 (10.68") on 2017-07-31
+  MATCH: WASHINGTON L A-23 -> Lake ID 315 (exact)
+    Tigers x599 (9.92") on 2017-07-31
+  MATCH: WASHINGTON L A-23 -> Lake ID 315 (exact)
+    Grayling x777 (2.79") on 2017-09-26
+  NO MATCH: WEBER R
+    Rainbows x100 (9.73") on 2017-06-28
+  NO MATCH: WEBER R
+    Rainbows x201 (9.73") on 2017-06-28
+  NO MATCH: WEBER R
+    Rainbows x201 (9.73") on 2017-06-28
+  NO MATCH: WEBER R
+    Rainbows x200 (10.98") on 2017-07-19
+  NO MATCH: WEBER R
+    Rainbows x100 (10.98") on 2017-07-19
+  NO MATCH: WEBER R
+    Rainbows x200 (10.98") on 2017-07-19
+  NO MATCH: WEBER R
+    Rainbows x200 (10.77") on 2017-07-25
+  NO MATCH: WEBER R
+    Rainbows x100 (10.77") on 2017-07-25
+  NO MATCH: WEBER R
+    Rainbows x200 (10.77") on 2017-07-25
+  NO MATCH: WEBER R
+    Rainbows x201 (10.68") on 2017-08-07
+  NO MATCH: WEBER R
+    Rainbows x201 (10.68") on 2017-08-07
+  NO MATCH: WEBER R
+    Rainbows x100 (10.68") on 2017-08-07
+  NO MATCH: WEBER R
+    Rainbows x99 (11.44") on 2017-08-21
+  NO MATCH: WEBER R
+    Rainbows x200 (11.44") on 2017-08-21
+  NO MATCH: WEBER R
+    Rainbows x200 (11.44") on 2017-08-21
+  MATCH: WHISKEY ISLAND L BR3 -> Lake ID 63 (exact)
+    Grayling x999 (2.79") on 2017-09-26
+  NO MATCH: WHITNEY RES
+    Rainbows x4233 (10.01") on 2017-06-12
+  NO MATCH: WHITNEY RES
+    Tigers x12017 (3.83") on 2017-06-26
+  NO MATCH: WHITNEY RES
+    Rainbows x2000 (10.6") on 2017-07-11
+  NO MATCH: WHITNEY RES
+    Tigers x7992 (4.3") on 2017-07-18
+  NO MATCH: WINDSOR POND
+    Rainbows x74 (9.93") on 2017-05-30
+  NO MATCH: WINDSOR POND
+    Rainbows x125 (10.01") on 2017-06-19
+  NO MATCH: WINDSOR POND
+    Rainbows x0 (10.01") on 2017-06-19
+  MATCH: YELLOWPINE,LOWER W66 -> Lake ID 522 (exact)
+    Brookies x210 (2.29") on 2017-07-12
+
+Summit Summary:
+  Records found: 215
+  Matched lakes: 129
+  Unmatched lakes: 15
+
+=== PROCESSING DUCHESNE COUNTY ===
+  MATCH: AUDRY L RC-45 -> Lake ID 322 (exact)
+    Brookies x109 (2.53") on 2017-07-09
+  MATCH: BEARD L U-74 -> Lake ID 430 (exact)
+    Brookies x465 (2.53") on 2017-07-09
+  MATCH: BECKY L WR-77 -> Lake ID 567 (exact)
+    Brookies x341 (2.53") on 2017-07-09
+  MATCH: BEDGROUND L Z-46 -> Lake ID 324 (exact)
+    Grayling x302 (2.79") on 2017-09-25
+  MATCH: BETSEY L X-7 -> Lake ID 325 (exact)
+    Cutthroats x3998 (1.62") on 2017-09-25
+  MATCH: BIG DOG L X-32 -> Lake ID 209 (exact)
+    Grayling x808 (2.79") on 2017-09-25
+  NO MATCH: BIG SANDWASH RES
+    Walleye x174100 (0.28") on 2017-04-05
+  NO MATCH: BIG SANDWASH RES
+    Rainbows x9113 (5.9") on 2017-05-01
+  NO MATCH: BIG SANDWASH RES
+    Rainbows x4678 (5.9") on 2017-05-01
+  NO MATCH: BIG SANDWASH RES
+    Rainbows x2001 (11.08") on 2017-05-28
+  NO MATCH: BIG SANDWASH RES
+    Brown Trout x2500 (2.36") on 2017-05-29
+  NO MATCH: BIG SANDWASH RES
+    Rainbows x3497 (7.0") on 2017-05-29
+  NO MATCH: BIG SANDWASH RES
+    Rainbows x3498 (7.47") on 2017-05-29
+  NO MATCH: BIG SANDWASH RES
+    Brown Trout x7997 (3.31") on 2017-06-28
+  MATCH: BLYTHE L Z-20 -> Lake ID 119 (exact)
+    Brookies x691 (2.29") on 2017-07-12
+  MATCH: BONNIE L Z-6 -> Lake ID 120 (exact)
+    Brookies x608 (2.29") on 2017-07-12
+  MATCH: BROOK L U-54 -> Lake ID 432 (exact)
+    Brookies x1023 (2.53") on 2017-07-09
+  NO MATCH: BROWNS DRAW RES
+    Tigers x4300 (3.15") on 2017-05-02
+  NO MATCH: BROWNS DRAW RES
+    Rainbows x19968 (2.89") on 2017-05-11
+  MATCH: BUD L Z-2 -> Lake ID 122 (exact)
+    Brookies x566 (2.29") on 2017-07-12
+  MATCH: BUTTERFLY L Z-1 -> Lake ID 123 (exact)
+    Rainbows x399 (10.03") on 2017-06-27
+  MATCH: BUTTERFLY L Z-1 -> Lake ID 123 (exact)
+    Tigers x300 (8.98") on 2017-06-27
+  MATCH: BUTTERFLY L Z-1 -> Lake ID 123 (exact)
+    Rainbows x399 (10.6") on 2017-07-05
+  MATCH: BUTTERFLY L Z-1 -> Lake ID 123 (exact)
+    Rainbows x399 (10.6") on 2017-07-10
+  MATCH: BUTTERFLY L Z-1 -> Lake ID 123 (exact)
+    Brookies x503 (2.29") on 2017-07-12
+  MATCH: BUTTERFLY L Z-1 -> Lake ID 123 (exact)
+    Tigers x399 (9.92") on 2017-07-12
+  MATCH: BUTTERFLY L Z-1 -> Lake ID 123 (exact)
+    Tigers x399 (9.92") on 2017-07-17
+  MATCH: BUTTERFLY L Z-1 -> Lake ID 123 (exact)
+    Rainbows x301 (10.98") on 2017-07-17
+  MATCH: BUTTERFLY L Z-1 -> Lake ID 123 (exact)
+    Rainbows x300 (10.77") on 2017-07-26
+  MATCH: BUTTERFLY L Z-1 -> Lake ID 123 (exact)
+    Rainbows x299 (10.68") on 2017-07-31
+  MATCH: BUTTERFLY L Z-1 -> Lake ID 123 (exact)
+    Tigers x399 (9.92") on 2017-07-31
+  MATCH: BUTTERFLY L Z-1 -> Lake ID 123 (exact)
+    Rainbows x299 (10.68") on 2017-08-07
+  MATCH: BUTTERFLY L Z-1 -> Lake ID 123 (exact)
+    Rainbows x299 (11.02") on 2017-08-14
+  MATCH: BUTTERFLY L Z-1 -> Lake ID 123 (exact)
+    Tigers x400 (10.63") on 2017-08-14
+  MATCH: BUTTERFLY L Z-1 -> Lake ID 123 (exact)
+    Tigers x405 (10.63") on 2017-08-17
+  MATCH: BUTTERFLY L Z-1 -> Lake ID 123 (exact)
+    Rainbows x399 (11.44") on 2017-08-22
+  MATCH: BUTTERFLY L Z-1 -> Lake ID 123 (exact)
+    Rainbows x301 (11.44") on 2017-08-28
+  MATCH: CARROL L, UPPER X-18 -> Lake ID 410 (exact)
+    Brookies x3519 (2.53") on 2017-07-09
+  MATCH: CIRQUE L WR-33 -> Lake ID 661 (exact)
+    Grayling x681 (2.79") on 2017-09-20
+  MATCH: CRATER L X-94 -> Lake ID 213 (exact)
+    Tigers x718 (2.63") on 2017-07-11
+  MATCH: D-19 -> Lake ID 128 (exact)
+    Brookies x293 (2.29") on 2017-07-12
+  MATCH: D-26 -> Lake ID 129 (exact)
+    Brookies x210 (2.29") on 2017-07-12
+  MATCH: DG- 6 -> Lake ID 101 (exact)
+    Cutthroats x599 (1.62") on 2017-09-25
+  MATCH: DG- 9 -> Lake ID 104 (exact)
+    Cutthroats x998 (1.62") on 2017-09-25
+  MATCH: DG-10 -> Lake ID 105 (exact)
+    Cutthroats x998 (1.62") on 2017-09-25
+  MATCH: DG-14 -> Lake ID 106 (exact)
+    Cutthroats x200 (1.62") on 2017-09-25
+  MATCH: DG-15 -> Lake ID 107 (exact)
+    Cutthroats x200 (1.62") on 2017-09-25
+  MATCH: DG-16 -> Lake ID 108 (exact)
+    Cutthroats x200 (1.62") on 2017-09-25
+  MATCH: DG-17 -> Lake ID 109 (exact)
+    Cutthroats x443 (1.62") on 2017-09-25
+  MATCH: DIAMOND L U-39 -> Lake ID 463 (exact)
+    Grayling x551 (2.79") on 2017-09-20
+  MATCH: DIVIDE L U-59 -> Lake ID 442 (exact)
+    Cutthroats x1899 (1.62") on 2017-09-25
+  MATCH: EAST SLIDE L LF-44 -> Lake ID 214 (exact)
+    Brookies x310 (2.53") on 2017-07-09
+  MATCH: FERN L X-5 -> Lake ID 339 (exact)
+    Brookies x1446 (2.29") on 2017-07-12
+  MATCH: GATES L LF-34 -> Lake ID 215 (exact)
+    Brookies x264 (2.53") on 2017-07-09
+  MATCH: GLADYS L X-128 -> Lake ID 343 (exact)
+    Brookies x754 (2.29") on 2017-07-12
+  MATCH: GREEN MEADOW POND -> Lake ID 499 (medium)
+    Cutthroats x389 (5.1") on 2017-05-22
+  MATCH: HEART L X-13 -> Lake ID 346 (exact)
+    Cutthroats x569 (1.62") on 2017-09-25
+  MATCH: HELEN L X-126 -> Lake ID 347 (exact)
+    Brookies x838 (2.29") on 2017-07-12
+  MATCH: HIDDEN L WR-63 -> Lake ID 530 (exact)
+    Cutthroats x1323 (1.62") on 2017-09-25
+  MATCH: HOOVER L Z-10 -> Lake ID 142 (exact)
+    Brookies x1404 (2.29") on 2017-07-12
+  NO MATCH: INDIAN CYN CR
+    Cutthroats x2022 (2.04") on 2017-10-16
+  MATCH: JEAN L Z-41 -> Lake ID 351 (exact)
+    Brookies x1991 (2.29") on 2017-07-12
+  MATCH: JOAN L Z-19 -> Lake ID 145 (exact)
+    Brookies x1509 (2.29") on 2017-07-12
+  NO MATCH: LAKE CANYON L
+    Tigers x620 (3.69") on 2017-05-26
+  NO MATCH: LAKE CANYON L
+    Cutthroats x900 (4.85") on 2017-05-26
+  MATCH: LF-37 -> Lake ID 223 (exact)
+    Brookies x310 (2.53") on 2017-07-09
+  MATCH: LILY PAD L X-2 -> Lake ID 355 (exact)
+    Brookies x1006 (2.29") on 2017-07-12
+  MATCH: MARGIE L X-129 -> Lake ID 358 (exact)
+    Brookies x754 (2.29") on 2017-07-12
+  MATCH: MARSHALL L Z-11 -> Lake ID 150 (exact)
+    Brookies x1802 (2.29") on 2017-07-12
+  MATCH: MILK L Y-25 -> Lake ID 574 (exact)
+    Brookies x1767 (2.53") on 2017-07-09
+  MATCH: MIRROR L Z-3 -> Lake ID 151 (exact)
+    Rainbows x748 (10.24") on 2017-06-26
+  MATCH: MIRROR L Z-3 -> Lake ID 151 (exact)
+    Tigers x500 (8.98") on 2017-06-27
+  MATCH: MIRROR L Z-3 -> Lake ID 151 (exact)
+    Rainbows x999 (10.96") on 2017-07-03
+  MATCH: MIRROR L Z-3 -> Lake ID 151 (exact)
+    Rainbows x750 (10.6") on 2017-07-10
+  MATCH: MIRROR L Z-3 -> Lake ID 151 (exact)
+    Tigers x998 (9.92") on 2017-07-12
+  MATCH: MIRROR L Z-3 -> Lake ID 151 (exact)
+    Brookies x3499 (2.29") on 2017-07-12
+  MATCH: MIRROR L Z-3 -> Lake ID 151 (exact)
+    Tigers x998 (9.92") on 2017-07-17
+  MATCH: MIRROR L Z-3 -> Lake ID 151 (exact)
+    Rainbows x750 (10.98") on 2017-07-19
+  MATCH: MIRROR L Z-3 -> Lake ID 151 (exact)
+    Rainbows x1000 (10.77") on 2017-07-25
+  MATCH: MIRROR L Z-3 -> Lake ID 151 (exact)
+    Rainbows x750 (10.68") on 2017-07-31
+  MATCH: MIRROR L Z-3 -> Lake ID 151 (exact)
+    Tigers x998 (9.92") on 2017-07-31
+  MATCH: MIRROR L Z-3 -> Lake ID 151 (exact)
+    Rainbows x750 (11.02") on 2017-08-08
+  MATCH: MIRROR L Z-3 -> Lake ID 151 (exact)
+    Tigers x1000 (10.63") on 2017-08-14
+  MATCH: MIRROR L Z-3 -> Lake ID 151 (exact)
+    Rainbows x750 (11.02") on 2017-08-14
+  MATCH: MIRROR L Z-3 -> Lake ID 151 (exact)
+    Tigers x512 (10.63") on 2017-08-17
+  MATCH: MIRROR L Z-3 -> Lake ID 151 (exact)
+    Rainbows x800 (11.44") on 2017-08-22
+  MATCH: MIRROR L Z-3 -> Lake ID 151 (exact)
+    Rainbows x750 (11.44") on 2017-08-28
+  MATCH: MIRROR L Z-3 -> Lake ID 151 (exact)
+    Rainbows x752 (11.44") on 2017-09-07
+  NO MATCH: MOON L
+    Tigers x20000 (3.15") on 2017-05-02
+  NO MATCH: MOON L
+    Splake x10053 (3.47") on 2017-07-09
+  NO MATCH: MOON L
+    Rainbows x6998 (8.06") on 2017-10-03
+  MATCH: MOOSEHORN L Z-4 -> Lake ID 152 (exact)
+    Tigers x200 (8.98") on 2017-06-27
+  MATCH: MOOSEHORN L Z-4 -> Lake ID 152 (exact)
+    Rainbows x399 (10.03") on 2017-06-27
+  MATCH: MOOSEHORN L Z-4 -> Lake ID 152 (exact)
+    Rainbows x399 (10.96") on 2017-07-03
+  MATCH: MOOSEHORN L Z-4 -> Lake ID 152 (exact)
+    Rainbows x399 (10.6") on 2017-07-10
+  MATCH: MOOSEHORN L Z-4 -> Lake ID 152 (exact)
+    Tigers x399 (9.92") on 2017-07-12
+  MATCH: MOOSEHORN L Z-4 -> Lake ID 152 (exact)
+    Tigers x399 (9.92") on 2017-07-17
+  MATCH: MOOSEHORN L Z-4 -> Lake ID 152 (exact)
+    Rainbows x401 (10.98") on 2017-07-19
+  MATCH: MOOSEHORN L Z-4 -> Lake ID 152 (exact)
+    Rainbows x400 (10.77") on 2017-07-25
+  MATCH: MOOSEHORN L Z-4 -> Lake ID 152 (exact)
+    Rainbows x400 (10.68") on 2017-07-31
+  MATCH: MOOSEHORN L Z-4 -> Lake ID 152 (exact)
+    Tigers x399 (9.92") on 2017-07-31
+  MATCH: MOOSEHORN L Z-4 -> Lake ID 152 (exact)
+    Rainbows x400 (11.02") on 2017-08-08
+  MATCH: MOOSEHORN L Z-4 -> Lake ID 152 (exact)
+    Rainbows x400 (11.02") on 2017-08-14
+  MATCH: MOOSEHORN L Z-4 -> Lake ID 152 (exact)
+    Tigers x531 (10.63") on 2017-08-14
+  MATCH: OGDEN L WR-5 -> Lake ID 535 (exact)
+    Cutthroats x1397 (1.62") on 2017-09-25
+  MATCH: PASS L Z-5 -> Lake ID 158 (exact)
+    Rainbows x401 (10.24") on 2017-06-26
+  MATCH: PASS L Z-5 -> Lake ID 158 (exact)
+    Tigers x300 (8.98") on 2017-06-27
+  MATCH: PASS L Z-5 -> Lake ID 158 (exact)
+    Rainbows x399 (10.96") on 2017-07-03
+  MATCH: PASS L Z-5 -> Lake ID 158 (exact)
+    Rainbows x399 (10.6") on 2017-07-10
+  MATCH: PASS L Z-5 -> Lake ID 158 (exact)
+    Brookies x503 (2.29") on 2017-07-12
+  MATCH: PASS L Z-5 -> Lake ID 158 (exact)
+    Tigers x602 (9.92") on 2017-07-12
+  MATCH: PASS L Z-5 -> Lake ID 158 (exact)
+    Tigers x602 (9.92") on 2017-07-17
+  MATCH: PASS L Z-5 -> Lake ID 158 (exact)
+    Rainbows x401 (10.98") on 2017-07-19
+  MATCH: PASS L Z-5 -> Lake ID 158 (exact)
+    Rainbows x400 (10.77") on 2017-07-25
+  MATCH: PASS L Z-5 -> Lake ID 158 (exact)
+    Rainbows x400 (10.68") on 2017-07-31
+  MATCH: PASS L Z-5 -> Lake ID 158 (exact)
+    Tigers x451 (9.92") on 2017-07-31
+  MATCH: PASS L Z-5 -> Lake ID 158 (exact)
+    Rainbows x400 (11.02") on 2017-08-08
+  MATCH: PASS L Z-5 -> Lake ID 158 (exact)
+    Tigers x400 (10.63") on 2017-08-14
+  MATCH: PASS L Z-5 -> Lake ID 158 (exact)
+    Rainbows x400 (11.02") on 2017-08-14
+  MATCH: PASS L Z-5 -> Lake ID 158 (exact)
+    Tigers x595 (10.63") on 2017-08-17
+  MATCH: PASS L Z-5 -> Lake ID 158 (exact)
+    Rainbows x401 (11.44") on 2017-08-22
+  MATCH: PASS L Z-5 -> Lake ID 158 (exact)
+    Rainbows x200 (11.44") on 2017-08-28
+  MATCH: PENNY NICKELL L U-98 -> Lake ID 454 (exact)
+    Cutthroats x599 (1.62") on 2017-09-25
+  MATCH: PHINNEY L X-119 -> Lake ID 364 (exact)
+    Brookies x1362 (2.29") on 2017-07-12
+  MATCH: PICTURE L X-82 -> Lake ID 232 (exact)
+    Grayling x1600 (2.79") on 2017-09-25
+  MATCH: PINTO L X-22 -> Lake ID 366 (exact)
+    Brookies x5092 (2.29") on 2017-07-12
+  MATCH: R C NO 1 LAKE WR-2 -> Lake ID 544 (exact)
+    Cutthroats x1197 (1.62") on 2017-09-25
+  MATCH: RAINBOW L U-33 -> Lake ID 456 (exact)
+    Brookies x3519 (2.53") on 2017-07-09
+  NO MATCH: RED CR RES
+    Rainbows x9994 (4.04") on 2017-05-09
+  NO MATCH: RED CR RES
+    Tigers x4982 (3.09") on 2017-05-09
+  MATCH: ROBB L WR-1 -> Lake ID 656 (exact)
+    Brookies x434 (2.53") on 2017-07-09
+  NO MATCH: ROCK CR
+    Rainbows x1870 (10.91") on 2017-06-15
+  NO MATCH: ROCK CR
+    Rainbows x1000 (8.24") on 2017-06-26
+  NO MATCH: ROCK CR
+    Rainbows x500 (11.89") on 2017-06-26
+  MATCH: ROCK II L X-97 -> Lake ID 371 (exact)
+    Grayling x503 (2.79") on 2017-09-25
+  MATCH: SCOUT L Z-12 -> Lake ID 160 (exact)
+    Rainbows x398 (10.24") on 2017-06-26
+  MATCH: SCOUT L Z-12 -> Lake ID 160 (exact)
+    Rainbows x399 (10.6") on 2017-07-05
+  MATCH: SCOUT L Z-12 -> Lake ID 160 (exact)
+    Rainbows x399 (10.6") on 2017-07-10
+  MATCH: SCOUT L Z-12 -> Lake ID 160 (exact)
+    Brookies x1006 (2.29") on 2017-07-12
+  MATCH: SCOUT L Z-12 -> Lake ID 160 (exact)
+    Rainbows x401 (10.98") on 2017-07-19
+  MATCH: SCOUT L Z-12 -> Lake ID 160 (exact)
+    Rainbows x400 (10.77") on 2017-07-25
+  MATCH: SCOUT L Z-12 -> Lake ID 160 (exact)
+    Rainbows x340 (10.68") on 2017-07-31
+  MATCH: SHALER L Z-34 -> Lake ID 162 (exact)
+    Tigers x1300 (2.71") on 2017-06-29
+  MATCH: SHALER L Z-34 -> Lake ID 162 (exact)
+    Cutthroats x1301 (1.62") on 2017-09-25
+  MATCH: SQUAW L X-95 -> Lake ID 380 (exact)
+    Brookies x1054 (2.53") on 2017-07-09
+  NO MATCH: STARVATION RES
+    Kokanee x79868 (2.73") on 2017-03-27
+  NO MATCH: STARVATION RES
+    Perch Yellow x530 (6.3") on 2017-04-19
+  NO MATCH: STARVATION RES
+    Crappie Black x302 (10.77") on 2017-05-25
+  NO MATCH: STARVATION RES
+    Rainbows x403 (6.81") on 2017-09-08
+  NO MATCH: STARVATION RES
+    Rainbows x5300 (7.94") on 2017-09-27
+  NO MATCH: STARVATION RES
+    Rainbows x3500 (7.94") on 2017-09-27
+  NO MATCH: STARVATION RES
+    Rainbows x8200 (7.94") on 2017-09-27
+  NO MATCH: STARVATION RES
+    Rainbows x8000 (7.94") on 2017-09-27
+  NO MATCH: STARVATION RES
+    Crappie Black x100003 (2.0") on 2017-10-26
+  NO MATCH: STARVATION RES
+    Rainbows x2160 (9.59") on 2017-12-05
+  NO MATCH: STARVATION RES
+    Rainbows x4590 (9.59") on 2017-12-05
+  NO MATCH: STARVATION RES
+    Rainbows x4523 (9.59") on 2017-12-05
+  NO MATCH: STARVATION RES
+    Rainbows x2160 (9.59") on 2017-12-06
+  NO MATCH: STARVATION RES
+    Rainbows x4320 (9.59") on 2017-12-06
+  NO MATCH: STARVATION RES
+    Rainbows x4320 (9.59") on 2017-12-06
+  NO MATCH: STARVATION RES
+    Rainbows x2160 (9.59") on 2017-12-06
+  NO MATCH: STARVATION RES
+    Rainbows x4320 (9.59") on 2017-12-06
+  NO MATCH: STARVATION RES
+    Rainbows x810 (9.59") on 2017-12-07
+  MATCH: STEWART L X-79 -> Lake ID 234 (exact)
+    Cutthroats x953 (1.62") on 2017-09-25
+  NO MATCH: STRAWBERRY R
+    Rainbows x502 (10.91") on 2017-06-15
+  NO MATCH: STRAWBERRY R
+    Rainbows x500 (9.31") on 2017-08-09
+  MATCH: TAYLOR L WR-8 -> Lake ID 548 (exact)
+    Brookies x2511 (2.53") on 2017-07-09
+  MATCH: THOMPSON L RC-8 -> Lake ID 382 (exact)
+    Brookies x1411 (2.53") on 2017-07-09
+  MATCH: TUNGSTEN L X-107 -> Lake ID 579 (exact)
+    Cutthroats x998 (1.62") on 2017-09-25
+  MATCH: U- 19 -> Lake ID 459 (exact)
+    Brookies x1519 (2.53") on 2017-07-09
+  MATCH: U- 79 -> Lake ID 657 (exact)
+    Brookies x822 (2.53") on 2017-07-09
+  MATCH: U- 89 -> Lake ID 470 (exact)
+    Brookies x620 (2.53") on 2017-07-09
+  MATCH: U-100 -> Lake ID 662 (exact)
+    Grayling x790 (2.79") on 2017-09-20
+  MATCH: WALK-UP L WR-55 -> Lake ID 551 (exact)
+    Brookies x1860 (2.53") on 2017-07-09
+  MATCH: X- 24 -> Lake ID 422 (exact)
+    Cutthroats x1774 (1.62") on 2017-09-25
+  MATCH: X- 25 -> Lake ID 423 (exact)
+    Cutthroats x1700 (1.62") on 2017-09-25
+  MATCH: X- 26 -> Lake ID 424 (exact)
+    Brookies x419 (2.53") on 2017-07-09
+  MATCH: X- 50 -> Lake ID 668 (exact)
+    Grayling x213 (2.79") on 2017-09-25
+  MATCH: X- 57 -> Lake ID 580 (exact)
+    Brookies x899 (2.53") on 2017-07-09
+  MATCH: X- 60 -> Lake ID 582 (exact)
+    Cutthroats x798 (1.62") on 2017-09-25
+  MATCH: X- 78 -> Lake ID 243 (exact)
+    Cutthroats x1700 (1.62") on 2017-09-25
+  MATCH: X- 86 -> Lake ID 248 (exact)
+    Brookies x713 (2.53") on 2017-07-09
+  MATCH: X-105 -> Lake ID 583 (exact)
+    Cutthroats x1700 (1.62") on 2017-09-25
+  MATCH: Y-19 -> Lake ID 587 (exact)
+    Brookies x543 (2.53") on 2017-07-09
+
+Duchesne Summary:
+  Records found: 184
+  Matched lakes: 143
+  Unmatched lakes: 9
+
+=== FINAL SUMMARY ===
+Year: 2017
+Total records found: 399
+Total matched lakes: 126
+Total unmatched lakes: 24
+Match rate: 84.0%
+Detailed CSV saved: /Volumes/OLAF EXT/jedwoodx/repos/uintas/logs/historical_stocking_2017.csv
+Run completed at: 2025-08-25 17:15:29
