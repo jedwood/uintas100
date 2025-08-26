@@ -142,11 +142,166 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- About Modal -->
+                <div id="about-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+                    <div class="flex items-center justify-center min-h-screen p-4">
+                        <div class="bg-white rounded-lg max-w-4xl w-full max-h-screen overflow-y-auto">
+                            <div class="p-8">
+                                <div class="flex justify-between items-center mb-6">
+                                    <h1 class="text-3xl font-bold text-gray-800">About This Project</h1>
+                                    <button id="close-about-modal" class="text-gray-400 hover:text-gray-600 text-3xl font-bold">&times;</button>
+                                </div>
+                                
+                                <div class="space-y-8">
+                                    <div class="text-lg leading-relaxed p-6 bg-gray-50 rounded-lg border-l-4 border-gray-400">
+                                        I'm on a mission to catch a fish out of at least 100 different Uintas waters. I grew up in Provo fishing and camping all over, but somehow never in the Uintas. At the ripe age of 42 I spent a week on the Highline trail and realized what I've been missing.
+                                    </div>
+
+                                    <div>
+                                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Sources of Information & Inspiration</h2>
+                                        
+                                        <div class="space-y-6">
+                                            <div>
+                                                <h3 class="text-xl font-semibold text-gray-700 mb-3">Websites</h3>
+                                                <ul class="space-y-2 ml-4">
+                                                    <li><a href="https://junesucker.com/uintas" target="_blank" class="text-blue-600 underline hover:text-blue-800">Junesucker.com</a></li>
+                                                    <li><a href="https://dwrapps.utah.gov/fishstocking/Fish" target="_blank" class="text-blue-600 underline hover:text-blue-800">DWR Stocking Reports</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div>
+                                                <h3 class="text-xl font-semibold text-gray-700 mb-3">YouTube Channels</h3>
+                                                <ul class="space-y-2 ml-4">
+                                                    <li><a href="https://www.youtube.com/@TroutHowler" target="_blank" class="text-blue-600 underline hover:text-blue-800">TroutHowler</a></li>
+                                                    <li><a href="https://www.youtube.com/@UtahWaterLog" target="_blank" class="text-blue-600 underline hover:text-blue-800">Utah Water Log</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div>
+                                                <h3 class="text-xl font-semibold text-gray-700 mb-3">Books</h3>
+                                                <ul class="space-y-2 ml-4">
+                                                    <li><a href="https://www.amazon.com/Hiking-Utahs-Uintas-Andrew-Gillman/dp/1493075691" target="_blank" class="text-blue-600 underline hover:text-blue-800">Hiking Utah's High Uintas</a></li>
+                                                    <li><a href="https://www.amazon.com/High-Uintas-Adventures-Backcountry-Planner/dp/B08FPGJ214" target="_blank" class="text-blue-600 underline hover:text-blue-800">High Uintas Adventures</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div>
+                                                <h3 class="text-xl font-semibold text-gray-700 mb-3">Old DWR Pamphlets</h3>
+                                                <ul class="space-y-2 ml-4">
+                                                    <li><a href="data/dwr_original_pamphlets/dwr-bear-blacks-fork.pdf" target="_blank" class="text-blue-600 underline hover:text-blue-800">Bear River & Blacks Fork Drainages</a></li>
+                                                    <li><a href="data/dwr_original_pamphlets/dwr-dry-gulch-and-uinta.pdf" target="_blank" class="text-blue-600 underline hover:text-blue-800">Dry Gulch & Uinta River Drainages</a></li>
+                                                    <li><a href="data/dwr_original_pamphlets/dwr-duchesne.pdf" target="_blank" class="text-blue-600 underline hover:text-blue-800">Duchesne River Drainage</a></li>
+                                                    <li><a href="data/dwr_original_pamphlets/dwr-provo-weber.pdf" target="_blank" class="text-blue-600 underline hover:text-blue-800">Provo River & Weber River Drainages</a></li>
+                                                    <li><a href="data/dwr_original_pamphlets/dwr-sheep-carter-burnt-fork.pdf" target="_blank" class="text-blue-600 underline hover:text-blue-800">Sheep Creek, Carter Creek & Burnt Fork Drainages</a></li>
+                                                    <li><a href="data/dwr_original_pamphlets/dwr-smith-henry-beaver.pdf" target="_blank" class="text-blue-600 underline hover:text-blue-800">Smiths Fork, Henrys Fork & Beaver Creek Drainages</a></li>
+                                                    <li><a href="data/dwr_original_pamphlets/dwr-uintas-rock-creek.pdf" target="_blank" class="text-blue-600 underline hover:text-blue-800">Uinta River & Rock Creek Drainages</a></li>
+                                                    <li><a href="data/dwr_original_pamphlets/dwr-yellowstone-lake-fork-swift.pdf" target="_blank" class="text-blue-600 underline hover:text-blue-800">Yellowstone River, Lake Fork & Swift Creek Drainages</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Fun Facts</h2>
+                                        <div class="space-y-6">
+                                            <p class="text-lg leading-relaxed">
+                                                There are around 500 lakes in the Uintas with fish in them, and a couple hundred without. Many are stocked regularly, some were stocked years ago and have established naturally reproducing populations, some have no fish and likely never have, and some were once stocked but they gave up due to frequent winter kill.
+                                            </p>
+                                            
+                                            <div>
+                                                <h3 class="text-xl font-semibold text-gray-700 mb-3">Deep and High</h3>
+                                                <ul class="space-y-2 ml-4">
+                                                    <li><strong>Deepest:</strong> Crater (X-94) at 147 feet</li>
+                                                    <li><strong>Highest elevation:</strong> Beard (U-74) at 11,740 feet</li>
+                                                </ul>
+                                            </div>
+
+                                            <div>
+                                                <h3 class="text-xl font-semibold text-gray-700 mb-3">Popular Names</h3>
+                                                <div class="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm">
+                                                    <div><strong>Hidden</strong> (6 lakes)</div>
+                                                    <div><strong>Island</strong> (4 lakes)</div>
+                                                    <div><strong>Beaver</strong> (3 lakes)</div>
+                                                    <div><strong>Blue</strong> (3 lakes)</div>
+                                                    <div><strong>Castle</strong> (3 lakes)</div>
+                                                    <div><strong>Cliff</strong> (3 lakes)</div>
+                                                    <div><strong>Fish</strong> (3 lakes)</div>
+                                                    <div><strong>Lily Pad</strong> (3 lakes)</div>
+                                                    <div><strong>Lost</strong> (3 lakes)</div>
+                                                    <div><strong>Bear</strong> (2 lakes)</div>
+                                                    <div><strong>Brook</strong> (2 lakes)</div>
+                                                    <div><strong>Carol</strong> (2 lakes)</div>
+                                                    <div><strong>Cleveland</strong> (2 lakes)</div>
+                                                    <div><strong>Crater</strong> (2 lakes)</div>
+                                                    <div><strong>Crystal</strong> (2 lakes)</div>
+                                                    <div><strong>Dean</strong> (2 lakes)</div>
+                                                    <div><strong>Diamond</strong> (2 lakes)</div>
+                                                    <div><strong>Dollar</strong> (2 lakes)</div>
+                                                    <div><strong>Duck</strong> (2 lakes)</div>
+                                                    <div><strong>Everman</strong> (2 lakes)</div>
+                                                    <div><strong>Gem</strong> (2 lakes)</div>
+                                                    <div><strong>Gilbert</strong> (2 lakes)</div>
+                                                    <div><strong>Hell Hole</strong> (2 lakes)</div>
+                                                    <div><strong>Horseshoe</strong> (2 lakes)</div>
+                                                    <div><strong>Jean</strong> (2 lakes)</div>
+                                                    <div><strong>Lambert</strong> (2 lakes)</div>
+                                                    <div><strong>Lilly</strong> (2 lakes)</div>
+                                                    <div><strong>Lily</strong> (2 lakes)</div>
+                                                    <div><strong>Little Elk</strong> (2 lakes)</div>
+                                                    <div><strong>Marsh</strong> (2 lakes)</div>
+                                                    <div><strong>Milk</strong> (2 lakes)</div>
+                                                    <div><strong>Mud</strong> (2 lakes)</div>
+                                                    <div><strong>Olsen</strong> (2 lakes)</div>
+                                                    <div><strong>Porcupine</strong> (2 lakes)</div>
+                                                    <div><strong>Rainbow</strong> (2 lakes)</div>
+                                                    <div><strong>Round</strong> (2 lakes)</div>
+                                                    <div><strong>Sand</strong> (2 lakes)</div>
+                                                    <div><strong>Twin</strong> (2 lakes)</div>
+                                                </div>
+                                                
+                                                <p class="text-sm text-gray-600 mt-4 italic">
+                                                    There's an X-22 in both Rock Creek Drainage (Pinto) and Swift Creek Drainage, which can cause some confusion when referencing lakes by number alone.
+                                                </p>
+                                            </div>
+
+                                            <div>
+                                                <h3 class="text-xl font-semibold text-gray-700 mb-3">2025 Stocking Totals</h3>
+                                                <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                                                    <div class="text-center p-3 bg-gray-50 rounded-lg">
+                                                        <div class="text-2xl font-bold text-gray-800">96,000</div>
+                                                        <div class="text-sm text-gray-600">Brookies</div>
+                                                    </div>
+                                                    <div class="text-center p-3 bg-gray-50 rounded-lg">
+                                                        <div class="text-2xl font-bold text-gray-800">63,000</div>
+                                                        <div class="text-sm text-gray-600">Rainbows</div>
+                                                    </div>
+                                                    <div class="text-center p-3 bg-gray-50 rounded-lg">
+                                                        <div class="text-2xl font-bold text-gray-800">28,000</div>
+                                                        <div class="text-sm text-gray-600">Tigers</div>
+                                                    </div>
+                                                    <div class="text-center p-3 bg-gray-50 rounded-lg">
+                                                        <div class="text-2xl font-bold text-gray-800">27,000</div>
+                                                        <div class="text-sm text-gray-600">Cutthroats</div>
+                                                    </div>
+                                                    <div class="text-center p-3 bg-gray-50 rounded-lg">
+                                                        <div class="text-2xl font-bold text-gray-800">4,000</div>
+                                                        <div class="text-sm text-gray-600">Grayling</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             
             <!-- About Link -->
             <div class="mt-8 text-center">
-                <a href="about.html" class="text-slate-600 hover:text-slate-800 text-sm transition-colors">About this project</a>
+                <button id="about-link" class="text-slate-600 hover:text-slate-800 text-sm transition-colors underline cursor-pointer bg-transparent border-none">About this project</button>
             </div>
         </div>
     </div>
@@ -342,6 +497,8 @@
             document.getElementById('apply-filters').addEventListener('click', applyFilters);
             document.getElementById('clear-filters').addEventListener('click', clearFilters);
             document.getElementById('close-modal').addEventListener('click', closeModal);
+            document.getElementById('about-link').addEventListener('click', openAboutModal);
+            document.getElementById('close-about-modal').addEventListener('click', closeAboutModal);
             
             // Filter state management
             ['drainage-filter', 'species-filter', 'depth-filter', 'year-filter'].forEach(id => {
@@ -752,6 +909,14 @@
 
         function closeModal() {
             document.getElementById('lake-detail-modal').classList.add('hidden');
+        }
+
+        function openAboutModal() {
+            document.getElementById('about-modal').classList.remove('hidden');
+        }
+
+        function closeAboutModal() {
+            document.getElementById('about-modal').classList.add('hidden');
         }
 
         // Note: Fishing reports and lake editing features commented out
