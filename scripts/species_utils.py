@@ -105,6 +105,62 @@ def format_species_display(species_list, asterisk_species=None):
     
     return ", ".join(display_list)
 
+def update_lake_fish_species(cursor, lake_id, cutoff_year=2018):
+    """
+    Update a lake's fish_species field by merging existing historical data with stocking records.
+    
+    Args:
+        cursor: Database cursor
+        lake_id: Lake ID to update
+        cutoff_year: Year cutoff for asterisk logic (species not stocked since this year get *)
+    """
+    # Get current fish_species (contains manual edits and historical data)
+    cursor.execute('SELECT fish_species FROM lakes WHERE id = ?', (lake_id,))
+    current_species_text = cursor.fetchone()[0] or ''
+    
+    # Parse current species (removing asterisks for processing)
+    current_species = set()
+    if current_species_text:
+        # Split and clean existing species
+        parts = re.split(r'[,;&]|\sand\s', current_species_text)
+        for part in parts:
+            # Remove asterisks and normalize
+            clean_part = re.sub(r'\*', '', part).strip()
+            if clean_part:
+                normalized = normalize_species_name(clean_part)
+                if normalized:
+                    current_species.add(normalized)
+    
+    # Get species from stocking records
+    cursor.execute('''
+        SELECT DISTINCT species FROM stocking_records 
+        WHERE lake_id = ? 
+        ORDER BY species
+    ''', (lake_id,))
+    stocking_species = set(row[0] for row in cursor.fetchall())
+    
+    # Get recent stocking species (for asterisk logic)
+    cursor.execute('''
+        SELECT DISTINCT species FROM stocking_records 
+        WHERE lake_id = ? AND source_year >= ?
+        ORDER BY species
+    ''', (lake_id, cutoff_year))
+    recent_stocking_species = set(row[0] for row in cursor.fetchall())
+    
+    # Merge all species
+    all_species = current_species.union(stocking_species)
+    
+    # Apply asterisk logic: species not stocked since cutoff_year get asterisks
+    asterisk_species = all_species - recent_stocking_species
+    
+    # Format for display
+    if all_species:
+        updated_fish_species = format_species_display(sorted(all_species), asterisk_species)
+        cursor.execute('UPDATE lakes SET fish_species = ? WHERE id = ?', (updated_fish_species, lake_id))
+        return updated_fish_species
+    
+    return None
+
 def standardize_stocking_species(raw_species):
     """Convert raw stocking species from DWR data to normalized names"""
     mapping = {

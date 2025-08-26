@@ -512,7 +512,7 @@
                         ${lake.size_acres ? ` • ${lake.size_acres} acres` : ''} 
                         ${lake.max_depth_ft ? ` • ${lake.max_depth_ft} ft deep` : ''}
                         ${lake.elevation_ft ? ` • ${lake.elevation_ft.toLocaleString()} ft elev` : ''}
-                        • (${lake.stockingYears})
+                        ${lake.stockingYears !== 'not stocked' ? ` • (${lake.stockingYears})` : ''}
                     </div>
                 </div>
                 `;
@@ -579,7 +579,7 @@
                         ${lake.size_acres ? `${lake.fish_species ? ' • ' : ''}${lake.size_acres} acres` : ''} 
                         ${lake.max_depth_ft ? ` • ${lake.max_depth_ft} ft deep` : ''}
                         ${lake.elevation_ft ? ` • ${lake.elevation_ft.toLocaleString()} ft elev` : ''}
-                        • (${stockingInfo})
+                        ${stockingInfo !== 'not stocked' ? ` • (${stockingInfo})` : ''}
                     </div>
                 </div>
                 `;
@@ -627,7 +627,7 @@
                         ${lake.size_acres ? ` • ${lake.size_acres} acres` : ''} 
                         ${lake.max_depth_ft ? ` • ${lake.max_depth_ft} ft deep` : ''}
                         ${lake.elevation_ft ? ` • ${lake.elevation_ft.toLocaleString()} ft elev` : ''}
-                        • (${stockingInfo})
+                        ${stockingInfo !== 'not stocked' ? ` • (${stockingInfo})` : ''}
                     </div>
                 </div>
                 `;

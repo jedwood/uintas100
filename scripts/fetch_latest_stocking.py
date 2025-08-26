@@ -5,7 +5,7 @@ import sqlite3
 import csv
 import os
 from database_utils import create_database, extract_letter_number, stocking_record_exists, find_matching_lake
-from species_utils import standardize_stocking_species
+from species_utils import standardize_stocking_species, update_lake_fish_species
 from datetime import datetime
 
 def insert_stocking_record(cursor, lake_id, species, quantity, length, stock_date, source_year, county):
@@ -66,6 +66,9 @@ def parse_and_insert_data(html_content, conn, cursor, county, csv_writer, log_fi
             if not stocking_record_exists(cursor, lake_id, species, quantity, stock_date):
                 insert_stocking_record(cursor, lake_id, species, quantity, length, stock_date, source_year, county)
                 new_records += 1
+                
+                # Update fish_species field with new stocking data
+                update_lake_fish_species(cursor, lake_id)
                 
                 # Flag lake for Apple Notes update when new stocking record added
                 cursor.execute("UPDATE lakes SET notes_needs_update = TRUE WHERE id = ?", (lake_id,))
