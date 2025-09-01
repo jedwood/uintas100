@@ -35,8 +35,9 @@ osascript scripts/sync_db_to_notes_jxa.js
 
 ### PWA Cache Management
 ```bash
-# Update PWA cache version before committing changes
-sed -i '' "s/uintas-v[0-9]*/uintas-v$(date +%s)/g" service-worker.js
+# PWA cache version is automatically updated by commit hook
+# No manual intervention needed - just commit and the hook handles it
+git commit -m "your changes"  # Automatically updates cache version
 ```
 
 ### Development Server
@@ -102,14 +103,14 @@ Auto-generated lake data   ← System content
 
 ### PWA Cache Strategy
 - Service worker caches all static assets and database
-- Cache version must be updated in `service-worker.js` before deploying changes
+- Cache version is automatically updated by commit hook when changes are committed
 - Works offline indefinitely when installed to iPhone home screen
 
 ## Development Notes
 
 - No build process required - static files served directly
 - Database changes require re-running appropriate Python scripts
-- PWA updates need cache version increment in service-worker.js
+- PWA updates are handled automatically by commit hook (no manual cache version updates needed)
 - Apple Notes sync requires macOS with JXA (JavaScript for Automation)
 - Species data uses intelligent merging of historical and current stocking records
 
