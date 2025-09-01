@@ -140,7 +140,7 @@ def main():
             total_new_records = 0
             all_unmatched = set()
             
-            for county in ["Summit", "Duchesne"]:
+            for county in ["Summit", "Duchesne", "Uintah", "Daggett"]:
                 log_file.write(f"\nProcessing {county} county...\n")
                 print(f"Fetching data for {county} county...")
                 

@@ -201,7 +201,14 @@ function run() {
         // Always include Jed's Notes section (even if empty) for editing
         noteBody += "<br><h2>Jed's Notes</h2>";
         if (jedNotes) {
-            noteBody += `<p>${jedNotes.replace(/\n/g, '<br>')}</p><br>`;
+            // Check if content is already HTML formatted
+            if (jedNotes.includes('<br>') || jedNotes.includes('<i>') || jedNotes.includes('<b>') || jedNotes.includes('<div>')) {
+                // Already HTML formatted, wrap in div for structure
+                noteBody += `<div>${jedNotes}</div><br>`;
+            } else {
+                // Legacy plain text format, convert newlines to breaks
+                noteBody += `<p>${jedNotes.replace(/\n/g, '<br>')}</p><br>`;
+            }
         } else {
             noteBody += "<p><i>Add your notes here...</i></p><br>";
         }
@@ -209,14 +216,21 @@ function run() {
         // Always include Trip Reports section (even if empty) for editing
         noteBody += "<h2>Trip Reports</h2>";
         if (tripReports) {
-            const trips = tripReports.split('\n');
-            noteBody += "<ul>";
-            trips.forEach(trip => {
-                if (trip.trim()) {
-                    noteBody += `<li>${trip}</li>`;
-                }
-            });
-            noteBody += "</ul><br>";
+            // Check if trip reports are already in HTML list format
+            if (tripReports.includes('<ul') && tripReports.includes('<li>')) {
+                // Already HTML format, use as-is
+                noteBody += tripReports + "<br>";
+            } else {
+                // Legacy text format, convert to list
+                const trips = tripReports.split('\n');
+                noteBody += `<ul class="Apple-dash-list">`;
+                trips.forEach(trip => {
+                    if (trip.trim()) {
+                        noteBody += `<li>${trip}</li>`;
+                    }
+                });
+                noteBody += "</ul><br>";
+            }
         } else {
             noteBody += "<p><i>Add trip reports here...</i></p><br>";
         }

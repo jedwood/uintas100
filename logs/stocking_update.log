@@ -66,3 +66,84 @@ Total new records: 26
 Total unmatched lakes: 26
 CSV file updated: /Volumes/OLAF EXT/jedwoodx/repos/uintas/data/utah_dwr_stocking_data.csv
 Run completed at: 2025-08-23 11:36:27
+
+=== STOCKING UPDATE RUN: 2025-08-31 21:53:56 ===
+
+Processing Summit county...
+  → 0 new records added for SUMMIT county
+  → 11 unmatched lakes in SUMMIT
+    - BEAR R
+    - DEER VALLEY LAKES
+    - ECHO RES
+    - HAYDEN FK
+    - PROVO R
+    - ROCKPORT RES
+    - SMITH-MOREHOUSE RES
+    - STATELINE RES
+    - STILLWATER FK
+    - WEBER R
+    - WHITNEY RES
+
+Processing Duchesne county...
+  → 0 new records added for DUCHESNE county
+  → 15 unmatched lakes in DUCHESNE
+    - BIG SANDWASH RES
+    - BROWNS DRAW RES
+    - DUCHESNE R
+    - DUCHESNE R, N FK
+    - LAKE CANYON L
+    - LAKE FK R
+    - MOON L
+    - RED CR RES
+    - ROCK CR
+    - STARVATION RES
+    - STRAWBERRY R
+    - UINTA POND
+    - UINTA R
+    - UPPER STILLWATER RES
+    - YELLOWSTONE R
+
+Processing Uintah county...
+  → 0 new records added for UINTAH county
+  → 19 unmatched lakes in UINTAH
+    - ASHLEY CR, S FK
+    - BROUGH RES
+    - BULLOCK RES
+    - CALDER RES
+    - COTTONWOOD RES
+    - EAST PARK RES
+    - GHOST POND
+    - LITTLE BRUSH CR
+    - LITTLE MONTES RES
+    - MATT WARNER RES
+    - OAKS PARK RES
+    - OLD FORT POND NORTH
+    - OLD FORT POND SOUTH
+    - PARADISE RES
+    - PELICAN L
+    - PELICAN SCB
+    - RED FLEET RES
+    - ROOSEVELT COMM POND
+    - STEINAKER RES
+
+Processing Daggett county...
+  → 0 new records added for DAGGETT county
+  → 12 unmatched lakes in DAGGETT
+    - BROWNE L
+    - CART CR
+    - CARTER CR
+    - CARTER CR, E FK
+    - CARTER CR, W FK
+    - FLAMING GORGE RES
+    - GREEN R
+    - LONG PARK RES
+    - MANN CR
+    - MOOSE POND
+    - SHEEP CR
+    - WEYMAN CR
+
+=== SUMMARY ===
+Total new records: 0
+Total unmatched lakes: 57
+CSV file updated: /Volumes/OLAF EXT/jedwoodx/repos/uintas/data/utah_dwr_stocking_data.csv
+Run completed at: 2025-08-31 21:53:57

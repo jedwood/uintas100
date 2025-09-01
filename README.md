@@ -334,34 +334,66 @@ Then run: `osascript scripts/sync_db_to_notes_jxa.js`
 
 I need to create a CSV export for Google My Maps import. Since Google My Maps has a 10-layer limit but we have 18 drainages, we need to group drainages based on how they were organized in the old DWR pamphlets.
 
-Step 0: briefly research the current state of Google "My Maps" and/or Maps API. As a final product I want a map that will handle all ~700 of these lakes, that I can share with others, embed in the web app, and ideally use offline in my iPhone Google Maps app.
+**Step 0: Research Findings (2025) ✅**
 
-Step 1: Parse DWR Pamphlet Groupings
-Look at the DWR pamphlet filenames in the project and determine which drainages were grouped together in each pamphlet. Create a mapping of drainage groups that will keep us under the 10-layer limit for Google My Maps.
+**Google My Maps Capabilities:**
+- **Layer Limit**: 10 layers maximum (confirmed for 2025)
+- **Data Import**: Up to 2,000 rows per import, 40MB file size limit
+- **CSV Requirements**: Column names limited to 64 characters, first row must be headers
+- **Sharing**: Public web links, private sharing, website embedding supported
+- **Mobile**: Android app available, basic offline capabilities through standard Google Maps
+- **Export**: Can export to KML for use in other platforms
 
-Step 2: Create Drainage Coordinates Stub File
-Create a JSON or CSV file called drainage_centers.json (or similar) with this structure:
-json{
-  "Ashley Creek": {"lat": null, "lng": null},
-  "Bear River": {"lat": null, "lng": null},
+**Alternative Platform Research:**
+- **CalTopo**: Supports GPX/KML/GeoJSON import but **crashes with "anything over a few hundred points"** - not suitable for 700+ lakes
+- **Apple Maps**: Personal favorite mentioned, can import from KML exports
+- **Export Strategy**: Start with Google My Maps, then export KML/CSV for import to CalTopo, Apple Maps, etc.
+
+**Recommendation**: Proceed with Google My Maps as primary platform (web-based sharing priority), then use KML export for other platforms. The 10-layer limit requires strategic drainage groupings per DWR pamphlet organization.
+
+**Step 1: DWR Pamphlet Groupings Analysis ✅**
+
+Based on DWR pamphlet filenames in `data/dwr_original_pamphlets/`, the historical groupings are:
+
+1. **Bear River + Blacks Fork** (`dwr-bear-blacks-fork.pdf`)
+2. **Dry Gulch + Uinta River** (`dwr-dry-gulch-and-uinta.pdf`)
+3. **Duchesne River** (`dwr-duchesne.pdf`)
+4. **Provo River + Weber River** (`dwr-provo-weber.pdf`)
+5. **Sheep Creek + Carter Creek + Burnt Fork** (`dwr-sheep-carter-burnt-fork.pdf`)
+6. **Smiths Fork + Henrys Fork + Beaver Creek** (`dwr-smith-henry-beaver.pdf`)
+7. **Uintas + Rock Creek** (`dwr-uintas-rock-creek.pdf`)
+8. **Yellowstone + Lake Fork + Swift Creek** (`dwr-yellowstone-lake-fork-swift.pdf`)
+
+**Total: 8 Layer Groups** (well under the 10-layer Google My Maps limit)
+
+**Step 2: Create Drainage Coordinates Stub File**
+
+Create `drainage_centers.json` with this structure:
+```json
+{
+  "Ashley Creek Drainage": {"lat": null, "lng": null},
+  "Bear River Drainage": {"lat": null, "lng": null},
+  "Beaver Creek Drainage": {"lat": null, "lng": null},
   [... for all 18 drainages]
 }
-This will be a stub file that I'll manually populate with center coordinates for each drainage.
+```
+**Format: JSON** (preferred for easy programmatic access)
 
-Step 3: Create CSV Export Script
-Write a script that:
+**Step 3: CSV Export Script Requirements**
 
-- Reads the drainage center coordinates from the stub file
-- Queries the database for all lakes
-- Assigns each lake the coordinates of its drainage center
-- Groups drainages into layers based on the DWR pamphlet groupings
-- Exports a CSV suitable for Google My Maps import with these columns:
+**Description Field Priority** (researched Google My Maps limits):
+1. **Species** (or "NO FISH" if flagged as no_fish)
+2. **Depth, Size** (brief format: "45 acres, 12 ft deep")
+3. **Stocking History** (most recent: "Last stocked: 2023 Brookies")  
+4. **DWR Notes** (truncated if needed)
+5. **Character Limit**: No specific limit found for description content, but keep concise for mobile readability
 
-- Name (lake name + designation)
-- Description (follow a similar pattern that we use for the Apple Notes creation: I want as much info in this description as we have, subject to Google Map limitations, which you'll need to research)
-- Latitude (from drainage center)
-- Longitude (from drainage center)
-- Layer (the drainage group name for organizing into separate layers)
+**CSV Columns:**
+- **Name**: Lake designation + name (e.g., "G-49" or "G-49 (Sample Lake)")
+- **Description**: Species, depth, size, recent stocking, key DWR info
+- **Latitude**: From drainage center coordinates
+- **Longitude**: From drainage center coordinates  
+- **Layer**: DWR pamphlet group name (8 total groups)
 
 Requirements:
 
@@ -372,6 +404,8 @@ Requirements:
 
 The goal is to create a CSV I can import to Google My Maps, where each drainage group becomes a separate layer, and all lakes start positioned at their drainage center so I can drag them to precise locations while noting elevations.
 
+
+# FUTURE
 ## 2- Add info from my books
 - scan in simple additional drainage maps
 - scan in and OCR data tables to fill in missing elevation, size, depth values

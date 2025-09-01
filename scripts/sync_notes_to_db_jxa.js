@@ -92,11 +92,13 @@ function run() {
                              editableContent.match(/Jed's Notes.*?<\/div>\s*<div>(.*?)<\/div>/is);
         if (jedNotesMatch) {
             let jedContent = jedNotesMatch[1];
-            // Clean up HTML and extract text
-            jedContent = jedContent.replace(/<br\s*\/?>/gi, '\n');
-            jedContent = jedContent.replace(/<\/?div>/g, '\n');
-            jedContent = jedContent.replace(/<\/?[^>]+>/g, '');
-            jedContent = jedContent.replace(/\n+/g, '\n').trim();
+            // Preserve HTML formatting but clean up structural tags
+            jedContent = jedContent.replace(/<br\s*\/?>/gi, '<br>'); // Normalize <br> tags
+            jedContent = jedContent.replace(/<div><br><\/div>/gi, '<br>'); // Convert empty div+br to just br
+            jedContent = jedContent.replace(/<div>/gi, ''); // Remove opening div tags
+            jedContent = jedContent.replace(/<\/div>/gi, '<br>'); // Convert closing div to br
+            jedContent = jedContent.replace(/(<br>\s*){2,}/gi, '<br><br>'); // Normalize multiple breaks
+            jedContent = jedContent.replace(/^<br>|<br>$/g, '').trim(); // Remove leading/trailing breaks
             
             // Don't save placeholder text
             if (jedContent && jedContent !== "Add your notes here...") {
@@ -113,16 +115,16 @@ function run() {
             
             // Handle both list format and paragraph format
             if (tripContent.includes('<li>')) {
-                // Extract from list items
-                const listItems = tripContent.match(/<li>(.*?)<\/li>/g);
+                // Preserve list format - keep as HTML list
+                const listItems = tripContent.match(/<li>(.*?)<\/li>/gs);
                 if (listItems) {
-                    tripReports = listItems.map(item => {
-                        let cleaned = item.replace(/<\/?li>/g, '');
-                        cleaned = cleaned.replace(/<br\s*\/?>/gi, '\n');
-                        cleaned = cleaned.replace(/<\/?[^>]+>/g, '');
-                        cleaned = cleaned.replace(/\n+/g, '\n').trim();
-                        return cleaned;
-                    }).join('\n');
+                    const cleanedItems = listItems.map(item => {
+                        // Clean up individual list items but keep them as list items
+                        let cleaned = item.replace(/<br\s*\/?>\s*<\/li>$/gi, '</li>'); // Remove trailing <br> before </li>
+                        return cleaned.trim();
+                    });
+                    // Reconstruct as proper HTML list
+                    tripReports = `<ul class="Apple-dash-list">\n${cleanedItems.join('\n')}\n</ul>`;
                 }
             } else {
                 // Extract from paragraph

@@ -1,0 +1,556 @@
+=== UINTAH & DAGGETT HISTORICAL STOCKING IMPORT ===
+Started at: 2025-08-31 21:53:25
+Years: 2002-2025
+Counties: Uintah, Daggett
+
+
+=== PROCESSING UINTAH COUNTY ===
+  NEW: BERT L GR-62 (669) - Grayling x370 on 2002-07-30 [exact]
+  NEW: BLUE L DF-1 (2) - Brookies x707 on 2002-06-27 [exact]
+  NEW: DEADMAN L GR-38 (4) - Brookies x1060 on 2002-06-27 [exact]
+  NEW: HACKING L GR-40 (15) - Rainbows x502 on 2002-06-24 [exact]
+  NEW: HACKING L GR-40 (15) - Brookies x1001 on 2002-06-27 [exact]
+  NEW: KIBAH L, EAST DF-11 (6) - Brookies x255 on 2002-06-27 [exact]
+  NEW: KIBAH L,FINGER DF-12 (7) - Brookies x373 on 2002-06-27 [exact]
+  NEW: LITTLE ELK L DF-17 (19) - Grayling x507 on 2002-07-30 [exact]
+  NEW: WOOLEY L WR-40 (555) - Brookies x118 on 2002-06-27 [exact]
+  → 9 new records added for 8 lakes in Uintah
+    Matched lakes: BERT L GR-62, BLUE L DF-1, DEADMAN L GR-38, HACKING L GR-40, KIBAH L, EAST DF-11, KIBAH L,FINGER DF-12, LITTLE ELK L DF-17, WOOLEY L WR-40
+  → 12 unmatched waters in Uintah
+  NEW: ASHLEY TWIN L GR-35 (1) - Brookies x2093 on 2003-07-03 [exact]
+  NEW: HACKING L GR-40 (15) - Rainbows x224 on 2003-06-30 [exact]
+  NEW: HACKING L GR-40 (15) - Rainbows x135 on 2003-07-22 [exact]
+  NEW: HACKING L GR-40 (15) - Rainbows x103 on 2003-07-22 [exact]
+  NEW: WATKINS L WR-48 (552) - Brookies x1799 on 2003-07-03 [exact]
+  → 5 new records added for 3 lakes in Uintah
+    Matched lakes: ASHLEY TWIN L GR-35, HACKING L GR-40, WATKINS L WR-48
+  → 15 unmatched waters in Uintah
+  NEW: HACKING L GR-40 (15) - Rainbows x225 on 2004-07-01 [exact]
+  NEW: HACKING L GR-40 (15) - Brookies x994 on 2004-07-07 [exact]
+  NEW: HACKING L GR-40 (15) - Rainbows x222 on 2004-07-21 [exact]
+  NEW: MARSH L GR-39 (20) - Brookies x1255 on 2004-07-07 [exact]
+  NEW: PAUL L DF-18 (24) - Brookies x1092 on 2004-07-07 [exact]
+  → 5 new records added for 3 lakes in Uintah
+    Matched lakes: HACKING L GR-40, MARSH L GR-39, PAUL L DF-18
+  → 14 unmatched waters in Uintah
+  NEW: ASHLEY TWIN L GR-35 (1) - Brookies x2104 on 2005-07-15 [exact]
+  NEW: BLUE L DF-1 (2) - Brookies x697 on 2005-07-15 [exact]
+  NEW: DEADMAN L GR-38 (4) - Brookies x1045 on 2005-07-15 [exact]
+  NEW: DOLLAR L WR-43 (527) - Brookies x697 on 2005-07-15 [exact]
+  NEW: HACKING L GR-40 (15) - Rainbows x348 on 2005-07-21 [exact]
+  NEW: KIBAH L, EAST DF-11 (6) - Brookies x255 on 2005-07-15 [exact]
+  NEW: KIBAH L, WEST DF-14 (8) - Brookies x777 on 2005-07-15 [exact]
+  NEW: KIBAH L,FINGER DF-12 (7) - Brookies x375 on 2005-07-15 [exact]
+  NEW: KIBAH L,ISLAND DF-16 (10) - Brookies x804 on 2005-07-15 [exact]
+  NEW: MUD L GR-47 (22) - Grayling x990 on 2005-07-18 [exact]
+  NEW: STEWART L (234) - Chub x546 on 2005-05-05 [medium]
+  NEW: TEDS L WR-44 (549) - Brookies x1501 on 2005-07-15 [exact]
+  → 12 new records added for 12 lakes in Uintah
+    Matched lakes: ASHLEY TWIN L GR-35, BLUE L DF-1, DEADMAN L GR-38, DOLLAR L WR-43, HACKING L GR-40, KIBAH L, EAST DF-11, KIBAH L, WEST DF-14, KIBAH L,FINGER DF-12, KIBAH L,ISLAND DF-16, MUD L GR-47, STEWART L, TEDS L WR-44
+  → 16 unmatched waters in Uintah
+  NEW: ASHLEY TWIN L GR-35 (1) - Brookies x2100 on 2006-07-12 [exact]
+  NEW: BERT L GR-62 (669) - Grayling x370 on 2006-08-02 [exact]
+  NEW: BLUE L DF-1 (2) - Brookies x704 on 2006-07-12 [exact]
+  NEW: DEADMAN L GR-38 (4) - Brookies x1050 on 2006-07-12 [exact]
+  NEW: HACKING L GR-40 (15) - Rainbows x255 on 2006-06-23 [exact]
+  NEW: HACKING L GR-40 (15) - Tigers x503 on 2006-06-23 [exact]
+  NEW: HACKING L GR-40 (15) - Brookies x998 on 2006-07-12 [exact]
+  NEW: HACKING L GR-40 (15) - Rainbows x348 on 2006-07-19 [exact]
+  NEW: LITTLE ELK L DF-17 (19) - Grayling x502 on 2006-08-02 [exact]
+  NEW: MARSH L GR-39 (20) - Brookies x1260 on 2006-07-17 [exact]
+  NEW: MUD L GR-47 (22) - Grayling x422 on 2006-08-02 [exact]
+  NEW: PAUL L DF-18 (24) - Brookies x1103 on 2006-07-12 [exact]
+  → 12 new records added for 9 lakes in Uintah
+    Matched lakes: ASHLEY TWIN L GR-35, BERT L GR-62, BLUE L DF-1, DEADMAN L GR-38, HACKING L GR-40, LITTLE ELK L DF-17, MARSH L GR-39, MUD L GR-47, PAUL L DF-18
+  → 17 unmatched waters in Uintah
+  NEW: BERT L GR-62 (669) - Brookies x1373 on 2007-07-16 [exact]
+  NEW: GOOSE L NO 2 GR-43 (11) - Brookies x1945 on 2007-07-16 [exact]
+  NEW: HACKING L GR-40 (15) - Rainbows x347 on 2007-06-18 [exact]
+  NEW: KIBAH L, EAST DF-11 (6) - Brookies x243 on 2007-07-16 [exact]
+  NEW: LITTLE BLUE L GR-48 (18) - Brookies x601 on 2007-07-16 [exact]
+  NEW: WOOLEY L WR-40 (555) - Brookies x129 on 2007-07-16 [exact]
+  → 6 new records added for 6 lakes in Uintah
+    Matched lakes: BERT L GR-62, GOOSE L NO 2 GR-43, HACKING L GR-40, KIBAH L, EAST DF-11, LITTLE BLUE L GR-48, WOOLEY L WR-40
+  → 19 unmatched waters in Uintah
+  NEW: ASHLEY TWIN L GR-35 (1) - Brookies x2100 on 2008-07-10 [exact]
+  NEW: DF- 4 (5) - Cutthroats x754 on 2008-09-24 [exact]
+  NEW: HACKING L GR-40 (15) - Rainbows x350 on 2008-06-25 [exact]
+  NEW: HACKING L GR-40 (15) - Cutthroats x1002 on 2008-09-24 [exact]
+  NEW: WATKINS L WR-48 (552) - Brookies x1800 on 2008-07-10 [exact]
+  → 5 new records added for 4 lakes in Uintah
+    Matched lakes: ASHLEY TWIN L GR-35, DF- 4, HACKING L GR-40, WATKINS L WR-48
+  → 17 unmatched waters in Uintah
+  NEW: BLUE L DF-1 (2) - Brookies x696 on 2009-07-16 [exact]
+  NEW: DEADMAN L GR-38 (4) - Brookies x1053 on 2009-07-16 [exact]
+  NEW: HACKING L GR-40 (15) - Rainbows x351 on 2009-06-29 [exact]
+  NEW: KIBAH L, WEST DF-14 (8) - Brookies x783 on 2009-07-16 [exact]
+  NEW: KIBAH L,FINGER DF-12 (7) - Brookies x374 on 2009-07-16 [exact]
+  NEW: KIBAH L,ISLAND DF-16 (10) - Brookies x800 on 2009-07-16 [exact]
+  NEW: MUD L GR-47 (22) - Grayling x638 on 2009-08-03 [exact]
+  NEW: RED BELLY L GR-51 (25) - Cutthroats x588 on 2009-09-16 [exact]
+  → 8 new records added for 8 lakes in Uintah
+    Matched lakes: BLUE L DF-1, DEADMAN L GR-38, HACKING L GR-40, KIBAH L, WEST DF-14, KIBAH L,FINGER DF-12, KIBAH L,ISLAND DF-16, MUD L GR-47, RED BELLY L GR-51
+  → 16 unmatched waters in Uintah
+  NEW: ASHLEY TWIN L GR-35 (1) - Brookies x2105 on 2010-07-15 [exact]
+  NEW: BERT L GR-62 (669) - Grayling x366 on 2010-09-14 [exact]
+  NEW: DF- 4 (5) - Cutthroats x750 on 2010-09-30 [exact]
+  NEW: HACKING L GR-40 (15) - Rainbows x350 on 2010-06-30 [exact]
+  NEW: HACKING L GR-40 (15) - Cutthroats x1018 on 2010-09-30 [exact]
+  NEW: KIBAH L, EAST DF-11 (6) - Brookies x253 on 2010-07-15 [exact]
+  NEW: LITTLE ELK L DF-17 (19) - Grayling x488 on 2010-09-14 [exact]
+  NEW: MARSH L GR-39 (20) - Brookies x1001 on 2010-07-15 [exact]
+  NEW: MUD L GR-47 (22) - Grayling x641 on 2010-09-14 [exact]
+  NEW: PAUL L DF-18 (24) - Brookies x1104 on 2010-07-15 [exact]
+  NEW: SANDY L GR-45 (26) - Cutthroats x750 on 2010-09-30 [exact]
+  NEW: TEDS L WR-44 (549) - Brookies x1400 on 2010-07-15 [exact]
+  → 12 new records added for 11 lakes in Uintah
+    Matched lakes: ASHLEY TWIN L GR-35, BERT L GR-62, DF- 4, HACKING L GR-40, KIBAH L, EAST DF-11, LITTLE ELK L DF-17, MARSH L GR-39, MUD L GR-47, PAUL L DF-18, SANDY L GR-45, TEDS L WR-44
+  → 18 unmatched waters in Uintah
+  NEW: BERT L GR-62 (669) - Brookies x374 on 2011-08-04 [exact]
+  NEW: HACKING L GR-40 (15) - Rainbows x290 on 2011-07-21 [exact]
+  NEW: TWIN L, NORTH GR-50 (23) - Tigers x160 on 2011-08-08 [exact]
+  → 3 new records added for 3 lakes in Uintah
+    Matched lakes: BERT L GR-62, HACKING L GR-40, TWIN L, NORTH GR-50
+  → 18 unmatched waters in Uintah
+  NEW: ASHLEY TWIN L GR-35 (1) - Brookies x2105 on 2012-07-09 [exact]
+  NEW: BLUE L DF-1 (2) - Brookies x694 on 2012-07-09 [exact]
+  NEW: DEADMAN L GR-38 (4) - Brookies x1042 on 2012-07-09 [exact]
+  NEW: GOOSE L NO 2 GR-43 (11) - Brookies x1931 on 2012-07-09 [exact]
+  NEW: HACKING L GR-40 (15) - Rainbows x312 on 2012-07-12 [exact]
+  NEW: WOOLEY L WR-40 (555) - Brookies x130 on 2012-07-09 [exact]
+  → 6 new records added for 6 lakes in Uintah
+    Matched lakes: ASHLEY TWIN L GR-35, BLUE L DF-1, DEADMAN L GR-38, GOOSE L NO 2 GR-43, HACKING L GR-40, WOOLEY L WR-40
+  → 17 unmatched waters in Uintah
+  NEW: BERT L GR-62 (669) - Grayling x276 on 2013-10-07 [exact]
+  NEW: DF- 4 (5) - Cutthroats x750 on 2013-07-09 [exact]
+  NEW: HACKING L GR-40 (15) - Rainbows x290 on 2013-07-09 [exact]
+  NEW: KIBAH L, EAST DF-11 (6) - Brookies x258 on 2013-07-03 [exact]
+  NEW: KIBAH L, WEST DF-14 (8) - Brookies x790 on 2013-07-03 [exact]
+  NEW: KIBAH L,FINGER DF-12 (7) - Brookies x371 on 2013-07-03 [exact]
+  NEW: KIBAH L,ISLAND DF-16 (10) - Brookies x806 on 2013-07-03 [exact]
+  NEW: LITTLE ELK L DF-17 (19) - Tigers x1998 on 2013-07-08 [exact]
+  NEW: MARSH L GR-39 (20) - Rainbows x1840 on 2013-06-20 [exact]
+  NEW: MARSH L GR-39 (20) - Rainbows x1581 on 2013-06-24 [exact]
+  NEW: MUD L GR-47 (22) - Grayling x420 on 2013-10-07 [exact]
+  NEW: RED BELLY L GR-51 (25) - Cutthroats x661 on 2013-10-07 [exact]
+  NEW: WATKINS L WR-48 (552) - Brookies x1798 on 2013-07-10 [exact]
+  → 13 new records added for 12 lakes in Uintah
+    Matched lakes: BERT L GR-62, DF- 4, HACKING L GR-40, KIBAH L, EAST DF-11, KIBAH L, WEST DF-14, KIBAH L,FINGER DF-12, KIBAH L,ISLAND DF-16, LITTLE ELK L DF-17, MARSH L GR-39, MUD L GR-47, RED BELLY L GR-51, WATKINS L WR-48
+  → 16 unmatched waters in Uintah
+  NEW: ASHLEY TWIN L GR-35 (1) - Brookies x2101 on 2014-07-02 [exact]
+  NEW: HACKING L GR-40 (15) - Rainbows x288 on 2014-06-30 [exact]
+  NEW: LITTLE ELK L DF-17 (19) - Grayling x480 on 2014-08-29 [exact]
+  NEW: MARSH L GR-39 (20) - Goldens x600 on 2014-09-24 [exact]
+  NEW: SANDY L GR-45 (26) - Cutthroats x570 on 2014-09-15 [exact]
+  → 5 new records added for 5 lakes in Uintah
+    Matched lakes: ASHLEY TWIN L GR-35, HACKING L GR-40, LITTLE ELK L DF-17, MARSH L GR-39, SANDY L GR-45
+  → 17 unmatched waters in Uintah
+  NEW: BERT L GR-62 (669) - Brookies x367 on 2015-07-06 [exact]
+  NEW: BLUE L DF-1 (2) - Brookies x705 on 2015-07-06 [exact]
+  NEW: DEADMAN L GR-38 (4) - Brookies x1058 on 2015-07-06 [exact]
+  NEW: HACKING L GR-40 (15) - Rainbows x290 on 2015-07-03 [exact]
+  NEW: LITTLE BLUE L GR-48 (18) - Brookies x606 on 2015-07-06 [exact]
+  NEW: PAUL L DF-18 (24) - Brookies x1100 on 2015-07-06 [exact]
+  → 6 new records added for 6 lakes in Uintah
+    Matched lakes: BERT L GR-62, BLUE L DF-1, DEADMAN L GR-38, HACKING L GR-40, LITTLE BLUE L GR-48, PAUL L DF-18
+  → 15 unmatched waters in Uintah
+  NEW: ASHLEY TWIN L GR-35 (1) - Brookies x2171 on 2016-06-30 [exact]
+  NEW: DF- 4 (5) - Cutthroats x726 on 2016-09-20 [exact]
+  NEW: HACKING L GR-40 (15) - Rainbows x292 on 2016-06-30 [exact]
+  NEW: HACKING L GR-40 (15) - Cutthroats x999 on 2016-09-20 [exact]
+  NEW: KIBAH L, EAST DF-11 (6) - Brookies x314 on 2016-06-30 [exact]
+  NEW: RED BELLY L GR-51 (25) - Cutthroats x636 on 2016-09-20 [exact]
+  NEW: TEDS L WR-44 (549) - Brookies x1457 on 2016-06-30 [exact]
+  NEW: WOOLEY L WR-40 (555) - Tigers x997 on 2016-07-14 [exact]
+  → 8 new records added for 7 lakes in Uintah
+    Matched lakes: ASHLEY TWIN L GR-35, DF- 4, HACKING L GR-40, KIBAH L, EAST DF-11, RED BELLY L GR-51, TEDS L WR-44, WOOLEY L WR-40
+  → 16 unmatched waters in Uintah
+  NEW: BERT L GR-62 (669) - Grayling x278 on 2017-09-20 [exact]
+  NEW: GOOSE L NO 2 GR-43 (11) - Brookies x1953 on 2017-07-09 [exact]
+  NEW: KIBAH L, WEST DF-14 (8) - Brookies x791 on 2017-07-09 [exact]
+  NEW: KIBAH L,FINGER DF-12 (7) - Brookies x388 on 2017-07-09 [exact]
+  NEW: KIBAH L,ISLAND DF-16 (10) - Brookies x822 on 2017-07-09 [exact]
+  NEW: LITTLE BLUE L GR-48 (18) - Brookies x620 on 2017-07-09 [exact]
+  NEW: LITTLE ELK L DF-17 (19) - Grayling x500 on 2017-09-20 [exact]
+  NEW: WOOLEY L WR-40 (555) - Brookies x1023 on 2017-07-09 [exact]
+  → 8 new records added for 8 lakes in Uintah
+    Matched lakes: BERT L GR-62, GOOSE L NO 2 GR-43, KIBAH L, WEST DF-14, KIBAH L,FINGER DF-12, KIBAH L,ISLAND DF-16, LITTLE BLUE L GR-48, LITTLE ELK L DF-17, WOOLEY L WR-40
+  → 13 unmatched waters in Uintah
+  NEW: ASHLEY TWIN L GR-35 (1) - Brookies x2100 on 2018-07-10 [exact]
+  NEW: BLUE L DF-1 (2) - Brookies x704 on 2018-07-10 [exact]
+  NEW: DEADMAN L GR-38 (4) - Brookies x1050 on 2018-07-10 [exact]
+  NEW: HACKING L GR-40 (15) - Tigers x502 on 2018-07-10 [exact]
+  NEW: PAUL L DF-18 (24) - Brookies x1103 on 2018-07-10 [exact]
+  NEW: WATKINS L WR-48 (552) - Brookies x1806 on 2018-07-10 [exact]
+  → 6 new records added for 6 lakes in Uintah
+    Matched lakes: ASHLEY TWIN L GR-35, BLUE L DF-1, DEADMAN L GR-38, HACKING L GR-40, PAUL L DF-18, WATKINS L WR-48
+  → 18 unmatched waters in Uintah
+  NEW: BERT L GR-62 (669) - Brookies x286 on 2019-07-11 [exact]
+  NEW: BERT L GR-62 (669) - Grayling x323 on 2019-10-01 [exact]
+  NEW: DF- 4 (5) - Cutthroats x758 on 2019-09-23 [exact]
+  NEW: HACKING L GR-40 (15) - Tigers x500 on 2019-07-11 [exact]
+  NEW: HACKING L GR-40 (15) - Cutthroats x1011 on 2019-09-23 [exact]
+  NEW: KIBAH L, EAST DF-11 (6) - Brookies x195 on 2019-07-11 [exact]
+  NEW: KIBAH L, WEST DF-14 (8) - Brookies x2002 on 2019-07-11 [exact]
+  NEW: LAKESHORE L GR-34 (17) - Tiger muskie x162 on 2019-07-10 [exact]
+  NEW: MARSH L GR-39 (20) - Brookies x975 on 2019-07-11 [exact]
+  NEW: RED BELLY L GR-51 (25) - Cutthroats x632 on 2019-09-23 [exact]
+  NEW: SANDY L GR-45 (26) - Cutthroats x569 on 2019-09-23 [exact]
+  → 11 new records added for 9 lakes in Uintah
+    Matched lakes: BERT L GR-62, DF- 4, HACKING L GR-40, KIBAH L, EAST DF-11, KIBAH L, WEST DF-14, LAKESHORE L GR-34, MARSH L GR-39, RED BELLY L GR-51, SANDY L GR-45
+  → 21 unmatched waters in Uintah
+  NEW: ASHLEY TWIN L GR-35 (1) - Brookies x2090 on 2020-07-06 [exact]
+  NEW: HACKING L GR-40 (15) - Tigers x496 on 2020-07-06 [exact]
+  NEW: LITTLE ELK L DF-17 (19) - Grayling x504 on 2020-09-21 [exact]
+  NEW: TEDS L WR-44 (549) - Brookies x1394 on 2020-07-06 [exact]
+  → 4 new records added for 4 lakes in Uintah
+    Matched lakes: ASHLEY TWIN L GR-35, HACKING L GR-40, LITTLE ELK L DF-17, TEDS L WR-44
+  → 20 unmatched waters in Uintah
+  NEW: BLUE L DF-1 (2) - Brookies x701 on 2021-07-01 [exact]
+  NEW: DEADMAN L GR-38 (4) - Brookies x1051 on 2021-07-01 [exact]
+  NEW: HACKING L GR-40 (15) - Rainbows x496 on 2021-06-18 [exact]
+  NEW: HACKING L GR-40 (15) - Tigers x497 on 2021-07-07 [exact]
+  NEW: KIBAH L, WEST DF-14 (8) - Brookies x777 on 2021-07-01 [exact]
+  NEW: KIBAH L,FINGER DF-12 (7) - Brookies x374 on 2021-07-01 [exact]
+  NEW: KIBAH L,ISLAND DF-16 (10) - Brookies x800 on 2021-07-01 [exact]
+  NEW: WILDE L GR-36 (29) - Grayling x323 on 2021-09-21 [exact]
+  → 8 new records added for 7 lakes in Uintah
+    Matched lakes: BLUE L DF-1, DEADMAN L GR-38, HACKING L GR-40, KIBAH L, WEST DF-14, KIBAH L,FINGER DF-12, KIBAH L,ISLAND DF-16, WILDE L GR-36
+  → 23 unmatched waters in Uintah
+  NEW: ASHLEY TWIN L GR-35 (1) - Brookies x2092 on 2022-07-06 [exact]
+  NEW: DF- 4 (5) - Cutthroats x743 on 2022-09-23 [exact]
+  NEW: HACKING L GR-40 (15) - Cutthroats x989 on 2022-09-23 [exact]
+  NEW: KIBAH L, EAST DF-11 (6) - Brookies x253 on 2022-07-06 [exact]
+  NEW: LAKESHORE L GR-34 (17) - Tiger muskie x150 on 2022-07-06 [exact]
+  NEW: LITTLE BLUE L GR-48 (18) - Brookies x598 on 2022-07-06 [exact]
+  NEW: PAUL L DF-18 (24) - Brookies x1098 on 2022-07-06 [exact]
+  NEW: RED BELLY L GR-51 (25) - Cutthroats x618 on 2022-09-23 [exact]
+  NEW: STEWART L (234) - Chub x105 on 2022-06-30 [medium]
+  NEW: WATKINS L WR-48 (552) - Brookies x1795 on 2022-07-06 [exact]
+  NEW: WOOLEY L WR-40 (555) - Brookies x1000 on 2022-07-06 [exact]
+  → 11 new records added for 11 lakes in Uintah
+    Matched lakes: ASHLEY TWIN L GR-35, DF- 4, HACKING L GR-40, KIBAH L, EAST DF-11, LAKESHORE L GR-34, LITTLE BLUE L GR-48, PAUL L DF-18, RED BELLY L GR-51, STEWART L, WATKINS L WR-48, WOOLEY L WR-40
+  → 20 unmatched waters in Uintah
+  NEW: BERT L GR-62 (669) - Brookies x372 on 2023-07-21 [exact]
+  NEW: HACKING L GR-40 (15) - Rainbows x250 on 2023-07-11 [exact]
+  NEW: HACKING L GR-40 (15) - Tigers x263 on 2023-07-11 [exact]
+  NEW: SANDY L GR-45 (26) - Cutthroats x748 on 2023-09-19 [exact]
+  NEW: TEDS L WR-44 (549) - Brookies x697 on 2023-07-21 [exact]
+  → 5 new records added for 4 lakes in Uintah
+    Matched lakes: BERT L GR-62, HACKING L GR-40, SANDY L GR-45, TEDS L WR-44
+  → 22 unmatched waters in Uintah
+  NEW: ASHLEY TWIN L GR-35 (1) - Brookies x2097 on 2024-06-26 [exact]
+  NEW: BERT L GR-62 (669) - Grayling x276 on 2024-09-23 [exact]
+  NEW: BLUE L DF-1 (2) - Brookies x699 on 2024-06-26 [exact]
+  NEW: DEADMAN L GR-38 (4) - Brookies x1042 on 2024-06-26 [exact]
+  NEW: HACKING L GR-40 (15) - Tigers x251 on 2024-07-06 [exact]
+  NEW: HACKING L GR-40 (15) - Rainbows x251 on 2024-07-06 [exact]
+  NEW: HACKING L GR-40 (15) - Cutthroats x248 on 2024-09-23 [exact]
+  NEW: PEARL L WR-45 (538) - Cutthroats x299 on 2024-09-23 [exact]
+  NEW: SAND L WR-42 (546) - Cutthroats x403 on 2024-09-23 [exact]
+  → 9 new records added for 7 lakes in Uintah
+    Matched lakes: ASHLEY TWIN L GR-35, BERT L GR-62, BLUE L DF-1, DEADMAN L GR-38, HACKING L GR-40, PEARL L WR-45, SAND L WR-42
+  → 23 unmatched waters in Uintah
+  NEW: HACKING L GR-40 (15) - Tigers x150 on 2025-06-19 [exact]
+  NEW: HACKING L GR-40 (15) - Rainbows x250 on 2025-06-19 [exact]
+  NEW: KIBAH L, EAST DF-11 (6) - Brookies x251 on 2025-06-30 [exact]
+  NEW: KIBAH L, WEST DF-14 (8) - Brookies x783 on 2025-06-30 [exact]
+  NEW: KIBAH L,FINGER DF-12 (7) - Brookies x376 on 2025-06-30 [exact]
+  NEW: KIBAH L,ISLAND DF-16 (10) - Brookies x799 on 2025-06-30 [exact]
+  NEW: TEDS L WR-44 (549) - Brookies x996 on 2025-07-01 [exact]
+  → 7 new records added for 6 lakes in Uintah
+    Matched lakes: HACKING L GR-40, KIBAH L, EAST DF-11, KIBAH L, WEST DF-14, KIBAH L,FINGER DF-12, KIBAH L,ISLAND DF-16, TEDS L WR-44
+  → 19 unmatched waters in Uintah
+
+Uintah County Summary:
+  Total new records: 184
+  Matched lakes: 28
+  Unmatched waters: 39
+  Lake names matched: ASHLEY TWIN L GR-35, BERT L GR-62, BLUE L DF-1, DEADMAN L GR-38, DF- 4, DOLLAR L WR-43, GOOSE L NO 2 GR-43, HACKING L GR-40, KIBAH L, EAST DF-11, KIBAH L, WEST DF-14, KIBAH L,FINGER DF-12, KIBAH L,ISLAND DF-16, LAKESHORE L GR-34, LITTLE BLUE L GR-48, LITTLE ELK L DF-17, MARSH L GR-39, MUD L GR-47, PAUL L DF-18, PEARL L WR-45, RED BELLY L GR-51, SAND L WR-42, SANDY L GR-45, STEWART L, TEDS L WR-44, TWIN L, NORTH GR-50, WATKINS L WR-48, WILDE L GR-36, WOOLEY L WR-40
+
+
+=== PROCESSING DAGGETT COUNTY ===
+  NEW: GR- 21 (634) - Brookies x373 on 2002-06-28 [exact]
+  NEW: LAMB L GR-19 (637) - Grayling x599 on 2002-07-30 [exact]
+  NEW: MUTTON L GR-23 (638) - Brookies x903 on 2002-06-28 [exact]
+  NEW: ONE FISH L GR-32 (402) - Brookies x393 on 2002-06-27 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x2275 on 2002-06-04 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x1577 on 2002-07-03 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x960 on 2002-07-08 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x652 on 2002-07-08 [exact]
+  NEW: TEEPEE L,LOWER GR-29 (400) - Brookies x373 on 2002-06-27 [exact]
+  → 9 new records added for 6 lakes in Daggett
+    Matched lakes: GR- 21, LAMB L GR-19, MUTTON L GR-23, ONE FISH L GR-32, SPIRIT L GR-3, TEEPEE L,LOWER GR-29
+  → 9 unmatched waters in Daggett
+  NEW: DAGGETT L GR-6 (391) - Grayling x1025 on 2003-08-05 [exact]
+  NEW: RED L GR-33 (404) - Brookies x1504 on 2003-07-03 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x1558 on 2003-06-16 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x1560 on 2003-07-01 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x680 on 2003-07-16 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x920 on 2003-07-16 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x905 on 2003-09-02 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x655 on 2003-09-02 [exact]
+  → 8 new records added for 3 lakes in Daggett
+    Matched lakes: DAGGETT L GR-6, RED L GR-33, SPIRIT L GR-3
+  → 9 unmatched waters in Daggett
+  NEW: GR- 21 (634) - Brookies x375 on 2004-07-07 [exact]
+  NEW: MYSTERY (LOST)GR-101 (401) - Brookies x994 on 2004-07-07 [exact]
+  NEW: ONE FISH L GR-32 (402) - Brookies x408 on 2004-07-07 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x2002 on 2004-06-24 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x1564 on 2004-07-21 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x1988 on 2004-08-10 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x840 on 2004-08-30 [exact]
+  NEW: TEEPEE L,LOWER GR-29 (400) - Brookies x375 on 2004-07-07 [exact]
+  → 8 new records added for 5 lakes in Daggett
+    Matched lakes: GR- 21, MYSTERY (LOST)GR-101, ONE FISH L GR-32, SPIRIT L GR-3, TEEPEE L,LOWER GR-29
+  → 9 unmatched waters in Daggett
+  NEW: ANSON L ,EAST GR-13 (632) - Brookies x724 on 2005-07-15 [exact]
+  NEW: BUMMER L GR-22 (387) - Brookies x295 on 2005-07-15 [exact]
+  NEW: DAGGETT L GR-6 (391) - Grayling x990 on 2005-07-18 [exact]
+  NEW: GR- 31 (635) - Brookies x496 on 2005-07-15 [exact]
+  NEW: RAM L GR-24 (640) - Grayling x990 on 2005-07-18 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x1701 on 2005-06-28 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x1600 on 2005-07-21 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x1566 on 2005-08-09 [exact]
+  → 8 new records added for 6 lakes in Daggett
+    Matched lakes: ANSON L ,EAST GR-13, BUMMER L GR-22, DAGGETT L GR-6, GR- 31, RAM L GR-24, SPIRIT L GR-3
+  → 8 unmatched waters in Daggett
+  NEW: ANSON L ,EAST GR-13 (632) - Brookies x720 on 2006-07-17 [exact]
+  NEW: BUMMER L GR-22 (387) - Brookies x300 on 2006-07-17 [exact]
+  NEW: BUMMER L GR-22 (387) - Grayling x299 on 2006-08-02 [exact]
+  NEW: DAGGETT L GR-6 (391) - Grayling x4998 on 2006-08-02 [exact]
+  NEW: EWE L GR-18 (392) - Grayling x449 on 2006-08-02 [exact]
+  NEW: GR- 21 (634) - Brookies x380 on 2006-07-17 [exact]
+  NEW: GR-104 (636) - Grayling x642 on 2006-08-02 [exact]
+  NEW: MYSTERY (LOST)GR-101 (401) - Brookies x1260 on 2006-07-12 [exact]
+  NEW: ONE FISH L GR-32 (402) - Brookies x400 on 2006-07-17 [exact]
+  NEW: RAM L GR-24 (640) - Grayling x695 on 2006-08-02 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x1748 on 2006-06-09 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x1820 on 2006-06-27 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x1600 on 2006-07-26 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x1400 on 2006-08-09 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x1395 on 2006-08-21 [exact]
+  NEW: TEEPEE L,LOWER GR-29 (400) - Brookies x380 on 2006-07-17 [exact]
+  → 16 new records added for 11 lakes in Daggett
+    Matched lakes: ANSON L ,EAST GR-13, BUMMER L GR-22, DAGGETT L GR-6, EWE L GR-18, GR- 21, GR-104, MYSTERY (LOST)GR-101, ONE FISH L GR-32, RAM L GR-24, SPIRIT L GR-3, TEEPEE L,LOWER GR-29
+  → 7 unmatched waters in Daggett
+  NEW: CANDY L GR-17 (388) - Grayling x824 on 2007-07-30 [exact]
+  NEW: CLEAR L GR-12 (389) - Grayling x1500 on 2007-07-30 [exact]
+  NEW: GR- 31 (635) - Brookies x501 on 2007-07-16 [exact]
+  NEW: MUTTON L GR-23 (638) - Brookies x901 on 2007-07-16 [exact]
+  NEW: RED L GR-33 (404) - Brookies x1502 on 2007-07-16 [exact]
+  NEW: SESAME L GR-15 (641) - Brookies x601 on 2007-07-16 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x1833 on 2007-06-06 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x1833 on 2007-07-11 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x1425 on 2007-08-13 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x408 on 2007-08-21 [exact]
+  NEW: SPIRIT L GR-3 (405) - Tigers x1500 on 2007-08-27 [exact]
+  NEW: TEEPEE L,UPPER GR-30 (407) - Grayling x676 on 2007-07-30 [exact]
+  → 12 new records added for 8 lakes in Daggett
+    Matched lakes: CANDY L GR-17, CLEAR L GR-12, GR- 31, MUTTON L GR-23, RED L GR-33, SESAME L GR-15, SPIRIT L GR-3, TEEPEE L,UPPER GR-30
+  → 9 unmatched waters in Daggett
+  NEW: HIDDEN L GR-7 (394) - Brookies x1280 on 2008-07-10 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x2000 on 2008-06-24 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x1833 on 2008-07-23 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x900 on 2008-08-26 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x987 on 2008-08-28 [exact]
+  → 5 new records added for 2 lakes in Daggett
+    Matched lakes: HIDDEN L GR-7, SPIRIT L GR-3
+  → 9 unmatched waters in Daggett
+  NEW: DAGGETT L GR-6 (391) - Grayling x6047 on 2009-08-03 [exact]
+  NEW: GR- 21 (634) - Brookies x379 on 2009-08-03 [exact]
+  NEW: ONE FISH L GR-32 (402) - Brookies x400 on 2009-07-16 [exact]
+  NEW: RAM L GR-24 (640) - Cutthroats x686 on 2009-09-16 [exact]
+  NEW: SPIRIT L GR-3 (405) - Tigers x5016 on 2009-06-16 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x1834 on 2009-06-29 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x1833 on 2009-07-21 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x1833 on 2009-08-17 [exact]
+  NEW: TEEPEE L,LOWER GR-29 (400) - Brookies x374 on 2009-07-16 [exact]
+  → 9 new records added for 6 lakes in Daggett
+    Matched lakes: DAGGETT L GR-6, GR- 21, ONE FISH L GR-32, RAM L GR-24, SPIRIT L GR-3, TEEPEE L,LOWER GR-29
+  → 9 unmatched waters in Daggett
+  NEW: EWE L GR-18 (392) - Grayling x458 on 2010-09-14 [exact]
+  NEW: GR-104 (636) - Grayling x641 on 2010-09-14 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x1499 on 2010-06-22 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x500 on 2010-07-07 [exact]
+  NEW: SPIRIT L GR-3 (405) - Tigers x1700 on 2010-07-07 [exact]
+  NEW: SPIRIT L GR-3 (405) - Tigers x1700 on 2010-07-20 [exact]
+  NEW: SPIRIT L GR-3 (405) - Tigers x1598 on 2010-08-11 [exact]
+  → 7 new records added for 3 lakes in Daggett
+    Matched lakes: EWE L GR-18, GR-104, SPIRIT L GR-3
+  → 9 unmatched waters in Daggett
+  NEW: ANSON L, UPPER GR-10 (386) - Tigers x200 on 2011-08-08 [exact]
+  NEW: PENGUIN L GR-16 (639) - Tigers x100 on 2011-08-08 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x1150 on 2011-07-13 [exact]
+  NEW: SPIRIT L GR-3 (405) - Tigers x1840 on 2011-07-18 [exact]
+  NEW: SPIRIT L GR-3 (405) - Tigers x1840 on 2011-07-19 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x1034 on 2011-08-09 [exact]
+  → 6 new records added for 3 lakes in Daggett
+    Matched lakes: ANSON L, UPPER GR-10, PENGUIN L GR-16, SPIRIT L GR-3
+  → 10 unmatched waters in Daggett
+  NEW: GR- 21 (634) - Brookies x391 on 2012-07-09 [exact]
+  NEW: GR- 31 (635) - Brookies x499 on 2012-07-09 [exact]
+  NEW: HIDDEN L GR-7 (394) - Brookies x1280 on 2012-07-09 [exact]
+  NEW: HIDDEN L GR-7 (394) - Brookies x1000 on 2012-08-06 [exact]
+  NEW: MUTTON L GR-23 (638) - Brookies x890 on 2012-07-09 [exact]
+  NEW: ONE FISH L GR-32 (402) - Brookies x391 on 2012-07-09 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x1115 on 2012-07-05 [exact]
+  NEW: SPIRIT L GR-3 (405) - Rainbows x1036 on 2012-07-16 [exact]
+  NEW: SPIRIT L GR-3 (405) - Tigers x4019 on 2012-07-18 [exact]
+  NEW: SPIRIT L GR-3 (405) - Tigers x519 on 2012-10-09 [exact]
+  NEW: TEEPEE L,LOWER GR-29 (400) - Brookies x369 on 2012-07-09 [exact]
+  → 11 new records added for 7 lakes in Daggett
+    Matched lakes: GR- 21, GR- 31, HIDDEN L GR-7, MUTTON L GR-23, ONE FISH L GR-32, SPIRIT L GR-3, TEEPEE L,LOWER GR-29
+  → 9 unmatched waters in Daggett
+  NEW: ANSON L ,EAST GR-13 (632) - Tigers x720 on 2013-07-08 [exact]
+  NEW: BUMMER L GR-22 (387) - Brookies x210 on 2013-07-03 [exact]
+  NEW: CLEAR L GR-12 (389) - Tigers x1503 on 2013-07-08 [exact]
+  NEW: EWE L GR-18 (392) - Grayling x450 on 2013-10-07 [exact]
+  NEW: GR-104 (636) - Grayling x600 on 2013-10-07 [exact]
+  NEW: LAMB L GR-19 (637) - Tigers x603 on 2013-07-08 [exact]
+  NEW: MYSTERY (LOST)GR-101 (401) - Brookies x1016 on 2013-07-03 [exact]
+  NEW: RED L GR-33 (404) - Brookies x1516 on 2013-07-03 [exact]
+  NEW: SPIRIT L GR-3 (405) - Tigers x5502 on 2013-06-12 [exact]
+  → 9 new records added for 9 lakes in Daggett
+    Matched lakes: ANSON L ,EAST GR-13, BUMMER L GR-22, CLEAR L GR-12, EWE L GR-18, GR-104, LAMB L GR-19, MYSTERY (LOST)GR-101, RED L GR-33, SPIRIT L GR-3
+  → 10 unmatched waters in Daggett
+  NEW: SPIRIT L GR-3 (405) - Tigers x5499 on 2014-06-25 [exact]
+  → 1 new records added for 1 lakes in Daggett
+    Matched lakes: SPIRIT L GR-3
+  → 9 unmatched waters in Daggett
+  NEW: DAGGETT L GR-6 (391) - Grayling x6003 on 2015-08-25 [exact]
+  NEW: GR- 21 (634) - Brookies x381 on 2015-07-06 [exact]
+  NEW: LAMB L GR-20 (633) - Brookies x296 on 2015-07-06 [exact]
+  NEW: ONE FISH L GR-32 (402) - Brookies x395 on 2015-07-06 [exact]
+  NEW: RED L GR-33 (404) - Brookies x1495 on 2015-07-06 [exact]
+  NEW: SESAME L GR-15 (641) - Brookies x606 on 2015-07-06 [exact]
+  NEW: SPIRIT L GR-3 (405) - Tigers x5387 on 2015-06-25 [exact]
+  NEW: TEEPEE L,LOWER GR-29 (400) - Brookies x381 on 2015-07-06 [exact]
+  → 8 new records added for 8 lakes in Daggett
+    Matched lakes: DAGGETT L GR-6, GR- 21, LAMB L GR-20, ONE FISH L GR-32, RED L GR-33, SESAME L GR-15, SPIRIT L GR-3, TEEPEE L,LOWER GR-29
+  → 11 unmatched waters in Daggett
+  NEW: ANSON L, UPPER GR-10 (386) - Tigers x997 on 2016-07-14 [exact]
+  NEW: BUMMER L GR-22 (387) - Brookies x327 on 2016-07-26 [exact]
+  NEW: CANDY L GR-17 (388) - Tigers x825 on 2016-07-14 [exact]
+  NEW: CLEAR L GR-12 (389) - Tigers x1498 on 2016-07-14 [exact]
+  NEW: MYSTERY (LOST)GR-101 (401) - Brookies x1057 on 2016-06-30 [exact]
+  NEW: PENGUIN L GR-16 (639) - Tigers x205 on 2016-07-14 [exact]
+  NEW: RAM L GR-24 (640) - Tigers x700 on 2016-07-14 [exact]
+  NEW: SPIRIT L GR-3 (405) - Tigers x3666 on 2016-07-05 [exact]
+  NEW: SPIRIT L GR-3 (405) - Tigers x1833 on 2016-07-05 [exact]
+  → 9 new records added for 8 lakes in Daggett
+    Matched lakes: ANSON L, UPPER GR-10, BUMMER L GR-22, CANDY L GR-17, CLEAR L GR-12, MYSTERY (LOST)GR-101, PENGUIN L GR-16, RAM L GR-24, SPIRIT L GR-3
+  → 9 unmatched waters in Daggett
+  NEW: EWE L GR-18 (392) - Grayling x450 on 2017-09-20 [exact]
+  NEW: GR-104 (636) - Grayling x648 on 2017-09-20 [exact]
+  NEW: HIDDEN L GR-7 (394) - Brookies x1287 on 2017-07-09 [exact]
+  NEW: LAMB L GR-19 (637) - Tigers x593 on 2017-07-11 [exact]
+  NEW: MUTTON L GR-23 (638) - Brookies x915 on 2017-07-09 [exact]
+  NEW: MYSTERY (LOST)GR-101 (401) - Brookies x109 on 2017-07-09 [exact]
+  NEW: RAM L GR-24 (640) - Tigers x718 on 2017-07-11 [exact]
+  NEW: SESAME L GR-15 (641) - Brookies x620 on 2017-07-09 [exact]
+  NEW: SPIRIT L GR-3 (405) - Tigers x5499 on 2017-07-10 [exact]
+  → 9 new records added for 9 lakes in Daggett
+    Matched lakes: EWE L GR-18, GR-104, HIDDEN L GR-7, LAMB L GR-19, MUTTON L GR-23, MYSTERY (LOST)GR-101, RAM L GR-24, SESAME L GR-15, SPIRIT L GR-3
+  → 9 unmatched waters in Daggett
+  NEW: ANSON L ,EAST GR-13 (632) - Tigers x722 on 2018-07-10 [exact]
+  NEW: CLEAR L GR-12 (389) - Tigers x1496 on 2018-07-10 [exact]
+  NEW: GR- 21 (634) - Tigers x386 on 2018-07-10 [exact]
+  NEW: LAMB L GR-20 (633) - Tigers x97 on 2018-07-10 [exact]
+  NEW: ONE FISH L GR-32 (402) - Brookies x200 on 2018-07-10 [exact]
+  NEW: ONE FISH L GR-32 (402) - Grayling x594 on 2018-10-15 [exact]
+  NEW: SPIRIT L GR-3 (405) - Tigers x4128 on 2018-06-25 [exact]
+  NEW: SPIRIT L GR-3 (405) - Tigers x1899 on 2018-06-26 [exact]
+  → 8 new records added for 6 lakes in Daggett
+    Matched lakes: ANSON L ,EAST GR-13, CLEAR L GR-12, GR- 21, LAMB L GR-20, ONE FISH L GR-32, SPIRIT L GR-3
+  → 11 unmatched waters in Daggett
+  NEW: BEAR CR BEAVER POND (32) - Tigers x510 on 2019-08-19 [medium]
+  NEW: GR-104 (636) - Grayling x706 on 2019-10-01 [exact]
+  NEW: SPIRIT L GR-3 (405) - Tigers x4006 on 2019-07-12 [exact]
+  → 3 new records added for 3 lakes in Daggett
+    Matched lakes: BEAR CR BEAVER POND, GR-104, SPIRIT L GR-3
+  → 9 unmatched waters in Daggett
+  NEW: EWE L GR-18 (392) - Grayling x450 on 2020-09-21 [exact]
+  NEW: MYSTERY (LOST)GR-101 (401) - Cutthroats x803 on 2020-09-23 [exact]
+  NEW: POTTER L,UPPER GR-28 (403) - Cutthroats x3009 on 2020-09-23 [exact]
+  NEW: RED L GR-33 (404) - Tigers x766 on 2020-07-06 [exact]
+  NEW: RED L GR-33 (404) - Cutthroats x1501 on 2020-09-23 [exact]
+  NEW: SPIRIT L GR-3 (405) - Tigers x2818 on 2020-06-23 [exact]
+  NEW: SPIRIT L GR-3 (405) - Tigers x126 on 2020-07-16 [exact]
+  NEW: TEEPEE L,LOWER GR-29 (400) - Cutthroats x401 on 2020-09-23 [exact]
+  NEW: TEEPEE L,UPPER GR-30 (407) - Tigers x600 on 2020-07-06 [exact]
+  → 9 new records added for 7 lakes in Daggett
+    Matched lakes: EWE L GR-18, MYSTERY (LOST)GR-101, POTTER L,UPPER GR-28, RED L GR-33, SPIRIT L GR-3, TEEPEE L,LOWER GR-29, TEEPEE L,UPPER GR-30
+  → 13 unmatched waters in Daggett
+  NEW: HIDDEN L GR-7 (394) - Brookies x1063 on 2021-07-01 [exact]
+  NEW: ONE FISH L GR-32 (402) - Brookies x397 on 2021-07-01 [exact]
+  NEW: RED L GR-33 (404) - Tiger muskie x200 on 2021-06-22 [exact]
+  NEW: RED L GR-33 (404) - Grayling x194 on 2021-09-21 [exact]
+  NEW: SPIRIT L GR-3 (405) - Tigers x3150 on 2021-06-09 [exact]
+  NEW: SPIRIT L GR-3 (405) - Cutthroats x1507 on 2021-07-02 [exact]
+  → 6 new records added for 4 lakes in Daggett
+    Matched lakes: HIDDEN L GR-7, ONE FISH L GR-32, RED L GR-33, SPIRIT L GR-3
+  → 10 unmatched waters in Daggett
+  NEW: ANSON L ,EAST GR-13 (632) - Brookies x765 on 2022-07-06 [exact]
+  NEW: SPIRIT L GR-3 (405) - Tigers x2501 on 2022-06-22 [exact]
+  → 2 new records added for 2 lakes in Daggett
+    Matched lakes: ANSON L ,EAST GR-13, SPIRIT L GR-3
+  → 8 unmatched waters in Daggett
+  NEW: BUMMER L GR-22 (387) - Cutthroats x221 on 2023-09-19 [exact]
+  NEW: CLEAR L GR-12 (389) - Tigers x1021 on 2023-07-21 [exact]
+  NEW: CLEAR L GR-12 (389) - Tigers x502 on 2023-09-19 [exact]
+  NEW: LAMB L GR-19 (637) - Cutthroats x497 on 2023-09-19 [exact]
+  NEW: MUTTON L GR-23 (638) - Cutthroats x387 on 2023-09-19 [exact]
+  NEW: POTTER L,UPPER GR-28 (403) - Cutthroats x1491 on 2023-09-19 [exact]
+  NEW: RAM L GR-24 (640) - Cutthroats x497 on 2023-09-19 [exact]
+  NEW: SPIRIT L GR-3 (405) - Tigers x2752 on 2023-07-05 [exact]
+  NEW: TEEPEE L,LOWER GR-29 (400) - Cutthroats x387 on 2023-09-19 [exact]
+  NEW: TEEPEE L,UPPER GR-30 (407) - Tigers x598 on 2023-07-21 [exact]
+  NEW: TEEPEE L,UPPER GR-30 (407) - Tigers x299 on 2023-09-19 [exact]
+  → 11 new records added for 9 lakes in Daggett
+    Matched lakes: BUMMER L GR-22, CLEAR L GR-12, LAMB L GR-19, MUTTON L GR-23, POTTER L,UPPER GR-28, RAM L GR-24, SPIRIT L GR-3, TEEPEE L,LOWER GR-29, TEEPEE L,UPPER GR-30
+  → 10 unmatched waters in Daggett
+  NEW: CANDY L GR-17 (388) - Cutthroats x558 on 2024-10-01 [exact]
+  NEW: DAGGETT L GR-6 (391) - Cutthroats x1304 on 2024-10-01 [exact]
+  NEW: DAGGETT L GR-6 (391) - Cutthroats x1892 on 2024-10-01 [exact]
+  NEW: GR-104 (636) - Grayling x299 on 2024-09-23 [exact]
+  NEW: MYSTERY (LOST)GR-101 (401) - Cutthroats x793 on 2024-07-15 [exact]
+  NEW: ONE FISH L GR-32 (402) - Brookies x201 on 2024-06-26 [exact]
+  NEW: POTTER L,UPPER GR-28 (403) - Cutthroats x1502 on 2024-10-01 [exact]
+  NEW: RAM L GR-24 (640) - Cutthroats x496 on 2024-07-15 [exact]
+  NEW: RED L GR-33 (404) - Tiger muskie x210 on 2024-06-26 [exact]
+  NEW: RED L GR-33 (404) - Tigers x799 on 2024-06-26 [exact]
+  NEW: SPIRIT L GR-3 (405) - Cutthroats x1000 on 2024-07-01 [exact]
+  → 11 new records added for 9 lakes in Daggett
+    Matched lakes: CANDY L GR-17, DAGGETT L GR-6, GR-104, MYSTERY (LOST)GR-101, ONE FISH L GR-32, POTTER L,UPPER GR-28, RAM L GR-24, RED L GR-33, SPIRIT L GR-3
+  → 11 unmatched waters in Daggett
+  NEW: ANSON L, LOWER GR-9 (385) - Cutthroats x649 on 2025-06-30 [exact]
+  NEW: BEAVER CR (32) - Cutthroats x302 on 2025-06-25 [medium]
+  NEW: BUMMER L GR-22 (387) - Cutthroats x207 on 2025-06-30 [exact]
+  NEW: CANDY L GR-17 (388) - Cutthroats x207 on 2025-06-30 [exact]
+  NEW: DAGGETT L GR-6 (391) - Cutthroats x2032 on 2025-06-30 [exact]
+  NEW: GR- 31 (635) - Cutthroats x502 on 2025-06-30 [exact]
+  NEW: MUTTON L GR-23 (638) - Cutthroats x399 on 2025-06-30 [exact]
+  NEW: POTTER L,UPPER GR-28 (403) - Cutthroats x900 on 2025-06-30 [exact]
+  NEW: RAM L GR-24 (640) - Cutthroats x251 on 2025-06-30 [exact]
+  NEW: SPIRIT L GR-3 (405) - Cutthroats x175 on 2025-07-08 [exact]
+  NEW: SPIRIT L GR-3 (405) - Tigers x609 on 2025-07-08 [exact]
+  NEW: TEEPEE L,LOWER GR-29 (400) - Cutthroats x399 on 2025-06-30 [exact]
+  → 12 new records added for 11 lakes in Daggett
+    Matched lakes: ANSON L, LOWER GR-9, BEAVER CR, BUMMER L GR-22, CANDY L GR-17, DAGGETT L GR-6, GR- 31, MUTTON L GR-23, POTTER L,UPPER GR-28, RAM L GR-24, SPIRIT L GR-3, TEEPEE L,LOWER GR-29
+  → 12 unmatched waters in Daggett
+
+Daggett County Summary:
+  Total new records: 197
+  Matched lakes: 27
+  Unmatched waters: 18
+  Lake names matched: ANSON L ,EAST GR-13, ANSON L, LOWER GR-9, ANSON L, UPPER GR-10, BEAR CR BEAVER POND, BEAVER CR, BUMMER L GR-22, CANDY L GR-17, CLEAR L GR-12, DAGGETT L GR-6, EWE L GR-18, GR- 21, GR- 31, GR-104, HIDDEN L GR-7, LAMB L GR-19, LAMB L GR-20, MUTTON L GR-23, MYSTERY (LOST)GR-101, ONE FISH L GR-32, PENGUIN L GR-16, POTTER L,UPPER GR-28, RAM L GR-24, RED L GR-33, SESAME L GR-15, SPIRIT L GR-3, TEEPEE L,LOWER GR-29, TEEPEE L,UPPER GR-30
+
+=== FINAL SUMMARY ===
+Counties processed: Uintah, Daggett
+Years processed: 2002-2025
+Total new stocking records: 381
+Total unique lakes matched: 55
+Total unmatched waters: 56
+CSV file updated: /Volumes/OLAF EXT/jedwoodx/repos/uintas/data/utah_dwr_stocking_data.csv
+Run completed at: 2025-08-31 21:53:39
