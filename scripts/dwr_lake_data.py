@@ -3708,6 +3708,380 @@ DWR_LAKE_ENTRIES = [
         'designation': 'GR-179',
         'name': None,
         'text': "This shallow natural lake is situated in dense conifers 150 yards south of the North Slope Road in the vicinity of Bullocks Park. GR-179 is located immediately east of GR-178 which is visible from the road. GR-179 is 5.5 acres, 9,770 feet in elevation, with 11-foot maximum depth. Potential camping areas are available with no running water or horse feed. GR-179 is subject to light annual recreational use at present. Experimental stocking of brook trout was undertaken during 1985 to evaluate the habitat potential of this lake. GR-179 may be subject to winterkill."
+    },
+
+    # ASHLEY CREEK DRAINAGE
+    {
+        'designation': 'GR-35',
+        'name': 'ASHLEY TWINS RESERVOIR',
+        'text': "This fluctuating reservoir has a large earthen dam about 475 yards long on the east end. Elevation 10,332 feet, 20.7 to 30.3 acres, 8 to 18 feet maximum depth. At maximum drawdown, three small lakes are formed (North, South and East) along with numerous small isolated pools. The stream between North and South lakes has been channeled. Jeep access is possible by going 5½ miles west from the marked sign on the Red Cloud Loop Road 27 miles north of Vernal. Horses cannot be hauled the last 3 miles because of the rugged road. Marginal camping is available near the dam, and horsefeed is abundant ¼ mile southeast in a long meadow. The only spring water available enters on the southwest corner of the lake. The fishery contains sizable brook and pan-size cutthroat trout. Cutthroat spawn naturally in the spring-fed inlet. Angling pressure drops off considerably in late summer because of the mucky shoreline resulting from drawdown."
+    },
+    {
+        'designation': 'GR-62',
+        'name': 'BERT',
+        'text': "This attractive, natural lake sits at the base of some rock slides extending south from Marsh Peak. Elevation 10,220 feet, 3.7 acres, 11 feet maximum depth. Follow the Marsh Peak Trail 1 mile to the top of the ridge. Turn southeast and go down the east side of Chimney Rock basin 1 mile to the bottom. Bert Lake is located 1 mile south of Chimney Rock Lake. Horse access is impossible over the rocky, timbered terrain. Marginal camping and water are available several hundred yards east of the lake. Bert is stocked with brook trout. This attractive lake seldom receives anglers or campers."
+    },
+    {
+        'designation': 'DF-1',
+        'name': 'BLUE',
+        'text': "This scenic windswept lake sits at the top of a cirque basin in the tundra. Elevation 11,160 feet, 6.5 acres, 16 feet maximum depth. Drive into Blanchett Park 3 miles north of Paradise Park Reservoir. Head 5 miles north on a good Forest Service trail to Deadman Lake, then climb the gentle bald mountain southeast 1¼ miles. Another route is to follow the trail north 2½ miles up to the lake. Water and some horsefeed are available around the lake, but there are no campsites. Horse access is easy on the first route, but difficult on the second. The fishery is composed of an abundant brook trout population. Fishing pressure is moderate and consists of day-use anglers only. Sheep grazing in midsummer decreases the aesthetic beauty of this little basin."
+    },
+    {
+        'designation': 'GR-63',
+        'name': 'CHIMNEY ROCK',
+        'text': "This pothole lake sits at the southeast base of Marsh Peak in a steep cirque basin. Elevation 10,540 feet, 6.5 acres, 16 feet maximum depth. Little water exchange and low water levels cause winterkill, making it impossible to support fish. Follow the Marsh Peak trail 1 mile onto the ridge extending from Marsh Peak. Pick your way down the east side of the cirque basin to the lake over large talus boulders and thick timber. Horse access is impossible. Marginal campsites are scattered near the lake. Better camping and flowing water are available 1 mile to the south near Bert Lake. Scenery and solitude are assured for rugged individuals."
+    },
+    {
+        'designation': 'GR-38',
+        'name': 'DEADMAN',
+        'text': "This natural lake sits in open, windy terrain at the head of Dry Fork Basin. Elevation 10,790 feet, 7 acres, 9 feet maximum depth. Take jeep road to Blanchett Park 3 miles north of Paradise Park Reservoir. Go 5 miles north via a well-marked Forest Service trail to the lake. Though horse access is very good, feed is limited. Campsites are marginal along the south shore. Both brook and cutthroat trout inhabit the lake, but are not abundant. Fishing and camping pressure at Deadman is heavy; it is also somewhat popular with scout groups."
+    },
+    {
+        'designation': 'DF-11',
+        'name': 'EAST KIBAH',
+        'text': "This natural lake has two flowing inlets on the south and west shores, and a rock slide along the north shore. Elevation 10,495 feet, 2.9 acres, 12 feet maximum depth. A few brook trout are stocked and have good growth. A residual population of rainbow trout also inhabits the lake. DF-11 receives moderate fishing pressure, especially from day hikers."
+    },
+    {
+        'designation': 'DF-4',
+        'name': None,
+        'text': "This natural lake is situated in a rocky depression at the head of a cirque basin. Elevation 10,830 feet, 10 acres, 23 feet maximum depth. Follow Dry Fork Creek (a Forest Service trail exists partway) 2¼ miles above Blanchett Park to Reynolds Creek. Go along Reynolds Creek 1 mile to its spring source, then head due west over boulder terrain to the lake. Horses can be taken up Reynolds Creek only partway because of rough terrain. No campsites or horsefeed are available. Cutthroat trout inhabit the lake. This lake is for anglers who like solitude and ruggedness."
+    },
+    {
+        'designation': 'DF-12',
+        'name': 'FINGER KIBAH',
+        'text': "This shallow, long narrow lake is located 90 yards southwest of DF-11 in the Kibah Basin. Elevation 10,515 feet, 4.7 acres, 9 feet maximum depth. A healthy population of brook trout inhabits the lake. DF-12 receives moderate fishing pressure by day hikers coming from Blanchett Park."
+    },
+    {
+        'designation': 'DF-14',
+        'name': 'WEST KIBAH',
+        'text': "This lake is located at the base of a talus slope in the far southwest corner of Kibah Basin. Elevation 10,580 feet, 7.8 acres, 15 feet maximum depth. Go ½ mile in a southwest direction from DF-11 over rough, timbered terrain (past DF-12). One campsite exists in a hollow on the southeast end of the lake. The fishery is composed of stocked brook trout. Fishing pressure is moderate and generally limited to day hikers."
+    },
+    {
+        'designation': 'DF-15',
+        'name': 'NORTH KIBAH',
+        'text': "This cirque lake is located in the far northwest corner of the Kibah Basin. Elevation 10,750 feet, 4.5 acres, 12 feet maximum depth. It sits ¼ mile northwest of DF-11. No trails or campsites are available around the lake. This lake does not support fish because of low water levels in the fall which cause winterkill."
+    },
+    {
+        'designation': 'DF-16',
+        'name': 'ISLAND KIBAH',
+        'text': "This natural lake is surrounded by rocky ridges covered with conifers. Elevation 10,540 feet, 8 acres, 14 feet maximum depth. It has a small, rocky island in the shallow south portion of the lake. Follow the west inlet of DF-11 northwest about 300 yards over rough, boulder terrain to DF-16. There is only one marginal campsite on the west end. DF-16 contains brook trout. Fishing pressure is moderate and generally limited to day hikers."
+    },
+    {
+        'designation': 'GR-57',
+        'name': 'FISH',
+        'text': "This beautiful lake sits at the western base of Marsh Peak and is surrounded by scattered timber and steep, talus slopes (see access to North Twin Lake). Elevation 10,745 feet, 17.5 acres, 40 feet maximum depth. From North Twin Lake, follow a vague Forest Service trail along the east inlet stream toward Marsh Peak for 2¼ miles. The lake has good camping sites, spring water and limited horsefeed. Horse access is good except for a small rugged talus ridge ½ mile east of North Twin Lake. Cutthroat trout in Fish Lake are sustained completely through natural reproduction. This lake receives quite a few visitors, and fishing pressure is generally heavy. Litter and mosquitoes are a nuisance."
+    },
+    {
+        'designation': 'GR-43',
+        'name': 'GOOSE #2',
+        'text': "This lake has an earthen dam on the east end. Elevation 10,252 feet, 19.4 acres (maximum), 9-15 feet maximum depth. Access is ½ mile north of Ashley Twin Reservoir via a good Forest Service trail. Horse access is good. Only a few campsites and limited horsefeed exist on the west end. No spring water is available. A few cutthroat trout inhabit the lake. Little camping and fishing pressure occur because of the mucky shoreline caused by drawdown. An experimental cutthroat stocking program was initiated in 1980 and will need to be evaluated."
+    },
+    {
+        'designation': 'GR-42',
+        'name': 'GOOSE #1',
+        'text': "This small, oblong irrigation reservoir is surrounded by rock ridges, marshes and deadfall. Elevation 10,240 feet, 3.8 acres (maximum), 9 to 13 feet maximum depth. Access is ¼ mile north of Ashley Twins Reservoir via a good Forest Service trail to Goose #2. Follow its outlet 125 yards east to Goose #3, then turn south for 20 yards to the lake. Horse access is generally slow through the marshy terrain. No horsefeed, campsites or spring water exist. This lake has only a few trout and receives little angling or camping pressure."
+    },
+    {
+        'designation': 'GR-52',
+        'name': None,
+        'text': "This small, natural lake is surrounded by wet boggy meadows on the north and small, conifer-covered ridges on the south (see North Twin Lake access). Elevation 10,515 feet, 2.1 acres, 4 feet maximum depth. From North Twin Lake, follow the north inlet stream 1¼ miles into a meadow; turn east following a small tributary 125 yards up a rock ridge to the lake. GR-52 sits 600 yards east-southeast from Red Belly Lake. Camping and horsefeed are available in the area, and horse access is good though trailless. Only a few brook trout inhabit the lake and they reproduce naturally. Angling and camping pressure are moderate."
+    },
+    {
+        'designation': 'GR-40',
+        'name': 'HACKING',
+        'text': "This natural lake sits at the base of a rockslide adjacent to the east side of Leidy Peak. Elevation 10,625 feet, 7.4 acres, 15 feet maximum depth. From the Trout Creek Guard Station on the Red Cloud Loop Road, drive west 7¼ miles to the lake. Limited spring water and camping sites are available; there is no horsefeed. The lake contains brook and rainbow trout. Fishing pressure is generally heavy on weekends because of vehicle access. Please take a little extra litter with you when you leave."
+    },
+    {
+        'designation': 'GR-46',
+        'name': 'HOOPER',
+        'text': "This shallow lake sits in an open, wet meadow and has a long, narrow inlet entering on the south end. Elevation 10,305 feet, 4.5 acres, 4 feet maximum depth. Access is 1¼ miles northwest from the Ashley Twins Reservoir via a well-marked Forest Service trail. Horse access is good. Some camping is available on the east shore and springs flow into the lake from the south. Plenty of horsefeed surrounds the lake. An abundant population of pan-size cutthroat trout inhabit Hooper. Horseflies are a real nuisance during midsummer. This accessible lake is a must for fly fishermen, who have only a day to spend in the high country but would like a nice creel of trout."
+    },
+    {
+        'designation': 'GR-34',
+        'name': 'LAKESHORE',
+        'text': "This picturesque lake is located in a meadow near the upper end of Lakeshore Basin, surrounded by rolling ridges and scattered timber. Elevation 10,792 feet, 11.1 acres, 18 feet maximum depth. Access is via a well-marked Forest Service trail 4¼ miles from Ashley Twins Reservoir or southwest via a Forest Service trail 5 miles from the trailhead at Hacking Lake. Horse access is easy; and camping, horsefeed and springs are abundant around the lake. Sheep grazing is quite heavy in the surrounding watershed. Slow-growing brook and cutthroat trout inhabit the lake. Fishing pressure is moderate."
+    },
+    {
+        'designation': 'GR-48',
+        'name': 'LITTLE BLUE',
+        'text': "This natural cirque lake sits in windswept tundra above timberline in the far northwest corner of Lakeshore Basin. Elevation 11,215 feet, 3.2 acres, 6 feet maximum depth. Follow a well-marked Forest Service trail 5¼ miles to the end of Lakeshore Basin from Ashley Twins Reservoir. Horse access is easy over this grassy, rolling terrain. There are no campsites and horsefeed is limited; however, good springs exist around the lake. Better camping and abundant horsefeed are available ¼ mile to the southeast. This lake was fishless at the time of survey (1979) and is being stocked experimentally to assess its potential. Angling and camping pressure are very light."
+    },
+    {
+        'designation': 'DF-17',
+        'name': 'LITTLE ELK',
+        'text': "This tadpole-shaped lake sits in a slight depression surrounded by conifers. Elevation 10,550 feet, 7.4 acres, 10 feet maximum depth. Follow the inlet stream to Paradise Park Reservoir ¼ mile to a small meadow; turn north and go 1 mile up a rugged, timbered mountain. One good campsite exists in a small meadow on the north shore. Horse access is very difficult, and there is no feed. Annual winterkill precludes sustaining a trout fishery. Camping pressure is light and generally limited to day use."
+    },
+    {
+        'designation': 'GR-39',
+        'name': 'MARSH',
+        'text': "This cirque lake is surrounded on three sides by steep, talus slopes. Elevation 10,820 feet, 12.6 acres, 21 feet maximum depth. Head 1 mile from Ashley Twins Reservoir in a westward direction into the cirque basin on the northwest side of Marsh Peak. There is no trail over this steep, timbered terrain and horses are not recommended. There is some spring water, but no campsites or horsefeed. Horse pasture and camping are available around Ashley Twins Reservoir. Brook trout inhabit this lake. Angling pressure is considered moderate."
+    },
+    {
+        'designation': 'DF-2',
+        'name': 'MOAP',
+        'text': "Moap is a natural lake sitting at the base of a steep talus slope. Elevation 10,740 feet, 2.7 acres, 5 feet maximum depth. Follow jeep road into Blanchett Park 3 miles north of Paradise Park Reservoir. Go north ½ mile on the Forest Service trail past Lonesome Park to a large, wet meadow; turn due west through the timber ½ mile into the small cirque basin. Horses can be taken to Moap. Some camping is available northeast of the lake, but there is no horsefeed. Moap contains no fish. Hikers seeking solitude and photographers might enjoy going to this beautiful little lake."
+    },
+    {
+        'designation': 'GR-47',
+        'name': 'MUD',
+        'text': "This pretty, irregular-shaped lake has a small riprap dam on the north and sits at the base of a steep, talus ridge that extends eastward from Marsh Peak. Elevation 10,582 feet, 4.2 acres, 11 to 15 feet maximum depth. A small peninsula extends into the lake from the south shore. There is no trail, but access is ½ mile south up a thick timbered, rocky ridge from Ashley Twins Reservoir. Horse access is difficult over this rugged terrain. This lake has marginal camping, little spring water, and no horsefeed. Mud Lake was experimentally stocked with cutthroat trout beginning in 1981. Angling and camping pressure are light."
+    },
+    {
+        'designation': 'GR-50',
+        'name': 'NORTH TWIN (DRY FORK)',
+        'text': "This natural lake is surrounded by large, open meadows and scattered timber. Elevation 10,305 feet, 10.3 acres, 24 feet maximum depth. Go northeast 6 miles on a Forest Service trail from Paradise Park Campground. The second and third miles crisscross logging roads, and the rock trail markers in this area are quite hard to follow until you cross Dry Fork Creek. Horse access is quite easy. Campsites, horse pasture and spring water are present. Abundant brook and cutthroat trout inhabit the lake. Angling pressure is quite heavy throughout the summer, yet fishing remains good for pan-size trout."
+    },
+    {
+        'designation': 'DF-18',
+        'name': 'PAUL',
+        'text': "This natural lake is located on a flat bench surrounded by rocky, timbered ridges 2¼ miles northwest of Paradise Park Reservoir. Elevation 10,630 feet, 11.1 acres, 17 feet maximum depth. Access is by a trail that starts on the north shore of Little Elk ¼ mile south of Paul. Access is generally rough and trails poorly marked; horse access is very difficult. Camping is available on the west shore, but there is no horsefeed. Stocked brook trout grow well, feeding on freshwater shrimp. Angling pressure is light but appears to be on the increase."
+    },
+    {
+        'designation': 'GR-51',
+        'name': 'RED BELLY',
+        'text': "This natural lake is surrounded by seeps on the north shore and conifers on the south. Elevation 10,540 feet, 6.3 acres, 8 feet maximum depth. Follow the north inlet stream to North Twin Lake ½ mile, then turn north and follow the stream tributary ½ mile to the lake at the base of a rock ledge. Horse access is easy and there is camping and horsefeed near the lake. A few healthy cutthroat inhabit the lake. Fishing pressure is moderate, but there is considerable day use from people camped at North and South Twin Lakes (Dry Fork)."
+    },
+    {
+        'designation': 'GR-45',
+        'name': 'SANDY',
+        'text': "This natural lake sits in thick conifers. Elevation 10,500 feet, 5.6 acres, 10 feet maximum depth. Go northwest 2/3 of a mile from Ashley Twins Reservoir via the well-marked trail to the inlet of Goose Lake #2; turn due west and follow the trailless inlet ½ mile through thick timber to the lake. Horse access is difficult the last ½ mile. Some campsites are available on the west end, but there is no spring water or horsefeed. Slow-growing cutthroat inhabit the lake. This lake receives little fishing and camping pressure."
+    },
+    {
+        'designation': 'GR-59',
+        'name': 'SHAW',
+        'text': "This natural lake is located in a large, wet meadow. Elevation 10,700 feet, 2.8 acres, 5 feet maximum depth. A lily pond sits 100 yards due west of Shaw in the same meadow (see North Twin Lake access). From North Twin Lake, follow the east inlet stream along a vague Forest Service trail toward Marsh Peak for 1¼ miles to the second large meadow. Campsites, water and horsefeed are available around the lake. Horse access is good. A very small population of little cutthroat trout inhabit the lake. Though ideal for fly-fishing, this lake receives little fishing pressure."
+    },
+    {
+        'designation': 'GR-49',
+        'name': 'SOUTH TWIN (DRY FORK)',
+        'text': "This natural lake is surrounded by marshy vegetation, wet meadows and scattered timber. Elevation 10,300 feet, 6.2 acres, 8 feet maximum depth. Follow the Forest Service trail from Paradise Park 6 miles northeast to the lake (South Twin is 150 yards south of North Twin). Horse access is easy. Horsefeed and campsites are abundant around the lake, but spring water is available only at North Twin. The fishery is composed of pan-size brook and cutthroat trout. Angling and camping pressure is heavy. Litter is a problem at this lake; please help haul it out!"
+    },
+    {
+        'designation': 'GR-36',
+        'name': 'WILDE',
+        'text': "This natural lake sits just below timberline in a small basin at the southwest corner of Leidy Peak. Elevation 10,950 feet, 4.3 acres, 13 feet maximum depth. It is the largest lake in a series of three cirque lakes. Access is via a trail from Ashley Twins Reservoir four miles into Lakeshore Basin. Turn north at a small meadow pond (GR-76) and go ½ mile past another Lake (GR-77) climbing a steep, talus ledge into Wilde Lake Basin. Horse access is impossible the last ½ mile. Camping sites, springs and horsefeed are available ½ mile south of Wilde in Lakeshore Basin. The lake contains no fish, but the area is scenic for those seeking solitude."
+    },
+
+    # WHITEROCKS RIVER DRAINAGES
+    {
+        'designation': 'WR-64',
+        'name': 'CHEPETA',
+        'text': "Elevation 10,600 feet. Maximum surface acres 50, maximum depth 60 feet. Reservoir with 20 foot dam on the south end of the lake. Size and depth fluctuates. Located 20 miles from Paradise Park Reservoir by good Forest Service trail or poor jeep road. Several fishing streams enter this large reservoir. Excellent campsites with plenty of horse feed. Good fishing for both brook and cutthroat trout. Heavy fishing pressure. Plenty of open shoreline for fly fishermen with hip boots. Several good fishing lakes nearby. A small rubber boat or raft is helpful on this large water. Some natural reproduction. Large insect population too, and they bite as fast as the fish. Stocked cyclically with brook trout."
+    },
+    {
+        'designation': 'WR-7',
+        'name': 'CLEVELAND',
+        'text': "26 acres, elevation 10,700 feet, maximum depth 6 feet, average depth 4 feet. Fourteen miles north of Pole Creek Lake on good, marked Forest Service trail. ½ mile west of Queant. A large, shallow, spring-fed meadow lake in timberline country. Excellent evening fly fishing lake with very good campsites and horse feed. Large brook and cutthroat trout. Popular area receiving considerable fishing pressure. Stocked cyclically with cutthroat trout."
+    },
+    {
+        'designation': 'WR-49',
+        'name': 'CLIFF',
+        'text': "Elevation 11,000 feet, maximum acres 40, maximum depth 55 feet. Reservoir, size and depth fluctuates 25 feet. From Paradise Park Reservoir 15 miles along good, posted, Forest Service trail or poor jeep road. Rough, heavily timbered, rocky terrain. Cliff lies against the rock slides which forms the only open shoreline. Poor campsites without horse feed. The jeep road goes by to the west of the lake. Good fishing for both brook and cutthroat trout; some 16 inches in length. Brook trout stocked cyclically."
+    },
+    {
+        'designation': 'WR-43',
+        'name': 'DOLLAR',
+        'text': "7 acres, elevation 11,000 feet, maximum depth 15 feet, average depth 5 feet. ½ mile southwest of Whiterocks Lake. A triangular shaped lake lying against the rock slides, in timbered terrain interspersed with meadows. No trail to the lake. Fair campsites with limited horse feed. Some open shoreline for fly fishing. Generally very good fishing for brook; cutthroat and rainbow trout. Stocked with brook trout."
+    },
+    {
+        'designation': 'WR-58',
+        'name': 'ELBOW',
+        'text': "25 acres, elevation 11,000 feet, maximum depth 27 feet, average depth 20 feet. From Chepeta, one mile northwest or from Sharlee, ½ mile north. No trail. Rough terrain, heavily timbered. Use campsites and horse feed at Chepeta or Sharlee. Some open shoreline for fly fishing. A striking, elbow-shaped lake lying against the rock slides. Good fishing for brook trout. Stocked."
+    },
+    {
+        'designation': 'WR-56',
+        'name': 'FIGURE-EIGHT',
+        'text': "3 acres, elevation 10,700 feet, maximum depth 5 feet, average depth, 3 feet. From Chepeta Lake, ¼ mile up the northwest stream. Rough terrain, no trail. Campsites and horse feed in the area. A small, cold, shallow lake inhabited by extremely wary cutthroat trout. Partly open, marshy shoreline. Seldom visited. Natural reproduction."
+    },
+    {
+        'designation': 'WR-63',
+        'name': 'HIDDEN',
+        'text': "12 acres, elevation 10,500 feet, maximum depth 48 feet, average depth 27 feet. A deep, eliptical lake lying in a small pocket in dense conifers. Few campsites and little horse feed. No open shoreline. From Paradise Park Reservoir 15 miles by Forest Service trail to \"fork\" in trail, leave trails and head west for a good mile over rough terrain. Hard to find. Stocked for the first time in 1963 and 1964 with brook trout. Should be a good one!"
+    },
+    {
+        'designation': 'WR-12',
+        'name': 'LARVAE',
+        'text': "4 acres, elevation 10,200 feet, maximum depth 28 feet, average depth 15 feet. Two miles east of Pole Creek Lake and one mile east of the west fork trail \"take-off\" point. A pretty lake lying in dense conifers. Heavy fishing pressure. Campsites with horse feed in Pole Creek Lake area. Fair fishing for brook trout. Stocked with fingerling brook every year."
+    },
+    {
+        'designation': 'WR-17',
+        'name': 'LOWER ROCK',
+        'text': "12 acres, elevation 10,600 feet, maximum depth 39 feet, average depth 20 feet. 1½ miles northwest of Pole Creek Lake. No trail to the lake. Timbered, rocky terrain with little open shoreline. A deep lake receiving some fishing pressure. Generally good fishing for brook trout. A few very large cutthroat in the lake. Campsites and horse feed can be found to the east. Stocked cyclically with brook trout."
+    },
+    {
+        'designation': 'WR-16',
+        'name': 'MIDDLE ROCK',
+        'text': "6 acres, elevation 10,600 feet, maximum depth 10 feet, average depth 6 feet. Nearly two miles northwest of Pole Creek Lake. Rough, rocky, timbered terrain with no trail. Little open shoreline for fly fishermen. Generally receives little fishing pressure. Campsites and horse feed can be found to the east. Good fishing for brook trout. A few cutthroat in the lake. Stocked cyclically with brook trout."
+    },
+    {
+        'designation': 'WR-53',
+        'name': 'MOCASSIN',
+        'text': "11 acres, elevation 10,700 feet, maximum depth 27 feet, average depth 10 feet. A small reservoir with a five-foot dam along the southwest end of the lake. Rough terrain, but very good camping sites and horse feed in the area. Lies ¼ mile east of Chepeta. Rock slides along the entire east side of the lake form the only open shoreline. Fast fishing for brook and cutthroat trout. Stocked occasionally with brook."
+    },
+    {
+        'designation': 'WR-5',
+        'name': 'OGDEN',
+        'text': "14 acres, elevation 11,000 feet, maximum depth 21 feet, average depth 8 feet. 16 miles north of Pole Creek Lake on good Forest Service west fork trail. One mile northwest of Queant. A long, deep lake lying against the rock slides. Some open shoreline. Good campsites with horse feed and running water. Fine fishing for wary cutthroat trout. Moderate fishing pressure. Stocked cyclically with cutthroat trout."
+    },
+    {
+        'designation': 'WR-52',
+        'name': 'PAPOOSE',
+        'text': "8 acres, elevation 10,750 feet, maximum depth 22 feet, average depth 8 feet. Reservoir with 7 foot dam at the south end of the lake. One mile north of Chepeta. No trail. Open country with shoreline completely accessible for fly fishing. Excellent campsites and horse feed in the area. Wary brook and cutthroat trout, but good fishermen sport heavy creels. Stocked with brook trout."
+    },
+    {
+        'designation': 'WR-18',
+        'name': 'PARADISE PARK RESERVOIR',
+        'text': "Elevation 10,000 feet, size and depth fluctuates, maximum acreage approximately 137, depth 10 to 36 feet. By dirt road 20 miles north of LaPoint. Timbered area with excellent Forest Service campground facilities. A Forest Service guard station is located just south of the dam. A \"take off\" point into many of the high lakes. A popular fishing site for rainbow trout. Stocked annually."
+    },
+    {
+        'designation': 'WR-45',
+        'name': 'PEARL',
+        'text': "2½ acres, elevation 11,000 feet, maximum depth 15 feet, average depth 6 feet. A small, pear-shaped lake up under the rock ledge. One mile north of Whiterocks Lake. No trail and terrain is rough, heavily timbered and rocky. No good campsites at lake, very good campsites with horse feed around Whiterocks Lake. Some open shoreline for fly fishing. Fast fishing for brook trout. Stocked periodically."
+    },
+    {
+        'designation': 'WR-6',
+        'name': 'POINT (ADAMS)',
+        'text': "16 acres, elevation 10,800 feet, maximum depth 21 feet, average depth 8 feet. Twelve miles north of Pole Creek Lake on Forest Service west fork trail. Lake lies west of main stream and two miles south of Queant, at base of bald ridge with rocky, timbered shoreline. Campsites and horse feed east on the main stream. Good fishing for brook trout. Little fishing pressure. Stocked cyclically with brook trout."
+    },
+    {
+        'designation': 'WR-13',
+        'name': 'POLE CREEK LAKE',
+        'text': "5 acres, elevation 10,200 feet, maximum depth 10 feet, average depth 4 feet. By dirt road 15 miles north of Whiterocks. An open meadow lake receiving heavy fishing pressure. Some campsites and horse feed in surrounding area. Moderately good fishing for rainbow trout. Stocked annually."
+    },
+    {
+        'designation': 'WR-4',
+        'name': 'QUEANT',
+        'text': "57 acres, elevation 10,700 feet, maximum depth 44 feet, average depth 13 feet. 14 miles north of Pole Creek Lake along good posted Forest Service west fork trail. Open meadow with scattered timber providing excellent campsites with plenty of horse feed. Several streams with running water. This large half-moon shaped lake is popular and receives considerable use. Plenty of open shoreline for the fly fisherman. Generally good evening fishing for brook trout. Stocked cyclically with brook trout."
+    },
+    {
+        'designation': 'WR-35',
+        'name': 'RASSMUSSEN #1',
+        'text': "19 acres, elevation 10,500 feet, maximum depth 5 feet, average depth 3 feet. Twelve miles north from Pole Creek Lake along Forest Service west fork trail, then one mile west on sheep trail. Two miles south of Point Lake. Rocky, timbered terrain with few campsites and little horse feed. Excellent fishing for brook trout. Stocked cyclically with brook trout."
+    },
+    {
+        'designation': 'WR-36',
+        'name': 'RASSMUSSEN #2',
+        'text': "14 acres, elevation 10,500 feet, maximum depth 8 feet, average depth 4 feet. A sister lake of WR-35, it lies just southeast and almost joins lake #1. Generally provides excellent fishing and good fishermen seldom leave hungry. Some open shoreline for fly fishermen. Stocked cyclically with brook trout."
+    },
+    {
+        'designation': 'WR-2',
+        'name': 'RC #1',
+        'text': "10 acres, elevation 10,650 feet, maximum depth 16 feet, average depth 8 feet, 10 miles north of Pole Creek Lake on good Forest Service trail. Two miles southeast of Queant Lake. Rough, heavily timbered terrain with slide rock completely along the east side of the lake. Open rock shoreline for half of the lake. Fishing pressure is light. Campsite available just south of the lake with limited horse feed. Excellent campsites and horse feed can be found ½ mile east along the main stream. Good fishing for both brook and cutthroat trout. The mosquitoes bite as fast as the fish, so have as much repellent as fishing tackle. East RC #2 forms a small part of #1. Stocked periodically with cutthroat trout."
+    },
+    {
+        'designation': 'WR-66',
+        'name': 'READER',
+        'text': "10 acres, elevation 11,150 feet, maximum depth 10 feet, average depth 5 feet. From Chepeta Lake 4 miles west by Forest Service trail into the area. Reader lies at the base of the pass near the Fox Lake trail. Mostly open terrain with scattered timber. Open shoreline for the fly fishermen. Good campsites with some horse feed. Excellent fishing for both brook and cutthroat trout. Some natural reproduction. Stocked periodically with cutthroat trout."
+    },
+    {
+        'designation': 'WR-42',
+        'name': 'SAND',
+        'text': "6 acres, elevation 11,000 feet, maximum depth 5 feet, average depth 3 feet. ½ mile northeast along the meadows from Teds. A small, open, meadow lake lying against the rock slides. Excellent fly fishing for pan-sized brook and cutthroat trout. Little fishing pressure. Very good campsites with horse feed. Natural reproduction."
+    },
+    {
+        'designation': 'WR-57',
+        'name': 'SHARLEE',
+        'text': "10 acres, elevation 10,800 feet, maximum depth 4 feet, average depth 3 feet. Two miles west of Chepeta Lake on good Forest Service trail. A pretty, meadow lake with completely open, marshy shoreline. Excellent campsites with horse feed. Several springs provide drinking water. An excellent fly fishing water with hip boots or a small rubber boat. Little fishing pressure and the fishing is great. Good population of cutthroat and brook trout. You won't go hungry here. Some natural reproduction with periodical stocking."
+    },
+    {
+        'designation': 'WR-8',
+        'name': 'TAYLOR',
+        'text': "25 acres, elevation 11,350 feet, maximum depth 53 feet, average depth 10 feet. Sixteen miles north of Pole Creek Lake along good Forest Service west fork trail. Two miles northeast of Queant. A tadpole shaped lake lying in the open, rocky, terrain above timberline. Open brushy shoreline for fly fishing. Poor campsites with little horse feed. Good fishing for all sizes of brook trout. Stocked cyclically with brook trout. Seldom visited."
+    },
+    {
+        'designation': 'WR-44',
+        'name': 'TEDS',
+        'text': "14 acres, elevation 10,500 feet, maximum depth 20 feet, average depth 7 feet. From Paradise Park Reservoir 15 miles along excellent Forest Service trail on poor jeep road. Teds is often confused with Workman Lake, but lies one mile north of Workman. The shoreline is mostly timbered, with enough open meadow to provide excellent fly fishing areas. A good looking, productive lake housing large brook and cutthroat trout. Fishing pressure is heavy but the evening fishing is generally good. Excellent campsites with good drinking water and plenty of horse feed. A good lake at which to stay. Stocked with brook trout."
+    },
+    {
+        'designation': 'WR-14',
+        'name': 'UPPER ROCK',
+        'text': "15 acres, elevation 10,600 feet, maximum depth 28 feet, water level fluctuates. Two miles northwest of Pole Creek Lake over very rough terrain, no trail. A large lake lying in a deep, rocky basin. Open rock shoreline. Little fishing pressure on this remote lake. No campsites. Generally good fishing. Stocked cyclically with cutthroat trout."
+    },
+    {
+        'designation': 'WR-55',
+        'name': 'WALK-UP',
+        'text': "13 acres, elevation 11,500 feet, maximum depth 60 feet, average depth 32 feet. From Chepeta, two miles northwest over difficult and rocky terrain. No trail. A high, deep, cold lake completely encompassed by slide rock. This lone lake lies at the very head of a small rock basin. No campsites or horse feed. Stocked experimentally with brook trout. One to watch!"
+    },
+    {
+        'designation': 'WR-48',
+        'name': 'WATKINS',
+        'text': "18 acres, elevation 11,000 feet, maximum depth 36 feet, average depth 15 feet. From Cliff Lake 100 yards southeast along the rock slides. Rough, heavily timbered, rocky terrain. No trail, poor campsites without horse feed. Very few fishermen. Some open shoreline. Light milky water coloration. Stocked with brook trout."
+    },
+    {
+        'designation': 'WR-46',
+        'name': 'WHITEROCKS RESERVOIR LAKE',
+        'text': "Elevation 10,800 feet, maximum acres 35, maximum depth 42 feet. Water level fluctuates 20 feet. Located some 20 miles via good Forest Service trail or poor jeep road. The shoreline consists of about half meadow and half rock-timber, so take along your boots and fly rod. Very good camping areas with lots of running water. Horse feed generally available in the area. Some natural reproduction, stocked. Heavy fishing pressure. Brook and cutthroat trout to 2 and 3 pounds in weight."
+    },
+    {
+        'designation': 'WR-54',
+        'name': 'WIGWAM',
+        'text': "4 acres, elevation 10,750 feet, maximum depth 14 feet, average depth 6 feet. Reservoir with a 5 foot dam on south end of the lake. From Chepeta, ½ mile northeast. No trail. Rock slides completely along the east side of the lake. Lies in very rough, rocky area, recommend use of good campsites and horse feed at Chepeta. Generally good fishing for both brook and cutthroat trout. Stocked periodically with brook trout."
+    },
+    {
+        'designation': 'WR-40',
+        'name': 'WOOLEY',
+        'text': "18 acres, elevation 11,000 feet, maximum depth 42 feet, average depth 14 feet. One mile east of Workman at the head of the basin against the rock slides. No trail. Open rock shoreline encompasses this cold, deep lake. Excellent campsites and horse feed near Workman Lake. Fair fishing for brook trout. Stocked periodically."
+    },
+    {
+        'designation': 'WR-50',
+        'name': 'WORKMAN',
+        'text': "20 acres, elevation 10,500 feet, maximum depth 14 feet, average depth 4½ feet. From Paradise Park Reservoir 17 miles along posted, good Forest Service trail or poor jeep road. Two miles north of Cliff Lake. Heavily timbered terrain with limited open shoreline. Good campsites with horse feed in the area. Many springs. A few large brook trout. Generally fast fishing for cutthroat trout. Popular lake. Stocked with cutthroat."
+    },
+    {
+        'designation': 'WR-9',
+        'name': None,
+        'text': "3 acres, elevation 11,200 feet, maximum depth 12 feet, average depth 5 feet. Sixteen miles north of Pole Creek Lake on Forest Service west fork trail and ½ mile southeast of Taylor. A small lake above timberline, lying in the open gently sloping basin below Taylor Lake. Poor, rocky campsites with limited horse feed. Open shoreline for fly fishing. Stocked experimentally with brook trout. A good one to keep an eye on, may be good!"
+    },
+    {
+        'designation': 'WR-19',
+        'name': None,
+        'text': "10 acres, elevation 10,500 feet, maximum depth 18 feet, average depth 8 feet. Two miles north of Pole Creek Lake around the east side of the rock slides. No trail to the lake. Very rocky, timbered terrain. Poor campsites with no horse feed. Some large, wary cutthroat trout inhabit this lake. Seldom visited. Stocked periodically with cutthroat."
+    },
+    {
+        'designation': 'WR-34',
+        'name': None,
+        'text': "9 acres, elevation 11,500 feet, maximum depth 20 feet. Two miles southwest of Cleveland Lake in small open rock basin. A cold, remote lake with open, brushy shoreline. Very poor campsites. No horse feed. Stocked experimentally with brook trout and could produce some fair fishing."
+    },
+    {
+        'designation': 'WR-37',
+        'name': None,
+        'text': "3 acres, elevation 10,600 feet, maximum depth 13 feet, average depth 6 feet. One mile southeast of Rassmussen #2, around the tip of the rock slides. No trail. A narrow, rocky lake with some open shore. Some scattered timber with poor campsites. No horse feed. Few fishermen. Small population of large, cutthroat trout. Moderate fishing for brook trout. Stocked with brook trout."
+    },
+    {
+        'designation': 'WR-65',
+        'name': 'HELL HOLE',
+        'text': "8 acres, elevation 10,850 feet, maximum depth 6 feet, average depth 4 feet. From Chepeta 4 miles west by Forest Service trail into the area. WR-65 lies ½ mile southwest of the trail against the rock slides. Rough, timbered country. Campsites and horse feed in the area. Mostly open shoreline. Stocked experimentally with brook."
+    },
+    {
+        'designation': 'WR-67',
+        'name': 'HORSESHOE',
+        'text': "12 acres, elevation 11,100 feet, maximum depth 14 feet, average depth 6 feet. One mile southeast of Reader Lake along the rock slides. No trail. An arrowhead shaped lake encompassed by rocks and conifers. Some open shoreline. Campsites and horse feed in the area. Light fishing pressure. Fishing is fast for cutthroat trout. Stocked."
+    },
+    {
+        'designation': 'WR-73',
+        'name': None,
+        'text': "8 acres, elevation 11,000 feet. From Rasmussen Lake two miles northwest into the head of a small basin. No trail. Very rough, rocky terrain. Rock slides come into this triangular shaped lake, and form more than half the shoreline. Few campsites with little horse feed. Stocked experimentally with brook trout. The lakes in this rugged basin could provide some excellent fishing."
+    },
+    {
+        'designation': 'WR-74',
+        'name': None,
+        'text': "4 acres, elevation 11,000 feet, maximum depth 14 feet, average depth 7 feet. Two hundred yards east of WR-75. No trail. Few campsites and little horse feed. Rock slides enter the lake along the north side. Some open shoreline. Stocked experimentally."
+    },
+    {
+        'designation': 'WR-75',
+        'name': None,
+        'text': "3 acres, elevation 10,800 feet, maximum depth 8 feet, average depth 5 feet. Two hundred yards south of WR-74, no trail. Few campsites and little horse feed. Some open shoreline. Stocked experimentally with brook."
+    },
+    {
+        'designation': 'WR-76',
+        'name': None,
+        'text': "8 acres (combined), elevation 10,700 feet, maximum depth 7 feet. From Rasmussen Lake one mile northwest via sheep trail along creek. Two shallow, meadow lakes lying side by side, connected by a large stream, and surrounded by conifers. Campsites with some horse feed in the area. Excellent fly fishing areas. Stocked experimentally with brook trout."
+    },
+    {
+        'designation': 'WR-77',
+        'name': None,
+        'text': "4 acres, elevation 10,800 feet, maximum depth 15 feet. From Rassmussen one mile west or from WR-76, ½ mile south. Rough terrain, no trail rock slides form half the shoreline. No campsites or horse feed by the lake. Stocked experimentally with brook."
     }
 ]
 

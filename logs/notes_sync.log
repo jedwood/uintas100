@@ -934,3 +934,453 @@ No notes found with *update tag
 No notes to update
 No lakes flagged for updates.
 No updates needed.
+Starting Notes → Database sync
+[2025-09-01 06:05:27] Starting Notes → Database sync
+
+Using Notes search to find all notes containing '*update'
+[2025-09-01 06:05:28] Using Notes search to find all notes containing '*update'
+
+Found 0 total notes containing '*update' across all folders
+[2025-09-01 06:05:47] Found 0 total notes containing '*update' across all folders
+
+No notes found with *update tag
+[2025-09-01 06:05:47] No notes found with *update tag
+
+No notes to update
+Found 54 lakes needing updates: GR-35, DF-1, GR-38, DF-4, DF-11, DF-12, DF-14, DF-16, GR-43, GR-40, GR-34, GR-48, DF-17, GR-39, GR-47, GR-50, DF-18, GR-51, GR-45, GR-36, BR-10, X-79, GR-9, GR-10, GR-22, GR-17, GR-12, GR-6, GR-18, GR-7, GR-29, GR-101, GR-32, GR-28, GR-33, GR-3, GR-30, WR-43, WR-45, WR-42, WR-44, WR-48, WR-40, GR-13, GR-20, GR-21, GR-31, GR-104, GR-19, GR-23, GR-16, GR-24, GR-15, GR-62
+Processing GR-35...
+Searching for lake GR-35 using Apple Notes search API
+  Found 1 notes containing 'GR-35' across all folders
+  Checking note in correct folder: 'Ashley Twin Reservoir (GR-35)'
+  Found exact match: 'Ashley Twin Reservoir (GR-35)'
+Found existing note: 'Ashley Twin Reservoir (GR-35)'
+Cleared update flag for GR-35
+Processing DF-1...
+Searching for lake DF-1 using Apple Notes search API
+  Found 8 notes containing 'DF-1' across all folders
+  Checking note in correct folder: 'Paul (DF-18)'
+  Checking note in correct folder: 'Little Elk (DF-17)'
+  Checking note in correct folder: 'Island Kibah (DF-16)'
+  Checking note in correct folder: 'North Kibah (DF-15)'
+  Checking note in correct folder: 'West Kibah (DF-14)'
+  Checking note in correct folder: 'Finger Kibah (DF-12)'
+  Checking note in correct folder: 'East Kibah (DF-11)'
+  Checking note in correct folder: 'Blue (DF-1)'
+  Found exact match: 'Blue (DF-1)'
+Found existing note: 'Blue (DF-1)'
+Cleared update flag for DF-1
+Processing GR-38...
+Searching for lake GR-38 using Apple Notes search API
+  Found 1 notes containing 'GR-38' across all folders
+  Checking note in correct folder: 'Deadman (GR-38)'
+  Found exact match: 'Deadman (GR-38)'
+Found existing note: 'Deadman (GR-38)'
+Cleared update flag for GR-38
+Processing DF-4...
+Searching for lake DF-4 using Apple Notes search API
+  Found 1 notes containing 'DF-4' across all folders
+  Checking note in correct folder: 'DF-4'
+  Found exact match: 'DF-4'
+Found existing note: 'DF-4'
+Cleared update flag for DF-4
+Processing DF-11...
+Searching for lake DF-11 using Apple Notes search API
+  Found 1 notes containing 'DF-11' across all folders
+  Checking note in correct folder: 'East Kibah (DF-11)'
+  Found exact match: 'East Kibah (DF-11)'
+Found existing note: 'East Kibah (DF-11)'
+Cleared update flag for DF-11
+Processing DF-12...
+Searching for lake DF-12 using Apple Notes search API
+  Found 1 notes containing 'DF-12' across all folders
+  Checking note in correct folder: 'Finger Kibah (DF-12)'
+  Found exact match: 'Finger Kibah (DF-12)'
+Found existing note: 'Finger Kibah (DF-12)'
+Cleared update flag for DF-12
+Processing DF-14...
+Searching for lake DF-14 using Apple Notes search API
+  Found 1 notes containing 'DF-14' across all folders
+  Checking note in correct folder: 'West Kibah (DF-14)'
+  Found exact match: 'West Kibah (DF-14)'
+Found existing note: 'West Kibah (DF-14)'
+Cleared update flag for DF-14
+Processing DF-16...
+Searching for lake DF-16 using Apple Notes search API
+  Found 1 notes containing 'DF-16' across all folders
+  Checking note in correct folder: 'Island Kibah (DF-16)'
+  Found exact match: 'Island Kibah (DF-16)'
+Found existing note: 'Island Kibah (DF-16)'
+Cleared update flag for DF-16
+Processing GR-43...
+Searching for lake GR-43 using Apple Notes search API
+  Found 1 notes containing 'GR-43' across all folders
+  Checking note in correct folder: 'Goose #2 (GR-43)'
+  Found exact match: 'Goose #2 (GR-43)'
+Found existing note: 'Goose #2 (GR-43)'
+Cleared update flag for GR-43
+Processing GR-40...
+Searching for lake GR-40 using Apple Notes search API
+  Found 1 notes containing 'GR-40' across all folders
+  Checking note in correct folder: 'Hacking (GR-40)'
+  Found exact match: 'Hacking (GR-40)'
+Found existing note: 'Hacking (GR-40)'
+Cleared update flag for GR-40
+Processing GR-34...
+Searching for lake GR-34 using Apple Notes search API
+  Found 1 notes containing 'GR-34' across all folders
+  Checking note in correct folder: 'Lakeshore (GR-34)'
+  Found exact match: 'Lakeshore (GR-34)'
+Found existing note: 'Lakeshore (GR-34)'
+Cleared update flag for GR-34
+Processing GR-48...
+Searching for lake GR-48 using Apple Notes search API
+  Found 1 notes containing 'GR-48' across all folders
+  Checking note in correct folder: 'Little Blue (GR-48)'
+  Found exact match: 'Little Blue (GR-48)'
+Found existing note: 'Little Blue (GR-48)'
+Cleared update flag for GR-48
+Processing DF-17...
+Searching for lake DF-17 using Apple Notes search API
+  Found 1 notes containing 'DF-17' across all folders
+  Checking note in correct folder: 'Little Elk (DF-17)'
+  Found exact match: 'Little Elk (DF-17)'
+Found existing note: 'Little Elk (DF-17)'
+Cleared update flag for DF-17
+Processing GR-39...
+Searching for lake GR-39 using Apple Notes search API
+  Found 1 notes containing 'GR-39' across all folders
+  Checking note in correct folder: 'Marsh (GR-39)'
+  Found exact match: 'Marsh (GR-39)'
+Found existing note: 'Marsh (GR-39)'
+Cleared update flag for GR-39
+Processing GR-47...
+Searching for lake GR-47 using Apple Notes search API
+  Found 1 notes containing 'GR-47' across all folders
+  Checking note in correct folder: 'Mud (GR-47)'
+  Found exact match: 'Mud (GR-47)'
+Found existing note: 'Mud (GR-47)'
+Cleared update flag for GR-47
+Processing GR-50...
+Searching for lake GR-50 using Apple Notes search API
+  Found 1 notes containing 'GR-50' across all folders
+  Checking note in correct folder: 'North Twin (Dry Fork) (GR-50)'
+  Found exact match: 'North Twin (Dry Fork) (GR-50)'
+Found existing note: 'North Twin (Dry Fork) (GR-50)'
+Cleared update flag for GR-50
+Processing DF-18...
+Searching for lake DF-18 using Apple Notes search API
+  Found 1 notes containing 'DF-18' across all folders
+  Checking note in correct folder: 'Paul (DF-18)'
+  Found exact match: 'Paul (DF-18)'
+Found existing note: 'Paul (DF-18)'
+Cleared update flag for DF-18
+Processing GR-51...
+Searching for lake GR-51 using Apple Notes search API
+  Found 1 notes containing 'GR-51' across all folders
+  Checking note in correct folder: 'Red Belly (GR-51)'
+  Found exact match: 'Red Belly (GR-51)'
+Found existing note: 'Red Belly (GR-51)'
+Cleared update flag for GR-51
+Processing GR-45...
+Searching for lake GR-45 using Apple Notes search API
+  Found 1 notes containing 'GR-45' across all folders
+  Checking note in correct folder: 'Sandy (GR-45)'
+  Found exact match: 'Sandy (GR-45)'
+Found existing note: 'Sandy (GR-45)'
+Cleared update flag for GR-45
+Processing GR-36...
+Searching for lake GR-36 using Apple Notes search API
+  Found 1 notes containing 'GR-36' across all folders
+  Checking note in correct folder: 'Wilde (GR-36)'
+  Found exact match: 'Wilde (GR-36)'
+Found existing note: 'Wilde (GR-36)'
+Cleared update flag for GR-36
+Processing BR-10...
+Searching for lake BR-10 using Apple Notes search API
+  Found 1 notes containing 'BR-10' across all folders
+  Checking note in correct folder: 'Beaver (BR-10)'
+  Found exact match: 'Beaver (BR-10)'
+Found existing note: 'Beaver (BR-10)'
+Cleared update flag for BR-10
+Processing X-79...
+Searching for lake X-79 using Apple Notes search API
+  Found 1 notes containing 'X-79' across all folders
+  Checking note in correct folder: 'Stewart (X-79)'
+  Found exact match: 'Stewart (X-79)'
+Found existing note: 'Stewart (X-79)'
+Cleared update flag for X-79
+Processing GR-9...
+Searching for lake GR-9 using Apple Notes search API
+  Found 1 notes containing 'GR-9' across all folders
+  Checking note in correct folder: 'Anson Lower (GR-9)'
+  Found exact match: 'Anson Lower (GR-9)'
+Found existing note: 'Anson Lower (GR-9)'
+Cleared update flag for GR-9
+Processing GR-10...
+Searching for lake GR-10 using Apple Notes search API
+  Found 3 notes containing 'GR-10' across all folders
+  Checking note in correct folder: 'Mystery (GR-101)'
+  Checking note in correct folder: 'Anson Upper (GR-10)'
+  Found exact match: 'Anson Upper (GR-10)'
+Found existing note: 'Anson Upper (GR-10)'
+Cleared update flag for GR-10
+Processing GR-22...
+Searching for lake GR-22 using Apple Notes search API
+  Found 1 notes containing 'GR-22' across all folders
+  Checking note in correct folder: 'Bummer (GR-22)'
+  Found exact match: 'Bummer (GR-22)'
+Found existing note: 'Bummer (GR-22)'
+Cleared update flag for GR-22
+Processing GR-17...
+Searching for lake GR-17 using Apple Notes search API
+  Found 8 notes containing 'GR-17' across all folders
+  Checking note in correct folder: 'UTANNA (GR-176) 🚫'
+  Checking note in correct folder: 'Candy (GR-17)'
+  Found exact match: 'Candy (GR-17)'
+Found existing note: 'Candy (GR-17)'
+Cleared update flag for GR-17
+Processing GR-12...
+Searching for lake GR-12 using Apple Notes search API
+  Found 5 notes containing 'GR-12' across all folders
+  Checking note in correct folder: 'Clear (GR-12)'
+  Found exact match: 'Clear (GR-12)'
+Found existing note: 'Clear (GR-12)'
+Cleared update flag for GR-12
+Processing GR-6...
+Searching for lake GR-6 using Apple Notes search API
+  Found 3 notes containing 'GR-6' across all folders
+  Checking note in correct folder: 'Dagget (GR-6)'
+  Found exact match: 'Dagget (GR-6)'
+Found existing note: 'Dagget (GR-6)'
+Cleared update flag for GR-6
+Processing GR-18...
+Searching for lake GR-18 using Apple Notes search API
+  Found 1 notes containing 'GR-18' across all folders
+  Checking note in correct folder: 'EWE (GR-18)'
+  No matching note found for GR-18
+Note not found. Creating new note: 'Ewe (GR-18)'
+Cleared update flag for GR-18
+Processing GR-7...
+Searching for lake GR-7 using Apple Notes search API
+  Found 1 notes containing 'GR-7' across all folders
+  Checking note in correct folder: 'Hidden (GR-7)'
+  Found exact match: 'Hidden (GR-7)'
+Found existing note: 'Hidden (GR-7)'
+Cleared update flag for GR-7
+Processing GR-29...
+Searching for lake GR-29 using Apple Notes search API
+  Found 1 notes containing 'GR-29' across all folders
+  Checking note in correct folder: 'Lower Teepee (GR-29)'
+  Found exact match: 'Lower Teepee (GR-29)'
+Found existing note: 'Lower Teepee (GR-29)'
+Cleared update flag for GR-29
+Processing GR-101...
+Searching for lake GR-101 using Apple Notes search API
+  Found 1 notes containing 'GR-101' across all folders
+  Checking note in correct folder: 'Mystery (GR-101)'
+  Found exact match: 'Mystery (GR-101)'
+Found existing note: 'Mystery (GR-101)'
+Cleared update flag for GR-101
+Processing GR-32...
+Searching for lake GR-32 using Apple Notes search API
+  Found 1 notes containing 'GR-32' across all folders
+  Checking note in correct folder: 'One Fish (GR-32)'
+  Found exact match: 'One Fish (GR-32)'
+Found existing note: 'One Fish (GR-32)'
+Cleared update flag for GR-32
+Processing GR-28...
+Searching for lake GR-28 using Apple Notes search API
+  Found 1 notes containing 'GR-28' across all folders
+  Checking note in correct folder: 'Upper Potter (GR-28)'
+  Found exact match: 'Upper Potter (GR-28)'
+Found existing note: 'Upper Potter (GR-28)'
+Cleared update flag for GR-28
+Processing GR-33...
+Searching for lake GR-33 using Apple Notes search API
+  Found 1 notes containing 'GR-33' across all folders
+  Checking note in correct folder: 'Red Lake (GR-33)'
+  Found exact match: 'Red Lake (GR-33)'
+Found existing note: 'Red Lake (GR-33)'
+Cleared update flag for GR-33
+Processing GR-3...
+Searching for lake GR-3 using Apple Notes search API
+  Found 10 notes containing 'GR-3' across all folders
+  Checking note in correct folder: 'Red Lake (GR-33)'
+  Checking note in correct folder: 'One Fish (GR-32)'
+  Checking note in correct folder: 'Upper Teepee (GR-30)'
+  Checking note in correct folder: 'Spirit Lake (GR-3)'
+  Found exact match: 'Spirit Lake (GR-3)'
+Found existing note: 'Spirit Lake (GR-3)'
+Cleared update flag for GR-3
+Processing GR-30...
+Searching for lake GR-30 using Apple Notes search API
+  Found 1 notes containing 'GR-30' across all folders
+  Checking note in correct folder: 'Upper Teepee (GR-30)'
+  Found exact match: 'Upper Teepee (GR-30)'
+Found existing note: 'Upper Teepee (GR-30)'
+Cleared update flag for GR-30
+Processing WR-43...
+Searching for lake WR-43 using Apple Notes search API
+  Found 1 notes containing 'WR-43' across all folders
+  Checking note in correct folder: 'Dollar (WR-43)'
+  Found exact match: 'Dollar (WR-43)'
+Found existing note: 'Dollar (WR-43)'
+Cleared update flag for WR-43
+Processing WR-45...
+Searching for lake WR-45 using Apple Notes search API
+  Found 1 notes containing 'WR-45' across all folders
+  Checking note in correct folder: 'Pearl (WR-45)'
+  Found exact match: 'Pearl (WR-45)'
+Found existing note: 'Pearl (WR-45)'
+Cleared update flag for WR-45
+Processing WR-42...
+Searching for lake WR-42 using Apple Notes search API
+  Found 1 notes containing 'WR-42' across all folders
+  Checking note in correct folder: 'Sand (WR-42)'
+  Found exact match: 'Sand (WR-42)'
+Found existing note: 'Sand (WR-42)'
+Cleared update flag for WR-42
+Processing WR-44...
+Searching for lake WR-44 using Apple Notes search API
+  Found 1 notes containing 'WR-44' across all folders
+  Checking note in correct folder: 'Ted (WR-44)'
+  Found exact match: 'Ted (WR-44)'
+Found existing note: 'Ted (WR-44)'
+Cleared update flag for WR-44
+Processing WR-48...
+Searching for lake WR-48 using Apple Notes search API
+  Found 1 notes containing 'WR-48' across all folders
+  Checking note in correct folder: 'Watkins (WR-48)'
+  Found exact match: 'Watkins (WR-48)'
+Found existing note: 'Watkins (WR-48)'
+Cleared update flag for WR-48
+Processing WR-40...
+Searching for lake WR-40 using Apple Notes search API
+  Found 1 notes containing 'WR-40' across all folders
+  Checking note in correct folder: 'Wooley (WR-40)'
+  Found exact match: 'Wooley (WR-40)'
+Found existing note: 'Wooley (WR-40)'
+Cleared update flag for WR-40
+Processing GR-13...
+Searching for lake GR-13 using Apple Notes search API
+  Found 8 notes containing 'GR-13' across all folders
+  Checking note in correct folder: 'GR-13'
+  Found exact match: 'GR-13'
+Found existing note: 'GR-13'
+Cleared update flag for GR-13
+Processing GR-20...
+Searching for lake GR-20 using Apple Notes search API
+  Found 1 notes containing 'GR-20' across all folders
+  Checking note in correct folder: 'GR-20'
+  Found exact match: 'GR-20'
+Found existing note: 'GR-20'
+Cleared update flag for GR-20
+Processing GR-21...
+Searching for lake GR-21 using Apple Notes search API
+  Found 1 notes containing 'GR-21' across all folders
+  Checking note in correct folder: 'GR-21'
+  Found exact match: 'GR-21'
+Found existing note: 'GR-21'
+Cleared update flag for GR-21
+Processing GR-31...
+Searching for lake GR-31 using Apple Notes search API
+  Found 1 notes containing 'GR-31' across all folders
+  Checking note in correct folder: 'GR-31'
+  Found exact match: 'GR-31'
+Found existing note: 'GR-31'
+Cleared update flag for GR-31
+Processing GR-104...
+Searching for lake GR-104 using Apple Notes search API
+  Found 1 notes containing 'GR-104' across all folders
+  Checking note in correct folder: 'GR-104'
+  Found exact match: 'GR-104'
+Found existing note: 'GR-104'
+Cleared update flag for GR-104
+Processing GR-19...
+Searching for lake GR-19 using Apple Notes search API
+  Found 1 notes containing 'GR-19' across all folders
+  Checking note in correct folder: 'Lamb (GR-19)'
+  Found exact match: 'Lamb (GR-19)'
+Found existing note: 'Lamb (GR-19)'
+Cleared update flag for GR-19
+Processing GR-23...
+Searching for lake GR-23 using Apple Notes search API
+  Found 1 notes containing 'GR-23' across all folders
+  Checking note in correct folder: 'Mutton (GR-23)'
+  Found exact match: 'Mutton (GR-23)'
+Found existing note: 'Mutton (GR-23)'
+Cleared update flag for GR-23
+Processing GR-16...
+Searching for lake GR-16 using Apple Notes search API
+  Found 8 notes containing 'GR-16' across all folders
+  Checking note in correct folder: 'Penguin (GR-16)'
+  Found exact match: 'Penguin (GR-16)'
+Found existing note: 'Penguin (GR-16)'
+Cleared update flag for GR-16
+Processing GR-24...
+Searching for lake GR-24 using Apple Notes search API
+  Found 1 notes containing 'GR-24' across all folders
+  Checking note in correct folder: 'RAM (GR-24)'
+  No matching note found for GR-24
+Note not found. Creating new note: 'Ram (GR-24)'
+Cleared update flag for GR-24
+Processing GR-15...
+Searching for lake GR-15 using Apple Notes search API
+  Found 9 notes containing 'GR-15' across all folders
+  Checking note in correct folder: 'Sesame (GR-15)'
+  Found exact match: 'Sesame (GR-15)'
+Found existing note: 'Sesame (GR-15)'
+Cleared update flag for GR-15
+Processing GR-62...
+Searching for lake GR-62 using Apple Notes search API
+  Found 1 notes containing 'GR-62' across all folders
+  Checking note in correct folder: 'Bert (GR-62)'
+  Found exact match: 'Bert (GR-62)'
+Found existing note: 'Bert (GR-62)'
+Cleared update flag for GR-62
+Updated 54 lake notes.
+Starting Notes → Database sync
+[2025-09-01 18:00:03] Starting Notes → Database sync
+
+Using Notes search to find all notes containing '*update'
+[2025-09-01 18:00:03] Using Notes search to find all notes containing '*update'
+
+Found 0 total notes containing '*update' across all folders
+[2025-09-01 18:00:25] Found 0 total notes containing '*update' across all folders
+
+No notes found with *update tag
+[2025-09-01 18:00:25] No notes found with *update tag
+
+No notes to update
+No lakes flagged for updates.
+No updates needed.
+Starting Notes → Database sync
+[2025-09-02 06:00:08] Starting Notes → Database sync
+
+Using Notes search to find all notes containing '*update'
+[2025-09-02 06:00:08] Using Notes search to find all notes containing '*update'
+
+Found 0 total notes containing '*update' across all folders
+[2025-09-02 06:00:30] Found 0 total notes containing '*update' across all folders
+
+No notes found with *update tag
+[2025-09-02 06:00:30] No notes found with *update tag
+
+No notes to update
+No lakes flagged for updates.
+No updates needed.
+Starting Notes → Database sync
+[2025-09-02 12:00:01] Starting Notes → Database sync
+
+Using Notes search to find all notes containing '*update'
+[2025-09-02 12:00:03] Using Notes search to find all notes containing '*update'
+
+Found 0 total notes containing '*update' across all folders
+[2025-09-02 12:00:25] Found 0 total notes containing '*update' across all folders
+
+No notes found with *update tag
+[2025-09-02 12:00:25] No notes found with *update tag
+
+No notes to update
+No lakes flagged for updates.
+No updates needed.

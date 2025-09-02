@@ -92,6 +92,8 @@ All fish species are standardized using `species_utils.py`:
 - Historical species marked with asterisks (*) if not recently stocked
 
 ### Apple Notes Structure
+**Organization**: Notes are organized in the "Uintas 💯" folder with subfolders for each drainage. Lake notes are stored within their respective drainage subfolders.
+
 ```
 Lake Name (A-42) 🎣        ← Status emoji in title
 Status: CAUGHT             ← Sync field
