@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import sqlite3
 import csv
 import os
+import subprocess
 from database_utils import create_database, extract_letter_number, stocking_record_exists, find_matching_lake
 from species_utils import standardize_stocking_species, update_lake_fish_species
 from datetime import datetime
@@ -103,6 +104,55 @@ def parse_and_insert_data(html_content, conn, cursor, county, csv_writer, log_fi
     print(f"Inserted {new_records} new stocking records for {county} county.")
     return new_records, unmatched_lakes
 
+def commit_and_push_changes(log_file, new_records_count):
+    """Commit database changes and push to remote if new records were added."""
+    try:
+        # Get the project root directory
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        project_dir = os.path.dirname(script_dir)
+        
+        # Change to project directory for git commands
+        original_cwd = os.getcwd()
+        os.chdir(project_dir)
+        
+        # Check git status to see what files changed
+        result = subprocess.run(['git', 'status', '--porcelain'], 
+                               capture_output=True, text=True, check=True)
+        
+        if not result.stdout.strip():
+            log_file.write("No git changes detected, skipping commit\n")
+            return
+        
+        log_file.write(f"Git changes detected:\n{result.stdout}")
+        
+        # Add changed files
+        subprocess.run(['git', 'add', 'uinta_lakes.db', 'data/utah_dwr_stocking_data.csv'], 
+                       check=True)
+        log_file.write("Added database and CSV files to git\n")
+        
+        # Commit with descriptive message
+        commit_msg = f"Auto-update: {new_records_count} new DWR stocking records"
+        subprocess.run(['git', 'commit', '-m', commit_msg], check=True)
+        log_file.write(f"Committed changes: {commit_msg}\n")
+        
+        # Push to remote
+        subprocess.run(['git', 'push'], check=True)
+        log_file.write("Pushed changes to remote repository\n")
+        
+        print(f"✓ Committed and pushed {new_records_count} new stocking records")
+        
+    except subprocess.CalledProcessError as e:
+        error_msg = f"Git operation failed: {e}"
+        log_file.write(f"ERROR: {error_msg}\n")
+        print(f"⚠️  {error_msg}")
+    except Exception as e:
+        error_msg = f"Unexpected error during git operations: {e}"
+        log_file.write(f"ERROR: {error_msg}\n")
+        print(f"⚠️  {error_msg}")
+    finally:
+        # Restore original working directory
+        os.chdir(original_cwd)
+
 def main():
     """Main function to fetch and update stocking data."""
     # Setup paths
@@ -155,6 +205,15 @@ def main():
                     log_file.write(f"  ERROR: Failed to fetch data for {county}\n")
             
             conn.close()
+            
+            # Commit and push changes if new records were added
+            if total_new_records > 0:
+                log_file.write(f"\n=== GIT OPERATIONS ===\n")
+                print(f"\nCommitting and pushing {total_new_records} new records...")
+                commit_and_push_changes(log_file, total_new_records)
+            else:
+                log_file.write(f"\nNo new records added, skipping git commit\n")
+                print("No new records added, skipping git operations")
             
             # Final summary
             log_file.write(f"\n=== SUMMARY ===\n")

@@ -105,7 +105,7 @@ def format_species_display(species_list, asterisk_species=None):
     
     return ", ".join(display_list)
 
-def update_lake_fish_species(cursor, lake_id, cutoff_year=2018):
+def update_lake_fish_species(cursor, lake_id, cutoff_year=2015):
     """
     Update a lake's fish_species field by merging existing historical data with stocking records.
     

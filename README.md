@@ -77,7 +77,7 @@ The database uses standardized species names for consistency across all data sou
 - **Tiger muskie** (Tiger muskie)
 - **Channel catfish** (Channel catfish)
 
-**Asterisk System**: Species with asterisks (*) appear in historical data but haven't been stocked since 2018, indicating potential treatment or natural changes. Example: "Brookies, Cutthroats*" means brook trout are currently stocked but cutthroat presence is historical only.
+**Asterisk System**: Species with asterisks (*) appear in historical data but haven't been stocked since 2015, indicating potential treatment or natural changes. Example: "Brookies, Cutthroats*" means brook trout are currently stocked but cutthroat presence is historical only.
 
 ## Database Schema
 
@@ -189,7 +189,7 @@ SELECT name, info FROM drainages WHERE name LIKE '%Bear River%';
   - Updated 576 lakes with merged historical and stocking species data
   - Added asterisk indicators (*) for species in historical data but not recently stocked
   - Implemented shared species_utils.py for consistent normalization across all scripts
-- ✅ **Enhanced Fish Species Data**: Merged Norrick historical data with stocking records since 2018
+- ✅ **Enhanced Fish Species Data**: Merged Norrick historical data with stocking records since 2015
   - Intelligent filtering matches either historical or stocking data
   - Display shows comprehensive species with provenance indicators
   - Removed old manual species translation logic from web app
