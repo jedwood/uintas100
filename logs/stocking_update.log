@@ -147,3 +147,1925 @@ Total new records: 0
 Total unmatched lakes: 57
 CSV file updated: /Volumes/OLAF EXT/jedwoodx/repos/uintas/data/utah_dwr_stocking_data.csv
 Run completed at: 2025-08-31 21:53:57
+
+=== STOCKING UPDATE RUN: 2025-09-09 02:00:04 ===
+
+Processing Summit county...
+  → 0 new records added for SUMMIT county
+  → 80 unmatched lakes in SUMMIT
+    - ALEXANDER L A-1
+    - BEAR R
+    - BEAVER CR
+    - BEAVER L BR-10
+    - BETH L A-6
+    - BIG ELK RES A-18
+    - BLUE L A-5
+    - BOURBON L BR-1
+    - BR- 2
+    - BR-34
+    - BR-35
+    - BR-50
+    - BR-55
+    - BRIDGER L G-20
+    - BUCKEYE L A-3
+    - CHINA L G-21
+    - CLEGG L A-47
+    - CLIFF L G-5
+    - CLYDE L A-28
+    - CRYSTAL L A-51
+    - DEER VALLEY LAKES
+    - DIVIDE L NO 1 A-36
+    - ECHO RES
+    - ERICKSON L,NORTH W26
+    - FAITH L A-16
+    - FISH L GR-125
+    - G- 80
+    - GR-155
+    - GR-160
+    - GR-162
+    - HAYDEN FK
+    - HAYSTACK L A-9
+    - HOOP L
+    - JESSON L GR-1
+    - KABELL L GR-140
+    - KAMAS RES W-40
+    - LILLIAN L A-43
+    - LILLY L A-58
+    - LILY L BR-11
+    - LILY L LOWER A-25
+    - LORENA L BR-46
+    - LOST L A-59
+    - LYMAN L, LOWER G-25
+    - LYMAN L, UPPER G-27
+    - MARSH L G-19
+    - MCPHETERS L BR-14
+    - NOTCH L W-36
+    - OLSON L W-32
+    - P-11
+    - PETIT L A-26
+    - PROVO R
+    - QUARTER CORNER LG103
+    - RED CASTLE L G-15
+    - RED CASTLE,EAST G-17
+    - RED CASTLE,LOWER G12
+    - RED CASTLE,UPPER G16
+    - REIDS L W-38
+    - ROCK L A-10
+    - ROCKPORT RES
+    - RUTH L BR-40
+    - SCOW L BR-12
+    - SHADOW L A-52
+    - SMITH-MOREHOUSE RES
+    - SMITHS FK PASS L G14
+    - SPECTACLE L A-44
+    - STATELINE RES
+    - STILLWATER FK
+    - TAMARACK L GR-2
+    - TEAL L BR-32
+    - TEAPOT L A-60
+    - TRIAL L A-61
+    - TRIDENT L A-41
+    - W-59
+    - W-62
+    - WALL L A-29
+    - WASHINGTON L A-23
+    - WATSON L A-27
+    - WEBER R
+    - WHITNEY RES
+    - YELLOWPINE,LOWER W66
+
+Processing Duchesne county...
+  → 0 new records added for DUCHESNE county
+  → 54 unmatched lakes in DUCHESNE
+    - BIG SANDWASH RES
+    - BLUE L Z-32
+    - BLYTHE L Z-20
+    - BONNIE L Z-6
+    - BROWNS DRAW RES
+    - BUD L Z-2
+    - BUTTERFLY L Z-1
+    - CARROT L U-17
+    - CLIFF L WR-49
+    - D-19
+    - DOCS L X-15
+    - DUCHESNE R
+    - DUCHESNE R, N FK
+    - EMERALD L D-20
+    - FARMERS L X-23
+    - FOX RES U-47
+    - GLADYS L X-128
+    - HOOVER L Z-10
+    - KIDNEY L, WEST U-26
+    - LAKE CANYON L
+    - LAKE FK R
+    - LINDA L LF-36
+    - MABA L Z-8
+    - MARSHALL L Z-11
+    - MILK L Y-25
+    - MIRROR L Z-3
+    - MOON L
+    - MOOSEHORN L Z-4
+    - PALISADE L Z-28
+    - PAPOOSE L WR-52
+    - PASS L Z-5
+    - POINT L WR-6
+    - POLE CR L
+    - PYRAMID L Z-17
+    - QUEANT L WR-4
+    - RED CR RES
+    - ROCK CR
+    - ROCK L, LOWER WR-17
+    - SCOUT L Z-12
+    - SONNY L X-12
+    - SPIDER L X-109
+    - STARVATION RES
+    - STRAWBERRY R
+    - SURVEY L RC-20
+    - U- 50
+    - UINTA POND
+    - UINTA R
+    - UINTAH L X-131
+    - UPPER STILLWATER RES
+    - WYMAN L Z-14
+    - X- 26
+    - X- 84
+    - X- 85
+    - YELLOWSTONE R
+
+Processing Uintah county...
+  → 0 new records added for UINTAH county
+  → 25 unmatched lakes in UINTAH
+    - ASHLEY CR, S FK
+    - BROUGH RES
+    - BULLOCK RES
+    - CALDER RES
+    - COTTONWOOD RES
+    - EAST PARK RES
+    - GHOST POND
+    - HACKING L GR-40
+    - KIBAH L, EAST DF-11
+    - KIBAH L, WEST DF-14
+    - KIBAH L,FINGER DF-12
+    - KIBAH L,ISLAND DF-16
+    - LITTLE BRUSH CR
+    - LITTLE MONTES RES
+    - MATT WARNER RES
+    - OAKS PARK RES
+    - OLD FORT POND NORTH
+    - OLD FORT POND SOUTH
+    - PARADISE RES
+    - PELICAN L
+    - PELICAN SCB
+    - RED FLEET RES
+    - ROOSEVELT COMM POND
+    - STEINAKER RES
+    - TEDS L WR-44
+
+Processing Daggett county...
+  → 0 new records added for DAGGETT county
+  → 23 unmatched lakes in DAGGETT
+    - ANSON L, LOWER GR-9
+    - BEAVER CR
+    - BROWNE L
+    - BUMMER L GR-22
+    - CANDY L GR-17
+    - CART CR
+    - CARTER CR
+    - CARTER CR, E FK
+    - CARTER CR, W FK
+    - DAGGETT L GR-6
+    - FLAMING GORGE RES
+    - GR- 31
+    - GREEN R
+    - LONG PARK RES
+    - MANN CR
+    - MOOSE POND
+    - MUTTON L GR-23
+    - POTTER L,UPPER GR-28
+    - RAM L GR-24
+    - SHEEP CR
+    - SPIRIT L GR-3
+    - TEEPEE L,LOWER GR-29
+    - WEYMAN CR
+
+No new records added, skipping git commit
+
+=== SUMMARY ===
+Total new records: 0
+Total unmatched lakes: 181
+CSV file updated: /Volumes/OLAF EXT/jedwoodx/repos/uintas/data/utah_dwr_stocking_data.csv
+Run completed at: 2025-09-09 06:47:54
+
+=== STOCKING UPDATE RUN: 2025-09-12 02:00:04 ===
+
+Processing Summit county...
+  → 0 new records added for SUMMIT county
+  → 80 unmatched lakes in SUMMIT
+    - ALEXANDER L A-1
+    - BEAR R
+    - BEAVER CR
+    - BEAVER L BR-10
+    - BETH L A-6
+    - BIG ELK RES A-18
+    - BLUE L A-5
+    - BOURBON L BR-1
+    - BR- 2
+    - BR-34
+    - BR-35
+    - BR-50
+    - BR-55
+    - BRIDGER L G-20
+    - BUCKEYE L A-3
+    - CHINA L G-21
+    - CLEGG L A-47
+    - CLIFF L G-5
+    - CLYDE L A-28
+    - CRYSTAL L A-51
+    - DEER VALLEY LAKES
+    - DIVIDE L NO 1 A-36
+    - ECHO RES
+    - ERICKSON L,NORTH W26
+    - FAITH L A-16
+    - FISH L GR-125
+    - G- 80
+    - GR-155
+    - GR-160
+    - GR-162
+    - HAYDEN FK
+    - HAYSTACK L A-9
+    - HOOP L
+    - JESSON L GR-1
+    - KABELL L GR-140
+    - KAMAS RES W-40
+    - LILLIAN L A-43
+    - LILLY L A-58
+    - LILY L BR-11
+    - LILY L LOWER A-25
+    - LORENA L BR-46
+    - LOST L A-59
+    - LYMAN L, LOWER G-25
+    - LYMAN L, UPPER G-27
+    - MARSH L G-19
+    - MCPHETERS L BR-14
+    - NOTCH L W-36
+    - OLSON L W-32
+    - P-11
+    - PETIT L A-26
+    - PROVO R
+    - QUARTER CORNER LG103
+    - RED CASTLE L G-15
+    - RED CASTLE,EAST G-17
+    - RED CASTLE,LOWER G12
+    - RED CASTLE,UPPER G16
+    - REIDS L W-38
+    - ROCK L A-10
+    - ROCKPORT RES
+    - RUTH L BR-40
+    - SCOW L BR-12
+    - SHADOW L A-52
+    - SMITH-MOREHOUSE RES
+    - SMITHS FK PASS L G14
+    - SPECTACLE L A-44
+    - STATELINE RES
+    - STILLWATER FK
+    - TAMARACK L GR-2
+    - TEAL L BR-32
+    - TEAPOT L A-60
+    - TRIAL L A-61
+    - TRIDENT L A-41
+    - W-59
+    - W-62
+    - WALL L A-29
+    - WASHINGTON L A-23
+    - WATSON L A-27
+    - WEBER R
+    - WHITNEY RES
+    - YELLOWPINE,LOWER W66
+
+Processing Duchesne county...
+  → 0 new records added for DUCHESNE county
+  → 54 unmatched lakes in DUCHESNE
+    - BIG SANDWASH RES
+    - BLUE L Z-32
+    - BLYTHE L Z-20
+    - BONNIE L Z-6
+    - BROWNS DRAW RES
+    - BUD L Z-2
+    - BUTTERFLY L Z-1
+    - CARROT L U-17
+    - CLIFF L WR-49
+    - D-19
+    - DOCS L X-15
+    - DUCHESNE R
+    - DUCHESNE R, N FK
+    - EMERALD L D-20
+    - FARMERS L X-23
+    - FOX RES U-47
+    - GLADYS L X-128
+    - HOOVER L Z-10
+    - KIDNEY L, WEST U-26
+    - LAKE CANYON L
+    - LAKE FK R
+    - LINDA L LF-36
+    - MABA L Z-8
+    - MARSHALL L Z-11
+    - MILK L Y-25
+    - MIRROR L Z-3
+    - MOON L
+    - MOOSEHORN L Z-4
+    - PALISADE L Z-28
+    - PAPOOSE L WR-52
+    - PASS L Z-5
+    - POINT L WR-6
+    - POLE CR L
+    - PYRAMID L Z-17
+    - QUEANT L WR-4
+    - RED CR RES
+    - ROCK CR
+    - ROCK L, LOWER WR-17
+    - SCOUT L Z-12
+    - SONNY L X-12
+    - SPIDER L X-109
+    - STARVATION RES
+    - STRAWBERRY R
+    - SURVEY L RC-20
+    - U- 50
+    - UINTA POND
+    - UINTA R
+    - UINTAH L X-131
+    - UPPER STILLWATER RES
+    - WYMAN L Z-14
+    - X- 26
+    - X- 84
+    - X- 85
+    - YELLOWSTONE R
+
+Processing Uintah county...
+  → 0 new records added for UINTAH county
+  → 25 unmatched lakes in UINTAH
+    - ASHLEY CR, S FK
+    - BROUGH RES
+    - BULLOCK RES
+    - CALDER RES
+    - COTTONWOOD RES
+    - EAST PARK RES
+    - GHOST POND
+    - HACKING L GR-40
+    - KIBAH L, EAST DF-11
+    - KIBAH L, WEST DF-14
+    - KIBAH L,FINGER DF-12
+    - KIBAH L,ISLAND DF-16
+    - LITTLE BRUSH CR
+    - LITTLE MONTES RES
+    - MATT WARNER RES
+    - OAKS PARK RES
+    - OLD FORT POND NORTH
+    - OLD FORT POND SOUTH
+    - PARADISE RES
+    - PELICAN L
+    - PELICAN SCB
+    - RED FLEET RES
+    - ROOSEVELT COMM POND
+    - STEINAKER RES
+    - TEDS L WR-44
+
+Processing Daggett county...
+  → 0 new records added for DAGGETT county
+  → 23 unmatched lakes in DAGGETT
+    - ANSON L, LOWER GR-9
+    - BEAVER CR
+    - BROWNE L
+    - BUMMER L GR-22
+    - CANDY L GR-17
+    - CART CR
+    - CARTER CR
+    - CARTER CR, E FK
+    - CARTER CR, W FK
+    - DAGGETT L GR-6
+    - FLAMING GORGE RES
+    - GR- 31
+    - GREEN R
+    - LONG PARK RES
+    - MANN CR
+    - MOOSE POND
+    - MUTTON L GR-23
+    - POTTER L,UPPER GR-28
+    - RAM L GR-24
+    - SHEEP CR
+    - SPIRIT L GR-3
+    - TEEPEE L,LOWER GR-29
+    - WEYMAN CR
+
+No new records added, skipping git commit
+
+=== SUMMARY ===
+Total new records: 0
+Total unmatched lakes: 181
+CSV file updated: /Volumes/OLAF EXT/jedwoodx/repos/uintas/data/utah_dwr_stocking_data.csv
+Run completed at: 2025-09-12 02:00:05
+
+=== STOCKING UPDATE RUN: 2025-09-13 02:00:05 ===
+
+Processing Summit county...
+  → 0 new records added for SUMMIT county
+  → 80 unmatched lakes in SUMMIT
+    - ALEXANDER L A-1
+    - BEAR R
+    - BEAVER CR
+    - BEAVER L BR-10
+    - BETH L A-6
+    - BIG ELK RES A-18
+    - BLUE L A-5
+    - BOURBON L BR-1
+    - BR- 2
+    - BR-34
+    - BR-35
+    - BR-50
+    - BR-55
+    - BRIDGER L G-20
+    - BUCKEYE L A-3
+    - CHINA L G-21
+    - CLEGG L A-47
+    - CLIFF L G-5
+    - CLYDE L A-28
+    - CRYSTAL L A-51
+    - DEER VALLEY LAKES
+    - DIVIDE L NO 1 A-36
+    - ECHO RES
+    - ERICKSON L,NORTH W26
+    - FAITH L A-16
+    - FISH L GR-125
+    - G- 80
+    - GR-155
+    - GR-160
+    - GR-162
+    - HAYDEN FK
+    - HAYSTACK L A-9
+    - HOOP L
+    - JESSON L GR-1
+    - KABELL L GR-140
+    - KAMAS RES W-40
+    - LILLIAN L A-43
+    - LILLY L A-58
+    - LILY L BR-11
+    - LILY L LOWER A-25
+    - LORENA L BR-46
+    - LOST L A-59
+    - LYMAN L, LOWER G-25
+    - LYMAN L, UPPER G-27
+    - MARSH L G-19
+    - MCPHETERS L BR-14
+    - NOTCH L W-36
+    - OLSON L W-32
+    - P-11
+    - PETIT L A-26
+    - PROVO R
+    - QUARTER CORNER LG103
+    - RED CASTLE L G-15
+    - RED CASTLE,EAST G-17
+    - RED CASTLE,LOWER G12
+    - RED CASTLE,UPPER G16
+    - REIDS L W-38
+    - ROCK L A-10
+    - ROCKPORT RES
+    - RUTH L BR-40
+    - SCOW L BR-12
+    - SHADOW L A-52
+    - SMITH-MOREHOUSE RES
+    - SMITHS FK PASS L G14
+    - SPECTACLE L A-44
+    - STATELINE RES
+    - STILLWATER FK
+    - TAMARACK L GR-2
+    - TEAL L BR-32
+    - TEAPOT L A-60
+    - TRIAL L A-61
+    - TRIDENT L A-41
+    - W-59
+    - W-62
+    - WALL L A-29
+    - WASHINGTON L A-23
+    - WATSON L A-27
+    - WEBER R
+    - WHITNEY RES
+    - YELLOWPINE,LOWER W66
+
+Processing Duchesne county...
+  → 0 new records added for DUCHESNE county
+  → 54 unmatched lakes in DUCHESNE
+    - BIG SANDWASH RES
+    - BLUE L Z-32
+    - BLYTHE L Z-20
+    - BONNIE L Z-6
+    - BROWNS DRAW RES
+    - BUD L Z-2
+    - BUTTERFLY L Z-1
+    - CARROT L U-17
+    - CLIFF L WR-49
+    - D-19
+    - DOCS L X-15
+    - DUCHESNE R
+    - DUCHESNE R, N FK
+    - EMERALD L D-20
+    - FARMERS L X-23
+    - FOX RES U-47
+    - GLADYS L X-128
+    - HOOVER L Z-10
+    - KIDNEY L, WEST U-26
+    - LAKE CANYON L
+    - LAKE FK R
+    - LINDA L LF-36
+    - MABA L Z-8
+    - MARSHALL L Z-11
+    - MILK L Y-25
+    - MIRROR L Z-3
+    - MOON L
+    - MOOSEHORN L Z-4
+    - PALISADE L Z-28
+    - PAPOOSE L WR-52
+    - PASS L Z-5
+    - POINT L WR-6
+    - POLE CR L
+    - PYRAMID L Z-17
+    - QUEANT L WR-4
+    - RED CR RES
+    - ROCK CR
+    - ROCK L, LOWER WR-17
+    - SCOUT L Z-12
+    - SONNY L X-12
+    - SPIDER L X-109
+    - STARVATION RES
+    - STRAWBERRY R
+    - SURVEY L RC-20
+    - U- 50
+    - UINTA POND
+    - UINTA R
+    - UINTAH L X-131
+    - UPPER STILLWATER RES
+    - WYMAN L Z-14
+    - X- 26
+    - X- 84
+    - X- 85
+    - YELLOWSTONE R
+
+Processing Uintah county...
+  → 0 new records added for UINTAH county
+  → 25 unmatched lakes in UINTAH
+    - ASHLEY CR, S FK
+    - BROUGH RES
+    - BULLOCK RES
+    - CALDER RES
+    - COTTONWOOD RES
+    - EAST PARK RES
+    - GHOST POND
+    - HACKING L GR-40
+    - KIBAH L, EAST DF-11
+    - KIBAH L, WEST DF-14
+    - KIBAH L,FINGER DF-12
+    - KIBAH L,ISLAND DF-16
+    - LITTLE BRUSH CR
+    - LITTLE MONTES RES
+    - MATT WARNER RES
+    - OAKS PARK RES
+    - OLD FORT POND NORTH
+    - OLD FORT POND SOUTH
+    - PARADISE RES
+    - PELICAN L
+    - PELICAN SCB
+    - RED FLEET RES
+    - ROOSEVELT COMM POND
+    - STEINAKER RES
+    - TEDS L WR-44
+
+Processing Daggett county...
+  → 0 new records added for DAGGETT county
+  → 23 unmatched lakes in DAGGETT
+    - ANSON L, LOWER GR-9
+    - BEAVER CR
+    - BROWNE L
+    - BUMMER L GR-22
+    - CANDY L GR-17
+    - CART CR
+    - CARTER CR
+    - CARTER CR, E FK
+    - CARTER CR, W FK
+    - DAGGETT L GR-6
+    - FLAMING GORGE RES
+    - GR- 31
+    - GREEN R
+    - LONG PARK RES
+    - MANN CR
+    - MOOSE POND
+    - MUTTON L GR-23
+    - POTTER L,UPPER GR-28
+    - RAM L GR-24
+    - SHEEP CR
+    - SPIRIT L GR-3
+    - TEEPEE L,LOWER GR-29
+    - WEYMAN CR
+
+No new records added, skipping git commit
+
+=== SUMMARY ===
+Total new records: 0
+Total unmatched lakes: 181
+CSV file updated: /Volumes/OLAF EXT/jedwoodx/repos/uintas/data/utah_dwr_stocking_data.csv
+Run completed at: 2025-09-13 02:00:06
+
+=== STOCKING UPDATE RUN: 2025-09-14 02:00:04 ===
+
+Processing Summit county...
+  → 0 new records added for SUMMIT county
+  → 80 unmatched lakes in SUMMIT
+    - ALEXANDER L A-1
+    - BEAR R
+    - BEAVER CR
+    - BEAVER L BR-10
+    - BETH L A-6
+    - BIG ELK RES A-18
+    - BLUE L A-5
+    - BOURBON L BR-1
+    - BR- 2
+    - BR-34
+    - BR-35
+    - BR-50
+    - BR-55
+    - BRIDGER L G-20
+    - BUCKEYE L A-3
+    - CHINA L G-21
+    - CLEGG L A-47
+    - CLIFF L G-5
+    - CLYDE L A-28
+    - CRYSTAL L A-51
+    - DEER VALLEY LAKES
+    - DIVIDE L NO 1 A-36
+    - ECHO RES
+    - ERICKSON L,NORTH W26
+    - FAITH L A-16
+    - FISH L GR-125
+    - G- 80
+    - GR-155
+    - GR-160
+    - GR-162
+    - HAYDEN FK
+    - HAYSTACK L A-9
+    - HOOP L
+    - JESSON L GR-1
+    - KABELL L GR-140
+    - KAMAS RES W-40
+    - LILLIAN L A-43
+    - LILLY L A-58
+    - LILY L BR-11
+    - LILY L LOWER A-25
+    - LORENA L BR-46
+    - LOST L A-59
+    - LYMAN L, LOWER G-25
+    - LYMAN L, UPPER G-27
+    - MARSH L G-19
+    - MCPHETERS L BR-14
+    - NOTCH L W-36
+    - OLSON L W-32
+    - P-11
+    - PETIT L A-26
+    - PROVO R
+    - QUARTER CORNER LG103
+    - RED CASTLE L G-15
+    - RED CASTLE,EAST G-17
+    - RED CASTLE,LOWER G12
+    - RED CASTLE,UPPER G16
+    - REIDS L W-38
+    - ROCK L A-10
+    - ROCKPORT RES
+    - RUTH L BR-40
+    - SCOW L BR-12
+    - SHADOW L A-52
+    - SMITH-MOREHOUSE RES
+    - SMITHS FK PASS L G14
+    - SPECTACLE L A-44
+    - STATELINE RES
+    - STILLWATER FK
+    - TAMARACK L GR-2
+    - TEAL L BR-32
+    - TEAPOT L A-60
+    - TRIAL L A-61
+    - TRIDENT L A-41
+    - W-59
+    - W-62
+    - WALL L A-29
+    - WASHINGTON L A-23
+    - WATSON L A-27
+    - WEBER R
+    - WHITNEY RES
+    - YELLOWPINE,LOWER W66
+
+Processing Duchesne county...
+  → 0 new records added for DUCHESNE county
+  → 54 unmatched lakes in DUCHESNE
+    - BIG SANDWASH RES
+    - BLUE L Z-32
+    - BLYTHE L Z-20
+    - BONNIE L Z-6
+    - BROWNS DRAW RES
+    - BUD L Z-2
+    - BUTTERFLY L Z-1
+    - CARROT L U-17
+    - CLIFF L WR-49
+    - D-19
+    - DOCS L X-15
+    - DUCHESNE R
+    - DUCHESNE R, N FK
+    - EMERALD L D-20
+    - FARMERS L X-23
+    - FOX RES U-47
+    - GLADYS L X-128
+    - HOOVER L Z-10
+    - KIDNEY L, WEST U-26
+    - LAKE CANYON L
+    - LAKE FK R
+    - LINDA L LF-36
+    - MABA L Z-8
+    - MARSHALL L Z-11
+    - MILK L Y-25
+    - MIRROR L Z-3
+    - MOON L
+    - MOOSEHORN L Z-4
+    - PALISADE L Z-28
+    - PAPOOSE L WR-52
+    - PASS L Z-5
+    - POINT L WR-6
+    - POLE CR L
+    - PYRAMID L Z-17
+    - QUEANT L WR-4
+    - RED CR RES
+    - ROCK CR
+    - ROCK L, LOWER WR-17
+    - SCOUT L Z-12
+    - SONNY L X-12
+    - SPIDER L X-109
+    - STARVATION RES
+    - STRAWBERRY R
+    - SURVEY L RC-20
+    - U- 50
+    - UINTA POND
+    - UINTA R
+    - UINTAH L X-131
+    - UPPER STILLWATER RES
+    - WYMAN L Z-14
+    - X- 26
+    - X- 84
+    - X- 85
+    - YELLOWSTONE R
+
+Processing Uintah county...
+  → 0 new records added for UINTAH county
+  → 25 unmatched lakes in UINTAH
+    - ASHLEY CR, S FK
+    - BROUGH RES
+    - BULLOCK RES
+    - CALDER RES
+    - COTTONWOOD RES
+    - EAST PARK RES
+    - GHOST POND
+    - HACKING L GR-40
+    - KIBAH L, EAST DF-11
+    - KIBAH L, WEST DF-14
+    - KIBAH L,FINGER DF-12
+    - KIBAH L,ISLAND DF-16
+    - LITTLE BRUSH CR
+    - LITTLE MONTES RES
+    - MATT WARNER RES
+    - OAKS PARK RES
+    - OLD FORT POND NORTH
+    - OLD FORT POND SOUTH
+    - PARADISE RES
+    - PELICAN L
+    - PELICAN SCB
+    - RED FLEET RES
+    - ROOSEVELT COMM POND
+    - STEINAKER RES
+    - TEDS L WR-44
+
+Processing Daggett county...
+  → 0 new records added for DAGGETT county
+  → 23 unmatched lakes in DAGGETT
+    - ANSON L, LOWER GR-9
+    - BEAVER CR
+    - BROWNE L
+    - BUMMER L GR-22
+    - CANDY L GR-17
+    - CART CR
+    - CARTER CR
+    - CARTER CR, E FK
+    - CARTER CR, W FK
+    - DAGGETT L GR-6
+    - FLAMING GORGE RES
+    - GR- 31
+    - GREEN R
+    - LONG PARK RES
+    - MANN CR
+    - MOOSE POND
+    - MUTTON L GR-23
+    - POTTER L,UPPER GR-28
+    - RAM L GR-24
+    - SHEEP CR
+    - SPIRIT L GR-3
+    - TEEPEE L,LOWER GR-29
+    - WEYMAN CR
+
+No new records added, skipping git commit
+
+=== SUMMARY ===
+Total new records: 0
+Total unmatched lakes: 181
+CSV file updated: /Volumes/OLAF EXT/jedwoodx/repos/uintas/data/utah_dwr_stocking_data.csv
+Run completed at: 2025-09-14 02:00:05
+
+=== STOCKING UPDATE RUN: 2025-09-16 02:00:00 ===
+
+Processing Summit county...
+  → 0 new records added for SUMMIT county
+  → 80 unmatched lakes in SUMMIT
+    - ALEXANDER L A-1
+    - BEAR R
+    - BEAVER CR
+    - BEAVER L BR-10
+    - BETH L A-6
+    - BIG ELK RES A-18
+    - BLUE L A-5
+    - BOURBON L BR-1
+    - BR- 2
+    - BR-34
+    - BR-35
+    - BR-50
+    - BR-55
+    - BRIDGER L G-20
+    - BUCKEYE L A-3
+    - CHINA L G-21
+    - CLEGG L A-47
+    - CLIFF L G-5
+    - CLYDE L A-28
+    - CRYSTAL L A-51
+    - DEER VALLEY LAKES
+    - DIVIDE L NO 1 A-36
+    - ECHO RES
+    - ERICKSON L,NORTH W26
+    - FAITH L A-16
+    - FISH L GR-125
+    - G- 80
+    - GR-155
+    - GR-160
+    - GR-162
+    - HAYDEN FK
+    - HAYSTACK L A-9
+    - HOOP L
+    - JESSON L GR-1
+    - KABELL L GR-140
+    - KAMAS RES W-40
+    - LILLIAN L A-43
+    - LILLY L A-58
+    - LILY L BR-11
+    - LILY L LOWER A-25
+    - LORENA L BR-46
+    - LOST L A-59
+    - LYMAN L, LOWER G-25
+    - LYMAN L, UPPER G-27
+    - MARSH L G-19
+    - MCPHETERS L BR-14
+    - NOTCH L W-36
+    - OLSON L W-32
+    - P-11
+    - PETIT L A-26
+    - PROVO R
+    - QUARTER CORNER LG103
+    - RED CASTLE L G-15
+    - RED CASTLE,EAST G-17
+    - RED CASTLE,LOWER G12
+    - RED CASTLE,UPPER G16
+    - REIDS L W-38
+    - ROCK L A-10
+    - ROCKPORT RES
+    - RUTH L BR-40
+    - SCOW L BR-12
+    - SHADOW L A-52
+    - SMITH-MOREHOUSE RES
+    - SMITHS FK PASS L G14
+    - SPECTACLE L A-44
+    - STATELINE RES
+    - STILLWATER FK
+    - TAMARACK L GR-2
+    - TEAL L BR-32
+    - TEAPOT L A-60
+    - TRIAL L A-61
+    - TRIDENT L A-41
+    - W-59
+    - W-62
+    - WALL L A-29
+    - WASHINGTON L A-23
+    - WATSON L A-27
+    - WEBER R
+    - WHITNEY RES
+    - YELLOWPINE,LOWER W66
+
+Processing Duchesne county...
+  → 0 new records added for DUCHESNE county
+  → 61 unmatched lakes in DUCHESNE
+    - BIG SANDWASH RES
+    - BLUE L Z-32
+    - BLYTHE L Z-20
+    - BONNIE L Z-6
+    - BROWNS DRAW RES
+    - BUD L Z-2
+    - BUTTERFLY L Z-1
+    - CARROT L U-17
+    - CLIFF L WR-49
+    - D-19
+    - DOCS L X-15
+    - DUCHESNE R
+    - DUCHESNE R, N FK
+    - EAST CENTER OWEEP CR
+    - EAST OWEEP CR
+    - EMERALD L D-20
+    - FARMERS L X-23
+    - FOX RES U-47
+    - GLADYS L X-128
+    - HOOVER L Z-10
+    - KIDNEY L, WEST U-26
+    - LAKE CANYON L
+    - LAKE FK R
+    - LINDA L LF-36
+    - MABA L Z-8
+    - MARSHALL L Z-11
+    - MILK L Y-25
+    - MIRROR L Z-3
+    - MOON L
+    - MOOSEHORN L Z-4
+    - OWEEP CR
+    - PALISADE L Z-28
+    - PAPOOSE L WR-52
+    - PASS L Z-5
+    - POINT L WR-6
+    - POLE CR L
+    - PYRAMID L Z-17
+    - QUEANT L WR-4
+    - RED CR RES
+    - ROCK CR
+    - ROCK CR, S FK
+    - ROCK L, LOWER WR-17
+    - SCOUT L Z-12
+    - SONNY L X-12
+    - SPIDER L X-109
+    - STARVATION RES
+    - STRAWBERRY R
+    - SURVEY L RC-20
+    - U- 50
+    - UINTA POND
+    - UINTA R
+    - UINTAH L X-131
+    - UPPER STILLWATER RES
+    - WEST CENTER OWEEP CR
+    - WEST OWEEP CR
+    - WOLF CR
+    - WYMAN L Z-14
+    - X- 26
+    - X- 84
+    - X- 85
+    - YELLOWSTONE R
+
+Processing Uintah county...
+  → 0 new records added for UINTAH county
+  → 25 unmatched lakes in UINTAH
+    - ASHLEY CR, S FK
+    - BROUGH RES
+    - BULLOCK RES
+    - CALDER RES
+    - COTTONWOOD RES
+    - EAST PARK RES
+    - GHOST POND
+    - HACKING L GR-40
+    - KIBAH L, EAST DF-11
+    - KIBAH L, WEST DF-14
+    - KIBAH L,FINGER DF-12
+    - KIBAH L,ISLAND DF-16
+    - LITTLE BRUSH CR
+    - LITTLE MONTES RES
+    - MATT WARNER RES
+    - OAKS PARK RES
+    - OLD FORT POND NORTH
+    - OLD FORT POND SOUTH
+    - PARADISE RES
+    - PELICAN L
+    - PELICAN SCB
+    - RED FLEET RES
+    - ROOSEVELT COMM POND
+    - STEINAKER RES
+    - TEDS L WR-44
+
+Processing Daggett county...
+  → 0 new records added for DAGGETT county
+  → 23 unmatched lakes in DAGGETT
+    - ANSON L, LOWER GR-9
+    - BEAVER CR
+    - BROWNE L
+    - BUMMER L GR-22
+    - CANDY L GR-17
+    - CART CR
+    - CARTER CR
+    - CARTER CR, E FK
+    - CARTER CR, W FK
+    - DAGGETT L GR-6
+    - FLAMING GORGE RES
+    - GR- 31
+    - GREEN R
+    - LONG PARK RES
+    - MANN CR
+    - MOOSE POND
+    - MUTTON L GR-23
+    - POTTER L,UPPER GR-28
+    - RAM L GR-24
+    - SHEEP CR
+    - SPIRIT L GR-3
+    - TEEPEE L,LOWER GR-29
+    - WEYMAN CR
+
+No new records added, skipping git commit
+
+=== SUMMARY ===
+Total new records: 0
+Total unmatched lakes: 188
+CSV file updated: /Volumes/OLAF EXT/jedwoodx/repos/uintas/data/utah_dwr_stocking_data.csv
+Run completed at: 2025-09-16 02:00:01
+
+=== STOCKING UPDATE RUN: 2025-09-17 02:00:04 ===
+
+Processing Summit county...
+  → 0 new records added for SUMMIT county
+  → 80 unmatched lakes in SUMMIT
+    - ALEXANDER L A-1
+    - BEAR R
+    - BEAVER CR
+    - BEAVER L BR-10
+    - BETH L A-6
+    - BIG ELK RES A-18
+    - BLUE L A-5
+    - BOURBON L BR-1
+    - BR- 2
+    - BR-34
+    - BR-35
+    - BR-50
+    - BR-55
+    - BRIDGER L G-20
+    - BUCKEYE L A-3
+    - CHINA L G-21
+    - CLEGG L A-47
+    - CLIFF L G-5
+    - CLYDE L A-28
+    - CRYSTAL L A-51
+    - DEER VALLEY LAKES
+    - DIVIDE L NO 1 A-36
+    - ECHO RES
+    - ERICKSON L,NORTH W26
+    - FAITH L A-16
+    - FISH L GR-125
+    - G- 80
+    - GR-155
+    - GR-160
+    - GR-162
+    - HAYDEN FK
+    - HAYSTACK L A-9
+    - HOOP L
+    - JESSON L GR-1
+    - KABELL L GR-140
+    - KAMAS RES W-40
+    - LILLIAN L A-43
+    - LILLY L A-58
+    - LILY L BR-11
+    - LILY L LOWER A-25
+    - LORENA L BR-46
+    - LOST L A-59
+    - LYMAN L, LOWER G-25
+    - LYMAN L, UPPER G-27
+    - MARSH L G-19
+    - MCPHETERS L BR-14
+    - NOTCH L W-36
+    - OLSON L W-32
+    - P-11
+    - PETIT L A-26
+    - PROVO R
+    - QUARTER CORNER LG103
+    - RED CASTLE L G-15
+    - RED CASTLE,EAST G-17
+    - RED CASTLE,LOWER G12
+    - RED CASTLE,UPPER G16
+    - REIDS L W-38
+    - ROCK L A-10
+    - ROCKPORT RES
+    - RUTH L BR-40
+    - SCOW L BR-12
+    - SHADOW L A-52
+    - SMITH-MOREHOUSE RES
+    - SMITHS FK PASS L G14
+    - SPECTACLE L A-44
+    - STATELINE RES
+    - STILLWATER FK
+    - TAMARACK L GR-2
+    - TEAL L BR-32
+    - TEAPOT L A-60
+    - TRIAL L A-61
+    - TRIDENT L A-41
+    - W-59
+    - W-62
+    - WALL L A-29
+    - WASHINGTON L A-23
+    - WATSON L A-27
+    - WEBER R
+    - WHITNEY RES
+    - YELLOWPINE,LOWER W66
+
+Processing Duchesne county...
+  → 0 new records added for DUCHESNE county
+  → 61 unmatched lakes in DUCHESNE
+    - BIG SANDWASH RES
+    - BLUE L Z-32
+    - BLYTHE L Z-20
+    - BONNIE L Z-6
+    - BROWNS DRAW RES
+    - BUD L Z-2
+    - BUTTERFLY L Z-1
+    - CARROT L U-17
+    - CLIFF L WR-49
+    - D-19
+    - DOCS L X-15
+    - DUCHESNE R
+    - DUCHESNE R, N FK
+    - EAST CENTER OWEEP CR
+    - EAST OWEEP CR
+    - EMERALD L D-20
+    - FARMERS L X-23
+    - FOX RES U-47
+    - GLADYS L X-128
+    - HOOVER L Z-10
+    - KIDNEY L, WEST U-26
+    - LAKE CANYON L
+    - LAKE FK R
+    - LINDA L LF-36
+    - MABA L Z-8
+    - MARSHALL L Z-11
+    - MILK L Y-25
+    - MIRROR L Z-3
+    - MOON L
+    - MOOSEHORN L Z-4
+    - OWEEP CR
+    - PALISADE L Z-28
+    - PAPOOSE L WR-52
+    - PASS L Z-5
+    - POINT L WR-6
+    - POLE CR L
+    - PYRAMID L Z-17
+    - QUEANT L WR-4
+    - RED CR RES
+    - ROCK CR
+    - ROCK CR, S FK
+    - ROCK L, LOWER WR-17
+    - SCOUT L Z-12
+    - SONNY L X-12
+    - SPIDER L X-109
+    - STARVATION RES
+    - STRAWBERRY R
+    - SURVEY L RC-20
+    - U- 50
+    - UINTA POND
+    - UINTA R
+    - UINTAH L X-131
+    - UPPER STILLWATER RES
+    - WEST CENTER OWEEP CR
+    - WEST OWEEP CR
+    - WOLF CR
+    - WYMAN L Z-14
+    - X- 26
+    - X- 84
+    - X- 85
+    - YELLOWSTONE R
+
+Processing Uintah county...
+  → 0 new records added for UINTAH county
+  → 25 unmatched lakes in UINTAH
+    - ASHLEY CR, S FK
+    - BROUGH RES
+    - BULLOCK RES
+    - CALDER RES
+    - COTTONWOOD RES
+    - EAST PARK RES
+    - GHOST POND
+    - HACKING L GR-40
+    - KIBAH L, EAST DF-11
+    - KIBAH L, WEST DF-14
+    - KIBAH L,FINGER DF-12
+    - KIBAH L,ISLAND DF-16
+    - LITTLE BRUSH CR
+    - LITTLE MONTES RES
+    - MATT WARNER RES
+    - OAKS PARK RES
+    - OLD FORT POND NORTH
+    - OLD FORT POND SOUTH
+    - PARADISE RES
+    - PELICAN L
+    - PELICAN SCB
+    - RED FLEET RES
+    - ROOSEVELT COMM POND
+    - STEINAKER RES
+    - TEDS L WR-44
+
+Processing Daggett county...
+  → 0 new records added for DAGGETT county
+  → 23 unmatched lakes in DAGGETT
+    - ANSON L, LOWER GR-9
+    - BEAVER CR
+    - BROWNE L
+    - BUMMER L GR-22
+    - CANDY L GR-17
+    - CART CR
+    - CARTER CR
+    - CARTER CR, E FK
+    - CARTER CR, W FK
+    - DAGGETT L GR-6
+    - FLAMING GORGE RES
+    - GR- 31
+    - GREEN R
+    - LONG PARK RES
+    - MANN CR
+    - MOOSE POND
+    - MUTTON L GR-23
+    - POTTER L,UPPER GR-28
+    - RAM L GR-24
+    - SHEEP CR
+    - SPIRIT L GR-3
+    - TEEPEE L,LOWER GR-29
+    - WEYMAN CR
+
+No new records added, skipping git commit
+
+=== SUMMARY ===
+Total new records: 0
+Total unmatched lakes: 188
+CSV file updated: /Volumes/OLAF EXT/jedwoodx/repos/uintas/data/utah_dwr_stocking_data.csv
+Run completed at: 2025-09-17 02:00:05
+
+=== STOCKING UPDATE RUN: 2025-09-26 02:07:39 ===
+
+Processing Summit county...
+  → 0 new records added for SUMMIT county
+  → 85 unmatched lakes in SUMMIT
+    - ABES L W-30
+    - ALEXANDER L A-1
+    - BEAR R
+    - BEAVER CR
+    - BEAVER L BR-10
+    - BETH L A-6
+    - BIG ELK RES A-18
+    - BLUE L A-5
+    - BOBS L G-73
+    - BOURBON L BR-1
+    - BR- 2
+    - BR-34
+    - BR-35
+    - BR-50
+    - BR-55
+    - BRIDGER L G-20
+    - BUCKEYE L A-3
+    - CHINA L G-21
+    - CLEGG L A-47
+    - CLIFF L G-5
+    - CLYDE L A-28
+    - CRYSTAL L A-51
+    - DEADHORSE L G-77
+    - DEER VALLEY LAKES
+    - DIVIDE L NO 1 A-36
+    - ECHO RES
+    - ERICKSON L,NORTH W26
+    - FAITH L A-16
+    - FISH L GR-125
+    - G- 80
+    - GR-155
+    - GR-160
+    - GR-162
+    - HAYDEN FK
+    - HAYSTACK L A-9
+    - HESSIE L G-18
+    - HOOP L
+    - ISLAND L A-57
+    - JESSON L GR-1
+    - KABELL L GR-140
+    - KAMAS RES W-40
+    - LILLIAN L A-43
+    - LILLY L A-58
+    - LILY L BR-11
+    - LILY L LOWER A-25
+    - LORENA L BR-46
+    - LOST L A-59
+    - LYMAN L, LOWER G-25
+    - LYMAN L, UPPER G-27
+    - MARSH L G-19
+    - MCPHETERS L BR-14
+    - NOTCH L W-36
+    - OLSON L W-32
+    - P-11
+    - PETIT L A-26
+    - PROVO R
+    - QUARTER CORNER LG103
+    - RED CASTLE L G-15
+    - RED CASTLE,EAST G-17
+    - RED CASTLE,LOWER G12
+    - RED CASTLE,UPPER G16
+    - REIDS L W-38
+    - ROCK L A-10
+    - ROCKPORT RES
+    - RUTH L BR-40
+    - SCOW L BR-12
+    - SHADOW L A-52
+    - SMITH-MOREHOUSE RES
+    - SMITHS FK PASS L G14
+    - SPECTACLE L A-44
+    - STATELINE RES
+    - STILLWATER FK
+    - TAMARACK L GR-2
+    - TEAL L BR-32
+    - TEAPOT L A-60
+    - TRIAL L A-61
+    - TRIDENT L A-41
+    - W-59
+    - W-62
+    - WALL L A-29
+    - WASHINGTON L A-23
+    - WATSON L A-27
+    - WEBER R
+    - WHITNEY RES
+    - YELLOWPINE,LOWER W66
+
+Processing Duchesne county...
+  → 0 new records added for DUCHESNE county
+  → 61 unmatched lakes in DUCHESNE
+    - BIG SANDWASH RES
+    - BLUE L Z-32
+    - BLYTHE L Z-20
+    - BONNIE L Z-6
+    - BROWNS DRAW RES
+    - BUD L Z-2
+    - BUTTERFLY L Z-1
+    - CARROT L U-17
+    - CLIFF L WR-49
+    - D-19
+    - DOCS L X-15
+    - DUCHESNE R
+    - DUCHESNE R, N FK
+    - EAST CENTER OWEEP CR
+    - EAST OWEEP CR
+    - EMERALD L D-20
+    - FARMERS L X-23
+    - FOX RES U-47
+    - GLADYS L X-128
+    - HOOVER L Z-10
+    - KIDNEY L, WEST U-26
+    - LAKE CANYON L
+    - LAKE FK R
+    - LINDA L LF-36
+    - MABA L Z-8
+    - MARSHALL L Z-11
+    - MILK L Y-25
+    - MIRROR L Z-3
+    - MOON L
+    - MOOSEHORN L Z-4
+    - OWEEP CR
+    - PALISADE L Z-28
+    - PAPOOSE L WR-52
+    - PASS L Z-5
+    - POINT L WR-6
+    - POLE CR L
+    - PYRAMID L Z-17
+    - QUEANT L WR-4
+    - RED CR RES
+    - ROCK CR
+    - ROCK CR, S FK
+    - ROCK L, LOWER WR-17
+    - SCOUT L Z-12
+    - SONNY L X-12
+    - SPIDER L X-109
+    - STARVATION RES
+    - STRAWBERRY R
+    - SURVEY L RC-20
+    - U- 50
+    - UINTA POND
+    - UINTA R
+    - UINTAH L X-131
+    - UPPER STILLWATER RES
+    - WEST CENTER OWEEP CR
+    - WEST OWEEP CR
+    - WOLF CR
+    - WYMAN L Z-14
+    - X- 26
+    - X- 84
+    - X- 85
+    - YELLOWSTONE R
+
+Processing Uintah county...
+  → 0 new records added for UINTAH county
+  → 25 unmatched lakes in UINTAH
+    - ASHLEY CR, S FK
+    - BROUGH RES
+    - BULLOCK RES
+    - CALDER RES
+    - COTTONWOOD RES
+    - EAST PARK RES
+    - GHOST POND
+    - HACKING L GR-40
+    - KIBAH L, EAST DF-11
+    - KIBAH L, WEST DF-14
+    - KIBAH L,FINGER DF-12
+    - KIBAH L,ISLAND DF-16
+    - LITTLE BRUSH CR
+    - LITTLE MONTES RES
+    - MATT WARNER RES
+    - OAKS PARK RES
+    - OLD FORT POND NORTH
+    - OLD FORT POND SOUTH
+    - PARADISE RES
+    - PELICAN L
+    - PELICAN SCB
+    - RED FLEET RES
+    - ROOSEVELT COMM POND
+    - STEINAKER RES
+    - TEDS L WR-44
+
+Processing Daggett county...
+  → 0 new records added for DAGGETT county
+  → 23 unmatched lakes in DAGGETT
+    - ANSON L, LOWER GR-9
+    - BEAVER CR
+    - BROWNE L
+    - BUMMER L GR-22
+    - CANDY L GR-17
+    - CART CR
+    - CARTER CR
+    - CARTER CR, E FK
+    - CARTER CR, W FK
+    - DAGGETT L GR-6
+    - FLAMING GORGE RES
+    - GR- 31
+    - GREEN R
+    - LONG PARK RES
+    - MANN CR
+    - MOOSE POND
+    - MUTTON L GR-23
+    - POTTER L,UPPER GR-28
+    - RAM L GR-24
+    - SHEEP CR
+    - SPIRIT L GR-3
+    - TEEPEE L,LOWER GR-29
+    - WEYMAN CR
+
+No new records added, skipping git commit
+
+=== SUMMARY ===
+Total new records: 0
+Total unmatched lakes: 193
+CSV file updated: /Volumes/OLAF EXT/jedwoodx/repos/uintas/data/utah_dwr_stocking_data.csv
+Run completed at: 2025-09-26 02:07:40
+
+=== STOCKING UPDATE RUN: 2025-09-27 02:00:01 ===
+
+Processing Summit county...
+  → 0 new records added for SUMMIT county
+  → 85 unmatched lakes in SUMMIT
+    - ABES L W-30
+    - ALEXANDER L A-1
+    - BEAR R
+    - BEAVER CR
+    - BEAVER L BR-10
+    - BETH L A-6
+    - BIG ELK RES A-18
+    - BLUE L A-5
+    - BOBS L G-73
+    - BOURBON L BR-1
+    - BR- 2
+    - BR-34
+    - BR-35
+    - BR-50
+    - BR-55
+    - BRIDGER L G-20
+    - BUCKEYE L A-3
+    - CHINA L G-21
+    - CLEGG L A-47
+    - CLIFF L G-5
+    - CLYDE L A-28
+    - CRYSTAL L A-51
+    - DEADHORSE L G-77
+    - DEER VALLEY LAKES
+    - DIVIDE L NO 1 A-36
+    - ECHO RES
+    - ERICKSON L,NORTH W26
+    - FAITH L A-16
+    - FISH L GR-125
+    - G- 80
+    - GR-155
+    - GR-160
+    - GR-162
+    - HAYDEN FK
+    - HAYSTACK L A-9
+    - HESSIE L G-18
+    - HOOP L
+    - ISLAND L A-57
+    - JESSON L GR-1
+    - KABELL L GR-140
+    - KAMAS RES W-40
+    - LILLIAN L A-43
+    - LILLY L A-58
+    - LILY L BR-11
+    - LILY L LOWER A-25
+    - LORENA L BR-46
+    - LOST L A-59
+    - LYMAN L, LOWER G-25
+    - LYMAN L, UPPER G-27
+    - MARSH L G-19
+    - MCPHETERS L BR-14
+    - NOTCH L W-36
+    - OLSON L W-32
+    - P-11
+    - PETIT L A-26
+    - PROVO R
+    - QUARTER CORNER LG103
+    - RED CASTLE L G-15
+    - RED CASTLE,EAST G-17
+    - RED CASTLE,LOWER G12
+    - RED CASTLE,UPPER G16
+    - REIDS L W-38
+    - ROCK L A-10
+    - ROCKPORT RES
+    - RUTH L BR-40
+    - SCOW L BR-12
+    - SHADOW L A-52
+    - SMITH-MOREHOUSE RES
+    - SMITHS FK PASS L G14
+    - SPECTACLE L A-44
+    - STATELINE RES
+    - STILLWATER FK
+    - TAMARACK L GR-2
+    - TEAL L BR-32
+    - TEAPOT L A-60
+    - TRIAL L A-61
+    - TRIDENT L A-41
+    - W-59
+    - W-62
+    - WALL L A-29
+    - WASHINGTON L A-23
+    - WATSON L A-27
+    - WEBER R
+    - WHITNEY RES
+    - YELLOWPINE,LOWER W66
+
+Processing Duchesne county...
+  → 0 new records added for DUCHESNE county
+  → 61 unmatched lakes in DUCHESNE
+    - BIG SANDWASH RES
+    - BLUE L Z-32
+    - BLYTHE L Z-20
+    - BONNIE L Z-6
+    - BROWNS DRAW RES
+    - BUD L Z-2
+    - BUTTERFLY L Z-1
+    - CARROT L U-17
+    - CLIFF L WR-49
+    - D-19
+    - DOCS L X-15
+    - DUCHESNE R
+    - DUCHESNE R, N FK
+    - EAST CENTER OWEEP CR
+    - EAST OWEEP CR
+    - EMERALD L D-20
+    - FARMERS L X-23
+    - FOX RES U-47
+    - GLADYS L X-128
+    - HOOVER L Z-10
+    - KIDNEY L, WEST U-26
+    - LAKE CANYON L
+    - LAKE FK R
+    - LINDA L LF-36
+    - MABA L Z-8
+    - MARSHALL L Z-11
+    - MILK L Y-25
+    - MIRROR L Z-3
+    - MOON L
+    - MOOSEHORN L Z-4
+    - OWEEP CR
+    - PALISADE L Z-28
+    - PAPOOSE L WR-52
+    - PASS L Z-5
+    - POINT L WR-6
+    - POLE CR L
+    - PYRAMID L Z-17
+    - QUEANT L WR-4
+    - RED CR RES
+    - ROCK CR
+    - ROCK CR, S FK
+    - ROCK L, LOWER WR-17
+    - SCOUT L Z-12
+    - SONNY L X-12
+    - SPIDER L X-109
+    - STARVATION RES
+    - STRAWBERRY R
+    - SURVEY L RC-20
+    - U- 50
+    - UINTA POND
+    - UINTA R
+    - UINTAH L X-131
+    - UPPER STILLWATER RES
+    - WEST CENTER OWEEP CR
+    - WEST OWEEP CR
+    - WOLF CR
+    - WYMAN L Z-14
+    - X- 26
+    - X- 84
+    - X- 85
+    - YELLOWSTONE R
+
+Processing Uintah county...
+  → 0 new records added for UINTAH county
+  → 25 unmatched lakes in UINTAH
+    - ASHLEY CR, S FK
+    - BROUGH RES
+    - BULLOCK RES
+    - CALDER RES
+    - COTTONWOOD RES
+    - EAST PARK RES
+    - GHOST POND
+    - HACKING L GR-40
+    - KIBAH L, EAST DF-11
+    - KIBAH L, WEST DF-14
+    - KIBAH L,FINGER DF-12
+    - KIBAH L,ISLAND DF-16
+    - LITTLE BRUSH CR
+    - LITTLE MONTES RES
+    - MATT WARNER RES
+    - OAKS PARK RES
+    - OLD FORT POND NORTH
+    - OLD FORT POND SOUTH
+    - PARADISE RES
+    - PELICAN L
+    - PELICAN SCB
+    - RED FLEET RES
+    - ROOSEVELT COMM POND
+    - STEINAKER RES
+    - TEDS L WR-44
+
+Processing Daggett county...
+  → 0 new records added for DAGGETT county
+  → 23 unmatched lakes in DAGGETT
+    - ANSON L, LOWER GR-9
+    - BEAVER CR
+    - BROWNE L
+    - BUMMER L GR-22
+    - CANDY L GR-17
+    - CART CR
+    - CARTER CR
+    - CARTER CR, E FK
+    - CARTER CR, W FK
+    - DAGGETT L GR-6
+    - FLAMING GORGE RES
+    - GR- 31
+    - GREEN R
+    - LONG PARK RES
+    - MANN CR
+    - MOOSE POND
+    - MUTTON L GR-23
+    - POTTER L,UPPER GR-28
+    - RAM L GR-24
+    - SHEEP CR
+    - SPIRIT L GR-3
+    - TEEPEE L,LOWER GR-29
+    - WEYMAN CR
+
+No new records added, skipping git commit
+
+=== SUMMARY ===
+Total new records: 0
+Total unmatched lakes: 193
+CSV file updated: /Volumes/OLAF EXT/jedwoodx/repos/uintas/data/utah_dwr_stocking_data.csv
+Run completed at: 2025-09-27 02:00:02
+
+=== STOCKING UPDATE RUN: 2025-09-28 02:03:30 ===
+
+Processing Summit county...
+  → 0 new records added for SUMMIT county
+  → 85 unmatched lakes in SUMMIT
+    - ABES L W-30
+    - ALEXANDER L A-1
+    - BEAR R
+    - BEAVER CR
+    - BEAVER L BR-10
+    - BETH L A-6
+    - BIG ELK RES A-18
+    - BLUE L A-5
+    - BOBS L G-73
+    - BOURBON L BR-1
+    - BR- 2
+    - BR-34
+    - BR-35
+    - BR-50
+    - BR-55
+    - BRIDGER L G-20
+    - BUCKEYE L A-3
+    - CHINA L G-21
+    - CLEGG L A-47
+    - CLIFF L G-5
+    - CLYDE L A-28
+    - CRYSTAL L A-51
+    - DEADHORSE L G-77
+    - DEER VALLEY LAKES
+    - DIVIDE L NO 1 A-36
+    - ECHO RES
+    - ERICKSON L,NORTH W26
+    - FAITH L A-16
+    - FISH L GR-125
+    - G- 80
+    - GR-155
+    - GR-160
+    - GR-162
+    - HAYDEN FK
+    - HAYSTACK L A-9
+    - HESSIE L G-18
+    - HOOP L
+    - ISLAND L A-57
+    - JESSON L GR-1
+    - KABELL L GR-140
+    - KAMAS RES W-40
+    - LILLIAN L A-43
+    - LILLY L A-58
+    - LILY L BR-11
+    - LILY L LOWER A-25
+    - LORENA L BR-46
+    - LOST L A-59
+    - LYMAN L, LOWER G-25
+    - LYMAN L, UPPER G-27
+    - MARSH L G-19
+    - MCPHETERS L BR-14
+    - NOTCH L W-36
+    - OLSON L W-32
+    - P-11
+    - PETIT L A-26
+    - PROVO R
+    - QUARTER CORNER LG103
+    - RED CASTLE L G-15
+    - RED CASTLE,EAST G-17
+    - RED CASTLE,LOWER G12
+    - RED CASTLE,UPPER G16
+    - REIDS L W-38
+    - ROCK L A-10
+    - ROCKPORT RES
+    - RUTH L BR-40
+    - SCOW L BR-12
+    - SHADOW L A-52
+    - SMITH-MOREHOUSE RES
+    - SMITHS FK PASS L G14
+    - SPECTACLE L A-44
+    - STATELINE RES
+    - STILLWATER FK
+    - TAMARACK L GR-2
+    - TEAL L BR-32
+    - TEAPOT L A-60
+    - TRIAL L A-61
+    - TRIDENT L A-41
+    - W-59
+    - W-62
+    - WALL L A-29
+    - WASHINGTON L A-23
+    - WATSON L A-27
+    - WEBER R
+    - WHITNEY RES
+    - YELLOWPINE,LOWER W66
+
+Processing Duchesne county...
+  → 0 new records added for DUCHESNE county
+  → 61 unmatched lakes in DUCHESNE
+    - BIG SANDWASH RES
+    - BLUE L Z-32
+    - BLYTHE L Z-20
+    - BONNIE L Z-6
+    - BROWNS DRAW RES
+    - BUD L Z-2
+    - BUTTERFLY L Z-1
+    - CARROT L U-17
+    - CLIFF L WR-49
+    - D-19
+    - DOCS L X-15
+    - DUCHESNE R
+    - DUCHESNE R, N FK
+    - EAST CENTER OWEEP CR
+    - EAST OWEEP CR
+    - EMERALD L D-20
+    - FARMERS L X-23
+    - FOX RES U-47
+    - GLADYS L X-128
+    - HOOVER L Z-10
+    - KIDNEY L, WEST U-26
+    - LAKE CANYON L
+    - LAKE FK R
+    - LINDA L LF-36
+    - MABA L Z-8
+    - MARSHALL L Z-11
+    - MILK L Y-25
+    - MIRROR L Z-3
+    - MOON L
+    - MOOSEHORN L Z-4
+    - OWEEP CR
+    - PALISADE L Z-28
+    - PAPOOSE L WR-52
+    - PASS L Z-5
+    - POINT L WR-6
+    - POLE CR L
+    - PYRAMID L Z-17
+    - QUEANT L WR-4
+    - RED CR RES
+    - ROCK CR
+    - ROCK CR, S FK
+    - ROCK L, LOWER WR-17
+    - SCOUT L Z-12
+    - SONNY L X-12
+    - SPIDER L X-109
+    - STARVATION RES
+    - STRAWBERRY R
+    - SURVEY L RC-20
+    - U- 50
+    - UINTA POND
+    - UINTA R
+    - UINTAH L X-131
+    - UPPER STILLWATER RES
+    - WEST CENTER OWEEP CR
+    - WEST OWEEP CR
+    - WOLF CR
+    - WYMAN L Z-14
+    - X- 26
+    - X- 84
+    - X- 85
+    - YELLOWSTONE R
+
+Processing Uintah county...
+  → 0 new records added for UINTAH county
+  → 25 unmatched lakes in UINTAH
+    - ASHLEY CR, S FK
+    - BROUGH RES
+    - BULLOCK RES
+    - CALDER RES
+    - COTTONWOOD RES
+    - EAST PARK RES
+    - GHOST POND
+    - HACKING L GR-40
+    - KIBAH L, EAST DF-11
+    - KIBAH L, WEST DF-14
+    - KIBAH L,FINGER DF-12
+    - KIBAH L,ISLAND DF-16
+    - LITTLE BRUSH CR
+    - LITTLE MONTES RES
+    - MATT WARNER RES
+    - OAKS PARK RES
+    - OLD FORT POND NORTH
+    - OLD FORT POND SOUTH
+    - PARADISE RES
+    - PELICAN L
+    - PELICAN SCB
+    - RED FLEET RES
+    - ROOSEVELT COMM POND
+    - STEINAKER RES
+    - TEDS L WR-44
+
+Processing Daggett county...
+  → 0 new records added for DAGGETT county
+  → 23 unmatched lakes in DAGGETT
+    - ANSON L, LOWER GR-9
+    - BEAVER CR
+    - BROWNE L
+    - BUMMER L GR-22
+    - CANDY L GR-17
+    - CART CR
+    - CARTER CR
+    - CARTER CR, E FK
+    - CARTER CR, W FK
+    - DAGGETT L GR-6
+    - FLAMING GORGE RES
+    - GR- 31
+    - GREEN R
+    - LONG PARK RES
+    - MANN CR
+    - MOOSE POND
+    - MUTTON L GR-23
+    - POTTER L,UPPER GR-28
+    - RAM L GR-24
+    - SHEEP CR
+    - SPIRIT L GR-3
+    - TEEPEE L,LOWER GR-29
+    - WEYMAN CR
+
+No new records added, skipping git commit
+
+=== SUMMARY ===
+Total new records: 0
+Total unmatched lakes: 193
+CSV file updated: /Volumes/OLAF EXT/jedwoodx/repos/uintas/data/utah_dwr_stocking_data.csv
+Run completed at: 2025-09-28 02:03:31

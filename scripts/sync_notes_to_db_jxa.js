@@ -27,9 +27,11 @@ function run() {
         const timestamp = new Date().toISOString().replace('T', ' ').substring(0, 19);
         const logEntry = `[${timestamp}] ${message}\n`;
         console.log(message);
-        
+
         try {
-            app.doShellScript(`echo "${logEntry}" >> "${logPath}"`);
+            // Escape special characters for shell safety
+            const escapedLogEntry = logEntry.replace(/"/g, '\\"').replace(/\$/g, '\\$').replace(/`/g, '\\`');
+            app.doShellScript(`echo "${escapedLogEntry}" >> "${logPath}"`);
         } catch (e) {
             console.log(`Failed to write to log: ${e}`);
         }
@@ -89,7 +91,7 @@ function run() {
         // Parse Jed's Notes - handle both <h2> and <span> formats
         let jedNotes = null;
         const jedNotesMatch = editableContent.match(/<h2>Jed's Notes<\/h2>(.*?)(?=<h2>|<div>═|$)/is) ||
-                             editableContent.match(/Jed's Notes.*?<\/div>\s*<div>(.*?)<\/div>/is);
+                             editableContent.match(/Jed's Notes.*?<\/div>\s*<div>(.*?)(?=<div><b><span.*?Trip Reports|<div>═|$)/is);
         if (jedNotesMatch) {
             let jedContent = jedNotesMatch[1];
             // Preserve HTML formatting but clean up structural tags
@@ -99,7 +101,7 @@ function run() {
             jedContent = jedContent.replace(/<\/div>/gi, '<br>'); // Convert closing div to br
             jedContent = jedContent.replace(/(<br>\s*){2,}/gi, '<br><br>'); // Normalize multiple breaks
             jedContent = jedContent.replace(/^<br>|<br>$/g, '').trim(); // Remove leading/trailing breaks
-            
+
             // Don't save placeholder text
             if (jedContent && jedContent !== "Add your notes here...") {
                 jedNotes = jedContent;

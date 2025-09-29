@@ -13,7 +13,8 @@ function run() {
     // --- Helper Functions ---
     function runQuery(query) {
         try {
-            return app.doShellScript(`sqlite3 -newline '||' -separator '|' "${dbPath}" "${query}"`);
+            // Use a unique separator that won't appear in content: ASCII 30 (Record Separator)
+            return app.doShellScript(`sqlite3 -newline '||' -separator '\u001E' "${dbPath}" "${query}"`);
         } catch (e) {
             console.log(`Error running query: ${query}`);
             console.log(e);
@@ -136,7 +137,8 @@ function run() {
         const lakeInfoResult = runQuery(lakeInfoQuery);
         if (!lakeInfoResult) return;
 
-        const [lakeName, drainageName, lakeSize, lakeDepth, lakeElevation, lakeSpecies, lakePressure, dwrNotes, junesuckerNotes, lakeStatus, jedNotes, tripReports, noFish] = lakeInfoResult.split('|');
+        const [lakeName, drainageName, lakeSize, lakeDepth, lakeElevation, lakeSpecies, lakePressure, dwrNotes, junesuckerNotes, lakeStatus, jedNotes, tripReports, noFish] = lakeInfoResult.split('\u001E');
+
 
         const stockingQuery = `SELECT stock_date, species, quantity, length FROM stocking_records WHERE lake_id = (SELECT id FROM lakes WHERE letter_number = '${letterNumber}') ORDER BY stock_date DESC;`;
         const stockingRecordsResult = runQuery(stockingQuery);
