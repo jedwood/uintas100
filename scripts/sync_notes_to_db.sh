@@ -1,15 +1,26 @@
 #!/bin/bash
 
 # Wrapper script to sync Apple Notes back to database
-# Looks for notes containing *update tag and syncs content to database
+# Uses SQLite reader (primary) with JXA fallback
 # Usage: ./sync_notes_to_db.sh
 
-echo "Starting Apple Notes → Database sync (looking for *update tags)..."
-result=$(osascript "$(dirname "$0")/sync_notes_to_db_jxa.js")
+SCRIPT_DIR="$(dirname "$0")"
+
+echo "Starting Apple Notes → Database sync..."
+
+# Try the new SQLite-based reader first (requires Full Disk Access)
+if python3 "$SCRIPT_DIR/sync_notes_to_db.py" "$@"; then
+    exit 0
+fi
+
+# If Python script fails (e.g., no Full Disk Access), fall back to pure JXA
+echo ""
+echo "SQLite reader failed, falling back to JXA-based sync..."
+result=$(osascript "$SCRIPT_DIR/sync_notes_to_db_jxa.js")
 echo "$result"
 
-# Check if log file exists and show recent entries
-log_file="$(dirname "$0")/../logs/notes_sync.log"
+# Show recent log entries
+log_file="$SCRIPT_DIR/../logs/notes_sync.log"
 if [[ -f "$log_file" ]]; then
     echo ""
     echo "Recent log entries:"
