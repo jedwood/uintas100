@@ -1,6 +1,8 @@
 // JXA script to sync Apple Notes with *update tag back to database
 // This script finds notes with *update, parses content above delimiter, updates database
 
+ObjC.import('Foundation');
+
 function run() {
     const app = Application.currentApplication();
     app.includeStandardAdditions = true;
@@ -8,8 +10,13 @@ function run() {
     const notes = Application("Notes");
 
     // --- Configuration ---
-    const dbPath = "/Volumes/OLAF EXT/jedwoodx/repos/uintas/uinta_lakes.db";
-    const logPath = "/Volumes/OLAF EXT/jedwoodx/repos/uintas/logs/notes_sync.log";
+    // Accept project dir as CLI argument, fall back to default
+    const args = $.NSProcessInfo.processInfo.arguments;
+    const argCount = args.count;
+    const defaultProjectDir = "/Users/jed/repos/uintas";
+    const projectDir = argCount > 4 ? ObjC.unwrap(args.objectAtIndex(4)) : defaultProjectDir;
+    const dbPath = projectDir + "/uinta_lakes.db";
+    const logPath = projectDir + "/logs/notes_sync.log";
     const mainFolderName = "Uintas 💯";
 
     // --- Helper Functions ---

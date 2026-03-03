@@ -9,9 +9,13 @@ This script safely adds new stocking records without duplicating existing ones.
 import sqlite3
 import csv
 import re
+import os
 from datetime import datetime
 from database_utils import create_database, find_matching_lake, extract_letter_number, dump_stocking_data, dump_combined_data
 from species_utils import standardize_stocking_species
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_DIR = os.path.dirname(SCRIPT_DIR)
 
 def process_stocking_data(conn):
     """Process stocking data and match with lakes"""
@@ -19,8 +23,9 @@ def process_stocking_data(conn):
     unmatched_records = []
     new_records_count = 0
     duplicate_count = 0
-    
-    with open('../data/utah_dwr_stocking_data.csv', 'r') as f:
+
+    csv_path = os.path.join(PROJECT_DIR, 'data', 'utah_dwr_stocking_data.csv')
+    with open(csv_path, 'r') as f:
         reader = csv.DictReader(f)
         
         for row in reader:
@@ -123,7 +128,8 @@ def process_stocking_data(conn):
     
     # Save unmatched records
     if unmatched_records:
-        with open('../logs/unmatched_stocking.csv', 'w', newline='') as f:
+        unmatched_path = os.path.join(PROJECT_DIR, 'logs', 'unmatched_stocking.csv')
+        with open(unmatched_path, 'w', newline='') as f:
             writer = csv.DictWriter(f, fieldnames=['water_name', 'county', 'species', 'quantity', 'length', 'stock_date', 'source_year'])
             writer.writeheader()
             writer.writerows(unmatched_records)
@@ -139,7 +145,8 @@ def main():
     print("This script adds new stocking records without duplicating existing ones.\n")
     
     # Connect to existing database
-    conn = sqlite3.connect("../uinta_lakes.db")
+    db_path = os.path.join(PROJECT_DIR, "uinta_lakes.db")
+    conn = sqlite3.connect(db_path)
     
     print("Processing stocking data...")
     process_stocking_data(conn)

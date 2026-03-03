@@ -1,6 +1,8 @@
 // JXA script to sync only flagged database entries to Apple Notes
 // This script processes lakes where notes_needs_update = TRUE
 
+ObjC.import('Foundation');
+
 function run() {
     const app = Application.currentApplication();
     app.includeStandardAdditions = true;
@@ -8,7 +10,12 @@ function run() {
     const notes = Application("Notes");
 
     // --- Configuration ---
-    const dbPath = "/Volumes/OLAF EXT/jedwoodx/repos/uintas/uinta_lakes.db";
+    // Accept project dir as CLI argument, fall back to default
+    const args = $.NSProcessInfo.processInfo.arguments;
+    const argCount = args.count;
+    const defaultProjectDir = "/Users/jed/repos/uintas";
+    const projectDir = argCount > 4 ? ObjC.unwrap(args.objectAtIndex(4)) : defaultProjectDir;
+    const dbPath = projectDir + "/uinta_lakes.db";
 
     // --- Helper Functions ---
     function runQuery(query) {

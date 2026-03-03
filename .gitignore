@@ -1,0 +1,6 @@
+tauri-app/src-tauri/target/
+dist/
+venv/
+__pycache__/
+*.pyc
+.DS_Store

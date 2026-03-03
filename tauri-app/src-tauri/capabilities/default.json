@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/nicktrav/tauri-docs-refs/refs/heads/main/capabilities.schema.json",
+  "identifier": "default",
+  "description": "Permissions for the Uintas admin panel",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "shell:allow-open",
+    "notification:default",
+    "notification:allow-is-permission-granted",
+    "notification:allow-request-permission",
+    "notification:allow-notify",
+    "autostart:allow-enable",
+    "autostart:allow-disable",
+    "autostart:allow-is-enabled",
+    "store:default"
+  ]
+}

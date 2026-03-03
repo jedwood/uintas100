@@ -5,12 +5,23 @@ Total Lakes: 717
 
 
 --- Ashley Creek Drainage ---
-DF-4     | (No name)                 | 10.0ac   | 23ft   | ?ft elev   | Low      | 
-         └─ No stocking records
+DF-4     | (No name)                 | 10.0ac   | 23ft   | 10830ft elev | Low      | 
+         DWR: This natural lake is situated in a rocky depression at the head of a cirque basin. Elevation 10,830 feet, 10 acres, 23 feet maximum depth. Follow Dry Fork Creek (a Forest Service trail exists partway) 2¼ miles above Blanchett Park to Reynolds Creek. Go along Reynolds Creek 1 mile to its spring source, then head due west over boulder terrain to the lake. Horses can be taken up Reynolds Creek only partway because of rough terrain. No campsites or horsefeed are available. Cutthroat trout inhabit the lake. This lake is for anglers who like solitude and ruggedness.
+         └─ 2022-09-23 | Cutthroats      |    743 fish | 1.57"  | UINTAH
+         └─ 2019-09-23 | Cutthroats      |    758 fish | 1.7"   | UINTAH
+         └─ 2016-09-20 | Cutthroats      |    726 fish | 1.47"  | UINTAH
+         └─ 2013-07-09 | Cutthroats      |    750 fish | 2.8"   | UINTAH
+         └─ 2010-09-30 | Cutthroats      |    750 fish | 1.71"  | UINTAH
+         └─ 2008-09-24 | Cutthroats      |    754 fish | 1.42"  | UINTAH
 
 GR-104   | (No name)                 | 4.3ac    | 19ft   | ?ft elev   | Low      | 
          DWR: This 4.3 acre natural pond sits on a steep bench overlooking the Sheep Creek Canal approximately 3.1 miles from both the Beaver Creek Trail head and Spirit Lake. GR-104 is located 0.3 miles west of the junction of Forest Service trails 017 and 052. The lake lies at an elevation of 9,290 feet and is surrounded by rocky timber. Maximum depth is 19 feet. Campsites and spring water are not available in the immediate area. The lake does not have inlets or an outlet and does not overwinter trout. This is another water where grayling may be stocked sometime in the future. Contact the Division of Wildlife Resources Office in Vernal for up-to-date information. Fishing pressure is very light.
-         └─ No stocking records
+         └─ 2024-09-23 | Grayling        |    299 fish | 2.47"  | DAGGETT
+         └─ 2019-10-01 | Grayling        |    706 fish | 2.39"  | DAGGETT
+         └─ 2017-09-20 | Grayling        |    648 fish | 2.79"  | DAGGETT
+         └─ 2013-10-07 | Grayling        |    600 fish | 3.22"  | DAGGETT
+         └─ 2010-09-14 | Grayling        |    641 fish | 2.02"  | DAGGETT
+         └─ 2006-08-02 | Grayling        |    642 fish | 1.66"  | DAGGETT
 
 GR-11    | (No name)                 | 2.6ac    | 8ft    | 10635ft elev | Low      | 
          DWR: This 2.6 acre pothole lake sits 200 yards southwest of Upper Anson Lake. Campsites, horse feed and sources of spring water are as described for Anson Lakes. GR-11 is 10,635 feet in elevation and has a maximum depth of 8 feet. This lake provides only marginal fish habitat and may winterkill. Fishing pressure is quite light for stocked brook trout.
@@ -24,124 +35,314 @@ GR-119   | (No name)                 | ?ac      | ?ft    | ?ft elev   | ?       
 
 GR-13    | (No name)                 | 9.2ac    | ?ft    | ?ft elev   | Low      | 
          DWR: This natural moraine lake is situated on a glacial shelf at the bottom of a cirque in western Weyman Lakes Basin. The east-west orientation of the cirque makes this 9.2 acre lake susceptible to severe winds. GR-13 is located at timberline at an elevation of 10,820 feet and is surrounded by boulder fields and weathered stands of sub-alpine fir. The lake lies 0.7 miles west of Anson Lakes up rock slides and across rough boulder fields. Total distance from Spirit Lake and Beaver Creek Trail head is 7.8 and 9.7 miles, respectively. Horses are best left at Anson Lakes. Campsites are nonexistent, and no spring water is available. GR-13 is rather unique in that the lakes underground outlet is a visible siphon found along the northeastern shore. Fishing pressure is very light for stocked brook trout.
-         └─ No stocking records
+         └─ 2022-07-06 | Brookies        |    765 fish | 3.62"  | DAGGETT
+         └─ 2018-07-10 | Tigers          |    722 fish | 3.29"  | DAGGETT
+         └─ 2013-07-08 | Tigers          |    720 fish | 3.08"  | DAGGETT
+         └─ 2006-07-17 | Brookies        |    720 fish | 2.92"  | DAGGETT
+         └─ 2005-07-15 | Brookies        |    724 fish | 2.65"  | DAGGETT
 
 GR-20    | (No name)                 | 5.7ac    | 8ft    | 10355ft elev | Low      | 
          DWR: GR-20 is a fairly shallow, rocky pond which sits a short distance southwest of Bummer Lake in Lamb Lakes Basin. This lake is 5.7 acres, 10,355 feet in elevation with a maximum depth of 8 feet. Access and camping are as described for Bummer Lake. The inlets and outlet of GR-20 are intermittent, and the lake provides only marginal fish habitat. Fishing is very light for stocked brook trout.
-         └─ No stocking records
+         └─ 2018-07-10 | Tigers          |     97 fish | 2.35"  | DAGGETT
+         └─ 2015-07-06 | Brookies        |    296 fish | 2.61"  | DAGGETT
 
 GR-21    | (No name)                 | 3.7ac    | 7ft    | 10355ft elev | Low      | 
          DWR: Located less than 200 yards northwest of Bummer Lake, GR-21 is quite similar to GR-20. Habitat is marginal and the lake may winterkill. GR-21 is 3.7 acres, 10,355 feet in elevation with a maximum depth of 7 feet. Fishing is very light for stocked brook trout.
-         └─ No stocking records
+         └─ 2018-07-10 | Tigers          |    386 fish | 2.35"  | DAGGETT
+         └─ 2015-07-06 | Brookies        |    381 fish | 2.61"  | DAGGETT
+         └─ 2012-07-09 | Brookies        |    391 fish | 2.3"   | DAGGETT
+         └─ 2009-08-03 | Brookies        |    379 fish | 3.05"  | DAGGETT
+         └─ 2006-07-17 | Brookies        |    380 fish | 2.92"  | DAGGETT
+         └─ 2004-07-07 | Brookies        |    375 fish | 2.46"  | DAGGETT
+         └─ 2002-06-28 | Brookies        |    373 fish | 2.34"  | DAGGETT
 
 GR-31    | (No name)                 | 6.0ac    | 6ft    | 9270ft elev | Low      | 
          DWR: This natural, irregular shaped lake is essentially an on stream portion of the Sheep Creek Canal, which supplies irrigation water to northern Daggett County. This makes the lake fairly easy to find. Simply follow the canal 1.2 miles northwest from its junction with the Leidy Peak Trail [012]. GR-31 is the first lake you come to directly below the canal's first major waterfall. Total distance from Browne Lake is approximately 4.1 miles. The lake is 6.0 acres, 9,270 feet in elevation with a maximum depth of 6 feet. There is no spring water, campsites, or horse feed in the immediate vicinity. Horse feed and a few campsites are available in a small meadow along the canal 0.3 miles upstream. Fishing pressure is very light for naturally produced brook trout.
+         └─ 2025-06-30 | Cutthroats      |    502 fish | 2.69"  | DAGGETT
+         └─ 2012-07-09 | Brookies        |    499 fish | 2.3"   | DAGGETT
+         └─ 2007-07-16 | Brookies        |    501 fish | 2.6"   | DAGGETT
+         └─ 2005-07-15 | Brookies        |    496 fish | 2.65"  | DAGGETT
+
+GR-52    | (No name)                 | 2.1ac    | 4ft    | 10515ft elev | Moderate | 
+         DWR: This small, natural lake is surrounded by wet boggy meadows on the north and small, conifer-covered ridges on the south (see North Twin Lake access). Elevation 10,515 feet, 2.1 acres, 4 feet maximum depth. From North Twin Lake, follow the north inlet stream 1¼ miles into a meadow; turn east following a small tributary 125 yards up a rock ridge to the lake. GR-52 sits 600 yards east-southeast from Red Belly Lake. Camping and horsefeed are available in the area, and horse access is good though trailless. Only a few brook trout inhabit the lake and they reproduce naturally. Angling and camping pressure are moderate.
          └─ No stocking records
 
-GR-52    | (No name)                 | 2.1ac    | 4ft    | ?ft elev   | Moderate | 
+GR-35    | Ashley Twin Reservoir     | 25.0ac   | 18ft   | 10332ft elev | Moderate | 
+         DWR: This fluctuating reservoir has a large earthen dam about 475 yards long on the east end. Elevation 10,332 feet, 20.7 to 30.3 acres, 8 to 18 feet maximum depth. At maximum drawdown, three small lakes are formed (North, South and East) along with numerous small isolated pools. The stream between North and South lakes has been channeled. Jeep access is possible by going 5½ miles west from the marked sign on the Red Cloud Loop Road 27 miles north of Vernal. Horses cannot be hauled the last 3 miles because of the rugged road. Marginal camping is available near the dam, and horsefeed is abundant ¼ mile southeast in a long meadow. The only spring water available enters on the southwest corner of the lake. The fishery contains sizable brook and pan-size cutthroat trout. Cutthroat spawn naturally in the spring-fed inlet. Angling pressure drops off considerably in late summer because of the mucky shoreline resulting from drawdown.
+         └─ 2024-06-26 | Brookies        |   2097 fish | 2.93"  | UINTAH
+         └─ 2022-07-06 | Brookies        |   2092 fish | 3.62"  | UINTAH
+         └─ 2020-07-06 | Brookies        |   2090 fish | 3.49"  | UINTAH
+         └─ 2018-07-10 | Brookies        |   2100 fish | 2.88"  | UINTAH
+         └─ 2016-06-30 | Brookies        |   2171 fish | 2.06"  | UINTAH
+         └─ 2014-07-02 | Brookies        |   2101 fish | 2.43"  | UINTAH
+         └─ 2012-07-09 | Brookies        |   2105 fish | 2.3"   | UINTAH
+         └─ 2010-07-15 | Brookies        |   2105 fish | 2.89"  | UINTAH
+         └─ 2008-07-10 | Brookies        |   2100 fish | 2.92"  | UINTAH
+         └─ 2006-07-12 | Brookies        |   2100 fish | 2.88"  | UINTAH
+         └─ 2005-07-15 | Brookies        |   2104 fish | 2.65"  | UINTAH
+         └─ 2003-07-03 | Brookies        |   2093 fish | 2.48"  | UINTAH
+
+GR-62    | Bert                      | 3.7ac    | 11ft   | 10220ft elev | Low      | 
+         DWR: This attractive, natural lake sits at the base of some rock slides extending south from Marsh Peak. Elevation 10,220 feet, 3.7 acres, 11 feet maximum depth. Follow the Marsh Peak Trail 1 mile to the top of the ridge. Turn southeast and go down the east side of Chimney Rock basin 1 mile to the bottom. Bert Lake is located 1 mile south of Chimney Rock Lake. Horse access is impossible over the rocky, timbered terrain. Marginal camping and water are available several hundred yards east of the lake. Bert is stocked with brook trout. This attractive lake seldom receives anglers or campers.
+         └─ 2024-09-23 | Grayling        |    276 fish | 2.47"  | UINTAH
+         └─ 2023-07-21 | Brookies        |    372 fish | 3.0"   | UINTAH
+         └─ 2019-10-01 | Grayling        |    323 fish | 2.39"  | UINTAH
+         └─ 2019-07-11 | Brookies        |    286 fish | 2.68"  | UINTAH
+         └─ 2017-09-20 | Grayling        |    278 fish | 2.79"  | UINTAH
+         └─ 2015-07-06 | Brookies        |    367 fish | 2.61"  | UINTAH
+         └─ 2013-10-07 | Grayling        |    276 fish | 3.22"  | UINTAH
+         └─ 2011-08-04 | Brookies        |    374 fish | 2.45"  | UINTAH
+         └─ 2010-09-14 | Grayling        |    366 fish | 2.02"  | UINTAH
+         └─ 2007-07-16 | Brookies        |   1373 fish | 2.6"   | UINTAH
+         └─ 2006-08-02 | Grayling        |    370 fish | 1.66"  | UINTAH
+         └─ 2002-07-30 | Grayling        |    370 fish | 0.77"  | UINTAH
+
+DF-1     | Blue                      | 6.5ac    | 16ft   | 11160ft elev | Moderate | 
+         DWR: This scenic windswept lake sits at the top of a cirque basin in the tundra. Elevation 11,160 feet, 6.5 acres, 16 feet maximum depth. Drive into Blanchett Park 3 miles north of Paradise Park Reservoir. Head 5 miles north on a good Forest Service trail to Deadman Lake, then climb the gentle bald mountain southeast 1¼ miles. Another route is to follow the trail north 2½ miles up to the lake. Water and some horsefeed are available around the lake, but there are no campsites. Horse access is easy on the first route, but difficult on the second. The fishery is composed of an abundant brook trout population. Fishing pressure is moderate and consists of day-use anglers only. Sheep grazing in midsummer decreases the aesthetic beauty of this little basin.
+         └─ 2024-06-26 | Brookies        |    699 fish | 2.93"  | UINTAH
+         └─ 2021-07-01 | Brookies        |    701 fish | 3.32"  | UINTAH
+         └─ 2018-07-10 | Brookies        |    704 fish | 2.88"  | UINTAH
+         └─ 2015-07-06 | Brookies        |    705 fish | 2.61"  | UINTAH
+         └─ 2012-07-09 | Brookies        |    694 fish | 2.3"   | UINTAH
+         └─ 2009-07-16 | Brookies        |    696 fish | 3.06"  | UINTAH
+         └─ 2006-07-12 | Brookies        |    704 fish | 2.88"  | UINTAH
+         └─ 2005-07-15 | Brookies        |    697 fish | 2.65"  | UINTAH
+         └─ 2002-06-27 | Brookies        |    707 fish | 2.34"  | UINTAH
+
+GR-63    | Chimney Rock              | 6.5ac    | 16ft   | 10540ft elev | ?        | 
+         DWR: This pothole lake sits at the southeast base of Marsh Peak in a steep cirque basin. Elevation 10,540 feet, 6.5 acres, 16 feet maximum depth. Little water exchange and low water levels cause winterkill, making it impossible to support fish. Follow the Marsh Peak trail 1 mile onto the ridge extending from Marsh Peak. Pick your way down the east side of the cirque basin to the lake over large talus boulders and thick timber. Horse access is impossible. Marginal campsites are scattered near the lake. Better camping and flowing water are available 1 mile to the south near Bert Lake. Scenery and solitude are assured for rugged individuals.
          └─ No stocking records
 
-GR-35    | Ashley Twin Reservoir     | 25.0ac   | 18ft   | ?ft elev   | Moderate | 
-         └─ No stocking records
-
-GR-62    | Bert                      | 3.7ac    | 11ft   | ?ft elev   | Low      | 
-         └─ No stocking records
-
-DF-1     | Blue                      | 6.5ac    | 16ft   | ?ft elev   | Moderate | 
-         └─ No stocking records
-
-GR-63    | Chimney Rock              | ?ac      | ?ft    | ?ft elev   | ?        | 
-         └─ No stocking records
-
-GR-38    | Deadman                   | 7.0ac    | 9ft    | ?ft elev   | High     | 
+GR-38    | Deadman                   | 7.0ac    | 9ft    | 10790ft elev | High     | 
+         DWR: This natural lake sits in open, windy terrain at the head of Dry Fork Basin. Elevation 10,790 feet, 7 acres, 9 feet maximum depth. Take jeep road to Blanchett Park 3 miles north of Paradise Park Reservoir. Go 5 miles north via a well-marked Forest Service trail to the lake. Though horse access is very good, feed is limited. Campsites are marginal along the south shore. Both brook and cutthroat trout inhabit the lake, but are not abundant. Fishing and camping pressure at Deadman is heavy; it is also somewhat popular with scout groups.
+         └─ 2024-06-26 | Brookies        |   1042 fish | 2.93"  | UINTAH
          └─ 2023-11-16 | Cutthroats      |    200 fish | 3.22"  | SUMMIT
          └─ 2023-05-31 | Cutthroats      |    155 fish | 8.69"  | SUMMIT
          └─ 2022-09-19 | Brookies        |    114 fish | 16.99" | SUMMIT
          └─ 2022-08-25 | Brookies        |    500 fish | 4.64"  | SUMMIT
          └─ 2022-06-07 | Cutthroats      |   1002 fish | 7.58"  | SUMMIT
          └─ 2021-09-14 | Cutthroats      |    252 fish | 3.24"  | SUMMIT
+         └─ 2021-07-01 | Brookies        |   1051 fish | 3.32"  | UINTAH
+         └─ 2018-07-10 | Brookies        |   1050 fish | 2.88"  | UINTAH
+         └─ 2015-07-06 | Brookies        |   1058 fish | 2.61"  | UINTAH
+         └─ 2012-07-09 | Brookies        |   1042 fish | 2.3"   | UINTAH
+         └─ 2009-07-16 | Brookies        |   1053 fish | 3.06"  | UINTAH
+         └─ 2006-07-12 | Brookies        |   1050 fish | 2.88"  | UINTAH
+         └─ 2005-07-15 | Brookies        |   1045 fish | 2.65"  | UINTAH
+         └─ 2002-06-27 | Brookies        |   1060 fish | 2.34"  | UINTAH
 
-DF-11    | East Kibah                | 2.9ac    | 12ft   | ?ft elev   | Moderate | 
+DF-11    | East Kibah                | 2.9ac    | 12ft   | 10495ft elev | Moderate | 
+         DWR: This natural lake has two flowing inlets on the south and west shores, and a rock slide along the north shore. Elevation 10,495 feet, 2.9 acres, 12 feet maximum depth. A few brook trout are stocked and have good growth. A residual population of rainbow trout also inhabits the lake. DF-11 receives moderate fishing pressure, especially from day hikers.
+         └─ 2025-06-30 | Brookies        |    251 fish | 3.4"   | UINTAH
+         └─ 2022-07-06 | Brookies        |    253 fish | 3.62"  | UINTAH
+         └─ 2019-07-11 | Brookies        |    195 fish | 2.68"  | UINTAH
+         └─ 2016-06-30 | Brookies        |    314 fish | 2.06"  | UINTAH
+         └─ 2013-07-03 | Brookies        |    258 fish | 2.61"  | UINTAH
+         └─ 2010-07-15 | Brookies        |    253 fish | 2.89"  | UINTAH
+         └─ 2007-07-16 | Brookies        |    243 fish | 2.6"   | UINTAH
+         └─ 2005-07-15 | Brookies        |    255 fish | 2.65"  | UINTAH
+         └─ 2002-06-27 | Brookies        |    255 fish | 2.34"  | UINTAH
+
+DF-12    | Finger Kibah              | 4.7ac    | 9ft    | 10515ft elev | Moderate | 
+         DWR: This shallow, long narrow lake is located 90 yards southwest of DF-11 in the Kibah Basin. Elevation 10,515 feet, 4.7 acres, 9 feet maximum depth. A healthy population of brook trout inhabits the lake. DF-12 receives moderate fishing pressure by day hikers coming from Blanchett Park.
+         └─ 2025-06-30 | Brookies        |    376 fish | 3.4"   | UINTAH
+         └─ 2021-07-01 | Brookies        |    374 fish | 3.32"  | UINTAH
+         └─ 2017-07-09 | Brookies        |    388 fish | 2.53"  | UINTAH
+         └─ 2013-07-03 | Brookies        |    371 fish | 2.61"  | UINTAH
+         └─ 2009-07-16 | Brookies        |    374 fish | 3.06"  | UINTAH
+         └─ 2005-07-15 | Brookies        |    375 fish | 2.65"  | UINTAH
+         └─ 2002-06-27 | Brookies        |    373 fish | 2.34"  | UINTAH
+
+GR-57    | Fish                      | 17.5ac   | 40ft   | 10745ft elev | High     | 
+         DWR: This beautiful lake sits at the western base of Marsh Peak and is surrounded by scattered timber and steep, talus slopes (see access to North Twin Lake). Elevation 10,745 feet, 17.5 acres, 40 feet maximum depth. From North Twin Lake, follow a vague Forest Service trail along the east inlet stream toward Marsh Peak for 2¼ miles. The lake has good camping sites, spring water and limited horsefeed. Horse access is good except for a small rugged talus ridge ½ mile east of North Twin Lake. Cutthroat trout in Fish Lake are sustained completely through natural reproduction. This lake receives quite a few visitors, and fishing pressure is generally heavy. Litter and mosquitoes are a nuisance.
          └─ No stocking records
 
-DF-12    | Finger Kibah              | 4.7ac    | 9ft    | ?ft elev   | Moderate | 
+GR-42    | Goose #1                  | 3.8ac    | 13ft   | 10240ft elev | ?        | 
+         DWR: This small, oblong irrigation reservoir is surrounded by rock ridges, marshes and deadfall. Elevation 10,240 feet, 3.8 acres (maximum), 9 to 13 feet maximum depth. Access is ¼ mile north of Ashley Twins Reservoir via a good Forest Service trail to Goose #2. Follow its outlet 125 yards east to Goose #3, then turn south for 20 yards to the lake. Horse access is generally slow through the marshy terrain. No horsefeed, campsites or spring water exist. This lake has only a few trout and receives little angling or camping pressure.
          └─ No stocking records
 
-GR-57    | Fish                      | 17.5ac   | 40ft   | ?ft elev   | High     | 
+GR-43    | Goose #2                  | 19.4ac   | 15ft   | 10252ft elev | Low      | 
+         DWR: This lake has an earthen dam on the east end. Elevation 10,252 feet, 19.4 acres (maximum), 9-15 feet maximum depth. Access is ½ mile north of Ashley Twin Reservoir via a good Forest Service trail. Horse access is good. Only a few campsites and limited horsefeed exist on the west end. No spring water is available. A few cutthroat trout inhabit the lake. Little camping and fishing pressure occur because of the mucky shoreline caused by drawdown. An experimental cutthroat stocking program was initiated in 1980 and will need to be evaluated.
+         └─ 2017-07-09 | Brookies        |   1953 fish | 2.53"  | UINTAH
+         └─ 2012-07-09 | Brookies        |   1931 fish | 2.3"   | UINTAH
+         └─ 2007-07-16 | Brookies        |   1945 fish | 2.6"   | UINTAH
+
+GR-40    | Hacking                   | 7.4ac    | 15ft   | 10625ft elev | ?        | 
+         DWR: This natural lake sits at the base of a rockslide adjacent to the east side of Leidy Peak. Elevation 10,625 feet, 7.4 acres, 15 feet maximum depth. From the Trout Creek Guard Station on the Red Cloud Loop Road, drive west 7¼ miles to the lake. Limited spring water and camping sites are available; there is no horsefeed. The lake contains brook and rainbow trout. Fishing pressure is generally heavy on weekends because of vehicle access. Please take a little extra litter with you when you leave.
+         └─ 2025-06-19 | Tigers          |    150 fish | 3.58"  | UINTAH
+         └─ 2025-06-19 | Rainbows        |    250 fish | 9.67"  | UINTAH
+         └─ 2024-09-23 | Cutthroats      |    248 fish | 1.48"  | UINTAH
+         └─ 2024-07-06 | Tigers          |    251 fish | 3.62"  | UINTAH
+         └─ 2024-07-06 | Rainbows        |    251 fish | 10.26" | UINTAH
+         └─ 2023-07-11 | Rainbows        |    250 fish | 12.04" | UINTAH
+         └─ 2023-07-11 | Tigers          |    263 fish | 2.7"   | UINTAH
+         └─ 2022-09-23 | Cutthroats      |    989 fish | 1.91"  | UINTAH
+         └─ 2021-07-07 | Tigers          |    497 fish | 3.46"  | UINTAH
+         └─ 2021-06-18 | Rainbows        |    496 fish | 9.47"  | UINTAH
+         └─ 2020-07-06 | Tigers          |    496 fish | 3.2"   | UINTAH
+         └─ 2019-09-23 | Cutthroats      |   1011 fish | 1.7"   | UINTAH
+         └─ 2019-07-11 | Tigers          |    500 fish | 2.65"  | UINTAH
+         └─ 2018-07-10 | Tigers          |    502 fish | 2.35"  | UINTAH
+         └─ 2016-09-20 | Cutthroats      |    999 fish | 1.47"  | UINTAH
+         └─ 2016-06-30 | Rainbows        |    292 fish | 8.41"  | UINTAH
+         └─ 2015-07-03 | Rainbows        |    290 fish | 9.72"  | UINTAH
+         └─ 2014-06-30 | Rainbows        |    288 fish | 9.41"  | UINTAH
+         └─ 2013-07-09 | Rainbows        |    290 fish | 10.28" | UINTAH
+         └─ 2012-07-12 | Rainbows        |    312 fish | 10.77" | UINTAH
+         └─ 2011-07-21 | Rainbows        |    290 fish | 10.28" | UINTAH
+         └─ 2010-09-30 | Cutthroats      |   1018 fish | 1.71"  | UINTAH
+         └─ 2010-06-30 | Rainbows        |    350 fish | 9.84"  | UINTAH
+         └─ 2009-06-29 | Rainbows        |    351 fish | 9.59"  | UINTAH
+         └─ 2008-09-24 | Cutthroats      |   1002 fish | 1.42"  | UINTAH
+         └─ 2008-06-25 | Rainbows        |    350 fish | 10.05" | UINTAH
+         └─ 2007-06-18 | Rainbows        |    347 fish | 10.86" | UINTAH
+         └─ 2006-07-19 | Rainbows        |    348 fish | 10.77" | UINTAH
+         └─ 2006-07-12 | Brookies        |    998 fish | 2.88"  | UINTAH
+         └─ 2006-06-23 | Rainbows        |    255 fish | 9.21"  | UINTAH
+         └─ 2006-06-23 | Tigers          |    503 fish | 3.49"  | UINTAH
+         └─ 2005-07-21 | Rainbows        |    348 fish | 9.9"   | UINTAH
+         └─ 2004-07-21 | Rainbows        |    222 fish | 8.62"  | UINTAH
+         └─ 2004-07-07 | Brookies        |    994 fish | 2.46"  | UINTAH
+         └─ 2004-07-01 | Rainbows        |    225 fish | 9.81"  | UINTAH
+         └─ 2003-07-22 | Rainbows        |    135 fish | 8.14"  | UINTAH
+         └─ 2003-07-22 | Rainbows        |    103 fish | 10.03" | UINTAH
+         └─ 2003-06-30 | Rainbows        |    224 fish | 9.92"  | UINTAH
+         └─ 2002-06-27 | Brookies        |   1001 fish | 2.34"  | UINTAH
+         └─ 2002-06-24 | Rainbows        |    502 fish | 9.58"  | UINTAH
+
+GR-46    | Hooper                    | 4.5ac    | 4ft    | 10305ft elev | Moderate | 
+         DWR: This shallow lake sits in an open, wet meadow and has a long, narrow inlet entering on the south end. Elevation 10,305 feet, 4.5 acres, 4 feet maximum depth. Access is 1¼ miles northwest from the Ashley Twins Reservoir via a well-marked Forest Service trail. Horse access is good. Some camping is available on the east shore and springs flow into the lake from the south. Plenty of horsefeed surrounds the lake. An abundant population of pan-size cutthroat trout inhabit Hooper. Horseflies are a real nuisance during midsummer. This accessible lake is a must for fly fishermen, who have only a day to spend in the high country but would like a nice creel of trout.
          └─ No stocking records
 
-GR-42    | Goose #1                  | ?ac      | ?ft    | ?ft elev   | ?        | 
-         └─ No stocking records
+DF-16    | Island Kibah              | 8.0ac    | 14ft   | 10540ft elev | Moderate | 
+         DWR: This natural lake is surrounded by rocky ridges covered with conifers. Elevation 10,540 feet, 8 acres, 14 feet maximum depth. It has a small, rocky island in the shallow south portion of the lake. Follow the west inlet of DF-11 northwest about 300 yards over rough, boulder terrain to DF-16. There is only one marginal campsite on the west end. DF-16 contains brook trout. Fishing pressure is moderate and generally limited to day hikers.
+         └─ 2025-06-30 | Brookies        |    799 fish | 3.4"   | UINTAH
+         └─ 2021-07-01 | Brookies        |    800 fish | 3.32"  | UINTAH
+         └─ 2017-07-09 | Brookies        |    822 fish | 2.53"  | UINTAH
+         └─ 2013-07-03 | Brookies        |    806 fish | 2.61"  | UINTAH
+         └─ 2009-07-16 | Brookies        |    800 fish | 3.06"  | UINTAH
+         └─ 2005-07-15 | Brookies        |    804 fish | 2.65"  | UINTAH
 
-GR-43    | Goose #2                  | 19.4ac   | 15ft   | ?ft elev   | Low      | 
-         └─ No stocking records
-
-GR-40    | Hacking                   | ?ac      | ?ft    | ?ft elev   | ?        | 
-         └─ No stocking records
-
-GR-46    | Hooper                    | 4.5ac    | 4ft    | ?ft elev   | Moderate | 
-         └─ No stocking records
-
-DF-16    | Island Kibah              | 8.0ac    | 14ft   | ?ft elev   | Moderate | 
-         └─ No stocking records
-
-GR-34    | Lakeshore                 | 11.1ac   | 18ft   | ?ft elev   | Moderate | 
-         └─ No stocking records
+GR-34    | Lakeshore                 | 11.1ac   | 18ft   | 10792ft elev | Moderate | 
+         DWR: This picturesque lake is located in a meadow near the upper end of Lakeshore Basin, surrounded by rolling ridges and scattered timber. Elevation 10,792 feet, 11.1 acres, 18 feet maximum depth. Access is via a well-marked Forest Service trail 4¼ miles from Ashley Twins Reservoir or southwest via a Forest Service trail 5 miles from the trailhead at Hacking Lake. Horse access is easy; and camping, horsefeed and springs are abundant around the lake. Sheep grazing is quite heavy in the surrounding watershed. Slow-growing brook and cutthroat trout inhabit the lake. Fishing pressure is moderate.
+         └─ 2022-07-06 | Tiger muskie    |    150 fish | 3.39"  | UINTAH
+         └─ 2019-07-10 | Tiger muskie    |    162 fish | 7.27"  | UINTAH
 
 GR-19    | Lamb                      | 6.0ac    | 10ft   | 10540ft elev | Low      | 
          DWR: Lamb Lake is located at the bottom of a small brushy meadow in the western lobe of Lamb Lakes Basin. Abutting a steep rock slide, this relatively murky lake is 6.0 acres, 10,540 feet in elevation with a maximum depth of 10 feet. There is no trail to the lake. Follow access directions to Bummer Lake. Lamb Lake lies to the west 0.9 miles across downed timber and rocks. The lake is surrounded by rocky timber but generally has an open shoreline. Horse feed and campsites are scarce due to the rough terrain; however, spring water is abundant. This lake has marginal fish habitat and may be fishless. Fishing pressure is light.
+         └─ 2023-09-19 | Cutthroats      |    497 fish | 1.73"  | DAGGETT
+         └─ 2017-07-11 | Tigers          |    593 fish | 2.63"  | DAGGETT
+         └─ 2013-07-08 | Tigers          |    603 fish | 3.08"  | DAGGETT
+         └─ 2002-07-30 | Grayling        |    599 fish | 0.77"  | DAGGETT
+
+GR-48    | Little Blue               | 3.2ac    | 6ft    | 11215ft elev | Low      | 
+         DWR: This natural cirque lake sits in windswept tundra above timberline in the far northwest corner of Lakeshore Basin. Elevation 11,215 feet, 3.2 acres, 6 feet maximum depth. Follow a well-marked Forest Service trail 5¼ miles to the end of Lakeshore Basin from Ashley Twins Reservoir. Horse access is easy over this grassy, rolling terrain. There are no campsites and horsefeed is limited; however, good springs exist around the lake. Better camping and abundant horsefeed are available ¼ mile to the southeast. This lake was fishless at the time of survey (1979) and is being stocked experimentally to assess its potential. Angling and camping pressure are very light.
+         └─ 2022-07-06 | Brookies        |    598 fish | 3.62"  | UINTAH
+         └─ 2017-07-09 | Brookies        |    620 fish | 2.53"  | UINTAH
+         └─ 2015-07-06 | Brookies        |    606 fish | 2.61"  | UINTAH
+         └─ 2007-07-16 | Brookies        |    601 fish | 2.6"   | UINTAH
+
+DF-17    | Little Elk                | 7.4ac    | 10ft   | 10550ft elev | ?        | 
+         DWR: This tadpole-shaped lake sits in a slight depression surrounded by conifers. Elevation 10,550 feet, 7.4 acres, 10 feet maximum depth. Follow the inlet stream to Paradise Park Reservoir ¼ mile to a small meadow; turn north and go 1 mile up a rugged, timbered mountain. One good campsite exists in a small meadow on the north shore. Horse access is very difficult, and there is no feed. Annual winterkill precludes sustaining a trout fishery. Camping pressure is light and generally limited to day use.
+         └─ 2020-09-21 | Grayling        |    504 fish | 2.81"  | UINTAH
+         └─ 2017-09-20 | Grayling        |    500 fish | 2.79"  | UINTAH
+         └─ 2014-08-29 | Grayling        |    480 fish | 2.32"  | UINTAH
+         └─ 2013-07-08 | Tigers          |   1998 fish | 3.08"  | UINTAH
+         └─ 2010-09-14 | Grayling        |    488 fish | 2.02"  | UINTAH
+         └─ 2006-08-02 | Grayling        |    502 fish | 1.66"  | UINTAH
+         └─ 2002-07-30 | Grayling        |    507 fish | 0.77"  | UINTAH
+
+GR-39    | Marsh                     | 12.6ac   | 21ft   | 10820ft elev | Moderate | 
+         DWR: This cirque lake is surrounded on three sides by steep, talus slopes. Elevation 10,820 feet, 12.6 acres, 21 feet maximum depth. Head 1 mile from Ashley Twins Reservoir in a westward direction into the cirque basin on the northwest side of Marsh Peak. There is no trail over this steep, timbered terrain and horses are not recommended. There is some spring water, but no campsites or horsefeed. Horse pasture and camping are available around Ashley Twins Reservoir. Brook trout inhabit this lake. Angling pressure is considered moderate.
+         └─ 2019-07-11 | Brookies        |    975 fish | 2.68"  | UINTAH
+         └─ 2014-09-24 | Goldens         |    600 fish | 1.53"  | UINTAH
+         └─ 2013-06-24 | Rainbows        |   1581 fish | 10.28" | UINTAH
+         └─ 2013-06-20 | Rainbows        |   1840 fish | 10.28" | UINTAH
+         └─ 2010-07-15 | Brookies        |   1001 fish | 2.89"  | UINTAH
+         └─ 2006-07-17 | Brookies        |   1260 fish | 2.92"  | UINTAH
+         └─ 2004-07-07 | Brookies        |   1255 fish | 2.46"  | UINTAH
+
+DF-2     | Moap                      | 2.7ac    | 5ft    | 10740ft elev | ?        | 
+         DWR: Moap is a natural lake sitting at the base of a steep talus slope. Elevation 10,740 feet, 2.7 acres, 5 feet maximum depth. Follow jeep road into Blanchett Park 3 miles north of Paradise Park Reservoir. Go north ½ mile on the Forest Service trail past Lonesome Park to a large, wet meadow; turn due west through the timber ½ mile into the small cirque basin. Horses can be taken to Moap. Some camping is available northeast of the lake, but there is no horsefeed. Moap contains no fish. Hikers seeking solitude and photographers might enjoy going to this beautiful little lake.
          └─ No stocking records
 
-GR-48    | Little Blue               | 3.2ac    | 6ft    | ?ft elev   | Low      | 
-         └─ No stocking records
-
-DF-17    | Little Elk                | ?ac      | ?ft    | ?ft elev   | ?        | 
-         └─ No stocking records
-
-GR-39    | Marsh                     | 12.6ac   | 21ft   | ?ft elev   | Moderate | 
-         └─ No stocking records
-
-DF-2     | Moap                      | ?ac      | ?ft    | ?ft elev   | ?        | 
-         └─ No stocking records
-
-GR-47    | Mud                       | ?ac      | ?ft    | ?ft elev   | ?        | 
-         └─ No stocking records
+GR-47    | Mud                       | 4.2ac    | 15ft   | 10582ft elev | ?        | 
+         DWR: This pretty, irregular-shaped lake has a small riprap dam on the north and sits at the base of a steep, talus ridge that extends eastward from Marsh Peak. Elevation 10,582 feet, 4.2 acres, 11 to 15 feet maximum depth. A small peninsula extends into the lake from the south shore. There is no trail, but access is ½ mile south up a thick timbered, rocky ridge from Ashley Twins Reservoir. Horse access is difficult over this rugged terrain. This lake has marginal camping, little spring water, and no horsefeed. Mud Lake was experimentally stocked with cutthroat trout beginning in 1981. Angling and camping pressure are light.
+         └─ 2013-10-07 | Grayling        |    420 fish | 3.22"  | UINTAH
+         └─ 2010-09-14 | Grayling        |    641 fish | 2.02"  | UINTAH
+         └─ 2009-08-03 | Grayling        |    638 fish | 1.4"   | UINTAH
+         └─ 2006-08-02 | Grayling        |    422 fish | 1.66"  | UINTAH
+         └─ 2005-07-18 | Grayling        |    990 fish | 0.76"  | UINTAH
 
 GR-23    | Mutton                    | 3.8ac    | 10ft   | 10570ft elev | Low      | 
          DWR: This natural lake abuts a rocky slope in the southern corner of Lamb Lakes Basin. There is no trail to the lake. Easiest access is to follow the inlet of Bummer Lake 0.6 miles south to Mutton. Total distance from Browne Lake is 7.0 miles. Mutton Lake is 3.8 acres, 10,570 feet in elevation with a maximum depth of 10 feet. Spring water is available at the lake, and a few campsites can be found around the inlet area. Horse feed is not abundant, and horse access to the lake, or anywhere in the basin, is difficult due to the rough terrain. Fishing pressure is very light for stocked brook trout.
+         └─ 2025-06-30 | Cutthroats      |    399 fish | 2.69"  | DAGGETT
+         └─ 2023-09-19 | Cutthroats      |    387 fish | 1.73"  | DAGGETT
+         └─ 2017-07-09 | Brookies        |    915 fish | 2.53"  | DAGGETT
+         └─ 2012-07-09 | Brookies        |    890 fish | 2.3"   | DAGGETT
+         └─ 2007-07-16 | Brookies        |    901 fish | 2.6"   | DAGGETT
+         └─ 2002-06-28 | Brookies        |    903 fish | 2.34"  | DAGGETT
+
+DF-15    | North Kibah               | 4.5ac    | 12ft   | 10750ft elev | ?        | 
+         DWR: This cirque lake is located in the far northwest corner of the Kibah Basin. Elevation 10,750 feet, 4.5 acres, 12 feet maximum depth. It sits ¼ mile northwest of DF-11. No trails or campsites are available around the lake. This lake does not support fish because of low water levels in the fall which cause winterkill.
          └─ No stocking records
 
-DF-15    | North Kibah               | ?ac      | ?ft    | ?ft elev   | ?        | 
-         └─ No stocking records
+GR-50    | North Twin (Dry Fork)     | 10.3ac   | 24ft   | 10305ft elev | High     | 
+         DWR: This natural lake is surrounded by large, open meadows and scattered timber. Elevation 10,305 feet, 10.3 acres, 24 feet maximum depth. Go northeast 6 miles on a Forest Service trail from Paradise Park Campground. The second and third miles crisscross logging roads, and the rock trail markers in this area are quite hard to follow until you cross Dry Fork Creek. Horse access is quite easy. Campsites, horse pasture and spring water are present. Abundant brook and cutthroat trout inhabit the lake. Angling pressure is quite heavy throughout the summer, yet fishing remains good for pan-size trout.
+         └─ 2011-08-08 | Tigers          |    160 fish | 10.86" | UINTAH
 
-GR-50    | North Twin (Dry Fork)     | ?ac      | ?ft    | ?ft elev   | High     | 
-         └─ No stocking records
-
-DF-18    | Paul                      | 11.1ac   | 17ft   | ?ft elev   | Low      | 
-         └─ No stocking records
+DF-18    | Paul                      | 11.1ac   | 17ft   | 10630ft elev | Low      |  - From Dan Potts top 5 lakes<i>: “</i>Reached from Roosevelt, this is a relatively easy one-mile hike from a side road to the right of the Paradise Park Road about 1.75 miles past Paradise Park Reservoir. Park about 0.75 miles up the side road where it starts to curve to the left, and hike north northeast one-half mile, climbing about 100 feet to Little Elk Lake. Paul is only about one quarter mile to the north of Little Elk. Brook trout grow fat here.”<br>
+         DWR: This natural lake is located on a flat bench surrounded by rocky, timbered ridges 2¼ miles northwest of Paradise Park Reservoir. Elevation 10,630 feet, 11.1 acres, 17 feet maximum depth. Access is by a trail that starts on the north shore of Little Elk ¼ mile south of Paul. Access is generally rough and trails poorly marked; horse access is very difficult. Camping is available on the west shore, but there is no horsefeed. Stocked brook trout grow well, feeding on freshwater shrimp. Angling pressure is light but appears to be on the increase.
+         └─ 2022-07-06 | Brookies        |   1098 fish | 3.62"  | UINTAH
+         └─ 2018-07-10 | Brookies        |   1103 fish | 2.88"  | UINTAH
+         └─ 2015-07-06 | Brookies        |   1100 fish | 2.61"  | UINTAH
+         └─ 2010-07-15 | Brookies        |   1104 fish | 2.89"  | UINTAH
+         └─ 2006-07-12 | Brookies        |   1103 fish | 2.88"  | UINTAH
+         └─ 2004-07-07 | Brookies        |   1092 fish | 2.46"  | UINTAH
 
 GR-16    | Penguin                   | 2.1ac    | 20ft   | 10665ft elev | Moderate | 
          DWR: This small, boulder-strewn pond is located just a few yards west of Upper Anson Lake in Weyman Lakes Basin. Penguin Lake is surrounded by talus slopes and rocky moraines. The lake is 2.1 acres, 10,665 feet in elevation with a maximum depth of 20 feet. Total distances from Spirit Lake and the Beaver Creek Trail head are 7.1 and 9.0 miles, respectively. Campsites, spring water and horse feed are available in the vicinity of Anson lakes. Penguin supports a naturally reproducing population of pan-sized brook trout. Fishing pressure is light to moderate.
-         └─ No stocking records
+         └─ 2016-07-14 | Tigers          |    205 fish | 3.62"  | DAGGETT
+         └─ 2011-08-08 | Tigers          |    100 fish | 10.86" | DAGGETT
 
 GR-24    | Ram                       | 7.0ac    | 27ft   | 10380ft elev | Low      | 
          DWR: Ram Lake lies at the base of a rock slide approximately 0.6 miles west-southwest of Bummer Lake in Lamb Lakes Basin. See Bummer Lake for more detailed access instructions. Total distance from Browne Lake is 6.9 miles. There is no maintained trail into the basin. Ram Lake is 7.0 acres, 10,380 feet in elevation with a maximum depth of 27 feet. The rough, rocky terrain in the immediate area affords few good campsites. Spring water is found in good supply along the eastern margin of the talus while horse feed is available in wet meadows to the west. This lake may contain a small population of cutthroat trout. Fishing pressure is light.
-         └─ No stocking records
+         └─ 2025-06-30 | Cutthroats      |    251 fish | 2.69"  | DAGGETT
+         └─ 2024-07-15 | Cutthroats      |    496 fish | 2.26"  | DAGGETT
+         └─ 2023-09-19 | Cutthroats      |    497 fish | 1.73"  | DAGGETT
+         └─ 2017-07-11 | Tigers          |    718 fish | 2.63"  | DAGGETT
+         └─ 2016-07-14 | Tigers          |    700 fish | 3.62"  | DAGGETT
+         └─ 2009-09-16 | Cutthroats      |    686 fish | 1.43"  | DAGGETT
+         └─ 2006-08-02 | Grayling        |    695 fish | 1.66"  | DAGGETT
+         └─ 2005-07-18 | Grayling        |    990 fish | 0.76"  | DAGGETT
 
-GR-51    | Red Belly                 | 6.3ac    | 8ft    | ?ft elev   | Moderate | 
-         └─ No stocking records
+GR-51    | Red Belly                 | 6.3ac    | 8ft    | 10540ft elev | Moderate | 
+         DWR: This natural lake is surrounded by seeps on the north shore and conifers on the south. Elevation 10,540 feet, 6.3 acres, 8 feet maximum depth. Follow the north inlet stream to North Twin Lake ½ mile, then turn north and follow the stream tributary ½ mile to the lake at the base of a rock ledge. Horse access is easy and there is camping and horsefeed near the lake. A few healthy cutthroat inhabit the lake. Fishing pressure is moderate, but there is considerable day use from people camped at North and South Twin Lakes (Dry Fork).
+         └─ 2022-09-23 | Cutthroats      |    618 fish | 1.91"  | UINTAH
+         └─ 2019-09-23 | Cutthroats      |    632 fish | 1.7"   | UINTAH
+         └─ 2016-09-20 | Cutthroats      |    636 fish | 1.47"  | UINTAH
+         └─ 2013-10-07 | Cutthroats      |    661 fish | 1.45"  | UINTAH
+         └─ 2009-09-16 | Cutthroats      |    588 fish | 1.43"  | UINTAH
 
-GR-45    | Sandy                     | 5.6ac    | 10ft   | ?ft elev   | Low      | 
-         └─ No stocking records
+GR-45    | Sandy                     | 5.6ac    | 10ft   | 10500ft elev | Low      | 
+         DWR: This natural lake sits in thick conifers. Elevation 10,500 feet, 5.6 acres, 10 feet maximum depth. Go northwest 2/3 of a mile from Ashley Twins Reservoir via the well-marked trail to the inlet of Goose Lake #2; turn due west and follow the trailless inlet ½ mile through thick timber to the lake. Horse access is difficult the last ½ mile. Some campsites are available on the west end, but there is no spring water or horsefeed. Slow-growing cutthroat inhabit the lake. This lake receives little fishing and camping pressure.
+         └─ 2023-09-19 | Cutthroats      |    748 fish | 1.45"  | UINTAH
+         └─ 2019-09-23 | Cutthroats      |    569 fish | 1.7"   | UINTAH
+         └─ 2014-09-15 | Cutthroats      |    570 fish | 1.52"  | UINTAH
+         └─ 2010-09-30 | Cutthroats      |    750 fish | 1.71"  | UINTAH
 
 GR-15    | Sesame                    | 6.0ac    | 7ft    | 10780ft elev | Low      | 
          DWR: Surrounded by boulder fields and talus slopes, Sesame Lake lies in a shallow depression 0.4 miles west of Upper Anson Lake in Weyman Lakes Basin. The most direct access is due west from Penguin Lake up the rock slide and across some of the roughest boulder fields in the Uintas. Use caution when traversing the rocks. Even 5 ton boulders can sometimes shift when stepped on. The lake is located 7.4 and 9.3 miles, respectively from Spirit Lake and the Beaver Creek Trail head. Sesame Lake is 6.0 acres, 10,780 feet in elevation with a maximum depth of 7 feet. The nearest campsites, spring water and horse feed are found at Anson Lakes. Sesame Lake is occasionally stocked with brook trout. Fishing pressure is very light. Fishing can be spotty as the lake may experience partial winterkill during particularly harsh winters.
+         └─ 2017-07-09 | Brookies        |    620 fish | 2.53"  | DAGGETT
+         └─ 2015-07-06 | Brookies        |    606 fish | 2.61"  | DAGGETT
+         └─ 2007-07-16 | Brookies        |    601 fish | 2.6"   | DAGGETT
+
+GR-59    | Shaw                      | 2.8ac    | 5ft    | 10700ft elev | Low      | 
+         DWR: This natural lake is located in a large, wet meadow. Elevation 10,700 feet, 2.8 acres, 5 feet maximum depth. A lily pond sits 100 yards due west of Shaw in the same meadow (see North Twin Lake access). From North Twin Lake, follow the east inlet stream along a vague Forest Service trail toward Marsh Peak for 1¼ miles to the second large meadow. Campsites, water and horsefeed are available around the lake. Horse access is good. A very small population of little cutthroat trout inhabit the lake. Though ideal for fly-fishing, this lake receives little fishing pressure.
          └─ No stocking records
 
-GR-59    | Shaw                      | 2.8ac    | 5ft    | ?ft elev   | Low      | 
-         └─ No stocking records
-
-GR-49    | South Twin (Dry Fork)     | 6.2ac    | 8ft    | ?ft elev   | High     | 
+GR-49    | South Twin (Dry Fork)     | 6.2ac    | 8ft    | 10300ft elev | High     | 
+         DWR: This natural lake is surrounded by marshy vegetation, wet meadows and scattered timber. Elevation 10,300 feet, 6.2 acres, 8 feet maximum depth. Follow the Forest Service trail from Paradise Park 6 miles northeast to the lake (South Twin is 150 yards south of North Twin). Horse access is easy. Horsefeed and campsites are abundant around the lake, but spring water is available only at North Twin. The fishery is composed of pan-size brook and cutthroat trout. Angling and camping pressure is heavy. Litter is a problem at this lake; please help haul it out!
          └─ No stocking records
 
 GR-5     | Summit                    | 9.9ac    | 7ft    | 10460ft elev | Low      | 
@@ -152,11 +353,19 @@ GR-5     | Summit                    | 9.9ac    | 7ft    | 10460ft elev | Low   
          └─ 2010-09-14 | Grayling        |   1007 fish | 2.02"  | SUMMIT
          └─ 2006-08-02 | Grayling        |    598 fish | 1.66"  | SUMMIT
 
-DF-14    | West Kibah                | 7.8ac    | 15ft   | ?ft elev   | Moderate | 
-         └─ No stocking records
+DF-14    | West Kibah                | 7.8ac    | 15ft   | 10580ft elev | Moderate | 
+         DWR: This lake is located at the base of a talus slope in the far southwest corner of Kibah Basin. Elevation 10,580 feet, 7.8 acres, 15 feet maximum depth. Go ½ mile in a southwest direction from DF-11 over rough, timbered terrain (past DF-12). One campsite exists in a hollow on the southeast end of the lake. The fishery is composed of stocked brook trout. Fishing pressure is moderate and generally limited to day hikers.
+         └─ 2025-06-30 | Brookies        |    783 fish | 3.4"   | UINTAH
+         └─ 2021-07-01 | Brookies        |    777 fish | 3.32"  | UINTAH
+         └─ 2019-07-11 | Brookies        |   2002 fish | 2.68"  | UINTAH
+         └─ 2017-07-09 | Brookies        |    791 fish | 2.53"  | UINTAH
+         └─ 2013-07-03 | Brookies        |    790 fish | 2.61"  | UINTAH
+         └─ 2009-07-16 | Brookies        |    783 fish | 3.06"  | UINTAH
+         └─ 2005-07-15 | Brookies        |    777 fish | 2.65"  | UINTAH
 
-GR-36    | Wilde                     | ?ac      | ?ft    | ?ft elev   | ?        | 
-         └─ No stocking records
+GR-36    | Wilde                     | 4.3ac    | 13ft   | 10950ft elev | ?        | 
+         DWR: This natural lake sits just below timberline in a small basin at the southwest corner of Leidy Peak. Elevation 10,950 feet, 4.3 acres, 13 feet maximum depth. It is the largest lake in a series of three cirque lakes. Access is via a trail from Ashley Twins Reservoir four miles into Lakeshore Basin. Turn north at a small meadow pond (GR-76) and go ½ mile past another Lake (GR-77) climbing a steep, talus ledge into Wilde Lake Basin. Horse access is impossible the last ½ mile. Camping sites, springs and horsefeed are available ½ mile south of Wilde in Lakeshore Basin. The lake contains no fish, but the area is scenic for those seeking solitude.
+         └─ 2021-09-21 | Grayling        |    323 fish | 2.65"  | UINTAH
 
 
 --- Bear River Drainage ---
@@ -331,6 +540,7 @@ BR-10    | Beaver                    | 13.2ac   | 32ft   | 9420ft elev | Moderat
          └─ 2025-07-01 | Rainbows        |     98 fish | 10.14" | SUMMIT
          └─ 2025-07-01 | Tigers          |    305 fish | 11.08" | SUMMIT
          └─ 2025-07-01 | Rainbows        |    996 fish | 10.14" | SUMMIT
+         └─ 2025-06-25 | Cutthroats      |    302 fish | 7.23"  | DAGGETT
          └─ 2025-06-24 | Cutthroats      |  14165 fish | 8.56"  | SUMMIT
          └─ 2025-06-23 | Rainbows        |    110 fish | 10.44" | SUMMIT
          └─ 2024-12-13 | Cutthroats      |    571 fish | 10.27" | SUMMIT
@@ -367,6 +577,7 @@ BR-10    | Beaver                    | 13.2ac   | 32ft   | 9420ft elev | Moderat
          └─ 2020-07-06 | Rainbows        |    202 fish | 9.21"  | SUMMIT
          └─ 2020-06-17 | Rainbows        |    200 fish | 10.0"  | SUMMIT
          └─ 2020-06-10 | Rainbows        |   1000 fish | 10.0"  | SUMMIT
+         └─ 2019-08-19 | Tigers          |    510 fish | 11.68" | DAGGETT
          └─ 2019-08-05 | Rainbows        |    200 fish | 10.52" | SUMMIT
          └─ 2019-07-29 | Rainbows        |    199 fish | 9.63"  | SUMMIT
          └─ 2019-07-15 | Rainbows        |    200 fish | 9.87"  | SUMMIT
@@ -512,7 +723,8 @@ BR-36    | Hayden Lake               | 4.4ac    | 5ft    | 10420ft elev | Modera
          └─ 2004-09-28 | Cutthroats      |    790 fish | 2.27"  | SUMMIT
          └─ 2003-10-01 | Cutthroats      |    800 fish | 3.26"  | SUMMIT
 
-BR-29    | Hell Hole                 | 8.5ac    | 9ft    | 10340ft elev | ?        | 
+BR-29    | Hell Hole                 | 8.5ac    | 9ft    | 10340ft elev | ?        | [CAUGHT] - Can be accessed from Christmas Meadows, or off Mirror Lake Highway. Consensus seems to be take the latter.  From https://www.roadtripryan.com/go/t/utah/northern-utah/hell-hole-lake :<br><br>From Bear River Service, go south on the Mirror Lake Highway about 12 miles to milepost 36.4. The Gold Hill road takes off on the west side here. You want the dirt road slightly north of this taking off on the east. The road is generally passable by all vehicles if carefully driven. Follow it a few hundred yards to where a parking area and closure sign are. This is the shortcut trailhead.<br>
+From the road closure sign, follow an old jeep trail that is becoming very overgrown. It crosses Hayden Fork in just a couple of minutes. The old jeep road/trail becomes more faint, but follow it another few minutes to where it crosses a marsh. After crossing the marsh, the trail heads a bit northeast and enters the trees in a couple of minutes. From here it becomes much more defined and easy to follow. About 15-20 minutes from the trailhead you will intersect the road from the Standard Route. Go right here, following the road less than an hour to a bridge. The trail to Hell Hole Lake branches off here on the right (south) on the west side of the bridge.<i>Note: Just north of the bridge, on the west side of the stream, are several old cabin ruins. They are in very dilapidated shape, with only a few logs left standing, but still interesting to visit.</i>From the bridge, the trail leaves the road, goes south and is easy to follow. 10 minutes from the bridge you may notice an old bridge/log flume on the left across the stream. This is a remnant of the early logging days in the area.  It is a bit of a grunt as the trail climb to Hell Hole Lake, but the scenery gets better and better. Most groups will take a couple of hours from the bridge to the lake. There is good camping around the lake, but also anywhere up higher in the basin.<br>
          DWR: Hell Hole is a shallow lake with partly open shorelines situated centrally in the Hell Hole Basin near the head of the Main Fork Drainage. The lake is 8.5 acres, 10,340 feet in elevation with 9 feet maximum depth. The surrounding terrain is scenic and composed of large, boggy meadows and thick patches of timber. Access is 5 miles southeast of Highway U-150 on the Main Fork Stillwater Trail which begins as an unmarked jeep road across the highway from the Gold Hill turnoff. This trail, not well maintained, is difficult to follow at times. Campsites are excellent at Hell Hole with plenty of horse feed and running water. Several small springs are present as well. Hell Hole contains a good population of pan-sized cutthroat trout often overlooked by anglers. Fishermen are encouraged to bring plenty of mosquito repellent on trips to this basin.
          └─ No stocking records
 
@@ -529,7 +741,7 @@ BR-38    | Jewel                     | 2.4ac    | 13ft   | 10300ft elev | ?     
          └─ 2006-07-14 | Tigers          |    240 fish | 3.56"  | SUMMIT
          └─ 2002-07-30 | Cutthroats      |    478 fish | 1.41"  | SUMMIT
 
-BR-20    | Kermsuh                   | 12.4ac   | 14ft   | 10300ft elev | Low      | 
+BR-20    | Kermsuh                   | 12.4ac   | 14ft   | 10300ft elev | Low      |  - This guy shares his experience taking a “shortcut” up and over Hayden/Kettling. Sounds like not really a shortcut, but could be interesting to hike in via Stillwater, then hike out over that shortcut to a waiting shuttle. Probably no net time savings though.<i> </i>Kermsuh &quotshortcut&quot | Backcountry Post
          DWR: Kermsuh is a long, narrow lake situated in rocky timbered country in the isolated West Basin of the Stillwater Fork Drainage. It is 12.4 acres, 10,300 feet in elevation, with 14 feet maximum depth. Campsites are poor due to the rocky nature of the surrounding terrain, but running water is abundant. Horse feed can be located in a small meadow to the south. Access is 1¾ miles south of Christmas Meadows on the Stillwater Pack Trail to the junction with the Kermsuh Lake Trail and then 2¼ miles southwest up the steep grade into West Basin. The cutthroat trout population is sustained by natural reproduction. This lake provides a good opportunity for users seeking solitude.
          └─ No stocking records
 
@@ -728,7 +940,7 @@ BR-12    | Scow                      | 22.9ac   | 6ft    | 10100ft elev | Low   
          └─ 2003-07-02 | Brookies        |   1696 fish | 2.62"  | SUMMIT
          └─ 2002-06-24 | Brookies        |   1698 fish | 2.54"  | SUMMIT
 
-BR-31    | Seidner                   | 3.2ac    | 8ft    | 10460ft elev | Moderate | 
+BR-31    | Seidner                   | 3.2ac    | 8ft    | 10460ft elev | Moderate |  - This guy got there going up and over from Hell Hole: Hell Hole - Seidner Lake | Utah Wildlife Forum. Dan Potts puts this in his list of 5 must-visit lakes. “Park at the Christmas Meadows Trailhead out of Kamas. Although it is less than a five-mile hike, the last two miles gain 1,500 feet! The side drainage leading to the lake is easy to reach and spot on the right about one and a half miles up the Christmas Meadows Trail. This lake is where I set my record of landing 27 brook trout on consecutive casts, although they were all small. This is a lake for those who are fit and really want to get away from it all.” https://utahstories.com/2021/08/the-top-five-lakes-in-the-high-uinta-mountains-to-visit/<br>
          DWR: Seidner is a small spring-fed lake which abuts a talus slope at the head of an isolated basin in the Stillwater Fork Drainage. It is 4.2 acres, 10,460 feet in elevation, with 8 feet maximum depth. Access is 2¾ miles south of the Christmas Meadows Trailhead on the Stillwater Pack Trail to a minor side drainage, and then some 2 steep miles west following this drainage to the head of the basin. Direct access trails are not available. Access on horseback can be difficult. The lake is immediately west of a large meadow where campsites and horse feed can be found. Spring water is available from any one of several inlet sources. Seidner presently contains a large population of brook trout sustained by natural reproduction.
          └─ No stocking records
 
@@ -1298,6 +1510,9 @@ G-103    | Quarter Corner Lg103      | ?ac      | ?ft    | ?ft elev   | ?       
 
 
 --- Burnt Fork Drainage ---
+GR-129   | (No name)                 | ?ac      | ?ft    | ?ft elev   | ?        | 
+         └─ 2012-01-01 | Brookies        |    493 fish | ?      | Summit
+
 GR-137   | (No name)                 | ?ac      | ?ft    | ?ft elev   | ?        | 
          └─ No stocking records
 
@@ -3837,10 +4052,7 @@ G-99     | (No name)                 | ?ac      | ?ft    | ?ft elev   | ?       
          DWR: This lake does not sustain fish life. It is shown on the map as a landmark.
          └─ No stocking records
 
-GR-129   | (No name)                 | ?ac      | ?ft    | ?ft elev   | ?        | 
-         └─ 2012-01-01 | Brookies        |    493 fish | ?      | Summit
-
-G-38     | Alligator                 | 14.5ac   | 26ft   | 10033ft elev | High     | 
+G-38     | Alligator                 | 14.5ac   | 26ft   | 10033ft elev | High     |  - Report from Dave Webb way back in 2005: “<i>There's a nice meadow at the southern end of the lake and good fly fishing in the shallows in the mornings and evenings. Alligator has brook and cutthroat trout. The cutts are stocked. We caught only cutthroat, ranging up to 13 inches. I think there are bigger fish in the reservoir. We saw them cruising the shallows…Because thick trees grow right up to the water's edge, it was somewhat difficult to fish with a fly rod except in the meadow area. I tangled a lot of tippets in trees</i>.” (from https://redrockadventure.com/fish/utah-fishing-lakes-reservoirs/31-uinta-mountains/330-family-fishing-at-alligator-lake )
          DWR: Alligator is an elongated natural lake located in dense lodgepole forest at the lower end of the Henrys Fork Basin. The lake is 14.5 acres, 10,033 feet in elevation, with 26-foot maximum depth. Alligator experiences a minor water level fluctuation of 1-2 feet annually. The lake is situated 3/8 mile west of the Henrys Fork Trail on an unmarked side trail which begins some 2 1/4 miles southwest of the Henrys Fork Trailhead. Good campsites are available with a small amount of horse feed to the west. Spring water is not present and thick timber makes fly casting difficult. Due to the ease of access, Alligator is fished heavily. Remember to apply minimum impact camping techniques and carry out your refuse.
          └─ No stocking records
 
@@ -4226,13 +4438,15 @@ LF-4     | Porcupine                 | 11.4ac   | 20ft   | 10540ft elev | ?     
 
 X-79     | Stewart                   | 9.2ac    | 22ft   | 10530ft elev | Low      | 
          DWR: This round lake is surrounded by coniferous forest. It is 9.2 acres, 10,530 feet in elevation, with 22 feet maximum depth. Access is trailless through timber approximately 1/2 mile northwest of the Clements Lake dam. Several camping areas and spring water are available, but there is no horse pasture. Brook trout are stocked and angling pressure is light.
+         └─ 2022-06-30 | Chub            |    105 fish | 10.05" | UINTAH
          └─ 2021-09-22 | Cutthroats      |    942 fish | 1.9"   | DUCHESNE
          └─ 2017-09-25 | Cutthroats      |    953 fish | 1.62"  | DUCHESNE
          └─ 2013-10-07 | Cutthroats      |    944 fish | 1.45"  | DUCHESNE
          └─ 2008-09-24 | Cutthroats      |    952 fish | 1.42"  | DUCHESNE
+         └─ 2005-05-05 | Chub            |    546 fish | 13.14" | UINTAH
          └─ 2002-06-27 | Brookies        |    942 fish | 2.34"  | DUCHESNE
 
-LF-25    | Toquer                    | 11.1ac   | 32ft   | 10470ft elev | Low      | 
+LF-25    | Toquer                    | 11.1ac   | 32ft   | 10470ft elev | Low      |  - On Dan Potts top five list: “Accessed from Mountain Home, Toquer is relatively easy to access. Park at the upper end of Center Park at the Swasey Hole Trailhead. Access to the small Hell’s Canyon Trail leading to the lake is had by shortcutting across a meadow and dropping about 300 feet to the small trail which gains about 500 feet in two miles to the lake. It is easy to dead-reckon west to the trail. A good lake for kids.”<br>
          DWR: This lake is the headwater of Fish Creek, which flows directly into Moon Lake. It is 11.1 acres, 10,470 feet in elevation, with 32 feet maximum depth. Access is about 7 miles via the Fish Creek National Recreation Trail from Moon Lake, or 3 miles via the Hells Canyon Trail from the west end of the Center Park. Good camping, spring water and horse pasture exist near the lake. The lake contains both brook and cutthroat trout. Angling pressure is light.
          └─ 2024-09-23 | Cutthroats      |    444 fish | 1.48"  | DUCHESNE
 
@@ -5272,7 +5486,7 @@ A-39     | Shingle Creek East        | 7.0ac    | 44ft   | 9700ft elev | High   
          └─ 2008-07-09 | Tigers          |    396 fish | 2.75"  | SUMMIT
          └─ 2006-07-10 | Splake          |    401 fish | 3.74"  | SUMMIT
 
-P-62     | Shingle Creek Lower       | 4.0ac    | 14ft   | 9620ft elev | Moderate | 
+P-62     | Shingle Creek Lower       | 4.0ac    | 14ft   | 9620ft elev | Moderate |  - Don Potts cites this as one of 5 must-visit lakes. He means “east” when he says “hike west.” “Take the Upper Setting Road to its trailhead. Hike about three quarters of a mile to a narrow, lily-covered pond on the right, then hike west cross country down to Shingle Creek. Cross the creek and clamber up a steep wall to a shelf, climbing 300 feet in only a quarter mile. The rest is an easy hike of less than one-half-mile to the lake. You will find great fly fishing at its upper end, but this lake cannot handle a lot of fishing pressure. A good lake for those who are more adventuresome.” https://utahstories.com/2021/08/the-top-five-lakes-in-the-high-uinta-mountains-to-visit/<br>
          DWR: Lower Shingle Creek is a shallow natural lake located in an isolated basin in the Shingle Creek Drainage. It is 4 acres, 9,620 feet in elevation, with 14 feet maximum depth. The shoreline is timbered with a large, open meadow to the northeast. Trails do not exist and horse access is difficult. Proceed east of the Upper Setting Trailhead for 1¾ miles over steep terrain to the lake. Lower Shingle is also accessible via the Shingle Creek Trail from U-150. Follow the trail north for 4½ miles to a large meadow and then head east for ¼ mile. Campsites are available, but spring water is present only in the early season. Lower Shingle Creek contains brook trout, and angling pressure is moderate.
          └─ 2014-06-12 | Tigers          |    121 fish | 2.75"  | SUMMIT
 
@@ -7115,23 +7329,38 @@ GR-169   | (No name)                 | ?ac      | ?ft    | ?ft elev   | ?       
 
 GR-9     | Anson Lower               | 14.5ac   | 20ft   | 10575ft elev | Moderate | 
          DWR: Located at the end of the maintained trail into Weyman Lakes Basin, Lower Anson Lake is impossible to miss. Total distance from Spirit Lake and the Beaver Creek Trail head are 6.2 and 8.1 miles, respectively. The lake is 14.5 acres, 10,575 feet in elevation with a maximum depth of 20 feet. Good campsites are infrequent in rough, rocky terrain. The best spots are in the vicinity of the trail. Horse feed is spotty. If you plan an extended trip, it is probably a good idea to pasture horses in the meadows along the stream between Lower and Upper Anson lakes. There is no spring water at Lower Anson, but there is a large spring on the east side of the creek about 0.1 mile north of Upper Anson Lake. Lower Anson Lake has been stocked in the past with brook trout. Due to apparent success of natural reproduction, stocking of brook trout was discontinued. Fishing pressure is moderate to heavy on this fairly popular water. A few cutthroat trout are also available.
-         └─ No stocking records
+         └─ 2025-06-30 | Cutthroats      |    649 fish | 2.69"  | DAGGETT
 
 GR-10    | Anson Upper               | 7.7ac    | 58ft   | 10660ft elev | Moderate | 
          DWR: Upper Anson is a natural lake just 0.2 miles south of Lower Anson Lake in the Weyman Lakes Basin. A maintained Forest Service trail drops down from higher country to Lower Anson. From there a faint trail leads south along the east side of the creek to Upper Anson. Total distance from the Beaver Creek Trail head and Spirit Lake is 8.8 and 6.9 miles, respectively. Upper Anson Lake is 7.7 acres, 10,660 feet in elevation with a maximum depth of 58 feet. Horses can travel within 100 yards of the lake but no further due to rocky terrain. There are no good campsites at the lake itself, however spring water is available. Campsites, horse feed and additional spring water are found between Upper and Lower Anson lakes. Upper Anson Lake contains a population of brook trout which sustains itself through natural reproduction. Fishing pressure is moderate.
-         └─ No stocking records
+         └─ 2016-07-14 | Tigers          |    997 fish | 3.62"  | DAGGETT
+         └─ 2011-08-08 | Tigers          |    200 fish | 10.86" | DAGGETT
 
 GR-22    | Bummer                    | 1.9ac    | 6ft    | 10350ft elev | Low      | 
          DWR: This small, shallow lake is located on the east side of Lamb Lakes Basin approximately 6.5 miles from Browne Lake. There is no maintained trail for the last 1.5 miles. The most direct access to lakes in this basin is cross-country from the junction of Forest Service trails 018-I and 017 southwest up the bottom of the basin. The going is rough through rocky timber and across boulder fields. Horse access is impossible by this route and should not be attempted. Supposedly, horses can get into Lamb Lakes Basin via two little-used trails, one which drops from the ridge southeast of Bummer Lake, the other which drops from the ridge northwest of Ewe Lake. The existence of these trails was not verified during this project. Horse use in Lamb Lakes Basin would be restricted due to the rocky terrain. Bummer Lake is 1.9 acres, 10,350 feet in elevation with a maximum depth of 6 feet. Wading can be an effective way to fish this lake. Use extreme caution, however, because footing is quite treacherous. The lake is periodically stocked with brook trout. Good campsites are rare, and there is no spring water. A little horse feed is found near the inlet. Fishing pressure is light.
-         └─ No stocking records
+         └─ 2025-06-30 | Cutthroats      |    207 fish | 2.69"  | DAGGETT
+         └─ 2023-09-19 | Cutthroats      |    221 fish | 1.73"  | DAGGETT
+         └─ 2016-07-26 | Brookies        |    327 fish | 2.44"  | DAGGETT
+         └─ 2013-07-03 | Brookies        |    210 fish | 2.61"  | DAGGETT
+         └─ 2006-08-02 | Grayling        |    299 fish | 1.66"  | DAGGETT
+         └─ 2006-07-17 | Brookies        |    300 fish | 2.92"  | DAGGETT
+         └─ 2005-07-15 | Brookies        |    295 fish | 2.65"  | DAGGETT
 
 GR-17    | Candy                     | 5.5ac    | ?ft    | ?ft elev   | ?        | 
          DWR: Candy Lake is a rocky 5.5 acre pond lying in the northeast corner of Weyman Lakes Basin approximately 8.8 miles from the Beaver Creek Trail head. Follow the directions to Hidden Lake (GR-7). Candy lies 0.2 miles north through rocky timber. Horses can be taken as far as Lower Anson Lake. Candy Lake sits at an elevation of 10,290 feet and has a maximum depth of 29 feet. Campsites are rare in the immediate vicinity, but spring water is present. The lake does not overwinter fish due to poor inlet flows, and stocking has been discontinued indefinitely. The lake may be experimentally planted sometime in the future with Arctic grayling which may prove more tolerant of the harsh environment. Check with the Division of Wildlife Resources Office in Vernal for the current management of this lake.
-         └─ No stocking records
+         └─ 2025-06-30 | Cutthroats      |    207 fish | 2.69"  | DAGGETT
+         └─ 2024-10-01 | Cutthroats      |    558 fish | 3.83"  | DAGGETT
+         └─ 2016-07-14 | Tigers          |    825 fish | 3.62"  | DAGGETT
+         └─ 2007-07-30 | Grayling        |    824 fish | 1.5"   | DAGGETT
 
 GR-12    | Clear                     | 10.2ac   | 25ft   | 10780ft elev | Low      | 
          DWR: This pretty lake is aptly named. Located in Weyman Lakes Basin, Clear Lake lies 0.4 miles west of Lower Anson Lake, 8.5 miles from the Beaver Creek Trail head and 6.6 miles from Spirit Lake. The last 0.4 miles is through rocky timber, and horse access is impossible beyond Anson lakes. The lake is 10.2 acres, 10,780 feet in elevation with a maximum depth of 25 feet. No campsites or spring water are found in the immediate area. Fishing pressure is light. The lake may contain cutthroat trout.
-         └─ No stocking records
+         └─ 2023-09-19 | Tigers          |    502 fish | 3.95"  | DAGGETT
+         └─ 2023-07-21 | Tigers          |   1021 fish | 2.7"   | DAGGETT
+         └─ 2018-07-10 | Tigers          |   1496 fish | 3.29"  | DAGGETT
+         └─ 2016-07-14 | Tigers          |   1498 fish | 3.62"  | DAGGETT
+         └─ 2013-07-08 | Tigers          |   1503 fish | 3.08"  | DAGGETT
+         └─ 2007-07-30 | Grayling        |   1500 fish | 1.5"   | DAGGETT
 
 GR-116   | Columbine                 | 5.7ac    | 5ft    | 10550ft elev | Low      | 
          DWR: Columbine Lake sits on a rocky bench at the base of a talus slope 1.3 miles southwest of Spirit Lake. The lake is 5.7 acres and 10,550 feet in elevation. Follow the Middle Fork of Sheep Creek upstream from Spirit Lake until the stream goes underground. The lake lies across the boulder fields to the south. Horse access is impossible. Spring water is available at the lake, and a few campsites can be found in a grassy area on the lake's southwestern shore. Despite only a 5 foot maximum depth and a lake level that tends to fluctuate during drier years, Columbine Lake still manages to support a small population of brook trout maintained through periodic stocking. Fishing pressure is light.
@@ -7143,11 +7372,22 @@ GR-116   | Columbine                 | 5.7ac    | 5ft    | 10550ft elev | Low   
 
 GR-6     | Dagget                    | 42.6ac   | 29ft   | 10462ft elev | High     | 
          DWR: Located only 2.6 miles southeast of Spirit Lake via a good trail, Daggett Lake is one of the more accessible and popular lakes in the Sheep Creek drainage. It is 42.6 acres, 10,462 feet in elevation with a maximum depth of 29 feet. Campsites are scattered around the lake. Spring water, although present, is not abundant. Horse feed can be found in a narrow meadow north of the lake or along the outlet below the dam. Daggett Lake is noted for hordes of mosquitoes that can quickly turn a pleasant hike into a real ordeal. Come prepared with lots of insect repellant. Fishing pressure is heavy for stocked rainbow trout. An occasional cutthroat can also be taken.
-         └─ No stocking records
+         └─ 2025-06-30 | Cutthroats      |   2032 fish | 1.84"  | DAGGETT
+         └─ 2024-10-01 | Cutthroats      |   1304 fish | 3.83"  | DAGGETT
+         └─ 2024-10-01 | Cutthroats      |   1892 fish | 3.25"  | DAGGETT
+         └─ 2015-08-25 | Grayling        |   6003 fish | 2.4"   | DAGGETT
+         └─ 2009-08-03 | Grayling        |   6047 fish | 1.4"   | DAGGETT
+         └─ 2006-08-02 | Grayling        |   4998 fish | 1.66"  | DAGGETT
+         └─ 2005-07-18 | Grayling        |    990 fish | 0.76"  | DAGGETT
+         └─ 2003-08-05 | Grayling        |   1025 fish | 0.89"  | DAGGETT
 
 GR-18    | Ewe                       | 3.0ac    | 10ft   | 10750ft elev | Low      | 
          DWR: Ewe Lake is located at the bottom of a talus slope in western Lamb Lake Basin. It is 3.0 acres, 10,750 feet in elevation with a maximum depth of 10 feet. Ewe Lake is 7.3 miles from Browne Lake. The last 2.3 miles is cross-country across rough terrain. See Bummer Lake for a more detailed description of general access to the Lamb Lakes area. Campsites are scarce, but spring water can be found at the lake. Trout stocked in Ewe Lake in the past have not been able to overwinter, and as of 1986 the lake is fishless. Grayling may be introduced in the future on an experimental basis. Fishing pressure is light.
-         └─ No stocking records
+         └─ 2020-09-21 | Grayling        |    450 fish | 2.81"  | DAGGETT
+         └─ 2017-09-20 | Grayling        |    450 fish | 2.79"  | DAGGETT
+         └─ 2013-10-07 | Grayling        |    450 fish | 3.22"  | DAGGETT
+         └─ 2010-09-14 | Grayling        |    458 fish | 2.02"  | DAGGETT
+         └─ 2006-08-02 | Grayling        |    449 fish | 1.66"  | DAGGETT
 
 GR-115   | Gail                      | 4.5ac    | 25ft   | 10420ft elev | Low      | 
          DWR: Gail is a small, seldom visited lake which sits at the bottom of a rock slide approximately 1.1 miles southwest of Spirit Lake. Follow the trail to Jesson Lake. Gail lies 0.2 miles to the south across downed timber and rocky terrain. The lake is 4.5 acres, 10,420 feet in elevation with 25 feet maximum depth. There are no campsites in this rough country, and spring water is not available. Horse access is difficult, if not impossible. Gail supports a small population of cutthroat trout. An occasional brook trout may also be taken. Fishing pressure is very light.
@@ -7163,7 +7403,11 @@ GR-112   | Hidden                    | 4.3ac    | 8ft    | 10270ft elev | Low   
 
 GR-7     | Hidden                    | 8.5ac    | 26ft   | 10380ft elev | Low      | 
          DWR: Hidden Lake is a picturesque, natural lake which lies at the bottom of a wet meadow 0.7 miles northwest of Lower Anson Lake in Weyman Lakes Basin. Total distance from the Beaver Creek Trail head is 9.0 miles. Horses should be ridden only as far as Anson Lakes. From that point access is cross-country through downed timber and across scattered boulder fields. The lake is 8.5 acres, 10,380 feet in elevation with a maximum depth of 26 feet. Spring water can be found on the lake's southwestern shore, but campsites are few and far between in the rough country which surrounds the lake. Fishing pressure is light for stocked brook trout. The lake also supports a small number of cutthroat trout.
-         └─ No stocking records
+         └─ 2021-07-01 | Brookies        |   1063 fish | 3.32"  | DAGGETT
+         └─ 2017-07-09 | Brookies        |   1287 fish | 2.53"  | DAGGETT
+         └─ 2012-08-06 | Brookies        |   1000 fish | 2.68"  | DAGGETT
+         └─ 2012-07-09 | Brookies        |   1280 fish | 2.3"   | DAGGETT
+         └─ 2008-07-10 | Brookies        |   1280 fish | 2.92"  | DAGGETT
 
 GR-1     | Jesson                    | 25.5ac   | 56ft   | 10392ft elev | High     | 
          DWR: Jesson Lake is a fairly large, popular water which lies approximately 1.0 mile southwest of Spirit Lake via a maintained but rocky trail. This natural lake is surrounded by rocky timber and good campsites are difficult to find. Spring water and a minute amount of horse feed are located on the west shoreline. Jesson Lake is 25.5 acres, 10,392 feet in elevation with a maximum depth of 56 feet. Brook trout are regularly stocked, but don't be surprised if you land an occasional cutthroat. Fishing pressure is heavy.
@@ -7206,22 +7450,119 @@ GR-27    | Lower Potter              | 3.4ac    | 16ft   | 10130ft elev | Modera
          └─ No stocking records
 
 GR-29    | Lower Teepee              | ?ac      | ?ft    | ?ft elev   | ?        | 
-         └─ No stocking records
+         └─ 2025-06-30 | Cutthroats      |    399 fish | 2.69"  | DAGGETT
+         └─ 2023-09-19 | Cutthroats      |    387 fish | 1.73"  | DAGGETT
+         └─ 2020-09-23 | Cutthroats      |    401 fish | 2.48"  | DAGGETT
+         └─ 2015-07-06 | Brookies        |    381 fish | 2.61"  | DAGGETT
+         └─ 2012-07-09 | Brookies        |    369 fish | 2.3"   | DAGGETT
+         └─ 2009-07-16 | Brookies        |    374 fish | 3.06"  | DAGGETT
+         └─ 2006-07-17 | Brookies        |    380 fish | 2.92"  | DAGGETT
+         └─ 2004-07-07 | Brookies        |    375 fish | 2.46"  | DAGGETT
+         └─ 2002-06-27 | Brookies        |    373 fish | 2.34"  | DAGGETT
 
 GR-101   | Mystery                   | 10.2ac   | 25ft   | 9750ft elev | Moderate | 
          DWR: This pretty, elongated lake lies in a pocket formed by two oblique ridges and is surrounded by dense timber. There is a trail to the lake, but it can be difficult to find. Follow the south bank of the Sheep Creek Canal downstream from the Leidy Peak Trail. Approximately 0.2 miles upstream of GR-31 the trail cuts up the slope to the south. Lost Lake, also called Mystery Lake in some references, is 1.1 miles further along the trail. The lake is 10.2 acres, 9,750 feet in elevation with a maximum depth of 25 feet. Total distance from Browne Lake is 4.9 miles. Spring water is located on the lake's south shore. There is no horse feed, and decent campsites are difficult to find because of the rocky, timbered slopes around the lake. The lake is periodically stocked with brook trout. Cutthroat trout are also present in the lake. Fishing pressure is light to moderate.
-         └─ No stocking records
+         └─ 2024-07-15 | Cutthroats      |    793 fish | 2.26"  | DAGGETT
+         └─ 2020-09-23 | Cutthroats      |    803 fish | 2.48"  | DAGGETT
+         └─ 2017-07-09 | Brookies        |    109 fish | 2.53"  | DAGGETT
+         └─ 2016-06-30 | Brookies        |   1057 fish | 2.06"  | DAGGETT
+         └─ 2013-07-03 | Brookies        |   1016 fish | 2.61"  | DAGGETT
+         └─ 2006-07-12 | Brookies        |   1260 fish | 2.88"  | DAGGETT
+         └─ 2004-07-07 | Brookies        |    994 fish | 2.46"  | DAGGETT
 
 GR-32    | One Fish                  | 4.5ac    | 35ft   | 9350ft elev | Low      | 
          DWR: One Fish Lake is located in heavy timber just a few yards north of the Sheep Creek Canal 0.3 miles downstream from where the canal crosses the Leidy Peak Trail. Total distance from Browne Lake is 3.0 miles. Campsites, horse feed and spring water are available in the large meadow 0.2 miles southeast of the canal. The lake is 4.5 acres, 9,350 feet in elevation with a maximum depth of 35 feet. Unless you are an expert don't bother taking a fly rod. The dense timber makes back casting almost impossible. Fishing pressure is light for stocked brook trout.
-         └─ No stocking records
+         └─ 2024-06-26 | Brookies        |    201 fish | 2.93"  | DAGGETT
+         └─ 2021-07-01 | Brookies        |    397 fish | 3.32"  | DAGGETT
+         └─ 2018-10-15 | Grayling        |    594 fish | 3.31"  | DAGGETT
+         └─ 2018-07-10 | Brookies        |    200 fish | 2.88"  | DAGGETT
+         └─ 2015-07-06 | Brookies        |    395 fish | 2.61"  | DAGGETT
+         └─ 2012-07-09 | Brookies        |    391 fish | 2.3"   | DAGGETT
+         └─ 2009-07-16 | Brookies        |    400 fish | 3.06"  | DAGGETT
+         └─ 2006-07-17 | Brookies        |    400 fish | 2.92"  | DAGGETT
+         └─ 2004-07-07 | Brookies        |    408 fish | 2.46"  | DAGGETT
+         └─ 2002-06-27 | Brookies        |    393 fish | 2.34"  | DAGGETT
 
 GR-33    | Red Lake                  | 20.9ac   | 57ft   | 9850ft elev | Low      | 
          DWR: This fairly large, irregular shaped lake is located at the end of a rough, rocky trail 1.2 miles south of the Teepee Lakes. The trail to Red Lake diverges from the Leidy Peak Trail just south of its junction with the Sheep Creek Canal. Total distance from Browne Lake is 4.4 miles. Leidy Peak, located south of the lake, provides a stunning backdrop. Red Lake is 20.9 acres, 9,850 feet in elevation with a maximum depth of 57 feet. Good campsites are very infrequent in the rough, timbered country surrounding the lake. Spring water is also unavailable. Sparse horse feed can be found in meadows to the north along the outlet. Deep sod-covered potholes abound in the meadow. You may want to picket horses on firmer ground rather than turning them loose with hobbles. Fishing pressure is light to moderate for stocked brook trout.
-         └─ No stocking records
+         └─ 2024-06-26 | Tiger muskie    |    210 fish | 5.93"  | DAGGETT
+         └─ 2024-06-26 | Tigers          |    799 fish | 3.64"  | DAGGETT
+         └─ 2021-09-21 | Grayling        |    194 fish | 2.65"  | DAGGETT
+         └─ 2021-06-22 | Tiger muskie    |    200 fish | 3.31"  | DAGGETT
+         └─ 2020-09-23 | Cutthroats      |   1501 fish | 2.48"  | DAGGETT
+         └─ 2020-07-06 | Tigers          |    766 fish | 3.2"   | DAGGETT
+         └─ 2015-07-06 | Brookies        |   1495 fish | 2.61"  | DAGGETT
+         └─ 2013-07-03 | Brookies        |   1516 fish | 2.61"  | DAGGETT
+         └─ 2007-07-16 | Brookies        |   1502 fish | 2.6"   | DAGGETT
+         └─ 2003-07-03 | Brookies        |   1504 fish | 2.48"  | DAGGETT
 
 GR-3     | Spirit Lake               | ?ac      | ?ft    | ?ft elev   | ?        | 
-         └─ No stocking records
+         └─ 2025-07-08 | Cutthroats      |    175 fish | 14.49" | DAGGETT
+         └─ 2025-07-08 | Tigers          |    609 fish | 11.08" | DAGGETT
+         └─ 2024-07-01 | Cutthroats      |   1000 fish | 5.6"   | DAGGETT
+         └─ 2023-07-05 | Tigers          |   2752 fish | 9.21"  | DAGGETT
+         └─ 2022-06-22 | Tigers          |   2501 fish | 9.36"  | DAGGETT
+         └─ 2021-07-02 | Cutthroats      |   1507 fish | 6.28"  | DAGGETT
+         └─ 2021-06-09 | Tigers          |   3150 fish | 9.41"  | DAGGETT
+         └─ 2020-07-16 | Tigers          |    126 fish | 10.78" | DAGGETT
+         └─ 2020-06-23 | Tigers          |   2818 fish | 10.25" | DAGGETT
+         └─ 2019-07-12 | Tigers          |   4006 fish | 10.31" | DAGGETT
+         └─ 2018-06-26 | Tigers          |   1899 fish | 10.35" | DAGGETT
+         └─ 2018-06-25 | Tigers          |   4128 fish | 10.35" | DAGGETT
+         └─ 2017-07-10 | Tigers          |   5499 fish | 9.92"  | DAGGETT
+         └─ 2016-07-05 | Tigers          |   3666 fish | 9.87"  | DAGGETT
+         └─ 2016-07-05 | Tigers          |   1833 fish | 9.87"  | DAGGETT
+         └─ 2015-06-25 | Tigers          |   5387 fish | 8.1"   | DAGGETT
+         └─ 2014-06-25 | Tigers          |   5499 fish | 10.57" | DAGGETT
+         └─ 2013-06-12 | Tigers          |   5502 fish | 9.97"  | DAGGETT
+         └─ 2012-10-09 | Tigers          |    519 fish | 12.81" | DAGGETT
+         └─ 2012-07-18 | Tigers          |   4019 fish | 10.99" | DAGGETT
+         └─ 2012-07-16 | Rainbows        |   1036 fish | 10.77" | DAGGETT
+         └─ 2012-07-05 | Rainbows        |   1115 fish | 9.79"  | DAGGETT
+         └─ 2011-08-09 | Rainbows        |   1034 fish | 10.6"  | DAGGETT
+         └─ 2011-07-19 | Tigers          |   1840 fish | 10.46" | DAGGETT
+         └─ 2011-07-18 | Tigers          |   1840 fish | 10.46" | DAGGETT
+         └─ 2011-07-13 | Rainbows        |   1150 fish | 10.28" | DAGGETT
+         └─ 2010-08-11 | Tigers          |   1598 fish | 9.12"  | DAGGETT
+         └─ 2010-07-20 | Tigers          |   1700 fish | 9.8"   | DAGGETT
+         └─ 2010-07-07 | Rainbows        |    500 fish | 10.44" | DAGGETT
+         └─ 2010-07-07 | Tigers          |   1700 fish | 10.28" | DAGGETT
+         └─ 2010-06-22 | Rainbows        |   1499 fish | 10.58" | DAGGETT
+         └─ 2009-08-17 | Rainbows        |   1833 fish | 9.84"  | DAGGETT
+         └─ 2009-07-21 | Rainbows        |   1833 fish | 9.76"  | DAGGETT
+         └─ 2009-06-29 | Rainbows        |   1834 fish | 9.51"  | DAGGETT
+         └─ 2009-06-16 | Tigers          |   5016 fish | 3.08"  | DAGGETT
+         └─ 2008-08-28 | Rainbows        |    987 fish | 10.98" | DAGGETT
+         └─ 2008-08-26 | Rainbows        |    900 fish | 10.98" | DAGGETT
+         └─ 2008-07-23 | Rainbows        |   1833 fish | 9.92"  | DAGGETT
+         └─ 2008-06-24 | Rainbows        |   2000 fish | 9.92"  | DAGGETT
+         └─ 2007-08-27 | Tigers          |   1500 fish | 4.84"  | DAGGETT
+         └─ 2007-08-21 | Rainbows        |    408 fish | 10.31" | DAGGETT
+         └─ 2007-08-13 | Rainbows        |   1425 fish | 10.96" | DAGGETT
+         └─ 2007-07-11 | Rainbows        |   1833 fish | 11.02" | DAGGETT
+         └─ 2007-06-06 | Rainbows        |   1833 fish | 10.0"  | DAGGETT
+         └─ 2006-08-21 | Rainbows        |   1395 fish | 11.16" | DAGGETT
+         └─ 2006-08-09 | Rainbows        |   1400 fish | 10.77" | DAGGETT
+         └─ 2006-07-26 | Rainbows        |   1600 fish | 10.77" | DAGGETT
+         └─ 2006-06-27 | Rainbows        |   1820 fish | 9.87"  | DAGGETT
+         └─ 2006-06-09 | Rainbows        |   1748 fish | 10.28" | DAGGETT
+         └─ 2005-08-09 | Rainbows        |   1566 fish | 10.39" | DAGGETT
+         └─ 2005-07-21 | Rainbows        |   1600 fish | 9.9"   | DAGGETT
+         └─ 2005-06-28 | Rainbows        |   1701 fish | 9.87"  | DAGGETT
+         └─ 2004-08-30 | Rainbows        |    840 fish | 10.14" | DAGGETT
+         └─ 2004-08-10 | Rainbows        |   1988 fish | 9.81"  | DAGGETT
+         └─ 2004-07-21 | Rainbows        |   1564 fish | 8.62"  | DAGGETT
+         └─ 2004-06-24 | Rainbows        |   2002 fish | 9.72"  | DAGGETT
+         └─ 2003-09-02 | Rainbows        |    905 fish | 10.95" | DAGGETT
+         └─ 2003-09-02 | Rainbows        |    655 fish | 9.69"  | DAGGETT
+         └─ 2003-07-16 | Rainbows        |    680 fish | 10.03" | DAGGETT
+         └─ 2003-07-16 | Rainbows        |    920 fish | 8.14"  | DAGGETT
+         └─ 2003-07-01 | Rainbows        |   1560 fish | 9.92"  | DAGGETT
+         └─ 2003-06-16 | Rainbows        |   1558 fish | 9.02"  | DAGGETT
+         └─ 2002-07-08 | Rainbows        |    960 fish | 8.05"  | DAGGETT
+         └─ 2002-07-08 | Rainbows        |    652 fish | 9.8"   | DAGGETT
+         └─ 2002-07-03 | Rainbows        |   1577 fish | 9.58"  | DAGGETT
+         └─ 2002-06-04 | Rainbows        |   2275 fish | 9.17"  | DAGGETT
 
 GR-2     | Tamarack                  | 79.1ac   | 90ft   | 10429ft elev | High     | 
          DWR: Tamarack Lake is by far the largest lake in the Sheep/Carter Creek Drainage system. Located 1.4 miles west of Spirit Lake via a rocky but maintained Forest Service trail, Tamarack is a popular fishing lake for day hikers and scout groups. The lake is 79.1 acres, 10,429 feet in elevation with a maximum depth of 90 feet. The best camping sites are found on the east side of the lake while a few springs can be found along the southern shoreline. A few small meadows east of the lake contain horse feed. Tamarack Lake supports a naturally reproducing population of brook trout. A small number of cutthroat also inhabit the lake. Fishing pressure is heavy.
@@ -7239,11 +7580,17 @@ GR-2     | Tamarack                  | 79.1ac   | 90ft   | 10429ft elev | High  
 
 GR-28    | Upper Potter              | 4.3ac    | 28ft   | ?ft elev   | High     | 
          DWR: Lower Teepee Lake is a hourglass shaped lake surrounded by fairly heavy timber located at the head of the Sheep Creek Canal and 2.9 miles by trail from Browne Lake. Follow the canal upstream 0.2 miles from its junction with the Leidy Peak Trail. Lower Teepee Lake is 4.3 acres and sits at an elevation of 9,410 feet. The western basin of the lake is only 6 feet at its deepest point, but the larger eastern basin drops to 28 feet fairly quickly. Campsites, horse feed, and spring water are available in the vicinity of a long meadow 0.1 miles west of the lake across the trail. Fishing pressure is moderate to heavy for stocked brook trout.
-         └─ No stocking records
+         └─ 2025-06-30 | Cutthroats      |    900 fish | 2.69"  | DAGGETT
+         └─ 2024-10-01 | Cutthroats      |   1502 fish | 3.83"  | DAGGETT
+         └─ 2023-09-19 | Cutthroats      |   1491 fish | 1.73"  | DAGGETT
+         └─ 2020-09-23 | Cutthroats      |   3009 fish | 2.48"  | DAGGETT
 
 GR-30    | Upper Teepee              | 6.5ac    | 28ft   | 9430ft elev | Moderate | 
          DWR: This circular lake is located in dense timber 150 yards southeast of Lower Teepee Lake (see Lower Teepee Lake access). Upper Teepee Lake is 6.5 acres, 9,430 feet in elevation with a maximum depth of 28 feet. Campsites are limited, and there are no springs or horse feed in the area. Fishing could be spotty as the lake winterkills occasionally. It may have a few cutthroat trout. Fishing pressure is moderate.
-         └─ No stocking records
+         └─ 2023-09-19 | Tigers          |    299 fish | 3.95"  | DAGGETT
+         └─ 2023-07-21 | Tigers          |    598 fish | 2.7"   | DAGGETT
+         └─ 2020-07-06 | Tigers          |    600 fish | 3.2"   | DAGGETT
+         └─ 2007-07-30 | Grayling        |    676 fish | 1.5"   | DAGGETT
 
 GR-176   | Utanna                    | ?ac      | ?ft    | ?ft elev   | ?        | 
          DWR: This lake does not sustain fish life. It is shown on the map as a landmark only.
@@ -7298,7 +7645,7 @@ G-48     | (No name)                 | ?ac      | ?ft    | ?ft elev   | ?       
          DWR: This lake does not sustain fish life. It is shown on the map as a landmark.
          └─ No stocking records
 
-G-49     | (No name)                 | 3.9ac    | 11ft   | 10830ft elev | Low      | 
+G-49     | (No name)                 | 3.9ac    | 11ft   | 10830ft elev | Low      | [CAUGHT] - <i>Add your notes here...</i>
          DWR: G-49 is a small narrow lake which abuts a steep talus shoulder of Red Castle Peak in the East Fork Smiths Fork Basin. This lake is 3.9 acres maximum, 10,830 feet in elevation, with 11-foot maximum depth. G-49 is subject to natural water level fluctuation of 7-8 vertical feet which in turn reduces the size of this lake to only 30 percent of maximum area by late summer. G-49 is located 100 yards east of the East Fork Smiths Fork Trail from the stream crossing 1/2 mile south of Lower Red Castle Lake. G-49 is located on the major drainage system between Red Castle and Lower Red Castle lakes. Good campsites and horse feed can be located in the general area, but spring water is not available. This small fluctuating lake contains a varied population of brook, cutthroat and rainbow trout which is able to overwinter in the small minimum pool and adjacent drainage system. G-49 receives light angling pressure and is often overlooked by anglers.
          └─ No stocking records
 
@@ -7613,7 +7960,7 @@ G-32     | Grahams                   | 18.5ac   | 25ft   | 9210ft elev | Unknown
          DWR: Grahams is a moderately sized reservoired lake located in timbered terrain in the lower Smiths Fork Basin. It is 18.5 acres maximum, 9,210 feet in elevation, with 25-foot maximum depth. Grahams straddles the state line with portions of this reservoir in Utah and Wyoming. The lake is highly stained and is coffee brown in color due to an accumulation of suspended organic material. The best route of access is on foot, 3/4 mile northwest of the China Meadows Road across the Stateline Reservoir dam and along the timbered ridge. Grahams is also accessible on a rough jeep road which begins 1/2 mile north of Stateline Reservoir. Follow this road north and west for 1 1/4 miles through a difficult river ford to the lake. Campsites are available at Grahams, but running water is not present in the lake vicinity. This lake is productive in nature, and does not sustain a fish population at present due to low oxygen concentrations and winterkill problems. The Forest Service has installed a water circulator on the surface of Grahams Reservoir in an attempt to improve wintering conditions, and stocking may be undertaken at some future time.
          └─ No stocking records
 
-G-18     | Hessie                    | 13.2ac   | 18ft   | 10620ft elev | Moderate | [CAUGHT]
+G-18     | Hessie                    | 13.2ac   | 18ft   | 10620ft elev | Moderate | [CAUGHT] - Interesting that the last tiger stocking was 2020, with cutthroat stocked in 2023. Need to find out if it was treated(?)
          DWR: This natural moraine lake is located in heavily timbered terrain at the base of a rocky point in the East Fork Smiths Fork Drainage. Hessie is 13.2 acres, 10,620 feet in elevation, with 18-foot maximum depth. Access is 3 1/2 miles southwest of the China Meadows Trailhead on the East Fork Smiths Fork Trail to the junction with the Highline Trail heading east. Follow the Highline Trail south and east for 1 1/2 miles to the Hessie Lake Cutoff, and proceed west for an additional 1/4 mile to the lake. There are several well used campsites along the eastern and southern lake perimeters. Fuelwood is scarce due to the heavy camping activity at Hessie, but spring water is available. Horse feed can be located in boggy meadows to the east. Hessie Lake contains a population of cutthroat trout maintained by aerial stocking. Remember to pack out your refuse and exercise minimum impact camping.
          └─ 2023-09-19 | Cutthroats      |   2651 fish | 1.73"  | SUMMIT
          └─ 2020-07-31 | Tigers          |   1319 fish | 2.4"   | SUMMIT
@@ -8658,7 +9005,8 @@ W-65     | Yellowpine Upper          | 3.0ac    | 12ft   | ?ft elev   | High    
 
 
 --- White Rocks Drainage ---
-WR-19    | (No name)                 | 10.0ac   | 18ft   | ?ft elev   | Low      | 
+WR-19    | (No name)                 | 10.0ac   | 18ft   | 10500ft elev | Low      | 
+         DWR: 10 acres, elevation 10,500 feet, maximum depth 18 feet, average depth 8 feet. Two miles north of Pole Creek Lake around the east side of the rock slides. No trail to the lake. Very rocky, timbered terrain. Poor campsites with no horse feed. Some large, wary cutthroat trout inhabit this lake. Seldom visited. Stocked periodically with cutthroat.
          └─ 2024-06-26 | Tiger muskie    |    150 fish | 5.93"  | DUCHESNE
          └─ 2022-07-06 | Tiger muskie    |    100 fish | 3.39"  | DUCHESNE
          └─ 2019-09-23 | Cutthroats      |    506 fish | 1.7"   | DUCHESNE
@@ -8666,22 +9014,26 @@ WR-19    | (No name)                 | 10.0ac   | 18ft   | ?ft elev   | Low     
          └─ 2013-10-07 | Cutthroats      |   1038 fish | 1.45"  | DUCHESNE
          └─ 2009-09-16 | Cutthroats      |    980 fish | 1.43"  | DUCHESNE
 
-WR-34    | (No name)                 | 9.0ac    | 20ft   | ?ft elev   | Low      | 
+WR-34    | (No name)                 | 9.0ac    | 20ft   | 11500ft elev | Low      | 
+         DWR: 9 acres, elevation 11,500 feet, maximum depth 20 feet. Two miles southwest of Cleveland Lake in small open rock basin. A cold, remote lake with open, brushy shoreline. Very poor campsites. No horse feed. Stocked experimentally with brook trout and could produce some fair fishing.
          └─ 2024-09-23 | Cutthroats      |    898 fish | 1.48"  | DUCHESNE
          └─ 2018-10-12 | Cutthroats      |    649 fish | 1.74"  | DUCHESNE
          └─ 2013-10-07 | Cutthroats      |    944 fish | 1.45"  | DUCHESNE
          └─ 2008-09-24 | Cutthroats      |    903 fish | 1.42"  | DUCHESNE
 
-WR-37    | (No name)                 | 3.0ac    | 13ft   | ?ft elev   | Moderate | 
+WR-37    | (No name)                 | 3.0ac    | 13ft   | 10600ft elev | Moderate | 
+         DWR: 3 acres, elevation 10,600 feet, maximum depth 13 feet, average depth 6 feet. One mile southeast of Rassmussen #2, around the tip of the rock slides. No trail. A narrow, rocky lake with some open shore. Some scattered timber with poor campsites. No horse feed. Few fishermen. Small population of large, cutthroat trout. Moderate fishing for brook trout. Stocked with brook trout.
          └─ No stocking records
 
-WR-73    | (No name)                 | 8.0ac    | ?ft    | ?ft elev   | Low      | 
+WR-73    | (No name)                 | 8.0ac    | ?ft    | 11000ft elev | Low      | 
+         DWR: 8 acres, elevation 11,000 feet. From Rasmussen Lake two miles northwest into the head of a small basin. No trail. Very rough, rocky terrain. Rock slides come into this triangular shaped lake, and form more than half the shoreline. Few campsites with little horse feed. Stocked experimentally with brook trout. The lakes in this rugged basin could provide some excellent fishing.
          └─ 2023-09-19 | Cutthroats      |    842 fish | 1.45"  | DUCHESNE
          └─ 2018-10-12 | Cutthroats      |    590 fish | 1.74"  | DUCHESNE
          └─ 2013-07-09 | Cutthroats      |    796 fish | 2.8"   | DUCHESNE
          └─ 2008-09-24 | Cutthroats      |    804 fish | 1.42"  | DUCHESNE
 
-WR-74    | (No name)                 | 4.0ac    | 14ft   | ?ft elev   | Low      | 
+WR-74    | (No name)                 | 4.0ac    | 14ft   | 11000ft elev | Low      | 
+         DWR: 4 acres, elevation 11,000 feet, maximum depth 14 feet, average depth 7 feet. Two hundred yards east of WR-75. No trail. Few campsites and little horse feed. Rock slides enter the lake along the north side. Some open shoreline. Stocked experimentally.
          └─ 2022-09-23 | Cutthroats      |    223 fish | 1.57"  | DUCHESNE
          └─ 2019-09-23 | Cutthroats      |    253 fish | 1.7"   | DUCHESNE
          └─ 2016-09-20 | Cutthroats      |    272 fish | 1.47"  | DUCHESNE
@@ -8689,23 +9041,27 @@ WR-74    | (No name)                 | 4.0ac    | 14ft   | ?ft elev   | Low     
          └─ 2010-09-30 | Cutthroats      |    482 fish | 1.71"  | DUCHESNE
          └─ 2008-09-24 | Cutthroats      |    347 fish | 1.42"  | DUCHESNE
 
-WR-75    | (No name)                 | 3.0ac    | 8ft    | ?ft elev   | Low      | 
+WR-75    | (No name)                 | 3.0ac    | 8ft    | 10800ft elev | Low      | 
+         DWR: 3 acres, elevation 10,800 feet, maximum depth 8 feet, average depth 5 feet. Two hundred yards south of WR-74, no trail. Few campsites and little horse feed. Some open shoreline. Stocked experimentally with brook.
          └─ 2023-09-19 | Cutthroats      |    281 fish | 1.45"  | DUCHESNE
          └─ 2018-10-12 | Cutthroats      |    236 fish | 1.74"  | DUCHESNE
          └─ 2013-10-07 | Cutthroats      |    283 fish | 1.45"  | DUCHESNE
          └─ 2008-09-24 | Cutthroats      |    298 fish | 1.42"  | DUCHESNE
 
-WR-76    | (No name)                 | 8.0ac    | 7ft    | ?ft elev   | Unknown  | 
+WR-76    | (No name)                 | 8.0ac    | 7ft    | 10700ft elev | Unknown  | 
+         DWR: 8 acres (combined), elevation 10,700 feet, maximum depth 7 feet. From Rasmussen Lake one mile northwest via sheep trail along creek. Two shallow, meadow lakes lying side by side, connected by a large stream, and surrounded by conifers. Campsites with some horse feed in the area. Excellent fly fishing areas. Stocked experimentally with brook trout.
          └─ No stocking records
 
-WR-77    | (No name)                 | 4.0ac    | 15ft   | ?ft elev   | Low      | 
+WR-77    | (No name)                 | 4.0ac    | 15ft   | 10800ft elev | Low      | 
+         DWR: 4 acres, elevation 10,800 feet, maximum depth 15 feet. From Rassmussen one mile west or from WR-76, ½ mile south. Rough terrain, no trail rock slides form half the shoreline. No campsites or horse feed by the lake. Stocked experimentally with brook.
          └─ 2024-06-26 | Brookies        |    166 fish | 2.93"  | DUCHESNE
          └─ 2022-07-06 | Brookies        |    327 fish | 3.62"  | DUCHESNE
          └─ 2017-07-09 | Brookies        |    341 fish | 2.53"  | DUCHESNE
          └─ 2012-07-09 | Brookies        |    326 fish | 2.3"   | DUCHESNE
          └─ 2008-07-10 | Brookies        |    330 fish | 2.92"  | DUCHESNE
 
-WR-9     | (No name)                 | 3.0ac    | 12ft   | ?ft elev   | Low      | 
+WR-9     | (No name)                 | 3.0ac    | 12ft   | 11200ft elev | Low      | 
+         DWR: 3 acres, elevation 11,200 feet, maximum depth 12 feet, average depth 5 feet. Sixteen miles north of Pole Creek Lake on Forest Service west fork trail and ½ mile southeast of Taylor. A small lake above timberline, lying in the open gently sloping basin below Taylor Lake. Poor, rocky campsites with limited horse feed. Open shoreline for fly fishing. Stocked experimentally with brook trout. A good one to keep an eye on, may be good!
          └─ 2024-06-26 | Brookies        |    249 fish | 2.93"  | DUCHESNE
          └─ 2021-07-01 | Brookies        |    251 fish | 3.32"  | DUCHESNE
          └─ 2018-07-10 | Brookies        |    252 fish | 2.88"  | DUCHESNE
@@ -8716,20 +9072,23 @@ WR-9     | (No name)                 | 3.0ac    | 12ft   | ?ft elev   | Low     
          └─ 2005-07-15 | Brookies        |    255 fish | 2.65"  | DUCHESNE
          └─ 2002-06-27 | Brookies        |    255 fish | 2.34"  | DUCHESNE
 
-WR-64    | Chepeta                   | 50.0ac   | 60ft   | ?ft elev   | High     | 
+WR-64    | Chepeta                   | 50.0ac   | 60ft   | 10600ft elev | High     | 
+         DWR: Elevation 10,600 feet. Maximum surface acres 50, maximum depth 60 feet. Reservoir with 20 foot dam on the south end of the lake. Size and depth fluctuates. Located 20 miles from Paradise Park Reservoir by good Forest Service trail or poor jeep road. Several fishing streams enter this large reservoir. Excellent campsites with plenty of horse feed. Good fishing for both brook and cutthroat trout. Heavy fishing pressure. Plenty of open shoreline for fly fishermen with hip boots. Several good fishing lakes nearby. A small rubber boat or raft is helpful on this large water. Some natural reproduction. Large insect population too, and they bite as fast as the fish. Stocked cyclically with brook trout.
          └─ 2022-09-23 | Cutthroats      |   9213 fish | 1.57"  | DUCHESNE
          └─ 2022-06-30 | Brookies        |   1838 fish | 3.7"   | DUCHESNE
          └─ 2018-10-12 | Cutthroats      |   4366 fish | 1.74"  | DUCHESNE
          └─ 2014-09-15 | Cutthroats      |   7220 fish | 1.52"  | DUCHESNE
 
-WR-7     | Cleveland                 | 26.0ac   | 6ft    | ?ft elev   | High     | 
+WR-7     | Cleveland                 | 26.0ac   | 6ft    | 10700ft elev | High     | 
+         DWR: 26 acres, elevation 10,700 feet, maximum depth 6 feet, average depth 4 feet. Fourteen miles north of Pole Creek Lake on good, marked Forest Service trail. ½ mile west of Queant. A large, shallow, spring-fed meadow lake in timberline country. Excellent evening fly fishing lake with very good campsites and horse feed. Large brook and cutthroat trout. Popular area receiving considerable fishing pressure. Stocked cyclically with cutthroat trout.
          └─ 2021-07-01 | Brookies        |   2406 fish | 3.32"  | DUCHESNE
          └─ 2016-06-30 | Brookies        |   2457 fish | 2.06"  | DUCHESNE
          └─ 2013-07-10 | Brookies        |   2403 fish | 2.57"  | DUCHESNE
          └─ 2006-07-12 | Brookies        |   2405 fish | 2.88"  | DUCHESNE
          └─ 2004-07-07 | Brookies        |   2396 fish | 2.46"  | DUCHESNE
 
-WR-49    | Cliff                     | 40.0ac   | 55ft   | ?ft elev   | Moderate | 
+WR-49    | Cliff                     | 40.0ac   | 55ft   | 11000ft elev | Moderate | 
+         DWR: Elevation 11,000 feet, maximum acres 40, maximum depth 55 feet. Reservoir, size and depth fluctuates 25 feet. From Paradise Park Reservoir 15 miles along good, posted, Forest Service trail or poor jeep road. Rough, heavily timbered, rocky terrain. Cliff lies against the rock slides which forms the only open shoreline. Poor campsites without horse feed. The jeep road goes by to the west of the lake. Good fishing for both brook and cutthroat trout; some 16 inches in length. Brook trout stocked cyclically.
          └─ 2025-06-30 | Brookies        |   1996 fish | 3.4"   | DUCHESNE
          └─ 2021-07-01 | Tigers          |   1993 fish | 3.28"  | DUCHESNE
          └─ 2021-07-01 | Brookies        |   1997 fish | 3.32"  | DUCHESNE
@@ -8739,24 +9098,29 @@ WR-49    | Cliff                     | 40.0ac   | 55ft   | ?ft elev   | Moderate
          └─ 2006-07-12 | Brookies        |   4001 fish | 2.88"  | DUCHESNE
          └─ 2004-07-07 | Brookies        |   4010 fish | 2.46"  | DUCHESNE
 
-WR-43    | Dollar                    | 7.0ac    | 15ft   | ?ft elev   | Moderate | 
-         └─ No stocking records
+WR-43    | Dollar                    | 7.0ac    | 15ft   | 11000ft elev | Moderate | 
+         DWR: 7 acres, elevation 11,000 feet, maximum depth 15 feet, average depth 5 feet. ½ mile southwest of Whiterocks Lake. A triangular shaped lake lying against the rock slides, in timbered terrain interspersed with meadows. No trail to the lake. Fair campsites with limited horse feed. Some open shoreline for fly fishing. Generally very good fishing for brook; cutthroat and rainbow trout. Stocked with brook trout.
+         └─ 2005-07-15 | Brookies        |    697 fish | 2.65"  | UINTAH
 
-WR-58    | Elbow                     | 25.0ac   | 17ft   | ?ft elev   | Moderate | 
+WR-58    | Elbow                     | 25.0ac   | 17ft   | 11000ft elev | Moderate | 
+         DWR: 25 acres, elevation 11,000 feet, maximum depth 27 feet, average depth 20 feet. From Chepeta, one mile northwest or from Sharlee, ½ mile north. No trail. Rough terrain, heavily timbered. Use campsites and horse feed at Chepeta or Sharlee. Some open shoreline for fly fishing. A striking, elbow-shaped lake lying against the rock slides. Good fishing for brook trout. Stocked.
          └─ 2024-06-26 | Brookies        |   2606 fish | 2.93"  | DUCHESNE
          └─ 2020-07-06 | Brookies        |   3243 fish | 3.49"  | DUCHESNE
          └─ 2016-06-30 | Brookies        |   3314 fish | 2.06"  | DUCHESNE
          └─ 2010-07-15 | Brookies        |   3260 fish | 2.38"  | DUCHESNE
          └─ 2005-07-15 | Brookies        |   1005 fish | 2.65"  | DUCHESNE
 
-WR-56    | Figure-Eight              | 3.0ac    | 5ft    | ?ft elev   | Low      | 
+WR-56    | Figure-Eight              | 3.0ac    | 5ft    | 10700ft elev | Low      | 
+         DWR: 3 acres, elevation 10,700 feet, maximum depth 5 feet, average depth, 3 feet. From Chepeta Lake, ¼ mile up the northwest stream. Rough terrain, no trail. Campsites and horse feed in the area. A small, cold, shallow lake inhabited by extremely wary cutthroat trout. Partly open, marshy shoreline. Seldom visited. Natural reproduction.
          └─ No stocking records
 
-WR-65    | Hell Hole                 | 8.0ac    | 6ft    | ?ft elev   | Moderate | 
+WR-65    | Hell Hole                 | 8.0ac    | 6ft    | 10850ft elev | Moderate | 
+         DWR: 8 acres, elevation 10,850 feet, maximum depth 6 feet, average depth 4 feet. From Chepeta 4 miles west by Forest Service trail into the area. WR-65 lies ½ mile southwest of the trail against the rock slides. Rough, timbered country. Campsites and horse feed in the area. Mostly open shoreline. Stocked experimentally with brook.
          └─ 2022-09-23 | Cutthroats      |    372 fish | 1.57"  | DUCHESNE
          └─ 2019-09-23 | Cutthroats      |    300 fish | 1.61"  | DUCHESNE
 
-WR-63    | Hidden                    | 12.0ac   | 27ft   | ?ft elev   | Moderate | 
+WR-63    | Hidden                    | 12.0ac   | 27ft   | 10500ft elev | Moderate | 
+         DWR: 12 acres, elevation 10,500 feet, maximum depth 48 feet, average depth 27 feet. A deep, eliptical lake lying in a small pocket in dense conifers. Few campsites and little horse feed. No open shoreline. From Paradise Park Reservoir 15 miles by Forest Service trail to "fork" in trail, leave trails and head west for a good mile over rough terrain. Hard to find. Stocked for the first time in 1963 and 1964 with brook trout. Should be a good one!
          └─ 2023-09-19 | Cutthroats      |   1029 fish | 1.45"  | DUCHESNE
          └─ 2022-09-23 | Cutthroats      |    966 fish | 1.57"  | DUCHESNE
          └─ 2019-09-23 | Cutthroats      |    974 fish | 1.61"  | DUCHESNE
@@ -8765,13 +9129,15 @@ WR-63    | Hidden                    | 12.0ac   | 27ft   | ?ft elev   | Moderate
          └─ 2008-07-09 | Cutthroats      |   1209 fish | 5.61"  | DUCHESNE
          └─ 2007-07-16 | Brookies        |   1273 fish | 2.6"   | DUCHESNE
 
-WR-67    | Horseshoe                 | 12.0ac   | 14ft   | ?ft elev   | Low      | 
+WR-67    | Horseshoe                 | 12.0ac   | 14ft   | 11100ft elev | Low      | 
+         DWR: 12 acres, elevation 11,100 feet, maximum depth 14 feet, average depth 6 feet. One mile southeast of Reader Lake along the rock slides. No trail. An arrowhead shaped lake encompassed by rocks and conifers. Some open shoreline. Campsites and horse feed in the area. Light fishing pressure. Fishing is fast for cutthroat trout. Stocked.
          └─ 2023-09-19 | Cutthroats      |    936 fish | 1.45"  | DUCHESNE
          └─ 2022-09-23 | Cutthroats      |    892 fish | 1.57"  | DUCHESNE
          └─ 2019-09-23 | Cutthroats      |    899 fish | 1.61"  | DUCHESNE
          └─ 2013-07-09 | Cutthroats      |    894 fish | 2.71"  | DUCHESNE
 
-WR-12    | Larvae                    | 4.0ac    | 28ft   | ?ft elev   | High     | 
+WR-12    | Larvae                    | 4.0ac    | 28ft   | 10200ft elev | High     | 
+         DWR: 4 acres, elevation 10,200 feet, maximum depth 28 feet, average depth 15 feet. Two miles east of Pole Creek Lake and one mile east of the west fork trail "take-off" point. A pretty lake lying in dense conifers. Heavy fishing pressure. Campsites with horse feed in Pole Creek Lake area. Fair fishing for brook trout. Stocked with fingerling brook every year.
          └─ 2024-06-26 | Brookies        |    403 fish | 2.93"  | DUCHESNE
          └─ 2022-07-06 | Brookies        |    580 fish | 3.62"  | DUCHESNE
          └─ 2020-07-27 | Brookies        |    580 fish | 4.0"   | DUCHESNE
@@ -8781,46 +9147,58 @@ WR-12    | Larvae                    | 4.0ac    | 28ft   | ?ft elev   | High    
          └─ 2007-07-16 | Brookies        |    586 fish | 2.6"   | DUCHESNE
          └─ 2003-07-03 | Brookies        |    572 fish | 2.48"  | DUCHESNE
 
-WR-17    | Lower Rock                | 12.0ac   | 39ft   | ?ft elev   | Moderate | 
+WR-17    | Lower Rock                | 12.0ac   | 39ft   | 10600ft elev | Moderate | 
+         DWR: 12 acres, elevation 10,600 feet, maximum depth 39 feet, average depth 20 feet. 1½ miles northwest of Pole Creek Lake. No trail to the lake. Timbered, rocky terrain with little open shoreline. A deep lake receiving some fishing pressure. Generally good fishing for brook trout. A few very large cutthroat in the lake. Campsites and horse feed can be found to the east. Stocked cyclically with brook trout.
          └─ 2025-07-07 | Tigers          |   1871 fish | 3.71"  | DUCHESNE
          └─ 2018-07-10 | Tigers          |   1872 fish | 2.35"  | DUCHESNE
          └─ 2013-07-08 | Tigers          |   1872 fish | 3.08"  | DUCHESNE
          └─ 2008-09-24 | Cutthroats      |   1002 fish | 1.42"  | DUCHESNE
 
-WR-16    | Middle Rock               | 6.0ac    | 10ft   | ?ft elev   | Low      | 
+WR-16    | Middle Rock               | 6.0ac    | 10ft   | 10600ft elev | Low      | 
+         DWR: 6 acres, elevation 10,600 feet, maximum depth 10 feet, average depth 6 feet. Nearly two miles northwest of Pole Creek Lake. Rough, rocky, timbered terrain with no trail. Little open shoreline for fly fishermen. Generally receives little fishing pressure. Campsites and horse feed can be found to the east. Good fishing for brook trout. A few cutthroat in the lake. Stocked cyclically with brook trout.
          └─ 2023-09-19 | Cutthroats      |    468 fish | 1.45"  | DUCHESNE
          └─ 2019-09-23 | Cutthroats      |    569 fish | 1.7"   | DUCHESNE
          └─ 2018-10-12 | Cutthroats      |    413 fish | 1.74"  | DUCHESNE
          └─ 2013-10-07 | Cutthroats      |    566 fish | 1.45"  | DUCHESNE
          └─ 2008-09-24 | Cutthroats      |    595 fish | 1.42"  | DUCHESNE
 
-WR-53    | Mocassin                  | 11.0ac   | 27ft   | ?ft elev   | Moderate | 
+WR-53    | Mocassin                  | 11.0ac   | 27ft   | 10700ft elev | Moderate | 
+         DWR: 11 acres, elevation 10,700 feet, maximum depth 27 feet, average depth 10 feet. A small reservoir with a five-foot dam along the southwest end of the lake. Rough terrain, but very good camping sites and horse feed in the area. Lies ¼ mile east of Chepeta. Rock slides along the entire east side of the lake form the only open shoreline. Fast fishing for brook and cutthroat trout. Stocked occasionally with brook.
          └─ 2024-09-23 | Cutthroats      |    599 fish | 1.48"  | DUCHESNE
 
-WR-5     | Ogden                     | 14.0ac   | 21ft   | ?ft elev   | Low      | 
+WR-5     | Ogden                     | 14.0ac   | 21ft   | 11000ft elev | Low      | 
+         DWR: 14 acres, elevation 11,000 feet, maximum depth 21 feet, average depth 8 feet. 16 miles north of Pole Creek Lake on good Forest Service west fork trail. One mile northwest of Queant. A long, deep lake lying against the rock slides. Some open shoreline. Good campsites with horse feed and running water. Fine fishing for wary cutthroat trout. Moderate fishing pressure. Stocked cyclically with cutthroat trout.
          └─ 2024-09-23 | Cutthroats      |   1002 fish | 1.48"  | DUCHESNE
          └─ 2021-09-22 | Cutthroats      |   1412 fish | 1.9"   | DUCHESNE
          └─ 2017-09-25 | Cutthroats      |   1397 fish | 1.62"  | DUCHESNE
          └─ 2013-10-07 | Cutthroats      |   1416 fish | 1.45"  | DUCHESNE
          └─ 2008-09-24 | Cutthroats      |   1399 fish | 1.42"  | DUCHESNE
 
-WR-52    | Papoose                   | 8.0ac    | 22ft   | ?ft elev   | Moderate | 
+WR-52    | Papoose                   | 8.0ac    | 22ft   | 10750ft elev | Moderate | 
+         DWR: 8 acres, elevation 10,750 feet, maximum depth 22 feet, average depth 8 feet. Reservoir with 7 foot dam at the south end of the lake. One mile north of Chepeta. No trail. Open country with shoreline completely accessible for fly fishing. Excellent campsites and horse feed in the area. Wary brook and cutthroat trout, but good fishermen sport heavy creels. Stocked with brook trout.
          └─ 2025-07-01 | Brookies        |    677 fish | 3.4"   | DUCHESNE
 
-WR-18    | Paradise Park Reservoir   | 137.0ac  | 36ft   | ?ft elev   | High     | 
+WR-18    | Paradise Park Reservoir   | 137.0ac  | 36ft   | 10000ft elev | High     | 
+         DWR: Elevation 10,000 feet, size and depth fluctuates, maximum acreage approximately 137, depth 10 to 36 feet. By dirt road 20 miles north of LaPoint. Timbered area with excellent Forest Service campground facilities. A Forest Service guard station is located just south of the dam. A "take off" point into many of the high lakes. A popular fishing site for rainbow trout. Stocked annually.
          └─ No stocking records
 
-WR-45    | Pearl                     | 2.5ac    | 15ft   | ?ft elev   | Low      | 
-         └─ No stocking records
+WR-45    | Pearl                     | 2.5ac    | 15ft   | 11000ft elev | Low      |  - On Dan Potts top five list: “Accessed out of Whiterocks, park just off the road to Chepeta (Reservoir) near the trail heading to the east just past the bridge over the Whiterocks River in a large meadow below the reservoir.<br>
+After hiking east more than a half mile up that meadow, the trail enters timber and gradually climbs about 200 feet up and over a low ridge for about a mile before breaking back out into various open meadows.<br>
+Hiking cross country to the Northeast and following the long meadows uphill, Pearl is located at the base of an opposing straight mountain wall directly north about a half mile from the earthen dam of Whiterocks Reservoir.<br>
+Although fishing is often sketchy at Pearl, there are a number of other good fishing lakes within two-and-a-half miles.”<br>
+         DWR: 2½ acres, elevation 11,000 feet, maximum depth 15 feet, average depth 6 feet. A small, pear-shaped lake up under the rock ledge. One mile north of Whiterocks Lake. No trail and terrain is rough, heavily timbered and rocky. No good campsites at lake, very good campsites with horse feed around Whiterocks Lake. Some open shoreline for fly fishing. Fast fishing for brook trout. Stocked periodically.
+         └─ 2024-09-23 | Cutthroats      |    299 fish | 1.48"  | UINTAH
 
-WR-6     | Point (Adams)             | 16.0ac   | 21ft   | ?ft elev   | Low      | 
+WR-6     | Point (Adams)             | 16.0ac   | 21ft   | 10800ft elev | Low      | 
+         DWR: 16 acres, elevation 10,800 feet, maximum depth 21 feet, average depth 8 feet. Twelve miles north of Pole Creek Lake on Forest Service west fork trail. Lake lies west of main stream and two miles south of Queant, at base of bald ridge with rocky, timbered shoreline. Campsites and horse feed east on the main stream. Good fishing for brook trout. Little fishing pressure. Stocked cyclically with brook trout.
          └─ 2025-07-01 | Brookies        |   1604 fish | 3.4"   | DUCHESNE
          └─ 2020-07-06 | Brookies        |   1595 fish | 3.49"  | DUCHESNE
          └─ 2015-07-06 | Brookies        |   1593 fish | 2.61"  | DUCHESNE
          └─ 2010-07-15 | Brookies        |   1600 fish | 2.38"  | DUCHESNE
          └─ 2005-07-15 | Brookies        |    804 fish | 2.65"  | DUCHESNE
 
-WR-13    | Pole Creek Lake           | 5.0ac    | 10ft   | ?ft elev   | High     | 
+WR-13    | Pole Creek Lake           | 5.0ac    | 10ft   | 10200ft elev | High     | 
+         DWR: 5 acres, elevation 10,200 feet, maximum depth 10 feet, average depth 4 feet. By dirt road 15 miles north of Whiterocks. An open meadow lake receiving heavy fishing pressure. Some campsites and horse feed in surrounding area. Moderately good fishing for rainbow trout. Stocked annually.
          └─ 2025-06-30 | Tigers          |    500 fish | 3.69"  | DUCHESNE
          └─ 2024-06-26 | Tigers          |    495 fish | 3.64"  | DUCHESNE
          └─ 2023-09-19 | Tigers          |    249 fish | 3.95"  | DUCHESNE
@@ -8853,7 +9231,8 @@ WR-13    | Pole Creek Lake           | 5.0ac    | 10ft   | ?ft elev   | High    
          └─ 2003-07-23 | Rainbows        |    385 fish | 10.03" | DUCHESNE
          └─ 2002-06-18 | Rainbows        |   2001 fish | 9.58"  | DUCHESNE
 
-WR-4     | Quent                     | 57.0ac   | 44ft   | ?ft elev   | High     | 
+WR-4     | Quent                     | 57.0ac   | 44ft   | 10700ft elev | High     | 
+         DWR: 57 acres, elevation 10,700 feet, maximum depth 44 feet, average depth 13 feet. 14 miles north of Pole Creek Lake along good posted Forest Service west fork trail. Open meadow with scattered timber providing excellent campsites with plenty of horse feed. Several streams with running water. This large half-moon shaped lake is popular and receives considerable use. Plenty of open shoreline for the fly fisherman. Generally good evening fishing for brook trout. Stocked cyclically with brook trout.
          └─ 2025-07-01 | Brookies        |   1448 fish | 3.4"   | DUCHESNE
          └─ 2025-06-30 | Brookies        |   1448 fish | 3.4"   | DUCHESNE
          └─ 2023-09-19 | Cutthroats      |    936 fish | 1.45"  | DUCHESNE
@@ -8862,26 +9241,30 @@ WR-4     | Quent                     | 57.0ac   | 44ft   | ?ft elev   | High    
          └─ 2010-07-15 | Brookies        |   4120 fish | 2.38"  | DUCHESNE
          └─ 2005-07-15 | Brookies        |   1997 fish | 2.65"  | DUCHESNE
 
-WR-2     | RC #1                     | 10.0ac   | 16ft   | ?ft elev   | Low      | 
+WR-2     | RC #1                     | 10.0ac   | 16ft   | 10650ft elev | Low      | 
+         DWR: 10 acres, elevation 10,650 feet, maximum depth 16 feet, average depth 8 feet, 10 miles north of Pole Creek Lake on good Forest Service trail. Two miles southeast of Queant Lake. Rough, heavily timbered terrain with slide rock completely along the east side of the lake. Open rock shoreline for half of the lake. Fishing pressure is light. Campsite available just south of the lake with limited horse feed. Excellent campsites and horse feed can be found ½ mile east along the main stream. Good fishing for both brook and cutthroat trout. The mosquitoes bite as fast as the fish, so have as much repellent as fishing tackle. East RC #2 forms a small part of #1. Stocked periodically with cutthroat trout.
          └─ 2024-09-23 | Cutthroats      |    599 fish | 1.48"  | DUCHESNE
          └─ 2017-09-25 | Cutthroats      |   1197 fish | 1.62"  | DUCHESNE
          └─ 2013-10-07 | Cutthroats      |   1227 fish | 1.45"  | DUCHESNE
 
-WR-35    | Rassmussen #1             | 19.0ac   | 5ft    | ?ft elev   | Moderate | 
+WR-35    | Rassmussen #1             | 19.0ac   | 5ft    | 10500ft elev | Moderate | 
+         DWR: 19 acres, elevation 10,500 feet, maximum depth 5 feet, average depth 3 feet. Twelve miles north from Pole Creek Lake along Forest Service west fork trail, then one mile west on sheep trail. Two miles south of Point Lake. Rocky, timbered terrain with few campsites and little horse feed. Excellent fishing for brook trout. Stocked cyclically with brook trout.
          └─ 2022-07-06 | Brookies        |   1536 fish | 3.62"  | DUCHESNE
          └─ 2018-07-10 | Brookies        |   1533 fish | 2.88"  | DUCHESNE
          └─ 2013-07-10 | Brookies        |   1529 fish | 2.57"  | DUCHESNE
          └─ 2008-07-10 | Brookies        |   1500 fish | 2.92"  | DUCHESNE
          └─ 2003-07-03 | Brookies        |   1521 fish | 2.48"  | DUCHESNE
 
-WR-36    | Rassmussen #2             | 14.0ac   | 8ft    | ?ft elev   | Moderate | 
+WR-36    | Rassmussen #2             | 14.0ac   | 8ft    | 10500ft elev | Moderate | 
+         DWR: 14 acres, elevation 10,500 feet, maximum depth 8 feet, average depth 4 feet. A sister lake of WR-35, it lies just southeast and almost joins lake #1. Generally provides excellent fishing and good fishermen seldom leave hungry. Some open shoreline for fly fishermen. Stocked cyclically with brook trout.
          └─ 2022-07-06 | Brookies        |   1394 fish | 3.62"  | DUCHESNE
          └─ 2018-07-10 | Brookies        |   1407 fish | 2.88"  | DUCHESNE
          └─ 2013-07-10 | Brookies        |   1395 fish | 2.57"  | DUCHESNE
          └─ 2008-07-10 | Brookies        |   1400 fish | 2.92"  | DUCHESNE
          └─ 2003-07-03 | Brookies        |   1406 fish | 2.48"  | DUCHESNE
 
-WR-66    | Reader                    | 10.0ac   | 10ft   | ?ft elev   | Moderate | 
+WR-66    | Reader                    | 10.0ac   | 10ft   | 11150ft elev | Moderate | 
+         DWR: 10 acres, elevation 11,150 feet, maximum depth 10 feet, average depth 5 feet. From Chepeta Lake 4 miles west by Forest Service trail into the area. Reader lies at the base of the pass near the Fox Lake trail. Mostly open terrain with scattered timber. Open shoreline for the fly fishermen. Good campsites with some horse feed. Excellent fishing for both brook and cutthroat trout. Some natural reproduction. Stocked periodically with cutthroat trout.
          └─ 2022-09-23 | Cutthroats      |    743 fish | 1.57"  | DUCHESNE
          └─ 2021-06-02 | Cutthroats      |   4004 fish | 4.28"  | DUCHESNE
          └─ 2020-09-23 | Cutthroats      |    240 fish | 1.53"  | DUCHESNE
@@ -8890,51 +9273,76 @@ WR-66    | Reader                    | 10.0ac   | 10ft   | ?ft elev   | Moderate
          └─ 2019-09-23 | Cutthroats      |    749 fish | 1.61"  | DUCHESNE
          └─ 2019-09-23 | Cutthroats      |    524 fish | 1.61"  | DUCHESNE
 
-WR-42    | Sand                      | 6.0ac    | 5ft    | ?ft elev   | Low      | 
-         └─ No stocking records
+WR-42    | Sand                      | 6.0ac    | 5ft    | 11000ft elev | Low      | 
+         DWR: 6 acres, elevation 11,000 feet, maximum depth 5 feet, average depth 3 feet. ½ mile northeast along the meadows from Teds. A small, open, meadow lake lying against the rock slides. Excellent fly fishing for pan-sized brook and cutthroat trout. Little fishing pressure. Very good campsites with horse feed. Natural reproduction.
+         └─ 2024-09-23 | Cutthroats      |    403 fish | 1.48"  | UINTAH
 
-WR-57    | Sharlee                   | 10.0ac   | 4ft    | ?ft elev   | Low      | 
+WR-57    | Sharlee                   | 10.0ac   | 4ft    | 10800ft elev | Low      | 
+         DWR: 10 acres, elevation 10,800 feet, maximum depth 4 feet, average depth 3 feet. Two miles west of Chepeta Lake on good Forest Service trail. A pretty, meadow lake with completely open, marshy shoreline. Excellent campsites with horse feed. Several springs provide drinking water. An excellent fly fishing water with hip boots or a small rubber boat. Little fishing pressure and the fishing is great. Good population of cutthroat and brook trout. You won't go hungry here. Some natural reproduction with periodical stocking.
          └─ 2023-09-19 | Cutthroats      |    655 fish | 1.45"  | DUCHESNE
          └─ 2019-09-23 | Cutthroats      |    674 fish | 1.61"  | DUCHESNE
 
-WR-8     | Taylor                    | 25.0ac   | 53ft   | ?ft elev   | Low      | 
+WR-8     | Taylor                    | 25.0ac   | 53ft   | 11350ft elev | Low      | 
+         DWR: 25 acres, elevation 11,350 feet, maximum depth 53 feet, average depth 10 feet. Sixteen miles north of Pole Creek Lake along good Forest Service west fork trail. Two miles northeast of Queant. A tadpole shaped lake lying in the open, rocky, terrain above timberline. Open brushy shoreline for fly fishing. Poor campsites with little horse feed. Good fishing for all sizes of brook trout. Stocked cyclically with brook trout. Seldom visited.
          └─ 2022-06-30 | Brookies        |   2497 fish | 3.7"   | DUCHESNE
          └─ 2017-07-09 | Brookies        |   2511 fish | 2.53"  | DUCHESNE
          └─ 2012-07-09 | Brookies        |   2496 fish | 2.3"   | DUCHESNE
          └─ 2007-07-16 | Brookies        |   2488 fish | 2.6"   | DUCHESNE
 
-WR-44    | Ted                       | 14.0ac   | 20ft   | ?ft elev   | High     | 
-         └─ No stocking records
+WR-44    | Ted                       | 14.0ac   | 20ft   | 10500ft elev | High     | 
+         DWR: 14 acres, elevation 10,500 feet, maximum depth 20 feet, average depth 7 feet. From Paradise Park Reservoir 15 miles along excellent Forest Service trail on poor jeep road. Teds is often confused with Workman Lake, but lies one mile north of Workman. The shoreline is mostly timbered, with enough open meadow to provide excellent fly fishing areas. A good looking, productive lake housing large brook and cutthroat trout. Fishing pressure is heavy but the evening fishing is generally good. Excellent campsites with good drinking water and plenty of horse feed. A good lake at which to stay. Stocked with brook trout.
+         └─ 2025-07-01 | Brookies        |    996 fish | 3.4"   | UINTAH
+         └─ 2023-07-21 | Brookies        |    697 fish | 3.0"   | UINTAH
+         └─ 2020-07-06 | Brookies        |   1394 fish | 3.49"  | UINTAH
+         └─ 2016-06-30 | Brookies        |   1457 fish | 2.06"  | UINTAH
+         └─ 2010-07-15 | Brookies        |   1400 fish | 2.38"  | UINTAH
+         └─ 2005-07-15 | Brookies        |   1501 fish | 2.65"  | UINTAH
 
-WR-14    | Upper Rock                | 15.0ac   | 28ft   | ?ft elev   | Low      | 
+WR-14    | Upper Rock                | 15.0ac   | 28ft   | 10600ft elev | Low      | 
+         DWR: 15 acres, elevation 10,600 feet, maximum depth 28 feet, water level fluctuates. Two miles northwest of Pole Creek Lake over very rough terrain, no trail. A large lake lying in a deep, rocky basin. Open rock shoreline. Little fishing pressure on this remote lake. No campsites. Generally good fishing. Stocked cyclically with cutthroat trout.
          └─ 2023-09-19 | Cutthroats      |   1684 fish | 1.45"  | DUCHESNE
          └─ 2018-10-12 | Cutthroats      |   2016 fish | 1.76"  | DUCHESNE
          └─ 2013-10-07 | Cutthroats      |   1982 fish | 1.45"  | DUCHESNE
          └─ 2008-09-24 | Cutthroats      |   2004 fish | 1.42"  | DUCHESNE
 
-WR-55    | Walk Up                   | 13.0ac   | 60ft   | ?ft elev   | Low      | 
+WR-55    | Walk Up                   | 13.0ac   | 60ft   | 11500ft elev | Low      | 
+         DWR: 13 acres, elevation 11,500 feet, maximum depth 60 feet, average depth 32 feet. From Chepeta, two miles northwest over difficult and rocky terrain. No trail. A high, deep, cold lake completely encompassed by slide rock. This lone lake lies at the very head of a small rock basin. No campsites or horse feed. Stocked experimentally with brook trout. One to watch!
          └─ 2022-07-06 | Brookies        |   1832 fish | 3.62"  | DUCHESNE
          └─ 2017-07-09 | Brookies        |   1860 fish | 2.53"  | DUCHESNE
          └─ 2012-07-09 | Brookies        |   1845 fish | 2.3"   | DUCHESNE
          └─ 2008-07-10 | Brookies        |   1840 fish | 2.92"  | DUCHESNE
          └─ 2002-06-27 | Brookies        |   1845 fish | 2.34"  | DUCHESNE
 
-WR-48    | Watkins                   | 18.0ac   | 36ft   | ?ft elev   | Low      | 
+WR-48    | Watkins                   | 18.0ac   | 36ft   | 11000ft elev | Low      | 
+         DWR: 18 acres, elevation 11,000 feet, maximum depth 36 feet, average depth 15 feet. From Cliff Lake 100 yards southeast along the rock slides. Rough, heavily timbered, rocky terrain. No trail, poor campsites without horse feed. Very few fishermen. Some open shoreline. Light milky water coloration. Stocked with brook trout.
+         └─ 2022-07-06 | Brookies        |   1795 fish | 3.62"  | UINTAH
+         └─ 2018-07-10 | Brookies        |   1806 fish | 2.88"  | UINTAH
+         └─ 2013-07-10 | Brookies        |   1798 fish | 2.57"  | UINTAH
+         └─ 2008-07-10 | Brookies        |   1800 fish | 2.92"  | UINTAH
+         └─ 2003-07-03 | Brookies        |   1799 fish | 2.48"  | UINTAH
+
+WR-46    | Whiterocks Reservoir Lake | 35.0ac   | 42ft   | 10800ft elev | High     | 
+         DWR: Elevation 10,800 feet, maximum acres 35, maximum depth 42 feet. Water level fluctuates 20 feet. Located some 20 miles via good Forest Service trail or poor jeep road. The shoreline consists of about half meadow and half rock-timber, so take along your boots and fly rod. Very good camping areas with lots of running water. Horse feed generally available in the area. Some natural reproduction, stocked. Heavy fishing pressure. Brook and cutthroat trout to 2 and 3 pounds in weight.
          └─ No stocking records
 
-WR-46    | Whiterocks Reservoir Lake | 35.0ac   | 42ft   | ?ft elev   | High     | 
-         └─ No stocking records
-
-WR-54    | Wigwam                    | 4.0ac    | 14ft   | ?ft elev   | Moderate | 
+WR-54    | Wigwam                    | 4.0ac    | 14ft   | 10750ft elev | Moderate | 
+         DWR: 4 acres, elevation 10,750 feet, maximum depth 14 feet, average depth 6 feet. Reservoir with a 5 foot dam on south end of the lake. From Chepeta, ½ mile northeast. No trail. Rock slides completely along the east side of the lake. Lies in very rough, rocky area, recommend use of good campsites and horse feed at Chepeta. Generally good fishing for both brook and cutthroat trout. Stocked periodically with brook trout.
          └─ 2020-07-06 | Brookies        |    677 fish | 3.49"  | DUCHESNE
          └─ 2015-07-06 | Brookies        |    677 fish | 2.61"  | DUCHESNE
          └─ 2010-07-15 | Brookies        |    680 fish | 2.38"  | DUCHESNE
          └─ 2005-07-15 | Brookies        |    670 fish | 2.65"  | DUCHESNE
 
-WR-40    | Wooley                    | 18.0ac   | 42ft   | ?ft elev   | Moderate | 
-         └─ No stocking records
+WR-40    | Wooley                    | 18.0ac   | 42ft   | 11000ft elev | Moderate | 
+         DWR: 18 acres, elevation 11,000 feet, maximum depth 42 feet, average depth 14 feet. One mile east of Workman at the head of the basin against the rock slides. No trail. Open rock shoreline encompasses this cold, deep lake. Excellent campsites and horse feed near Workman Lake. Fair fishing for brook trout. Stocked periodically.
+         └─ 2022-07-06 | Brookies        |   1000 fish | 3.62"  | UINTAH
+         └─ 2017-07-09 | Brookies        |   1023 fish | 2.53"  | UINTAH
+         └─ 2016-07-14 | Tigers          |    997 fish | 3.62"  | UINTAH
+         └─ 2012-07-09 | Brookies        |    130 fish | 2.3"   | UINTAH
+         └─ 2007-07-16 | Brookies        |    129 fish | 2.6"   | UINTAH
+         └─ 2002-06-27 | Brookies        |    118 fish | 2.34"  | UINTAH
 
-WR-50    | Workman                   | 20.0ac   | 14ft   | ?ft elev   | Moderate | 
+WR-50    | Workman                   | 20.0ac   | 14ft   | 10500ft elev | Moderate | 
+         DWR: 20 acres, elevation 10,500 feet, maximum depth 14 feet, average depth 4½ feet. From Paradise Park Reservoir 17 miles along posted, good Forest Service trail or poor jeep road. Two miles north of Cliff Lake. Heavily timbered terrain with limited open shoreline. Good campsites with horse feed in the area. Many springs. A few large brook trout. Generally fast fishing for cutthroat trout. Popular lake. Stocked with cutthroat.
          └─ No stocking records
 
 

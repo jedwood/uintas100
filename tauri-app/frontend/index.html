@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uintas Admin</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f3f4f6; color: #1f2937; }
+
+    .header { background: #fff; border-bottom: 1px solid #e5e7eb; padding: 16px 24px; display: flex; align-items: center; gap: 12px; }
+    .header h1 { font-size: 18px; font-weight: 700; }
+    .header .subtitle { font-size: 12px; color: #9ca3af; }
+
+    .container { max-width: 720px; margin: 0 auto; padding: 20px; }
+
+    .section { background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+    .section-title { font-size: 11px; font-weight: 600; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+
+    /* Status cards */
+    .status-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+    .status-card { border-radius: 8px; padding: 12px; border: 1px solid #e5e7eb; }
+    .status-card.ok { background: #f0fdf4; border-color: #bbf7d0; }
+    .status-card.err { background: #fef2f2; border-color: #fecaca; }
+    .status-card.neutral { background: #f9fafb; border-color: #e5e7eb; }
+    .status-label { font-size: 13px; font-weight: 600; color: #374151; display: flex; align-items: center; gap: 6px; }
+    .status-dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+    .status-dot.green { background: #22c55e; }
+    .status-dot.red { background: #ef4444; }
+    .status-dot.gray { background: #9ca3af; }
+    .status-detail { font-size: 11px; color: #6b7280; margin-top: 4px; line-height: 1.4; }
+    .status-error { font-size: 11px; color: #dc2626; margin-top: 2px; }
+
+    /* Run buttons */
+    .run-btns { display: flex; gap: 8px; }
+    .run-btn { flex: 1; padding: 10px 12px; border: none; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.15s; text-align: center; }
+    .run-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .run-btn.blue { background: #eff6ff; color: #1d4ed8; }
+    .run-btn.blue:hover:not(:disabled) { background: #dbeafe; }
+    .run-btn.green { background: #f0fdf4; color: #15803d; }
+    .run-btn.green:hover:not(:disabled) { background: #dcfce7; }
+    .run-btn.purple { background: #faf5ff; color: #7e22ce; }
+    .run-btn.purple:hover:not(:disabled) { background: #f3e8ff; }
+
+    .run-output { margin-top: 10px; display: none; }
+    .run-output.visible { display: block; }
+    .run-output pre { background: #111827; color: #a7f3d0; font-size: 11px; padding: 12px; border-radius: 8px; max-height: 200px; overflow-y: auto; white-space: pre-wrap; font-family: 'SF Mono', 'Menlo', monospace; }
+
+    /* Schedule */
+    .sched-row { background: #f9fafb; border-radius: 8px; padding: 12px; margin-bottom: 8px; }
+    .sched-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+    .sched-label { font-size: 13px; font-weight: 500; color: #374151; }
+    .sched-interval { display: flex; align-items: center; gap: 6px; }
+    .sched-interval span { font-size: 11px; color: #6b7280; }
+    .sched-interval select { font-size: 11px; border: 1px solid #d1d5db; border-radius: 4px; padding: 3px 6px; background: #fff; }
+    .save-btn { width: 100%; padding: 9px; background: #1f2937; color: #fff; border: none; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer; transition: background 0.15s; margin-top: 4px; }
+    .save-btn:hover { background: #374151; }
+
+    /* Toggle switch */
+    .toggle { position: relative; width: 36px; height: 20px; flex-shrink: 0; }
+    .toggle input { opacity: 0; width: 0; height: 0; }
+    .toggle .slider { position: absolute; cursor: pointer; inset: 0; background: #d1d5db; border-radius: 20px; transition: 0.2s; }
+    .toggle .slider::before { content: ''; position: absolute; height: 16px; width: 16px; left: 2px; bottom: 2px; background: #fff; border-radius: 50%; transition: 0.2s; }
+    .toggle input:checked + .slider { background: #2563eb; }
+    .toggle input:checked + .slider::before { transform: translateX(16px); }
+    .toggle.green input:checked + .slider { background: #16a34a; }
+    .toggle.dark input:checked + .slider { background: #1f2937; }
+
+    /* Log viewer */
+    .log-tabs { display: flex; gap: 4px; margin-bottom: 8px; }
+    .log-tab { padding: 4px 12px; border: none; border-radius: 20px; font-size: 11px; font-weight: 500; cursor: pointer; transition: all 0.15s; }
+    .log-tab.active { background: #1f2937; color: #fff; }
+    .log-tab:not(.active) { background: #e5e7eb; color: #6b7280; }
+    .log-tab:not(.active):hover { background: #d1d5db; }
+    .log-viewer { background: #111827; color: #d1d5db; font-size: 11px; padding: 12px; border-radius: 8px; height: 280px; overflow-y: auto; white-space: pre-wrap; font-family: 'SF Mono', 'Menlo', monospace; }
+    .log-refresh { font-size: 11px; color: #2563eb; background: none; border: none; cursor: pointer; margin-top: 6px; }
+    .log-refresh:hover { text-decoration: underline; }
+
+    /* Settings */
+    .settings-row { display: flex; align-items: center; justify-content: space-between; background: #f9fafb; border-radius: 8px; padding: 12px; }
+    .settings-label { font-size: 13px; font-weight: 500; color: #374151; }
+
+    /* Spinner */
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: spin 0.6s linear infinite; vertical-align: middle; margin-right: 4px; }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Uintas Admin</h1>
+  <span class="subtitle">Sync & scheduling controls</span>
+</div>
+
+<div class="container">
+
+  <!-- Status -->
+  <div class="section">
+    <div class="section-title">Status</div>
+    <div id="status-cards" class="status-grid">
+      <div class="status-card neutral"><div class="status-detail">Loading...</div></div>
+      <div class="status-card neutral"><div class="status-detail">Loading...</div></div>
+      <div class="status-card neutral"><div class="status-detail">Loading...</div></div>
+    </div>
+  </div>
+
+  <!-- Run Now -->
+  <div class="section">
+    <div class="section-title">Run Now</div>
+    <div class="run-btns">
+      <button id="btn-stocking" class="run-btn blue" onclick="runScript('btn-stocking','run_stocking_update')">Fetch Stocking</button>
+      <button id="btn-notes-sync" class="run-btn green" onclick="runScript('btn-notes-sync','run_notes_sync')">Sync Notes to DB</button>
+      <button id="btn-notes-push" class="run-btn purple" onclick="runScript('btn-notes-push','run_notes_push')">Push DB to Notes</button>
+    </div>
+    <div id="run-output" class="run-output"><pre></pre></div>
+  </div>
+
+  <!-- Schedule -->
+  <div class="section">
+    <div class="section-title">Schedule</div>
+    <div class="sched-row">
+      <div class="sched-header">
+        <span class="sched-label">Stocking Updates</span>
+        <label class="toggle">
+          <input type="checkbox" id="sched-stocking-enabled">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="sched-interval">
+        <span>Every</span>
+        <select id="sched-stocking-interval">
+          <option value="6">6 hours</option>
+          <option value="12">12 hours</option>
+          <option value="24">24 hours</option>
+          <option value="48">48 hours</option>
+          <option value="72">72 hours</option>
+          <option value="168">7 days</option>
+        </select>
+      </div>
+    </div>
+    <div class="sched-row">
+      <div class="sched-header">
+        <span class="sched-label">Notes Sync</span>
+        <label class="toggle green">
+          <input type="checkbox" id="sched-notes-enabled">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="sched-interval">
+        <span>Every</span>
+        <select id="sched-notes-interval">
+          <option value="1">1 hour</option>
+          <option value="3">3 hours</option>
+          <option value="6">6 hours</option>
+          <option value="12">12 hours</option>
+          <option value="24">24 hours</option>
+        </select>
+      </div>
+    </div>
+    <button class="save-btn" id="btn-save-schedule" onclick="saveSchedule()">Save Schedule</button>
+  </div>
+
+  <!-- Logs -->
+  <div class="section">
+    <div class="section-title">Logs</div>
+    <div class="log-tabs">
+      <button class="log-tab active" data-tab="stocking" onclick="switchLog('stocking')">Stocking</button>
+      <button class="log-tab" data-tab="notes" onclick="switchLog('notes')">Notes</button>
+      <button class="log-tab" data-tab="fetch" onclick="switchLog('fetch')">Fetch</button>
+    </div>
+    <pre id="log-viewer" class="log-viewer">Loading...</pre>
+    <button class="log-refresh" onclick="refreshLog()">Refresh</button>
+  </div>
+
+  <!-- Settings -->
+  <div class="section">
+    <div class="section-title">Settings</div>
+    <div class="settings-row">
+      <span class="settings-label">Launch at Login</span>
+      <label class="toggle dark">
+        <input type="checkbox" id="autostart-toggle" onchange="toggleAutostart(this.checked)">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const { invoke } = window.__TAURI__.core;
+  const { listen } = window.__TAURI__.event;
+
+  let activeLogTab = 'stocking';
+  let runningTask = null;
+
+  // --- Init ---
+  async function init() {
+    await Promise.all([refreshStatus(), refreshLog(), refreshSchedule(), refreshAutostart()]);
+  }
+
+  // --- Status ---
+  async function refreshStatus() {
+    try {
+      const s = await invoke('get_status');
+      const cards = document.getElementById('status-cards');
+      cards.innerHTML =
+        statusCard('Stocking', s.stocking) +
+        statusCard('Notes Sync', s.notes_sync) +
+        dbCard(s);
+    } catch (e) {
+      console.error('Status error:', e);
+    }
+  }
+
+  function statusCard(label, t) {
+    const ok = t.last_success;
+    const cls = t.last_run ? (ok ? 'ok' : 'err') : 'neutral';
+    const dot = t.last_run ? (ok ? 'green' : 'red') : 'gray';
+    let detail = 'Last: ' + fmtTime(t.last_run);
+    if (t.enabled && t.next_run) detail += '<br>Next: ' + fmtTime(t.next_run);
+    const errHtml = t.last_error ? '<div class="status-error">' + esc(t.last_error.substring(0, 120)) + '</div>' : '';
+    return '<div class="status-card ' + cls + '">' +
+      '<div class="status-label"><span class="status-dot ' + dot + '"></span>' + label + '</div>' +
+      '<div class="status-detail">' + detail + '</div>' + errHtml + '</div>';
+  }
+
+  function dbCard(s) {
+    const kb = s.db_size_bytes ? (s.db_size_bytes / 1024).toFixed(0) + ' KB' : '?';
+    const mod = s.db_modified ? '<br>Modified: ' + fmtTime(s.db_modified) : '';
+    return '<div class="status-card neutral">' +
+      '<div class="status-label"><span class="status-dot gray"></span>Database</div>' +
+      '<div class="status-detail">Size: ' + kb + mod + '</div></div>';
+  }
+
+  // --- Run scripts ---
+  async function runScript(btnId, cmd) {
+    if (runningTask) return;
+    runningTask = cmd;
+    const btn = document.getElementById(btnId);
+    const origText = btn.textContent;
+    btn.innerHTML = '<span class="spinner"></span>Running...';
+    btn.disabled = true;
+    const out = document.getElementById('run-output');
+    out.classList.remove('visible');
+
+    try {
+      const r = await invoke(cmd);
+      const text = r.success ? 'OK\n' + r.stdout : 'FAILED\n' + r.stderr + '\n' + r.stdout;
+      out.querySelector('pre').textContent = text;
+      out.classList.add('visible');
+      refreshStatus();
+    } catch (e) {
+      out.querySelector('pre').textContent = 'Error: ' + e;
+      out.classList.add('visible');
+    } finally {
+      btn.textContent = origText;
+      btn.disabled = false;
+      runningTask = null;
+    }
+  }
+
+  // --- Schedule ---
+  async function refreshSchedule() {
+    try {
+      const c = await invoke('get_schedule');
+      document.getElementById('sched-stocking-enabled').checked = c.stocking_update.enabled;
+      document.getElementById('sched-stocking-interval').value = String(c.stocking_update.interval_hours);
+      document.getElementById('sched-notes-enabled').checked = c.notes_sync.enabled;
+      document.getElementById('sched-notes-interval').value = String(c.notes_sync.interval_hours);
+    } catch (e) {
+      console.error('Schedule error:', e);
+    }
+  }
+
+  async function saveSchedule() {
+    const btn = document.getElementById('btn-save-schedule');
+    try {
+      const c = await invoke('get_schedule');
+      c.stocking_update.enabled = document.getElementById('sched-stocking-enabled').checked;
+      c.stocking_update.interval_hours = parseInt(document.getElementById('sched-stocking-interval').value);
+      c.notes_sync.enabled = document.getElementById('sched-notes-enabled').checked;
+      c.notes_sync.interval_hours = parseInt(document.getElementById('sched-notes-interval').value);
+      await invoke('set_schedule', { config: c });
+      btn.textContent = 'Saved!';
+      setTimeout(() => { btn.textContent = 'Save Schedule'; }, 1500);
+    } catch (e) {
+      btn.textContent = 'Error';
+      console.error('Save schedule error:', e);
+      setTimeout(() => { btn.textContent = 'Save Schedule'; }, 2000);
+    }
+  }
+
+  // --- Logs ---
+  async function refreshLog() {
+    const v = document.getElementById('log-viewer');
+    try {
+      const content = await invoke('read_log', { logName: activeLogTab });
+      v.textContent = content || '(empty)';
+      v.scrollTop = v.scrollHeight;
+    } catch (e) {
+      v.textContent = 'Error: ' + e;
+    }
+  }
+
+  function switchLog(tab) {
+    activeLogTab = tab;
+    document.querySelectorAll('.log-tab').forEach(el => {
+      el.classList.toggle('active', el.dataset.tab === tab);
+    });
+    refreshLog();
+  }
+
+  // --- Autostart ---
+  async function refreshAutostart() {
+    try {
+      const enabled = await invoke('get_autostart_status');
+      document.getElementById('autostart-toggle').checked = enabled;
+    } catch (e) {
+      console.error('Autostart error:', e);
+    }
+  }
+
+  async function toggleAutostart(enabled) {
+    try {
+      await invoke('set_autostart', { enabled });
+    } catch (e) {
+      console.error('Autostart toggle error:', e);
+      document.getElementById('autostart-toggle').checked = !enabled;
+    }
+  }
+
+  // --- Events ---
+  listen('schedule-update', (ev) => {
+    refreshStatus();
+    if (activeLogTab === 'stocking' && ev.payload.task === 'stocking_update') refreshLog();
+    if (activeLogTab === 'notes' && ev.payload.task === 'notes_sync') refreshLog();
+  });
+
+  // --- Helpers ---
+  function fmtTime(v) {
+    if (!v) return 'Never';
+    try {
+      const d = new Date(v);
+      if (isNaN(d.getTime())) return v;
+      const diff = Date.now() - d;
+      if (diff < 60000) return 'just now';
+      if (diff < 3600000) return Math.floor(diff / 60000) + 'm ago';
+      if (diff < 86400000) return Math.floor(diff / 3600000) + 'h ago';
+      return d.toLocaleDateString() + ' ' + d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    } catch { return v; }
+  }
+
+  function esc(s) {
+    const d = document.createElement('div');
+    d.textContent = s;
+    return d.innerHTML;
+  }
+
+  init();
+</script>
+</body>
+</html>

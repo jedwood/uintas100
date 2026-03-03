@@ -16,16 +16,17 @@ def insert_stocking_record(cursor, lake_id, species, quantity, length, stock_dat
         VALUES (?, ?, ?, ?, ?, ?, ?)
     """, (lake_id, species, quantity, length, stock_date, source_year, county))
 
-def fetch_stocking_data(county):
-    """Fetch stocking data for a given county."""
-    current_year = datetime.now().year
-    url = f"https://dwrapps.utah.gov/fishstocking/FishAjax?y={current_year}&sort=watername&sortorder=ASC&sortspecific={county}&whichSpecific=county"
+def fetch_stocking_data(county, year=None):
+    """Fetch stocking data for a given county and year."""
+    if year is None:
+        year = datetime.now().year
+    url = f"https://dwrapps.utah.gov/fishstocking/FishAjax?y={year}&sort=watername&sortorder=ASC&sortspecific={county}&whichSpecific=county"
     try:
-        response = requests.get(url)
+        response = requests.get(url, timeout=30)
         response.raise_for_status()
         return response.text
     except requests.exceptions.RequestException as e:
-        print(f"Error fetching data for {county}: {e}")
+        print(f"Error fetching data for {county} ({year}): {e}")
         return None
 
 def parse_and_insert_data(html_content, conn, cursor, county, csv_writer, log_file):
@@ -189,20 +190,26 @@ def main():
             
             total_new_records = 0
             all_unmatched = set()
-            
-            for county in ["Summit", "Duchesne", "Uintah", "Daggett"]:
-                log_file.write(f"\nProcessing {county} county...\n")
-                print(f"Fetching data for {county} county...")
-                
-                html_content = fetch_stocking_data(county)
-                if html_content:
-                    new_records, unmatched = parse_and_insert_data(
-                        html_content, conn, cursor, county, csv_writer, log_file
-                    )
-                    total_new_records += new_records
-                    all_unmatched.update(unmatched)
-                else:
-                    log_file.write(f"  ERROR: Failed to fetch data for {county}\n")
+
+            # Fetch current year and prior year (catches late-season stocking added after year rolls over)
+            current_year = datetime.now().year
+            years_to_fetch = [current_year, current_year - 1]
+
+            for year in years_to_fetch:
+                log_file.write(f"\n--- Fetching {year} data ---\n")
+                for county in ["Summit", "Duchesne", "Uintah", "Daggett"]:
+                    log_file.write(f"\nProcessing {county} county ({year})...\n")
+                    print(f"Fetching data for {county} county ({year})...")
+
+                    html_content = fetch_stocking_data(county, year)
+                    if html_content:
+                        new_records, unmatched = parse_and_insert_data(
+                            html_content, conn, cursor, county, csv_writer, log_file
+                        )
+                        total_new_records += new_records
+                        all_unmatched.update(unmatched)
+                    else:
+                        log_file.write(f"  ERROR: Failed to fetch data for {county} ({year})\n")
             
             conn.close()
             

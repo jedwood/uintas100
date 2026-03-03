@@ -1,10 +1,14 @@
 import sqlite3
 import csv
 import re
+import os
 from datetime import datetime
 
-def create_database(db_path="../uinta_lakes.db"):
+def create_database(db_path=None):
     """Create SQLite database with required schema"""
+    if db_path is None:
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        db_path = os.path.join(os.path.dirname(script_dir), "uinta_lakes.db")
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
     

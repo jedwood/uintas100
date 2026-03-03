@@ -1,7 +1,7 @@
 UINTA MOUNTAINS STOCKING RECORDS DUMP
 ==================================================
 
-Total Stocking Records: 6745
+Total Stocking Records: 7126
 
 
 --- BR-2 ---
@@ -98,6 +98,14 @@ Total Stocking Records: 6745
 --- D-45 ---
   2013-01-01 | Tigers          |    450 fish | ?      | Duchesne
   2010-01-01 | Tigers          |    448 fish | ?      | Duchesne
+
+--- DF-4 ---
+  2022-09-23 | Cutthroats      |    743 fish | 1.57"  | UINTAH
+  2019-09-23 | Cutthroats      |    758 fish | 1.7"   | UINTAH
+  2016-09-20 | Cutthroats      |    726 fish | 1.47"  | UINTAH
+  2013-07-09 | Cutthroats      |    750 fish | 2.8"   | UINTAH
+  2010-09-30 | Cutthroats      |    750 fish | 1.71"  | UINTAH
+  2008-09-24 | Cutthroats      |    754 fish | 1.42"  | UINTAH
 
 --- DG-10 ---
   2021-09-22 | Cutthroats      |    984 fish | 1.9"   | DUCHESNE
@@ -282,6 +290,14 @@ Total Stocking Records: 6745
   2010-07-14 | Brookies        |    187 fish | 2.83"  | SUMMIT
   2006-07-13 | Brookies        |    196 fish | 2.61"  | SUMMIT
 
+--- GR-104 ---
+  2024-09-23 | Grayling        |    299 fish | 2.47"  | DAGGETT
+  2019-10-01 | Grayling        |    706 fish | 2.39"  | DAGGETT
+  2017-09-20 | Grayling        |    648 fish | 2.79"  | DAGGETT
+  2013-10-07 | Grayling        |    600 fish | 3.22"  | DAGGETT
+  2010-09-14 | Grayling        |    641 fish | 2.02"  | DAGGETT
+  2006-08-02 | Grayling        |    642 fish | 1.66"  | DAGGETT
+
 --- GR-119 ---
   2019-10-01 | Grayling        |    323 fish | 2.39"  | SUMMIT
   2017-09-20 | Grayling        |    300 fish | 2.79"  | SUMMIT
@@ -290,6 +306,13 @@ Total Stocking Records: 6745
 
 --- GR-129 ---
   2012-01-01 | Brookies        |    493 fish | ?      | Summit
+
+--- GR-13 ---
+  2022-07-06 | Brookies        |    765 fish | 3.62"  | DAGGETT
+  2018-07-10 | Tigers          |    722 fish | 3.29"  | DAGGETT
+  2013-07-08 | Tigers          |    720 fish | 3.08"  | DAGGETT
+  2006-07-17 | Brookies        |    720 fish | 2.92"  | DAGGETT
+  2005-07-15 | Brookies        |    724 fish | 2.65"  | DAGGETT
 
 --- GR-145 ---
   2020-09-21 | Grayling        |   1098 fish | 2.81"  | SUMMIT
@@ -385,6 +408,25 @@ Total Stocking Records: 6745
   2006-07-13 | Brookies        |    399 fish | 2.88"  | SUMMIT
   2004-07-07 | Brookies        |    408 fish | 2.46"  | SUMMIT
   2002-06-28 | Brookies        |    393 fish | 2.34"  | SUMMIT
+
+--- GR-20 ---
+  2018-07-10 | Tigers          |     97 fish | 2.35"  | DAGGETT
+  2015-07-06 | Brookies        |    296 fish | 2.61"  | DAGGETT
+
+--- GR-21 ---
+  2018-07-10 | Tigers          |    386 fish | 2.35"  | DAGGETT
+  2015-07-06 | Brookies        |    381 fish | 2.61"  | DAGGETT
+  2012-07-09 | Brookies        |    391 fish | 2.3"   | DAGGETT
+  2009-08-03 | Brookies        |    379 fish | 3.05"  | DAGGETT
+  2006-07-17 | Brookies        |    380 fish | 2.92"  | DAGGETT
+  2004-07-07 | Brookies        |    375 fish | 2.46"  | DAGGETT
+  2002-06-28 | Brookies        |    373 fish | 2.34"  | DAGGETT
+
+--- GR-31 ---
+  2025-06-30 | Cutthroats      |    502 fish | 2.69"  | DAGGETT
+  2012-07-09 | Brookies        |    499 fish | 2.3"   | DAGGETT
+  2007-07-16 | Brookies        |    501 fish | 2.6"   | DAGGETT
+  2005-07-15 | Brookies        |    496 fish | 2.65"  | DAGGETT
 
 --- LF-16 ---
   2021-07-01 | Brookies        |    298 fish | 3.32"  | DUCHESNE
@@ -831,11 +873,32 @@ Total Stocking Records: 6745
   2006-07-07 | Brookies        |    576 fish | 2.75"  | DUCHESNE
   2005-07-14 | Brookies        |    576 fish | 2.65"  | DUCHESNE
 
+--- Anson Lower GR-9 ---
+  2025-06-30 | Cutthroats      |    649 fish | 2.69"  | DAGGETT
+
+--- Anson Upper GR-10 ---
+  2016-07-14 | Tigers          |    997 fish | 3.62"  | DAGGETT
+  2011-08-08 | Tigers          |    200 fish | 10.86" | DAGGETT
+
 --- Arta RC-23 ---
   2023-09-19 | Cutthroats      |    561 fish | 1.45"  | DUCHESNE
   2019-09-23 | Cutthroats      |    569 fish | 1.7"   | DUCHESNE
   2018-10-12 | Cutthroats      |    354 fish | 1.74"  | DUCHESNE
   2013-07-09 | Cutthroats      |    541 fish | 2.71"  | DUCHESNE
+
+--- Ashley Twin Reservoir GR-35 ---
+  2024-06-26 | Brookies        |   2097 fish | 2.93"  | UINTAH
+  2022-07-06 | Brookies        |   2092 fish | 3.62"  | UINTAH
+  2020-07-06 | Brookies        |   2090 fish | 3.49"  | UINTAH
+  2018-07-10 | Brookies        |   2100 fish | 2.88"  | UINTAH
+  2016-06-30 | Brookies        |   2171 fish | 2.06"  | UINTAH
+  2014-07-02 | Brookies        |   2101 fish | 2.43"  | UINTAH
+  2012-07-09 | Brookies        |   2105 fish | 2.3"   | UINTAH
+  2010-07-15 | Brookies        |   2105 fish | 2.89"  | UINTAH
+  2008-07-10 | Brookies        |   2100 fish | 2.92"  | UINTAH
+  2006-07-12 | Brookies        |   2100 fish | 2.88"  | UINTAH
+  2005-07-15 | Brookies        |   2104 fish | 2.65"  | UINTAH
+  2003-07-03 | Brookies        |   2093 fish | 2.48"  | UINTAH
 
 --- Aspen X-63 ---
   2022-07-06 | Brookies        |    851 fish | 3.62"  | DUCHESNE
@@ -924,6 +987,7 @@ Total Stocking Records: 6745
   2025-07-01 | Rainbows        |     98 fish | 10.14" | SUMMIT
   2025-07-01 | Tigers          |    305 fish | 11.08" | SUMMIT
   2025-07-01 | Rainbows        |    996 fish | 10.14" | SUMMIT
+  2025-06-25 | Cutthroats      |    302 fish | 7.23"  | DAGGETT
   2025-06-24 | Cutthroats      |  14165 fish | 8.56"  | SUMMIT
   2025-06-23 | Rainbows        |    110 fish | 10.44" | SUMMIT
   2024-12-13 | Cutthroats      |    571 fish | 10.27" | SUMMIT
@@ -960,6 +1024,7 @@ Total Stocking Records: 6745
   2020-07-06 | Rainbows        |    202 fish | 9.21"  | SUMMIT
   2020-06-17 | Rainbows        |    200 fish | 10.0"  | SUMMIT
   2020-06-10 | Rainbows        |   1000 fish | 10.0"  | SUMMIT
+  2019-08-19 | Tigers          |    510 fish | 11.68" | DAGGETT
   2019-08-05 | Rainbows        |    200 fish | 10.52" | SUMMIT
   2019-07-29 | Rainbows        |    199 fish | 9.63"  | SUMMIT
   2019-07-15 | Rainbows        |    200 fish | 9.87"  | SUMMIT
@@ -1075,6 +1140,20 @@ Total Stocking Records: 6745
   2005-07-18 | Grayling        |    990 fish | 0.76"  | DUCHESNE
   2002-07-30 | Grayling        |    300 fish | 0.77"  | DUCHESNE
 
+--- Bert GR-62 ---
+  2024-09-23 | Grayling        |    276 fish | 2.47"  | UINTAH
+  2023-07-21 | Brookies        |    372 fish | 3.0"   | UINTAH
+  2019-10-01 | Grayling        |    323 fish | 2.39"  | UINTAH
+  2019-07-11 | Brookies        |    286 fish | 2.68"  | UINTAH
+  2017-09-20 | Grayling        |    278 fish | 2.79"  | UINTAH
+  2015-07-06 | Brookies        |    367 fish | 2.61"  | UINTAH
+  2013-10-07 | Grayling        |    276 fish | 3.22"  | UINTAH
+  2011-08-04 | Brookies        |    374 fish | 2.45"  | UINTAH
+  2010-09-14 | Grayling        |    366 fish | 2.02"  | UINTAH
+  2007-07-16 | Brookies        |   1373 fish | 2.6"   | UINTAH
+  2006-08-02 | Grayling        |    370 fish | 1.66"  | UINTAH
+  2002-07-30 | Grayling        |    370 fish | 0.77"  | UINTAH
+
 --- Beth A-6 ---
   2025-06-25 | Brookies        |    300 fish | 3.01"  | SUMMIT
   2024-07-03 | Brookies        |    296 fish | 2.9"   | SUMMIT
@@ -1137,6 +1216,17 @@ Total Stocking Records: 6745
   2010-07-08 | Brookies        |    598 fish | 2.79"  | SUMMIT
   2006-07-13 | Brookies        |    294 fish | 2.61"  | SUMMIT
   2006-07-13 | Brookies        |    305 fish | 2.88"  | SUMMIT
+
+--- Blue DF-1 ---
+  2024-06-26 | Brookies        |    699 fish | 2.93"  | UINTAH
+  2021-07-01 | Brookies        |    701 fish | 3.32"  | UINTAH
+  2018-07-10 | Brookies        |    704 fish | 2.88"  | UINTAH
+  2015-07-06 | Brookies        |    705 fish | 2.61"  | UINTAH
+  2012-07-09 | Brookies        |    694 fish | 2.3"   | UINTAH
+  2009-07-16 | Brookies        |    696 fish | 3.06"  | UINTAH
+  2006-07-12 | Brookies        |    704 fish | 2.88"  | UINTAH
+  2005-07-15 | Brookies        |    697 fish | 2.65"  | UINTAH
+  2002-06-27 | Brookies        |    707 fish | 2.34"  | UINTAH
 
 --- Blue Z-32 ---
   2025-07-02 | Tigers          |   1396 fish | 3.8"   | DUCHESNE
@@ -1459,6 +1549,15 @@ Total Stocking Records: 6745
   2004-07-06 | Brookies        |    603 fish | 2.48"  | DUCHESNE
   2003-08-05 | Grayling        |    328 fish | 0.89"  | DUCHESNE
   2002-07-30 | Grayling        |    599 fish | 0.77"  | DUCHESNE
+
+--- Bummer GR-22 ---
+  2025-06-30 | Cutthroats      |    207 fish | 2.69"  | DAGGETT
+  2023-09-19 | Cutthroats      |    221 fish | 1.73"  | DAGGETT
+  2016-07-26 | Brookies        |    327 fish | 2.44"  | DAGGETT
+  2013-07-03 | Brookies        |    210 fish | 2.61"  | DAGGETT
+  2006-08-02 | Grayling        |    299 fish | 1.66"  | DAGGETT
+  2006-07-17 | Brookies        |    300 fish | 2.92"  | DAGGETT
+  2005-07-15 | Brookies        |    295 fish | 2.65"  | DAGGETT
 
 --- Butterfly Z-1 ---
   2025-08-14 | Tigers          |    250 fish | 11.26" | DUCHESNE
@@ -1893,6 +1992,12 @@ Total Stocking Records: 6745
   2006-07-07 | Brookies        |    504 fish | 2.75"  | DUCHESNE
   2004-07-07 | Brookies        |    505 fish | 2.46"  | DUCHESNE
 
+--- Candy GR-17 ---
+  2025-06-30 | Cutthroats      |    207 fish | 2.69"  | DAGGETT
+  2024-10-01 | Cutthroats      |    558 fish | 3.83"  | DAGGETT
+  2016-07-14 | Tigers          |    825 fish | 3.62"  | DAGGETT
+  2007-07-30 | Grayling        |    824 fish | 1.5"   | DAGGETT
+
 --- Carol W-51 ---
   2024-07-02 | Brookies        |    265 fish | 2.9"   | SUMMIT
   2022-06-27 | Brookies        |    276 fish | 2.75"  | SUMMIT
@@ -2027,6 +2132,14 @@ Total Stocking Records: 6745
   2013-10-07 | Grayling        |   1020 fish | 3.22"  | DUCHESNE
   2010-09-14 | Grayling        |   1007 fish | 2.02"  | DUCHESNE
   2006-08-02 | Grayling        |   1021 fish | 1.66"  | DUCHESNE
+
+--- Clear GR-12 ---
+  2023-09-19 | Tigers          |    502 fish | 3.95"  | DAGGETT
+  2023-07-21 | Tigers          |   1021 fish | 2.7"   | DAGGETT
+  2018-07-10 | Tigers          |   1496 fish | 3.29"  | DAGGETT
+  2016-07-14 | Tigers          |   1498 fish | 3.62"  | DAGGETT
+  2013-07-08 | Tigers          |   1503 fish | 3.08"  | DAGGETT
+  2007-07-30 | Grayling        |   1500 fish | 1.5"   | DAGGETT
 
 --- Clegg A-47 ---
   2025-06-26 | Brookies        |    250 fish | 3.01"  | SUMMIT
@@ -2226,6 +2339,16 @@ Total Stocking Records: 6745
 --- Cutthroat (clint) A-40 ---
   2014-06-12 | Tigers          |    217 fish | 2.75"  | SUMMIT
 
+--- Dagget GR-6 ---
+  2025-06-30 | Cutthroats      |   2032 fish | 1.84"  | DAGGETT
+  2024-10-01 | Cutthroats      |   1304 fish | 3.83"  | DAGGETT
+  2024-10-01 | Cutthroats      |   1892 fish | 3.25"  | DAGGETT
+  2015-08-25 | Grayling        |   6003 fish | 2.4"   | DAGGETT
+  2009-08-03 | Grayling        |   6047 fish | 1.4"   | DAGGETT
+  2006-08-02 | Grayling        |   4998 fish | 1.66"  | DAGGETT
+  2005-07-18 | Grayling        |    990 fish | 0.76"  | DAGGETT
+  2003-08-05 | Grayling        |   1025 fish | 0.89"  | DAGGETT
+
 --- Dale Z-39 ---
   2024-06-28 | Brookies        |   1469 fish | 2.91"  | DUCHESNE
   2021-06-30 | Brookies        |   1495 fish | 2.79"  | DUCHESNE
@@ -2274,12 +2397,21 @@ Total Stocking Records: 6745
   2006-07-14 | Tigers          |   1596 fish | 3.56"  | SUMMIT
 
 --- Deadman GR-38 ---
+  2024-06-26 | Brookies        |   1042 fish | 2.93"  | UINTAH
   2023-11-16 | Cutthroats      |    200 fish | 3.22"  | SUMMIT
   2023-05-31 | Cutthroats      |    155 fish | 8.69"  | SUMMIT
   2022-09-19 | Brookies        |    114 fish | 16.99" | SUMMIT
   2022-08-25 | Brookies        |    500 fish | 4.64"  | SUMMIT
   2022-06-07 | Cutthroats      |   1002 fish | 7.58"  | SUMMIT
   2021-09-14 | Cutthroats      |    252 fish | 3.24"  | SUMMIT
+  2021-07-01 | Brookies        |   1051 fish | 3.32"  | UINTAH
+  2018-07-10 | Brookies        |   1050 fish | 2.88"  | UINTAH
+  2015-07-06 | Brookies        |   1058 fish | 2.61"  | UINTAH
+  2012-07-09 | Brookies        |   1042 fish | 2.3"   | UINTAH
+  2009-07-16 | Brookies        |   1053 fish | 3.06"  | UINTAH
+  2006-07-12 | Brookies        |   1050 fish | 2.88"  | UINTAH
+  2005-07-15 | Brookies        |   1045 fish | 2.65"  | UINTAH
+  2002-06-27 | Brookies        |   1060 fish | 2.34"  | UINTAH
 
 --- Dean W-35 ---
   2024-09-25 | Grayling        |    448 fish | 2.47"  | SUMMIT
@@ -2357,6 +2489,9 @@ Total Stocking Records: 6745
   2010-07-08 | Brookies        |   1104 fish | 2.79"  | DUCHESNE
   2005-07-14 | Brookies        |    496 fish | 2.65"  | DUCHESNE
 
+--- Dollar WR-43 ---
+  2005-07-15 | Brookies        |    697 fish | 2.65"  | UINTAH
+
 --- Dollar Lake G-2 ---
   2023-07-14 | Tigers          |   1001 fish | 2.83"  | SUMMIT
   2020-07-31 | Tigers          |   1008 fish | 2.4"   | SUMMIT
@@ -2370,6 +2505,17 @@ Total Stocking Records: 6745
   2013-07-03 | Brookies        |   1016 fish | 2.61"  | DUCHESNE
   2008-07-10 | Brookies        |   1000 fish | 2.92"  | DUCHESNE
   2003-07-03 | Brookies        |    997 fish | 2.48"  | DUCHESNE
+
+--- East Kibah DF-11 ---
+  2025-06-30 | Brookies        |    251 fish | 3.4"   | UINTAH
+  2022-07-06 | Brookies        |    253 fish | 3.62"  | UINTAH
+  2019-07-11 | Brookies        |    195 fish | 2.68"  | UINTAH
+  2016-06-30 | Brookies        |    314 fish | 2.06"  | UINTAH
+  2013-07-03 | Brookies        |    258 fish | 2.61"  | UINTAH
+  2010-07-15 | Brookies        |    253 fish | 2.89"  | UINTAH
+  2007-07-16 | Brookies        |    243 fish | 2.6"   | UINTAH
+  2005-07-15 | Brookies        |    255 fish | 2.65"  | UINTAH
+  2002-06-27 | Brookies        |    255 fish | 2.34"  | UINTAH
 
 --- East Red Castle G-17 ---
   2025-06-30 | Tigers          |    698 fish | 3.69"  | SUMMIT
@@ -2463,6 +2609,13 @@ Total Stocking Records: 6745
   2005-07-14 | Brookies        |    804 fish | 2.65"  | DUCHESNE
   2002-06-24 | Brookies        |    811 fish | 2.54"  | DUCHESNE
 
+--- Ewe GR-18 ---
+  2020-09-21 | Grayling        |    450 fish | 2.81"  | DAGGETT
+  2017-09-20 | Grayling        |    450 fish | 2.79"  | DAGGETT
+  2013-10-07 | Grayling        |    450 fish | 3.22"  | DAGGETT
+  2010-09-14 | Grayling        |    458 fish | 2.02"  | DAGGETT
+  2006-08-02 | Grayling        |    449 fish | 1.66"  | DAGGETT
+
 --- Faith A-16 ---
   2025-06-26 | Brookies        |    100 fish | 3.01"  | SUMMIT
   2024-07-03 | Brookies        |    102 fish | 2.9"   | SUMMIT
@@ -2500,6 +2653,15 @@ Total Stocking Records: 6745
   2008-07-08 | Brookies        |   1450 fish | 2.92"  | DUCHESNE
   2005-07-14 | Brookies        |   1394 fish | 2.65"  | DUCHESNE
   2002-06-24 | Brookies        |   1454 fish | 2.54"  | DUCHESNE
+
+--- Finger Kibah DF-12 ---
+  2025-06-30 | Brookies        |    376 fish | 3.4"   | UINTAH
+  2021-07-01 | Brookies        |    374 fish | 3.32"  | UINTAH
+  2017-07-09 | Brookies        |    388 fish | 2.53"  | UINTAH
+  2013-07-03 | Brookies        |    371 fish | 2.61"  | UINTAH
+  2009-07-16 | Brookies        |    374 fish | 3.06"  | UINTAH
+  2005-07-15 | Brookies        |    375 fish | 2.65"  | UINTAH
+  2002-06-27 | Brookies        |    373 fish | 2.34"  | UINTAH
 
 --- Fire A-14 ---
   2022-09-19 | Cutthroats      |   1524 fish | 2.51"  | SUMMIT
@@ -2600,6 +2762,11 @@ Total Stocking Records: 6745
   2009-07-06 | Brookies        |    750 fish | 2.71"  | DUCHESNE
   2005-07-14 | Brookies        |    750 fish | 2.65"  | DUCHESNE
 
+--- Goose #2 GR-43 ---
+  2017-07-09 | Brookies        |   1953 fish | 2.53"  | UINTAH
+  2012-07-09 | Brookies        |   1931 fish | 2.3"   | UINTAH
+  2007-07-16 | Brookies        |   1945 fish | 2.6"   | UINTAH
+
 --- Governor Dern Z-24 ---
   2022-06-29 | Brookies        |   3660 fish | 2.75"  | DUCHESNE
   2018-06-26 | Brookies        |   3600 fish | 2.88"  | DUCHESNE
@@ -2622,6 +2789,48 @@ Total Stocking Records: 6745
   2013-10-07 | Grayling        |    851 fish | 3.22"  | DUCHESNE
   2010-09-14 | Grayling        |    854 fish | 2.02"  | DUCHESNE
   2006-08-02 | Grayling        |    854 fish | 1.66"  | DUCHESNE
+
+--- Hacking GR-40 ---
+  2025-06-19 | Tigers          |    150 fish | 3.58"  | UINTAH
+  2025-06-19 | Rainbows        |    250 fish | 9.67"  | UINTAH
+  2024-09-23 | Cutthroats      |    248 fish | 1.48"  | UINTAH
+  2024-07-06 | Tigers          |    251 fish | 3.62"  | UINTAH
+  2024-07-06 | Rainbows        |    251 fish | 10.26" | UINTAH
+  2023-07-11 | Rainbows        |    250 fish | 12.04" | UINTAH
+  2023-07-11 | Tigers          |    263 fish | 2.7"   | UINTAH
+  2022-09-23 | Cutthroats      |    989 fish | 1.91"  | UINTAH
+  2021-07-07 | Tigers          |    497 fish | 3.46"  | UINTAH
+  2021-06-18 | Rainbows        |    496 fish | 9.47"  | UINTAH
+  2020-07-06 | Tigers          |    496 fish | 3.2"   | UINTAH
+  2019-09-23 | Cutthroats      |   1011 fish | 1.7"   | UINTAH
+  2019-07-11 | Tigers          |    500 fish | 2.65"  | UINTAH
+  2018-07-10 | Tigers          |    502 fish | 2.35"  | UINTAH
+  2016-09-20 | Cutthroats      |    999 fish | 1.47"  | UINTAH
+  2016-06-30 | Rainbows        |    292 fish | 8.41"  | UINTAH
+  2015-07-03 | Rainbows        |    290 fish | 9.72"  | UINTAH
+  2014-06-30 | Rainbows        |    288 fish | 9.41"  | UINTAH
+  2013-07-09 | Rainbows        |    290 fish | 10.28" | UINTAH
+  2012-07-12 | Rainbows        |    312 fish | 10.77" | UINTAH
+  2011-07-21 | Rainbows        |    290 fish | 10.28" | UINTAH
+  2010-09-30 | Cutthroats      |   1018 fish | 1.71"  | UINTAH
+  2010-06-30 | Rainbows        |    350 fish | 9.84"  | UINTAH
+  2009-06-29 | Rainbows        |    351 fish | 9.59"  | UINTAH
+  2008-09-24 | Cutthroats      |   1002 fish | 1.42"  | UINTAH
+  2008-06-25 | Rainbows        |    350 fish | 10.05" | UINTAH
+  2007-06-18 | Rainbows        |    347 fish | 10.86" | UINTAH
+  2006-07-19 | Rainbows        |    348 fish | 10.77" | UINTAH
+  2006-07-12 | Brookies        |    998 fish | 2.88"  | UINTAH
+  2006-06-23 | Rainbows        |    255 fish | 9.21"  | UINTAH
+  2006-06-23 | Tigers          |    503 fish | 3.49"  | UINTAH
+  2005-07-21 | Rainbows        |    348 fish | 9.9"   | UINTAH
+  2004-07-21 | Rainbows        |    222 fish | 8.62"  | UINTAH
+  2004-07-07 | Brookies        |    994 fish | 2.46"  | UINTAH
+  2004-07-01 | Rainbows        |    225 fish | 9.81"  | UINTAH
+  2003-07-22 | Rainbows        |    135 fish | 8.14"  | UINTAH
+  2003-07-22 | Rainbows        |    103 fish | 10.03" | UINTAH
+  2003-06-30 | Rainbows        |    224 fish | 9.92"  | UINTAH
+  2002-06-27 | Brookies        |   1001 fish | 2.34"  | UINTAH
+  2002-06-24 | Rainbows        |    502 fish | 9.58"  | UINTAH
 
 --- Hayden Lake BR-36 ---
   2022-06-28 | Tigers          |    473 fish | 2.65"  | SUMMIT
@@ -2728,6 +2937,13 @@ Total Stocking Records: 6745
   2004-06-11 | Rainbows        |    501 fish | 10.24" | SUMMIT
   2003-05-21 | Rainbows        |    500 fish | 9.75"  | SUMMIT
   2002-06-06 | Rainbows        |    502 fish | 9.63"  | SUMMIT
+
+--- Hidden GR-7 ---
+  2021-07-01 | Brookies        |   1063 fish | 3.32"  | DAGGETT
+  2017-07-09 | Brookies        |   1287 fish | 2.53"  | DAGGETT
+  2012-08-06 | Brookies        |   1000 fish | 2.68"  | DAGGETT
+  2012-07-09 | Brookies        |   1280 fish | 2.3"   | DAGGETT
+  2008-07-10 | Brookies        |   1280 fish | 2.92"  | DAGGETT
 
 --- Hidden WR-63 ---
   2023-09-19 | Cutthroats      |   1029 fish | 1.45"  | DUCHESNE
@@ -2904,6 +3120,14 @@ Total Stocking Records: 6745
   2018-10-12 | Cutthroats      |   1180 fish | 1.74"  | DUCHESNE
   2014-09-15 | Cutthroats      |   1615 fish | 1.52"  | DUCHESNE
   2010-09-30 | Cutthroats      |   1018 fish | 1.71"  | DUCHESNE
+
+--- Island Kibah DF-16 ---
+  2025-06-30 | Brookies        |    799 fish | 3.4"   | UINTAH
+  2021-07-01 | Brookies        |    800 fish | 3.32"  | UINTAH
+  2017-07-09 | Brookies        |    822 fish | 2.53"  | UINTAH
+  2013-07-03 | Brookies        |    806 fish | 2.61"  | UINTAH
+  2009-07-16 | Brookies        |    800 fish | 3.06"  | UINTAH
+  2005-07-15 | Brookies        |    804 fish | 2.65"  | UINTAH
 
 --- Jack X-133 ---
   2022-06-29 | Brookies        |    216 fish | 2.75"  | DUCHESNE
@@ -3104,6 +3328,16 @@ Total Stocking Records: 6745
   2013-07-09 | Cutthroats      |   1001 fish | 2.8"   | DUCHESNE
   2008-09-24 | Cutthroats      |   1002 fish | 1.42"  | DUCHESNE
   2003-10-03 | Cutthroats      |   1040 fish | 1.76"  | DUCHESNE
+
+--- Lakeshore GR-34 ---
+  2022-07-06 | Tiger muskie    |    150 fish | 3.39"  | UINTAH
+  2019-07-10 | Tiger muskie    |    162 fish | 7.27"  | UINTAH
+
+--- Lamb GR-19 ---
+  2023-09-19 | Cutthroats      |    497 fish | 1.73"  | DAGGETT
+  2017-07-11 | Tigers          |    593 fish | 2.63"  | DAGGETT
+  2013-07-08 | Tigers          |    603 fish | 3.08"  | DAGGETT
+  2002-07-30 | Grayling        |    599 fish | 0.77"  | DAGGETT
 
 --- Lambert A-2 ---
   2024-07-03 | Brookies        |    153 fish | 2.9"   | SUMMIT
@@ -3618,6 +3852,12 @@ Total Stocking Records: 6745
   2010-07-15 | Brookies        |    400 fish | 2.38"  | DUCHESNE
   2005-07-15 | Brookies        |    402 fish | 2.65"  | DUCHESNE
 
+--- Little Blue GR-48 ---
+  2022-07-06 | Brookies        |    598 fish | 3.62"  | UINTAH
+  2017-07-09 | Brookies        |    620 fish | 2.53"  | UINTAH
+  2015-07-06 | Brookies        |    606 fish | 2.61"  | UINTAH
+  2007-07-16 | Brookies        |    601 fish | 2.6"   | UINTAH
+
 --- Little Dog X-33 ---
   2024-06-26 | Brookies        |    699 fish | 2.93"  | DUCHESNE
   2021-07-01 | Brookies        |    701 fish | 3.32"  | DUCHESNE
@@ -3635,6 +3875,15 @@ Total Stocking Records: 6745
   2011-08-01 | Tigers          |   1196 fish | 2.94"  | SUMMIT
   2010-09-15 | Cutthroats      |   2002 fish | 1.55"  | SUMMIT
   2007-09-10 | Cutthroats      |   2003 fish | 1.86"  | SUMMIT
+
+--- Little Elk DF-17 ---
+  2020-09-21 | Grayling        |    504 fish | 2.81"  | UINTAH
+  2017-09-20 | Grayling        |    500 fish | 2.79"  | UINTAH
+  2014-08-29 | Grayling        |    480 fish | 2.32"  | UINTAH
+  2013-07-08 | Tigers          |   1998 fish | 3.08"  | UINTAH
+  2010-09-14 | Grayling        |    488 fish | 2.02"  | UINTAH
+  2006-08-02 | Grayling        |    502 fish | 1.66"  | UINTAH
+  2002-07-30 | Grayling        |    507 fish | 0.77"  | UINTAH
 
 --- Little Hidden W-21 ---
   2023-07-14 | Brookies        |    468 fish | 2.68"  | SUMMIT
@@ -3934,6 +4183,17 @@ Total Stocking Records: 6745
   2013-07-08 | Tigers          |   1872 fish | 3.08"  | DUCHESNE
   2008-09-24 | Cutthroats      |   1002 fish | 1.42"  | DUCHESNE
 
+--- Lower Teepee GR-29 ---
+  2025-06-30 | Cutthroats      |    399 fish | 2.69"  | DAGGETT
+  2023-09-19 | Cutthroats      |    387 fish | 1.73"  | DAGGETT
+  2020-09-23 | Cutthroats      |    401 fish | 2.48"  | DAGGETT
+  2015-07-06 | Brookies        |    381 fish | 2.61"  | DAGGETT
+  2012-07-09 | Brookies        |    369 fish | 2.3"   | DAGGETT
+  2009-07-16 | Brookies        |    374 fish | 3.06"  | DAGGETT
+  2006-07-17 | Brookies        |    380 fish | 2.92"  | DAGGETT
+  2004-07-07 | Brookies        |    375 fish | 2.46"  | DAGGETT
+  2002-06-27 | Brookies        |    373 fish | 2.34"  | DAGGETT
+
 --- Lyman G-27 ---
   2025-07-02 | Brookies        |   2496 fish | 2.97"  | SUMMIT
   2024-07-17 | Brookies        |   1998 fish | 3.71"  | SUMMIT
@@ -4069,6 +4329,15 @@ Total Stocking Records: 6745
   2003-05-27 | Rainbows        |   1984 fish | 9.31"  | SUMMIT
   2003-05-27 | Rainbows        |   2015 fish | 9.31"  | SUMMIT
   2002-05-17 | Rainbows        |   2501 fish | 9.36"  | SUMMIT
+
+--- Marsh GR-39 ---
+  2019-07-11 | Brookies        |    975 fish | 2.68"  | UINTAH
+  2014-09-24 | Goldens         |    600 fish | 1.53"  | UINTAH
+  2013-06-24 | Rainbows        |   1581 fish | 10.28" | UINTAH
+  2013-06-20 | Rainbows        |   1840 fish | 10.28" | UINTAH
+  2010-07-15 | Brookies        |   1001 fish | 2.89"  | UINTAH
+  2006-07-17 | Brookies        |   1260 fish | 2.92"  | UINTAH
+  2004-07-07 | Brookies        |   1255 fish | 2.46"  | UINTAH
 
 --- Marshall Z-11 ---
   2025-06-25 | Brookies        |   1800 fish | 3.01"  | DUCHESNE
@@ -4930,6 +5199,13 @@ Total Stocking Records: 6745
 --- Mt. Emmons U-13 ---
   2012-09-24 | Goldens         |    996 fish | 1.3"   | DUCHESNE
 
+--- Mud GR-47 ---
+  2013-10-07 | Grayling        |    420 fish | 3.22"  | UINTAH
+  2010-09-14 | Grayling        |    641 fish | 2.02"  | UINTAH
+  2009-08-03 | Grayling        |    638 fish | 1.4"   | UINTAH
+  2006-08-02 | Grayling        |    422 fish | 1.66"  | UINTAH
+  2005-07-18 | Grayling        |    990 fish | 0.76"  | UINTAH
+
 --- Mud X-66 ---
   2024-06-26 | Brookies        |    379 fish | 2.93"  | DUCHESNE
   2021-07-01 | Brookies        |    374 fish | 3.32"  | DUCHESNE
@@ -4940,6 +5216,23 @@ Total Stocking Records: 6745
   2006-07-12 | Brookies        |    378 fish | 2.88"  | DUCHESNE
   2004-07-07 | Brookies        |    375 fish | 2.46"  | DUCHESNE
 
+--- Mutton GR-23 ---
+  2025-06-30 | Cutthroats      |    399 fish | 2.69"  | DAGGETT
+  2023-09-19 | Cutthroats      |    387 fish | 1.73"  | DAGGETT
+  2017-07-09 | Brookies        |    915 fish | 2.53"  | DAGGETT
+  2012-07-09 | Brookies        |    890 fish | 2.3"   | DAGGETT
+  2007-07-16 | Brookies        |    901 fish | 2.6"   | DAGGETT
+  2002-06-28 | Brookies        |    903 fish | 2.34"  | DAGGETT
+
+--- Mystery GR-101 ---
+  2024-07-15 | Cutthroats      |    793 fish | 2.26"  | DAGGETT
+  2020-09-23 | Cutthroats      |    803 fish | 2.48"  | DAGGETT
+  2017-07-09 | Brookies        |    109 fish | 2.53"  | DAGGETT
+  2016-06-30 | Brookies        |   1057 fish | 2.06"  | DAGGETT
+  2013-07-03 | Brookies        |   1016 fish | 2.61"  | DAGGETT
+  2006-07-12 | Brookies        |   1260 fish | 2.88"  | DAGGETT
+  2004-07-07 | Brookies        |    994 fish | 2.46"  | DAGGETT
+
 --- Neil W-31 ---
   2022-06-27 | Brookies        |     60 fish | 2.75"  | SUMMIT
   2018-07-09 | Brookies        |     63 fish | 2.88"  | SUMMIT
@@ -4947,6 +5240,9 @@ Total Stocking Records: 6745
   2010-07-08 | Brookies        |     63 fish | 2.79"  | SUMMIT
   2006-07-07 | Brookies        |     60 fish | 2.75"  | SUMMIT
   2002-06-24 | Brookies        |     61 fish | 2.54"  | SUMMIT
+
+--- North Twin (Dry Fork) GR-50 ---
+  2011-08-08 | Tigers          |    160 fish | 10.86" | UINTAH
 
 --- Notch W-36 ---
   2025-06-26 | Brookies        |   1000 fish | 3.01"  | SUMMIT
@@ -4992,6 +5288,18 @@ Total Stocking Records: 6745
   2004-07-06 | Brookies        |    701 fish | 2.48"  | SUMMIT
   2003-06-30 | Brookies        |    695 fish | 2.62"  | SUMMIT
   2002-06-24 | Brookies        |    704 fish | 2.54"  | SUMMIT
+
+--- One Fish GR-32 ---
+  2024-06-26 | Brookies        |    201 fish | 2.93"  | DAGGETT
+  2021-07-01 | Brookies        |    397 fish | 3.32"  | DAGGETT
+  2018-10-15 | Grayling        |    594 fish | 3.31"  | DAGGETT
+  2018-07-10 | Brookies        |    200 fish | 2.88"  | DAGGETT
+  2015-07-06 | Brookies        |    395 fish | 2.61"  | DAGGETT
+  2012-07-09 | Brookies        |    391 fish | 2.3"   | DAGGETT
+  2009-07-16 | Brookies        |    400 fish | 3.06"  | DAGGETT
+  2006-07-17 | Brookies        |    400 fish | 2.92"  | DAGGETT
+  2004-07-07 | Brookies        |    408 fish | 2.46"  | DAGGETT
+  2002-06-27 | Brookies        |    393 fish | 2.34"  | DAGGETT
 
 --- Ostler BR-27 ---
   2024-07-08 | Tigers          |   1404 fish | 2.78"  | SUMMIT
@@ -5462,6 +5770,21 @@ Total Stocking Records: 6745
   2002-06-12 | Rainbows        |    502 fish | 9.52"  | DUCHESNE
   2002-06-04 | Rainbows        |    501 fish | 9.63"  | DUCHESNE
 
+--- Paul DF-18 ---
+  2022-07-06 | Brookies        |   1098 fish | 3.62"  | UINTAH
+  2018-07-10 | Brookies        |   1103 fish | 2.88"  | UINTAH
+  2015-07-06 | Brookies        |   1100 fish | 2.61"  | UINTAH
+  2010-07-15 | Brookies        |   1104 fish | 2.89"  | UINTAH
+  2006-07-12 | Brookies        |   1103 fish | 2.88"  | UINTAH
+  2004-07-07 | Brookies        |   1092 fish | 2.46"  | UINTAH
+
+--- Pearl WR-45 ---
+  2024-09-23 | Cutthroats      |    299 fish | 1.48"  | UINTAH
+
+--- Penguin GR-16 ---
+  2016-07-14 | Tigers          |    205 fish | 3.62"  | DAGGETT
+  2011-08-08 | Tigers          |    100 fish | 10.86" | DAGGETT
+
 --- Penny Nickell U-98 ---
   2017-09-25 | Cutthroats      |    599 fish | 1.62"  | DUCHESNE
   2014-09-15 | Cutthroats      |    570 fish | 1.52"  | DUCHESNE
@@ -5671,6 +5994,16 @@ Total Stocking Records: 6745
   2006-07-07 | Brookies        |    996 fish | 2.75"  | DUCHESNE
   2004-07-06 | Brookies        |    994 fish | 2.48"  | DUCHESNE
 
+--- Ram GR-24 ---
+  2025-06-30 | Cutthroats      |    251 fish | 2.69"  | DAGGETT
+  2024-07-15 | Cutthroats      |    496 fish | 2.26"  | DAGGETT
+  2023-09-19 | Cutthroats      |    497 fish | 1.73"  | DAGGETT
+  2017-07-11 | Tigers          |    718 fish | 2.63"  | DAGGETT
+  2016-07-14 | Tigers          |    700 fish | 3.62"  | DAGGETT
+  2009-09-16 | Cutthroats      |    686 fish | 1.43"  | DAGGETT
+  2006-08-02 | Grayling        |    695 fish | 1.66"  | DAGGETT
+  2005-07-18 | Grayling        |    990 fish | 0.76"  | DAGGETT
+
 --- Ramona A-38 ---
   2024-07-03 | Brookies        |    469 fish | 2.9"   | SUMMIT
   2021-06-28 | Brookies        |    345 fish | 2.79"  | SUMMIT
@@ -5706,6 +6039,13 @@ Total Stocking Records: 6745
   2019-09-23 | Cutthroats      |    749 fish | 1.61"  | DUCHESNE
   2019-09-23 | Cutthroats      |    524 fish | 1.61"  | DUCHESNE
 
+--- Red Belly GR-51 ---
+  2022-09-23 | Cutthroats      |    618 fish | 1.91"  | UINTAH
+  2019-09-23 | Cutthroats      |    632 fish | 1.7"   | UINTAH
+  2016-09-20 | Cutthroats      |    636 fish | 1.47"  | UINTAH
+  2013-10-07 | Cutthroats      |    661 fish | 1.45"  | UINTAH
+  2009-09-16 | Cutthroats      |    588 fish | 1.43"  | UINTAH
+
 --- Red Castle G-15 ---
   2025-07-02 | Tigers          |   4901 fish | 3.8"   | SUMMIT
   2025-07-01 | Tigers          |    698 fish | 3.79"  | SUMMIT
@@ -5723,6 +6063,18 @@ Total Stocking Records: 6745
   2012-07-04 | Tigers          |   2105 fish | 3.16"  | SUMMIT
   2011-08-01 | Tigers          |   2600 fish | 2.94"  | SUMMIT
   2008-07-09 | Tigers          |  33696 fish | 2.75"  | SUMMIT
+
+--- Red Lake GR-33 ---
+  2024-06-26 | Tiger muskie    |    210 fish | 5.93"  | DAGGETT
+  2024-06-26 | Tigers          |    799 fish | 3.64"  | DAGGETT
+  2021-09-21 | Grayling        |    194 fish | 2.65"  | DAGGETT
+  2021-06-22 | Tiger muskie    |    200 fish | 3.31"  | DAGGETT
+  2020-09-23 | Cutthroats      |   1501 fish | 2.48"  | DAGGETT
+  2020-07-06 | Tigers          |    766 fish | 3.2"   | DAGGETT
+  2015-07-06 | Brookies        |   1495 fish | 2.61"  | DAGGETT
+  2013-07-03 | Brookies        |   1516 fish | 2.61"  | DAGGETT
+  2007-07-16 | Brookies        |   1502 fish | 2.6"   | DAGGETT
+  2003-07-03 | Brookies        |   1504 fish | 2.48"  | DAGGETT
 
 --- Reids W-38 ---
   2025-06-26 | Brookies        |    250 fish | 3.01"  | SUMMIT
@@ -5843,6 +6195,15 @@ Total Stocking Records: 6745
   2014-07-07 | Brookies        |    398 fish | 1.78"  | SUMMIT
   2010-07-14 | Brookies        |    403 fish | 2.79"  | SUMMIT
   2006-07-07 | Brookies        |    396 fish | 2.75"  | SUMMIT
+
+--- Sand WR-42 ---
+  2024-09-23 | Cutthroats      |    403 fish | 1.48"  | UINTAH
+
+--- Sandy GR-45 ---
+  2023-09-19 | Cutthroats      |    748 fish | 1.45"  | UINTAH
+  2019-09-23 | Cutthroats      |    569 fish | 1.7"   | UINTAH
+  2014-09-15 | Cutthroats      |    570 fish | 1.52"  | UINTAH
+  2010-09-30 | Cutthroats      |    750 fish | 1.71"  | UINTAH
 
 --- Scout Z-12 ---
   2025-07-08 | Rainbows        |    850 fish | 10.77" | DUCHESNE
@@ -5995,6 +6356,11 @@ Total Stocking Records: 6745
   2013-07-09 | Cutthroats      |    785 fish | 2.8"   | DUCHESNE
   2009-09-16 | Cutthroats      |    784 fish | 1.43"  | DUCHESNE
 
+--- Sesame GR-15 ---
+  2017-07-09 | Brookies        |    620 fish | 2.53"  | DAGGETT
+  2015-07-06 | Brookies        |    606 fish | 2.61"  | DAGGETT
+  2007-07-16 | Brookies        |    601 fish | 2.6"   | DAGGETT
+
 --- Shadow A-52 ---
   2025-06-25 | Brookies        |    700 fish | 3.01"  | SUMMIT
   2024-07-03 | Brookies        |    704 fish | 2.9"   | SUMMIT
@@ -6116,6 +6482,74 @@ Total Stocking Records: 6745
   2007-07-16 | Brookies        |   2002 fish | 2.6"   | DUCHESNE
   2003-07-03 | Brookies        |   1995 fish | 2.48"  | DUCHESNE
 
+--- Spirit Lake GR-3 ---
+  2025-07-08 | Cutthroats      |    175 fish | 14.49" | DAGGETT
+  2025-07-08 | Tigers          |    609 fish | 11.08" | DAGGETT
+  2024-07-01 | Cutthroats      |   1000 fish | 5.6"   | DAGGETT
+  2023-07-05 | Tigers          |   2752 fish | 9.21"  | DAGGETT
+  2022-06-22 | Tigers          |   2501 fish | 9.36"  | DAGGETT
+  2021-07-02 | Cutthroats      |   1507 fish | 6.28"  | DAGGETT
+  2021-06-09 | Tigers          |   3150 fish | 9.41"  | DAGGETT
+  2020-07-16 | Tigers          |    126 fish | 10.78" | DAGGETT
+  2020-06-23 | Tigers          |   2818 fish | 10.25" | DAGGETT
+  2019-07-12 | Tigers          |   4006 fish | 10.31" | DAGGETT
+  2018-06-26 | Tigers          |   1899 fish | 10.35" | DAGGETT
+  2018-06-25 | Tigers          |   4128 fish | 10.35" | DAGGETT
+  2017-07-10 | Tigers          |   5499 fish | 9.92"  | DAGGETT
+  2016-07-05 | Tigers          |   3666 fish | 9.87"  | DAGGETT
+  2016-07-05 | Tigers          |   1833 fish | 9.87"  | DAGGETT
+  2015-06-25 | Tigers          |   5387 fish | 8.1"   | DAGGETT
+  2014-06-25 | Tigers          |   5499 fish | 10.57" | DAGGETT
+  2013-06-12 | Tigers          |   5502 fish | 9.97"  | DAGGETT
+  2012-10-09 | Tigers          |    519 fish | 12.81" | DAGGETT
+  2012-07-18 | Tigers          |   4019 fish | 10.99" | DAGGETT
+  2012-07-16 | Rainbows        |   1036 fish | 10.77" | DAGGETT
+  2012-07-05 | Rainbows        |   1115 fish | 9.79"  | DAGGETT
+  2011-08-09 | Rainbows        |   1034 fish | 10.6"  | DAGGETT
+  2011-07-19 | Tigers          |   1840 fish | 10.46" | DAGGETT
+  2011-07-18 | Tigers          |   1840 fish | 10.46" | DAGGETT
+  2011-07-13 | Rainbows        |   1150 fish | 10.28" | DAGGETT
+  2010-08-11 | Tigers          |   1598 fish | 9.12"  | DAGGETT
+  2010-07-20 | Tigers          |   1700 fish | 9.8"   | DAGGETT
+  2010-07-07 | Rainbows        |    500 fish | 10.44" | DAGGETT
+  2010-07-07 | Tigers          |   1700 fish | 10.28" | DAGGETT
+  2010-06-22 | Rainbows        |   1499 fish | 10.58" | DAGGETT
+  2009-08-17 | Rainbows        |   1833 fish | 9.84"  | DAGGETT
+  2009-07-21 | Rainbows        |   1833 fish | 9.76"  | DAGGETT
+  2009-06-29 | Rainbows        |   1834 fish | 9.51"  | DAGGETT
+  2009-06-16 | Tigers          |   5016 fish | 3.08"  | DAGGETT
+  2008-08-28 | Rainbows        |    987 fish | 10.98" | DAGGETT
+  2008-08-26 | Rainbows        |    900 fish | 10.98" | DAGGETT
+  2008-07-23 | Rainbows        |   1833 fish | 9.92"  | DAGGETT
+  2008-06-24 | Rainbows        |   2000 fish | 9.92"  | DAGGETT
+  2007-08-27 | Tigers          |   1500 fish | 4.84"  | DAGGETT
+  2007-08-21 | Rainbows        |    408 fish | 10.31" | DAGGETT
+  2007-08-13 | Rainbows        |   1425 fish | 10.96" | DAGGETT
+  2007-07-11 | Rainbows        |   1833 fish | 11.02" | DAGGETT
+  2007-06-06 | Rainbows        |   1833 fish | 10.0"  | DAGGETT
+  2006-08-21 | Rainbows        |   1395 fish | 11.16" | DAGGETT
+  2006-08-09 | Rainbows        |   1400 fish | 10.77" | DAGGETT
+  2006-07-26 | Rainbows        |   1600 fish | 10.77" | DAGGETT
+  2006-06-27 | Rainbows        |   1820 fish | 9.87"  | DAGGETT
+  2006-06-09 | Rainbows        |   1748 fish | 10.28" | DAGGETT
+  2005-08-09 | Rainbows        |   1566 fish | 10.39" | DAGGETT
+  2005-07-21 | Rainbows        |   1600 fish | 9.9"   | DAGGETT
+  2005-06-28 | Rainbows        |   1701 fish | 9.87"  | DAGGETT
+  2004-08-30 | Rainbows        |    840 fish | 10.14" | DAGGETT
+  2004-08-10 | Rainbows        |   1988 fish | 9.81"  | DAGGETT
+  2004-07-21 | Rainbows        |   1564 fish | 8.62"  | DAGGETT
+  2004-06-24 | Rainbows        |   2002 fish | 9.72"  | DAGGETT
+  2003-09-02 | Rainbows        |    905 fish | 10.95" | DAGGETT
+  2003-09-02 | Rainbows        |    655 fish | 9.69"  | DAGGETT
+  2003-07-16 | Rainbows        |    680 fish | 10.03" | DAGGETT
+  2003-07-16 | Rainbows        |    920 fish | 8.14"  | DAGGETT
+  2003-07-01 | Rainbows        |   1560 fish | 9.92"  | DAGGETT
+  2003-06-16 | Rainbows        |   1558 fish | 9.02"  | DAGGETT
+  2002-07-08 | Rainbows        |    960 fish | 8.05"  | DAGGETT
+  2002-07-08 | Rainbows        |    652 fish | 9.8"   | DAGGETT
+  2002-07-03 | Rainbows        |   1577 fish | 9.58"  | DAGGETT
+  2002-06-04 | Rainbows        |   2275 fish | 9.17"  | DAGGETT
+
 --- Squaw X-95 ---
   2022-06-29 | Brookies        |   1056 fish | 2.75"  | DUCHESNE
   2017-07-09 | Brookies        |   1054 fish | 2.53"  | DUCHESNE
@@ -6133,10 +6567,12 @@ Total Stocking Records: 6745
   2007-07-30 | Grayling        |   2003 fish | 1.5"   | SUMMIT
 
 --- Stewart X-79 ---
+  2022-06-30 | Chub            |    105 fish | 10.05" | UINTAH
   2021-09-22 | Cutthroats      |    942 fish | 1.9"   | DUCHESNE
   2017-09-25 | Cutthroats      |    953 fish | 1.62"  | DUCHESNE
   2013-10-07 | Cutthroats      |    944 fish | 1.45"  | DUCHESNE
   2008-09-24 | Cutthroats      |    952 fish | 1.42"  | DUCHESNE
+  2005-05-05 | Chub            |    546 fish | 13.14" | UINTAH
   2002-06-27 | Brookies        |    942 fish | 2.34"  | DUCHESNE
 
 --- Summit GR-5 ---
@@ -6555,6 +6991,14 @@ Total Stocking Records: 6745
   2002-06-10 | Rainbows        |    499 fish | 9.52"  | SUMMIT
   2002-06-05 | Brookies        |    499 fish | 2.35"  | SUMMIT
   2002-06-03 | Rainbows        |    501 fish | 9.63"  | SUMMIT
+
+--- Ted WR-44 ---
+  2025-07-01 | Brookies        |    996 fish | 3.4"   | UINTAH
+  2023-07-21 | Brookies        |    697 fish | 3.0"   | UINTAH
+  2020-07-06 | Brookies        |   1394 fish | 3.49"  | UINTAH
+  2016-06-30 | Brookies        |   1457 fish | 2.06"  | UINTAH
+  2010-07-15 | Brookies        |   1400 fish | 2.38"  | UINTAH
+  2005-07-15 | Brookies        |   1501 fish | 2.65"  | UINTAH
 
 --- Thompson RC-8 ---
   2021-06-30 | Brookies        |   1403 fish | 2.79"  | DUCHESNE
@@ -7126,6 +7570,12 @@ Total Stocking Records: 6745
   2006-07-13 | Brookies        |   1197 fish | 2.88"  | DUCHESNE
   2004-07-07 | Brookies        |   1206 fish | 2.46"  | DUCHESNE
 
+--- Upper Potter GR-28 ---
+  2025-06-30 | Cutthroats      |    900 fish | 2.69"  | DAGGETT
+  2024-10-01 | Cutthroats      |   1502 fish | 3.83"  | DAGGETT
+  2023-09-19 | Cutthroats      |   1491 fish | 1.73"  | DAGGETT
+  2020-09-23 | Cutthroats      |   3009 fish | 2.48"  | DAGGETT
+
 --- Upper Red Castle G-16 ---
   2025-07-02 | Tigers          |    849 fish | 3.8"   | SUMMIT
   2024-07-08 | Tigers          |    847 fish | 2.78"  | SUMMIT
@@ -7141,6 +7591,12 @@ Total Stocking Records: 6745
   2018-10-12 | Cutthroats      |   2016 fish | 1.76"  | DUCHESNE
   2013-10-07 | Cutthroats      |   1982 fish | 1.45"  | DUCHESNE
   2008-09-24 | Cutthroats      |   2004 fish | 1.42"  | DUCHESNE
+
+--- Upper Teepee GR-30 ---
+  2023-09-19 | Tigers          |    299 fish | 3.95"  | DAGGETT
+  2023-07-21 | Tigers          |    598 fish | 2.7"   | DAGGETT
+  2020-07-06 | Tigers          |    600 fish | 3.2"   | DAGGETT
+  2007-07-30 | Grayling        |    676 fish | 1.5"   | DAGGETT
 
 --- Verlie U-41 ---
   2019-07-11 | Brookies        |    416 fish | 2.68"  | DUCHESNE
@@ -7456,6 +7912,13 @@ Total Stocking Records: 6745
   2002-06-05 | Brookies        |   7872 fish | 2.35"  | SUMMIT
   2002-06-03 | Rainbows        |   1000 fish | 9.63"  | SUMMIT
 
+--- Watkins WR-48 ---
+  2022-07-06 | Brookies        |   1795 fish | 3.62"  | UINTAH
+  2018-07-10 | Brookies        |   1806 fish | 2.88"  | UINTAH
+  2013-07-10 | Brookies        |   1798 fish | 2.57"  | UINTAH
+  2008-07-10 | Brookies        |   1800 fish | 2.92"  | UINTAH
+  2003-07-03 | Brookies        |   1799 fish | 2.48"  | UINTAH
+
 --- Watson A-27 ---
   2025-06-25 | Brookies        |    300 fish | 3.01"  | SUMMIT
   2024-07-03 | Brookies        |    296 fish | 2.9"   | SUMMIT
@@ -7479,6 +7942,15 @@ Total Stocking Records: 6745
   2009-08-03 | Grayling        |   1000 fish | 1.4"   | SUMMIT
   2005-07-18 | Grayling        |    990 fish | 0.76"  | SUMMIT
   2003-08-05 | Grayling        |    492 fish | 0.89"  | SUMMIT
+
+--- West Kibah DF-14 ---
+  2025-06-30 | Brookies        |    783 fish | 3.4"   | UINTAH
+  2021-07-01 | Brookies        |    777 fish | 3.32"  | UINTAH
+  2019-07-11 | Brookies        |   2002 fish | 2.68"  | UINTAH
+  2017-07-09 | Brookies        |    791 fish | 2.53"  | UINTAH
+  2013-07-03 | Brookies        |    790 fish | 2.61"  | UINTAH
+  2009-07-16 | Brookies        |    783 fish | 3.06"  | UINTAH
+  2005-07-15 | Brookies        |    777 fish | 2.65"  | UINTAH
 
 --- Whiskey Island Lake BR-3 ---
   2021-09-21 | Grayling        |   1011 fish | 2.65"  | SUMMIT
@@ -7507,6 +7979,9 @@ Total Stocking Records: 6745
   2010-07-15 | Brookies        |    680 fish | 2.38"  | DUCHESNE
   2005-07-15 | Brookies        |    670 fish | 2.65"  | DUCHESNE
 
+--- Wilde GR-36 ---
+  2021-09-21 | Grayling        |    323 fish | 2.65"  | UINTAH
+
 --- Wilder Z-13 ---
   2024-07-03 | Brookies        |    398 fish | 2.9"   | DUCHESNE
   2021-06-28 | Brookies        |    403 fish | 2.79"  | DUCHESNE
@@ -7517,6 +7992,14 @@ Total Stocking Records: 6745
   2006-07-07 | Brookies        |    396 fish | 2.75"  | DUCHESNE
   2005-07-13 | Brookies        |    402 fish | 2.65"  | DUCHESNE
   2002-06-24 | Brookies        |    398 fish | 2.54"  | DUCHESNE
+
+--- Wooley WR-40 ---
+  2022-07-06 | Brookies        |   1000 fish | 3.62"  | UINTAH
+  2017-07-09 | Brookies        |   1023 fish | 2.53"  | UINTAH
+  2016-07-14 | Tigers          |    997 fish | 3.62"  | UINTAH
+  2012-07-09 | Brookies        |    130 fish | 2.3"   | UINTAH
+  2007-07-16 | Brookies        |    129 fish | 2.6"   | UINTAH
+  2002-06-27 | Brookies        |    118 fish | 2.34"  | UINTAH
 
 --- Wyman Z-14 ---
   2025-06-26 | Brookies        |    550 fish | 3.01"  | DUCHESNE
