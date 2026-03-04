@@ -185,6 +185,11 @@
                                         I'm on a mission to catch a fish out of at least 100 different Uintas waters. I grew up in Provo fishing and camping all over, but somehow never in the Uintas. At the ripe age of 42 I spent a week on the Highline trail and realized what I've been missing.
                                     </div>
 
+                                    <div class="text-base leading-relaxed p-6 bg-slate-50 rounded-lg border-l-4 border-slate-300 italic text-slate-700">
+                                        "During the original three-phase study, which occurred between 1956 and 1990, biologists surveyed 1,036 lakes. Of this original number of surveyed lakes, 446 lakes are presently being stocked on a prescribed cycle, 129 have sufficient natural reproduction and do not require stocking, and 461 are fishless. Presently 327 lakes are primarily managed for brook trout, 153 with cutthroat trout, 46 with grayling, 35 with tiger trout, 16 with rainbow trout and three lakes with golden trout."
+                                        <div class="mt-2 text-sm not-italic text-slate-500">&mdash; Utah DWR, Uinta Mountains Lakes Pamphlets (2025 Revised Edition)</div>
+                                    </div>
+
                                     <div>
                                         <h2 class="text-2xl font-bold text-gray-800 mb-4">Sources of Information & Inspiration</h2>
                                         
@@ -235,7 +240,7 @@
                                         <h2 class="text-2xl font-bold text-gray-800 mb-4">Fun Facts</h2>
                                         <div class="space-y-6">
                                             <p class="text-lg leading-relaxed">
-                                                There are around 500 lakes in the Uintas with fish in them, and a couple hundred without. Many are stocked regularly, some were stocked years ago and have established naturally reproducing populations, some have no fish and likely never have, and some were once stocked but they gave up due to frequent winter kill.
+                                                This database tracks 722 lakes across 19 drainages, of which 636 have fish. Many are stocked regularly, some were stocked years ago and have established naturally reproducing populations, some have no fish and likely never have, and some were once stocked but they gave up due to frequent winter kill.
                                             </p>
                                             
                                             <div>
@@ -290,7 +295,7 @@
                                                 </div>
                                                 
                                                 <p class="text-sm text-gray-600 mt-4 italic">
-                                                    There's an X-22 in both Rock Creek Drainage (Pinto) and Swift Creek Drainage, which can cause some confusion when referencing lakes by number alone.
+                                                    Two designations appear twice: X-22 exists in both Rock Creek (Pinto) and Swift Creek, and WR-14 covers both Upper Rock and Becky in the Whiterocks drainage. We use a "b" suffix (X-22b, WR-14b) to distinguish them.
                                                 </p>
                                             </div>
 
@@ -298,23 +303,23 @@
                                                 <h3 class="text-xl font-semibold text-gray-700 mb-3">2025 Stocking Totals</h3>
                                                 <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
                                                     <div class="text-center p-3 bg-gray-50 rounded-lg">
-                                                        <div class="text-2xl font-bold text-gray-800">96,000</div>
+                                                        <div class="text-2xl font-bold text-gray-800">99,100</div>
                                                         <div class="text-sm text-gray-600">Brookies</div>
                                                     </div>
                                                     <div class="text-center p-3 bg-gray-50 rounded-lg">
-                                                        <div class="text-2xl font-bold text-gray-800">63,000</div>
-                                                        <div class="text-sm text-gray-600">Rainbows</div>
-                                                    </div>
-                                                    <div class="text-center p-3 bg-gray-50 rounded-lg">
-                                                        <div class="text-2xl font-bold text-gray-800">28,000</div>
-                                                        <div class="text-sm text-gray-600">Tigers</div>
-                                                    </div>
-                                                    <div class="text-center p-3 bg-gray-50 rounded-lg">
-                                                        <div class="text-2xl font-bold text-gray-800">27,000</div>
+                                                        <div class="text-2xl font-bold text-gray-800">87,200</div>
                                                         <div class="text-sm text-gray-600">Cutthroats</div>
                                                     </div>
                                                     <div class="text-center p-3 bg-gray-50 rounded-lg">
-                                                        <div class="text-2xl font-bold text-gray-800">4,000</div>
+                                                        <div class="text-2xl font-bold text-gray-800">65,400</div>
+                                                        <div class="text-sm text-gray-600">Rainbows</div>
+                                                    </div>
+                                                    <div class="text-center p-3 bg-gray-50 rounded-lg">
+                                                        <div class="text-2xl font-bold text-gray-800">28,800</div>
+                                                        <div class="text-sm text-gray-600">Tigers</div>
+                                                    </div>
+                                                    <div class="text-center p-3 bg-gray-50 rounded-lg">
+                                                        <div class="text-2xl font-bold text-gray-800">3,900</div>
                                                         <div class="text-sm text-gray-600">Grayling</div>
                                                     </div>
                                                 </div>
@@ -1029,7 +1034,7 @@
                 navigator.serviceWorker.register('./service-worker.js')
                     .then(registration => {
                         console.log('Service Worker registered successfully:', registration.scope);
-                        
+
                         // Handle updates
                         registration.addEventListener('updatefound', () => {
                             const newWorker = registration.installing;

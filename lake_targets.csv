@@ -1,0 +1,614 @@
+letter_number,name,drainage,elevation_ft,size_acres,max_depth_ft,fish_species,fishing_pressure,low_pressure,remote_access,natural_repro,infrequent_stocking,big_fish_mentioned,productive_depth,elevation_sweet_spot,size_sweet_spot,tiger_trout,grayling,cutthroat,good_habitat,total_score,notes
+WR-43,Dollar,White Rocks Drainage,10500,7.3,15,"Brookies*, Cutthroats*, Rainbows*, Tigers*",Moderate,1,1,1,1,0,1,1,1,1,0,1,1,10,"Light pressure, Remote/off-trail, Natural repro, Infrequent stocking, Good depth, Good elevation, Good size, Tigers, Cutthroat, Good habitat"
+GR-19,Lamb,Ashley Creek Drainage,10540,6.0,10,"Cutthroats, Grayling*, Tigers*",Low,1,1,0,1,0,0,1,1,1,1,1,1,9,"Light pressure, Remote/off-trail, Infrequent stocking, Good elevation, Good size, Tigers, Grayling, Cutthroat, Good habitat"
+A-40,Cutthroat (clint),Provo River Drainage,9940,3.0,10,"Brookies, Tigers",Low,1,1,1,1,0,0,1,1,1,0,0,1,8,Light pressure; Remote/off-trail; Natural repro; Infrequent stocking; Good elevation; Good size; Tigers; Good habitat
+A-50,Weir,Provo River Drainage,9940,7.0,13,"Cutthroats, Grayling",Moderate,0,1,1,1,0,0,1,1,0,1,1,1,8,Remote/off-trail; Natural repro; Infrequent stocking; Good elevation; Good size; Grayling; Cutthroats; Good habitat
+BR-48,Priord,Bear River Drainage,10860,10.5,20,"Cutthroats, Tigers",Moderate,1,1,0,1,0,1,0,1,1,0,1,1,8,Light pressure; Remote/off-trail; Infrequent stocking; Good depth (20ft); Good size (10.5ac); Tigers; Cutthroat; Good habitat
+DF-17,Little Elk,Ashley Creek Drainage,10550,7.4,10,"Grayling, Tigers*",,1,1,0,1,0,0,1,1,1,1,0,1,8,"Light pressure, Remote/off-trail, Infrequent stocking, Good elevation, Good size, Tigers, Grayling, Good habitat"
+DG-9,,Dry Gulch Drainage,10750,10.0,27,Cutthroats,Low,1,1,0,1,0,1,1,1,0,0,1,1,8,"light pressure, remote/off-trail, infrequent stocking, good depth (27ft), good elev (10750ft), good size (10.0ac), cutthroat, good habitat"
+GR-12,Clear,Sheep/Carter Creek Drainages,10780,10.2,25,"Cutthroats*, Grayling*, Tigers",Low,1,0,0,1,0,1,1,1,1,1,0,1,8,"light pressure, infrequent stocking, good depth (25ft), good elev (10780ft), good size (10.2ac), tigers, grayling, good habitat"
+GR-24,Ram,Ashley Creek Drainage,10380,7.0,27,"Cutthroats, Grayling*, Tigers*",Low,1,0,0,0,0,1,1,1,1,1,1,1,8,"Light pressure, Good depth, Good elevation, Good size, Tigers, Grayling, Cutthroat, Good habitat"
+GR-47,Mud,Ashley Creek Drainage,10582,4.2,15,Grayling*,,1,1,1,0,0,1,1,1,0,1,0,1,8,"Light pressure, Remote/off-trail, Natural repro, Good depth, Good elevation, Good size, Grayling, Good habitat"
+GR-50,North Twin (Dry Fork),Ashley Creek Drainage,10305,10.3,24,"Brookies*, Cutthroats*, Tigers*",High,0,0,1,1,0,1,1,1,1,0,1,1,8,"Natural repro, Infrequent stocking, Big fish potential, Good depth, Good elevation, Good size, Tigers, Cutthroat, Good habitat"
+LF-8,,Lake Fork Drainage,10498,7.0,17,"Cutthroats, Unknown*",Low,1,1,0,1,0,1,1,1,0,0,1,1,8,Light pressure; Remote/off-trail; Infrequent stocking; Good depth (17ft); Good elevation; Good size (7.0ac); Cutthroat; Good habitat
+U-98,Penny Nickell,Uinta River Drainage,10710,11.5,43,Cutthroats,Low,1,1,0,1,0,1,1,1,0,0,1,1,8,"Light pressure, Remote/off-trail, Infrequent stocking, Good depth, Good elevation, Good size, Cutthroat, Good habitat"
+W-49,Sand,Weber River Drainage,10140,19.3,41,Grayling,Low,1,1,1,0,0,1,1,1,0,1,0,1,8,Light pressure; Remote/off-trail; Natural repro; Big fish potential; Good depth; Good elevation; Good size; Grayling; Good habitat
+W-58,Jean,Weber River Drainage,10100,3.0,25,Cutthroats,Low,1,1,0,1,0,1,1,1,0,0,1,1,8,Light pressure; Remote/off-trail; Infrequent stocking; Good depth; Good elevation; Good size; Cutthroats; Good habitat
+WR-17,Lower Rock,White Rocks Drainage,10600,19.2,39,"Brookies, Cutthroats",Moderate,1,0,1,1,0,1,1,1,0,0,1,1,8,"Light pressure, Natural repro, Infrequent stocking, Big fish potential, Good depth, Good elevation, Good size, Cutthroat, Good habitat"
+WR-45,Pearl,White Rocks Drainage,10700,7.9,15,"Brookies*, Cutthroats",Low,1,0,1,1,0,1,1,1,0,0,1,1,8,"Light pressure, Natural repro, Infrequent stocking, Good depth, Good elevation, Good size, Cutthroat, Good habitat"
+Z-44,Allen,Rock Creek Drainage,10390,15.2,16,"Brookies, Grayling",Low,1,1,1,0,0,1,1,1,0,1,0,1,8,Light pressure; Remote/off-trail; Natural repro; Good depth; Good elevation; Good size; Grayling; Good habitat
+A-11,Azure,Provo River Drainage,10140,9.0,23,Grayling,Low,1,0,0,1,0,1,1,1,0,1,0,1,7,Light pressure; Infrequent stocking; Big fish potential; Good depth; Good elevation; Good size; Grayling; Good habitat
+A-14,Fire,Provo River Drainage,10200,9.0,59,"Cutthroats, Tigers*",Moderate,0,1,0,1,0,0,1,1,1,0,1,1,7,Remote/off-trail; Infrequent stocking; Good elevation; Good size; Tigers; Cutthroats; Good habitat
+A-56,Junior,Provo River Drainage,10200,2.8,11,"Cutthroats, Tigers",Low,1,1,0,0,0,0,1,1,1,0,1,1,7,Light pressure; Remote/off-trail; Good elevation; Good size; Tigers; Cutthroats; Good habitat
+BR-10,Beaver,Bear River Drainage,9420,13.2,32,"Brookies*, Brown Trout*, Cutthroats, Rainbows, Tigers",Moderate,0,1,0,0,0,1,1,1,1,0,1,1,7,Remote/off-trail; Big fish potential; Good depth (32ft); Good elevation; Good size (13.2ac); Tigers; Cutthroat; Good habitat
+BR-20,Kermsuh,Bear River Drainage,10300,11.8,14,Cutthroats,Low,1,1,1,0,0,0,1,1,0,0,1,1,7,Light pressure; Remote/off-trail; Natural repro; Good elevation; Good size (11.8ac); Cutthroat; Good habitat
+BR-3,Whiskey Island Lake,Bear River Drainage,10340,5.0,19,Grayling,Low,1,1,0,0,0,1,1,1,0,1,0,1,7,Light pressure; Remote/off-trail; Good depth (19ft); Good elevation; Good size (5.0ac); Grayling; Good habitat
+BR-37,Cutthroat,Bear River Drainage,10390,3.4,16,"Cutthroats, Tigers",Moderate,0,1,0,0,0,1,1,1,1,0,1,1,7,Remote/off-trail; Good depth (16ft); Good elevation; Good size (3.4ac); Tigers; Cutthroat; Good habitat
+BR-42,Allsop,Bear River Drainage,10580,12.5,22,Cutthroats,Moderate,0,1,1,0,0,1,1,1,0,0,1,1,7,Remote/off-trail; Natural repro; Good depth (22ft); Good elevation; Good size (12.5ac); Cutthroat; Good habitat
+BR-44,,Bear River Drainage,10900,3.5,15,Tigers,Low,1,1,0,1,0,1,0,1,1,0,0,1,7,Light pressure; Remote/off-trail; Infrequent stocking; Big fish potential; Good depth (15ft); Good size (3.5ac); Tigers; Good habitat
+BR-46,Lorena,Bear River Drainage,10580,12.8,20,Brookies,Low,1,1,0,1,0,1,1,1,0,0,0,1,7,Light pressure; Remote/off-trail; Infrequent stocking; Good depth (20ft); Good elevation; Good size (12.8ac); Good habitat
+D-11,Hades,Duchesne River Drainage,9980,6.4,32,"Brookies, Rainbows",Low,1,1,1,0,0,1,1,1,0,0,0,1,7,Light pressure; Remote/off-trail; Natural repro; Good depth (32ft); Good elevation; Good size (6.4ac); Good habitat
+DG-3,Crow,Dry Gulch Drainage,10350,18.0,26,Cutthroats,Moderate,0,1,0,1,0,1,1,1,0,0,1,1,7,"remote/off-trail, infrequent stocking, good depth (26ft), good elev (10350ft), good size (18.0ac), cutthroat, good habitat"
+G-6,Sawmill,Henrys Fork Drainage,10661,7.2,21,"Brookies, Cutthroats",High,0,1,1,0,0,1,1,1,0,0,1,1,7,"remote/off-trail, natural repro, big fish potential, good depth (21ft), good elev (10661ft), good size (7.2ac), cutthroat, good habitat"
+GR-101,Mystery,Sheep/Carter Creek Drainages,9750,10.2,25,"Brookies*, Cutthroats",Moderate,1,0,0,1,0,1,1,1,0,0,1,1,7,"light pressure, infrequent stocking, good depth (25ft), good elev (9750ft), good size (10.2ac), cutthroat, good habitat"
+GR-104,,Ashley Creek Drainage,,4.3,19,"Grayling, Trout*",Low,1,1,0,1,0,1,0,1,0,1,0,1,7,"Light pressure, Remote/off-trail, Infrequent stocking, Good depth, Good size, Grayling, Good habitat"
+GR-112,Hidden,Sheep/Carter Creek Drainages,10270,4.3,8,"Brookies, Cutthroats",Low,1,1,0,1,0,0,1,1,0,0,1,1,7,"light pressure, remote/off-trail, infrequent stocking, big fish potential, good elev (10270ft), good size (4.3ac), cutthroat, good habitat"
+GR-115,Gail,Sheep/Carter Creek Drainages,10420,4.5,25,Cutthroats,Low,1,0,0,1,0,1,1,1,0,0,1,1,7,"light pressure, infrequent stocking, good depth (25ft), good elev (10420ft), good size (4.5ac), cutthroat, good habitat"
+GR-130,Snow,Burnt Fork Drainage,10550,9.4,35,Cutthroats,Low,1,0,0,1,0,1,1,1,0,0,1,1,7,"light pressure, infrequent stocking, good depth (35ft), good elev (10550ft), good size (9.4ac), cutthroat, good habitat"
+GR-15,Sesame,Ashley Creek Drainage,10780,6.0,7,"Brookies*, Grayling*",Low,1,0,1,1,0,0,1,1,0,1,0,1,7,"Light pressure, Natural repro, Infrequent stocking, Good elevation, Good size, Grayling, Good habitat"
+GR-18,Ewe,Sheep/Carter Creek Drainages,10750,3.0,10,Grayling,Low,1,1,0,1,0,0,1,1,0,1,0,1,7,"light pressure, remote/off-trail, infrequent stocking, good elev (10750ft), good size (3.0ac), grayling, good habitat"
+GR-20,,Ashley Creek Drainage,10355,5.7,8,"Brookies*, Tigers",Low,1,0,1,1,0,0,1,1,1,0,0,1,7,"Light pressure, Natural repro, Infrequent stocking, Good elevation, Good size, Tigers, Good habitat"
+GR-22,Bummer,Sheep/Carter Creek Drainages,10350,1.9,6,"Brookies*, Cutthroats, Grayling*",Low,1,1,0,1,0,0,1,0,0,1,1,1,7,"light pressure, remote/off-trail, infrequent stocking, good elev (10350ft), grayling, cutthroat, good habitat"
+GR-23,Mutton,Ashley Creek Drainage,10570,3.8,10,"Brookies*, Cutthroats",Low,1,1,0,1,0,0,1,1,0,0,1,1,7,"Light pressure, Remote/off-trail, Infrequent stocking, Good elevation, Good size, Cutthroat, Good habitat"
+GR-27,Lower Potter,Sheep/Carter Creek Drainages,10130,3.4,16,Brookies,Moderate,1,1,1,0,0,1,1,1,0,0,0,1,7,"light pressure, remote/off-trail, natural repro, big fish potential, good depth (16ft), good elev (10130ft), good size (3.4ac), good habitat"
+GR-30,Upper Teepee,Sheep/Carter Creek Drainages,9430,6.5,28,"Cutthroats*, Grayling*, Tigers",Moderate,0,0,0,1,0,1,1,1,1,1,0,1,7,"infrequent stocking, good depth (28ft), good elev (9430ft), good size (6.5ac), tigers, grayling, good habitat"
+GR-33,Red Lake,Sheep/Carter Creek Drainages,9850,20.9,57,"Brookies*, Cutthroats, Grayling, Tiger muskie, Tigers",Low,1,0,0,1,0,0,1,0,1,1,1,1,7,"light pressure, infrequent stocking, big fish potential, good elev (9850ft), tigers, grayling, cutthroat, good habitat"
+GR-34,Lakeshore,Ashley Creek Drainage,10792,11.1,18,"Brookies*, Cutthroats*, Tiger muskie, Tigers*",Moderate,0,0,0,1,0,1,1,1,1,0,1,1,7,"Infrequent stocking, Big fish potential, Good depth, Good elevation, Good size, Tigers, Cutthroat, Good habitat"
+GR-43,Goose #2,Ashley Creek Drainage,10252,19.4,15,"Brookies*, Cutthroats*",Low,0,0,1,1,0,1,1,1,0,0,1,1,7,"Natural repro, Infrequent stocking, Good depth, Good elevation, Good size, Cutthroat, Good habitat"
+GR-57,Fish,Ashley Creek Drainage,10745,17.5,40,Cutthroats,High,0,1,1,0,0,1,1,1,0,0,1,1,7,"Remote/off-trail, Natural repro, Big fish potential, Good depth, Good elevation, Good size, Cutthroat, Good habitat"
+GR-6,Dagget,Sheep/Carter Creek Drainages,10462,42.6,29,"Cutthroats, Grayling*, Rainbows*, Tigers*",High,0,0,0,1,0,1,1,0,1,1,1,1,7,"infrequent stocking, big fish potential, good depth (29ft), good elev (10462ft), tigers, grayling, cutthroat, good habitat"
+GR-7,Hidden,Sheep/Carter Creek Drainages,10380,8.5,26,"Brookies, Cutthroats*",Low,1,1,0,1,0,1,1,1,0,0,0,1,7,"light pressure, remote/off-trail, infrequent stocking, good depth (26ft), good elev (10380ft), good size (8.5ac), good habitat"
+RC-11,Sea Lion,Rock Creek Drainage,10385,7.9,11,Cutthroats,Low,1,1,0,1,0,0,1,1,0,0,1,1,7,Light pressure; Remote/off-trail; Infrequent stocking; Good elevation; Good size; Cutthroats; Good habitat
+RC-42,Cabin,Rock Creek Drainage,10450,4.3,16,Brookies,Low,1,0,0,1,1,1,1,1,0,0,0,1,7,Light pressure; Infrequent stocking; Big fish potential; Good depth; Good elevation; Good size; Good habitat
+RC-45,Audrey,Rock Creek Drainage,10021,13.2,25,Brookies,Low,1,1,0,1,0,1,1,1,0,0,0,1,7,Light pressure; Remote/off-trail; Infrequent stocking; Good depth; Good elevation; Good size; Good habitat
+W-34,Adax,Weber River Drainage,9700,5.0,10,Cutthroats,Low,1,1,1,0,0,0,1,1,0,0,1,1,7,Light pressure; Remote/off-trail; Natural repro; Good elevation; Good size; Cutthroats; Good habitat
+W-48,Round,Weber River Drainage,9940,5.0,36,"Cutthroats, Grayling",Moderate,0,0,1,0,0,1,1,1,0,1,1,1,7,Natural repro; Good depth; Good elevation; Good size; Grayling; Cutthroats; Good habitat
+WR-14,Upper Rock,White Rocks Drainage,10562,33.4,28,Cutthroats,Low,1,1,0,1,0,1,1,0,0,0,1,1,7,"Light pressure, Remote/off-trail, Infrequent stocking, Big fish potential, Good depth, Good elevation, Cutthroat, Good habitat"
+WR-40,Wooley,White Rocks Drainage,10680,20.5,42,"Brookies, Tigers*",Moderate,1,0,1,1,0,1,1,0,1,0,0,1,7,"Light pressure, Natural repro, Infrequent stocking, Good depth, Good elevation, Tigers, Good habitat"
+WR-42,Sand,White Rocks Drainage,10435,6.2,5,"Brookies*, Cutthroats",Low,1,0,1,1,0,0,1,1,0,0,1,1,7,"Light pressure, Natural repro, Infrequent stocking, Good elevation, Good size, Cutthroat, Good habitat"
+WR-5,Ogden,White Rocks Drainage,10900,13.9,21,"Brookies, Cutthroats",Low,1,1,0,1,0,1,0,1,0,0,1,1,7,"Light pressure, Remote/off-trail, Infrequent stocking, Good depth, Good size, Cutthroat, Good habitat"
+WR-52,Papoose,White Rocks Drainage,10607,16.8,22,"Brookies, Cutthroats",Moderate,0,0,1,1,0,1,1,1,0,0,1,1,7,"Natural repro, Infrequent stocking, Big fish potential, Good depth, Good elevation, Good size, Cutthroat, Good habitat"
+WR-54,Wigwam,White Rocks Drainage,10625,16.7,14,"Brookies, Cutthroats",Moderate,0,1,1,1,0,0,1,1,0,0,1,1,7,"Remote/off-trail, Natural repro, Infrequent stocking, Big fish potential, Good elevation, Good size, Cutthroat, Good habitat"
+X-100,Young,Rock Creek Drainage,10310,4.0,19,Cutthroats,Low,1,0,0,1,0,1,1,1,0,0,1,1,7,Light pressure; Infrequent stocking; Good depth; Good elevation; Good size; Cutthroats; Good habitat
+X-125,Reconnaissance,Rock Creek Drainage,11145,8.8,30,"Brookies, Cutthroats",Low,1,1,1,0,0,1,0,1,0,0,1,1,7,Light pressure; Remote/off-trail; Natural repro; Good depth; Good size; Cutthroats; Good habitat
+X-15,Doc's,Rock Creek Drainage,9882,14.5,45,Brookies,Low,1,1,0,1,0,1,1,1,0,0,0,1,7,Light pressure; Remote/off-trail; Infrequent stocking; Big fish potential; Good depth; Good elevation; Good size; Good habitat
+X-32,Big Dog,Lake Fork Drainage,10117,6.0,12,Grayling,Low,1,1,0,1,0,0,1,1,0,1,0,1,7,Light pressure; Remote/off-trail; Infrequent stocking; Big fish potential; Good elevation; Good size (6.0ac); Grayling; Good habitat
+X-34,Island,Lake Fork Drainage,10250,66.0,48,"Cutthroats, Tigers",High,0,1,0,1,0,1,1,0,1,0,1,1,7,Remote/off-trail; Infrequent stocking; Big fish potential; Good depth (48ft); Good elevation; Tigers; Cutthroat; Good habitat
+X-36,Tworoose,Lake Fork Drainage,10310,21.9,37,Cutthroats,Moderate,1,1,1,0,0,1,1,0,0,0,1,1,7,Light pressure; Remote/off-trail; Natural repro; Good depth (37ft); Good elevation; Cutthroat; Good habitat
+X-56,Grayling,Swift Creek Drainage,9980,8.5,33,Brookies,High,0,1,1,1,0,1,1,1,0,0,0,1,7,"remote/off-trail, natural repro, infrequent stocking, big fish potential, good depth (33ft), good elev (9980ft), good size (8.5ac), good habitat"
+X-77,Twin,Lake Fork Drainage,10594,12.9,15,Brookies,Low,1,1,0,1,0,1,1,1,0,0,0,1,7,Light pressure; Remote/off-trail; Infrequent stocking; Good depth (15ft); Good elevation; Good size (12.9ac); Good habitat
+X-78,,Lake Fork Drainage,10636,17.0,18,Cutthroats,Low,1,0,0,1,0,1,1,1,0,0,1,1,7,Light pressure; Infrequent stocking; Good depth (18ft); Good elevation; Good size (17.0ac); Cutthroat; Good habitat
+X-79,Stewart,Lake Fork Drainage,10530,9.2,22,"Brookies*, Chub, Cutthroats",Low,1,0,0,1,0,1,1,1,0,0,1,1,7,Light pressure; Infrequent stocking; Good depth (22ft); Good elevation; Good size (9.2ac); Cutthroat; Good habitat
+X-80,,Lake Fork Drainage,10580,4.6,5,"Brookies, Cutthroats",Low,1,1,1,0,0,0,1,1,0,0,1,1,7,Light pressure; Remote/off-trail; Natural repro; Big fish potential; Good elevation; Good size (4.6ac); Cutthroat; Good habitat
+X-81,Hook,Lake Fork Drainage,10722,21.0,19,Brookies,Low,1,1,1,1,0,1,1,0,0,0,0,1,7,Light pressure; Remote/off-trail; Natural repro; Infrequent stocking; Good depth (19ft); Good elevation; Good habitat
+X-89,,Lake Fork Drainage,11110,3.4,19,Unknown,Low,1,1,1,1,0,1,0,1,0,0,0,1,7,Light pressure; Remote/off-trail; Natural repro; Infrequent stocking; Big fish potential; Good depth (19ft); Good size (3.4ac); Good habitat
+Z-23,Margo,Rock Creek Drainage,10420,11.1,29,Cutthroats,Low,1,0,0,1,0,1,1,1,0,0,1,1,7,Light pressure; Infrequent stocking; Good depth; Good elevation; Good size; Cutthroats; Good habitat
+Z-46,Bedground,Rock Creek Drainage,10500,2.0,15,"Brookies, Grayling",Moderate,0,0,0,1,1,1,1,1,0,1,0,1,7,Infrequent stocking; Big fish potential; Good depth; Good elevation; Good size; Grayling; Good habitat
+Z-9,Shepard,Duchesne River Drainage,9980,14.2,32,"Brookies, Cutthroats, Rainbows",High,0,1,1,0,0,1,1,1,0,0,1,1,7,Remote/off-trail; Natural repro; Big fish potential; Good depth (32ft); Good elevation; Good size (14.2ac); Cutthroat; Good habitat
+A-12,Marjorie,Provo River Drainage,9980,13.0,16,Grayling,High,0,0,1,0,0,1,1,1,0,1,0,1,6,Natural repro; Big fish potential; Good depth; Good elevation; Good size; Grayling; Good habitat
+A-15,Hidden,Provo River Drainage,9760,8.2,25,Brookies,Moderate,0,1,0,1,0,1,1,1,0,0,0,1,6,Remote/off-trail; Infrequent stocking; Good depth; Good elevation; Good size; Good habitat
+A-17,Beaver,Provo River Drainage,9900,3.5,15,Brookies,Low,1,1,0,0,0,1,1,1,0,0,0,1,6,Light pressure; Remote/off-trail; Good depth; Good elevation; Good size; Good habitat
+A-34,Cliff,Provo River Drainage,10230,9.0,20,"Cutthroats, Tigers",High,0,0,0,0,0,1,1,1,1,0,1,1,6,Big fish potential; Good depth; Good elevation; Good size; Tigers; Cutthroats; Good habitat
+A-60,Teapot,Provo River Drainage,9950,13.0,46,"Brookies, Cutthroats, Grayling, Rainbows, Tigers",High,0,0,0,0,0,1,1,1,1,1,1,0,6,Big fish potential; Good depth; Good elevation; Good size; Tigers; Grayling; Cutthroats
+A-7,Duck,Provo River Drainage,9780,12.7,15,"Brookies, Cutthroats",High,0,0,1,0,0,1,1,1,0,0,1,1,6,Natural repro; Big fish potential; Good depth; Good elevation; Good size; Cutthroats; Good habitat
+BR-47,Norice,Bear River Drainage,10470,3.2,3,Cutthroats,Moderate,0,1,1,0,0,0,1,1,0,0,1,1,6,Remote/off-trail; Natural repro; Good elevation; Good size (3.2ac); Cutthroat; Good habitat
+D-14,Castle,Duchesne River Drainage,10300,1.0,12,"Cutthroats, Tigers",Moderate,0,1,0,1,0,0,1,0,1,0,1,1,6,Remote/off-trail; Infrequent stocking; Good elevation; Tigers; Cutthroat; Good habitat
+D-40,Broadhead,Duchesne River Drainage,9960,8.8,16,Brookies,Low,1,0,1,0,0,1,1,1,0,0,0,1,6,Light pressure; Natural repro; Good depth (16ft); Good elevation; Good size (8.8ac); Good habitat
+DF-18,Paul,Ashley Creek Drainage,10630,11.1,17,Brookies,Low,1,0,0,1,1,1,1,1,0,0,0,0,6,"Light pressure, Infrequent stocking, Good depth, Good elevation, Good size"
+DG-25,Upper Lily Pad,Dry Gulch Drainage,10280,12.0,37,"Brookies, Cutthroats",High,0,1,0,0,0,1,1,1,0,0,1,1,6,"remote/off-trail, big fish potential, good depth (37ft), good elev (10280ft), good size (12.0ac), cutthroat, good habitat"
+DG-27,Hidden,Dry Gulch Drainage,9520,10.0,39,Brookies,Low,1,0,0,1,0,1,1,1,0,0,0,1,6,"light pressure, infrequent stocking, good depth (39ft), good elev (9520ft), good size (10.0ac), good habitat"
+DG-6,,Dry Gulch Drainage,10550,3.0,5,Cutthroats,Low,1,0,0,1,0,0,1,1,0,0,1,1,6,"light pressure, infrequent stocking, good elev (10550ft), good size (3.0ac), cutthroat, good habitat"
+G-14,Smiths Fork Pass,Smiths Fork Drainage,11152,26.1,17,"Cutthroats, Tigers",Low,1,1,0,0,0,1,0,0,1,0,1,1,6,light pressure; remote/off-trail; big fish potential; good depth (17ft); tigers; cutthroat; good habitat
+G-18,Hessie,Smiths Fork Drainage,10620,13.2,18,"Brookies*, Cutthroats, Tigers",Moderate,0,0,0,0,0,1,1,1,1,0,1,1,6,big fish potential; good depth (18ft); good elev (10620ft); good size (13.2ac); tigers; cutthroat; good habitat
+G-38,Alligator,Henrys Fork Drainage,10033,14.5,26,"Brookies, Cutthroats",High,0,0,1,0,0,1,1,1,0,0,1,1,6,"natural repro, good depth (26ft), good elev (10033ft), good size (14.5ac), cutthroat, good habitat"
+G-49,,Smiths Fork Drainage,10830,3.9,11,"Brookies, Cutthroats, Rainbows",Low,1,1,1,0,0,0,0,1,0,0,1,1,6,light pressure; remote/off-trail; natural repro; good size (3.9ac); cutthroat; good habitat
+G-51,,Smiths Fork Drainage,10620,8.1,5,Brookies,Low,1,0,1,1,0,0,1,1,0,0,0,1,6,light pressure; natural repro; infrequent stocking; big fish potential; good elev (10620ft); good size (8.1ac); good habitat
+G-59,,Smiths Fork Drainage,10740,3.2,24,Brookies,Low,1,0,1,0,0,1,1,1,0,0,0,1,6,light pressure; natural repro; good depth (24ft); good elev (10740ft); good size (3.2ac); good habitat
+G-60,,Smiths Fork Drainage,10500,2.5,9,"Brookies, Tigers",Moderate,1,0,0,1,0,0,1,1,1,0,0,1,6,light pressure; infrequent stocking; big fish potential; good elev (10500ft); good size (2.5ac); tigers; good habitat
+G-63,Bald,Smiths Fork Drainage,11030,6.4,23,Brookies,Low,1,1,1,0,0,1,0,1,0,0,0,1,6,light pressure; remote/off-trail; natural repro; big fish potential; good depth (23ft); good size (6.4ac); good habitat
+G-64,,Smiths Fork Drainage,10470,3.4,5,"Cutthroats, Tigers",Low,1,0,0,0,0,0,1,1,1,0,1,1,6,light pressure; good elev (10470ft); good size (3.4ac); tigers; cutthroat; good habitat
+GR-116,Columbine,Sheep/Carter Creek Drainages,10550,5.7,5,"Brookies, Tigers",Low,1,0,0,1,0,0,1,1,1,0,0,1,6,"light pressure, infrequent stocking, good elev (10550ft), good size (5.7ac), tigers, good habitat"
+GR-127,Burnt Fork Lake,Burnt Fork Drainage,10630,9.8,25,Cutthroats,Moderate,0,0,1,0,0,1,1,1,0,0,1,1,6,"natural repro, good depth (25ft), good elev (10630ft), good size (9.8ac), cutthroat, good habitat"
+GR-128,Crystal,Burnt Fork Drainage,10380,5.4,5,"Brookies, Cutthroats",Low,0,1,1,0,0,0,1,1,0,0,1,1,6,"remote/off-trail, natural repro, good elev (10380ft), good size (5.4ac), cutthroat, good habitat"
+GR-134,Lower Bennion,Burnt Fork Drainage,10950,7.7,13,"Brookies, Cutthroats",Low,1,0,1,1,0,0,0,1,0,0,1,1,6,"light pressure, natural repro, infrequent stocking, big fish potential, good size (7.7ac), cutthroat, good habitat"
+GR-140,Kabell,Burnt Fork Drainage,10348,14.7,23,Cutthroats,Moderate,0,0,0,1,0,1,1,1,0,0,1,1,6,"infrequent stocking, big fish potential, good depth (23ft), good elev (10348ft), good size (14.7ac), cutthroat, good habitat"
+GR-144,Coffin,Beaver Creek Drainage,10853,25.8,28,"Cutthroats, Tigers",Low,1,1,0,0,0,1,0,0,1,0,1,1,6,"light pressure, remote/off-trail, good depth (28ft), tigers, cutthroat, good habitat"
+GR-145,,Beaver Creek Drainage,11020,5.6,11,"Cutthroats, Grayling",Low,0,1,0,1,0,0,0,1,0,1,1,1,6,"remote/off-trail, infrequent stocking, good size (5.6ac), grayling, cutthroat, good habitat"
+GR-148,Dine,Beaver Creek Drainage,10460,5.1,15,Brookies,Low,0,1,1,0,0,1,1,1,0,0,0,1,6,"remote/off-trail, natural repro, good depth (15ft), good elev (10460ft), good size (5.1ac), good habitat"
+GR-161,,Beaver Creek Drainage,9250,4.3,41,Brookies,Low,0,1,0,1,0,1,1,1,0,0,0,1,6,"remote/off-trail, infrequent stocking, good depth (41ft), good elev (9250ft), good size (4.3ac), good habitat"
+GR-17,Candy,Sheep/Carter Creek Drainages,,5.5,,"Cutthroats, Grayling*, Tigers*",,0,0,0,1,0,0,0,1,1,1,1,1,6,"infrequent stocking, good size (5.5ac), tigers, grayling, cutthroat, good habitat"
+GR-25,Judy,Sheep/Carter Creek Drainages,10830,4.7,24,"Brookies, Tigers",Low,1,0,0,1,0,1,0,1,1,0,0,1,6,"light pressure, infrequent stocking, good depth (24ft), good size (4.7ac), tigers, good habitat"
+GR-31,,Ashley Creek Drainage,9270,6.0,6,"Brookies*, Cutthroats",Low,1,0,0,1,0,0,1,1,0,0,1,1,6,"Light pressure, Infrequent stocking, Good elevation, Good size, Cutthroat, Good habitat"
+GR-32,One Fish,Sheep/Carter Creek Drainages,9350,4.5,35,"Brookies, Grayling",Low,1,0,0,0,0,1,1,1,0,1,0,1,6,"light pressure, big fish potential, good depth (35ft), good elev (9350ft), good size (4.5ac), grayling, good habitat"
+GR-35,Ashley Twin Reservoir,Ashley Creek Drainage,10332,25.0,18,"Brookies, Cutthroats*",Moderate,0,1,1,0,0,1,1,0,0,0,1,1,6,"Remote/off-trail, Natural repro, Big fish potential, Good depth, Good elevation, Cutthroat, Good habitat"
+GR-39,Marsh,Ashley Creek Drainage,10820,12.6,21,"Brookies, Goldens*, Rainbows*",Moderate,0,1,1,1,0,1,0,1,0,0,0,1,6,"Remote/off-trail, Natural repro, Infrequent stocking, Good depth, Good size, Good habitat"
+GR-4,Lost,Sheep/Carter Creek Drainages,10300,3.2,7,Cutthroats,Low,1,0,0,1,0,0,1,1,0,0,1,1,6,"light pressure, infrequent stocking, good elev (10300ft), good size (3.2ac), cutthroat, good habitat"
+GR-40,Hacking,Ashley Creek Drainage,10625,7.4,15,"Brookies*, Cutthroats, Rainbows, Tigers",,0,0,0,0,0,1,1,1,1,0,1,1,6,"Big fish potential, Good depth, Good elevation, Good size, Tigers, Cutthroat, Good habitat"
+GR-45,Sandy,Ashley Creek Drainage,10500,5.6,10,Cutthroats,Low,1,0,0,1,0,0,1,1,0,0,1,1,6,"Light pressure, Infrequent stocking, Good elevation, Good size, Cutthroat, Good habitat"
+GR-59,Shaw,Ashley Creek Drainage,10700,2.8,5,Cutthroats,Low,1,0,1,0,0,0,1,1,0,0,1,1,6,"Light pressure, Natural repro, Big fish potential, Good elevation, Good size, Cutthroat, Good habitat"
+GR-9,Anson Lower,Sheep/Carter Creek Drainages,10575,14.5,20,"Brookies*, Cutthroats",Moderate,0,0,1,0,0,1,1,1,0,0,1,1,6,"natural repro, big fish potential, good depth (20ft), good elev (10575ft), good size (14.5ac), cutthroat, good habitat"
+LF-16,,Lake Fork Drainage,10550,3.0,6,Brookies,Low,1,1,0,1,0,0,1,1,0,0,0,1,6,Light pressure; Remote/off-trail; Infrequent stocking; Good elevation; Good size (3.0ac); Good habitat
+LF-21,Lambert,Lake Fork Drainage,10990,6.6,15,Brookies,Moderate,1,1,0,1,0,1,0,1,0,0,0,1,6,Light pressure; Remote/off-trail; Infrequent stocking; Good depth (15ft); Good size (6.6ac); Good habitat
+LF-25,Toquer,Lake Fork Drainage,10470,11.1,32,"Brookies, Cutthroats",Low,1,0,0,0,0,1,1,1,0,0,1,1,6,Light pressure; Good depth (32ft); Good elevation; Good size (11.1ac); Cutthroat; Good habitat
+LF-30,Oweep,Lake Fork Drainage,10865,6.4,16,"Brookies, Cutthroats",Low,1,0,0,1,0,1,0,1,0,0,1,1,6,Light pressure; Infrequent stocking; Good depth (16ft); Good size (6.4ac); Cutthroat; Good habitat
+LF-34,Gates,Lake Fork Drainage,10450,5.4,20,Brookies,Low,1,0,0,1,0,1,1,1,0,0,0,1,6,Light pressure; Infrequent stocking; Good depth (20ft); Good elevation; Good size (5.4ac); Good habitat
+P-62,Shingle Creek Lower,Provo River Drainage,9620,4.0,14,Brookies,Moderate,0,1,1,1,0,0,1,1,0,0,0,1,6,Remote/off-trail; Natural repro; Infrequent stocking; Big fish potential; Good elevation; Good size; Good habitat
+RC-23,Arta,Rock Creek Drainage,10450,5.4,6,Cutthroats,Low,1,0,0,1,0,0,1,1,0,0,1,1,6,Light pressure; Infrequent stocking; Good elevation; Good size; Cutthroats; Good habitat
+RC-38,Horseshoe,Rock Creek Drainage,10118,2.9,20,Brookies,Low,1,0,0,1,0,1,1,1,0,0,0,1,6,Light pressure; Infrequent stocking; Good depth; Good elevation; Good size; Good habitat
+RC-8,Thompson,Rock Creek Drainage,10690,21.2,26,Brookies,Low,1,1,0,1,0,1,1,0,0,0,0,1,6,Light pressure; Remote/off-trail; Infrequent stocking; Good depth; Good elevation; Good habitat
+S-15,Lily,Swift Creek Drainage,9346,20.0,39,Brookies,High,0,1,0,1,0,1,1,1,0,0,0,1,6,"remote/off-trail, infrequent stocking, big fish potential, good depth (39ft), good elev (9346ft), good size (20.0ac), good habitat"
+U-13,Mt. Emmons,Uinta River Drainage,10990,15.5,21,"Brookies, Goldens",Low,1,0,1,1,0,1,0,1,0,0,0,1,6,"Light pressure, Natural repro, Infrequent stocking, Good depth, Good size, Good habitat"
+U-15,Roberts,Uinta River Drainage,11550,23.3,38,"Brookies, Cutthroats",Low,1,1,0,1,0,1,0,0,0,0,1,1,6,"Light pressure, Remote/off-trail, Infrequent stocking, Good depth, Cutthroat, Good habitat"
+U-5,Oke Doke,Uinta River Drainage,11320,12.9,38,Cutthroats,Low,1,0,0,1,0,1,0,1,0,0,1,1,6,"Light pressure, Infrequent stocking, Good depth, Good size, Cutthroat, Good habitat"
+U-74,Beard,Uinta River Drainage,11740,9.0,15,Brookies,Low,1,1,0,1,1,1,0,1,0,0,0,0,6,"Light pressure, Remote/off-trail, Infrequent stocking, Good depth, Good size"
+U-76,,Uinta River Drainage,11475,6.0,15,Cutthroats,Low,1,1,1,0,0,1,0,1,0,0,1,0,6,"Light pressure, Remote/off-trail, Natural repro, Good depth, Good size, Cutthroat"
+U-85,Craig,Uinta River Drainage,10848,9.3,14,"Brookies, Cutthroats",Low,1,1,1,1,0,0,0,1,0,0,1,0,6,"Light pressure, Remote/off-trail, Natural repro, Infrequent stocking, Big fish potential, Good size, Cutthroat"
+U-96,Bollie,Dry Gulch Drainage,10660,10.0,15,Cutthroats,Low,0,0,0,1,0,1,1,1,0,0,1,1,6,"infrequent stocking, good depth (15ft), good elev (10660ft), good size (10.0ac), cutthroat, good habitat"
+W-27,Meadow,Weber River Drainage,9820,29.0,46,"Cutthroats, Tigers",High,0,0,1,0,0,1,1,0,1,0,1,1,6,Natural repro; Big fish potential; Good depth; Good elevation; Tigers; Cutthroats; Good habitat
+W-28,Jerry,Weber River Drainage,10220,3.2,16,Brookies,Low,1,1,0,0,0,1,1,1,0,0,0,1,6,Light pressure; Remote/off-trail; Good depth; Good elevation; Good size; Good habitat
+W-29,Anchor,Weber River Drainage,10380,13.0,50,Brookies,Moderate,0,1,1,0,0,1,1,1,0,0,0,1,6,Remote/off-trail; Natural repro; Big fish potential; Good depth; Good elevation; Good size; Good habitat
+W-30,Abes,Weber River Drainage,9820,21.6,62,"Cutthroats, Tigers",High,0,1,0,1,0,0,1,0,1,0,1,1,6,Remote/off-trail; Infrequent stocking; Big fish potential; Good elevation; Tigers; Cutthroats; Good habitat
+W-40,Kamas,Weber River Drainage,10500,17.1,42,Tigers,Moderate,0,1,0,0,0,1,1,1,1,0,0,1,6,Remote/off-trail; Good depth; Good elevation; Good size; Tigers; Good habitat
+W-47,Fish,Weber River Drainage,10180,46.0,38,"Brookies, Grayling",High,0,1,1,0,0,1,1,0,0,1,0,1,6,Remote/off-trail; Natural repro; Big fish potential; Good depth; Good elevation; Grayling; Good habitat
+W-51,Carol,Weber River Drainage,9860,3.0,25,Brookies,Low,1,1,0,0,0,1,1,1,0,0,0,1,6,Light pressure; Remote/off-trail; Good depth; Good elevation; Good size; Good habitat
+W-62,,Weber River Drainage,9620,2.1,18,Brookies,Low,1,1,0,0,0,1,1,1,0,0,0,1,6,Light pressure; Remote/off-trail; Good depth; Good elevation; Good size; Good habitat
+W-67,Castle,Weber River Drainage,9860,10.0,30,"Cutthroats, Tigers",Moderate,0,0,0,0,0,1,1,1,1,0,1,1,6,Big fish potential; Good depth; Good elevation; Good size; Tigers; Cutthroats; Good habitat
+W-68,Arrowhead,Weber River Drainage,10100,2.1,26,Brookies,Moderate,0,1,1,0,0,1,1,1,0,0,0,1,6,Remote/off-trail; Natural repro; Good depth; Good elevation; Good size; Good habitat
+WR-16,Middle Rock,White Rocks Drainage,10600,7.1,10,"Brookies*, Cutthroats",Low,1,0,0,1,0,0,1,1,0,0,1,1,6,"Light pressure, Infrequent stocking, Big fish potential, Good elevation, Good size, Cutthroat, Good habitat"
+WR-19,,White Rocks Drainage,10500,11.4,18,Cutthroats,Low,0,0,0,1,0,1,1,1,0,0,1,1,6,"Infrequent stocking, Good depth, Good elevation, Good size, Cutthroat, Good habitat"
+WR-2,RC #1,White Rocks Drainage,10650,10.0,16,"Brookies, Cutthroats",Low,1,0,0,1,0,1,1,1,0,0,1,0,6,"Light pressure, Infrequent stocking, Good depth, Good elevation, Good size, Cutthroat"
+WR-34,,White Rocks Drainage,11200,9.0,20,Brookies,Low,1,1,0,1,0,1,0,1,0,0,0,1,6,"Light pressure, Remote/off-trail, Infrequent stocking, Good depth, Good size, Good habitat"
+WR-4,Quent,White Rocks Drainage,10620,55.4,44,Brookies,High,1,1,0,1,0,1,1,0,0,0,0,1,6,"Light pressure, Remote/off-trail, Infrequent stocking, Big fish potential, Good depth, Good elevation, Good habitat"
+WR-46,Whiterocks Reservoir Lake,White Rocks Drainage,10800,67.0,42,"Brookies, Cutthroats",High,1,0,1,0,0,1,1,0,0,0,1,1,6,"Light pressure, Natural repro, Good depth, Good elevation, Cutthroat, Good habitat"
+WR-48,Watkins,White Rocks Drainage,10390,18.4,36,Brookies,Low,1,0,0,1,0,1,1,1,0,0,0,1,6,"Light pressure, Infrequent stocking, Good depth, Good elevation, Good size, Good habitat"
+WR-50,Workman,White Rocks Drainage,10500,20.0,14,"Brookies, Cutthroats",Moderate,1,0,1,0,0,0,1,1,0,0,1,1,6,"Light pressure, Natural repro, Big fish potential, Good elevation, Good size, Cutthroat, Good habitat"
+WR-53,Mocassin,White Rocks Drainage,10700,18.9,27,"Brookies, Cutthroats",Moderate,0,0,0,1,0,1,1,1,0,0,1,1,6,"Infrequent stocking, Big fish potential, Good depth, Good elevation, Good size, Cutthroat, Good habitat"
+WR-56,Figure-Eight,White Rocks Drainage,10660,3.6,5,Cutthroats,Low,1,0,1,0,0,0,1,1,0,0,1,1,6,"Light pressure, Natural repro, Good elevation, Good size, Cutthroat, Good habitat"
+WR-6,Point (Adams),White Rocks Drainage,10720,16.1,21,Brookies,Low,1,0,0,1,0,1,1,1,0,0,0,1,6,"Light pressure, Infrequent stocking, Good depth, Good elevation, Good size, Good habitat"
+WR-67,Horseshoe,White Rocks Drainage,10860,11.3,14,Cutthroats,Low,1,1,0,1,0,0,0,1,0,0,1,1,6,"Light pressure, Remote/off-trail, Infrequent stocking, Big fish potential, Good size, Cutthroat, Good habitat"
+X-1,Shawdow,Rock Creek Drainage,9940,7.2,22,"Brookies, Cutthroats",Moderate,0,0,1,0,0,1,1,1,0,0,1,1,6,Natural repro; Big fish potential; Good depth; Good elevation; Good size; Cutthroats; Good habitat
+X-105,,Yellowstone Drainage,11456,8.1,14,Cutthroats,Low,1,1,0,1,0,0,0,1,0,0,1,1,6,light pressure; remote/off-trail; infrequent stocking; good size (8.1ac); cutthroat; good habitat
+X-11,Marsell,Duchesne River Drainage,10470,16.4,50,Cutthroats,Moderate,0,0,0,1,0,1,1,1,0,0,1,1,6,Infrequent stocking; Good depth (50ft); Good elevation; Good size (16.4ac); Cutthroat; Good habitat
+X-112,Ouray,Rock Creek Drainage,10380,4.0,6,"Brookies, Cutthroats",Moderate,0,0,1,1,0,0,1,1,0,0,1,1,6,Natural repro; Infrequent stocking; Good elevation; Good size; Cutthroats; Good habitat
+X-124,Boot,Rock Creek Drainage,11096,9.1,17,Cutthroats,Low,1,0,1,0,0,1,0,1,0,0,1,1,6,Light pressure; Natural repro; Good depth; Good size; Cutthroats; Good habitat
+X-127,Lightning,Rock Creek Drainage,10819,14.1,23,"Brookies, Cutthroats",Moderate,1,0,0,1,0,1,0,1,0,0,1,1,6,Light pressure; Infrequent stocking; Good depth; Good size; Cutthroats; Good habitat
+X-132,Black,Rock Creek Drainage,10403,11.8,14,"Brookies, Cutthroats",High,0,0,1,1,0,0,1,1,0,0,1,1,6,Natural repro; Infrequent stocking; Big fish potential; Good elevation; Good size; Cutthroats; Good habitat
+X-14,Farney,Duchesne River Drainage,10320,12.6,14,Grayling,Low,1,1,0,0,0,0,1,1,0,1,0,1,6,Light pressure; Remote/off-trail; Big fish potential; Good elevation; Good size (12.6ac); Grayling; Good habitat
+X-24,,Swift Creek Drainage,10919,21.4,30,Cutthroats,Low,1,1,0,1,0,1,0,0,0,0,1,1,6,"light pressure, remote/off-trail, infrequent stocking, good depth (30ft), cutthroat, good habitat"
+X-25,,Swift Creek Drainage,10966,15.9,27,Cutthroats,Moderate,1,0,0,1,0,1,0,1,0,0,1,1,6,"light pressure, infrequent stocking, good depth (27ft), good size (15.9ac), cutthroat, good habitat"
+X-57,,Yellowstone Drainage,10976,8.8,30,Brookies,Low,1,1,1,1,0,1,0,1,0,0,0,0,6,light pressure; remote/off-trail; natural repro; infrequent stocking; good depth (30ft); good size (8.8ac)
+X-61,,Lake Fork Drainage,10265,5.2,10,Cutthroats,Low,1,0,0,1,0,0,1,1,0,0,1,1,6,Light pressure; Infrequent stocking; Good elevation; Good size (5.2ac); Cutthroat; Good habitat
+X-62,,Lake Fork Drainage,10300,6.0,10,Cutthroats,Low,1,0,0,1,0,0,1,1,0,0,1,1,6,Light pressure; Infrequent stocking; Good elevation; Good size (6.0ac); Cutthroat; Good habitat
+X-63,Aspen,Lake Fork Drainage,10255,8.0,26,Brookies,Moderate,0,1,0,1,0,1,1,1,0,0,0,1,6,Remote/off-trail; Infrequent stocking; Good depth (26ft); Good elevation; Good size (8.0ac); Good habitat
+X-74,Clements,Lake Fork Drainage,10444,79.2,50,Cutthroats,Moderate,0,1,0,1,0,1,1,0,0,0,1,1,6,Remote/off-trail; Infrequent stocking; Big fish potential; Good depth (50ft); Good elevation; Cutthroat; Good habitat
+X-75,,Lake Fork Drainage,10450,4.4,6,Cutthroats,Low,1,0,1,0,0,0,1,1,0,0,1,1,6,Light pressure; Natural repro; Good elevation; Good size (4.4ac); Cutthroat; Good habitat
+X-82,Picture,Lake Fork Drainage,10731,20.0,13,Rainbows,Low,1,1,0,1,0,0,1,1,0,0,0,1,6,Light pressure; Remote/off-trail; Infrequent stocking; Good elevation; Good size (20.0ac); Good habitat
+X-84,,Lake Fork Drainage,10815,4.6,18,Brookies,Low,1,1,0,1,0,1,0,1,0,0,0,1,6,Light pressure; Remote/off-trail; Infrequent stocking; Good depth (18ft); Good size (4.6ac); Good habitat
+X-87,Ottoson Upper,Lake Fork Drainage,,12.4,30,Cutthroats,Low,1,1,0,1,0,1,0,1,0,0,1,0,6,Light pressure; Remote/off-trail; Infrequent stocking; Good depth (30ft); Good size (12.4ac); Cutthroat
+X-9,GranDaddy,Rock Creek Drainage,10310,173.0,40,"Brookies, Cutthroats",High,0,0,1,1,0,1,1,0,0,0,1,1,6,Natural repro; Infrequent stocking; Big fish potential; Good depth; Good elevation; Cutthroats; Good habitat
+X-90,Ameba,Lake Fork Drainage,10850,4.6,4,Cutthroats,Low,1,1,0,1,0,0,0,1,0,0,1,1,6,Light pressure; Remote/off-trail; Infrequent stocking; Good size (4.6ac); Cutthroat; Good habitat
+X-98,Shamrock,Rock Creek Drainage,10365,18.2,33,Brookies,Moderate,0,1,0,1,0,1,1,1,0,0,0,1,6,Remote/off-trail; Infrequent stocking; Good depth; Good elevation; Good size; Good habitat
+Z-10,Hoover,Duchesne River Drainage,9900,18.6,28,"Brookies, Cutthroats",High,0,1,0,0,0,1,1,1,0,0,1,1,6,Remote/off-trail; Good depth (28ft); Good elevation; Good size (18.6ac); Cutthroat; Good habitat
+Z-27,Morat #2,Duchesne River Drainage,10740,3.6,5,Cutthroats,Moderate,0,1,1,0,0,0,1,1,0,0,1,1,6,Remote/off-trail; Natural repro; Good elevation; Good size (3.6ac); Cutthroat; Good habitat
+Z-32,Blue,Duchesne River Drainage,10940,19.0,36,Tigers,,0,1,0,1,0,1,0,1,1,0,0,1,6,Remote/off-trail; Infrequent stocking; Good depth (36ft); Good size (19.0ac); Tigers; Good habitat
+Z-42,Carolyn,Duchesne River Drainage,10430,5.0,17,"Brookies, Cutthroats",Moderate,0,0,1,0,0,1,1,1,0,0,1,1,6,Natural repro; Good depth (17ft); Good elevation; Good size (5.0ac); Cutthroat; Good habitat
+A-19,Little Elk,Provo River Drainage,9780,13.2,31,Cutthroats,Moderate,0,0,0,0,0,1,1,1,0,0,1,1,5,Good depth; Good elevation; Good size; Cutthroats; Good habitat
+A-28,Clyde,Provo River Drainage,10420,16.0,21,Brookies,High,0,1,0,0,0,1,1,1,0,0,0,1,5,Remote/off-trail; Big fish potential; Good depth; Good elevation; Good size; Good habitat
+A-32,Twin Upper,Provo River Drainage,10420,9.0,13,"Brookies, Tigers",High,0,0,0,1,0,0,1,1,1,0,0,1,5,Infrequent stocking; Big fish potential; Good elevation; Good size; Tigers; Good habitat
+A-37,Long,Provo River Drainage,10100,35.0,26,"Brookies, Cutthroats",High,0,0,1,0,0,1,1,0,0,0,1,1,5,Natural repro; Big fish potential; Good depth; Good elevation; Cutthroats; Good habitat
+A-39,Shingle Creek East,Provo River Drainage,9700,7.0,44,"Brookies, Tigers",High,0,0,0,0,0,1,1,1,1,0,0,1,5,Big fish potential; Good depth; Good elevation; Good size; Tigers; Good habitat
+A-42,Star,Provo River Drainage,9980,16.0,35,"Brookies, Tigers",High,0,0,0,0,0,1,1,1,1,0,0,1,5,Big fish potential; Good depth; Good elevation; Good size; Tigers; Good habitat
+A-43,Lillian,Provo River Drainage,10100,2.0,8,Brookies,Low,1,1,0,0,0,0,1,1,0,0,0,1,5,Light pressure; Remote/off-trail; Good elevation; Good size; Good habitat
+A-44,Spectacle (Hourglass),Provo River Drainage,9740,9.3,17,Brookies,Moderate,0,1,0,0,0,1,1,1,0,0,0,1,5,Remote/off-trail; Big fish potential; Good depth; Good elevation; Good size; Good habitat
+A-5,Blue,Provo River Drainage,9680,8.0,26,Brookies,High,0,1,0,0,0,1,1,1,0,0,0,1,5,Remote/off-trail; Big fish potential; Good depth; Good elevation; Good size; Good habitat
+A-53,Tail,Provo River Drainage,9980,9.8,13,"Brookies, Cutthroats, Rainbows",High,0,0,1,0,0,0,1,1,0,0,1,1,5,Natural repro; Big fish potential; Good elevation; Good size; Cutthroats; Good habitat
+A-57,Island,Provo River Drainage,10140,28.0,40,"Brookies*, Cutthroats, Tigers",High,0,0,0,0,0,1,1,0,1,0,1,1,5,Good depth; Good elevation; Tigers; Cutthroats; Good habitat
+A-62,Long Pond,Provo River Drainage,10100,2.0,5,"Brookies, Cutthroats",Moderate,0,0,1,0,0,0,1,1,0,0,1,1,5,Natural repro; Good elevation; Good size; Cutthroats; Good habitat
+A-8,Pot,Provo River Drainage,9940,4.0,28,Brookies,High,0,1,0,0,0,1,1,1,0,0,0,1,5,Remote/off-trail; Big fish potential; Good depth; Good elevation; Good size; Good habitat
+A-9,Haystack,Provo River Drainage,9940,17.0,29,"Brookies, Cutthroats",High,0,0,0,0,0,1,1,1,0,0,1,1,5,Big fish potential; Good depth; Good elevation; Good size; Cutthroats; Good habitat
+BR-14,Mcpheters,Bear River Drainage,10860,28.3,45,Tigers,Moderate,0,1,1,0,0,1,0,0,1,0,0,1,5,Remote/off-trail; Natural repro; Good depth (45ft); Tigers; Good habitat
+BR-16,,Bear River Drainage,10610,1.3,5,"Brookies, Cutthroats",Low,1,0,1,0,0,0,1,0,0,0,1,1,5,Light pressure; Natural repro; Big fish potential; Good elevation; Cutthroat; Good habitat
+BR-17,,Bear River Drainage,10630,2.8,7,Brookies,Moderate,1,0,1,0,0,0,1,1,0,0,0,1,5,Light pressure; Natural repro; Good elevation; Good size (2.8ac); Good habitat
+BR-18,,Bear River Drainage,10610,5.5,12,Brookies,Low,1,0,1,0,0,0,1,1,0,0,0,1,5,Light pressure; Natural repro; Good elevation; Good size (5.5ac); Good habitat
+BR-19,Meadow Lake,Bear River Drainage,10470,2.8,5,Brookies,Low,1,0,1,0,0,0,1,1,0,0,0,1,5,Light pressure; Natural repro; Big fish potential; Good elevation; Good size (2.8ac); Good habitat
+BR-2,,Bear River Drainage,9780,0.7,5,Brookies,Low,1,0,1,1,0,0,1,0,0,0,0,1,5,Light pressure; Natural repro; Infrequent stocking; Good elevation; Good habitat
+BR-24,,Bear River Drainage,10460,2.3,10,Tigers,Low,1,0,0,0,0,0,1,1,1,0,0,1,5,Light pressure; Good elevation; Good size (2.3ac); Tigers; Good habitat
+BR-25,Toomset,Bear River Drainage,10300,2.3,11,Brookies,Low,1,0,1,0,0,0,1,1,0,0,0,1,5,Light pressure; Natural repro; Good elevation; Good size (2.3ac); Good habitat
+BR-26,Salamander lake,Bear River Drainage,10020,3.7,13,Brookies,Low,1,0,0,1,0,0,1,1,0,0,0,1,5,Light pressure; Infrequent stocking; Big fish potential; Good elevation; Good size (3.7ac); Good habitat
+BR-27,Ostler,Bear River Drainage,10540,13.2,14,Tigers,Moderate,0,1,0,0,0,0,1,1,1,0,0,1,5,Remote/off-trail; Good elevation; Good size (13.2ac); Tigers; Good habitat
+BR-29,Hell Hole,Bear River Drainage,10340,9.1,9,Cutthroats,,1,0,1,0,0,0,1,1,0,0,1,0,5,Light pressure; Natural repro; Big fish potential; Good elevation; Good size (9.1ac); Cutthroat
+BR-31,Seidner,Bear River Drainage,10460,3.0,8,Brookies,Moderate,0,1,1,0,0,0,1,1,0,0,0,1,5,Remote/off-trail; Natural repro; Big fish potential; Good elevation; Good size (3.0ac); Good habitat
+BR-41,,Bear River Drainage,10412,3.4,19,,,0,1,0,0,0,1,1,1,0,0,0,1,5,Remote/off-trail; Good depth (19ft); Good elevation; Good size (3.4ac); Good habitat
+BR-7,Lym,Bear River Drainage,10115,8.1,20,Brookies,Moderate,0,0,1,0,0,1,1,1,0,0,0,1,5,Natural repro; Big fish potential; Good depth (20ft); Good elevation; Good size (8.1ac); Good habitat
+BR-8,Mt Elizabeth,Bear River Drainage,9984,3.1,15,Cutthroats,Moderate,0,0,1,0,0,1,1,1,0,0,1,0,5,Natural repro; Good depth (15ft); Good elevation; Good size (3.1ac); Cutthroat
+D-19,,Duchesne River Drainage,10000,1.2,6,"Brookies, Cutthroats",Moderate,1,0,0,1,0,0,1,0,0,0,1,1,5,Light pressure; Infrequent stocking; Big fish potential; Good elevation; Cutthroat; Good habitat
+D-26,,Duchesne River Drainage,10060,3.0,10,Brookies,Moderate,0,1,0,1,0,0,1,1,0,0,0,1,5,Remote/off-trail; Infrequent stocking; Good elevation; Good size (3.0ac); Good habitat
+DF-4,,Ashley Creek Drainage,10830,10.0,23,Cutthroats,Low,0,1,0,0,0,1,0,1,0,0,1,1,5,"Remote/off-trail, Good depth, Good size, Cutthroat, Good habitat"
+DG-10,,Dry Gulch Drainage,10750,10.0,12,Cutthroats,Low,0,0,0,1,0,0,1,1,0,0,1,1,5,"infrequent stocking, good elev (10750ft), good size (10.0ac), cutthroat, good habitat"
+DG-14,,Dry Gulch Drainage,11000,2.0,10,Cutthroats,Low,0,1,0,1,0,0,0,1,0,0,1,1,5,"remote/off-trail, infrequent stocking, good size (2.0ac), cutthroat, good habitat"
+DG-17,,Dry Gulch Drainage,10950,3.0,12,Cutthroats,Low,0,0,1,1,0,0,0,1,0,0,1,1,5,"natural repro, infrequent stocking, big fish potential, good size (3.0ac), cutthroat, good habitat"
+DG-28,Heller Reservoir,Dry Gulch Drainage,10108,12.0,37,"Brookies*, Cutthroats",High,0,0,0,0,0,1,1,1,0,0,1,1,5,"big fish potential, good depth (37ft), good elev (10108ft), good size (12.0ac), cutthroat, good habitat"
+DG-7,,Dry Gulch Drainage,10550,6.0,4,Cutthroats,Low,0,0,1,0,0,0,1,1,0,0,1,1,5,"natural repro, good elev (10550ft), good size (6.0ac), cutthroat, good habitat"
+DG-8,,Dry Gulch Drainage,10550,7.0,8,Cutthroats,Low,0,0,1,0,0,0,1,1,0,0,1,1,5,"natural repro, good elev (10550ft), good size (7.0ac), cutthroat, good habitat"
+G-1,Henrys Fork Lake,Henrys Fork Drainage,10830,19.7,19,Cutthroats,Moderate,0,0,1,0,0,1,0,1,0,0,1,1,5,"natural repro, big fish potential, good depth (19ft), good size (19.7ac), cutthroat, good habitat"
+G-100,,Blacks Fork Drainage,9070,7.9,13,Brookies,Low,1,0,1,0,0,0,1,1,0,0,0,1,5,light pressure; natural repro; good elev (9070ft); good size (7.9ac); good habitat
+G-11,Castle,Blacks Fork Drainage,11363,11.5,10,Brookies,Low,1,1,0,1,0,0,0,1,0,0,0,1,5,light pressure; remote/off-trail; infrequent stocking; good size (11.5ac); good habitat
+G-15,Red Castle,Smiths Fork Drainage,11295,168.2,103,"Cutthroats, Tigers",High,1,1,0,0,0,0,0,0,1,0,1,1,5,light pressure; remote/off-trail; big fish potential; tigers; cutthroat; good habitat
+G-2,Dollar Lake,Henrys Fork Drainage,10785,9.7,18,"Brookies, Cutthroats",Moderate,0,0,0,0,0,1,1,1,0,0,1,1,5,"big fish potential, good depth (18ft), good elev (10785ft), good size (9.7ac), cutthroat, good habitat"
+G-21,China,Smiths Fork Drainage,9408,31.2,45,"Brookies, Cutthroats, Grayling",Moderate,0,0,0,0,0,1,1,0,0,1,1,1,5,big fish potential; good depth (45ft); good elev (9408ft); grayling; cutthroat; good habitat
+G-35,Sargent,Smiths Fork Drainage,9690,8.3,22,Trout,Low,0,0,1,0,0,1,1,1,0,0,0,1,5,natural repro; big fish potential; good depth (22ft); good elev (9690ft); good size (8.3ac); good habitat
+G-36,,Smiths Fork Drainage,9430,4.7,11,Trout,Low,1,0,1,0,0,0,1,1,0,0,0,1,5,light pressure; natural repro; good elev (9430ft); good size (4.7ac); good habitat
+G-44,,Blacks Fork Drainage,11140,1.5,7,Cutthroats,Low,1,1,1,0,0,0,0,0,0,0,1,1,5,light pressure; remote/off-trail; natural repro; cutthroat; good habitat
+G-50,,Smiths Fork Drainage,10639,3.7,5,Brookies,Moderate,0,1,1,0,0,0,1,1,0,0,0,1,5,remote/off-trail; natural repro; good elev (10639ft); good size (3.7ac); good habitat
+G-53,,Smiths Fork Drainage,11180,5.5,17,"Brookies, Cutthroats",Moderate,0,0,1,0,0,1,0,1,0,0,1,1,5,natural repro; good depth (17ft); good size (5.5ac); cutthroat; good habitat
+G-61,,Smiths Fork Drainage,10669,3.1,6,Brookies,Low,1,1,0,0,0,0,1,1,0,0,0,1,5,light pressure; remote/off-trail; big fish potential; good elev (10669ft); good size (3.1ac); good habitat
+G-62,,Blacks Fork Drainage,10630,2.2,7,Brookies,Low,1,0,1,0,0,0,1,1,0,0,0,1,5,light pressure; natural repro; good elev (10630ft); good size (2.2ac); good habitat
+G-65,,Blacks Fork Drainage,10900,4.4,5,Brookies,Moderate,1,1,1,0,0,0,0,1,0,0,0,1,5,light pressure; remote/off-trail; natural repro; big fish potential; good size (4.4ac); good habitat
+G-67,,Blacks Fork Drainage,11158,7.1,25,Brookies,Low,0,1,0,1,0,1,0,1,0,0,0,1,5,remote/off-trail; infrequent stocking; good depth (25ft); good size (7.1ac); good habitat
+G-7,Bear,Henrys Fork Drainage,10767,16.9,37,Brookies,Moderate,0,1,0,0,0,1,1,1,0,0,0,1,5,"remote/off-trail, big fish potential, good depth (37ft), good elev (10767ft), good size (16.9ac), good habitat"
+G-73,Bobs,Blacks Fork Drainage,11150,6.1,30,"Cutthroats, Tigers",Low,0,0,0,0,0,1,0,1,1,0,1,1,5,big fish potential; good depth (30ft); good size (6.1ac); tigers; cutthroat; good habitat
+G-74,,Blacks Fork Drainage,10934,2.9,3,Brookies,Low,1,1,0,1,0,0,0,1,0,0,0,1,5,light pressure; remote/off-trail; infrequent stocking; good size (2.9ac); good habitat
+G-76,Ejod,Blacks Fork Drainage,10900,5.7,12,Cutthroats,Low,1,0,1,0,0,0,0,1,0,0,1,1,5,light pressure; natural repro; good size (5.7ac); cutthroat; good habitat
+G-77,Dead Horse,Blacks Fork Drainage,10878,14.8,41,"Cutthroats, Tigers",Moderate,0,0,0,0,0,1,0,1,1,0,1,1,5,big fish potential; good depth (41ft); good size (14.8ac); tigers; cutthroat; good habitat
+G-8,Grass,Henrys Fork Drainage,10740,5.5,4,"Brookies, Cutthroats",Moderate,0,0,1,0,0,0,1,1,0,0,1,1,5,"natural repro, good elev (10740ft), good size (5.5ac), cutthroat, good habitat"
+G-80,,Blacks Fork Drainage,10580,1.6,8,Brookies,Low,1,1,0,1,0,0,1,0,0,0,0,1,5,light pressure; remote/off-trail; infrequent stocking; good elev (10580ft); good habitat
+G-82,,Blacks Fork Drainage,10140,3.7,6,Brookies,Low,0,1,0,1,0,0,1,1,0,0,0,1,5,remote/off-trail; infrequent stocking; good elev (10140ft); good size (3.7ac); good habitat
+GR-11,,Ashley Creek Drainage,10635,2.6,8,Brookies,Low,1,0,1,0,0,0,1,1,0,0,0,1,5,"Light pressure, Natural repro, Good elevation, Good size, Good habitat"
+GR-125,Fish,Burnt Fork Drainage,10685,38.3,23,"Brookies, Cutthroats",Moderate,0,1,0,0,0,1,1,0,0,0,1,1,5,"remote/off-trail, big fish potential, good depth (23ft), good elev (10685ft), cutthroat, good habitat"
+GR-126,Boxer,Burnt Fork Drainage,10700,6.0,11,Cutthroats,Moderate,0,0,1,0,0,0,1,1,0,0,1,1,5,"natural repro, big fish potential, good elev (10700ft), good size (6.0ac), cutthroat, good habitat"
+GR-13,,Ashley Creek Drainage,,9.2,,"Brookies, Tigers",Low,1,0,0,1,0,0,0,1,1,0,0,1,5,"Light pressure, Infrequent stocking, Good size, Tigers, Good habitat"
+GR-131,Round,Burnt Fork Drainage,10662,24.3,38,Cutthroats,Moderate,0,0,0,1,0,1,1,0,0,0,1,1,5,"infrequent stocking, big fish potential, good depth (38ft), good elev (10662ft), cutthroat, good habitat"
+GR-132,Island,Burnt Fork Drainage,10777,117.8,34,"Brookies, Cutthroats",High,0,0,1,0,0,1,1,0,0,0,1,1,5,"natural repro, big fish potential, good depth (34ft), good elev (10777ft), cutthroat, good habitat"
+GR-133,Whitewall,Burnt Fork Drainage,10900,14.5,3,"Brookies, Cutthroats",Low,1,0,1,0,0,0,0,1,0,0,1,1,5,"light pressure, natural repro, big fish potential, good size (14.5ac), cutthroat, good habitat"
+GR-135,Upper Bennion,Burnt Fork Drainage,10970,2.0,3,"Brookies, Cutthroats",Low,1,0,1,0,0,0,0,1,0,0,1,1,5,"light pressure, natural repro, good size (2.0ac), cutthroat, good habitat"
+GR-147,Beaver,Beaver Creek Drainage,10505,38.3,30,"Brookies, Cutthroats",High,0,0,1,0,0,1,1,0,0,0,1,1,5,"natural repro, big fish potential, good depth (30ft), good elev (10505ft), cutthroat, good habitat"
+GR-153,,Beaver Creek Drainage,11060,3.6,2,"Brookies, Cutthroats",Low,1,0,1,0,0,0,0,1,0,0,1,1,5,"light pressure, natural repro, good size (3.6ac), cutthroat, good habitat"
+GR-163,,Beaver Creek Drainage,9322,6.5,16,Brookies,Low,0,1,0,0,0,1,1,1,0,0,0,1,5,"remote/off-trail, big fish potential, good depth (16ft), good elev (9322ft), good size (6.5ac), good habitat"
+GR-21,,Ashley Creek Drainage,10355,3.7,7,"Brookies*, Tigers",Low,1,0,1,0,0,0,1,1,1,0,0,0,5,"Light pressure, Natural repro, Good elevation, Good size, Tigers"
+GR-36,Wilde,Ashley Creek Drainage,10950,4.3,13,Grayling,,0,1,0,1,0,0,0,1,0,1,0,1,5,"Remote/off-trail, Infrequent stocking, Big fish potential, Good size, Grayling, Good habitat"
+GR-46,Hooper,Ashley Creek Drainage,10305,4.5,4,Cutthroats,Moderate,0,0,1,0,0,0,1,1,0,0,1,1,5,"Natural repro, Good elevation, Good size, Cutthroat, Good habitat"
+GR-49,South Twin (Dry Fork),Ashley Creek Drainage,10300,6.2,8,"Brookies, Cutthroats",High,0,0,1,0,0,0,1,1,0,0,1,1,5,"Natural repro, Big fish potential, Good elevation, Good size, Cutthroat, Good habitat"
+GR-5,Summit,Ashley Creek Drainage,10460,9.9,7,Grayling,Low,0,1,0,1,0,0,1,1,0,1,0,0,5,"Remote/off-trail, Infrequent stocking, Good elevation, Good size, Grayling"
+GR-51,Red Belly,Ashley Creek Drainage,10540,6.3,8,Cutthroats,Moderate,0,0,0,1,0,0,1,1,0,0,1,1,5,"Infrequent stocking, Good elevation, Good size, Cutthroat, Good habitat"
+LF-22,Porcupine,Lake Fork Drainage,11301,12.8,14,"Brookies*, Cutthroats",Low,1,1,0,0,0,0,0,1,0,0,1,1,5,Light pressure; Remote/off-trail; Good size (12.8ac); Cutthroat; Good habitat
+LF-36,Linda,Lake Fork Drainage,10940,3.8,5,Brookies,Low,1,1,0,1,0,0,0,1,0,0,0,1,5,Light pressure; Remote/off-trail; Infrequent stocking; Good size (3.8ac); Good habitat
+LF-4,Porcupine,Lake Fork Drainage,10540,11.4,20,,,0,1,0,0,0,1,1,1,0,0,0,1,5,Remote/off-trail; Good depth (20ft); Good elevation; Good size (11.4ac); Good habitat
+RC-4,Brinkley,Rock Creek Drainage,10460,4.2,18,Brookies,High,0,0,0,1,0,1,1,1,0,0,0,1,5,Infrequent stocking; Big fish potential; Good depth; Good elevation; Good size; Good habitat
+U-21,George Beard,Uinta River Drainage,11420,7.4,15,Brookies,Low,1,0,1,1,0,1,0,1,0,0,0,0,5,"Light pressure, Natural repro, Infrequent stocking, Good depth, Good size"
+U-23,Lily,Uinta River Drainage,10919,5.3,15,Brookies,Low,1,1,0,1,0,1,0,1,0,0,0,0,5,"Light pressure, Remote/off-trail, Infrequent stocking, Good depth, Good size"
+U-38,,Uinta River Drainage,11218,15.7,13,Cutthroats,Moderate,1,0,0,1,0,0,0,1,0,0,1,1,5,"Light pressure, Infrequent stocking, Good size, Cutthroat, Good habitat"
+U-39,,Uinta River Drainage,11160,5.3,9,Grayling,,1,0,0,1,0,0,0,1,0,1,0,1,5,"Light pressure, Infrequent stocking, Good size, Grayling, Good habitat"
+U-4,Chain 4,Uinta River Drainage,10870,13.5,31,Cutthroats,Low,1,1,0,0,0,1,0,1,0,0,1,0,5,"Light pressure, Remote/off-trail, Good depth, Good size, Cutthroat"
+U-59,Divide,Uinta River Drainage,11217,18.9,39,Cutthroats,Low,1,0,0,1,0,1,0,1,0,0,1,0,5,"Light pressure, Infrequent stocking, Good depth, Good size, Cutthroat"
+U-73,Milk,Uinta River Drainage,11236,13.1,35,"Brookies, Cutthroats",Low,1,0,1,0,0,1,0,1,0,0,1,0,5,"Light pressure, Natural repro, Good depth, Good size, Cutthroat"
+U-82,Gilbert,Uinta River Drainage,11459,14.6,20,Brookies,Low,1,0,0,1,0,1,0,1,0,0,0,1,5,"Light pressure, Infrequent stocking, Good depth, Good size, Good habitat"
+U-9,Pippen,Uinta River Drainage,10450,3.2,3,Brookies,Moderate,0,0,1,1,0,0,1,1,0,0,0,1,5,"Natural repro, Infrequent stocking, Big fish potential, Good elevation, Good size, Good habitat"
+W-16,,Weber River Drainage,,7.5,,Brookies,Low,1,1,0,1,0,0,0,1,0,0,0,1,5,Light pressure; Remote/off-trail; Infrequent stocking; Good size; Good habitat
+W-21,Little Hidden,Weber River Drainage,10280,8.0,28,Brookies,Moderate,0,0,0,1,0,1,1,1,0,0,0,1,5,Infrequent stocking; Good depth; Good elevation; Good size; Good habitat
+W-22,Peter,Weber River Drainage,10460,3.0,13,Unknown,Low,1,0,1,0,0,0,1,1,0,0,0,1,5,Light pressure; Natural repro; Good elevation; Good size; Good habitat
+W-24,Ibantik,Weber River Drainage,10100,10.2,28,Brookies,High,0,0,0,1,0,1,1,1,0,0,0,1,5,Infrequent stocking; Good depth; Good elevation; Good size; Good habitat
+W-31,Neil,Weber River Drainage,10140,1.1,20,Brookies,Low,1,0,0,1,0,1,1,0,0,0,0,1,5,Light pressure; Infrequent stocking; Good depth; Good elevation; Good habitat
+W-33,Rhoads,Weber River Drainage,10140,7.5,32,Brookies,Moderate,0,0,1,0,0,1,1,1,0,0,0,1,5,Natural repro; Big fish potential; Good depth; Good elevation; Good size; Good habitat
+W-35,Dean,Weber River Drainage,10060,12.0,16,"Brookies, Grayling",High,0,0,0,0,0,1,1,1,0,1,0,1,5,Big fish potential; Good depth; Good elevation; Good size; Grayling; Good habitat
+W-41,Lofty,Weber River Drainage,10820,4.0,20,"Cutthroats, Tigers",Moderate,0,0,0,0,0,1,0,1,1,0,1,1,5,Good depth; Good size; Tigers; Cutthroats; Good habitat
+W-52,,Weber River Drainage,,3.6,25,Brookies,Moderate,0,1,0,1,0,1,0,1,0,0,0,1,5,Remote/off-trail; Infrequent stocking; Good depth; Good size; Good habitat
+W-53,,Weber River Drainage,,2.2,9,Brookies,Low,1,1,1,0,0,0,0,1,0,0,0,1,5,Light pressure; Remote/off-trail; Natural repro; Good size; Good habitat
+WR-12,Larvae,White Rocks Drainage,10200,5.4,28,Brookies,High,0,0,0,1,0,1,1,1,0,0,0,1,5,"Infrequent stocking, Good depth, Good elevation, Good size, Good habitat"
+WR-14b,Becky,White Rocks Drainage,10960,6.2,24,Brookies,,0,1,1,0,0,1,0,1,0,0,0,1,5,"Remote/off-trail, Natural repro, Good depth, Good size, Good habitat"
+WR-33,Cirque L,Weber River Drainage,,,,Grayling,,1,0,1,1,0,0,0,0,0,1,0,1,5,Light pressure; Natural repro; Infrequent stocking; Grayling; Good habitat
+WR-37,,White Rocks Drainage,10600,3.0,13,"Brookies, Cutthroats",Moderate,0,1,1,0,0,0,1,1,0,0,1,0,5,"Remote/off-trail, Natural repro, Big fish potential, Good elevation, Good size, Cutthroat"
+WR-44,Ted,White Rocks Drainage,10500,14.0,20,Brookies,High,0,0,0,1,0,1,1,1,0,0,0,1,5,"Infrequent stocking, Big fish potential, Good depth, Good elevation, Good size, Good habitat"
+WR-55,Walk Up,White Rocks Drainage,11114,18.4,60,Brookies,Low,1,1,0,1,0,0,0,1,0,0,0,1,5,"Light pressure, Remote/off-trail, Infrequent stocking, Big fish potential, Good size, Good habitat"
+WR-57,Sharlee,White Rocks Drainage,10740,9.4,4,"Brookies, Cutthroats",Low,0,0,0,1,0,0,1,1,0,0,1,1,5,"Infrequent stocking, Big fish potential, Good elevation, Good size, Cutthroat, Good habitat"
+WR-64,Chepeta,White Rocks Drainage,10600,135.0,60,"Brookies, Cutthroats",High,0,0,1,1,0,0,1,0,0,0,1,1,5,"Natural repro, Infrequent stocking, Big fish potential, Good elevation, Cutthroat, Good habitat"
+WR-65,Hell Hole,White Rocks Drainage,10760,5.4,6,Brookies,Moderate,1,0,0,1,0,0,1,1,0,0,0,1,5,"Light pressure, Infrequent stocking, Big fish potential, Good elevation, Good size, Good habitat"
+WR-66,Reader,White Rocks Drainage,10960,10.2,10,"Brookies, Cutthroats",Moderate,1,1,0,0,0,0,0,1,0,0,1,1,5,"Light pressure, Remote/off-trail, Big fish potential, Good size, Cutthroat, Good habitat"
+WR-73,,White Rocks Drainage,10960,7.1,,Brookies,Low,1,1,0,1,0,0,0,1,0,0,0,1,5,"Light pressure, Remote/off-trail, Infrequent stocking, Big fish potential, Good size, Good habitat"
+WR-75,,White Rocks Drainage,10691,2.7,8,Brookies,Low,1,0,0,1,0,0,1,1,0,0,0,1,5,"Light pressure, Infrequent stocking, Good elevation, Good size, Good habitat"
+WR-76,,White Rocks Drainage,10610,4.2,7,Brookies,Unknown,1,0,1,0,0,0,1,1,0,0,0,1,5,"Light pressure, Natural repro, Good elevation, Good size, Good habitat"
+WR-77,,White Rocks Drainage,10800,4.0,15,Brookies,Low,0,1,0,1,0,1,1,1,0,0,0,0,5,"Remote/off-trail, Infrequent stocking, Good depth, Good elevation, Good size"
+X-10,Mohawk,Rock Creek Drainage,10380,38.3,32,"Brookies, Cutthroats",Moderate,0,0,1,0,0,1,1,0,0,0,1,1,5,Natural repro; Big fish potential; Good depth; Good elevation; Cutthroats; Good habitat
+X-104,Little Superior,Yellowstone Drainage,11208,13.9,24,Brookies,Low,1,0,1,0,0,1,0,1,0,0,0,1,5,light pressure; natural repro; good depth (24ft); good size (13.9ac); good habitat
+X-109,Spider,Yellowstone Drainage,10830,20.0,31,"Brookies, Cutthroats",High,0,0,0,1,0,1,0,1,0,0,1,1,5,infrequent stocking; big fish potential; good depth (31ft); good size (20.0ac); cutthroat; good habitat
+X-111,Jill,Rock Creek Drainage,10460,3.6,25,Brookies,Moderate,0,0,0,1,0,1,1,1,0,0,0,1,5,Infrequent stocking; Good depth; Good elevation; Good size; Good habitat
+X-121,Continent,Rock Creek Drainage,11285,27.4,23,"Brookies, Cutthroats",Moderate,1,0,0,1,0,1,0,0,0,0,1,1,5,Light pressure; Infrequent stocking; Good depth; Cutthroats; Good habitat
+X-13,Heart,Rock Creek Drainage,10500,5.7,19,Cutthroats,High,0,0,0,0,0,1,1,1,0,0,1,1,5,Big fish potential; Good depth; Good elevation; Good size; Cutthroats; Good habitat
+X-131,Uintah,Rock Creek Drainage,10840,8.4,14,Brookies,Low,1,1,0,1,0,0,0,1,0,0,0,1,5,Light pressure; Remote/off-trail; Infrequent stocking; Good size; Good habitat
+X-133,Jack,Rock Creek Drainage,10460,2.7,14,"Brookies, Cutthroats",Moderate,0,0,0,1,0,0,1,1,0,0,1,1,5,Infrequent stocking; Good elevation; Good size; Cutthroats; Good habitat
+X-2,Lily Pad,Rock Creek Drainage,10270,9.5,14,"Brookies, Cutthroats",Moderate,0,0,0,1,0,0,1,1,0,0,1,1,5,Infrequent stocking; Good elevation; Good size; Cutthroats; Good habitat
+X-26,,Swift Creek Drainage,11008,7.7,23,Brookies,Low,1,0,0,1,0,1,0,1,0,0,0,1,5,"light pressure, infrequent stocking, good depth (23ft), good size (7.7ac), good habitat"
+X-3,Lodgepole,Rock Creek Drainage,10140,20.4,29,Brookies,Moderate,0,1,0,1,0,1,1,0,0,0,0,1,5,Remote/off-trail; Infrequent stocking; Good depth; Good elevation; Good habitat
+X-31,Brown Duck,Lake Fork Drainage,10186,30.7,12,"Cutthroats, Tiger muskie",High,0,0,0,1,0,0,1,0,1,0,1,1,5,Infrequent stocking; Big fish potential; Good elevation; Tigers; Cutthroat; Good habitat
+X-33,Little Dog,Lake Fork Drainage,10230,4.5,17,Brookies,Low,1,0,0,0,0,1,1,1,0,0,0,1,5,Light pressure; Good depth (17ft); Good elevation; Good size (4.5ac); Good habitat
+X-35,Kidney,Lake Fork Drainage,10267,190.0,112,"Brookies, Cutthroats",Moderate,0,1,0,1,0,0,1,0,0,0,1,1,5,Remote/off-trail; Infrequent stocking; Good elevation; Cutthroat; Good habitat
+X-43,Diamond,Rock Creek Drainage,10230,13.0,45,Brookies,Moderate,0,0,0,1,0,1,1,1,0,0,0,1,5,Infrequent stocking; Good depth; Good elevation; Good size; Good habitat
+X-49,Twin,Swift Creek Drainage,10816,14.0,15,Cutthroats,Moderate,1,0,0,1,0,1,0,1,0,0,1,0,5,"light pressure, infrequent stocking, good depth (15ft), good size (14.0ac), cutthroat"
+X-54,White Miller,Swift Creek Drainage,10670,11.0,18,Brookies,High,0,0,0,1,0,1,1,1,0,0,0,1,5,"infrequent stocking, big fish potential, good depth (18ft), good elev (10670ft), good size (11.0ac), good habitat"
+X-55,Deer,Swift Creek Drainage,10240,12.0,4,"Brookies*, Cutthroats",High,0,0,1,0,0,0,1,1,0,0,1,1,5,"natural repro, big fish potential, good elev (10240ft), good size (12.0ac), cutthroat, good habitat"
+X-60,,Yellowstone Drainage,10810,8.0,30,Cutthroats,Low,1,0,0,1,0,1,0,1,0,0,1,0,5,light pressure; infrequent stocking; good depth (30ft); good size (8.0ac); cutthroat
+X-64,Atwine,Lake Fork Drainage,10150,32.0,35,Brookies,Moderate,0,1,1,0,0,1,1,0,0,0,0,1,5,Remote/off-trail; Natural repro; Big fish potential; Good depth (35ft); Good elevation; Good habitat
+X-85,,Lake Fork Drainage,10860,4.7,14,Brookies,Low,1,1,0,1,0,0,0,1,0,0,0,1,5,Light pressure; Remote/off-trail; Infrequent stocking; Good size (4.7ac); Good habitat
+X-99,Amlen,Rock Creek Drainage,10340,7.3,9,Brookies,Moderate,0,1,0,1,0,0,1,1,0,0,0,1,5,Remote/off-trail; Infrequent stocking; Good elevation; Good size; Good habitat
+Y-2,,Yellowstone Drainage,11670,1.8,20,Brookies,Low,1,1,1,0,0,1,0,0,0,0,0,1,5,light pressure; remote/off-trail; natural repro; good depth (20ft); good habitat
+Y-20,,Yellowstone Drainage,11176,5.0,20,Grayling,Low,1,0,0,1,0,1,0,1,0,1,0,0,5,light pressure; infrequent stocking; good depth (20ft); good size (5.0ac); grayling
+Y-22,Kings,Yellowstone Drainage,11416,10.0,,Cutthroats,Low,1,1,0,1,0,0,0,1,0,0,1,0,5,light pressure; remote/off-trail; infrequent stocking; good size (10.0ac); cutthroat
+Y-34,Gem,Yellowstone Drainage,10550,11.1,15,Brookies,Moderate,0,0,1,0,0,1,1,1,0,0,0,1,5,natural repro; big fish potential; good depth (15ft); good elev (10550ft); good size (11.1ac); good habitat
+Y-36,,Yellowstone Drainage,10820,14.0,15,Brookies,Low,1,1,0,1,0,1,0,1,0,0,0,0,5,light pressure; remote/off-trail; infrequent stocking; good depth (15ft); good size (14.0ac)
+Y-4,,Yellowstone Drainage,11679,5.8,12,Brookies,Low,1,1,1,0,0,0,0,1,0,0,0,1,5,light pressure; remote/off-trail; natural repro; good size (5.8ac); good habitat
+Z-11,Marshall,Duchesne River Drainage,9980,18.0,36,Cutthroats,High,0,0,0,0,0,1,1,1,0,0,1,1,5,Big fish potential; Good depth (36ft); Good elevation; Good size (18.0ac); Cutthroat; Good habitat
+Z-15,Packard,Duchesne River Drainage,9940,4.5,10,Brookies,High,0,1,0,1,0,0,1,1,0,0,0,1,5,Remote/off-trail; Infrequent stocking; Big fish potential; Good elevation; Good size (4.5ac); Good habitat
+Z-16,Echo,Duchesne River Drainage,9740,18.0,44,Goldens,Moderate,0,0,1,0,0,1,1,1,0,0,0,1,5,Natural repro; Big fish potential; Good depth (44ft); Good elevation; Good size (18.0ac); Good habitat
+Z-17,Pyramid,Duchesne River Drainage,9700,15.0,36,Brookies,High,0,1,0,0,0,1,1,1,0,0,0,1,5,Remote/off-trail; Big fish potential; Good depth (36ft); Good elevation; Good size (15.0ac); Good habitat
+Z-18,Gem,Duchesne River Drainage,10070,3.8,14,"Brookies, Tigers",,1,0,0,0,0,0,1,1,1,0,0,1,5,Light pressure; Good elevation; Good size (3.8ac); Tigers; Good habitat
+Z-19,Joan,Duchesne River Drainage,10050,15.2,20,Brookies,Moderate,0,0,0,1,0,1,1,1,0,0,0,1,5,Infrequent stocking; Good depth (20ft); Good elevation; Good size (15.2ac); Good habitat
+Z-28,Palisade,Rock Creek Drainage,10140,22.7,45,"Brookies, Cutthroats",High,0,0,0,1,0,1,1,0,0,0,1,1,5,Infrequent stocking; Big fish potential; Good depth; Good elevation; Cutthroats; Good habitat
+Z-3,Mirror,Duchesne River Drainage,10200,42.0,37,"Brookies, Grayling, Rainbows, Tigers",High,0,1,0,0,0,1,1,0,1,1,0,0,5,Remote/off-trail; Big fish potential; Good depth (37ft); Good elevation; Tigers; Grayling
+Z-33,Leconte,Duchesne River Drainage,10920,9.5,15,"Cutthroats, Grayling",Moderate,0,1,0,0,0,1,0,1,0,1,1,0,5,Remote/off-trail; Good depth (15ft); Good size (9.5ac); Grayling; Cutthroat
+Z-37,Hyatt,Duchesne River Drainage,10740,2.4,10,,,1,1,0,0,0,0,1,1,0,0,0,1,5,Light pressure; Remote/off-trail; Good elevation; Good size (2.4ac); Good habitat
+Z-7,Fehr,Duchesne River Drainage,10260,5.7,27,Brookies,High,0,0,1,0,0,1,1,1,0,0,0,1,5,Natural repro; Big fish potential; Good depth (27ft); Good elevation; Good size (5.7ac); Good habitat
+A-10,Rock,Provo River Drainage,10140,8.0,14,Tigers,Moderate,0,0,0,0,0,0,1,1,1,0,0,1,4,Big fish potential; Good elevation; Good size; Tigers; Good habitat
+A-18,Big Elk,Provo River Drainage,10020,30.0,85,"Brookies, Tigers",High,0,1,0,0,0,0,1,0,1,0,0,1,4,Remote/off-trail; Big fish potential; Good elevation; Tigers; Good habitat
+A-2,Lambert,Provo River Drainage,9630,2.0,8,Brookies,Low,1,0,0,0,0,0,1,1,0,0,0,1,4,Light pressure; Big fish potential; Good elevation; Good size; Good habitat
+A-22,Diamond,Provo River Drainage,9900,3.0,7,"Brookies, Cutthroats",Moderate,0,0,0,0,0,0,1,1,0,0,1,1,4,Big fish potential; Good elevation; Good size; Cutthroats; Good habitat
+A-25,Lily Lower,Provo River Drainage,10030,3.2,16,Brookies,High,0,0,0,0,0,1,1,1,0,0,0,1,4,Big fish potential; Good depth; Good elevation; Good size; Good habitat
+A-29,Wall,Provo River Drainage,10140,80.0,97,"Brookies, Tigers",High,0,1,0,0,0,0,1,0,1,0,0,1,4,Remote/off-trail; Big fish potential; Good elevation; Tigers; Good habitat
+A-3,Buckeye,Provo River Drainage,9660,5.0,8,Brookies,High,0,0,1,0,0,0,1,1,0,0,0,1,4,Natural repro; Big fish potential; Good elevation; Good size; Good habitat
+A-30,John,Provo River Drainage,10500,4.0,10,Brookies,Moderate,0,0,0,1,0,0,1,1,0,0,0,1,4,Infrequent stocking; Good elevation; Good size; Good habitat
+A-35,Booker,Provo River Drainage,10460,4.1,8,Brookies,High,0,0,0,1,0,0,1,1,0,0,0,1,4,Infrequent stocking; Big fish potential; Good elevation; Good size; Good habitat
+A-36,"Divide, #1",Provo River Drainage,10460,3.5,5,Brookies,High,0,1,0,0,0,0,1,1,0,0,0,1,4,Remote/off-trail; Big fish potential; Good elevation; Good size; Good habitat
+A-38,Ramona,Provo River Drainage,10340,4.7,21,Brookies,Moderate,0,0,0,0,0,1,1,1,0,0,0,1,4,Big fish potential; Good depth; Good elevation; Good size; Good habitat
+A-48,Hourglass,Provo River Drainage,9980,5.7,2,"Brookies, Cutthroats",High,0,0,0,0,0,0,1,1,0,0,1,1,4,Big fish potential; Good elevation; Good size; Cutthroats; Good habitat
+A-52,Shadow,Provo River Drainage,10060,14.0,20,Brookies,High,0,0,0,0,0,1,1,1,0,0,0,1,4,Big fish potential; Good depth; Good elevation; Good size; Good habitat
+A-54,Hope,Provo River Drainage,,2.0,5,Brookies,Low,1,0,1,0,0,0,0,1,0,0,0,1,4,Light pressure; Natural repro; Good size; Good habitat
+BR-1,Bourbon lake (Gold Hill),Bear River Drainage,9820,2.0,8,Brookies,Moderate,0,1,0,0,0,0,1,1,0,0,0,1,4,Remote/off-trail; Good elevation; Good size (2.0ac); Good habitat
+BR-15,Ryder,Bear River Drainage,10620,24.4,55,Brookies,Moderate,0,1,1,0,0,0,1,0,0,0,0,1,4,Remote/off-trail; Natural repro; Big fish potential; Good elevation; Good habitat
+BR-28,Amethyst,Bear River Drainage,10750,43.7,59,"Brookies, Cutthroats",Moderate,0,1,1,0,0,0,1,0,0,0,1,0,4,Remote/off-trail; Natural repro; Good elevation; Cutthroat
+BR-32,Teal,Bear River Drainage,10260,6.8,14,Tigers,Moderate,0,0,0,0,0,0,1,1,1,0,0,1,4,Good elevation; Good size (6.8ac); Tigers; Good habitat
+BR-36,Hayden Lake,Bear River Drainage,10420,4.4,5,Tigers,Moderate,0,0,0,0,0,0,1,1,1,0,0,1,4,Good elevation; Good size (4.4ac); Tigers; Good habitat
+BR-38,Jewel,Bear River Drainage,10300,2.4,13,Tigers,,0,0,0,0,0,0,1,1,1,0,0,1,4,Big fish potential; Good elevation; Good size (2.4ac); Tigers; Good habitat
+BR-40,Ruth,Bear River Drainage,10340,9.5,30,Brookies,High,0,0,0,0,0,1,1,1,0,0,0,1,4,Big fish potential; Good depth (30ft); Good elevation; Good size (9.5ac); Good habitat
+BR-45,Baker,Bear River Drainage,10420,3.4,8,Tigers,Moderate,0,0,0,0,0,0,1,1,1,0,0,1,4,Big fish potential; Good elevation; Good size (3.4ac); Tigers; Good habitat
+BR-55,,Bear River Drainage,,,,"Brookies, Cutthroats",,1,0,0,1,0,0,0,0,0,0,1,1,4,Light pressure; Infrequent stocking; Cutthroat; Good habitat
+DF-14,West Kibah,Ashley Creek Drainage,10580,7.8,15,Brookies,Moderate,0,0,0,1,0,1,1,1,0,0,0,0,4,"Infrequent stocking, Good depth, Good elevation, Good size"
+DF-16,Island Kibah,Ashley Creek Drainage,10540,8.0,14,Brookies,Moderate,0,0,0,1,0,0,1,1,0,0,0,1,4,"Infrequent stocking, Good elevation, Good size, Good habitat"
+DF-2,Moap,Ashley Creek Drainage,10740,2.7,5,,,0,1,0,0,0,0,1,1,0,0,0,1,4,"Remote/off-trail, Big fish potential, Good elevation, Good size, Good habitat"
+DG-15,,Dry Gulch Drainage,10950,3.0,9,Cutthroats,Low,0,0,0,1,0,0,0,1,0,0,1,1,4,"infrequent stocking, good size (3.0ac), cutthroat, good habitat"
+DG-16,,Dry Gulch Drainage,10950,3.0,8,Cutthroats,Low,0,0,0,1,0,0,0,1,0,0,1,1,4,"infrequent stocking, good size (3.0ac), cutthroat, good habitat"
+DG-26,Lower Lily Pad,Dry Gulch Drainage,10275,9.0,11,Brookies,Low,1,0,0,0,0,0,1,1,0,0,0,1,4,"light pressure, good elev (10275ft), good size (9.0ac), good habitat"
+G-10,,Henrys Fork Drainage,10772,5.4,12,Brookies,Low,0,0,1,0,0,0,1,1,0,0,0,1,4,"natural repro, big fish potential, good elev (10772ft), good size (5.4ac), good habitat"
+G-13,,Smiths Fork Drainage,10860,7.9,17,Brookies,Low,1,0,0,0,0,1,0,1,0,0,0,1,4,light pressure; good depth (17ft); good size (7.9ac); good habitat
+G-3,Blanchard,Henrys Fork Drainage,11164,31.3,29,Cutthroats,Moderate,0,0,1,0,0,1,0,0,0,0,1,1,4,"natural repro, big fish potential, good depth (29ft), cutthroat, good habitat"
+G-37,Duck,Blacks Fork Drainage,9161,6.2,5,Brookies,Moderate,0,0,1,0,0,0,1,1,0,0,0,1,4,natural repro; good elev (9161ft); good size (6.2ac); good habitat
+G-39,,Blacks Fork Drainage,10820,2.6,7,Brookies,Low,1,0,1,0,0,0,0,1,0,0,0,1,4,light pressure; natural repro; good size (2.6ac); good habitat
+G-4,,Henrys Fork Drainage,11169,3.6,8,Cutthroats,Low,0,0,1,0,0,0,0,1,0,0,1,1,4,"natural repro, big fish potential, good size (3.6ac), cutthroat, good habitat"
+G-40,,Blacks Fork Drainage,10740,3.6,,Brookies,,0,0,0,1,0,0,1,1,0,0,0,1,4,infrequent stocking; good elev (10740ft); good size (3.6ac); good habitat
+G-42,,Henrys Fork Drainage,10900,4.6,2,"Brookies, Cutthroats",Low,0,0,1,0,0,0,0,1,0,0,1,1,4,"natural repro, good size (4.6ac), cutthroat, good habitat"
+G-45,,Smiths Fork Drainage,11220,3.1,12,Brookies,Low,0,1,1,0,0,0,0,1,0,0,0,1,4,remote/off-trail; natural repro; good size (3.1ac); good habitat
+G-5,Cliff,Henrys Fork Drainage,11443,33.1,69,"Cutthroats, Tigers",Low,0,1,0,0,0,0,0,0,1,0,1,1,4,"remote/off-trail, big fish potential, tigers, cutthroat, good habitat"
+G-52,,Smiths Fork Drainage,11340,2.6,4,Cutthroats,Low,1,1,0,0,0,0,0,1,0,0,1,0,4,light pressure; remote/off-trail; good size (2.6ac); cutthroat
+G-58,,Smiths Fork Drainage,10620,1.3,5,Cutthroats,Low,0,0,1,0,0,0,1,0,0,0,1,1,4,natural repro; big fish potential; good elev (10620ft); cutthroat; good habitat
+G-66,,Blacks Fork Drainage,10561,3.8,12,Brookies,Moderate,0,0,1,0,0,0,1,1,0,0,0,1,4,natural repro; big fish potential; good elev (10561ft); good size (3.8ac); good habitat
+G-69,,Blacks Fork Drainage,11109,4.8,13,Cutthrout,Low,0,1,1,0,0,0,0,1,0,0,0,1,4,remote/off-trail; natural repro; big fish potential; good size (4.8ac); good habitat
+G-81,,Blacks Fork Drainage,10665,1.7,5,Cutthrout Trout,Low,0,1,1,0,0,0,1,0,0,0,0,1,4,remote/off-trail; natural repro; big fish potential; good elev (10665ft); good habitat
+G-9,Island,Henrys Fork Drainage,10830,10.4,5,Brookies,Low,0,1,0,1,0,0,0,1,0,0,0,1,4,"remote/off-trail, infrequent stocking, good size (10.4ac), good habitat"
+GR-1,Jesson,Sheep/Carter Creek Drainages,10392,25.5,56,"Brookies, Cutthroats, Tigers",High,0,0,0,0,0,0,1,0,1,0,1,1,4,"big fish potential, good elev (10392ft), tigers, cutthroat, good habitat"
+GR-149,Hidden,Beaver Creek Drainage,10148,6.5,18,Brookies,Moderate,0,0,0,0,0,1,1,1,0,0,0,1,4,"good depth (18ft), good elev (10148ft), good size (6.5ac), good habitat"
+GR-150,Gilbert,Beaver Creek Drainage,10905,15.2,2,"Brookies, Cutthroats",Moderate,0,0,1,0,0,0,0,1,0,0,1,1,4,"natural repro, good size (15.2ac), cutthroat, good habitat"
+GR-152,,Beaver Creek Drainage,11295,4.8,13,Brookies,Low,1,0,0,1,0,0,0,1,0,0,0,1,4,"light pressure, infrequent stocking, good size (4.8ac), good habitat"
+GR-154,,Beaver Creek Drainage,10930,2.1,6,Brookies,Low,0,1,0,1,0,0,0,1,0,0,0,1,4,"remote/off-trail, infrequent stocking, good size (2.1ac), good habitat"
+GR-160,,Beaver Creek Drainage,9230,4.8,50,Brookies,Low,0,0,0,0,0,1,1,1,0,0,0,1,4,"good depth (50ft), good elev (9230ft), good size (4.8ac), good habitat"
+GR-162,,Beaver Creek Drainage,9344,6.5,18,Brookies,Low,0,0,0,0,0,1,1,1,0,0,0,1,4,"good depth (18ft), good elev (9344ft), good size (6.5ac), good habitat"
+GR-172,,Beaver Creek Drainage,9490,3.6,15,Brookies,Low,0,0,0,0,0,1,1,1,0,0,0,1,4,"big fish potential, good depth (15ft), good elev (9490ft), good size (3.6ac), good habitat"
+GR-173,,Beaver Creek Drainage,9490,3.9,27,Brookies,Low,0,0,0,0,0,1,1,1,0,0,0,1,4,"good depth (27ft), good elev (9490ft), good size (3.9ac), good habitat"
+GR-2,Tamarack,Sheep/Carter Creek Drainages,10429,79.1,90,"Brookies, Cutthroats, Tigers",High,0,0,0,0,0,0,1,0,1,0,1,1,4,"big fish potential, good elev (10429ft), tigers, cutthroat, good habitat"
+GR-28,Upper Potter,Sheep/Carter Creek Drainages,,4.3,28,"Brookies*, Cutthroats",High,0,0,0,0,0,1,0,1,0,0,1,1,4,"big fish potential, good depth (28ft), good size (4.3ac), cutthroat, good habitat"
+GR-42,Goose #1,Ashley Creek Drainage,10240,3.8,13,,,1,0,0,0,0,0,1,1,0,0,0,1,4,"Light pressure, Good elevation, Good size, Good habitat"
+GR-48,Little Blue,Ashley Creek Drainage,11215,3.2,6,Brookies,Low,1,0,0,1,0,0,0,1,0,0,0,1,4,"Light pressure, Infrequent stocking, Good size, Good habitat"
+GR-52,,Ashley Creek Drainage,10515,2.1,4,Brookies,Moderate,0,0,1,0,0,0,1,1,0,0,0,1,4,"Natural repro, Good elevation, Good size, Good habitat"
+GR-62,Bert,Ashley Creek Drainage,10220,3.7,11,"Brookies, Grayling",Low,1,0,0,0,0,0,1,1,0,1,0,0,4,"Light pressure, Good elevation, Good size, Grayling"
+GR-63,Chimney Rock,Ashley Creek Drainage,10540,6.5,16,,,0,1,0,0,0,1,1,1,0,0,0,0,4,"Remote/off-trail, Big fish potential, Good depth, Good elevation, Good size"
+LF-2,Crater,Lake Fork Drainage,10480,40.7,20,,,0,1,0,0,0,1,1,0,0,0,0,1,4,Remote/off-trail; Big fish potential; Good depth (20ft); Good elevation; Good habitat
+LF-35,,Lake Fork Drainage,,1.0,6,Brookies,Low,1,1,1,0,0,0,0,0,0,0,0,1,4,Light pressure; Remote/off-trail; Natural repro; Good habitat
+LF-37,,Lake Fork Drainage,10700,1.9,3,Brookies,Low,1,0,0,1,0,0,1,0,0,0,0,1,4,Light pressure; Infrequent stocking; Good elevation; Good habitat
+LF-43,,Lake Fork Drainage,10820,1.4,4,Brookies,Low,1,1,0,1,0,0,0,0,0,0,0,1,4,Light pressure; Remote/off-trail; Infrequent stocking; Good habitat
+LF-44,East Slide,Lake Fork Drainage,,5.0,,Brookies,Low,1,1,0,1,0,0,0,1,0,0,0,0,4,Light pressure; Remote/off-trail; Infrequent stocking; Good size (5.0ac)
+P-60,Shingle Creek West,Provo River Drainage,9940,5.0,12,Brookies,Moderate,1,0,0,0,0,0,1,1,0,0,0,1,4,Light pressure; Good elevation; Good size; Good habitat
+P-8,Norway Flats,Provo River Drainage,9900,3.0,16,,,0,0,0,0,0,1,1,1,0,0,0,1,4,Good depth; Good elevation; Good size; Good habitat
+RC-20,Survey,Rock Creek Drainage,10700,6.0,12,Brookies,Low,1,0,0,0,0,0,1,1,0,0,0,1,4,Light pressure; Good elevation; Good size; Good habitat
+RC-3,Huntley,Rock Creek Drainage,10460,1.2,9,Brookies,Low,1,0,1,0,0,0,1,0,0,0,0,1,4,Light pressure; Natural repro; Good elevation; Good habitat
+U-1,Chain 3 (upper),Uinta River Drainage,10623,51.0,44,Brookies,Moderate,0,0,1,1,0,1,1,0,0,0,0,0,4,"Natural repro, Infrequent stocking, Good depth, Good elevation"
+U-17,Carrot,Uinta River Drainage,10830,31.0,31,Brookies,Low,1,0,0,1,0,1,0,0,0,0,0,1,4,"Light pressure, Infrequent stocking, Big fish potential, Good depth, Good habitat"
+U-18,B-29 Lake,Uinta River Drainage,10740,19.0,7,,,1,0,0,0,0,0,1,1,0,0,0,1,4,"Light pressure, Big fish potential, Good elevation, Good size, Good habitat"
+U-2,Chain 2 (middle),Uinta River Drainage,10605,14.4,13,Brookies,Moderate,0,0,1,1,0,0,1,1,0,0,0,0,4,"Natural repro, Infrequent stocking, Good elevation, Good size"
+U-34,Davis South,Uinta River Drainage,11020,6.1,4,Brookies,Low,1,0,0,1,0,0,0,1,0,0,0,1,4,"Light pressure, Infrequent stocking, Big fish potential, Good size, Good habitat"
+U-35,,Uinta River Drainage,11110,4.4,5,"Brookies, Cutthroats",Moderate,0,0,1,0,0,0,0,1,0,0,1,1,4,"Natural repro, Good size, Cutthroat, Good habitat"
+U-42,,Uinta River Drainage,11350,7.6,7,Cutthroats,Low,1,0,0,1,0,0,0,1,0,0,1,0,4,"Light pressure, Infrequent stocking, Good size, Cutthroat"
+U-45,,Uinta River Drainage,11425,5.0,5,Cutthroats,Low,1,0,0,1,0,0,0,1,0,0,1,0,4,"Light pressure, Infrequent stocking, Good size, Cutthroat"
+U-47,Fox,Uinta River Drainage,10790,102.0,47,"Brookies, Cutthroats",Moderate,0,0,0,1,0,1,1,0,0,0,1,0,4,"Infrequent stocking, Big fish potential, Good depth, Good elevation, Cutthroat"
+U-48,Crescent,Uinta River Drainage,10830,31.0,23,"Brookies, Cutthroats",Moderate high,0,0,0,1,0,1,0,0,0,0,1,1,4,"Infrequent stocking, Big fish potential, Good depth, Cutthroat, Good habitat"
+U-49,Dollar,Uinta River Drainage,10704,11.5,6,Brookies,Moderate,0,0,1,0,0,0,1,1,0,0,0,1,4,"Natural repro, Big fish potential, Good elevation, Good size, Good habitat"
+U-88,,Uinta River Drainage,11030,14.0,18,Brookies,Low,1,0,1,0,0,1,0,1,0,0,0,0,4,"Light pressure, Natural repro, Big fish potential, Good depth, Good size"
+U-89,,Uinta River Drainage,11037,11.5,15,Brookies,Low,1,0,0,1,0,1,0,1,0,0,0,0,4,"Light pressure, Infrequent stocking, Good depth, Good size"
+U-93,,Uinta River Drainage,11402,11.1,8,Cutthroats,Very low,0,1,0,1,0,0,0,1,0,0,1,0,4,"Remote/off-trail, Infrequent stocking, Good size, Cutthroat"
+U-94,Albert,Uinta River Drainage,10826,7.0,8,Cutthroats,Low,0,1,1,0,0,0,0,1,0,0,1,0,4,"Remote/off-trail, Natural repro, Good size, Cutthroat"
+W-23,Lovenia,Weber River Drainage,10300,2.5,11,Brookies,High,0,0,0,1,0,0,1,1,0,0,0,1,4,Infrequent stocking; Big fish potential; Good elevation; Good size; Good habitat
+W-32,Olsen,Weber River Drainage,10220,7.0,13,Brookies,Moderate,0,1,0,0,0,0,1,1,0,0,0,1,4,Remote/off-trail; Good elevation; Good size; Good habitat
+W-38,Reids,Weber River Drainage,10340,3.0,8,Brookies,Low,1,0,0,0,0,0,1,1,0,0,0,1,4,Light pressure; Good elevation; Good size; Good habitat
+W-39,Fran,Weber River Drainage,10060,3.0,8,Brookies,Moderate,0,0,1,0,0,0,1,1,0,0,0,1,4,Natural repro; Good elevation; Good size; Good habitat
+W-46,Cuberant #5,Weber River Drainage,,5.0,15,Unknown,Low,1,0,1,0,0,1,0,1,0,0,0,0,4,Light pressure; Natural repro; Good depth; Good size
+W-57,,Weber River Drainage,,3.0,8,Brookies,Moderate,0,1,1,0,0,0,0,1,0,0,0,1,4,Remote/off-trail; Natural repro; Good size; Good habitat
+W-59,,Weber River Drainage,,4.0,10,Brookies,Moderate,0,1,0,1,0,0,0,1,0,0,0,1,4,Remote/off-trail; Infrequent stocking; Good size; Good habitat
+WR-1,Robb L,Weber River Drainage,,,,"Brookies, Cutthroats",,1,0,0,1,0,0,0,0,0,0,1,1,4,Light pressure; Infrequent stocking; Cutthroats; Good habitat
+WR-13,Pole Creek Lake,White Rocks Drainage,10200,5.0,10,"Rainbows, Tigers",High,0,0,1,0,0,0,1,1,1,0,0,0,4,"Natural repro, Good elevation, Good size, Tigers"
+WR-29,Dead,White Rocks Drainage,,,,Brookies,,1,1,1,0,0,0,0,0,0,0,0,1,4,"Light pressure, Remote/off-trail, Natural repro, Good habitat"
+WR-36,Rassmussen #2,White Rocks Drainage,10500,14.0,8,Brookies,Moderate,1,0,0,1,0,0,1,1,0,0,0,0,4,"Light pressure, Infrequent stocking, Good elevation, Good size"
+WR-58,Elbow,White Rocks Drainage,10910,27.4,17,Brookies,Moderate,0,1,0,1,0,1,0,0,0,0,0,1,4,"Remote/off-trail, Infrequent stocking, Big fish potential, Good depth, Good habitat"
+WR-63,Hidden,White Rocks Drainage,10500,13.2,27,Brookies,Moderate,0,0,0,0,0,1,1,1,0,0,0,1,4,"Good depth, Good elevation, Good size, Good habitat"
+WR-7,Cleveland,White Rocks Drainage,10700,23.1,6,"Brookies, Cutthroats",High,0,0,0,1,0,0,1,0,0,0,1,1,4,"Infrequent stocking, Good elevation, Cutthroat, Good habitat"
+WR-74,,White Rocks Drainage,11000,3.4,14,"Brookies*, Cutthroats",Low,1,0,0,0,0,0,0,1,0,0,1,1,4,"Light pressure, Good size, Cutthroat, Good habitat"
+X-12,Sonny,Duchesne River Drainage,10460,5.0,13,Brookies,Low,1,0,0,0,0,0,1,1,0,0,0,1,4,Light pressure; Good elevation; Good size (5.0ac); Good habitat
+X-123,Doug,Rock Creek Drainage,11060,1.0,8,Cutthroats,Low,1,0,1,0,0,0,0,0,0,0,1,1,4,Light pressure; Natural repro; Big fish potential; Cutthroats; Good habitat
+X-128,Gladys,Rock Creek Drainage,10900,7.5,6,Brookies,Moderate,1,0,0,1,0,0,0,1,0,0,0,1,4,Light pressure; Infrequent stocking; Good size; Good habitat
+X-129,Margie,Rock Creek Drainage,,7.5,11,Brookies,Low,1,0,0,1,0,0,0,1,0,0,0,1,4,Light pressure; Infrequent stocking; Good size; Good habitat
+X-130,Rosalie,Rock Creek Drainage,10910,8.1,8,Brookies,Low,1,0,0,1,0,0,0,1,0,0,0,1,4,Light pressure; Infrequent stocking; Big fish potential; Good size; Good habitat
+X-21,Carrol East,Swift Creek Drainage,,10.0,19,Cutthroats,Moderate,0,0,0,1,0,1,0,1,0,0,1,0,4,"infrequent stocking, good depth (19ft), good size (10.0ac), cutthroat"
+X-22,Pinto,Rock Creek Drainage,10020,9.0,8,"Brookies, Cutthroats",Moderate,0,0,0,0,0,0,1,1,0,0,1,1,4,Big fish potential; Good elevation; Good size; Cutthroats; Good habitat
+X-37,Lilly Pad,Lake Fork Drainage,10275,1.4,8,"Brookies, Cutthroats",Moderate,0,0,1,0,0,0,1,0,0,0,1,1,4,Natural repro; Good elevation; Cutthroat; Good habitat
+X-42,Mid,Rock Creek Drainage,10380,5.1,3,Brookies,Moderate,0,0,0,1,0,0,1,1,0,0,0,1,4,Infrequent stocking; Big fish potential; Good elevation; Good size; Good habitat
+X-58,Swasey,Yellowstone Drainage,10810,36.0,30,"Brookies, Cutthroats",High,0,0,1,0,0,1,0,0,0,0,1,1,4,natural repro; big fish potential; good depth (30ft); cutthroat; good habitat
+X-59,,Yellowstone Drainage,10706,4.5,13,"Brookies, Cutthroats",Moderate,0,0,1,0,0,0,1,1,0,0,1,0,4,natural repro; good elev (10706ft); good size (4.5ac); cutthroat
+X-6,Fish Hatchery,Rock Creek Drainage,10230,37.2,28,Brookies,High,0,0,0,1,0,1,1,0,0,0,0,1,4,Infrequent stocking; Big fish potential; Good depth; Good elevation; Good habitat
+X-66,Mud,Lake Fork Drainage,10340,2.5,5,Brookies,Low,1,0,0,0,0,0,1,1,0,0,0,1,4,Light pressure; Good elevation; Good size (2.5ac); Good habitat
+X-7,Betsey,Rock Creek Drainage,10350,33.8,44,"Brookies*, Cutthroats",High,0,0,0,0,0,1,1,0,0,0,1,1,4,Big fish potential; Good depth; Good elevation; Cutthroats; Good habitat
+X-8,Pine Island,Rock Creek Drainage,10300,79.6,44,Brookies,High,0,1,0,0,0,1,1,0,0,0,0,1,4,Remote/off-trail; Big fish potential; Good depth; Good elevation; Good habitat
+X-86,,Lake Fork Drainage,10819,6.9,12,Brookies,Low,1,1,0,0,0,0,0,1,0,0,0,1,4,Light pressure; Remote/off-trail; Good size (6.9ac); Good habitat
+X-88,Ottoson Lower,Lake Fork Drainage,,9.1,8,Cutthroats,Low,1,0,1,0,0,0,0,1,0,0,1,0,4,Light pressure; Natural repro; Good size (9.1ac); Cutthroat
+X-95,Squaw,Rock Creek Drainage,10483,10.4,9,Brookies,High,0,0,0,1,0,0,1,1,0,0,0,1,4,Infrequent stocking; Big fish potential; Good elevation; Good size; Good habitat
+X-96,Rock 1,Rock Creek Drainage,,4.8,19,Brookies,Low,1,0,0,1,0,1,0,1,0,0,0,0,4,Light pressure; Infrequent stocking; Good depth; Good size
+X-97,Rock 2,Rock Creek Drainage,,7.7,17,Brookies,Low,1,0,1,0,0,1,0,1,0,0,0,0,4,Light pressure; Natural repro; Good depth; Good size
+Y-19,,Yellowstone Drainage,11268,6.2,15,Brookies,Low,1,0,0,1,0,1,0,1,0,0,0,0,4,light pressure; infrequent stocking; good depth (15ft); good size (6.2ac)
+Y-25,Milk,Yellowstone Drainage,10983,17.5,20,Brookies,Low,1,0,0,1,0,1,0,1,0,0,0,0,4,light pressure; infrequent stocking; good depth (20ft); good size (17.5ac)
+Y-37,,Yellowstone Drainage,10823,13.0,12,Brookies,Low,1,1,0,1,0,0,0,1,0,0,0,0,4,light pressure; remote/off-trail; infrequent stocking; good size (13.0ac)
+Y-5,,Yellowstone Drainage,11685,1.8,6,Brookies,Low,1,1,1,0,0,0,0,0,0,0,0,1,4,light pressure; remote/off-trail; natural repro; good habitat
+Z-1,Butterfly,Duchesne River Drainage,10300,4.3,13,"Brookies, Grayling, Rainbows, Tigers",High,0,0,0,0,0,0,1,1,1,1,0,0,4,Big fish potential; Good elevation; Good size (4.3ac); Tigers; Grayling
+Z-14,Wyman,Duchesne River Drainage,9980,6.5,17,Brookies,Moderate,0,0,0,0,0,1,1,1,0,0,0,1,4,Big fish potential; Good depth (17ft); Good elevation; Good size (6.5ac); Good habitat
+Z-20,Blythe,Duchesne River Drainage,9000,5.0,14,Brookies,Moderate,0,1,0,0,0,0,1,1,0,0,0,1,4,Remote/off-trail; Good elevation; Good size (5.0ac); Good habitat
+Z-24,Governor Dern,Rock Creek Drainage,9990,32.0,9,"Brookies, Cutthroats",High,0,0,0,1,0,0,1,0,0,0,1,1,4,Infrequent stocking; Big fish potential; Good elevation; Cutthroats; Good habitat
+Z-25,Rainbow,Rock Creek Drainage,9930,17.9,15,Brookies,High,0,0,0,0,0,1,1,1,0,0,0,1,4,Big fish potential; Good depth; Good elevation; Good size; Good habitat
+Z-29,Lost,Rock Creek Drainage,10030,14.0,15,Brookies,Moderate,0,0,0,0,0,1,1,1,0,0,0,1,4,Good depth; Good elevation; Good size; Good habitat
+Z-30,Powell,Rock Creek Drainage,9980,22.4,15,Cutthroats,Moderate,0,0,0,0,0,1,1,0,0,0,1,1,4,Good depth; Good elevation; Cutthroats; Good habitat
+Z-31,Morat #1,Duchesne River Drainage,10740,5.4,13,Cutthroats,Moderate,0,0,0,0,0,0,1,1,0,0,1,1,4,Good elevation; Good size (5.4ac); Cutthroat; Good habitat
+Z-36,Everman,Rock Creek Drainage,10520,7.8,7,Brookies,Moderate,0,0,0,1,0,0,1,1,0,0,0,1,4,Infrequent stocking; Big fish potential; Good elevation; Good size; Good habitat
+Z-39,Dale,Rock Creek Drainage,10700,12.9,25,Brookies,High,0,0,0,0,0,1,1,1,0,0,0,1,4,Big fish potential; Good depth; Good elevation; Good size; Good habitat
+Z-4,Moosehorn,Duchesne River Drainage,10400,8.0,11,Rainbows,High,0,1,0,0,0,0,1,1,0,0,0,1,4,Remote/off-trail; Good elevation; Good size (8.0ac); Good habitat
+Z-40,Dean,Rock Creek Drainage,10755,24.0,44,Brookies,Moderate,0,1,0,0,0,1,1,0,0,0,0,1,4,Remote/off-trail; Good depth; Good elevation; Good habitat
+Z-41,Jean,Rock Creek Drainage,10753,23.2,23,"Brookies, Cutthroats",Moderate,0,0,0,0,0,1,1,0,0,0,1,1,4,Big fish potential; Good depth; Good elevation; Cutthroats; Good habitat
+Z-6,Bonnie,Duchesne River Drainage,10100,3.6,7,"Brookies, Cutthroats",High,0,0,0,0,0,0,1,1,0,0,1,1,4,Big fish potential; Good elevation; Good size (3.6ac); Cutthroat; Good habitat
+Z-8,Maba,Duchesne River Drainage,9900,4.2,20,Brookies,High,0,0,0,0,0,1,1,1,0,0,0,1,4,Big fish potential; Good depth (20ft); Good elevation; Good size (4.2ac); Good habitat
+A-1,Alexander,Provo River Drainage,9360,23.0,28,Brookies,High,0,0,0,0,0,1,1,0,0,0,0,1,3,Big fish potential; Good depth; Good elevation; Good habitat
+A-23,Washington,Provo River Drainage,9900,106.0,70,"Brookies, Cutthroats, Rainbows",High,0,0,0,0,0,0,1,0,0,0,1,1,3,Big fish potential; Good elevation; Cutthroats; Good habitat
+A-24,Lily Upper,Provo River Drainage,10020,3.2,12,,,0,0,0,0,0,0,1,1,0,0,0,1,3,Good elevation; Good size; Good habitat
+A-26,Petit (Junior #5),Provo River Drainage,10300,2.0,3,Brookies,Moderate,0,0,0,0,0,0,1,1,0,0,0,1,3,Good elevation; Good size; Good habitat
+A-27,Watson,Provo River Drainage,10420,6.0,10,Brookies,Moderate,0,0,0,0,0,0,1,1,0,0,0,1,3,Big fish potential; Good elevation; Good size; Good habitat
+A-31,James,Provo River Drainage,10500,2.1,8,Brookies,Moderate,0,0,0,0,0,0,1,1,0,0,0,1,3,Good elevation; Good size; Good habitat
+A-33,Twin Lower,Provo River Drainage,10410,3.0,14,Brookies,High,0,0,0,0,0,0,1,1,0,0,0,1,3,Big fish potential; Good elevation; Good size; Good habitat
+A-41,Trident,Provo River Drainage,9400,4.0,5,Brookies,High,0,0,0,0,0,0,1,1,0,0,0,1,3,Big fish potential; Good elevation; Good size; Good habitat
+A-47,Clegg,Provo River Drainage,10460,5.1,12,Brookies,Moderate,0,0,0,0,0,0,1,1,0,0,0,1,3,Good elevation; Good size; Good habitat
+A-51,Crystal,Provo River Drainage,10020,9.8,7,Brookies,High,0,0,0,0,0,0,1,1,0,0,0,1,3,Big fish potential; Good elevation; Good size; Good habitat
+A-58,Lilly,Provo River Drainage,9800,4.1,13,Rainbows,Moderate,0,0,0,0,0,0,1,1,0,0,0,1,3,Big fish potential; Good elevation; Good size; Good habitat
+A-6,Beth,Provo River Drainage,9780,5.4,10,Brookies,High,0,0,0,0,0,0,1,1,0,0,0,1,3,Big fish potential; Good elevation; Good size; Good habitat
+BR-11,Lilly,Bear River Drainage,8890,10.5,20,Rainbows,Moderate,0,0,0,0,0,1,0,1,0,0,0,1,3,Big fish potential; Good depth (20ft); Good size (10.5ac); Good habitat
+BR-12,Scow,Bear River Drainage,10100,21.4,6,Brookies,Low,1,0,0,0,0,0,1,0,0,0,0,1,3,Light pressure; Big fish potential; Good elevation; Good habitat
+BR-43,,Bear River Drainage,,,,Tigers,,0,1,0,0,0,0,0,0,1,0,0,1,3,Remote/off-trail; Tigers; Good habitat
+D-33,Iron Mine,Duchesne River Drainage,9580,6.1,21,,,0,0,0,0,0,1,1,1,0,0,0,0,3,Good depth (21ft); Good elevation; Good size (6.1ac)
+DF-11,East Kibah,Ashley Creek Drainage,10495,2.9,12,"Brookies, Rainbows*",Moderate,0,0,0,0,0,0,1,1,0,0,0,1,3,"Good elevation, Good size, Good habitat"
+DF-12,Finger Kibah,Ashley Creek Drainage,10515,4.7,9,Brookies,Moderate,0,0,0,1,0,0,1,1,0,0,0,0,3,"Infrequent stocking, Good elevation, Good size"
+DF-15,North Kibah,Ashley Creek Drainage,10750,4.5,12,,,0,1,0,0,0,0,1,1,0,0,0,0,3,"Remote/off-trail, Good elevation, Good size"
+DG-29,,Dry Gulch Drainage,9500,2.0,8,,,0,0,0,0,0,0,1,1,0,0,0,1,3,"good elev (9500ft), good size (2.0ac), good habitat"
+G-105,Wagonwheel,Blacks Fork Drainage,,,,Cutthroats,,0,0,1,0,0,0,0,0,0,0,1,1,3,natural repro; cutthroat; good habitat
+G-19,Marsh,Smiths Fork Drainage,9335,33.6,35,"Brookies, Rainbows",High,0,0,0,0,0,1,1,0,0,0,0,1,3,big fish potential; good depth (35ft); good elev (9335ft); good habitat
+G-20,Bridger,Smiths Fork Drainage,9350,21.0,15,"Brookies, Rainbows",High,0,0,0,0,0,1,1,0,0,0,0,1,3,big fish potential; good depth (15ft); good elev (9350ft); good habitat
+G-25,Lower Lyman,Blacks Fork Drainage,9276,4.5,25,Rainbows,High,0,0,0,0,0,1,1,1,0,0,0,0,3,big fish potential; good depth (25ft); good elev (9276ft); good size (4.5ac)
+G-27,Lyman,Blacks Fork Drainage,9311,35.3,30,Rainbows,Moderate,0,0,0,0,0,1,1,0,0,0,0,1,3,big fish potential; good depth (30ft); good elev (9311ft); good habitat
+G-34,,Smiths Fork Drainage,9390,1.0,6,"Brookies, Rainbows",Moderate,0,0,1,0,0,0,1,0,0,0,0,1,3,natural repro; big fish potential; good elev (9390ft); good habitat
+G-56,,Smiths Fork Drainage,11460,1.5,12,Brookies,Low,1,0,0,1,0,0,0,0,0,0,0,1,3,light pressure; infrequent stocking; good habitat
+G-71,,Blacks Fork Drainage,11527,2.7,14,Brookies,n/a,0,0,0,1,0,0,0,1,0,0,0,1,3,infrequent stocking; good size (2.7ac); good habitat
+G-98,,Henrys Fork Drainage,11208,5.4,,,,0,1,0,0,0,0,0,1,0,0,0,1,3,"remote/off-trail, good size (5.4ac), good habitat"
+GR-119,,Ashley Creek Drainage,,,,Grayling,,0,0,1,1,0,0,0,0,0,1,0,0,3,"Natural repro, Infrequent stocking, Grayling"
+GR-151,,Beaver Creek Drainage,11033,12.6,11,Brookies,Low,0,0,1,0,0,0,0,1,0,0,0,1,3,"natural repro, good size (12.6ac), good habitat"
+GR-177,,Beaver Creek Drainage,10860,18.3,,,,0,1,0,0,0,0,0,1,0,0,0,1,3,"remote/off-trail, big fish potential, good size (18.3ac), good habitat"
+GR-179,,Beaver Creek Drainage,9770,5.5,11,Brookies,Low,0,0,1,0,0,0,1,1,0,0,0,0,3,"natural repro, good elev (9770ft), good size (5.5ac)"
+GR-38,Deadman,Ashley Creek Drainage,10790,7.0,9,"Brookies, Cutthroats",High,0,0,0,0,0,0,1,1,0,0,1,0,3,"Big fish potential, Good elevation, Good size, Cutthroat"
+RC-30,Gibby,Rock Creek Drainage,,1.9,25,"Brookies*, Cutthroats",Moderate,0,0,0,1,0,1,0,0,0,0,1,0,3,Infrequent stocking; Good depth; Cutthroats
+U-100,,Uinta River Drainage,,,,Grayling,,0,0,1,1,0,0,0,0,0,1,0,0,3,"Natural repro, Infrequent stocking, Grayling"
+U-14,Allred,Uinta River Drainage,10995,34.0,30,Brookies,Moderate,0,1,1,0,0,1,0,0,0,0,0,0,3,"Remote/off-trail, Natural repro, Good depth"
+U-19,,Uinta River Drainage,11420,15.0,8,"Brookies, Goldens",Low,1,0,0,1,0,0,0,1,0,0,0,0,3,"Light pressure, Infrequent stocking, Good size"
+U-27,Samuals,Uinta River Drainage,10995,4.8,7,Brookies,Low,1,0,1,0,0,0,0,1,0,0,0,0,3,"Light pressure, Natural repro, Good size"
+U-3,Chain 1 (Lower),Uinta River Drainage,10580,62.0,38,Brookies,High,0,0,1,0,0,1,1,0,0,0,0,0,3,"Natural repro, Big fish potential, Good depth, Good elevation"
+U-32,Bowden,Uinta River Drainage,10693,4.5,14,Brookies,Moderate,0,0,0,1,0,0,1,1,0,0,0,0,3,"Infrequent stocking, Good elevation, Good size"
+U-36,,Uinta River Drainage,11100,4.6,7,Brookies,Moderate,0,0,1,0,0,0,0,1,0,0,0,1,3,"Natural repro, Good size, Good habitat"
+U-37,,Uinta River Drainage,11180,6.3,12,Brookies,Low,1,0,0,1,0,0,0,1,0,0,0,0,3,"Light pressure, Infrequent stocking, Good size"
+U-41,Verlie,Uinta River Drainage,10906,10.6,12,Brookies,Moderate,0,0,1,1,0,0,0,1,0,0,0,0,3,"Natural repro, Infrequent stocking, Good size"
+U-46,Davis North,Uinta River Drainage,11060,7.3,7,Brookies,Low,1,0,0,1,0,0,0,1,0,0,0,0,3,"Light pressure, Infrequent stocking, Good size"
+U-50,,Uinta River Drainage,10832,18.0,8,Brookies,Low,1,0,0,1,0,0,0,1,0,0,0,0,3,"Light pressure, Infrequent stocking, Good size"
+U-75,,Uinta River Drainage,11390,6.9,18,Brookies,Low,0,0,0,1,0,1,0,1,0,0,0,0,3,"Infrequent stocking, Good depth, Good size"
+W-14,,Weber River Drainage,,7.5,,,,0,1,0,0,0,0,0,1,0,0,0,1,3,Remote/off-trail; Good size; Good habitat
+W-15,,Weber River Drainage,,7.5,,,,0,1,0,0,0,0,0,1,0,0,0,1,3,Remote/off-trail; Good size; Good habitat
+W-20,Divide #2,Weber River Drainage,,3.5,10,Trout,Low,1,0,1,0,0,0,0,1,0,0,0,0,3,Light pressure; Natural repro; Good size
+W-36,Notch,Weber River Drainage,10300,20.2,57,"Brookies, Cutthroats",Moderate,0,0,0,0,0,0,1,0,0,0,1,1,3,Big fish potential; Good elevation; Cutthroats; Good habitat
+W-37,Bench,Weber River Drainage,10260,7.0,10,,,0,0,0,0,0,0,1,1,0,0,0,1,3,Good elevation; Good size; Good habitat
+W-42,Cuberant #1,Weber River Drainage,,3.5,18,Brookies,Moderate,0,0,0,1,0,1,0,1,0,0,0,0,3,Infrequent stocking; Good depth; Good size
+W-43,Cuberant #2,Weber River Drainage,,3.2,6,"Brookies, Cutthroats",Moderate,0,0,1,0,0,0,0,1,0,0,1,0,3,Natural repro; Good size; Cutthroats
+W-44,Cuberant #3,Weber River Drainage,,3.5,24,Brookies,Moderate,0,0,0,1,0,1,0,1,0,0,0,0,3,Infrequent stocking; Good depth; Good size
+W-5,,Weber River Drainage,,7.5,,,,0,1,0,0,0,0,0,1,0,0,0,1,3,Remote/off-trail; Good size; Good habitat
+W-54,,Weber River Drainage,,7.5,,,,0,1,0,0,0,0,0,1,0,0,0,1,3,Remote/off-trail; Good size; Good habitat
+W-56,,Weber River Drainage,,7.5,,,,0,1,0,0,0,0,0,1,0,0,0,1,3,Remote/off-trail; Good size; Good habitat
+W-60,,Weber River Drainage,,7.5,,,,0,1,0,0,0,0,0,1,0,0,0,1,3,Remote/off-trail; Good size; Good habitat
+W-61,,Weber River Drainage,,7.5,,,,0,1,0,0,0,0,0,1,0,0,0,1,3,Remote/off-trail; Good size; Good habitat
+W-64,Elkhorn,Weber River Drainage,9680,1.5,10,Brookies,Moderate,0,0,0,1,0,0,1,0,0,0,0,1,3,Infrequent stocking; Big fish potential; Good elevation; Good habitat
+WR-18,Paradise Park Reservoir,White Rocks Drainage,10000,137.0,36,Rainbows,High,0,0,1,0,0,1,1,0,0,0,0,0,3,"Natural repro, Big fish potential, Good depth, Good elevation"
+WR-35,Rassmussen #1,White Rocks Drainage,10500,19.0,5,Brookies,Moderate,0,0,0,1,0,0,1,1,0,0,0,0,3,"Infrequent stocking, Good elevation, Good size"
+WR-41,Saucer,White Rocks Drainage,,,,Brookies,,1,0,1,0,0,0,0,0,0,0,0,1,3,"Light pressure, Natural repro, Good habitat"
+WR-49,Cliff,White Rocks Drainage,11000,68.0,55,"Brookies, Cutthroats",Moderate,0,0,0,1,0,0,0,0,0,0,1,1,3,"Infrequent stocking, Big fish potential, Cutthroat, Good habitat"
+WR-9,,White Rocks Drainage,11160,3.1,12,Brookies,Low,1,0,0,0,0,0,0,1,0,0,0,1,3,"Light pressure, Big fish potential, Good size, Good habitat"
+X-107,Tungsten,Yellowstone Drainage,11344,13.0,13,"Brookies, Cutthroats",Moderate,0,0,0,1,0,0,0,1,0,0,1,0,3,infrequent stocking; good size (13.0ac); cutthroat
+X-108,North Star,Yellowstone Drainage,11395,14.0,15,Brookies,Moderate,0,0,1,0,0,1,0,1,0,0,0,0,3,natural repro; good depth (15ft); good size (14.0ac)
+X-110,Bluebell,Yellowstone Drainage,10894,38.3,32,,,0,1,0,0,0,1,0,0,0,0,0,1,3,remote/off-trail; big fish potential; good depth (32ft); good habitat
+X-113,Ledge,Rock Creek Drainage,10845,3.1,13,Brookies,Moderate,0,0,0,1,0,0,0,1,0,0,0,1,3,Infrequent stocking; Good size; Good habitat
+X-126,Helen,Rock Creek Drainage,10869,8.4,14,Brookies,Moderate,0,0,0,1,0,0,0,1,0,0,0,1,3,Infrequent stocking; Good size; Good habitat
+X-16,Timothy East,Swift Creek Drainage,,40.0,35,Cutthroats,High,0,0,0,1,0,1,0,0,0,0,1,0,3,"infrequent stocking, good depth (35ft), cutthroat"
+X-20,Timothy Center,Swift Creek Drainage,,10.0,18,Brookies,High,0,0,1,0,0,1,0,1,0,0,0,0,3,"natural repro, good depth (18ft), good size (10.0ac)"
+X-23,Farmers,Swift Creek Drainage,10990,63.0,24,Brookies,Moderate,0,0,0,1,0,1,0,0,0,0,0,1,3,"infrequent stocking, big fish potential, good depth (24ft), good habitat"
+X-41,Rudolph 3,Rock Creek Drainage,,2.4,14,Brookies,Low,1,0,1,0,0,0,0,1,0,0,0,0,3,Light pressure; Natural repro; Good size
+X-5,Fern,Rock Creek Drainage,,19.3,19,Brookies,Moderate,0,0,0,1,0,1,0,1,0,0,0,0,3,Infrequent stocking; Good depth; Good size
+X-51,,Swift Creek Drainage,11000,5.0,8,Cutthroats,Low,0,0,0,1,0,0,0,1,0,0,1,0,3,"infrequent stocking, good size (5.0ac), cutthroat"
+X-94,Crater,Lake Fork Drainage,11268,28.0,147,"Brookies, Splake",Low,1,1,0,0,0,0,0,0,0,0,0,1,3,Light pressure; Remote/off-trail; Good habitat
+Y-16,Doll,Yellowstone Drainage,11352,42.5,47,Brookies,Low,1,0,1,0,0,1,0,0,0,0,0,0,3,light pressure; natural repro; good depth (47ft)
+Y-31,,Yellowstone Drainage,11082,4.6,7,Brookies,Moderate,0,0,1,0,0,0,0,1,0,0,0,1,3,natural repro; good size (4.6ac); good habitat
+Y-41,Drift Reservoir,Yellowstone Drainage,11064,14.8,,Brookies,Low,1,0,0,1,0,0,0,1,0,0,0,0,3,light pressure; infrequent stocking; good size (14.8ac)
+Z-13,Wilder,Duchesne River Drainage,9900,3.7,14,Brookies,High,0,0,0,0,0,0,1,1,0,0,0,1,3,Big fish potential; Good elevation; Good size (3.7ac); Good habitat
+Z-2,Bud,Duchesne River Drainage,10220,3.7,13,Brookies,Moderate,0,0,0,0,0,0,1,1,0,0,0,1,3,Good elevation; Good size (3.7ac); Good habitat
+Z-34,Shaler,Duchesne River Drainage,10920,13.0,7,Cutthroats,Moderate,0,0,0,0,0,0,0,1,0,0,1,1,3,Good size (13.0ac); Cutthroat; Good habitat
+Z-35,Jordan,Duchesne River Drainage,10660,23.2,30,Brookies,Moderate,0,0,0,0,0,1,1,0,0,0,0,1,3,Big fish potential; Good depth (30ft); Good elevation; Good habitat
+Z-38,Daynes,Rock Creek Drainage,10670,23.2,21,Brookies,,0,0,0,0,0,1,1,0,0,0,0,1,3,Big fish potential; Good depth; Good elevation; Good habitat
+A-13,Jacks,Provo River Drainage,7980,1.2,23,Brookies,Moderate,0,0,0,0,0,1,0,0,0,0,0,1,2,
+A-20,Brook,Provo River Drainage,9720,1.1,6,Brookies,Moderate,0,0,0,0,0,0,1,0,0,0,0,1,2,
+A-59,Lost,Provo River Drainage,9400,62.0,22,Rainbows,Moderate,0,0,0,0,0,1,1,0,0,0,0,0,2,Big fish potential; Good depth; Good elevation
+BR-30,,Bear River Drainage,10580,1.2,6,,,0,0,0,0,0,0,1,0,0,0,0,1,2,Big fish potential; Good elevation; Good habitat
+BR-34,,Bear River Drainage,,,,Tigers,,0,0,0,0,0,0,0,0,1,0,0,1,2,
+BR-35,,Bear River Drainage,,,,Tigers,,0,0,0,0,0,0,0,0,1,0,0,1,2,
+DF-1,Blue,Ashley Creek Drainage,11160,6.5,16,Brookies,Moderate,0,0,0,0,0,1,0,1,0,0,0,0,2,
+G-12,Lower Red Castle,Smiths Fork Drainage,,45.0,28,Brookies,Moderate,0,0,0,1,0,1,0,0,0,0,0,0,2,
+G-16,Upper Red Castle,Smiths Fork Drainage,,25.6,72,"Cutthroats, Tigers",Moderate,0,0,0,0,0,0,0,0,1,0,1,0,2,
+G-17,East Red Castle,Smiths Fork Drainage,,21.1,58,"Cutthroats, Tigers",Moderate,0,0,0,0,0,0,0,0,1,0,1,0,2,
+G-68,,Blacks Fork Drainage,11421,4.2,6,Brookies,,0,0,0,0,0,0,0,1,0,0,0,1,2,
+GR-143,Hoop Lake,Burnt Fork Drainage,,,,"Grayling, Rainbows, Tigers",,0,0,0,0,0,0,0,0,1,1,0,0,2,
+GR-155,,Beaver Creek Drainage,10860,1.6,6,Brookies,Low,1,0,0,0,0,0,0,0,0,0,0,1,2,
+GR-3,Spirit Lake,Sheep/Carter Creek Drainages,,,,"Cutthroats, Rainbows*, Tigers",,0,0,0,0,0,0,0,0,1,0,1,0,2,
+U-16,Atwood,Uinta River Drainage,11030,200.0,40,"Brookies, Goldens",Moderate,0,0,1,0,0,1,0,0,0,0,0,0,2,"Natural repro, Big fish potential, Good depth"
+U-25,Kidney East,Uinta River Drainage,10850,13.7,12,Brookies,High,0,0,1,0,0,0,0,1,0,0,0,0,2,"Natural repro, Big fish potential, Good size"
+U-26,Kidney West,Uinta River Drainage,10850,20.0,4,Brookies,High,0,0,0,1,0,0,0,1,0,0,0,0,2,"Infrequent stocking, Big fish potential, Good size"
+U-33,Rainbow,Uinta River Drainage,11130,35.1,20,Brookies,Moderate,0,0,1,0,0,1,0,0,0,0,0,0,2,"Natural repro, Big fish potential, Good depth"
+U-54,Brook,Uinta River Drainage,10950,10.0,8,Brookies,Low,1,0,0,0,0,0,0,1,0,0,0,0,2,
+U-8,Lily Pad,Uinta River Drainage,10818,3.7,7,"Brookies, Rainbows",Moderate,0,0,1,0,0,0,0,1,0,0,0,0,2,
+U-91,,Uinta River Drainage,,,,Cutthroats,,0,0,0,1,0,0,0,0,0,0,1,0,2,
+U-99,Wall L,Uinta River Drainage,,,,Grayling,,0,0,0,1,0,0,0,0,0,1,0,0,2,
+W-45,Cuberant #4,Weber River Drainage,,22.0,25,Tigers,Moderate,0,0,0,0,0,1,0,0,1,0,0,0,2,
+WR-30,Johnson,White Rocks Drainage,,,,Brookies,,0,0,1,0,0,0,0,0,0,0,0,1,2,
+WR-8,Taylor,White Rocks Drainage,11220,22.4,53,Brookies,Low,0,0,0,1,0,0,0,0,0,0,0,1,2,"Infrequent stocking, Big fish potential, Good habitat"
+X-103,Superior,Yellowstone Drainage,11163,36.0,26,Brookies,Moderate,0,0,1,0,0,1,0,0,0,0,0,0,2,
+X-106,Five Point Reservoir,Yellowstone Drainage,11009,82.0,21,"Brookies, Cutthroats",Moderate,0,0,0,0,0,1,0,0,0,0,1,0,2,big fish potential; good depth (21ft); cutthroat
+X-17,Carrol Lower,Swift Creek Drainage,,9.0,7,Brookies,Moderate,0,0,1,0,0,0,0,1,0,0,0,0,2,
+X-18,Carrol Upper,Swift Creek Drainage,,35.0,48,Brookies,Moderate,0,0,0,1,0,1,0,0,0,0,0,0,2,
+X-19,Timothy West,Swift Creek Drainage,,45.0,45,Brookies,Moderate,0,0,0,1,0,1,0,0,0,0,0,0,2,
+X-39,Rudolph 1,Rock Creek Drainage,,25.6,46,Brookies,Moderate,0,0,0,1,0,1,0,0,0,0,0,0,2,
+X-40,Rudolph 2,Rock Creek Drainage,,2.9,9,Brookies,Moderate,0,0,0,1,0,0,0,1,0,0,0,0,2,
+X-50,,Yellowstone Drainage,,,,Grayling,,0,0,0,1,0,0,0,0,0,1,0,0,2,
+Z-12,Scout,Duchesne River Drainage,10300,30.0,17,Rainbows,High,0,0,0,0,0,1,1,0,0,0,0,0,2,Big fish potential; Good depth (17ft); Good elevation
+Z-5,Pass,Duchesne River Drainage,10250,3.3,8,Rainbows,Moderate,0,0,0,0,0,0,1,1,0,0,0,0,2,
+A-61,Trial,Provo River Drainage,9800,98.0,68,"Brookies, Rainbows",High,0,0,0,0,0,0,1,0,0,0,0,0,1,
+D-45,,Duchesne River Drainage,,,,,,0,0,0,1,0,0,0,0,0,0,0,0,1,
+G-103,Quarter Corner Lg103,Blacks Fork Drainage,,,,"Grayling, Rainbows",,0,0,0,0,0,0,0,0,0,1,0,0,1,
+G-113,,Blacks Fork Drainage,,,,Cutthroats,,0,0,0,0,0,0,0,0,0,0,1,0,1,
+GR-29,Lower Teepee,Sheep/Carter Creek Drainages,,,,"Brookies*, Cutthroats",,0,0,0,0,0,0,0,0,0,0,1,0,1,
+P-11,,Provo River Drainage,,,,Brookies,,0,0,0,1,0,0,0,0,0,0,0,0,1,
+P-16,Charity L,Provo River Drainage,,,,Brookies,,0,0,0,1,0,0,0,0,0,0,0,0,1,
+RC-1,,Rock Creek Drainage,,,,,,0,0,0,1,0,0,0,0,0,0,0,0,1,
+RC-36,,Rock Creek Drainage,,,,Brookies,,0,0,0,1,0,0,0,0,0,0,0,0,1,
+U-22,,Uinta River Drainage,,,,Brookies,,0,0,0,1,0,0,0,0,0,0,0,0,1,
+U-79,,Uinta River Drainage,,,,Brookies,,0,0,0,1,0,0,0,0,0,0,0,0,1,
+W-25,Erickson South,Weber River Drainage,,10.0,12,Brookies,Moderate,0,0,0,0,0,0,0,1,0,0,0,0,1,
+W-26,Erickson North,Weber River Drainage,,9.0,12,Brookies,High,0,0,0,0,0,0,0,1,0,0,0,0,1,
+W-65,Yellowpine Upper,Weber River Drainage,,3.0,12,Brookies,High,0,0,0,0,0,0,0,1,0,0,0,0,1,
+W-66,Yellowpine Lower,Weber River Drainage,,2.0,7,Brookies,High,0,0,0,0,0,0,0,1,0,0,0,0,1,
+X-45,,Lake Fork Drainage,,2.8,4,,,0,0,0,0,0,0,0,1,0,0,0,0,1,

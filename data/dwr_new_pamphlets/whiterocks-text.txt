@@ -1,0 +1,1880 @@
+Acknowledgments
+This booklet is the third revision of the Lakes of the High Uintas booklets. The original printing
+occurred in 1984, with a revised edition printed in 1996. Because this is a revision, much of the
+work presented in this edition was completed by previous biologists and managers who have
+since retired. We acknowledge their original work and effort in providing this valuable resource
+to the public.
+
+New in this edition
+In this edition, fish species for each lake have been updated to the best of our knowledge based
+on recent surveys. We have also updated lake acreage by tracing aerial photos of each lake in
+ArcMap. There are also tables for brook trout, cutthroat trout and Arctic grayling that provide the
+angler an average and maximum length and weight for fish sampled in each lake by the DWR
+with gillnets. This table also includes the present stocking cycle for each lake.
+
+Great fisheries depend on you!
+Here’s some things you can do to help:
+●​ Report unusual circumstances or water conditions to the DWR.
+●​ Don’t leave fishing line on the banks.
+●​ Carry out trash, keep a garbage sack with you on fishing trips.
+●​ Don’t move live fish.
+●​ Know fishing rules and obey them.
+●​ Be able to explain to others how rules help fishing.
+
+WHITEROCKS RIVER DRAINAGE | 2
+
+Introduction
+The Uinta Mountains of northeastern Utah are unique in that they are the highest mountain
+range in Utah and the only major range of mountains in the contiguous United States to lie in an
+east and west direction. King’s Peak — Utah’s tallest point of land, standing at 13,528 feet — is
+hard to distinguish from its sister peaks, all of which are over 13,000 feet in elevation. This is a
+country of snow-capped mountains, large alpine basins dotted with lakes, steep rocky slopes,
+green meadows and tall trees. Four of Utah’s major rivers, the Duchesne, Provo, Weber and Bear,
+originate in the snowfields of these mountains. There are well over 1,000 natural lakes in the
+headwater regions of the Uinta Mountains, and more than 500 of these lakes support
+populations of sportfish.
+The lakes of the Uinta Mountains underwent three study cycles to determine which lakes were
+suitable for fish and to develop management recommendations for each lake. During the
+original three-phase study, which occurred between 1956 and 1990, biologists surveyed 1,036
+lakes. Of this original number of surveyed lakes, 446 lakes are presently being stocked on a
+prescribed cycle, 129 have sufficient natural reproduction and do not require stocking, and 461
+are fishless. Presently 327 lakes are primarily managed for brook trout, 153 with cutthroat trout,
+46 with grayling, 35 with tiger trout, 16 with rainbow trout and three lakes with golden trout. Even
+though a lake has a primary species designated for management, many lakes do harbor more
+than one species. Tiger muskellunge have also been stocked into several lakes on an
+experimental basis in an effort to control natural reproducing brook trout.
+Since the last revision of these booklets (in 1996) several changes to fish stocking in the Uinta
+Mountains have occurred. Most notably, the Utah Division of Wildlife Resources now stocks
+genetically pure native Colorado River cutthroat trout into lakes instead of non-native
+Yellowstone cutthroat trout. There are also active ongoing efforts to restore Colorado River
+cutthroat trout into portions of their native range in Uinta Mountain streams. Another change
+that has occurred is triploid brook trout and rainbow trout are now stocked. These fish are sterile
+and cannot reproduce. Lastly, the DWR also started stocking tiger trout, which is a cross
+between brown trout and brook trout that are also sterile.
+Aircraft are still used to stock these remote lakes. Aerial stocking is designed to replenish
+populations or introduce fish into lakes that the DWR surveys have found suitable for
+experimental stocking. Care is taken not to overstock lakes because it usually results in small,
+poorly developed fish. Because the optimum growing season for trout at these elevations is very
+WHITEROCKS RIVER DRAINAGE | 3
+
+short (June through September), growth is relatively slow and trout will reach only 8 to 12 inches
+by the third year of life. The more inaccessible lakes are stocked on a 3-to-5-year cycle to
+encourage growth, and the heavily fished lakes are stocked on 1-to-2-year cycles to maintain
+population levels. Brook trout and cutthroat trout are the predominant species stocked as they
+have demonstrated an ability to grow and survive well in these alpine lakes. Rainbow trout,
+Arctic grayling and tiger trout can also be found in many Uinta Mountain lakes, adding variety
+and beauty to the angler’s experience.
+
+Be prepared
+A trip into the High Uintas can be very enjoyable, but may also be uncomfortable or hazardous to
+unprepared travelers. As most of the lakes lie in remote basins, it is recommended that trips be
+well planned and adequate preparations made beforehand. Always leave word with a friend or
+relative on your approximate destination and when you plan to return. Most of these lakes can
+be accessed on well-marked U.S. Forest Service trails. Other lakes can only be reached by going
+cross-country. However, cross-country travel should be avoided unless the user is familiar with
+this type of travel. It is a good idea to carry a GPS unit with topographical maps uploaded for
+reference. Alternatively, you can purchase topographical maps from the U.S. Geographical
+Survey or U.S. Forest Service. Ordinarily, trips up to 5 miles can be made on foot when the angler
+plans to spend only one day on the lake and return home that evening. However, backpackers
+who wish to stay overnight can easily reach the more remote lakes. Those wishing to use horses
+in the Uintas should study available pastures and springs and plan their trip accordingly.
+
+Hypothermia and other safety precautions
+●​ Warm clothing (made from fabrics that dry quickly) and good rain gear should be carried
+at all times.
+●​ Remember that snow showers are common all seasons at these high elevations, and
+temperatures can drop 20 to 30 degrees in a matter of minutes.
+●​ Carry instant energy food, such as candy and fruit, and avoid exhaustion.
+●​ If you get hot, ventilate to dispel body heat and moisture.
+●​ Avoid drinking large quantities of cold water when chilled.
+●​ Be sure to carry plenty of insect repellant for camp and horse, at least until mid-August.
+●​ Bring sunscreen and lip balm to protect the skin from the intense sunshine of high
+elevation.
+
+WHITEROCKS RIVER DRAINAGE | 4
+
+●​ Filter or boil all drinking water since drinking untreated water in the back country may
+cause giardia, a parasitic infection which can make you very ill.
+
+High Uintas ethics
+Of major concern is maintaining the aesthetic beauty and wilderness appeal of the Uinta
+Mountains. Camping, hiking and fishing in the Uinta Mountains continue to increase with
+population growth and desire to be outdoors. Excessive recreational pressure can quickly
+damage this alpine habitat if conscious efforts are not made to preserve its beauty. Remember
+to burn all combustible material and pack out everything that is not burnable. Do not bury any
+litter. Pack out refuse left by those less courteous than yourself. Dump wastewater a minimum
+of 150 feet from springs, lakes and streams and use biodegradable soap. Select a campsite
+carefully and avoid clearing the vegetation or ditching around a tent.
+Those entering the High Uinta backcountry should minimize their impact:
+●​ Please leave these beautiful mountains and lakes the way you would like to find them
+when you return.
+●​ Know and obey state fish and wildlife laws.
+●​ Know U.S. Forest Service wilderness restrictions and guidelines.
+●​ Dump wastewater a minimum of 150 feet from springs, lakes and streams.
+●​ Burn combustible materials
+●​ Use existing fire rings when possible
+●​ Pack out unburnable trash, including plastics and metal foil.
+●​ Pack out litter left by those less courteous than yourself.
+●​ Leave a clean camp and a dead fire.
+●​ Be familiar with leave no trace principles.
+It is a good idea to utilize previously constructed fire rings whenever possible. Avoid camping in
+one spot longer than five days. Horse packers should carefully select suitable pasture away
+from lakes and streams, avoiding wet and boggy areas. It is recommended that horses be
+hobbled or picketed to allow grazing over a large area. Picketed animals should be moved
+frequently to prevent trampling and beat out circles in meadows. A good wilderness toilet is
+made by digging a “cat hole” no deeper than 8 to 10 inches and at least 200 feet from water
+sources. Cover human waste with 4 to 6 inches of lightly compacted soil.
+
+WHITEROCKS RIVER DRAINAGE | 5
+
+Large groups encroach upon the solitude of others and have a greater impact upon the
+wilderness environment than the same number of users scattered among several parties. In an
+effort to control this problem, the USFS has implemented group size restrictions. Parties using
+the Primitive Area are not to exceed 14 people and 15 horses. Additionally, remember not to
+camp within 200 feet of an occupied campsite, designated trail or water source. Scout groups
+and other organizations should remember to check with USFS officials for guidelines and helpful
+suggestions. Scout groups may wish to take part in the “Leave No Trace” wilderness training
+programs offered by their organization.
+Fishing can be unpredictable, especially in the High Uintas. If one lake fails to produce fish, try
+another; there is usually one nearby. If the lakes are slow try fly fishing the numerous streams. If
+you like elbow room to camp and fish, and enjoy discovering new scenic wonders, let us
+recommend the High Uintas.
+
+WHITEROCKS RIVER DRAINAGE | 6
+
+Whiterocks River drainage
+Due to the relative ease of vehicular access and its close proximity to Vernal — the largest town
+in the Uintah Basin — the drainage of the Whiterocks River is probably one of the most popular
+drainages along the south slope of the Uinta Mountains. It is the only drainage on the south
+slope where a passenger car can gain access to within two miles of the main Uinta Divide. The
+headwater regions of the Whiterocks River drainage are characterized by dense pine stands
+interspersed with numerous alpine meadows of various sizes. There are well over 70 natural
+lakes and ponds, 47 of which contain fish populations under active management. These lakes
+range in size from under 2 acres to nearly 140 acres and from 10,030 feet to over 11,200 feet in
+elevation. The highest point in the drainage is an unnamed peak at the very head of Reader
+Lakes Basin that stretches to 12,700 feet above sea level. Numerous other mountains, which
+ring the drainage, are also well above 12,000 feet in elevation.
+State Route 121, which runs west from Vernal and north from Roosevelt, provides access to
+points of entry to the Whiterocks River drainage. A short distance east of Lapoint is Paradise
+Park Road that heads north from the highway to Paradise Park Campground. Trailheads at
+Paradise Park provide access to lakes on the east side of the Whiterocks River drainage and
+also those in the Dry Fork drainage to the northeast. The Farm Creek Road heads northwest
+from the town of Whiterocks to the base of Pole Mountain and the eastern side of the Elkhorn
+Loop road (FR 117). Forest Road 110 to Chepeta Lake splits off FR 117 just before Pole Creek
+campground. There are a number of both major and minor trailheads along this dirt road. The
+campground at Pole Creek Lake is a good place from which to hike to the Rock Lakes area.
+Along FR 110, the West Fork Trailhead provides access to the popular Cleveland/Queant Lakes
+area and also to the lakes of the Uinta River drainage across Fox-Queant Pass. Lakes of Reader
+Basin are accessible via a minor trailhead at Reader Creek. There is a trailhead approximately
+0.5 mile before the end of the road at Chepeta Lake that provides access to Reader Basin and to
+lakes in the East Fork Whiterocks River drainage. There is also parking at the end of the road at
+Chepeta Lake to access lakes north of Chepeta. These main trails and other secondary trails are
+identified on the drainage map by trail number.
+Lakes of the Whiterocks drainage receive a substantial amount of fishing pressure; but, as is
+common in other drainages, most of it is directed to only a handful of waters. Relatively few
+anglers bother to make a trek to Rock Lakes even though that area is fairly close to the Pole
+Creek Campground. The West Fork Trailhead receives considerable use, but most angling
+pressure in the West Fork area is localized in the Queant Lake vicinity. The cluster of waters
+WHITEROCKS RIVER DRAINAGE | 7
+
+around Chepeta Lake are relatively popular but not nearly as much as Chepeta itself. With the
+exception of Ted’s Lake, most waters on the eastern side of the drainage receive very little
+angling pressure.
+Between 2010 and 2022, DWR personnel from the Northeastern Region office surveyed 34 of
+the 47 lakes in the drainage. Brook trout are the most abundant species in the Whiterocks
+drainage, although cutthroat trout are also found in quite a few waters. Arctic grayling are found
+in six lakes and tiger trout are stocked into two lakes. Colorado River cutthroat restoration
+projects have occurred on Reader and Lynn creeks recently. Colorado River cutthroat trout
+populations with relatively high genetic purity can also be found in the East Fork Whiterocks
+River and main stem Whiterocks River downstream from Chepeta.
+USGS topographic maps applicable to the Whiterocks River drainage include the Chepeta Lake,
+Paradise Park, Rasmussen Lakes and Whiterocks Lake quadrangles. Small portions of the
+drainage are also found on the Bollie Lake and Fox Lake quadrangles. It is also a good idea to
+consult the Ashley National Forest website (fs.usda.gov/r04/ashley) for the latest Motor Vehicle
+Use Map published by the Ashley National Forest. The Whiterocks River drainage has been
+damaged in a number of areas by the irresponsible use of off-highway vehicles. The Motor
+Vehicle Use Map tells you where OHV use is permitted.
+
+Angel Lake, WR-19
+Angel Lake sits at an elevation of 10,407 feet, has a maximum depth of 17 feet and is 11.4
+surface acres. The lake is located at the bottom of a shallow cirque 0.7 mile south of the West
+Fork Whiterocks Trailhead. Intermittent springs are located on the west side of the lake. The
+area surrounding the lake is quite rocky. There is no horse feed and campsites are very scarce.
+The closest access is from the Rassmussen Lakes OHV trail. This OHV trail begins 0.2 mile
+south of the road to the West Fork Whiterocks Trailhead on the west side of the Chepeta Lake
+Road. Follow the OHV trail for about 0.5 mile to the second left fork in the road. Take the second
+fork from the main Rassmussen Lake road and follow for 0.1 mile to another fork. Take this for a
+couple hundred yards and park. From this point the lake lies approximately 0.3 mile in a
+southwesterly direction. Find the sparsely marked trail or scramble through timber and boulders
+to get to the lake. Angel Lake contains a naturally reproducing grayling population and is
+stocked periodically with cutthroat trout. Fishing pressure is moderate on this regularly visited
+water.
+
+WHITEROCKS RIVER DRAINAGE | 8
+
+Ann Lake, WR-74
+Ann Lake sits at an elevation of 10,910 feet, has a maximum depth of 14 feet and is 3.4 surface
+acres. The lake is located at the head of Rassmussen Lakes Basin four miles west of the West
+Fork Whiterocks Trailhead. Ann Lake lies at the base of a talus slope 0.5 mile northwest of Eric
+Lake. A few springs enter the lake on its northeast corner. There are no maintained trails in the
+basin and horse access, although possible, is moderately difficult. There are two ways to access
+the lake. The closest access is the Rassmussen Lake OHV trail described above for Angel Lake
+access. Instead of taking the forks for Angel Lake access, continue on the main road 2.2 miles
+to the end. From the end of the road follow the retired logging road into the old timber harvest
+cutting to the north then follow the ridge and logging road west towards Eric and Nellie lakes.
+Eventually the old logging road ends, but continue through the timber to the first meadow (1 mile
+distance from the end of the road) with the outlet to Eric Lake. Follow this stream upstream to
+Eric Lake (1.2 miles) and to Nellie Lake for another 0.5 mile. Ann Lake is 0.1 mile north of Nellie
+Lake. An alternative route is to start from the West Fork Whiterocks Trailhead and follow the trail
+north for 1.0 miles to the confluence with the Eric Lake outlet and the West Fork Whiterocks.
+From here leave the trail and follow the outlet upstream for approximately 3.0 miles through
+timber and meadow to Nellie Lake. Best campsites and horse feed can be found further east on
+the basin floor. A few springs enter the lake on its northeast corner. Ann Lake winterkills
+regularly but is stocked with cutthroat trout every three years. Fishing pressure is very light.
+
+Becky Lake, WR-14
+Becky Lake sits on a high, rocky bench overlooking Rasmussen Lakes Basin, 1 mile west of
+Rasmussen Lakes. The lake sits at the base of a talus slope at 10,960 feet in elevation and is 6.2
+surface acres with a maximum depth of 24 feet. To access Becky Lake see description for
+Rasmussen Lakes and Ann Lake (to access from Eric Lake). From Rasmussen 1 Lake, head
+west for 1.3 miles to Becky Lake. Becky Lake is in the next bowl west southwest from
+Rasmussen 1 Lake. From Eric Lake head due south for 0.5 mile to the lake. There is no trail and
+both routes are cross country through downed timber and rocky terrain. Horse access is difficult
+and not recommended. There are no good campsites or spring water near the lake. Campsites,
+spring water and horse feed in this little valley are almost completely restricted to the valley
+bottoms. Becky Lake is stocked with brook trout and receives very little fishing pressure.
+
+WHITEROCKS RIVER DRAINAGE | 9
+
+Chepeta Lake, WR-64
+Chepeta is a reservoir that is the largest water in the Whiterocks River drainage. The lake sits at
+an elevation of 10,560 feet, and at full pool has a maximum depth of 55 feet, and is 135 surface
+acres. The lake is regularly drawn down for irrigation, particularly in late summer. Access to the
+lake is by vehicle, making it a popular destination for day outings and extended camping. To
+access the lake take the Elkhorn Loop road from either the Farm Creek or Uinta Canyon side.
+From the Farm Creek side the road winds up the mountain and at 0.6 mile before you get to Pole
+Creek campground the road to Chepeta is on the right. From the Uinta side go 0.6 mile past the
+Pole Creek Campground to get to the Chepeta Lake road. From this point the road takes you to a
+parking area 200 yards south of Chepeta Lake. Campsites are plentiful in the area and abundant
+horse feed is located south of the lake. There are a few springs in the area; however, their quality
+is questionable due to the heavy recreational use. The Chepeta Lake trailhead, located 0.5 mile
+south of Chepeta Lake parking, provides access to lakes in the East Fork Whiterocks and the
+Reader Lakes area to the west. Chepeta Lake is stocked with cutthroat trout but also supports
+brook trout sustained through natural reproduction. Fishing pressure is quite heavy, particularly
+on weekends.
+
+Cirque Lake, WR-33
+This shallow pond lies, as the name implies, in a cirque 0.4 mile southwest of Rasmussen
+Lakes. The lake sits 10,652 feet in elevation and is 5.7 surface acres with a maximum depth of
+10 feet. To access Cirque Lake see description for Rasmussen Lakes. From Rasmussen 1 Lake,
+head southwest through downed timber for 0.3 mile to Cirque Lake. The lake is located at the
+toe of a massive rock glacier and can be turbid. It has also been winterkilled in the past. A few
+passable campsites are found in the immediate area but spring water is scarce. The lake is
+inaccessible by horseback. Grayling are stocked into the lake every three years and fishing
+pressure is very light.
+
+Cleveland Lake, WR-7
+Cleveland Lake is located next to the West Fork Whiterocks Trail approximately 4 miles north
+from the trailhead. The lake sits at an elevation of 10,640 feet and is 23.1 surface acres with a
+maximum depth of only 6 feet. Good campsites and abundant horse feed are found in the area,
+but there are no springs in the immediate area. Cleveland Lake is stocked with brook trout every
+five years. Cutthroat trout occupied the lake in the past but none were caught during the most
+
+W H I T E R O C K S R I V E R D R A I N A G E | 10
+
+recent survey in 2021. Cleveland Lake receives a fair amount of fishing pressure due to the close
+proximity of the lake to the trail and the popular Queant Lake area, 0.5 mile to the east.
+
+Cliff Lake, WR-49
+Cliff Lake is a large, reservoired lake that lies at the base of a talus slope in the southeastern
+portion of the Whiterocks River drainage. Access to the lake is via vehicle, preferably an ATV, but
+still possible with a high-clearance four-wheel-drive vehicle. From Paradise Park Campground
+follow the road west past the guard station (FR 104). Initially the road will be fine, but will turn
+into an OHV trail requiring four-wheel drive. The road will eventually connect into an OHV trail
+that follows Johnson Creek and eventually terminates near Cliff Lake. From the end of the road
+follow the canal downstream 100 yards or so to Cliff Lake. The lake sits at an elevation of
+10,348 feet and is 68 surface acres at full pool with a maximum depth of 55 feet. Campsites are
+scarce in the rocky, heavily timbered terrain. There are no springs or horse feed in the immediate
+area. Cliff Lake is stocked with brook and tiger trout. An occasional cutthroat trout may also be
+caught. Fishing pressure is moderate.
+
+Dead Lake, WR-29
+Dead Lake is an irregularly-shaped shallow pond that sits in a narrow, timbered draw north of the
+Paradise Campground and 0.2 mile east of Paradise Reservoir. The lake sits at 10,075 feet in
+elevation with a maximum depth of 15 feet and surface area of 9.7 acres. To access the lake
+take the Paradise Park Road from state Route 121 (just east of Lapoint) to Paradise
+Campground. From the Campground hike along the east side of Paradise Reservoir for 0.2 mile
+then cut east through timber for another 0.2 mile to Dead Lake. Several campsites are found in
+the area but there is no spring water or horse feed. Grayling are stocked in the lake every three
+years and the lake receives moderate fishing pressure.
+
+Deadfall Lake
+Deadfall Lake is a shallow pond that sits on a bench on the west ridge of the East Fork
+Whiterocks River drainage just off the Chepeta Lake Road. The lake sits at 9,809 feet in elevation
+and is 5.2 surface acres. Maximum depth is unknown. To access the lake, take the Elkhorn Loop
+Road from either the Farm Creek or Uinta Canyon side and turn onto the Chepeta Lake road near
+Pole Creek Campground (see Chepeta access description). Follow the Chepeta Lake road past
+the West Fork Whiterocks River crossing and just past the RC Lake road and park. Deadfall is
+east of the road 0.1 mile down a relatively steep slope covered with downed timber. Sometime
+in the 1990s a microburst wind swept across the canyon that felled most of the trees in a 0.5
+W H I T E R O C K S R I V E R D R A I N A G E | 11
+
+mile swath from below Angel Lake on the west to the rim of the East Fork Whiterocks River in
+the east. Hence the name Deadfall for this lake. There are no campsites, spring water or horse
+feed at the lake. This lake was not surveyed during any of the phases of the original surveys.
+Grayling were stocked experimentally in 2020 and did survive at least two winters. Grayling will
+continue to be stocked every three years. At this point fishing pressure is very light.
+
+Denise Lake, WR-9
+Denise Lake is located on a high bench in the West Fork Whiterocks River drainage 1.3 miles
+northeast of Queant Lake. The lake sits at 11,160 feet in elevation and is 3.1 surface acres with
+a maximum depth of nine feet. It can be accessed from the West Fork, RC Lake Road, Reader
+Creek or Chepeta Lake trailheads. Total distance for each of these access points is
+approximately 5.9, 3.9, 4.1 and 4.5 miles. For access from the West Fork Trailhead or RC Lake
+Road see description for Queant Lake. From Queant Lake follow the large meadow on the east
+side of Queant in a northeast direction for 1.3 miles to Denise Lake. From the Reader Creek
+Trailhead follow the trail north to the Highline trail junction then follow the Highline Trail up the
+ridge west of Reader Lakes Basin. From the Chepeta Lake Trailhead take the highline trail west
+and up the same ridge after crossing Reader Creek. During dry years good campsites are
+available in the edges of a small, grassy meadow on the lake’s north shore. These areas are
+often too wet for comfortable camping any other time. The meadow provides a little horse feed
+and there is a small spring on the northeast shore. Fishing pressure is fairly light for stocked
+brook trout.
+
+Dollar Lake, WR-43
+Dollar Lake is a natural lake that sits against a talus slope in the East Fork Whiterocks River
+drainage 0.5 mile south of Whiterocks Lake. The lake sits at 10,500 feet in elevation and is 7.3
+surface acres with a maximum depth of 15 feet. To access the lake from Chepeta Lake follow
+the trail east along the south flank or Rose Peak. The trail passes alternately through meadow
+and pines. Eventually you break out of the trees to the grassy meadows of the East Fork
+Whiterocks River. Dollar Lake lies cross-country at the base of the ridge to the south. Campsites
+and horse feed are scarce in the rocky terrain surrounding the lake. There is no spring water at
+the lake. The best areas for camping and pasture are in the valley of the East Fork. Dollar Lake
+supports a naturally reproducing population of brook trout. Cutthroat trout have also been
+present in the past but the lake has not been surveyed since 1991. Fishing pressure is light to
+moderate.
+
+W H I T E R O C K S R I V E R D R A I N A G E | 12
+
+Elbow Lake, WR-58
+This fairly large, picturesque lake is located at the base of a steep cliff approximately one mile
+west of Chepeta Lake. Elbow Lake sits at 10,910 feet in elevation and is 27.4 surface acres with
+a maximum depth of 27 feet. There is no trail to Elbow Lake so access is cross country up the
+slope west of Chepeta through downed timber and rocks. A more certain route is to follow the
+west shoreline of Chepeta Lake to the lake’s northwest corner where the Elbow Lake outlet
+enters Chepeta. Following the outlet up to Elbow Lake is still rough going but the odds of
+becoming disoriented are lessened. Alternatively, you can also take the old Highline Trail across
+the Chepeta Lake Dam west 1.3 miles to Sharlee Lake. Elbow Lake sits 0.5 mile north of Sharlee
+Lake. Good campsites are found primarily along the west side of the lake. Springs are located
+along the lake’s southwestern tip and horse feed is fairly scarce. Elbow Lake is stocked with
+brook trout and fishing pressure is moderate.
+
+Eric Lake, WR-76
+Eric Lake is two small, on-stream ponds located on the main drainage stream of Rasmussen
+Lakes Basin. The lake sits at 10,610 feet in elevation and is 4.2 surface acres with a maximum
+depth of only six feet. For access see the Ann Lake description. Eric Lake is approximately 2.1
+miles from the end of Rasmussen Lakes Road or 3.5 miles west of the West Fork Trailhead.
+Both ponds are nearly completely surrounded by wet meadow, which makes for great fly casting
+and soggy feet. Campsites and horse feed are fairly common and there is a spring on the lake’s
+south side. The lake supports populations of both brook and cutthroat trout sustained through
+natural reproduction. Fishing pressure is light.
+
+Figure Eight Lake, WR-56
+Figure Eight Lake is a shallow, hourglass shaped lake that sits on a rocky bench 0.1 mile
+northwest of Chepeta Lake. The lake sits at 10,660 feet in elevation and is 3.6 surface acres
+with a maximum depth of only five feet. For access, hike across the dam and around the west
+shoreline of Chepeta Lake to the Figure Eight Lake outlet in the northwest corner of the lake.
+Follow the outlet upstream to Figure Eight Lake. Total distance is approximately 1.3 miles from
+the Chepeta Lake parking area depending on how full Chepeta Lake is. A few campsites can be
+found in the rough terrain surrounding the lake, but horse access is difficult. Spring water is also
+available. A naturally reproducing population of Colorado River cutthroat trout inhabit the lake.
+Fishing pressure is light.
+
+W H I T E R O C K S R I V E R D R A I N A G E | 13
+
+Hell Hole Lake, WR-65
+Hell Hole Lake is a shallow, natural lake located on a high bench on the northwest side of Reader
+Lakes Basin. The lake sits at 10,760 feet in elevation and is 5.4 surface acres with a maximum
+depth of only 3 feet. To access the lake use the Reader Creek Trailhead and take the trail north
+to the top of the second large meadow approximately 1.5 miles from the trailhead. At the head
+of this meadow the tributary from Hell Hole Lake enters Reader Creek in the northwest corner.
+Follow the tributary for another 0.5 mile to Hell Hole Lake. There are a few campsites at the lake
+and spring water on the west side of the lake. Plenty of horse feed is found in the meadows
+surrounding the lake. Hell Hole Lake is prone to winterkill. Fishing pressure is light for stocked
+cutthroat trout. Additional fish do migrate into the lake from the outlet.
+
+Hidden Lake, WR-63
+Hidden Lake is located at the base of a rocky knob 0.25 mile west of the Chepeta Lake Road
+where Lynn Creek crosses the road. The lake sits at an elevation of 10,350 feet, and is 13.2
+surface acres with a maximum depth of 45 feet. The lake is surrounded by timber and is difficult
+to fly fish without waders or a willingness to get wet. A trail to the lake begins approximately 100
+yards south of where Lynn Creek crosses the road. Although the trail bypasses the lake itself a
+sign points to its general direction. There are a few campsites, but horse feed is scarce in the
+immediate vicinity. Springs are located along the shoreline. Fishing pressure is moderate for
+stocked cutthroat trout.
+
+Horseshoe Lake, WR-67
+Horseshoe Lake is located at the toe of a rocky bluff in Reader Lakes Basin, 3 miles from the
+Chepeta Lake Trailhead and 2.6 miles from the trailhead at Reader Creek. The lake sits at 10,860
+feet in elevation and is 11.3 surface acres with a maximum depth of 14 feet. To access the lake
+take the Highline Trail from the Chepeta Lake Trailhead or from the trailhead at Reader Creek to
+the large meadow at the head of the drainage. From the trailhead at Reader Creek this will be the
+third large meadow along the trail. At the bottom of this meadow the Highline Trail and Reader
+Creek Trail join. From this intersection continue cross country up the wet and rocky meadow
+north 0.5 mile to Horseshoe Lake. Spring water and campsites are available at the lake. There is
+ample horse feed in the large meadow west of the lake. The lake is stocked with cutthroat trout
+and fishing pressure is light to moderate.
+
+W H I T E R O C K S R I V E R D R A I N A G E | 14
+
+Johnson Lake, WR-30
+Johnson Lake is a shallow pond located approximately 2.5 northwest of Paradise Campground.
+From Paradise Park Campground follow the road west past the guard station (FR 104) for about
+4.5 miles. There will be an old logging road on the right. Either park and walk from here or
+continue on the logging road for another 0.4 mile until you are near the meadow where Lily Lake
+is. From Lily Lake follow the inlet channel for 1 mile upstream to Johnson Lake. The lake sits at
+10,780 feet in elevation and is 6.2 surface acres with a maximum depth of 8 feet. There is no
+spring water, but both campsites and horse feed are available near the lake. We began stocking
+Johnson Lake experimentally with grayling in 2021 and survival of these fish has not been
+evaluated. Check with the DWR office in Vernal for the status of this lake.
+
+Katy Lake, WR-34
+Katy Lake is a natural, glacial lake located in a high, rocky cirque 1 mile northwest of Point Lake
+in the West Fork Whiterocks River drainage. The lake sits at 11,200 feet in elevation and is 9.0
+surface acres with a maximum depth of 45 feet. To access, take the trail north from the West
+Fork Trailhead until you are east of the ridge where Lake lies (approximately 2.7 miles). Cut over
+to Point Lake then hike around the base of the ridge north and west to Katy Lake. The lake is
+surrounded by talus, rocky meadow and low, scraggly willows. Campsites and horse feed are
+scarce in open, wind-swept, rough terrain. There are no springs in this well-drained area. This
+cold, remote lake is stocked with cutthroat trout. Fishing pressure is very light. Katy Lake is a
+good lake to visit and be by yourself.
+
+Larvae Lake, WR-12
+Larvae Lake is an elongated pond surrounded by dense conifers one mile due east of the Pole
+Creek Campground. The Lake sits at an elevation of 10,030 feet and is 5.4 surface acres with a
+maximum depth of 29 feet. To access the lake park along the Chepeta Lake Road approximately
+0.3 mile east of the intersection with the Elkhorn Loop road. The lake is just over 0.10 mile to the
+southeast from this point. There is no spring water, but both campsites and horse feed are
+available near the lake. Larvae Lake is stocked every other year with brook trout and may
+winterkill from time to time. Fishing pressure is moderate.
+
+Lower Rock Lake, WR-17
+Lower Rock Lake located approximately 1 mile northwest of Pole Creek Lake. The easiest way
+to access the lake is to follow the inlet of Pole Creek Lake upstream to a large, wet meadow 0.5
+W H I T E R O C K S R I V E R D R A I N A G E | 15
+
+mile north of the road. Skirt off the south side of the meadow and follow the outlet of Lower
+Rock Lake through heavy timber to the lake. The lake sits at an elevation of 10,550 feet and is
+19.2 surface acres with a maximum depth of 39 feet. The lake is surrounded by rocks and heavy
+stands of pine with little open shoreline. There are only a few campsites at the lake. The best
+bets for campsites and horse feed are in the meadows east of the lake. Spring water can be
+found on the lake’s southwest shore. The lake is stocked with tiger trout and contains brook
+trout sustained through natural reproduction. Fishing pressure is relatively light considering the
+close proximity to the popular Pole Creek area.
+
+Middle Rock Lake, WR-16
+Middle Rock Lake is the smallest of the chain of lakes northwest of Pole Creek Lake and
+Campground. It is located a scant 200 yards north of Lower Rock Lake. Access is described
+above for Lower Rock Lake. The lake sits at an elevation of 10,580 feet and is 7.1 surface acres
+with a maximum depth of 10 feet. Middle Rock Lake is encircled by timber and large rocks, with
+little open shoreline. Campsites are difficult to find and the terrain is hard to negotiate on
+horseback. As with Lower Rock Lake, the best overnight amenities are found in the meadow to
+the east. There are no springs feeding the lake. Fishing pressure is moderately light for stocked
+cutthroat trout.
+
+Moccasin Lake, WR-53
+Moccasin is an irregularly shaped, reservoired lake that lies at the bottom of a talus slope 0.3
+mile east of Chepeta Reservoir. The outlet to Moccasin Lake is the first stream on the east side
+of Chepeta, north of the dam. To access the lake park at the Chepeta Lake dam and follow the
+trail that parallels the Moccasin Lake outlet for 0.25 mile to the lake. Moccasin sits at an
+elevation of 10,620 feet and is 18.9 surface acres with a maximum depth of 27 feet. Campsites
+can be found in the area but spring water is unavailable. The best horse feed and camping area
+is located south of Chepeta Lake. Moccasin Lake supports a naturally reproducing population of
+brook trout. The lake also supports some cutthroat trout. Fishing pressure is moderate to heavy.
+
+Nellie Lake, WR-75
+Nellie is a small on-stream pond that sits near the head of Rasmussen Lakes Basin 0.4 mile
+west of Eric Lake. There are no maintained trails in this basin. Total distance from the West Fork
+Whiterocks Trailhead is approximately 3.7 miles. For access description see access description
+for Ann Lake. The lake sits at 10,691 feet in elevation and is 2.7 surface acres with a maximum
+depth of eight feet. Campsites are very scarce. What little horse feed that is present is confined
+W H I T E R O C K S R I V E R D R A I N A G E | 16
+
+to the lakes margins. A small spring is located on the lake’s northwest shore. Fishing pressure is
+light for stocked cutthroat trout and for brook trout invading from downstream.
+
+Ogden Lake, WR-5
+Ogden is an oval-shaped natural lake, sitting at the bottom of a steep cliff, 0.6 mile northwest of
+Queant Lake. The lake sits at 10,900 feet in elevation and is 13.9 surface acres with a maximum
+depth of 21 feet. There are a few ways to access the lake. First from the West Fork Whiterocks
+Trailhead follow the trail to Queant Lake. The trail to Queant forks from the main trail
+approximately 0.3 mile before Cleveland Lake. There is also a trail to Queant that begins on the
+east side of Cleveland Lake. From Queant Lake travel northwesterly upslope through rocky
+terrain and downed timber to Ogden Lake. Alternatively, you can continue up the West Fork Trail
+past Cleveland Lake until the trail crosses the south bank of the West Fork Whiterocks. After this
+point continue on the north side of the stream and trend through a series of small meadows.
+You’ll eventually find the outlet to Ogden Lake and follow it to the lake. Both of these routes are
+approximately 5 miles from the West Fork Whiterocks Trailhead. Lastly is the old RC Lake road
+that begins 0.8 mile east of where the West Fork Whiterocks River crosses the Chepeta Lake
+road. From the end of this road follow the trail past RC Lake to Queant Lake then upslope from
+the lake as described above. Total distance from this route is 3.8 miles. Campsites are plentiful
+and there is excellent horse feed in the meadow below the lake. There is a spring that enters the
+lake on the north shore. Ogden Lake is stocked with cutthroat trout, but has been known to
+winterkill in the past. Fishing pressure is light to moderate.
+
+Papoose Lake, WR-52
+Papoose Lake is a long, narrow impounded water that sits at the bottom of a talus slope 150
+yards north of Moccasin Lake northeast of Chepeta Lake. The lake sits at 10,607 feet in
+elevation and is 16.8 surface acres with a maximum depth of 11 feet near the dam. Much of the
+lake is not over five feet deep. Access is from Chepeta Lake parking area at the dam. Take the
+trail north to Moccasin Lake then continue on to Papoose Lake. A number of passable
+campsites can be found on the west side of the lake while springs are located along the rock
+slides on the northeastern shore. There is very little horse feed due to the rocky terrain. A
+self-sustaining population of brook trout inhabit the lake. Cutthroat trout have also been present
+in the past but no recent survey has occurred to verify they are still present. Fishing pressure is
+moderate.
+
+W H I T E R O C K S R I V E R D R A I N A G E | 17
+
+Paradise Park Reservoir, WR-18
+Paradise Park Reservoir is a large impounded lake 26 miles north of the town of Lapoint. A
+Forest Service campground and guard station are located near the lake. Paradise Park Reservoir
+is not considered a high lake for management purposes. The lake is stocked with catchable-size
+rainbow trout and also harbors a naturally reproducing population of brook trout. Recreational
+use is very heavy.
+
+Pearl Lake, WR-45
+Pearl Lake lies at the head of the East Fork Whiterocks River in a small basin at the base of the
+Uinta divide, east of Chepeta Lake. The lake sits at 10,700 feet in elevation and is 7.9 surface
+acres with a maximum depth of 15 feet. To access the lake, park at the Chepeta Lake Dam
+parking area or at the Chepeta Lake Trailhead and take the highline trail east. At approximately
+2.6 miles the trail crosses a long, narrow meadow with a small tributary of the East Fork
+Whiterocks. Follow this meadow and tributary in a northeast direction for another 0.9 mile to
+Pearl Lake. Campsites and spring water can be found near the lake and there is horse feed in
+the meadow to the north and west of the lake. Pearl Lake supports a brook trout population
+sustained through natural reproduction. There have also been cutthroat trout present in the past,
+but none were caught during the most recent survey. Cutthroat trout will be stocked periodically
+and may regain a small presence in the lake. Fishing pressure is very light.
+
+Point Lake, WR-6
+Point Lake is an elongated lake that lies on a high, rocky bench below the tip of the mountain
+ridge that separates Rasmussen Lakes Basin from the Cleveland Lake area. The lake sits at
+10,720 feet in elevation and is 16.1 surface acres with a maximum depth of 21 feet. There is no
+trail to the lake, however access is straightforward. Just follow the trail north from the West Fork
+Trailhead to the confluence of the West Fork Whiterocks River and Point Lake outlet at
+approximately the 2.8 mile mark. Follow the outlet upstream to Point Lake. There are few good
+campsites, due to the rough, rocky terrain. For the same reason horse access is also difficult.
+Better campsites and horse feed are located to the east along the West Fork Whiterocks River.
+Springs are located northwest of the lake along the bottom of the talus slope. Point Lake is
+stocked with brook trout and a few cutthroat trout also inhabit the lake. Fishing pressure is light
+to moderate.
+
+W H I T E R O C K S R I V E R D R A I N A G E | 18
+
+Pole Creek Lake, WR-13
+This water is not technically considered to be a high lake for management purposes. A U.S.
+Forest Service campground is located at the lake. Pole Creek Lake is accessed via the Elkhorn
+Loop Road from either the Farm Creek or Uinta Canyon side. It is approximately 15 miles from
+the Farm Creek side and 11 miles from the Uinta Canyon side. The lake is stocked annually with
+tiger trout and harbors brook trout sustained through natural reproduction. Recreational use is
+moderate.
+
+Queant Lake, WR-4
+Queant Lake is a large, natural lake, located in the West Fork Whiterocks River drainage that is
+probably the most popular lake not accessible by vehicle in the entire Whiterocks River drainage.
+The lake sits at an elevation of 10,652 feet and is 55.4 surface acres with a maximum depth of
+44 feet. For access to the lake see the description for Ogden Lake access above. Total distance
+from the West Fork trailhead is 4 miles. Campsites and horse feed are abundant near the lake. A
+few springs are present, primarily along the lake’s northern shore. Fishing pressure is heavy for
+stocked brook trout.
+
+Rasmussen 1, WR-35
+Rasmussen 1, the slightly larger of the two Rasmussen Lakes, is located in a rocky, timbered
+basin, 2 miles west of the West Fork Whiterocks Trailhead. The lake sits at elevation 10,473 feet
+and is 14.6 surface acres with a maximum depth of only 5 feet. To access the lake, take the
+Rasmussen Lake OHV trail as described for Angel and Ann Lakes. From the end of the road walk
+0.4 mile west through downed timber and rocky terrain to Rasmussen 2 Lake, then skirt around
+the north shore of the lake to the west inlet and follow this inlet up the slope to Rasmussen 1
+Lake. Campsites are fairly numerous, primarily on the eastern side of the lake. However, there is
+no spring water and little horse feed. Fishing pressure is moderate for stocked brook trout.
+
+Rasmussen 2, WR-36
+Rasmussen 2 Lake is an irregularly shaped, natural lake that sits a short distance southeast of
+Rasmussen 1 in Rasmussen Lakes Basin. The lake sits at elevation 10,620 feet and is 16.3
+surface acres with a maximum depth of 8 feet. Access to the lake is described above for
+Rasmussen 1 Lake. A few campsites can be found around the lake, but there is no horse feed or
+spring water. Fishing pressure is moderate for stocked brook trout.
+
+W H I T E R O C K S R I V E R D R A I N A G E | 19
+
+R.C. No. 1, WR-2
+This lake is located below a steep talus slope along the east side of the West Fork Whiterocks
+River drainage. The lake sits at elevation 10,630 feet and is 9.3 surface acres with a maximum
+depth of 16 feet. An old logging road formerly would take you almost all the way to the lake,
+however, in the early 1990s the USFS closed the last 1.3 miles of the road to the lake. The R.C.
+Lakes Road is located 0.8 mile from where the West Fork Whiterocks River crosses the Chepeta
+Lake Road on the north side. Initially this road appears quite rough, but once you make the initial
+small climb it really isn’t too bad. Follow the road for 2.3 miles to a small parking area then walk
+the remaining 1.3 miles to the lake. Campsites and old fire pits are numerous, but there is no
+spring water or horse feed. The lake occasionally does winterkill. Fishing pressure is light for
+stocked cutthroat trout.
+
+R.C. No. 2, WR-3
+A small shallow pond located west of its much larger brother, R.C. No. 2 provides only marginal
+fish habitat. Access and camping amenities are as described for R.C. No. 1. The lake is 1.7
+surface acres, 10,620 feet in elevation, with a maximum depth of 7 feet. The lake is not stocked
+and relies on migration from R.C. No. 1 for fish.
+
+Robb Lake, WR-1
+This shallow, cirque lake is located at the head of the West Fork Whiterocks drainage along the
+trail just below Fox-Queant Pass. Robb Lake sits at elevation 11,060 feet and is 3.9 surface
+acres with a maximum depth of only 5 feet. To access the lake, park at the West Fork
+Whiterocks Trailhead and follow the trail north 5.7 miles to the lake. Robb Lake is surrounded by
+talus slopes and boulder fields, and the shoreline is open in most spots. There are no decent
+campsites or spring water. Horse feed is found along the West Fork Whiterocks. Robb Lake is
+stocked with brook trout, but due to the lack of deeper water and poor water exchange may
+winterkill from time to time. Fishing pressure is light.
+
+Sand Lake, WR-42
+Sand Lake is a shallow pond lying at the bottom of a talus slope 0.6 mile northeast of Ted’s
+Lake. The lake sits at 10,435 feet in elevation and is 6.2 surface acres with a maximum depth of
+only 4.5 feet. To access, park at the Chepeta Lake Trailhead and follow the Highline Trail east to
+Ted’s Lake a distance of approximately 3.2 miles. From Ted’s Lake follow the long winding
+W H I T E R O C K S R I V E R D R A I N A G E | 20
+
+meadow that begins on the northeast end of the lake for 0.6 mile to Sand Lake. An alternate
+route would be to take the OHV road to Cliff Lake (see description for Cliff Lake access) and
+take the trail to Ted’s Lake from there. Total hiking distance from this access point to Sand Lake
+is 3.2 miles. The area around Sand Lake is relatively flat and good campsites are abundant.
+Horse feed is excellent and a small spring is located near the outlet of the lake. Sand Lake
+supports a population of pan-size brook trout sustained by natural reproduction. Cutthroat trout
+also inhabit the lake though numbers have dwindled. Fishing should be fast and pressure is
+lightly moderate.
+
+Saucer Lake, WR-41
+This lake is a small, shallow pond located on a heavily timbered bench 0.4 mile east of Ted’s
+Lake on the East Fork drainage (see Ted’s Lake access). Saucer is 4.5 acres, 10,500 feet in
+elevation, with a maximum depth of 4.5 feet. A number of springs are located around the lake,
+but the best campsites are found at Ted’s Lake or Sand Lake, 0.3 mile to the north. Saucer may
+exhibit at least partial winterkill due to its shallow depth. The lake is stocked with brook trout
+and sustains very light fishing pressure.
+
+Sharlee Lake, WR-57
+Sharlee Lake is a pretty lake located on a high bench on the northwest side of Reader Lakes
+Basin. The lake is surrounded by open meadows making it an ideal fly casting lake. Sharlee Lake
+sits at 10,740 feet in elevation and is 9.4 surface acres with a maximum depth of only 4 feet. To
+access the lake, take the Highline Trail west from the Chepeta Lake Trailhead or from the
+trailhead at Reader Creek head north. Sharlee Lake is approximately 1.5 miles along the Highline
+Trail from the Chepeta Lake Trailhead and 1.8 miles from the Reader Creek Trailhead. If you take
+the Reader Creek Trailhead follow the trail to the second large meadow for 1.5 miles to the
+Sharlee Lake outlet just before the trail crosses Reader Creek the second time. From here follow
+the outlet upstream to Sharlee Lake for the remaining 0.3 mile. Campsites and horse feed are
+abundant, but springs are uncommon. Sharlee Lake supports a population of cutthroat trout.
+Fishing pressure is moderate.
+
+Tamara Lake, WR-73
+Tamara is a picturesque, remote lake which sits at the very head of the Rasmussen Lakes Basin
+in the West Fork of the Whiterocks drainage. From Eric Lake (see Eric Lake access), continue up
+the bottom of the basin, past Nellie Lake and up a steep, rocky slope through downed timber.
+Total distance from the West Fork Trailhead is 4.2 miles, all of it is cross-country. Horseback
+W H I T E R O C K S R I V E R D R A I N A G E | 21
+
+access is, at best, very difficult and not recommended. Tamara Lake is triangular in shape with
+talus slopes forming two of the sides. Large boulders make up the entire perimeter of the lake,
+and the footing is treacherous. The lake is 7.1 acres, 10,960 feet in elevation, with a maximum
+depth of 18 feet. Campsites are absent due to the rough terrain, and there is no spring water. All
+camping amenities and horse feed are found in the bottom of Rasmussen Lakes Basin. Fishing
+pressure is light for stocked cutthroat trout.
+
+Taylor Lake, WR-8
+Taylor Lake is a fairly large, deep lake located above timberline in an open, rocky cirque 2.2 miles
+north of Queant Lake in the West Fork of the Whiterocks drainage. The trail comes within a few
+hundred yards of the lake. Taylor can also be reached via the Chepeta Lake Trailhead across a
+high, shallow saddle west of Reader Lakes Basin. Total distance from Chepeta Lake and the
+West Fork Trailhead is 4.0 and 6.3 miles, respectively. Taylor Lake is 22.4 acres, 11,220 feet in
+elevation, with a maximum depth of 53 feet. Campsites are scarce in the rough terrain
+surrounding the lake, and there is no horse feed. A cluster of springs are located along the
+northwest shore. Fly fishing is relatively easy, given the lack of large trees, which tend to inhibit
+back-casting. The large rocks and low scraggly bushes along the shore, however, make for
+difficult walking. Watch your step. Taylor Lake sustains moderate fishing pressure for stocked
+brook trout.
+
+Ted’s Lake, WR-44
+This popular lake lies in the middle of a series of meadows in the East Fork Whiterocks River
+drainage. Ted’s Lake sits at an elevation of 10,336 feet and is 14.1 surface acres with a
+maximum depth of 20 feet. The lake can be accessed from either the Chepeta Lake Trailhead or
+from the Paradise Lake side. From the Chepeta Lake Trailhead take the highline trail east for just
+over 0.5 mile to where an old OHV trail hits the trail from the south. Take the OHV trail south to
+where it crosses the East Fork Whiterocks River. Continue up the slope until you reach a trail
+junction at the base of a wet meadow. Ted’s Lake sits 0.3 mile to the northeast. From the
+Paradise Lake side take the old road to Cliff Lake (see Cliff Lake access). Just before the end of
+the road an old OHV trail cuts north. Park and hike to the trail junction alluded to above then
+continue to Ted’s Lake. Campsites and horse feed are plentiful, but good spring water can be
+hard to find. Most of the shoreline is open and fly casting is nearly hassle-free. The relatively
+wide expanses of shallow water close to shore tend to make trout a bit wary. Most people agree
+
+W H I T E R O C K S R I V E R D R A I N A G E | 22
+
+that late evening is the most productive time for angling. Ted’s Lake is stocked with brook trout
+and fishing pressure is moderate to heavy.
+
+Upper Reader Lake, WR-66
+Upper Reader Lake is a shallow, picturesque lake located approximately 0.7 mile northwest of
+Horseshoe Lake at the head of Reader Basin. The lake sits at 10,960 feet in elevation and is 10.2
+surface acres with a maximum depth of 9 feet. To access the lake take the Highline Trail from
+the Chepeta Lake Trailhead or from the trailhead at Reader Creek to the large meadow at the
+head of the drainage. From the trailhead at Reader Creek this will be the third large meadow
+along the trail. At the bottom of this meadow the Highline Trail and Reader Creek Trail join. From
+this intersection follow Reader Creek cross-country up the wet and rocky meadow north 1.4
+miles to Upper Reader Lake. There are a few campsites near the lake and water can be found in
+the inlet on the west side. There is limited horse feed at the lake itself but excellent feed in the
+large meadow below the lake along Reader Creek. Reader Lake has winterkilled in the past and
+was not actively managed as a fishery. However, we are presently stocking grayling on an
+experimental basis and will assess the survival of this species in the lake. Cutthroat trout also
+occasionally migrate into the lake from Reader Creek. Fishing pressure is light.
+
+Upper Rock Lake, WR-14
+Upper Rock Lake is the largest of the three Rock Lakes that lie northwest of Pole Creek Lake.
+The lake sits in a shallow depression on a high flat bench at the base of the mountain 1.7 miles
+northwest of Pole Creek Lake. Upper Rock Lake sits at 10,562 feet in elevation and is 33.4
+surface acres with a maximum depth of 33 feet. Like many cirque lakes in the head of drainages
+it can be Caribbean blue or milky red in color depending on snowpack, time of year and
+precipitation. To access the lake see description for accessing Lower and Middle Rock lakes.
+Continue from Middle Rock Lake north for 0.3 mile across boulder fields and a steep slope.
+Campsites and horse feed are nonexistent at the lake and there are no obvious sources of
+spring water. The water level of Upper Rock Lake fluctuates rather dramatically during some
+years, and the lake winter kills regularly. The lake is stocked with cutthroat trout and fishing
+pressure is light.
+
+Walk-up Lake, WR-55
+Walk-up Lake is a classic example of a glacially formed cirque lake. Located 2.7 miles northwest
+of Chepeta Lake, Walk-up Lake sits in a deep bowl with surrounding cliffs towering a thousand
+feet above the surface of the lake. The lake sits at 11,114 feet in elevation and is 18.4 surface
+W H I T E R O C K S R I V E R D R A I N A G E | 23
+
+acres with a maximum depth of 55 feet. To access the lake follow the trail from Chepeta Lake
+that takes you to Mocassin and Papoose lakes. From Papoose cut over to Wigwam Lake then
+hike up northwest through steep, rocky meadows to Walk-up Lake. A rocky cleft also leads due
+north to Walk-up Lake from Figure Eight Lake. Follow the base of the mountain around to the
+northwest to the lake. Expect this route to be steep initially before the hike gets a little easier.
+Despite the abundance of rocks in the area, a few decent campsites can be located in small,
+grassy swales. Horse feed is very scarce, but there is spring water away from the lake. The
+shoreline is open, but footing is extremely treacherous on large, unstable boulders. Fishing
+pressure is light for stocked brook trout.
+
+Watkins Lake, WR-48
+Watkins Lake is an irregularly shaped lake located in the East Fork Whiterocks River drainage
+just over 100 yards east of Cliff Lake. The lake sits at 10,390 feet in elevation and is 18.4 surface
+acres with a maximum depth of 36 feet. To access the lake see access description for Cliff
+Lake. The southwest shore of the lake is composed of talus. Campsites are few in rough terrain
+and there is little horse feed. A few springs are located on the lake's northeastern shore. Fishing
+pressure is light for stocked brook trout.
+
+Whiterocks Lake, WR-46
+Whiterocks Lake lies at the head of the East Fork of the Whiterocks drainage, 3.5 miles east of
+Chepeta Lake. The lake is used primarily for irrigation storage and experiences severe
+drawdown during the course of the summer. Stocking has been discontinued due to the inability
+of the lake to overwinter fish; however, a few trout may migrate into the reservoir from the inlet
+stream. The size of Whiterocks Lake varies between 30 to 67 acres, depending on season and
+water demand. Campsites, horse feed and spring water are located in the vicinity. Fishing
+pressure is light.
+
+Wigwam Lake, WR-54
+Wigwam Lake is an impounded lake situated on a bench about 500 yards north of Chepeta Lake.
+The lake sits at 10,625 feet in elevation and is 16.7 surface acres with a maximum depth of 21
+feet. There is no trail to the lake, but access is quite easy if you follow the lake's outlet up from
+where it flows into the northeastern arm of Chepeta. Campsites, horse feed and spring water are
+all found in the immediate vicinity. The open shoreline makes for relaxed fly casting. Fishing
+pressure is moderate for brook trout sustained through natural reproduction. Cutthroat trout
+
+W H I T E R O C K S R I V E R D R A I N A G E | 24
+
+were also present in the lake in the past but no recent surveys have occurred to verify their
+continued presence.
+
+Wooley Lake, WR-40
+This pretty lake lies at the head of a rough, heavily timbered basin in the East Fork Whiterocks
+River drainage 0.9 mile east of Workman Lake. The lake sits at 10,680 feet in elevation and is
+20.5 surface acres with a maximum depth of 42 feet. For access see descriptions for Ted’s Lake
+and Workman Lake. Wooley Lake is surrounded by talus slides, boulder fields and rock strewn
+pines. Campsites and horse feed are located in the meadows between Workman and Wooley
+lakes. A number of springs are found against the toe of the mountain. A self-sustaining
+population of brook trout inhabit the lake and fishing pressure is light.
+
+Workman Lake, WR-50
+Workman Lake is a relatively shallow, natural lake located 0.7 mile south of Ted’s Lake in the
+East Fork Whiterocks River drainage. The lake sits at an elevation of 10,460 feet and is 20
+surface acres with a maximum depth of only 12 feet. Workman Lake can be accessed from the
+Paradise Park Reservoir side or the Chepeta Lake side. For access description from the Chepeta
+Lake side see Ted’s Lake and for the Paradise side see Cliff Lake access. From the Chepeta
+Lake side when you hit the trail junction for Ted’s Lake turn south instead of north and follow the
+trail for 0.2 mile to another trail that heads west to Workman Lake. From Cliff Lake follow the old
+OHV trail north for 1.5 miles to the Workman Lake outlet then follow the outlet upstream to the
+lake. Despite heavy timber there are a few campsites around the lake. A marginal spring is
+located between the lake's two inlets along the southeast shore. Horse feed is located in small
+meadows that are close to the north, east and south shores of the lake.
+Workman Lake supports populations of both brook and cutthroat trout sustained through
+natural reproduction. Fishing pressure is light to moderate.
+
+W H I T E R O C K S R I V E R D R A I N A G E | 25
+
+W H I T E R O C K S R I V E R D R A I N A G E | 26
+
+Brook trout gillnetting samples
+Lake
+
+Stocking
+cycle
+
+Other
+species
+present
+
+Number
+sampled
+
+Mean
+length
+(inches)
+
+Max length
+(inches)
+
+Mean wt
+(lbs)
+
+Max wt (lbs)
+
+Denise (WR-8)
+
+3
+
+None
+
+7
+
+13.3
+
+15.5
+
+1.15
+
+1.81
+
+Watkins (WR-48)
+
+2/3
+
+None
+
+62
+
+13.2
+
+17.7
+
+0.90
+
+2.02
+
+Elbow (WR-58)
+
+3
+
+None
+
+56
+
+12.8
+
+16.7
+
+0.86
+
+1.85
+
+Eric (WR-76)
+
+NR
+
+CT
+
+16
+
+12.5
+
+14.8
+
+0.84
+
+1.46
+
+Ted’s (WR-44)
+
+2/3
+
+None
+
+75
+
+12.5
+
+18.7
+
+0.94
+
+2.96
+
+Workman (WR-50)
+
+NR
+
+CT
+
+17
+
+12.5
+
+18.9
+
+1.07
+
+4.13
+
+Taylor (WR-8)
+
+5
+
+None
+
+33
+
+12.2
+
+16.1
+
+0.81
+
+1.98
+
+a
+
+NR
+
+TG
+
+40
+
+12.2
+
+15.2
+
+0.66
+
+1.46
+
+Point (WR-6)
+
+5
+
+CT
+
+54
+
+11.7
+
+14.8
+
+0.64
+
+1.20
+
+Robb (WR-1)
+
+2/3
+
+None
+
+31
+
+11.7
+
+15.9
+
+0.49
+
+2.12
+
+Nellie (WR-25)
+
+NR
+
+CT
+
+9
+
+11.5
+
+14.7
+
+0.64
+
+1.19
+
+Becky (WR-77)
+
+2/3
+
+CT
+
+39
+
+11.3
+
+13.1
+
+0.44
+
+0.89
+
+Lower Rock (WR-17)
+
+Queant (WR-4)
+
+5
+
+None
+
+149
+
+11.0
+
+15.9
+
+0.51
+
+2.13
+
+Chepeta (WR-64)
+
+NR
+
+CT
+
+99
+
+10.7
+
+16.0
+
+0.48
+
+1.64
+
+Cliff (WR-49)
+
+b
+
+5
+
+TG,CT
+
+85
+
+10.6
+
+13.7
+
+0.46
+
+1.05
+
+Sand (WR-42)
+
+NR
+
+CT
+
+81
+
+10.5
+
+14.6
+
+0.45
+
+1.23
+
+Dollar (WR-43)
+
+NR
+
+CT
+
+36
+
+10.4
+
+19.7
+
+0.50
+
+2.21
+
+Pearl (WR-45)
+
+NR
+
+CT
+
+76
+
+10.4
+
+13.6
+
+0.40
+
+0.78
+
+Rassmussen 2 (WR-36)
+
+5
+
+None
+
+75
+
+10.3
+
+13.4
+
+0.39
+
+0.88
+
+Walk-up (WR-55)
+
+5
+
+None
+
+10
+
+9.9
+
+11.2
+
+0.30
+
+0.46
+
+Cleveland
+
+5
+
+CT
+
+132
+
+9.8
+
+14.0
+
+0.37
+
+1.25
+
+Wooley (WR-40)
+
+5
+
+CT
+
+93
+
+9.8
+
+11.7
+
+0.31
+
+0.50
+
+Wigwam (WR-54)
+
+NR
+
+CT
+
+57
+
+9.7
+
+16.0
+
+0.42
+
+2.18
+
+Rassmussen 1 (WR-35)
+
+5
+
+None
+
+117
+
+9.6
+
+13.0
+
+0.33
+
+0.76
+
+Larvae (WR-12)
+
+2
+
+None
+
+17
+
+9.6
+
+14.0
+
+0.31
+
+1.01
+
+Papoose (WR-52)
+
+5
+
+CT
+
+22
+
+8.5
+
+11.6
+
+0.26
+
+0.64
+
+Moccasin (WR-53)
+
+NR
+
+CT
+
+100
+
+8.5
+
+14.3
+
+0.25
+
+1.04
+
+Saucer (WR-41)
+
+2/3
+
+None
+
+1
+
+6.8
+
+6.8
+
+0.09
+
+0.09
+
+a Tiger trout are stocked every 5 years into Lower Rock.
+b Tiger trout are stocked in addition to Brook Trout in Cliff Lake
+NR = Sustained by natural reproduction
+2/3 = For lakes with no natural reproduction and known to winterkill, lakes are stocked every 2nd and 3rd year instead of once
+every 5 years to prevent long fishless stretches.
+
+Table 1. Mean and maximum length and weight for brook trout sampled with gillnets 1960s to the present for lakes
+in the Whiterocks River Drainage, Utah. (Note: data is sorted by mean length with color codes green = average length
+> 12”, gold = average length 10” – 11” and blue average length < 10”.)
+
+W H I T E R O C K S R I V E R D R A I N A G E | 27
+
+Cutthroat trout gillnetting samples
+Stocking
+cycle
+
+Other
+species
+present
+
+Mean
+length
+(inches)
+
+Max length
+(inches)
+
+Lower Rock (WR-17)
+
+NR
+
+TG,BK
+
+Katy (WR-34)
+
+2/3
+
+None
+
+9
+
+13.4
+
+36
+
+13.0
+
+Cliff (WR-49)
+
+NR
+
+BK,TG
+
+11
+
+12.5
+
+Cleveland (WR-7)
+
+NR
+
+Becky (WR-77)
+
+NR
+
+BK
+
+8
+
+BK
+
+6
+
+Ogden (WR-5)
+Upper Rock (WR-14)
+
+2/3
+
+None
+
+66
+
+11.9
+
+15.4
+
+0.65
+
+1.27
+
+2/3
+
+None
+
+62
+
+11.7
+
+20.5
+
+0.82
+
+3.20
+
+Chepeta (WR-64)
+
+4
+
+BK
+
+35
+
+11.5
+
+16.5
+
+0.56
+
+1.54
+
+Nellie (WR-75)
+
+5
+
+BK
+
+19
+
+11.1
+
+14.6
+
+0.57
+
+1.21
+
+Tamara (WR-73)
+
+5
+
+None
+
+66
+
+10.5
+
+16.9
+
+0.49
+
+1.90
+
+Lake
+
+Number
+sampled
+
+Mean wt
+(lbs)
+
+Max wt (lbs)
+
+16.5
+
+1.24
+
+1.83
+
+14.8
+
+0.75
+
+1.17
+
+15.0
+
+0.65
+
+1.11
+
+12.1
+
+15.1
+
+0.64
+
+1.08
+
+12.1
+
+13.4
+
+0.63
+
+0.90
+
+Eric (WR-76)
+
+NR
+
+BK
+
+18
+
+10.3
+
+13.5
+
+0.37
+
+0.71
+
+Horseshoe (WR-67)
+
+2/3
+
+None
+
+64
+
+10.2
+
+15.0
+
+0.49
+
+1.49
+
+Angel (WR-19)
+
+3
+
+GRY, TGMK
+
+20
+
+10.2
+
+17.3
+
+0.39
+
+2.04
+
+Moccasin (WR-53)
+
+5
+
+BK
+
+43
+
+10.0
+
+15.5
+
+0.38
+
+1.39
+
+Ann (WR-74)
+
+3
+
+None
+
+7
+
+9.8
+
+11.5
+
+0.44
+
+0.70
+
+Hidden (WR-63)
+
+2
+
+None
+
+13
+
+9.6
+
+12.7
+
+0.32
+
+0.59
+
+Middle Rock (WR-67)
+
+2/3
+
+None
+
+39
+
+9.4
+
+17.5
+
+0.65
+
+1.71
+
+Pearl (WR-45)
+
+2/3
+
+BK
+
+40
+
+9.3
+
+12.7
+
+0.31
+
+0.68
+
+Wigwam (WR-54)
+
+NR
+
+BK
+
+18
+
+9.3
+
+13.0
+
+0.29
+
+0.73
+
+Sand (WR-42)
+
+5
+
+BK
+
+40
+
+9.3
+
+12.1
+
+0.29
+
+0.57
+
+Workman (WR-50)
+
+NR
+
+BK
+
+105
+
+9.2
+
+14.2
+
+0.35
+
+1.08
+
+Reader (WR-66)
+
+MIG
+
+GRY
+
+30
+
+9.2
+
+11.8
+
+0.34
+
+0.78
+
+Dollar (WR-43)
+
+NR
+
+BK
+
+52
+
+9.1
+
+10.8
+
+0.26
+
+0.44
+
+Sharlee (WR-57)
+
+NR
+
+None
+
+148
+
+8.4
+
+13.4
+
+0.22
+
+0.64
+
+Hell Hole (WR-65)
+
+3
+
+None
+
+15
+
+8.1
+
+10.2
+
+0.24
+
+0.36
+
+Figure Eight (WR-56)
+
+NR
+
+None
+
+56
+
+7.7
+
+11.7
+
+0.20
+
+0.57
+
+NR = Sustained by natural reproduction
+MIG = Fish known to migrate from stream into lake.
+2/3 = For lakes with no natural reproduction and known to winterkill, lakes are stocked every 2nd and 3rd year instead of once
+every 5 years to prevent long fishless stretches.
+
+Table 2. Mean and maximum length and weight for cutthroat trout sampled with gillnets 1960s to the present for
+lakes in the Whiterocks River Drainage, Utah. (Note: data is sorted by mean length with color codes green = average
+length > 12”, gold = average length 10” – 11” and blue average length < 10”.)
+
+W H I T E R O C K S R I V E R D R A I N A G E | 28
+
+Grayling gillnetting samples
+Lake
+
+Stocking
+cycle
+
+Other
+species
+present
+
+Number
+sampled
+
+Mean
+length
+(inches)
+
+Max length
+(inches)
+
+Mean wt
+(lbs)
+
+Max wt (lbs)
+
+Dead (WR-29)
+
+3
+
+None
+
+16
+
+12.4
+
+13.0
+
+0.67
+
+0.79
+
+Cirque (WR-33)
+
+3
+
+None
+
+15
+
+12.0
+
+13.7
+
+0.59
+
+0.87
+
+Angel (WR-19)
+
+NR
+
+CT, TGMK
+
+46
+
+10.7
+
+14.5
+
+0.38
+
+1.00
+
+9.2
+
+10.3
+
+0.23
+
+0.38
+
+Deadfall
+
+3
+
+None
+
+54
+
+Upper Reader (WR-66)
+
+3
+
+CT
+
+0
+
+None sampled
+
+Johnson (WR-30)
+
+3
+
+None
+
+0
+
+None sampled
+
+NR = Sustained by natural reproduction.
+
+Table 3. Mean and maximum length and weight for grayling sampled with gillnets 1960s to the present for lakes in
+the Whiterocks River Drainage, Utah. (Note: data is sorted by mean length with color codes green = average length >
+12”, gold = average length 10” – 11” and blue average length < 10”.)
+
+W H I T E R O C K S R I V E R D R A I N A G E | 29
+
+
