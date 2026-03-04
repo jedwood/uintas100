@@ -10,11 +10,12 @@
     "withGlobalTauri": true,
     "windows": [
       {
-        "title": "Uintas Admin",
-        "width": 760,
-        "height": 700,
+        "title": "Uintas",
+        "width": 1200,
+        "height": 850,
         "resizable": true,
-        "fullscreen": false
+        "fullscreen": false,
+        "titleBarStyle": "Overlay"
       }
     ],
     "security": {

@@ -3,16 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Uintas Admin</title>
+  <title>Uintas</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f3f4f6; color: #1f2937; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f3f4f6; color: #1f2937; overflow: hidden; height: 100vh; }
 
-    .header { background: #fff; border-bottom: 1px solid #e5e7eb; padding: 16px 24px; display: flex; align-items: center; gap: 12px; }
+    /* --- Web app view (iframe) --- */
+    #webapp-view {
+      position: fixed; inset: 0;
+      display: flex; flex-direction: column;
+    }
+    #webapp-view iframe {
+      flex: 1; width: 100%; border: none;
+    }
+    #webapp-loading {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: #f3f4f6;
+      font-size: 14px; color: #6b7280;
+      transition: opacity 0.3s;
+    }
+    #webapp-loading.hidden { opacity: 0; pointer-events: none; }
+
+    /* --- Floating gear button --- */
+    #gear-btn {
+      position: fixed; top: 12px; right: 14px; z-index: 100;
+      width: 32px; height: 32px;
+      border: none; border-radius: 8px;
+      background: rgba(0,0,0,0.06);
+      color: #6b7280;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.15s;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    #gear-btn:hover { background: rgba(0,0,0,0.12); color: #374151; }
+    #gear-btn svg { width: 18px; height: 18px; }
+
+    /* --- Admin panel --- */
+    #admin-panel {
+      position: fixed; inset: 0;
+      background: #f3f4f6;
+      overflow-y: auto;
+      display: none;
+      z-index: 50;
+    }
+    #admin-panel.visible { display: block; }
+
+    /* Title bar drag region for overlay mode */
+    .titlebar-spacer { height: 28px; -webkit-app-region: drag; }
+
+    .header { background: #fff; border-bottom: 1px solid #e5e7eb; padding: 12px 24px; display: flex; align-items: center; gap: 12px; }
     .header h1 { font-size: 18px; font-weight: 700; }
     .header .subtitle { font-size: 12px; color: #9ca3af; }
+    .back-btn { background: none; border: none; cursor: pointer; color: #6b7280; display: flex; align-items: center; padding: 4px; border-radius: 6px; transition: all 0.15s; }
+    .back-btn:hover { background: #f3f4f6; color: #374151; }
+    .back-btn svg { width: 20px; height: 20px; }
 
-    .container { max-width: 720px; margin: 0 auto; padding: 20px; }
+    .container { max-width: 720px; margin: 0 auto; padding: 20px; padding-bottom: 40px; }
 
     .section { background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
     .section-title { font-size: 11px; font-weight: 600; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
@@ -87,102 +136,133 @@
 </head>
 <body>
 
-<div class="header">
-  <h1>Uintas Admin</h1>
-  <span class="subtitle">Sync & scheduling controls</span>
+<!-- Web app view -->
+<div id="webapp-view">
+  <div class="titlebar-spacer"></div>
+  <iframe id="webapp-iframe" src="http://localhost:8000"></iframe>
+  <div id="webapp-loading">
+    <div style="text-align: center;">
+      <div class="spinner" style="width: 24px; height: 24px; border-width: 3px; color: #9ca3af;"></div>
+      <div style="margin-top: 12px;">Starting web server...</div>
+    </div>
+  </div>
 </div>
 
-<div class="container">
+<!-- Gear toggle button -->
+<button id="gear-btn" onclick="togglePanel()" title="Admin controls">
+  <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M8.34 1.804A1 1 0 019.32 1h1.36a1 1 0 01.98.804l.295 1.473c.497.144.971.342 1.416.587l1.25-.834a1 1 0 011.262.125l.962.962a1 1 0 01.125 1.262l-.834 1.25c.245.445.443.919.587 1.416l1.473.295a1 1 0 01.804.98v1.361a1 1 0 01-.804.98l-1.473.295a6.95 6.95 0 01-.587 1.416l.834 1.25a1 1 0 01-.125 1.262l-.962.962a1 1 0 01-1.262.125l-1.25-.834a6.953 6.953 0 01-1.416.587l-.295 1.473a1 1 0 01-.98.804H9.32a1 1 0 01-.98-.804l-.295-1.473a6.957 6.957 0 01-1.416-.587l-1.25.834a1 1 0 01-1.262-.125l-.962-.962a1 1 0 01-.125-1.262l.834-1.25a6.957 6.957 0 01-.587-1.416l-1.473-.295A1 1 0 011 10.68V9.32a1 1 0 01.804-.98l1.473-.295c.144-.497.342-.971.587-1.416l-.834-1.25a1 1 0 01.125-1.262l.962-.962A1 1 0 015.38 3.03l1.25.834a6.957 6.957 0 011.416-.587l.295-1.473zM13 10a3 3 0 11-6 0 3 3 0 016 0z" clip-rule="evenodd"/></svg>
+</button>
 
-  <!-- Status -->
-  <div class="section">
-    <div class="section-title">Status</div>
-    <div id="status-cards" class="status-grid">
-      <div class="status-card neutral"><div class="status-detail">Loading...</div></div>
-      <div class="status-card neutral"><div class="status-detail">Loading...</div></div>
-      <div class="status-card neutral"><div class="status-detail">Loading...</div></div>
-    </div>
+<!-- Admin panel (hidden by default) -->
+<div id="admin-panel">
+  <div class="titlebar-spacer"></div>
+  <div class="header">
+    <button class="back-btn" onclick="togglePanel()" title="Back to app">
+      <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clip-rule="evenodd"/></svg>
+    </button>
+    <h1>Uintas Admin</h1>
+    <span class="subtitle">Sync & scheduling controls</span>
   </div>
 
-  <!-- Run Now -->
-  <div class="section">
-    <div class="section-title">Run Now</div>
-    <div class="run-btns">
-      <button id="btn-stocking" class="run-btn blue" onclick="runScript('btn-stocking','run_stocking_update')">Fetch Stocking</button>
-      <button id="btn-notes-sync" class="run-btn green" onclick="runScript('btn-notes-sync','run_notes_sync')">Sync Notes to DB</button>
-      <button id="btn-notes-push" class="run-btn purple" onclick="runScript('btn-notes-push','run_notes_push')">Push DB to Notes</button>
-    </div>
-    <div id="run-output" class="run-output"><pre></pre></div>
-  </div>
+  <div class="container">
 
-  <!-- Schedule -->
-  <div class="section">
-    <div class="section-title">Schedule</div>
-    <div class="sched-row">
-      <div class="sched-header">
-        <span class="sched-label">Stocking Updates</span>
-        <label class="toggle">
-          <input type="checkbox" id="sched-stocking-enabled">
+    <!-- Status -->
+    <div class="section">
+      <div class="section-title">Status</div>
+      <div id="status-cards" class="status-grid">
+        <div class="status-card neutral"><div class="status-detail">Loading...</div></div>
+        <div class="status-card neutral"><div class="status-detail">Loading...</div></div>
+        <div class="status-card neutral"><div class="status-detail">Loading...</div></div>
+      </div>
+    </div>
+
+    <!-- Run Now -->
+    <div class="section">
+      <div class="section-title">Run Now</div>
+      <div class="run-btns">
+        <button id="btn-stocking" class="run-btn blue" onclick="runScript('btn-stocking','run_stocking_update')">Fetch Stocking</button>
+        <button id="btn-notes-sync" class="run-btn green" onclick="runScript('btn-notes-sync','run_notes_sync')">Sync Notes to DB</button>
+        <button id="btn-notes-push" class="run-btn purple" onclick="runScript('btn-notes-push','run_notes_push')">Push DB to Notes</button>
+      </div>
+      <div id="run-output" class="run-output"><pre></pre></div>
+    </div>
+
+    <!-- Schedule -->
+    <div class="section">
+      <div class="section-title">Schedule</div>
+      <div class="sched-row">
+        <div class="sched-header">
+          <span class="sched-label">Stocking Updates</span>
+          <label class="toggle">
+            <input type="checkbox" id="sched-stocking-enabled">
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="sched-interval">
+          <span>Every</span>
+          <select id="sched-stocking-interval">
+            <option value="6">6 hours</option>
+            <option value="12">12 hours</option>
+            <option value="24">24 hours</option>
+            <option value="48">48 hours</option>
+            <option value="72">72 hours</option>
+            <option value="168">7 days</option>
+          </select>
+        </div>
+      </div>
+      <div class="sched-row">
+        <div class="sched-header">
+          <span class="sched-label">Notes Sync</span>
+          <label class="toggle green">
+            <input type="checkbox" id="sched-notes-enabled">
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="sched-interval">
+          <span>Every</span>
+          <select id="sched-notes-interval">
+            <option value="1">1 hour</option>
+            <option value="3">3 hours</option>
+            <option value="6">6 hours</option>
+            <option value="12">12 hours</option>
+            <option value="24">24 hours</option>
+          </select>
+        </div>
+      </div>
+      <button class="save-btn" id="btn-save-schedule" onclick="saveSchedule()">Save Schedule</button>
+    </div>
+
+    <!-- Logs -->
+    <div class="section">
+      <div class="section-title">Logs</div>
+      <div class="log-tabs">
+        <button class="log-tab active" data-tab="stocking" onclick="switchLog('stocking')">Stocking</button>
+        <button class="log-tab" data-tab="notes" onclick="switchLog('notes')">Notes</button>
+      </div>
+      <pre id="log-viewer" class="log-viewer">Loading...</pre>
+      <button class="log-refresh" onclick="refreshLog()">Refresh</button>
+    </div>
+
+    <!-- Settings -->
+    <div class="section">
+      <div class="section-title">Settings</div>
+      <div class="settings-row" style="margin-bottom: 8px;">
+        <div>
+          <span class="settings-label">Web Server</span>
+          <div id="server-detail" class="status-detail" style="margin-top: 2px;">Checking...</div>
+        </div>
+        <button id="server-btn" class="run-btn blue" style="flex: none; width: auto; padding: 6px 14px; font-size: 12px;" onclick="toggleServer()">Start</button>
+      </div>
+      <div class="settings-row">
+        <span class="settings-label">Launch at Login</span>
+        <label class="toggle dark">
+          <input type="checkbox" id="autostart-toggle" onchange="toggleAutostart(this.checked)">
           <span class="slider"></span>
         </label>
       </div>
-      <div class="sched-interval">
-        <span>Every</span>
-        <select id="sched-stocking-interval">
-          <option value="6">6 hours</option>
-          <option value="12">12 hours</option>
-          <option value="24">24 hours</option>
-          <option value="48">48 hours</option>
-          <option value="72">72 hours</option>
-          <option value="168">7 days</option>
-        </select>
-      </div>
     </div>
-    <div class="sched-row">
-      <div class="sched-header">
-        <span class="sched-label">Notes Sync</span>
-        <label class="toggle green">
-          <input type="checkbox" id="sched-notes-enabled">
-          <span class="slider"></span>
-        </label>
-      </div>
-      <div class="sched-interval">
-        <span>Every</span>
-        <select id="sched-notes-interval">
-          <option value="1">1 hour</option>
-          <option value="3">3 hours</option>
-          <option value="6">6 hours</option>
-          <option value="12">12 hours</option>
-          <option value="24">24 hours</option>
-        </select>
-      </div>
-    </div>
-    <button class="save-btn" id="btn-save-schedule" onclick="saveSchedule()">Save Schedule</button>
-  </div>
 
-  <!-- Logs -->
-  <div class="section">
-    <div class="section-title">Logs</div>
-    <div class="log-tabs">
-      <button class="log-tab active" data-tab="stocking" onclick="switchLog('stocking')">Stocking</button>
-      <button class="log-tab" data-tab="notes" onclick="switchLog('notes')">Notes</button>
-    </div>
-    <pre id="log-viewer" class="log-viewer">Loading...</pre>
-    <button class="log-refresh" onclick="refreshLog()">Refresh</button>
   </div>
-
-  <!-- Settings -->
-  <div class="section">
-    <div class="section-title">Settings</div>
-    <div class="settings-row">
-      <span class="settings-label">Launch at Login</span>
-      <label class="toggle dark">
-        <input type="checkbox" id="autostart-toggle" onchange="toggleAutostart(this.checked)">
-        <span class="slider"></span>
-      </label>
-    </div>
-  </div>
-
 </div>
 
 <script>
@@ -191,10 +271,34 @@
 
   let activeLogTab = 'stocking';
   let runningTask = null;
+  let panelOpen = false;
+
+  // --- View toggle ---
+  function togglePanel() {
+    panelOpen = !panelOpen;
+    document.getElementById('admin-panel').classList.toggle('visible', panelOpen);
+    document.getElementById('webapp-view').style.display = panelOpen ? 'none' : 'flex';
+    document.getElementById('gear-btn').style.display = panelOpen ? 'none' : 'flex';
+    if (panelOpen) {
+      refreshStatus();
+      refreshServerStatus();
+    }
+  }
 
   // --- Init ---
   async function init() {
-    await Promise.all([refreshStatus(), refreshLog(), refreshSchedule(), refreshAutostart()]);
+    // Wait for server to come up, then hide loading overlay
+    const iframe = document.getElementById('webapp-iframe');
+    const loading = document.getElementById('webapp-loading');
+
+    iframe.addEventListener('load', () => {
+      loading.classList.add('hidden');
+    });
+
+    // Fallback: hide loading after a few seconds even if load event doesn't fire
+    setTimeout(() => { loading.classList.add('hidden'); }, 4000);
+
+    await Promise.all([refreshStatus(), refreshLog(), refreshSchedule(), refreshAutostart(), refreshServerStatus()]);
   }
 
   // --- Status ---
@@ -325,6 +429,64 @@
     } catch (e) {
       console.error('Autostart toggle error:', e);
       document.getElementById('autostart-toggle').checked = !enabled;
+    }
+  }
+
+  // --- Web server ---
+  let serverRunning = false;
+
+  async function refreshServerStatus() {
+    try {
+      serverRunning = await invoke('web_server_status');
+      updateServerUI();
+    } catch (e) {
+      console.error('Server status error:', e);
+    }
+  }
+
+  function updateServerUI() {
+    const btn = document.getElementById('server-btn');
+    const detail = document.getElementById('server-detail');
+    if (serverRunning) {
+      btn.textContent = 'Open';
+      btn.className = 'run-btn green';
+      btn.style.flex = 'none';
+      btn.style.width = 'auto';
+      btn.style.padding = '6px 14px';
+      btn.style.fontSize = '12px';
+      detail.innerHTML = '<span class="status-dot green" style="display:inline-block;vertical-align:middle;margin-right:4px;"></span>Running on localhost:8000';
+    } else {
+      btn.textContent = 'Start';
+      btn.className = 'run-btn blue';
+      btn.style.flex = 'none';
+      btn.style.width = 'auto';
+      btn.style.padding = '6px 14px';
+      btn.style.fontSize = '12px';
+      detail.innerHTML = '<span class="status-dot gray" style="display:inline-block;vertical-align:middle;margin-right:4px;"></span>Stopped';
+    }
+  }
+
+  async function toggleServer() {
+    const btn = document.getElementById('server-btn');
+    try {
+      if (serverRunning) {
+        // Reload the iframe to show the latest
+        document.getElementById('webapp-iframe').src = 'http://localhost:8000';
+        togglePanel(); // Switch back to web app view
+      } else {
+        btn.innerHTML = '<span class="spinner"></span>';
+        btn.disabled = true;
+        serverRunning = await invoke('start_web_server');
+        await new Promise(r => setTimeout(r, 500));
+        updateServerUI();
+        btn.disabled = false;
+        // Reload iframe now that server is up
+        document.getElementById('webapp-iframe').src = 'http://localhost:8000';
+      }
+    } catch (e) {
+      console.error('Server toggle error:', e);
+      btn.disabled = false;
+      updateServerUI();
     }
   }
 

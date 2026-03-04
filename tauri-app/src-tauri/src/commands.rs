@@ -1,8 +1,17 @@
 use crate::scheduler::{save_config, ScheduleConfig, SchedulerState};
 use crate::scripts;
 use serde::Serialize;
+use std::process::{Child, Command, Stdio};
 use std::sync::{Arc, Mutex};
 use tauri::State;
+
+// Global web server process handle
+static WEB_SERVER: Mutex<Option<Child>> = Mutex::new(None);
+
+/// Expose the web server handle so main.rs can auto-start it
+pub fn web_server_handle() -> &'static Mutex<Option<Child>> {
+    &WEB_SERVER
+}
 
 #[derive(Debug, Serialize)]
 pub struct RunResult {
@@ -303,6 +312,70 @@ pub async fn set_autostart(app: tauri::AppHandle, enabled: bool) -> Result<(), S
     } else {
         autostart.disable().map_err(|e| e.to_string())
     }
+}
+
+// -- Web server --
+
+#[tauri::command]
+pub async fn web_server_status() -> Result<bool, String> {
+    let mut guard = WEB_SERVER.lock().map_err(|e| e.to_string())?;
+    if let Some(child) = guard.as_mut() {
+        // Check if still running
+        match child.try_wait() {
+            Ok(Some(_)) => {
+                // Process exited
+                *guard = None;
+                Ok(false)
+            }
+            Ok(None) => Ok(true), // Still running
+            Err(_) => {
+                *guard = None;
+                Ok(false)
+            }
+        }
+    } else {
+        Ok(false)
+    }
+}
+
+#[tauri::command]
+pub async fn start_web_server(
+    state: State<'_, Arc<Mutex<SchedulerState>>>,
+) -> Result<bool, String> {
+    let project_dir = {
+        let state_guard = state.lock().map_err(|e| e.to_string())?;
+        state_guard.project_dir.clone()
+    };
+
+    let mut guard = WEB_SERVER.lock().map_err(|e| e.to_string())?;
+
+    // Check if already running
+    if let Some(child) = guard.as_mut() {
+        if child.try_wait().map_err(|e| e.to_string())?.is_none() {
+            return Ok(true); // Already running
+        }
+    }
+
+    let child = Command::new("python3")
+        .args(["-m", "http.server", "8000"])
+        .current_dir(&project_dir)
+        .stdout(Stdio::null())
+        .stderr(Stdio::null())
+        .spawn()
+        .map_err(|e| format!("Failed to start web server: {}", e))?;
+
+    *guard = Some(child);
+    Ok(true)
+}
+
+#[tauri::command]
+pub async fn stop_web_server() -> Result<bool, String> {
+    let mut guard = WEB_SERVER.lock().map_err(|e| e.to_string())?;
+    if let Some(mut child) = guard.take() {
+        let _ = child.kill();
+        let _ = child.wait();
+    }
+    Ok(false)
 }
 
 fn send_failure_notification(app: &tauri::AppHandle, title: &str, body: &str) {

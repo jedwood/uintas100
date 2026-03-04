@@ -7,6 +7,7 @@ mod scripts;
 
 use scheduler::SchedulerState;
 use std::path::{Path, PathBuf};
+use std::process::{Command, Stdio};
 use std::sync::{Arc, Mutex};
 use tauri::Manager;
 use tauri_plugin_autostart::MacosLauncher;
@@ -97,6 +98,26 @@ fn main() {
 
             app.manage(state.clone());
 
+            // Auto-start the web server
+            {
+                let project_dir = state.lock().unwrap().project_dir.clone();
+                match Command::new("python3")
+                    .args(["-m", "http.server", "8000"])
+                    .current_dir(&project_dir)
+                    .stdout(Stdio::null())
+                    .stderr(Stdio::null())
+                    .spawn()
+                {
+                    Ok(child) => {
+                        // Store in the same static used by commands::start/stop_web_server
+                        if let Ok(mut guard) = commands::web_server_handle().lock() {
+                            *guard = Some(child);
+                        }
+                    }
+                    Err(e) => eprintln!("Failed to auto-start web server: {}", e),
+                }
+            }
+
             // Start the scheduler
             scheduler::start_scheduler(app.handle().clone(), state);
 
@@ -112,6 +133,9 @@ fn main() {
             commands::get_status,
             commands::get_autostart_status,
             commands::set_autostart,
+            commands::web_server_status,
+            commands::start_web_server,
+            commands::stop_web_server,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
