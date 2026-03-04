@@ -173,30 +173,39 @@ pub async fn read_log(
     state: State<'_, Arc<Mutex<SchedulerState>>>,
     log_name: String,
 ) -> Result<String, String> {
-    let log_path = {
-        let state_guard = state.lock().map_err(|e| e.to_string())?;
-        match log_name.as_str() {
-            "stocking" => state_guard.project_dir.join("logs/stocking_update.log"),
-            "notes" => state_guard.project_dir.join("logs/notes_sync.log"),
-            "fetch" => state_guard.project_dir.join("stocking_fetch.log"),
-            _ => return Err(format!("Unknown log: {}", log_name)),
-        }
-    };
+    let state_guard = state.lock().map_err(|e| e.to_string())?;
 
-    match std::fs::read_to_string(&log_path) {
-        Ok(content) => {
-            let lines: Vec<&str> = content.lines().collect();
-            let start = lines.len().saturating_sub(200);
-            Ok(lines[start..].join("\n"))
-        }
-        Err(e) => {
-            if e.kind() == std::io::ErrorKind::NotFound {
-                Ok(String::from("(no log file found)"))
-            } else {
-                Err(format!("Error reading log: {}", e))
+    let log_paths: Vec<std::path::PathBuf> = match log_name.as_str() {
+        "stocking" => vec![
+            state_guard.project_dir.join("stocking_fetch.log"),
+            state_guard.project_dir.join("logs/stocking_update.log"),
+        ],
+        "notes" => vec![state_guard.project_dir.join("logs/notes_sync.log")],
+        _ => return Err(format!("Unknown log: {}", log_name)),
+    };
+    drop(state_guard);
+
+    let mut combined = String::new();
+    for path in &log_paths {
+        match std::fs::read_to_string(path) {
+            Ok(content) => {
+                if !combined.is_empty() {
+                    combined.push('\n');
+                }
+                combined.push_str(&content);
             }
+            Err(e) if e.kind() == std::io::ErrorKind::NotFound => {}
+            Err(e) => return Err(format!("Error reading log: {}", e)),
         }
     }
+
+    if combined.is_empty() {
+        return Ok(String::from("(no log file found)"));
+    }
+
+    let lines: Vec<&str> = combined.lines().collect();
+    let start = lines.len().saturating_sub(200);
+    Ok(lines[start..].join("\n"))
 }
 
 // -- Status --
