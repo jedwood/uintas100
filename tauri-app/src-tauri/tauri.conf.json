@@ -14,8 +14,7 @@
         "width": 1200,
         "height": 850,
         "resizable": true,
-        "fullscreen": false,
-        "titleBarStyle": "Overlay"
+        "fullscreen": false
       }
     ],
     "security": {

@@ -16,14 +16,22 @@
     #webapp-view iframe {
       flex: 1; width: 100%; border: none;
     }
-    #webapp-loading {
+    #webapp-overlay {
       position: absolute; inset: 0;
       display: flex; align-items: center; justify-content: center;
       background: #f3f4f6;
       font-size: 14px; color: #6b7280;
       transition: opacity 0.3s;
+      z-index: 10;
     }
-    #webapp-loading.hidden { opacity: 0; pointer-events: none; }
+    #webapp-overlay.hidden { opacity: 0; pointer-events: none; }
+    #webapp-overlay .reconnect-btn {
+      margin-top: 16px; padding: 10px 24px; border: none; border-radius: 8px;
+      background: #2563eb; color: #fff; font-size: 14px; font-weight: 500;
+      cursor: pointer; transition: background 0.15s;
+    }
+    #webapp-overlay .reconnect-btn:hover { background: #1d4ed8; }
+    #webapp-overlay .reconnect-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
     /* --- Floating gear button --- */
     #gear-btn {
@@ -51,8 +59,6 @@
     }
     #admin-panel.visible { display: block; }
 
-    /* Title bar drag region for overlay mode */
-    .titlebar-spacer { height: 28px; -webkit-app-region: drag; }
 
     .header { background: #fff; border-bottom: 1px solid #e5e7eb; padding: 12px 24px; display: flex; align-items: center; gap: 12px; }
     .header h1 { font-size: 18px; font-weight: 700; }
@@ -138,10 +144,9 @@
 
 <!-- Web app view -->
 <div id="webapp-view">
-  <div class="titlebar-spacer"></div>
   <iframe id="webapp-iframe" src="http://localhost:8000"></iframe>
-  <div id="webapp-loading">
-    <div style="text-align: center;">
+  <div id="webapp-overlay">
+    <div id="overlay-content" style="text-align: center;">
       <div class="spinner" style="width: 24px; height: 24px; border-width: 3px; color: #9ca3af;"></div>
       <div style="margin-top: 12px;">Starting web server...</div>
     </div>
@@ -155,7 +160,6 @@
 
 <!-- Admin panel (hidden by default) -->
 <div id="admin-panel">
-  <div class="titlebar-spacer"></div>
   <div class="header">
     <button class="back-btn" onclick="togglePanel()" title="Back to app">
       <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clip-rule="evenodd"/></svg>
@@ -251,7 +255,10 @@
           <span class="settings-label">Web Server</span>
           <div id="server-detail" class="status-detail" style="margin-top: 2px;">Checking...</div>
         </div>
-        <button id="server-btn" class="run-btn blue" style="flex: none; width: auto; padding: 6px 14px; font-size: 12px;" onclick="toggleServer()">Start</button>
+        <div style="display: flex; gap: 6px;">
+          <button id="server-start-btn" class="run-btn blue" style="flex: none; width: auto; padding: 6px 14px; font-size: 12px;" onclick="startServer()">Start</button>
+          <button id="server-stop-btn" class="run-btn purple" style="flex: none; width: auto; padding: 6px 14px; font-size: 12px; display: none;" onclick="stopServer()">Stop</button>
+        </div>
       </div>
       <div class="settings-row">
         <span class="settings-label">Launch at Login</span>
@@ -287,18 +294,77 @@
 
   // --- Init ---
   async function init() {
-    // Wait for server to come up, then hide loading overlay
-    const iframe = document.getElementById('webapp-iframe');
-    const loading = document.getElementById('webapp-loading');
-
-    iframe.addEventListener('load', () => {
-      loading.classList.add('hidden');
-    });
-
-    // Fallback: hide loading after a few seconds even if load event doesn't fire
-    setTimeout(() => { loading.classList.add('hidden'); }, 4000);
-
     await Promise.all([refreshStatus(), refreshLog(), refreshSchedule(), refreshAutostart(), refreshServerStatus()]);
+    // Start polling for server health (handles sleep/wake recovery)
+    waitForServer();
+  }
+
+  // --- Server health check & recovery ---
+  let serverHealthy = false;
+
+  async function checkServerHealth() {
+    try {
+      const resp = await fetch('http://localhost:8000', { method: 'HEAD', mode: 'no-cors' });
+      return true;
+    } catch {
+      return false;
+    }
+  }
+
+  async function waitForServer() {
+    const overlay = document.getElementById('webapp-overlay');
+    const content = document.getElementById('overlay-content');
+    const iframe = document.getElementById('webapp-iframe');
+
+    const healthy = await checkServerHealth();
+    if (healthy) {
+      serverHealthy = true;
+      overlay.classList.add('hidden');
+      // Reload iframe if it was showing an error
+      if (!iframe.contentWindow || iframe.contentWindow.location.href === 'about:blank') {
+        iframe.src = 'http://localhost:8000';
+      }
+    } else {
+      serverHealthy = false;
+      content.innerHTML = '<div style="font-size: 32px; margin-bottom: 8px; color: #d1d5db;">&#x1F3D4;</div>' +
+        '<div style="color: #374151; font-weight: 500;">Web app unavailable</div>' +
+        '<div style="margin-top: 4px; font-size: 12px; color: #9ca3af;">The local server isn\'t responding</div>' +
+        '<button class="reconnect-btn" onclick="reconnect()">Reconnect</button>';
+      overlay.classList.remove('hidden');
+    }
+
+    // Keep polling every 10s to auto-detect recovery
+    setTimeout(waitForServer, 10000);
+  }
+
+  async function reconnect() {
+    const content = document.getElementById('overlay-content');
+    const overlay = document.getElementById('webapp-overlay');
+    content.innerHTML = '<div class="spinner" style="width: 24px; height: 24px; border-width: 3px; color: #9ca3af;"></div>' +
+      '<div style="margin-top: 12px;">Reconnecting...</div>';
+
+    // Try to restart the server
+    try {
+      await invoke('start_web_server');
+    } catch (e) {
+      console.error('Reconnect start_web_server error:', e);
+    }
+
+    // Wait a moment for it to come up, then retry
+    await new Promise(r => setTimeout(r, 1500));
+
+    const healthy = await checkServerHealth();
+    if (healthy) {
+      serverHealthy = true;
+      document.getElementById('webapp-iframe').src = 'http://localhost:8000';
+      overlay.classList.add('hidden');
+      refreshServerStatus();
+    } else {
+      content.innerHTML = '<div style="font-size: 32px; margin-bottom: 8px; color: #d1d5db;">&#x1F3D4;</div>' +
+        '<div style="color: #374151; font-weight: 500;">Still can\'t connect</div>' +
+        '<div style="margin-top: 4px; font-size: 12px; color: #9ca3af;">Check that nothing else is using port 8000</div>' +
+        '<button class="reconnect-btn" onclick="reconnect()">Try Again</button>';
+    }
   }
 
   // --- Status ---
@@ -445,47 +511,52 @@
   }
 
   function updateServerUI() {
-    const btn = document.getElementById('server-btn');
+    const startBtn = document.getElementById('server-start-btn');
+    const stopBtn = document.getElementById('server-stop-btn');
     const detail = document.getElementById('server-detail');
     if (serverRunning) {
-      btn.textContent = 'Open';
-      btn.className = 'run-btn green';
-      btn.style.flex = 'none';
-      btn.style.width = 'auto';
-      btn.style.padding = '6px 14px';
-      btn.style.fontSize = '12px';
+      startBtn.style.display = 'none';
+      stopBtn.style.display = 'block';
       detail.innerHTML = '<span class="status-dot green" style="display:inline-block;vertical-align:middle;margin-right:4px;"></span>Running on localhost:8000';
     } else {
-      btn.textContent = 'Start';
-      btn.className = 'run-btn blue';
-      btn.style.flex = 'none';
-      btn.style.width = 'auto';
-      btn.style.padding = '6px 14px';
-      btn.style.fontSize = '12px';
+      startBtn.style.display = 'block';
+      stopBtn.style.display = 'none';
       detail.innerHTML = '<span class="status-dot gray" style="display:inline-block;vertical-align:middle;margin-right:4px;"></span>Stopped';
     }
   }
 
-  async function toggleServer() {
-    const btn = document.getElementById('server-btn');
+  async function startServer() {
+    const btn = document.getElementById('server-start-btn');
     try {
-      if (serverRunning) {
-        // Reload the iframe to show the latest
-        document.getElementById('webapp-iframe').src = 'http://localhost:8000';
-        togglePanel(); // Switch back to web app view
-      } else {
-        btn.innerHTML = '<span class="spinner"></span>';
-        btn.disabled = true;
-        serverRunning = await invoke('start_web_server');
-        await new Promise(r => setTimeout(r, 500));
-        updateServerUI();
-        btn.disabled = false;
-        // Reload iframe now that server is up
-        document.getElementById('webapp-iframe').src = 'http://localhost:8000';
-      }
-    } catch (e) {
-      console.error('Server toggle error:', e);
+      btn.innerHTML = '<span class="spinner"></span>';
+      btn.disabled = true;
+      serverRunning = await invoke('start_web_server');
+      await new Promise(r => setTimeout(r, 500));
+      updateServerUI();
       btn.disabled = false;
+      btn.textContent = 'Start';
+      document.getElementById('webapp-iframe').src = 'http://localhost:8000';
+    } catch (e) {
+      console.error('Server start error:', e);
+      btn.disabled = false;
+      btn.textContent = 'Start';
+      updateServerUI();
+    }
+  }
+
+  async function stopServer() {
+    const btn = document.getElementById('server-stop-btn');
+    try {
+      btn.innerHTML = '<span class="spinner"></span>';
+      btn.disabled = true;
+      serverRunning = await invoke('stop_web_server');
+      updateServerUI();
+      btn.disabled = false;
+      btn.textContent = 'Stop';
+    } catch (e) {
+      console.error('Server stop error:', e);
+      btn.disabled = false;
+      btn.textContent = 'Stop';
       updateServerUI();
     }
   }
