@@ -305,13 +305,22 @@ Add trip reports here...
 - **`fetch_latest_stocking.py`** - Auto-flags lakes when new stocking data is added
 
 ### **Automated Scheduling**
-Cron jobs run every 6 hours to maintain synchronization:
-```bash
-# Check for user updates in Apple Notes (every 6 hours)
-0 */6 * * * osascript sync_notes_to_db_jxa.js
+Sync is managed by the **Uintas Admin** Tauri app (`/Applications/Uintas.app`), which replaces the old cron-based approach. The app provides:
+- Configurable intervals for stocking updates and notes sync
+- Manual run buttons for each sync task
+- Log viewer for stocking, notes, and fetch logs
+- macOS notifications on failure
+- Launch at Login support
 
-# Push flagged database changes to Apple Notes (15 minutes after)
-15 */6 * * * osascript sync_db_to_notes_jxa.js
+To run the admin app during development:
+```bash
+cd tauri-app/src-tauri && cargo run
+```
+
+To rebuild and install:
+```bash
+cargo tauri build
+cp -R tauri-app/src-tauri/target/release/bundle/macos/Uintas.app /Applications/
 ```
 
 ### **Manual Sync Usage**

@@ -273,7 +273,7 @@ function run() {
             noteBody += "<ul>";
             stockingRecords.forEach(record => {
                 if (record.trim() !== "") {
-                    const [stockDate, species, quantity, fishLength] = record.split('|');
+                    const [stockDate, species, quantity, fishLength] = record.split('\u001E');
                     noteBody += `<li>${stockDate} - ${quantity} ${species}, ${fishLength}"</li>`;
                 }
             });
