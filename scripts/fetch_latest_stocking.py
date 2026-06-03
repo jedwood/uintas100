@@ -6,7 +6,7 @@ import csv
 import os
 import subprocess
 from database_utils import create_database, extract_letter_number, stocking_record_exists, find_matching_lake
-from species_utils import standardize_stocking_species, update_lake_fish_species
+from species_utils import standardize_stocking_species, update_lake_fish_species, refresh_all_fish_species
 from datetime import datetime
 
 def insert_stocking_record(cursor, lake_id, species, quantity, length, stock_date, source_year, county):
@@ -105,7 +105,7 @@ def parse_and_insert_data(html_content, conn, cursor, county, csv_writer, log_fi
     print(f"Inserted {new_records} new stocking records for {county} county.")
     return new_records, unmatched_lakes
 
-def commit_and_push_changes(log_file, new_records_count):
+def commit_and_push_changes(log_file, new_records_count, refreshed_count=0):
     """Commit database changes and push to remote if new records were added."""
     try:
         # Get the project root directory
@@ -132,7 +132,10 @@ def commit_and_push_changes(log_file, new_records_count):
         log_file.write("Added database and CSV files to git\n")
         
         # Commit with descriptive message
-        commit_msg = f"Auto-update: {new_records_count} new DWR stocking records"
+        if new_records_count > 0:
+            commit_msg = f"Auto-update: {new_records_count} new DWR stocking records"
+        else:
+            commit_msg = f"Auto-update: refresh fish_species for {refreshed_count} lakes"
         subprocess.run(['git', 'commit', '-m', commit_msg], check=True)
         log_file.write(f"Committed changes: {commit_msg}\n")
         
@@ -211,13 +214,21 @@ def main():
                     else:
                         log_file.write(f"  ERROR: Failed to fetch data for {county} ({year})\n")
             
+            # Sweep all lakes so the denormalized fish_species field can't drift
+            # from the stocking table (e.g. species added via other import paths).
+            changed = refresh_all_fish_species(cursor)
+            conn.commit()
+            log_file.write(f"Refreshed fish_species for {changed} lakes\n")
+            if changed:
+                print(f"Refreshed fish_species for {changed} lakes")
+
             conn.close()
-            
+
             # Commit and push changes if new records were added
-            if total_new_records > 0:
+            if total_new_records > 0 or changed > 0:
                 log_file.write(f"\n=== GIT OPERATIONS ===\n")
                 print(f"\nCommitting and pushing {total_new_records} new records...")
-                commit_and_push_changes(log_file, total_new_records)
+                commit_and_push_changes(log_file, total_new_records, changed)
             else:
                 log_file.write(f"\nNo new records added, skipping git commit\n")
                 print("No new records added, skipping git operations")

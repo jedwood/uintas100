@@ -161,6 +161,27 @@ def update_lake_fish_species(cursor, lake_id, cutoff_year=2015):
     
     return None
 
+def refresh_all_fish_species(cursor, cutoff_year=2015):
+    """
+    Recompute the denormalized fish_species field for every lake.
+
+    The per-lake update only fires when a brand-new stocking record is inserted,
+    so species added via other paths (CSV import, historical backfill) can leave
+    the display field stale. Running this over all lakes guarantees the field
+    stays consistent with the stocking_records table.
+
+    Returns the number of lakes whose fish_species value changed.
+    """
+    cursor.execute('SELECT id, fish_species FROM lakes')
+    rows = cursor.fetchall()
+
+    changed = 0
+    for lake_id, before in rows:
+        after = update_lake_fish_species(cursor, lake_id, cutoff_year=cutoff_year)
+        if after != before:
+            changed += 1
+    return changed
+
 def standardize_stocking_species(raw_species):
     """Convert raw stocking species from DWR data to normalized names"""
     mapping = {

@@ -12,7 +12,7 @@ import re
 import os
 from datetime import datetime
 from database_utils import create_database, find_matching_lake, extract_letter_number, dump_stocking_data, dump_combined_data
-from species_utils import standardize_stocking_species
+from species_utils import standardize_stocking_species, refresh_all_fish_species
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_DIR = os.path.dirname(SCRIPT_DIR)
@@ -150,7 +150,12 @@ def main():
     
     print("Processing stocking data...")
     process_stocking_data(conn)
-    
+
+    print("\nRefreshing fish_species display field...")
+    changed = refresh_all_fish_species(conn.cursor())
+    conn.commit()
+    print(f"  Updated fish_species for {changed} lakes")
+
     print("\nCreating updated dumps...")
     dump_stocking_data(conn)
     dump_combined_data(conn)
