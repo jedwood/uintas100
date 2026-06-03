@@ -85,6 +85,16 @@
                         </div>
 
                         <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Stocked Years</label>
+                            <div class="flex gap-2">
+                                <input type="number" id="year-min" placeholder="Min" min="2002" max="2025"
+                                       class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 text-sm">
+                                <input type="number" id="year-max" placeholder="Max" min="2002" max="2025"
+                                       class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 text-sm">
+                            </div>
+                        </div>
+
+                        <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Depth (feet)</label>
                             <div class="flex gap-2">
                                 <input type="number" id="depth-min" placeholder="Min" min="0" max="200" 
@@ -114,15 +124,6 @@
                             </div>
                         </div>
 
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Stocked Years</label>
-                            <div class="flex gap-2">
-                                <input type="number" id="year-min" placeholder="Min" min="2002" max="2025" 
-                                       class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 text-sm">
-                                <input type="number" id="year-max" placeholder="Max" min="2002" max="2025" 
-                                       class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 text-sm">
-                            </div>
-                        </div>
                     </div>
 
                     <div class="mt-4 space-y-2">
@@ -717,15 +718,18 @@
                         }
                     }
                     
-                    // Filter by year range
+                    // Filter by year range based on the lake's MOST RECENT stocking.
+                    // A max year means "not stocked since then" (e.g. max 2022 excludes
+                    // lakes stocked in 2023+), a min means "stocked at least that recently".
                     if (yearMin || yearMax) {
-                        relevantStocking = relevantStocking.filter(record => {
-                            const stockYear = parseInt(record.stock_date.split('-')[0]);
-                            const minCheck = !yearMin || stockYear >= parseInt(yearMin);
-                            const maxCheck = !yearMax || stockYear <= parseInt(yearMax);
-                            return minCheck && maxCheck;
-                        });
-                        return relevantStocking.length > 0;
+                        const years = relevantStocking
+                            .map(record => parseInt(record.stock_date.split('-')[0]))
+                            .filter(year => !isNaN(year));
+                        if (years.length === 0) return false;
+                        const latestYear = Math.max(...years);
+                        const minCheck = !yearMin || latestYear >= parseInt(yearMin);
+                        const maxCheck = !yearMax || latestYear <= parseInt(yearMax);
+                        return minCheck && maxCheck;
                     }
                     
                     return true;
