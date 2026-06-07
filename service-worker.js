@@ -1,4 +1,4 @@
-const CACHE_NAME = 'uintas-v1780592312';
+const CACHE_NAME = 'uintas-v1780851723';
 const MAX_CACHE_SIZE = 45 * 1024 * 1024; // Stay under iOS 50MB limit
 
 // Resources to cache immediately
