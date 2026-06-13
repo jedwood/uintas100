@@ -1,16 +1,38 @@
-const CACHE_NAME = 'uintas-v1780851723';
+const CACHE_NAME = 'uintas-v1781370232';
 const MAX_CACHE_SIZE = 45 * 1024 * 1024; // Stay under iOS 50MB limit
 
-// Resources to cache immediately
+// Resources to cache immediately. Everything is served locally — no CDN
+// dependence — so the app works offline even on its first install.
+// Lake photos are cached lazily as they're viewed.
 const urlsToCache = [
     './',
     './index.html',
-    './uinta_lakes.db',
+    './tailwind.css',
+    './lakes_data.json',
     './manifest.json',
-    // External resources
-    'https://cdn.tailwindcss.com',
-    'https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js',
-    'https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.wasm'
+    './favicon.ico',
+    './icon-180.png',
+    './icon-192.png',
+    './icon-512.png',
+    // Drainage maps — the ones you want at the trailhead
+    './drainages/ashley-creek-drainage.jpg',
+    './drainages/bear-river-drainage.jpg',
+    './drainages/beaver-creek-drainage.jpg',
+    './drainages/blacks-fork-drainage.jpg',
+    './drainages/burnt-fork-drainage.jpg',
+    './drainages/dry-gulch-drainage.jpg',
+    './drainages/duchesne-river-drainage.jpg',
+    './drainages/henrys-fork-drainage.jpg',
+    './drainages/lake-fork-drainage.jpg',
+    './drainages/provo-river-drainage.jpg',
+    './drainages/rock-creek-drainage.jpg',
+    './drainages/sheep-creek-carter-creek-drainage.jpg',
+    './drainages/smiths-fork-drainage.jpg',
+    './drainages/swift-creek-drainage.jpg',
+    './drainages/uinta-river-drainage.jpg',
+    './drainages/weber-river-drainage.jpg',
+    './drainages/whiterocks-drainage.jpg',
+    './drainages/yellowstone-river-drainage.jpg'
 ];
 
 // Install event - cache core resources
@@ -78,35 +100,42 @@ async function handleFetch(request) {
 
         // If not in cache, try network
         const networkResponse = await fetch(request);
-        
+
         // Cache successful responses (excluding range requests)
         if (networkResponse.status === 200 && !request.headers.get('range')) {
             await cacheResponse(request, networkResponse.clone());
         }
-        
+
         return networkResponse;
-        
+
     } catch (error) {
         console.warn('Service Worker: Fetch failed', error);
-        
+
         // Return offline page for HTML requests
-        if (request.headers.get('accept').includes('text/html')) {
+        if ((request.headers.get('accept') || '').includes('text/html')) {
             return new Response(`
                 <!DOCTYPE html>
                 <html>
                 <head>
                     <title>Offline - Uintas 💯</title>
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <script src="https://cdn.tailwindcss.com"></script>
+                    <style>
+                        body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #f8fafc;
+                               min-height: 100vh; display: flex; align-items: center; justify-content: center; margin: 0; }
+                        .card { text-align: center; padding: 2rem; }
+                        h1 { font-size: 1.875rem; color: #1f2937; margin-bottom: 1rem; }
+                        p { color: #4b5563; margin-bottom: 1rem; }
+                        .hint { font-size: 0.875rem; color: #6b7280; }
+                        button { margin-top: 1rem; background: #334155; color: white; padding: 0.5rem 1rem;
+                                 border: none; border-radius: 0.5rem; font-size: 1rem; }
+                    </style>
                 </head>
-                <body class="bg-slate-50 min-h-screen flex items-center justify-center">
-                    <div class="text-center p-8">
-                        <h1 class="text-3xl font-bold text-gray-800 mb-4">🏔️ Uintas 💯</h1>
-                        <p class="text-gray-600 mb-4">You're offline, but the app should still work!</p>
-                        <p class="text-sm text-gray-500">Try refreshing the page or check your connection.</p>
-                        <button onclick="window.location.reload()" class="mt-4 bg-slate-700 text-white px-4 py-2 rounded-lg">
-                            Retry
-                        </button>
+                <body>
+                    <div class="card">
+                        <h1>🏔️ Uintas 💯</h1>
+                        <p>You're offline, but the app should still work!</p>
+                        <p class="hint">Try refreshing the page or check your connection.</p>
+                        <button onclick="window.location.reload()">Retry</button>
                     </div>
                 </body>
                 </html>
@@ -114,7 +143,7 @@ async function handleFetch(request) {
                 headers: { 'Content-Type': 'text/html' }
             });
         }
-        
+
         // For other requests, return a generic error
         return new Response('Offline', { status: 503 });
     }
@@ -123,14 +152,14 @@ async function handleFetch(request) {
 async function cacheResponse(request, response) {
     try {
         const cache = await caches.open(CACHE_NAME);
-        
+
         // Check cache size before adding
         const usage = await navigator.storage?.estimate?.();
         if (usage && usage.usage > MAX_CACHE_SIZE * 0.8) {
             console.log('Service Worker: Cache approaching limit, skipping cache');
             return;
         }
-        
+
         await cache.put(request, response);
     } catch (error) {
         // iOS 17 cache bugs - fail silently
