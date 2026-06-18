@@ -1,4 +1,4 @@
-const CACHE_NAME = 'uintas-v1781370232';
+const CACHE_NAME = 'uintas-v1781803370';
 const MAX_CACHE_SIZE = 45 * 1024 * 1024; // Stay under iOS 50MB limit
 
 // Resources to cache immediately. Everything is served locally — no CDN
@@ -14,6 +14,13 @@ const urlsToCache = [
     './icon-180.png',
     './icon-192.png',
     './icon-512.png',
+    // Leaflet (vendored locally — map tiles still need a connection, but the
+    // map library and app shell stay fully offline-capable)
+    './vendor/leaflet/leaflet.js',
+    './vendor/leaflet/leaflet.css',
+    './vendor/leaflet/images/marker-icon.png',
+    './vendor/leaflet/images/marker-icon-2x.png',
+    './vendor/leaflet/images/marker-shadow.png',
     // Drainage maps — the ones you want at the trailhead
     './drainages/ashley-creek-drainage.jpg',
     './drainages/bear-river-drainage.jpg',

@@ -17,6 +17,10 @@ python3 scripts/setup_database.py
 python3 scripts/fetch_latest_stocking.py
 python3 scripts/update_stocking.py
 
+# Regenerate the frontend data file after any database change
+# (the pre-commit hook also runs this automatically when uinta_lakes.db is committed)
+python3 scripts/export_web_data.py
+
 # Generate human-readable dumps
 python3 -c "from scripts.database_utils import *; import sqlite3; conn = sqlite3.connect('uinta_lakes.db'); dump_lake_data(conn); dump_stocking_data(conn); dump_combined_data(conn)"
 ```
@@ -32,6 +36,24 @@ osascript scripts/sync_db_to_notes_jxa.js
 # Shell wrapper for notes sync
 ./scripts/sync_notes_to_db.sh
 ```
+
+### Coordinates & Mapping
+```bash
+# 1. Seed ~70% of lake coordinates from OpenStreetMap (matched by designation + name)
+python3 scripts/seed_coordinates.py            # uses cached OSM data if present
+python3 scripts/seed_coordinates.py --refresh  # re-fetch from Overpass
+
+# 2. Manually place/verify the rest in the Lake Locator (local web tool)
+python3 scripts/locator_server.py              # open http://localhost:8777/locator.html
+
+# 3. Push verified coords into the PWA data
+python3 scripts/export_web_data.py
+```
+Coordinate columns on `lakes`: `lat`, `lng`, `coord_source` (`osm-designation`/`osm-name`/`manual`),
+`coord_status` (`seed_unverified` | `seed_suspect` | `confirmed` | `manual` | `cant_find`).
+Only `confirmed`/`manual` coordinates are exported to the PWA (which shows an "Open in Maps"
+link); seeds stay internal to the Locator until you eyeball them. The Locator writes straight
+back into `uinta_lakes.db`.
 
 ### PWA Cache Management
 ```bash
@@ -65,10 +87,16 @@ npx serve .
 - **Lake Identification**: Letter-number system (BR-25, X-64) as primary keys
 
 ### Web Frontend (`index.html`)
-- **Progressive Web App**: Full offline functionality with service worker
-- **SQL.js Integration**: Client-side SQLite queries for real-time filtering
-- **Search & Filtering**: By drainage, species, depth, elevation, size, stocking years
-- **Lake Details**: Modal views with stocking history, photos, DWR notes
+- **Progressive Web App**: Full offline functionality with service worker, no CDN dependencies (Tailwind CSS vendored as `tailwind.css`, Leaflet vendored under `vendor/leaflet/`)
+- **JSON Data**: Loads `lakes_data.json` (generated from the database by `scripts/export_web_data.py`) with stocking records and photos nested per lake
+- **Search & Filtering**: By drainage, species, depth, elevation, size, stocking years. Filters collapse by default with an active-count badge.
+- **List / Map views**: One filtered result set, toggle between a list and a Leaflet map (USGS Topo + Imagery layers, status-colored pins, auto-fit, GPS "locate me"). View choice persists. Map tiles need a connection; pins/data work offline. Only `confirmed`/`manual` coordinates appear.
+- **Lake Details**: Modal views with stocking history, photos, DWR notes, "Open in Maps" link when coordinates exist
+- **Mission Progress**: Header shows CAUGHT-status count toward the 100-waters goal
+
+### Frontend Asset Regeneration
+- `lakes_data.json` - regenerate with `python3 scripts/export_web_data.py` after db changes (pre-commit hook does this automatically when the db is committed)
+- `tailwind.css` - regenerate only if new Tailwind classes are added to index.html: `npx tailwindcss@3.4.17 -o tailwind.css --content "./index.html" --minify`
 
 ### Data Sources Integration
 - **Utah DWR**: Official stocking reports (automated fetch from dwrapps.utah.gov)
@@ -120,10 +148,17 @@ Auto-generated lake data   ← System content
 
 ### Critical Files
 - `uinta_lakes.db` - Main database
+- `lakes_data.json` - Generated frontend data (do not edit by hand; regenerate via `scripts/export_web_data.py`)
 - `index.html` - Web app frontend
+- `tailwind.css` - Vendored static Tailwind build
+- `vendor/leaflet/` - Vendored Leaflet library + marker images (map view)
 - `service-worker.js` - PWA offline functionality
 - `scripts/setup_database.py` - Initial database creation
+- `scripts/export_web_data.py` - Database → lakes_data.json export
 - `scripts/species_utils.py` - Species name standardization
+- `scripts/seed_coordinates.py` - OSM coordinate seeder
+- `scripts/locator_server.py` + `locator.html` - Lake Locator tool for placing/verifying coordinates
+- `scripts/coord_utils.py` - Shared coordinate helpers (schema migration, name/designation normalization)
 
 ### Data Sources (`data/`)
 - `lake_data.csv` - Original 609 lake designations
