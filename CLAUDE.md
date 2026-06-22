@@ -90,7 +90,8 @@ npx serve .
 - **Progressive Web App**: Full offline functionality with service worker, no CDN dependencies (Tailwind CSS vendored as `tailwind.css`, Leaflet vendored under `vendor/leaflet/`)
 - **JSON Data**: Loads `lakes_data.json` (generated from the database by `scripts/export_web_data.py`) with stocking records and photos nested per lake
 - **Search & Filtering**: By drainage, species, depth, elevation, size, stocking years. Filters collapse by default with an active-count badge.
-- **List / Map views**: One filtered result set, toggle between a list and a Leaflet map (USGS Topo + Imagery layers, status-colored pins, auto-fit, GPS "locate me"). View choice persists. Map tiles need a connection; pins/data work offline. Only `confirmed`/`manual` coordinates appear.
+- **List / Map views**: One filtered result set, toggle between a list and a Leaflet map (USGS Topo + Imagery layers, status-colored pins, auto-fit, GPS "locate me"). A "Browse all lakes on the map" button opens the whole range without first picking a filter/drainage. View choice persists. Map tiles need a connection; pins/data work offline. Only `confirmed`/`manual` coordinates appear.
+- **Map orientation**: The red GPS marker shows a compass heading arrow (DeviceOrientation; iOS prompts for permission on the locate tap). The map supports rotation — two-finger twist on mobile, Shift+drag on desktop — via the vendored `leaflet-rotate` plugin (`vendor/leaflet/leaflet-rotate.js`); the heading arrow compensates for the current map bearing.
 - **Lake Details**: Modal views with stocking history, photos, DWR notes, "Open in Maps" link when coordinates exist
 - **Mission Progress**: Header shows CAUGHT-status count toward the 100-waters goal
 
@@ -151,7 +152,7 @@ Auto-generated lake data   ← System content
 - `lakes_data.json` - Generated frontend data (do not edit by hand; regenerate via `scripts/export_web_data.py`)
 - `index.html` - Web app frontend
 - `tailwind.css` - Vendored static Tailwind build
-- `vendor/leaflet/` - Vendored Leaflet library + marker images (map view)
+- `vendor/leaflet/` - Vendored Leaflet library + marker/layer-control images, plus the `leaflet-rotate` plugin (map view)
 - `service-worker.js` - PWA offline functionality
 - `scripts/setup_database.py` - Initial database creation
 - `scripts/export_web_data.py` - Database → lakes_data.json export

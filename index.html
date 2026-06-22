@@ -28,13 +28,23 @@
         .loaded .loading { display: block; }
         .loaded .not-loaded { display: none; }
         #results-map { height: 70vh; min-height: 340px; }
-        /* "You are here" GPS marker */
-        .gps-dot { width: 16px; height: 16px; background: #2563eb; border: 3px solid #fff;
-                   border-radius: 50%; box-shadow: 0 0 0 2px rgba(37,99,235,.4); }
+        /* "You are here" GPS marker — red, with an optional compass heading arrow */
+        .gps-marker { position: relative; width: 16px; height: 16px; }
+        .gps-dot { width: 16px; height: 16px; background: #ef4444; border: 3px solid #fff;
+                   border-radius: 50%; box-shadow: 0 0 0 2px rgba(239,68,68,.45); }
+        /* Arrow swings around the dot to point the way the phone is facing.
+           .gps-heading rotates about the dot center; the triangle sits just above it. */
+        .gps-heading { position: absolute; inset: 0; transform: rotate(var(--heading, 0deg));
+                   transform-origin: 50% 50%; transition: transform .12s linear; }
+        .gps-arrow { position: absolute; left: 50%; top: -13px; transform: translateX(-50%);
+                   width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent;
+                   border-bottom: 10px solid #ef4444; filter: drop-shadow(0 0 1px #fff); }
         .leaflet-bar .locate-btn { font-size: 18px; line-height: 30px; text-align: center;
                    width: 34px; height: 34px; display: block; background: #fff; cursor: pointer; }
         .leaflet-bar .locate-btn.locating { animation: pulse 1s infinite; }
         @keyframes pulse { 50% { opacity: .4; } }
+        /* Detail/About modals must sit above Leaflet panes & controls (z-index up to 1000) */
+        #lake-detail-modal, #about-modal { z-index: 1200; }
     </style>
 </head>
 <body class="bg-slate-50 min-h-screen">
@@ -75,6 +85,12 @@
                                autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
                         <div id="search-results" class="mt-2 bg-white border border-gray-200 rounded-md hidden max-h-60 overflow-y-auto"></div>
                     </div>
+
+                    <!-- Always-available full map (no filter required) -->
+                    <button id="map-all" type="button"
+                            class="w-full flex items-center justify-center gap-2 text-sm font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg px-4 py-2 transition-colors">
+                        🗺️ Browse all lakes on the map
+                    </button>
 
                     <!-- Collapsible Filters -->
                     <div class="mt-3 border-t border-gray-100 pt-3">
@@ -330,6 +346,7 @@
     </div>
 
     <script src="vendor/leaflet/leaflet.js"></script>
+    <script src="vendor/leaflet/leaflet-rotate.js"></script>
     <script>
         let lakes = [];
         let drainagesInfo = [];
@@ -509,6 +526,7 @@
             // List / Map view toggle
             document.getElementById('view-list').addEventListener('click', () => setView('list'));
             document.getElementById('view-map').addEventListener('click', () => setView('map'));
+            document.getElementById('map-all').addEventListener('click', showAllOnMap);
             updateViewToggle();
             document.getElementById('about-link').addEventListener('click', openAboutModal);
             document.getElementById('close-about-modal').addEventListener('click', closeAboutModal);
@@ -818,6 +836,14 @@
             renderCurrentView();
         }
 
+        // Open the whole-range map without picking a filter or drainage first.
+        function showAllOnMap() {
+            view.mode = 'map';
+            localStorage.setItem('uintas-view', 'map');
+            updateViewToggle();
+            setResults(lakes, { title: 'All Lakes', showDrainage: true });
+        }
+
         function updateViewToggle() {
             const active = 'px-3 py-1.5 font-medium transition-colors bg-slate-700 text-white';
             const idle = 'px-3 py-1.5 font-medium transition-colors bg-white text-gray-600 hover:bg-gray-50';
@@ -870,10 +896,49 @@
                              opts: { maxZoom: 17, attribution: 'OpenTopoMap (CC-BY-SA)' } },
         };
         let resultsMap = null, resultsMarkers = null, gpsMarker = null;
+        let gpsHeadingEl = null, headingListening = false, lastHeading = null;
+
+        // ---- Compass heading arrow (#2) ----
+        // Point the arrow the way the phone faces. iOS gives webkitCompassHeading
+        // (0=N, clockwise); other browsers approximate from absolute orientation alpha.
+        function applyHeading() {
+            if (lastHeading == null || !gpsHeadingEl) return;
+            const bearing = (resultsMap && resultsMap.getBearing) ? resultsMap.getBearing() : 0;
+            gpsHeadingEl.style.display = '';
+            gpsHeadingEl.style.setProperty('--heading', (lastHeading - bearing) + 'deg');
+        }
+        function onOrient(e) {
+            let hdg = null;
+            if (typeof e.webkitCompassHeading === 'number') hdg = e.webkitCompassHeading;
+            else if (e.absolute && typeof e.alpha === 'number') hdg = 360 - e.alpha;
+            if (hdg == null) return;
+            lastHeading = hdg;
+            applyHeading();
+        }
+        // Must run inside the user-gesture stack (the locate tap) for the iOS prompt.
+        function requestHeading() {
+            if (headingListening) return;
+            const begin = () => {
+                window.addEventListener('deviceorientationabsolute', onOrient, true);
+                window.addEventListener('deviceorientation', onOrient, true);
+                headingListening = true;
+            };
+            if (typeof DeviceOrientationEvent !== 'undefined'
+                && typeof DeviceOrientationEvent.requestPermission === 'function') {
+                DeviceOrientationEvent.requestPermission()
+                    .then(state => { if (state === 'granted') begin(); }).catch(() => {});
+            } else {
+                begin();
+            }
+        }
 
         function initMap() {
             if (resultsMap) return;
-            resultsMap = L.map('results-map').setView([40.72, -110.40], 9);
+            // rotate/touchRotate (leaflet-rotate): two-finger twist on mobile, Shift+drag on
+            // desktop; the rotate control doubles as a "reset to north" compass.
+            resultsMap = L.map('results-map', {
+                rotate: true, touchRotate: true, bearing: 0
+            }).setView([40.72, -110.40], 9);
             const layers = {};
             Object.entries(MAP_LAYERS).forEach(([name, l], i) => {
                 layers[name] = L.tileLayer(l.url, l.opts);
@@ -882,6 +947,8 @@
             L.control.layers(layers, null, { position: 'topright' }).addTo(resultsMap);
             resultsMarkers = L.layerGroup().addTo(resultsMap);
             addLocateControl();
+            // Keep the heading arrow pointing true as the map is manually rotated
+            resultsMap.on('rotate', applyHeading);
         }
 
         function statusColor(lake) {
@@ -943,6 +1010,7 @@
 
         function locateMe(btn) {
             if (!navigator.geolocation) { showMapNote('Geolocation not supported on this device.'); return; }
+            requestHeading();  // keep the iOS permission prompt in the tap's gesture stack
             btn.classList.add('locating');
             navigator.geolocation.getCurrentPosition(
                 pos => {
@@ -950,9 +1018,13 @@
                     const { latitude, longitude } = pos.coords;
                     if (gpsMarker) resultsMap.removeLayer(gpsMarker);
                     gpsMarker = L.marker([latitude, longitude], {
-                        icon: L.divIcon({ className: '', html: '<div class="gps-dot"></div>', iconSize: [16, 16] }),
+                        icon: L.divIcon({ className: '', iconSize: [16, 16], iconAnchor: [8, 8],
+                            html: '<div class="gps-marker"><div class="gps-heading" style="display:none"><span class="gps-arrow"></span></div><div class="gps-dot"></div></div>' }),
                         interactive: false, keyboard: false
                     }).addTo(resultsMap);
+                    const el = gpsMarker.getElement();
+                    gpsHeadingEl = el ? el.querySelector('.gps-heading') : null;
+                    applyHeading();  // show arrow immediately if we already have a heading
                     resultsMap.setView([latitude, longitude], Math.max(resultsMap.getZoom(), 13));
                 },
                 err => {
