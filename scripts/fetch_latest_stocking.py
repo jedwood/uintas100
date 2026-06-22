@@ -87,7 +87,11 @@ def parse_and_insert_data(html_content, conn, cursor, county, csv_writer, log_fi
                 })
                 
                 # Log the new record
-                log_file.write(f"  NEW: {water_name} ({lake_id}) - {species} x{quantity} on {stock_date}\n")
+                # Show the lake's designation (e.g. WR-33), not the meaningless internal id
+                designation = conn.execute(
+                    "SELECT letter_number FROM lakes WHERE id = ?", (lake_id,)
+                ).fetchone()[0] or lake_id
+                log_file.write(f"  NEW: {water_name} ({designation}) - {species} x {quantity} on {stock_date}\n")
 
     # Write new records to CSV
     for record in new_csv_records:

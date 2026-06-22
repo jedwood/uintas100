@@ -65,7 +65,7 @@ def parse_and_insert_data(html_content, conn, cursor, county, year, csv_writer, 
 
             if not lake_id:
                 unmatched_lakes.add(water_name)
-                log_file.write(f"  UNMATCHED: {water_name} - {species} x{quantity}\n")
+                log_file.write(f"  UNMATCHED: {water_name} - {species} x {quantity}\n")
                 continue
 
             # Check for potential issues
@@ -99,7 +99,7 @@ def parse_and_insert_data(html_content, conn, cursor, county, year, csv_writer, 
                 })
                 
                 # Log the new record
-                log_file.write(f"  NEW: {water_name} ({lake_id}) - {species} x{quantity} on {stock_date}\n")
+                log_file.write(f"  NEW: {water_name} ({lake_id}) - {species} x {quantity} on {stock_date}\n")
 
     # Write new records to CSV
     for record in new_csv_records:

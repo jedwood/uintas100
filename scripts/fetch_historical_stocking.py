@@ -75,11 +75,11 @@ def parse_and_analyze_data(html_content, conn, cursor, county, year, log_file):
             if lake_id:
                 matched_lakes.add(water_name)
                 log_file.write(f"  MATCH: {water_name} -> Lake ID {lake_id} ({match_type})\n")
-                log_file.write(f"    {species} x{quantity} ({length}\") on {stock_date}\n")
+                log_file.write(f"    {species} x {quantity} ({length}\") on {stock_date}\n")
             else:
                 unmatched_lakes.add(water_name)
                 log_file.write(f"  NO MATCH: {water_name}\n")
-                log_file.write(f"    {species} x{quantity} ({length}\") on {stock_date}\n")
+                log_file.write(f"    {species} x {quantity} ({length}\") on {stock_date}\n")
             
             found_records += 1
 

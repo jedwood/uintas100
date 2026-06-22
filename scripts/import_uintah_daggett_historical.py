@@ -98,7 +98,7 @@ def parse_and_insert_data(html_content, conn, cursor, county, year, csv_writer, 
                 })
                 
                 # Log the new record
-                log_file.write(f"  NEW: {water_name} ({lake_id}) - {species} x{quantity} on {stock_date} [{match_type}]\n")
+                log_file.write(f"  NEW: {water_name} ({lake_id}) - {species} x {quantity} on {stock_date} [{match_type}]\n")
 
     # Write new records to CSV
     for record in new_csv_records:
