@@ -79,10 +79,12 @@ npx serve .
   - `stocking_records` - DWR stocking history with normalized species names
   - `drainages` - 17 major drainage systems with access info and maps
   - `photos` - Lake photos from junesucker.com
+  - `other_waters` / `other_stocking_records` - "fringe" waters DWR stocks that are NOT lettered lakes (creeks, ponds, forks). Kept entirely separate from `lakes` and the PWA. `likely_drainage` is a GUESS borrowed from a namesake lake (e.g. "Beaver Cr" → BR-10 Beaver's drainage) — treat as use-at-your-own-risk. Rebuilt by `scripts/migrate_fringe_waters.py`.
 
 ### Python Backend (`scripts/`)
 - **Data Pipeline**: CSV sources → SQLite via setup/update scripts
 - **Species Standardization**: `species_utils.py` normalizes all species names to consistent format (Brookies, Tigers, Cutthroats, etc.)
+- **Stocking matcher** (`database_utils.find_matching_lake`): a DWR water is credited to a lake ONLY on an exact letter-number designation or an exact name (after stripping a trailing "Lake"/"Reservoir"). Loose substring matching was removed because it mis-filed creeks/ponds onto same-named lakes (e.g. "Beaver Cr" → BR-10). Such waters are instead routed to `other_waters` via `find_fringe_water` (whole-word name match → likely drainage). Fetch covers 5 counties: Summit, Duchesne, Uintah, Daggett, Wasatch.
 - **Apple Notes Integration**: Bidirectional sync using JXA scripts for personal fishing notes
 - **Lake Identification**: Letter-number system (BR-25, X-64) as primary keys
 

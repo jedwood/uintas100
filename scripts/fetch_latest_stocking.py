@@ -5,7 +5,10 @@ import sqlite3
 import csv
 import os
 import subprocess
-from database_utils import create_database, extract_letter_number, stocking_record_exists, find_matching_lake
+from database_utils import (
+    create_database, extract_letter_number, stocking_record_exists, find_matching_lake,
+    find_fringe_water, upsert_other_water, other_stocking_exists,
+)
 from species_utils import standardize_stocking_species, update_lake_fish_species, refresh_all_fish_species
 from datetime import datetime
 
@@ -38,9 +41,10 @@ def parse_and_insert_data(html_content, conn, cursor, county, csv_writer, log_fi
     rows = soup.find_all('tr')
     
     new_records = 0
+    new_fringe_records = 0
     unmatched_lakes = set()
     new_csv_records = []
-    
+
     for row in rows:
         cols = row.find_all('td')
         if len(cols) == 6:
@@ -51,7 +55,7 @@ def parse_and_insert_data(html_content, conn, cursor, county, csv_writer, log_fi
             quantity = int(cols[3].text.strip())
             length = float(cols[4].text.strip())
             stock_date_str = cols[5].text.strip()
-            
+
             try:
                 stock_date = datetime.strptime(stock_date_str, '%m/%d/%Y').strftime('%Y-%m-%d')
                 source_year = datetime.strptime(stock_date_str, '%m/%d/%Y').year
@@ -62,7 +66,32 @@ def parse_and_insert_data(html_content, conn, cursor, county, csv_writer, log_fi
             lake_id, match_type, match_details = find_matching_lake(cursor, water_name)
 
             if not lake_id:
-                unmatched_lakes.add(water_name)
+                # Not one of our lakes. If it shares a name root with a lake (e.g.
+                # "Beaver Cr" ~ BR-10 Beaver), file it as a fringe water with a
+                # guessed drainage; otherwise it's a lowland water we ignore.
+                fringe = find_fringe_water(cursor, water_name)
+                if fringe:
+                    water_id = upsert_other_water(cursor, water_name, fringe, county=county.title())
+                    if not other_stocking_exists(cursor, water_id, species, quantity, stock_date):
+                        cursor.execute(
+                            """INSERT INTO other_stocking_records
+                               (water_id, county, species, quantity, length, stock_date, source_year)
+                               VALUES (?, ?, ?, ?, ?, ?, ?)""",
+                            (water_id, county, species, quantity, length, stock_date, source_year),
+                        )
+                        new_fringe_records += 1
+                        # keep the CSV a complete log of everything DWR stocked
+                        new_csv_records.append({
+                            'water_name': water_name, 'county': county,
+                            'species': raw_species, 'quantity': quantity, 'length': length,
+                            'stock_date': stock_date_str, 'source_year': source_year,
+                        })
+                        log_file.write(
+                            f"  FRINGE: {water_name} [{fringe['water_type']}] "
+                            f"~{fringe['likely_drainage']} - {species} x {quantity} on {stock_date}\n"
+                        )
+                else:
+                    unmatched_lakes.add(water_name)
                 continue
 
             if not stocking_record_exists(cursor, lake_id, species, quantity, stock_date):
@@ -101,13 +130,15 @@ def parse_and_insert_data(html_content, conn, cursor, county, csv_writer, log_fi
     
     # Log summary
     log_file.write(f"  → {new_records} new records added for {county} county\n")
+    if new_fringe_records:
+        log_file.write(f"  → {new_fringe_records} new fringe (creek/pond) records in {county}\n")
     if unmatched_lakes:
         log_file.write(f"  → {len(unmatched_lakes)} unmatched lakes in {county}\n")
         for lake in sorted(list(unmatched_lakes)):
             log_file.write(f"    - {lake}\n")
-    
-    print(f"Inserted {new_records} new stocking records for {county} county.")
-    return new_records, unmatched_lakes
+
+    print(f"Inserted {new_records} new stocking records ({new_fringe_records} fringe) for {county} county.")
+    return new_records, new_fringe_records, unmatched_lakes
 
 def commit_and_push_changes(log_file, new_records_count, refreshed_count=0):
     """Commit database changes and push to remote if new records were added."""
@@ -196,24 +227,28 @@ def main():
             cursor = conn.cursor()
             
             total_new_records = 0
+            total_fringe_records = 0
             all_unmatched = set()
 
             # Fetch current year and prior year (catches late-season stocking added after year rolls over)
             current_year = datetime.now().year
             years_to_fetch = [current_year, current_year - 1]
 
+            # Wasatch covers a few fringe Uinta lakes (e.g. D-33 Iron Mine, D-40
+            # Broadhead). Non-Uinta waters in any county are dropped by the matcher.
             for year in years_to_fetch:
                 log_file.write(f"\n--- Fetching {year} data ---\n")
-                for county in ["Summit", "Duchesne", "Uintah", "Daggett"]:
+                for county in ["Summit", "Duchesne", "Uintah", "Daggett", "Wasatch"]:
                     log_file.write(f"\nProcessing {county} county ({year})...\n")
                     print(f"Fetching data for {county} county ({year})...")
 
                     html_content = fetch_stocking_data(county, year)
                     if html_content:
-                        new_records, unmatched = parse_and_insert_data(
+                        new_records, new_fringe, unmatched = parse_and_insert_data(
                             html_content, conn, cursor, county, csv_writer, log_file
                         )
                         total_new_records += new_records
+                        total_fringe_records += new_fringe
                         all_unmatched.update(unmatched)
                     else:
                         log_file.write(f"  ERROR: Failed to fetch data for {county} ({year})\n")
@@ -229,9 +264,11 @@ def main():
             conn.close()
 
             # Commit and push changes if new records were added
-            if total_new_records > 0 or changed > 0:
+            if total_new_records > 0 or total_fringe_records > 0 or changed > 0:
                 log_file.write(f"\n=== GIT OPERATIONS ===\n")
-                print(f"\nCommitting and pushing {total_new_records} new records...")
+                if total_fringe_records:
+                    log_file.write(f"Plus {total_fringe_records} new fringe (creek/pond) records\n")
+                print(f"\nCommitting and pushing {total_new_records} new records ({total_fringe_records} fringe)...")
                 commit_and_push_changes(log_file, total_new_records, changed)
             else:
                 log_file.write(f"\nNo new records added, skipping git commit\n")

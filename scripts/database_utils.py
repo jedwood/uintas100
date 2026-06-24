@@ -74,7 +74,38 @@ def create_database(db_path=None):
             map TEXT
         )
     ''')
-    
+
+    # "Other waters" — creeks, ponds, forks, etc. that DWR stocks but which are
+    # NOT one of our lettered lakes. Kept completely separate from `lakes` (and
+    # the PWA). `likely_drainage` is a GUESS borrowed from a similarly-named lake
+    # (see find_fringe_water); treat these as use-at-your-own-risk.
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS other_waters (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            water_name TEXT UNIQUE,
+            water_type TEXT,
+            likely_drainage TEXT,
+            inferred_from TEXT,
+            county TEXT,
+            notes TEXT
+        )
+    ''')
+
+    # Stocking records for the fringe waters above (mirrors stocking_records).
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS other_stocking_records (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            water_id INTEGER,
+            county TEXT,
+            species TEXT,
+            quantity INTEGER,
+            length REAL,
+            stock_date DATE,
+            source_year INTEGER,
+            FOREIGN KEY (water_id) REFERENCES other_waters (id)
+        )
+    ''')
+
     # Add new columns for Norrick data if they don't exist
     try:
         cursor.execute('ALTER TABLE lakes ADD COLUMN size_acres REAL')
@@ -199,38 +230,145 @@ def normalize_lake_name(name):
     normalized = re.sub(r'\s+', ' ', normalized).strip()
     return normalized
 
+# Trailing words that just mean "the lake/reservoir itself" — safe to ignore when
+# deciding whether two names refer to the same LAKE (so "Hidden L" == "Hidden").
+# Deliberately excludes POND/CREEK/etc.: a "Beaver Cr" or "Cutthroat Pond" is a
+# DIFFERENT water from a same-named lake and must NOT match (it goes to fringe).
+LAKE_SUFFIX_WORDS = {'LAKE', 'RESERVOIR'}
+# When guessing a fringe water's drainage we strip a broader set to find the root
+# (so "Uinta Pond" -> "UINTA" can borrow from the "Uintah" lake).
+FRINGE_ROOT_SUFFIX_WORDS = {'LAKE', 'RESERVOIR', 'POND', 'PONDS'}
+
+# Developed / front-country waters that are never Uinta backcountry creeks/ponds.
+# Excluded from fringe entirely (e.g. "Rock Cliff St Park" must not borrow a
+# high-lake drainage just because it contains the word "Cliff").
+FRINGE_EXCLUDE_RE = re.compile(
+    r'\b(ST\s*PARK|STATE\s*PARK|\bSP\b|WMA|GOLF|CITY|REGIONAL)\b', re.IGNORECASE
+)
+
+
+def _strip_trailing(normalized, words):
+    parts = normalized.split()
+    while parts and parts[-1] in words:
+        parts.pop()
+    return ' '.join(parts)
+
+
+def classify_water_type(water_name):
+    """Rough water-body type from a DWR water name."""
+    u = water_name.upper()
+    if re.search(r'\bCR\b|CREEK', u):
+        return 'creek'
+    if 'POND' in u:
+        return 'pond'
+    if re.search(r'\bRES\b|RESERVOIR', u):
+        return 'reservoir'
+    if 'SPRING' in u:
+        return 'spring'
+    if re.search(r'\bFK\b|\bFORK\b|\bR\b|RIVER', u):
+        return 'stream'
+    return 'other'
+
+
 def find_matching_lake(cursor, water_name):
-    """Find matching lake in database"""
+    """Find the LAKE a DWR water name refers to — conservatively.
+
+    Matches only when we're confident it's the same water:
+      1. an exact letter-number designation extracted from the name, or
+      2. names that are equal once trailing LAKE/RESERVOIR words are stripped
+         ("Hidden L" == "Hidden").
+
+    The old loose substring matching was removed: it mis-filed creeks and ponds
+    onto same-named lakes (e.g. "Beaver Cr" -> BR-10 Beaver). Those waters are
+    handled by find_fringe_water() and stored in other_waters instead.
+    """
     letter_number = extract_letter_number(water_name)
-    
-    # Primary match: letter-number designation
     if letter_number:
         cursor.execute('SELECT id, name FROM lakes WHERE letter_number = ?', (letter_number,))
         result = cursor.fetchone()
         if result:
             return result[0], "exact", f"Matched on letter-number: {letter_number}"
-    
-    # Secondary match: word name
-    normalized_water = normalize_lake_name(water_name)
-    if not normalized_water:
+
+    target = _strip_trailing(normalize_lake_name(water_name), LAKE_SUFFIX_WORDS)
+    if not target:
         return None, "none", "Empty normalized name"
-    
-    cursor.execute('SELECT id, name, letter_number FROM lakes')
-    all_lakes = cursor.fetchall()
-    
-    for lake_id, name, lake_letter_number in all_lakes:
-        
-        # Try matching against word name only
-        normalized_word = normalize_lake_name(name)
-        if normalized_water == normalized_word:
-            return lake_id, "high", f"Matched on normalized word name: {normalized_water}"
-        
-        # Try partial matching for common cases
-        if normalized_water in normalized_word or normalized_word in normalized_water:
-            if len(normalized_water) > 4 and len(normalized_word) > 4:
-                return lake_id, "medium", f"Partial match: {normalized_water} <-> {normalized_word}"
-    
+
+    cursor.execute('SELECT id, name FROM lakes WHERE name IS NOT NULL AND name != ""')
+    for lake_id, name in cursor.fetchall():
+        if _strip_trailing(normalize_lake_name(name), LAKE_SUFFIX_WORDS) == target:
+            return lake_id, "name", f"Matched on lake name: {target}"
+
     return None, "none", "No match found"
+
+
+def find_fringe_water(cursor, water_name):
+    """For a stocked water that is NOT one of our lakes, guess a likely drainage
+    by borrowing it from a similarly-named lake.
+
+    Returns a dict {water_type, likely_drainage, inferred_from} or None. This is
+    intentionally loose (name-root substring) and is ONLY used to file creek/pond
+    stockings into other_waters as use-at-your-own-risk hints — never to credit a
+    stocking to a real lake.
+    """
+    if FRINGE_EXCLUDE_RE.search(water_name):
+        return None
+
+    root = _strip_trailing(normalize_lake_name(water_name), FRINGE_ROOT_SUFFIX_WORDS)
+    if not root or len(root) < 4:
+        return None
+    water_tokens = root.split()
+
+    cursor.execute('SELECT letter_number, name, drainage FROM lakes WHERE name IS NOT NULL AND name != ""')
+    rows = cursor.fetchall()
+
+    # Require the lake's FULL name to appear as whole consecutive words in the
+    # water name ("Beaver Cr" contains the word "Beaver"), NOT a loose substring.
+    # Substring matching wrongly grabbed lowland waters — e.g. "Jordanelle Res"
+    # contains the letters of "Jordan" but is a different water entirely.
+    best = None  # (name_len, designation, name, drainage)
+    for designation, name, drainage in rows:
+        lake_tokens = normalize_lake_name(name).split()
+        lake_norm = ' '.join(lake_tokens)
+        if len(lake_norm) <= 4:  # ignore very short, common names (Bear, Sand, ...)
+            continue
+        n = len(lake_tokens)
+        is_match = any(water_tokens[i:i + n] == lake_tokens
+                       for i in range(len(water_tokens) - n + 1))
+        if is_match and (best is None or len(lake_norm) > best[0]):
+            best = (len(lake_norm), designation, name, drainage)
+
+    if not best:
+        return None
+    _, designation, name, drainage = best
+    return {
+        'water_type': classify_water_type(water_name),
+        'likely_drainage': drainage,
+        'inferred_from': f"{designation} {name}".strip(),
+    }
+
+
+def upsert_other_water(cursor, water_name, info, county=None):
+    """Insert (or fetch) an other_waters row for a fringe water. Returns its id."""
+    cursor.execute('SELECT id FROM other_waters WHERE water_name = ?', (water_name,))
+    row = cursor.fetchone()
+    if row:
+        return row[0]
+    cursor.execute(
+        '''INSERT INTO other_waters (water_name, water_type, likely_drainage, inferred_from, county)
+           VALUES (?, ?, ?, ?, ?)''',
+        (water_name, info.get('water_type'), info.get('likely_drainage'),
+         info.get('inferred_from'), county),
+    )
+    return cursor.lastrowid
+
+
+def other_stocking_exists(cursor, water_id, species, quantity, stock_date):
+    cursor.execute(
+        '''SELECT 1 FROM other_stocking_records
+           WHERE water_id = ? AND species = ? AND quantity = ? AND stock_date = ?''',
+        (water_id, species, quantity, stock_date),
+    )
+    return cursor.fetchone() is not None
 
 def parse_norrick_depth(depth_str):
     """Parse depth field handling 'Unknown' and 'n/a' values"""
