@@ -51,7 +51,8 @@ function run() {
             const possibleNames = [
                 baseName,                    // No emoji
                 `${baseName} 🎣`,           // CAUGHT
-                `${baseName} ✖️`,           // OTHERS/NONE
+                `${baseName} 👥🎣`,         // OTHERS (matches the in-app icon)
+                `${baseName} ✖️`,           // NONE (and legacy OTHERS notes)
                 `${baseName} 🚫`            // NO_FISH
             ];
             
@@ -100,7 +101,8 @@ function run() {
             const possibleNames = [
                 baseName,                    // No emoji
                 `${baseName} 🎣`,           // CAUGHT
-                `${baseName} ✖️`,           // OTHERS/NONE
+                `${baseName} 👥🎣`,         // OTHERS (matches the in-app icon)
+                `${baseName} ✖️`,           // NONE (and legacy OTHERS notes)
                 `${baseName} 🚫`            // NO_FISH
             ];
             
@@ -176,7 +178,9 @@ function run() {
             titleEmoji = " 🚫";  // No fish lakes get prohibition emoji
         } else if (lakeStatus === "CAUGHT") {
             titleEmoji = " 🎣";
-        } else if (lakeStatus === "OTHERS" || lakeStatus === "NONE") {
+        } else if (lakeStatus === "OTHERS") {
+            titleEmoji = " 👥🎣";  // others have caught here (matches the in-app icon)
+        } else if (lakeStatus === "NONE") {
             titleEmoji = " ✖️";
         }
         
