@@ -303,11 +303,17 @@ def normalize_lake_name(name):
     normalized = re.sub(r'\s+', ' ', normalized).strip()
     return normalized
 
-# Trailing words that just mean "the lake/reservoir itself" — safe to ignore when
-# deciding whether two names refer to the same LAKE (so "Hidden L" == "Hidden").
-# Deliberately excludes POND/CREEK/etc.: a "Beaver Cr" or "Cutthroat Pond" is a
-# DIFFERENT water from a same-named lake and must NOT match (it goes to fringe).
-LAKE_SUFFIX_WORDS = {'LAKE', 'RESERVOIR'}
+# Trailing words that just mean "the lake itself" — safe to ignore when deciding
+# whether two names refer to the same LAKE (so "Hidden L" == "Hidden").
+# Deliberately excludes RESERVOIR/POND/CREEK/etc.: a "Beaver Cr", "Cutthroat
+# Pond", or "Echo Reservoir" is a DIFFERENT water from a same-named lake and must
+# NOT match by name (it goes to fringe or is ignored). RESERVOIR in particular
+# kept mis-crediting lowland reservoirs onto tiny same-named Uinta lakes
+# ("Echo Reservoir" -> Z-16 "Echo"). A reservoir is credited to a lake only on an
+# exact letter-number designation (handled first in find_matching_lake) — and a
+# lake genuinely NAMED "... Reservoir" (e.g. Y-41 "Drift Reservoir") still matches
+# a "Drift Reservoir" water, because RESERVOIR is now compared on both sides.
+LAKE_SUFFIX_WORDS = {'LAKE'}
 # When guessing a fringe water's drainage we strip a broader set to find the root
 # (so "Uinta Pond" -> "UINTA" can borrow from the "Uintah" lake).
 FRINGE_ROOT_SUFFIX_WORDS = {'LAKE', 'RESERVOIR', 'POND', 'PONDS'}

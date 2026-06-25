@@ -160,11 +160,23 @@ def commit_and_push_changes(log_file, new_records_count, refreshed_count=0):
             return
         
         log_file.write(f"Git changes detected:\n{result.stdout}")
-        
+
+        # Keep the committed CSV seeds in lockstep with the DB. The pre-commit
+        # hook also does this when enabled (git config core.hooksPath .githooks),
+        # but regenerate here too so an unattended cron run can't push a DB whose
+        # seeds have drifted, regardless of how the machine's hooks are set up.
+        try:
+            import export_seeds
+            export_seeds.export()
+            log_file.write("Regenerated data/seeds/ from DB\n")
+        except Exception as e:
+            log_file.write(f"WARNING: seed export failed ({e}); committing without seed refresh\n")
+
         # Add changed files
-        subprocess.run(['git', 'add', 'uinta_lakes.db', 'data/utah_dwr_stocking_data.csv'], 
+        subprocess.run(['git', 'add', 'uinta_lakes.db',
+                        'data/utah_dwr_stocking_data.csv', 'data/seeds'],
                        check=True)
-        log_file.write("Added database and CSV files to git\n")
+        log_file.write("Added database, CSV, and seed files to git\n")
         
         # Commit with descriptive message
         if new_records_count > 0:

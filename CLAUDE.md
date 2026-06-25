@@ -31,15 +31,28 @@ git-diffable CSV **seeds** in `data/seeds/` (one per table). This is the recover
 path — and the regression guard that the DB never silently drifts.
 
 ```bash
-# After ANY change to uinta_lakes.db, re-export the seeds and commit them with the DB
-python3 scripts/export_seeds.py
+# Enable the version-controlled git hooks ONCE per clone (this is the only manual
+# step — afterward seeds stay in sync automatically):
+git config core.hooksPath .githooks
 
 # Rebuild a content-equivalent DB from the seeds, fully offline (writes a temp file)
 python3 scripts/rebuild_database.py                      # or --output PATH
 
 # Prove the seeds round-trip to the canonical DB (exit 0 = equivalent, 1 = drift)
 python3 scripts/verify_rebuild.py
+
+# Manual re-export (rarely needed — only if committing the DB with hooks disabled)
+python3 scripts/export_seeds.py
 ```
+
+**Seeds regenerate automatically** — you do not need to remember `export_seeds.py`:
+- The `.githooks/pre-commit` hook regenerates + stages `data/seeds/` whenever
+  `uinta_lakes.db` is staged (covers every manual commit and the cron auto-update,
+  since both go through `git commit`). Enable it once with the `core.hooksPath`
+  command above; it also bumps the PWA cache version.
+- `fetch_latest_stocking.py` (the unattended cron path) also re-exports seeds in
+  its commit step, so it can't push a DB with stale seeds even on a machine where
+  the hook isn't enabled.
 
 Why seeds and not a replay of `utah_dwr_stocking_data.csv`: a clean matcher replay
 does **not** reproduce the curated DB. `find_matching_lake` strips `RESERVOIR`, so
@@ -86,9 +99,10 @@ back into `uinta_lakes.db`.
 
 ### PWA Cache Management
 ```bash
-# PWA cache version is automatically updated by commit hook
+# PWA cache version is automatically updated by the .githooks/pre-commit hook
+# (enable once per clone: git config core.hooksPath .githooks)
 # No manual intervention needed - just commit and the hook handles it
-git commit -m "your changes"  # Automatically updates cache version
+git commit -m "your changes"  # Bumps cache version + re-exports data/seeds when the DB changed
 ```
 
 ### Development Server
@@ -113,7 +127,7 @@ npx serve .
 ### Python Backend (`scripts/`)
 - **Data Pipeline**: CSV sources → SQLite via setup/update scripts
 - **Species Standardization**: `species_utils.py` normalizes all species names to consistent format (Brookies, Tigers, Cutthroats, etc.)
-- **Stocking matcher** (`database_utils.find_matching_lake`): a DWR water is credited to a lake ONLY on an exact letter-number designation or an exact name (after stripping a trailing "Lake"/"Reservoir"). Loose substring matching was removed because it mis-filed creeks/ponds onto same-named lakes (e.g. "Beaver Cr" → BR-10). Such waters are instead routed to `other_waters` via `find_fringe_water` (whole-word name match → likely drainage). Fetch covers 5 counties: Summit, Duchesne, Uintah, Daggett, Wasatch. Fringe routing now lives in **both** stocking paths — `fetch_latest_stocking.py` (live DWR scrape) and `update_stocking.py` (CSV replay) — so either path keeps creeks/ponds out of `lakes`; `migrate_fringe_waters.py` was the one-time backfill for records already inserted under the old loose matcher.
+- **Stocking matcher** (`database_utils.find_matching_lake`): a DWR water is credited to a lake ONLY on an exact letter-number designation or an exact name (after stripping a trailing "Lake"). Loose substring matching was removed because it mis-filed creeks/ponds onto same-named lakes (e.g. "Beaver Cr" → BR-10). "Reservoir" is NOT a throwaway suffix (only "Lake" is): a lowland "Echo Reservoir" must not name-match the tiny Uinta "Echo" lake (Z-16) — reservoirs are credited to a lake only by explicit designation, while a lake genuinely *named* "… Reservoir" (e.g. Y-41 "Drift Reservoir") still matches because "Reservoir" is compared on both sides. Such waters are instead routed to `other_waters` via `find_fringe_water` (whole-word name match → likely drainage). Fetch covers 5 counties: Summit, Duchesne, Uintah, Daggett, Wasatch. Fringe routing now lives in **both** stocking paths — `fetch_latest_stocking.py` (live DWR scrape) and `update_stocking.py` (CSV replay) — so either path keeps creeks/ponds out of `lakes`; `migrate_fringe_waters.py` was the one-time backfill for records already inserted under the old loose matcher.
 - **Apple Notes Integration**: Bidirectional sync using JXA scripts for personal fishing notes
 - **Lake Identification**: Letter-number system (BR-25, X-64) as primary keys
 
@@ -191,6 +205,7 @@ Auto-generated lake data   ← System content
 - `scripts/rebuild_database.py` - Seeds → content-equivalent DB (offline recovery)
 - `scripts/verify_rebuild.py` - Proves seeds round-trip to the canonical DB (drift guard)
 - `data/seeds/` - Committed CSV seeds, one per table (the reproducible source of the DB)
+- `.githooks/pre-commit` - Version-controlled hook: PWA cache bump + auto re-export of `data/seeds/` when the DB is committed (enable: `git config core.hooksPath .githooks`)
 - `scripts/species_utils.py` - Species name standardization
 - `scripts/seed_coordinates.py` - OSM coordinate seeder
 - `scripts/locator_server.py` + `locator.html` - Lake Locator tool for placing/verifying coordinates
