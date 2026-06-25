@@ -1,0 +1,15 @@
+water_name,water_type,likely_drainage,inferred_from,county,notes
+BEAR CR BEAVER POND,creek,Bear River Drainage,BR-10 Beaver,Daggett,\N
+BEAVER CR,creek,Bear River Drainage,BR-10 Beaver,Summit,\N
+BENCH CR,creek,Weber River Drainage,W-37 Bench,Wasatch,\N
+DEADMAN CR,creek,Ashley Creek Drainage,GR-38 Deadman,Summit,\N
+EAST CENTER OWEEP CR,creek,Lake Fork Drainage,LF-30 Oweep,Duchesne,\N
+EAST OWEEP CR,creek,Lake Fork Drainage,LF-30 Oweep,Duchesne,\N
+GILBERT CR,creek,Beaver Creek Drainage,GR-150 Gilbert,Summit,\N
+GREEN MEADOW POND,pond,Weber River Drainage,W-27 Meadow,Duchesne,\N
+LOWER CUTTHROAT POND,pond,Bear River Drainage,BR-37 Cutthroat,Duchesne,\N
+OWEEP CR,creek,Lake Fork Drainage,LF-30 Oweep,Duchesne,\N
+READER CR,creek,White Rocks Drainage,WR-66 Reader,Duchesne,\N
+UPPER CUTTHROAT POND,pond,Bear River Drainage,BR-37 Cutthroat,Duchesne,\N
+WEST CENTER OWEEP CR,creek,Lake Fork Drainage,LF-30 Oweep,Duchesne,\N
+WEST OWEEP CR,creek,Lake Fork Drainage,LF-30 Oweep,Duchesne,\N

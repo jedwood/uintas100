@@ -1,9 +1,50 @@
 # DB Recovery Plan — rebuild `uinta_lakes.db` from scratch
 
-**Status:** plan only (not started). Drawn up 2026-06-24.
+**Status:** ✅ DONE (2026-06-24). Implemented via committed CSV **seeds** + a
+self-verifying rebuild, not the originally-hypothesized CSV-replay (see
+"Outcome" below for why the replay approach was abandoned).
 **Goal:** a single documented, idempotent, offline sequence that reconstructs a database **content-equivalent** to the committed `uinta_lakes.db`, with a self-verifying harness — so the committed DB stops being an unreproducible black box.
 
 The committed DB remains the source of truth. This plan does **not** change it; it makes it *rebuildable*. Good baseline md5 of the live DB: `2469f083eb098f3ace8d40bb63b52221`.
+
+---
+
+## Outcome (what shipped)
+
+A clean replay of `utah_dwr_stocking_data.csv` through the matcher was proven
+**unable** to reproduce the curated DB, so the design pivoted to seeds:
+
+- **Echo Reservoir finding.** `find_matching_lake` strips a trailing `RESERVOIR`,
+  so "ECHO RES" (Echo Reservoir, a lowland reservoir) name-matches the tiny Uinta
+  **Z-16 "Echo"** lake. The canonical DB has 2 records for Z-16 (the explicit
+  "ECHO L Z-16" rows); a replay credits it ~59 (adding Rainbows/Walleye that don't
+  belong). Same class of lowland-water mis-filing the matcher overhaul fought.
+  A faithful, offline, zero-residual rebuild therefore cannot come from the raw CSV.
+- **Lost sources.** 55 live lakes aren't in `lake_data.csv` (manual / lost-importer
+  additions; 29 carry curated coordinates), and `drainages` (19) + `photos` (34)
+  have no committed source files. None are reconstructable algorithmically.
+
+**What shipped instead** — the DB is now reconstructable from committed, diffable text:
+
+- `scripts/export_seeds.py` → `data/seeds/*.csv` (one per table; FKs as natural
+  keys; SQL `NULL` written as `\N` so `NULL`-vs-`''` round-trips, e.g. `basin`).
+- `scripts/rebuild_database.py` → loads seeds into a fresh canonical schema, fully
+  offline. Defaults to a temp file; refuses to overwrite the real DB without `--force`.
+- `scripts/verify_rebuild.py` → rebuilds to temp and content-diffs every table
+  vs the canonical DB on natural keys (ignoring surrogate `id` + `last_modified`).
+  **Verified PASS: 0 diff across all 7 tables (721 / 7074 / 19 / 34 / 14 / 161 / 0).**
+- `create_database()` now builds the **full** canonical schema (24 lakes cols in
+  live order + all triggers incl. `flag_lake_for_notes_update` + coordinate cols);
+  `setup_database.py` no longer patches schema ad hoc. PRAGMA parity verified.
+- Dumps assert their required columns (`assert_lake_columns`) so future drift fails
+  loudly instead of mid-query.
+
+**Ongoing workflow:** after any DB change run `export_seeds.py` and commit the seeds
+with the DB; run `verify_rebuild.py` to catch drift. The matcher still owns the
+*ongoing* update path (`fetch_latest_stocking.py` / `update_stocking.py`) — seeds
+own *reconstruction*.
+
+The task notes below are the original plan, kept for context.
 
 ---
 

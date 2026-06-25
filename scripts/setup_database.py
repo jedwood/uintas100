@@ -173,52 +173,12 @@ def main():
     print("Run this ONCE, then use update_stocking.py for ongoing updates.\n")
     
     print("Creating database and tables...")
+    # create_database() now builds the full canonical schema (all lakes columns,
+    # coordinate columns, and the last_modified / notes-flag triggers), so no
+    # additional ALTERs or trigger creation are needed here.
     conn = create_database()
     cursor = conn.cursor()
 
-    # Add last_modified columns and triggers
-    try:
-        cursor.execute('ALTER TABLE lakes ADD COLUMN last_modified TIMESTAMP')
-    except sqlite3.OperationalError:
-        pass # Column already exists
-    
-    try:
-        cursor.execute('ALTER TABLE stocking_records ADD COLUMN last_modified TIMESTAMP')
-    except sqlite3.OperationalError:
-        pass
-
-    cursor.execute('''
-        CREATE TRIGGER IF NOT EXISTS lakes_insert_trigger
-        AFTER INSERT ON lakes
-        BEGIN
-            UPDATE lakes SET last_modified = CURRENT_TIMESTAMP WHERE id = NEW.id;
-        END;
-    ''')
-
-    cursor.execute('''
-        CREATE TRIGGER IF NOT EXISTS lakes_update_trigger
-        AFTER UPDATE ON lakes
-        BEGIN
-            UPDATE lakes SET last_modified = CURRENT_TIMESTAMP WHERE id = NEW.id;
-        END;
-    ''')
-
-    cursor.execute('''
-        CREATE TRIGGER IF NOT EXISTS stocking_records_insert_trigger
-        AFTER INSERT ON stocking_records
-        BEGIN
-            UPDATE stocking_records SET last_modified = CURRENT_TIMESTAMP WHERE id = NEW.id;
-        END;
-    ''')
-
-    cursor.execute('''
-        CREATE TRIGGER IF NOT EXISTS stocking_records_update_trigger
-        AFTER UPDATE ON stocking_records
-        BEGIN
-            UPDATE stocking_records SET last_modified = CURRENT_TIMESTAMP WHERE id = NEW.id;
-        END;
-    ''')
-    
     print("Loading lake data from CSV...")
     load_lake_data(conn)
     

@@ -25,6 +25,35 @@ python3 scripts/export_web_data.py
 python3 -c "from scripts.database_utils import *; import sqlite3; conn = sqlite3.connect('uinta_lakes.db'); dump_lake_data(conn); dump_stocking_data(conn); dump_combined_data(conn)"
 ```
 
+### Database Reproducibility (seeds → rebuild → verify)
+`uinta_lakes.db` is canonical, but it is also fully reconstructable from committed,
+git-diffable CSV **seeds** in `data/seeds/` (one per table). This is the recovery
+path — and the regression guard that the DB never silently drifts.
+
+```bash
+# After ANY change to uinta_lakes.db, re-export the seeds and commit them with the DB
+python3 scripts/export_seeds.py
+
+# Rebuild a content-equivalent DB from the seeds, fully offline (writes a temp file)
+python3 scripts/rebuild_database.py                      # or --output PATH
+
+# Prove the seeds round-trip to the canonical DB (exit 0 = equivalent, 1 = drift)
+python3 scripts/verify_rebuild.py
+```
+
+Why seeds and not a replay of `utah_dwr_stocking_data.csv`: a clean matcher replay
+does **not** reproduce the curated DB. `find_matching_lake` strips `RESERVOIR`, so
+it mis-credits lowland reservoirs onto same-named Uinta lakes (e.g. "Echo Reservoir"
+→ Z-16 Echo, which the curated DB excludes), and it can't recreate the ~55
+manually-added lakes or the drainage/photo rows (their original sources aren't
+committed). The seeds capture the curated truth exactly; `verify_rebuild.py`
+confirms an exact, zero-diff round-trip on every table. SQL `NULL` is stored in the
+seeds as the sentinel `\N` (empty string stays empty) so the `NULL`-vs-`''`
+distinction (e.g. `basin`) round-trips. Schema lives in one place —
+`create_database()` builds the full canonical schema (all columns + triggers +
+coordinate columns); `setup_database.py`/`update_stocking.py` no longer patch it
+ad hoc. Full recovery write-up: `docs/db-recovery-plan.md`.
+
 ### Apple Notes Sync
 ```bash
 # Sync changes from Apple Notes to database
@@ -158,6 +187,10 @@ Auto-generated lake data   ← System content
 - `service-worker.js` - PWA offline functionality
 - `scripts/setup_database.py` - Initial database creation
 - `scripts/export_web_data.py` - Database → lakes_data.json export
+- `scripts/export_seeds.py` - Database → `data/seeds/*.csv` (reconstruction source)
+- `scripts/rebuild_database.py` - Seeds → content-equivalent DB (offline recovery)
+- `scripts/verify_rebuild.py` - Proves seeds round-trip to the canonical DB (drift guard)
+- `data/seeds/` - Committed CSV seeds, one per table (the reproducible source of the DB)
 - `scripts/species_utils.py` - Species name standardization
 - `scripts/seed_coordinates.py` - OSM coordinate seeder
 - `scripts/locator_server.py` + `locator.html` - Lake Locator tool for placing/verifying coordinates

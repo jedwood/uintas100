@@ -12,7 +12,14 @@ def create_database(db_path=None):
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
     
-    # Lakes table
+    # Lakes table.
+    # Full canonical column set, in the order the live DB has them. The columns
+    # after map_link were historically bolted on by ad-hoc ALTERs across several
+    # scripts (Norrick physical data, notes/status, coordinate work); they are
+    # declared up front here so a fresh build matches the committed DB's schema
+    # exactly. CREATE TABLE IF NOT EXISTS is a no-op on an existing DB, so this
+    # is non-destructive; the idempotent ALTER block below back-fills any column
+    # missing from an older database.
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS lakes (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -22,10 +29,26 @@ def create_database(db_path=None):
             basin TEXT,
             junesucker_notes TEXT,
             coordinates TEXT,
-            map_link TEXT
+            map_link TEXT,
+            size_acres REAL,
+            max_depth_ft INTEGER,
+            elevation_ft INTEGER,
+            dwr_notes TEXT,
+            fish_species TEXT,
+            fishing_pressure TEXT,
+            jed_notes TEXT,
+            status TEXT CHECK(status IN ("CAUGHT", "NONE", "OTHERS")),
+            trip_reports TEXT,
+            notes_needs_update BOOLEAN DEFAULT FALSE,
+            no_fish BOOLEAN DEFAULT 0,
+            last_modified TIMESTAMP,
+            lat REAL,
+            lng REAL,
+            coord_source TEXT,
+            coord_status TEXT
         )
     ''')
-    
+
     # Stocking records table
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS stocking_records (
@@ -37,6 +60,7 @@ def create_database(db_path=None):
             length REAL,
             stock_date DATE,
             source_year INTEGER,
+            last_modified TIMESTAMP,
             FOREIGN KEY (lake_id) REFERENCES lakes (id)
         )
     ''')
@@ -106,43 +130,92 @@ def create_database(db_path=None):
         )
     ''')
 
-    # Add new columns for Norrick data if they don't exist
+    # Idempotent safety net: back-fill any lakes column an OLDER database might
+    # be missing. No-ops on a fresh build (the full CREATE above already has
+    # them) and on the current live DB. Keeps any create_database() entry point
+    # converging to the canonical schema.
+    lake_column_adds = [
+        ('size_acres', 'REAL'),
+        ('max_depth_ft', 'INTEGER'),
+        ('elevation_ft', 'INTEGER'),
+        ('dwr_notes', 'TEXT'),
+        ('fish_species', 'TEXT'),
+        ('fishing_pressure', 'TEXT'),
+        ('jed_notes', 'TEXT'),
+        ('status', 'TEXT CHECK(status IN ("CAUGHT", "NONE", "OTHERS"))'),
+        ('trip_reports', 'TEXT'),
+        ('notes_needs_update', 'BOOLEAN DEFAULT FALSE'),
+        ('no_fish', 'BOOLEAN DEFAULT 0'),
+        ('last_modified', 'TIMESTAMP'),
+    ]
+    for col, decl in lake_column_adds:
+        try:
+            cursor.execute(f'ALTER TABLE lakes ADD COLUMN {col} {decl}')
+        except sqlite3.OperationalError:
+            pass  # Column already exists
+
     try:
-        cursor.execute('ALTER TABLE lakes ADD COLUMN size_acres REAL')
-    except sqlite3.OperationalError:
-        pass  # Column already exists
-    
-    try:
-        cursor.execute('ALTER TABLE lakes ADD COLUMN max_depth_ft INTEGER')
-    except sqlite3.OperationalError:
-        pass
-    
-    try:
-        cursor.execute('ALTER TABLE lakes ADD COLUMN fish_species TEXT')
-    except sqlite3.OperationalError:
-        pass
-    
-    try:
-        cursor.execute('ALTER TABLE lakes ADD COLUMN fishing_pressure TEXT')
-    except sqlite3.OperationalError:
-        pass
-    
-    
-    try:
-        cursor.execute('ALTER TABLE lakes ADD COLUMN jed_notes TEXT')
-    except sqlite3.OperationalError:
-        pass
-    
-    try:
-        cursor.execute('ALTER TABLE lakes ADD COLUMN no_fish BOOLEAN DEFAULT 0')
+        cursor.execute('ALTER TABLE stocking_records ADD COLUMN last_modified TIMESTAMP')
     except sqlite3.OperationalError:
         pass
-    
-    try:
-        cursor.execute('ALTER TABLE lakes ADD COLUMN status TEXT CHECK(status IN ("CAUGHT", "NONE", "OTHERS"))')
-    except sqlite3.OperationalError:
-        pass
-    
+
+    # Coordinate columns (lat/lng/coord_source/coord_status) live in coord_utils
+    # so the seeding/locator tools and the DB schema agree on one definition.
+    from coord_utils import ensure_coord_columns
+    ensure_coord_columns(conn)
+
+    # Triggers: keep last_modified fresh and flag lakes whose user-facing fields
+    # changed so the Apple Notes sync knows to re-export them. Defined here (not
+    # only in setup_database) so every entry point gets a complete schema.
+    cursor.execute('''
+        CREATE TRIGGER IF NOT EXISTS lakes_insert_trigger
+        AFTER INSERT ON lakes
+        BEGIN
+            UPDATE lakes SET last_modified = CURRENT_TIMESTAMP WHERE id = NEW.id;
+        END
+    ''')
+    cursor.execute('''
+        CREATE TRIGGER IF NOT EXISTS lakes_update_trigger
+        AFTER UPDATE ON lakes
+        BEGIN
+            UPDATE lakes SET last_modified = CURRENT_TIMESTAMP WHERE id = NEW.id;
+        END
+    ''')
+    cursor.execute('''
+        CREATE TRIGGER IF NOT EXISTS stocking_records_insert_trigger
+        AFTER INSERT ON stocking_records
+        BEGIN
+            UPDATE stocking_records SET last_modified = CURRENT_TIMESTAMP WHERE id = NEW.id;
+        END
+    ''')
+    cursor.execute('''
+        CREATE TRIGGER IF NOT EXISTS stocking_records_update_trigger
+        AFTER UPDATE ON stocking_records
+        BEGIN
+            UPDATE stocking_records SET last_modified = CURRENT_TIMESTAMP WHERE id = NEW.id;
+        END
+    ''')
+    cursor.execute('''
+        CREATE TRIGGER IF NOT EXISTS flag_lake_for_notes_update
+        AFTER UPDATE ON lakes
+        FOR EACH ROW
+        WHEN (
+            OLD.jed_notes IS NOT NEW.jed_notes OR
+            OLD.status IS NOT NEW.status OR
+            OLD.trip_reports IS NOT NEW.trip_reports OR
+            OLD.fish_species IS NOT NEW.fish_species OR
+            OLD.size_acres IS NOT NEW.size_acres OR
+            OLD.max_depth_ft IS NOT NEW.max_depth_ft OR
+            OLD.elevation_ft IS NOT NEW.elevation_ft OR
+            OLD.fishing_pressure IS NOT NEW.fishing_pressure OR
+            OLD.dwr_notes IS NOT NEW.dwr_notes OR
+            OLD.junesucker_notes IS NOT NEW.junesucker_notes
+        )
+        BEGIN
+            UPDATE lakes SET notes_needs_update = TRUE WHERE id = NEW.id;
+        END
+    ''')
+
     conn.commit()
     return conn
 
@@ -411,14 +484,31 @@ def stocking_record_exists(cursor, lake_id, species, quantity, stock_date):
     cursor.execute(query, (lake_id, species, quantity, stock_date))
     return cursor.fetchone() is not None
 
+def assert_lake_columns(conn, columns):
+    """Fail loudly (not with a cryptic mid-query OperationalError) if the lakes
+    table is missing a column a dump/reader needs — a sign of schema drift that
+    create_database() should have prevented."""
+    have = {row[1] for row in conn.execute("PRAGMA table_info(lakes)")}
+    missing = [c for c in columns if c not in have]
+    if missing:
+        raise RuntimeError(
+            f"lakes table is missing column(s) {missing}; the schema has drifted "
+            f"from create_database(). Rebuild/verify with scripts/verify_rebuild.py."
+        )
+
 def dump_lake_data(conn, output_file="../logs/lake_dump.txt"):
     """Create a text dump of all lakes for review"""
     cursor = conn.cursor()
-    
+    assert_lake_columns(conn, [
+        'letter_number', 'name', 'drainage', 'size_acres', 'max_depth_ft',
+        'elevation_ft', 'fish_species', 'fishing_pressure', 'jed_notes',
+        'status', 'dwr_notes',
+    ])
+
     cursor.execute('''
         SELECT letter_number, name, drainage, size_acres, max_depth_ft, elevation_ft,
                fish_species, fishing_pressure, jed_notes, status, dwr_notes
-        FROM lakes 
+        FROM lakes
         ORDER BY drainage, letter_number
     ''')
     
@@ -491,7 +581,12 @@ def dump_stocking_data(conn, output_file="../logs/stocking_dump.txt"):
 def dump_combined_data(conn, output_file="../logs/combined_dump.txt"):
     """Create a combined dump of lakes with their stocking records"""
     cursor = conn.cursor()
-    
+    assert_lake_columns(conn, [
+        'letter_number', 'name', 'drainage', 'size_acres', 'max_depth_ft',
+        'elevation_ft', 'fish_species', 'fishing_pressure', 'jed_notes',
+        'status', 'dwr_notes',
+    ])
+
     cursor.execute('''
         SELECT l.letter_number, l.name, l.drainage, l.size_acres, l.max_depth_ft, l.elevation_ft,
                l.fish_species, l.fishing_pressure, l.jed_notes, l.status, l.dwr_notes
