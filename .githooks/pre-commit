@@ -5,9 +5,10 @@
 #
 # It does two things:
 #   1. Bumps the PWA cache version so installed home-screen apps pick up changes.
-#   2. Whenever uinta_lakes.db is staged, regenerates the committed CSV seeds
-#      (data/seeds/) so they can never silently drift from the DB. The seeds are
-#      the DB's reproducible source — see scripts/export_seeds.py / verify_rebuild.py.
+#   2. Whenever uinta_lakes.db is staged, regenerates the artifacts derived from
+#      it so they can never silently drift from the DB:
+#        - data/seeds/      reproducible CSV source (scripts/export_seeds.py)
+#        - lakes_data.json  the JSON the PWA loads  (scripts/export_web_data.py)
 
 set -e
 
@@ -17,9 +18,10 @@ sed -i '' "s/uintas-v[0-9]*/${NEW_VERSION}/g" service-worker.js
 git add service-worker.js
 echo "PWA cache version updated to: ${NEW_VERSION}"
 
-# 2. Keep data/seeds/ in lockstep with the DB being committed
+# 2. Keep DB-derived artifacts in lockstep with the DB being committed
 if git diff --cached --name-only | grep -qx 'uinta_lakes.db'; then
-    echo "uinta_lakes.db staged — regenerating data/seeds/ ..."
+    echo "uinta_lakes.db staged — regenerating data/seeds/ and lakes_data.json ..."
     python3 scripts/export_seeds.py
-    git add data/seeds/
+    python3 scripts/export_web_data.py
+    git add data/seeds/ lakes_data.json
 fi
