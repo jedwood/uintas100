@@ -11,7 +11,11 @@ import csv
 import re
 import os
 from datetime import datetime
-from database_utils import create_database, find_matching_lake, extract_letter_number, dump_stocking_data, dump_combined_data
+from database_utils import (
+    create_database, find_matching_lake, extract_letter_number,
+    find_fringe_water, upsert_other_water, other_stocking_exists,
+    dump_stocking_data, dump_combined_data,
+)
 from species_utils import standardize_stocking_species, refresh_all_fish_species
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -22,6 +26,7 @@ def process_stocking_data(conn):
     cursor = conn.cursor()
     unmatched_records = []
     new_records_count = 0
+    new_fringe_count = 0
     duplicate_count = 0
 
     csv_path = os.path.join(PROJECT_DIR, 'data', 'utah_dwr_stocking_data.csv')
@@ -121,9 +126,34 @@ def process_stocking_data(conn):
                     new_records_count += 1
                     
                 else:
-                    # Add to unmatched list
-                    unmatched_records.append(row)                    
-    
+                    # Not a lettered lake. If it shares a name root with a lake
+                    # (e.g. "Beaver Cr" ~ BR-10 Beaver), file it in other_waters as
+                    # a fringe water with a guessed drainage; otherwise it's an
+                    # unmatched lowland water. Mirrors fetch_latest_stocking.py.
+                    fringe = find_fringe_water(cursor, water_name)
+                    if fringe:
+                        normalized_species = standardize_stocking_species(row['species'])
+                        try:
+                            date_obj = datetime.strptime(row['stock_date'], '%m/%d/%Y')
+                            formatted_date = date_obj.strftime('%Y-%m-%d')
+                        except:
+                            formatted_date = row['stock_date']
+                        qty = int(row['quantity']) if row['quantity'].isdigit() else 0
+                        length = float(row['length']) if row['length'].replace('.', '').isdigit() else 0.0
+                        # other_waters.county is Title case; the stocking row keeps the raw CSV casing
+                        water_id = upsert_other_water(cursor, water_name, fringe, county=row['county'].title())
+                        if not other_stocking_exists(cursor, water_id, normalized_species, qty, formatted_date):
+                            cursor.execute('''
+                                INSERT INTO other_stocking_records
+                                    (water_id, county, species, quantity, length, stock_date, source_year)
+                                VALUES (?, ?, ?, ?, ?, ?, ?)
+                            ''', (water_id, row['county'], normalized_species, qty, length,
+                                  formatted_date, int(row['source_year'])))
+                            new_fringe_count += 1
+                    else:
+                        # Add to unmatched list
+                        unmatched_records.append(row)
+
     conn.commit()
     
     # Save unmatched records
@@ -136,6 +166,7 @@ def process_stocking_data(conn):
     
     print(f"Stocking update complete:")
     print(f"  New records added: {new_records_count}")
+    print(f"  New fringe (creek/pond) records: {new_fringe_count}")
     print(f"  Duplicates skipped: {duplicate_count}")
     print(f"  Unmatched records: {len(unmatched_records)} (saved to ../logs/unmatched_stocking.csv)")
 

@@ -84,7 +84,7 @@ npx serve .
 ### Python Backend (`scripts/`)
 - **Data Pipeline**: CSV sources → SQLite via setup/update scripts
 - **Species Standardization**: `species_utils.py` normalizes all species names to consistent format (Brookies, Tigers, Cutthroats, etc.)
-- **Stocking matcher** (`database_utils.find_matching_lake`): a DWR water is credited to a lake ONLY on an exact letter-number designation or an exact name (after stripping a trailing "Lake"/"Reservoir"). Loose substring matching was removed because it mis-filed creeks/ponds onto same-named lakes (e.g. "Beaver Cr" → BR-10). Such waters are instead routed to `other_waters` via `find_fringe_water` (whole-word name match → likely drainage). Fetch covers 5 counties: Summit, Duchesne, Uintah, Daggett, Wasatch.
+- **Stocking matcher** (`database_utils.find_matching_lake`): a DWR water is credited to a lake ONLY on an exact letter-number designation or an exact name (after stripping a trailing "Lake"/"Reservoir"). Loose substring matching was removed because it mis-filed creeks/ponds onto same-named lakes (e.g. "Beaver Cr" → BR-10). Such waters are instead routed to `other_waters` via `find_fringe_water` (whole-word name match → likely drainage). Fetch covers 5 counties: Summit, Duchesne, Uintah, Daggett, Wasatch. Fringe routing now lives in **both** stocking paths — `fetch_latest_stocking.py` (live DWR scrape) and `update_stocking.py` (CSV replay) — so either path keeps creeks/ponds out of `lakes`; `migrate_fringe_waters.py` was the one-time backfill for records already inserted under the old loose matcher.
 - **Apple Notes Integration**: Bidirectional sync using JXA scripts for personal fishing notes
 - **Lake Identification**: Letter-number system (BR-25, X-64) as primary keys
 
