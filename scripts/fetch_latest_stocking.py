@@ -275,6 +275,12 @@ def main():
 
             conn.close()
 
+            # Flush the appended CSV rows to disk BEFORE git add. commit_and_push
+            # runs while this file is still open, and small appends (e.g. a couple
+            # of new fringe rows) otherwise sit in the buffer past `git add`,
+            # leaving the CSV committed a run behind / dirty in the working tree.
+            csv_file.flush()
+
             # Commit and push changes if new records were added
             if total_new_records > 0 or total_fringe_records > 0 or changed > 0:
                 log_file.write(f"\n=== GIT OPERATIONS ===\n")
