@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.limechile.uintas-notes-sync</string>
+
+    <!-- Mac Mini is the sole DB writer. Apple Notes -> DB, then commit + push.
+         launchd execs the venv python DIRECTLY so python is the TCC responsible
+         process: it reads ~/Library/Group Containers/group.com.apple.notes/
+         NoteStore.sqlite in-process, which is TCC-protected. That python MUST be
+         granted Full Disk Access or the read fails and the sync no-ops.
+         Grant FDA to: /Volumes/OLAF-EXT/jedwoodx/repos/uintas/venv/bin/python3
+         (resolves to the Homebrew python3.13; rebuilding the venv invalidates the
+         grant — re-add it). Removing the *update tag also needs Automation->Notes,
+         but that step is best-effort; the DB still updates without it.
+         This machine's home is on an external /Volumes disk, so this plist must
+         physically live on the INTERNAL disk (/Users/jed/Library/LaunchAgents)
+         and is revived after reboot by com.limechile.agent-bootstrapper. -->
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Volumes/OLAF-EXT/jedwoodx/repos/uintas/venv/bin/python3</string>
+        <string>scripts/notes_sync_agent.py</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Volumes/OLAF-EXT/jedwoodx/repos/uintas</string>
+
+    <!-- Every 6 hours. Notes->DB only; single-pass; safe to skip a fire. -->
+    <key>StartInterval</key>
+    <integer>21600</integer>
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>HOME</key>
+        <string>/Volumes/OLAF-EXT/jedwoodx</string>
+        <key>PATH</key>
+        <string>/Volumes/OLAF-EXT/jedwoodx/repos/uintas/venv/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/Users/jed/Library/Logs/uintas-notes-sync.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/jed/Library/Logs/uintas-notes-sync.log</string>
+
+    <key>ProcessType</key>
+    <string>Background</string>
+</dict>
+</plist>
