@@ -67,6 +67,23 @@ distinction (e.g. `basin`) round-trips. Schema lives in one place —
 coordinate columns); `setup_database.py`/`update_stocking.py` no longer patch it
 ad hoc. Full recovery write-up: `docs/db-recovery-plan.md`.
 
+### Single-writer model (the Mac Mini writes; everything else mirrors)
+Exactly ONE machine — the Mac Mini — writes `uinta_lakes.db` and pushes. Every
+other clone (MacBook, etc.) is a **read-only mirror**: it only `git pull`s and
+runs the app, and must never run a sync/fetch or commit the DB. This removes the
+two-machine write-conflict class (e.g. the binary-DB autostash conflicts).
+
+- **Enforcement:** a gitignored `.db-readonly` marker in the repo root makes a
+  clone a mirror. `fetch_latest_stocking.py`, `update_stocking.py`,
+  `sync_notes_to_db.sh`, and `sync_notes_and_push.sh` call
+  `writer_guard.exit_if_readonly()` (or the bash equivalent) and exit early when
+  the marker exists — so even if a scheduler fires the job, it does nothing.
+  - Mirror (MacBook): `touch .db-readonly`
+  - Writer (Mini): the marker must NOT exist (`ls .db-readonly` → absent)
+- The Mini is the only machine that should run the schedulers/cron for fetch and
+  Notes sync. You edit Apple Notes on any device; iCloud syncs them to the Mini,
+  which is the only place Notes↔DB is translated.
+
 ### Apple Notes Sync
 ```bash
 # Sync changes from Apple Notes to database
@@ -75,9 +92,18 @@ osascript scripts/sync_notes_to_db_jxa.js
 # Sync flagged database changes to Apple Notes
 osascript scripts/sync_db_to_notes_jxa.js
 
-# Shell wrapper for notes sync
+# Shell wrapper for notes sync (Notes -> DB only; self-guards on mirrors)
 ./scripts/sync_notes_to_db.sh
+
+# Mini-only: Notes -> DB AND commit+push the result (durably persists note edits)
+./scripts/sync_notes_and_push.sh
 ```
+**⚠️ DB→Notes is a known data-loss hazard right now.** `sync_db_to_notes_jxa.js`
+rebuilds the whole note body and **wipes anything above the ═══ delimiter**
+(un-captured trip reports / status). Do NOT schedule it. Run it by hand only,
+until a wipe-safe version (preserve everything above ═══, regenerate only the
+auto-data section below) exists. `sync_notes_and_push.sh` deliberately runs only
+the Notes→DB direction for this reason.
 
 ### Coordinates & Mapping
 ```bash
