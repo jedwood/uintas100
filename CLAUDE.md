@@ -83,6 +83,11 @@ two-machine write-conflict class (e.g. the binary-DB autostash conflicts).
 - The Mini is the only machine that should run the schedulers/cron for fetch and
   Notes sync. You edit Apple Notes on any device; iCloud syncs them to the Mini,
   which is the only place Notes↔DB is translated.
+- Notes→DB runs on the Mini as the `com.limechile.uintas-notes-sync` LaunchAgent
+  (every 6h; `scripts/notes_sync_agent.py` → Notes→DB then commit+push). Because
+  the home is on an external `/Volumes` disk, its deployment is non-standard
+  (internal-disk plist, FDA on the venv python, reboot revival via the
+  agent-bootstrapper). Full runbook: `deploy/README.md`.
 
 ### Apple Notes Sync
 ```bash
