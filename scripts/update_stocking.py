@@ -17,6 +17,7 @@ from database_utils import (
     dump_stocking_data, dump_combined_data,
 )
 from species_utils import standardize_stocking_species, refresh_all_fish_species
+from writer_guard import exit_if_readonly
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_DIR = os.path.dirname(SCRIPT_DIR)
@@ -172,6 +173,9 @@ def process_stocking_data(conn):
 
 def main():
     """Update stocking data only"""
+    # Single-writer guard: do nothing on a read-only mirror (e.g. the MacBook).
+    exit_if_readonly("stocking update")
+
     print("=== UINTA STOCKING DATA UPDATE ===")
     print("This script adds new stocking records without duplicating existing ones.\n")
     

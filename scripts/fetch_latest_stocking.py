@@ -10,6 +10,7 @@ from database_utils import (
     find_fringe_water, upsert_other_water, other_stocking_exists,
 )
 from species_utils import standardize_stocking_species, update_lake_fish_species, refresh_all_fish_species
+from writer_guard import exit_if_readonly
 from datetime import datetime
 
 def insert_stocking_record(cursor, lake_id, species, quantity, length, stock_date, source_year, county):
@@ -206,6 +207,9 @@ def commit_and_push_changes(log_file, new_records_count, refreshed_count=0):
 
 def main():
     """Main function to fetch and update stocking data."""
+    # Single-writer guard: do nothing on a read-only mirror (e.g. the MacBook).
+    exit_if_readonly("stocking fetch")
+
     # Setup paths
     script_dir = os.path.dirname(os.path.abspath(__file__))
     project_dir = os.path.dirname(script_dir)

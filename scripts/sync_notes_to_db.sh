@@ -6,6 +6,12 @@
 
 SCRIPT_DIR="$(dirname "$0")"
 
+# Single-writer guard: do nothing on a read-only mirror (e.g. the MacBook).
+if [ -f "$SCRIPT_DIR/../.db-readonly" ]; then
+    echo "[writer-guard] .db-readonly present — read-only mirror; skipping Notes→DB sync."
+    exit 0
+fi
+
 echo "Starting Apple Notes → Database sync..."
 
 # Try the new SQLite-based reader first (requires Full Disk Access)
