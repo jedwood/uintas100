@@ -291,6 +291,18 @@ def main():
             else:
                 log_file.write(f"\nNo new records added, skipping git commit\n")
                 print("No new records added, skipping git operations")
+                # A run with nothing to commit can still rewrite uinta_lakes.db
+                # (SQLite page churn / last_modified) and leave it dirty in the
+                # working tree. If left uncommitted, the scheduler's next
+                # `git pull --autostash` stashes the binary DB and the pop
+                # conflicts ("unmerged files") — exactly the failure this avoids.
+                # Reset the DB to HEAD so each run ends with a clean tree.
+                try:
+                    subprocess.run(['git', 'checkout', 'HEAD', '--', 'uinta_lakes.db'],
+                                   cwd=project_dir, check=True)
+                    log_file.write("Reset no-op DB churn to keep the working tree clean\n")
+                except subprocess.CalledProcessError as e:
+                    log_file.write(f"WARNING: could not reset DB to HEAD: {e}\n")
             
             # Final summary
             log_file.write(f"\n=== SUMMARY ===\n")
