@@ -18,3 +18,5 @@ logs/combined_dump.txt
 logs/notes_sync.log
 logs/stocking_dump.txt
 logs/stocking_update.log
+# Pre-overwrite Apple Notes backups written by sync_db_to_notes_jxa.js
+logs/notes_backups/

@@ -103,12 +103,18 @@ osascript scripts/sync_db_to_notes_jxa.js
 # Mini-only: Notes -> DB AND commit+push the result (durably persists note edits)
 ./scripts/sync_notes_and_push.sh
 ```
-**⚠️ DB→Notes is a known data-loss hazard right now.** `sync_db_to_notes_jxa.js`
-rebuilds the whole note body and **wipes anything above the ═══ delimiter**
-(un-captured trip reports / status). Do NOT schedule it. Run it by hand only,
-until a wipe-safe version (preserve everything above ═══, regenerate only the
-auto-data section below) exists. `sync_notes_and_push.sh` deliberately runs only
-the Notes→DB direction for this reason.
+**DB→Notes (`sync_db_to_notes_jxa.js`) is now wipe-safe.** Apple Notes has no
+surgical edit (writing a note replaces its whole body), so for an EXISTING note
+the script reads the live note and **preserves everything above the ═══ delimiter
+verbatim** (your Status / Jed's Notes / Trip Reports), rebuilding the body as
+preserved-above + fresh delimiter + DB-regenerated auto-data; only the `<h1>`
+title emoji is refreshed. It does NOT source your editable content from the DB, so
+it can't clobber un-captured edits regardless of the `*update`-tag/ordering.
+Safety nets: it **backs up** each old note body to `logs/notes_backups/` before
+overwriting, and **skips** (won't touch) any note lacking a ═══ delimiter.
+Preview without writing: `UINTAS_DRYRUN=1 osascript scripts/sync_db_to_notes_jxa.js`.
+Still run/verify it manually before considering a schedule. `sync_notes_and_push.sh`
+(the Notes→DB LaunchAgent path) deliberately does not run DB→Notes.
 
 ### Coordinates & Mapping
 ```bash

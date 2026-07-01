@@ -1,5 +1,14 @@
 // JXA script to sync only flagged database entries to Apple Notes
 // This script processes lakes where notes_needs_update = TRUE
+//
+// WIPE-SAFE: Apple Notes has no surgical edit — writing a note replaces its whole
+// body. So for an EXISTING note we do NOT rebuild the user-editable section from
+// the database (that clobbered un-captured trip reports / notes). Instead we read
+// the live note, preserve everything ABOVE the ═══ delimiter verbatim, and rebuild
+// the body as: preserved-above + fresh delimiter + DB-regenerated auto-data. Only
+// the <h1> title emoji is refreshed. Safety nets: the old body is backed up before
+// any overwrite, and a note with no delimiter is skipped rather than overwritten.
+// Dry run (preview, no writes):  UINTAS_DRYRUN=1 osascript scripts/sync_db_to_notes_jxa.js
 
 ObjC.import('Foundation');
 
@@ -13,15 +22,20 @@ function run() {
     // Accept project dir as CLI argument, fall back to default
     const args = $.NSProcessInfo.processInfo.arguments;
     const argCount = args.count;
-    const defaultProjectDir = "/Users/jed/repos/uintas";
+    const defaultProjectDir = "/Volumes/OLAF-EXT/jedwoodx/repos/uintas";
     const projectDir = argCount > 4 ? ObjC.unwrap(args.objectAtIndex(4)) : defaultProjectDir;
     const dbPath = projectDir + "/uinta_lakes.db";
+
+    // Dry run: preview only, never write notes or clear flags.
+    const dryRun = ObjC.unwrap($.NSProcessInfo.processInfo.environment.objectForKey('UINTAS_DRYRUN')) === '1';
+    const BACKUP_DIR = projectDir + "/logs/notes_backups";
+    if (dryRun) console.log("=== DRY RUN — no notes will be modified ===");
 
     // --- Helper Functions ---
     function runQuery(query) {
         try {
             // Use a unique separator that won't appear in content: ASCII 30 (Record Separator)
-            return app.doShellScript(`sqlite3 -newline '||' -separator '\u001E' "${dbPath}" "${query}"`);
+            return app.doShellScript(`sqlite3 -newline '||' -separator '' "${dbPath}" "${query}"`);
         } catch (e) {
             console.log(`Error running query: ${query}`);
             console.log(e);
@@ -29,13 +43,31 @@ function run() {
         }
     }
 
+    function backupNoteBody(letterNumber, body) {
+        // Save a note's current HTML before we overwrite it — insurance against
+        // any regression in the preserve-above logic.
+        try {
+            app.doShellScript("mkdir -p " + JSON.stringify(BACKUP_DIR));
+            const stamp = new Date().toISOString().replace(/[:.]/g, '-');
+            const safeLn = String(letterNumber).replace(/[^A-Za-z0-9_-]/g, '_');
+            const path = BACKUP_DIR + "/" + safeLn + "-" + stamp + ".html";
+            $.NSString.stringWithString(body).writeToFileAtomicallyEncodingError(
+                path, true, $.NSUTF8StringEncoding, null);
+            console.log("  Backed up old note body -> " + path);
+            return path;
+        } catch (e) {
+            console.log("  WARNING: backup failed for " + letterNumber + ": " + e);
+            return null;
+        }
+    }
+
     function findLakeNote(folder, lakeName, letterNumber, notes) {
         try {
             // Create proper note name (no parentheses if no lake name)
             const baseName = lakeName && lakeName.trim() ? `${lakeName.trim()} (${letterNumber})` : letterNumber;
-            
+
             console.log(`Searching for lake ${letterNumber} using Apple Notes search API`);
-            
+
             // Use Notes' built-in search to find notes containing the letter-number
             // This is much more efficient than looping through all notes in folder
             let searchResults;
@@ -46,7 +78,7 @@ function run() {
                 console.log(`  Search API failed, falling back to folder iteration: ${e}`);
                 return findLakeNoteFallback(folder, lakeName, letterNumber);
             }
-            
+
             // All possible note name variations
             const possibleNames = [
                 baseName,                    // No emoji
@@ -55,18 +87,18 @@ function run() {
                 `${baseName} ✖️`,           // NONE (and legacy OTHERS notes)
                 `${baseName} 🚫`            // NO_FISH
             ];
-            
+
             // Filter search results to only notes in our target folder with exact title match
             for (let i = 0; i < searchResults.length; i++) {
                 const note = searchResults[i];
-                
+
                 try {
                     // Check if note is in the target folder
                     const noteFolder = note.container();
                     if (noteFolder.id() === folder.id()) {
                         const noteName = note.name();
                         console.log(`  Checking note in correct folder: '${noteName}'`);
-                        
+
                         // Check for exact title match
                         for (const possibleName of possibleNames) {
                             if (noteName === possibleName) {
@@ -79,7 +111,7 @@ function run() {
                     console.log(`  Error checking search result ${i}: ${e}`);
                 }
             }
-            
+
             console.log(`  No matching note found for ${letterNumber}`);
             return null;
         } catch (e) {
@@ -93,10 +125,10 @@ function run() {
         try {
             console.log(`  Using fallback method for ${letterNumber}`);
             const notesInFolder = folder.notes();
-            
+
             // Create proper note name (no parentheses if no lake name)
             const baseName = lakeName && lakeName.trim() ? `${lakeName.trim()} (${letterNumber})` : letterNumber;
-            
+
             // All possible note name variations
             const possibleNames = [
                 baseName,                    // No emoji
@@ -105,10 +137,10 @@ function run() {
                 `${baseName} ✖️`,           // NONE (and legacy OTHERS notes)
                 `${baseName} 🚫`            // NO_FISH
             ];
-            
+
             for (let i = 0; i < notesInFolder.length; i++) {
                 const noteName = notesInFolder[i].name();
-                
+
                 for (const possibleName of possibleNames) {
                     if (noteName === possibleName) {
                         console.log(`  Found matching note (fallback): '${possibleName}'`);
@@ -126,7 +158,7 @@ function run() {
     // --- Find Lakes Needing Updates ---
     const flaggedLakesQuery = `SELECT letter_number FROM lakes WHERE notes_needs_update = TRUE;`;
     const flaggedLakesResult = runQuery(flaggedLakesQuery);
-    
+
     if (!flaggedLakesResult || flaggedLakesResult.trim() === "") {
         console.log("No lakes flagged for updates.");
         return "No updates needed.";
@@ -136,6 +168,7 @@ function run() {
     console.log(`Found ${flaggedLakes.length} lakes needing updates: ${flaggedLakes.join(', ')}`);
 
     let updatedCount = 0;
+    let skippedCount = 0;
 
     // --- Process Each Flagged Lake ---
     flaggedLakes.forEach(letterNumber => {
@@ -146,7 +179,7 @@ function run() {
         const lakeInfoResult = runQuery(lakeInfoQuery);
         if (!lakeInfoResult) return;
 
-        const [lakeName, drainageName, lakeSize, lakeDepth, lakeElevation, lakeSpecies, lakePressure, dwrNotes, junesuckerNotes, lakeStatus, jedNotes, tripReports, noFish] = lakeInfoResult.split('\u001E');
+        const [lakeName, drainageName, lakeSize, lakeDepth, lakeElevation, lakeSpecies, lakePressure, dwrNotes, junesuckerNotes, lakeStatus, jedNotes, tripReports, noFish] = lakeInfoResult.split('');
 
 
         const stockingQuery = `SELECT stock_date, species, quantity, length FROM stocking_records WHERE lake_id = (SELECT id FROM lakes WHERE letter_number = '${letterNumber}') ORDER BY stock_date DESC;`;
@@ -171,7 +204,7 @@ function run() {
 
         // Find existing note (searches all possible emoji variations)
         let lakeNote = findLakeNote(drainageFolder, lakeName, letterNumber, notes);
-        
+
         // Build the note name with current status emoji
         let titleEmoji = "";
         if (noFish === "1" || noFish === "true") {
@@ -183,115 +216,114 @@ function run() {
         } else if (lakeStatus === "NONE") {
             titleEmoji = " ✖️";
         }
-        
+
         // Create proper note name (no parentheses if no lake name)
         const baseName = lakeName && lakeName.trim() ? `${lakeName.trim()} (${letterNumber})` : letterNumber;
         const lakeNoteName = `${baseName}${titleEmoji}`;
+        const freshTitle = `<h1>${baseName}${titleEmoji}</h1>`;
+
+        // --- Auto-generated section (BELOW the ═══ delimiter) — always rebuilt from the DB ---
+        const DELIMITER = "<p>═════════════════════════════════════</p>";
+        let autoBelow = "<ul>";
+        autoBelow += `<li><b>Drainage:</b> ${drainageName}</li>`;
+        autoBelow += `<li><b>Elevation:</b> ${lakeElevation || 'Unknown'} ft</li>`;
+        autoBelow += `<li><b>Size:</b> ${lakeSize || 'Unknown'} acres</li>`;
+        autoBelow += `<li><b>Max Depth:</b> ${lakeDepth || 'Unknown'} ft</li>`;
+        autoBelow += `<li><b>Fishing Pressure:</b> ${lakePressure || 'Unknown'}</li>`;
+        autoBelow += `<li><b>Fish Species:</b> ${lakeSpecies || 'Unknown'}</li>`;
+        autoBelow += "</ul><br>";
+        if (junesuckerNotes) {
+            autoBelow += "<h2>Junesucker.com Notes</h2>";
+            let fj = junesuckerNotes.replace(/## (.*?):/g, '<br><br><b>$1:</b><br>');
+            fj = fj.replace(/\n/g, '<br>');
+            fj = fj.replace(/^<br><br><b>/, '<b>');
+            autoBelow += fj + "<br><br>";
+        }
+        autoBelow += "<h2>Stocking Records</h2>";
+        if (stockingRecords.length > 0 && stockingRecords[0].trim() !== "") {
+            autoBelow += "<ul>";
+            stockingRecords.forEach(record => {
+                if (record.trim() !== "") {
+                    const [stockDate, species, quantity, fishLength] = record.split('');
+                    autoBelow += `<li>${stockDate} - ${quantity} ${species}, ${fishLength}"</li>`;
+                }
+            });
+            autoBelow += "</ul><br>";
+        } else {
+            autoBelow += "<p>No stocking records found.</p><br>";
+        }
+        if (dwrNotes) {
+            autoBelow += "<h2>DWR Notes</h2>";
+            autoBelow += `<p>${dwrNotes.replace(/\n/g, '<br>')}</p>`;
+        }
+
+        // --- Editable section (ABOVE the ═══ delimiter) ---
+        let aboveEditable;
 
         if (lakeNote === null) {
+            // Brand-new note: no user content exists yet, so build the editable
+            // section from the DB (nothing to preserve).
+            if (dryRun) {
+                console.log(`  [dry-run] would CREATE note '${lakeNoteName}'`);
+                return;
+            }
             console.log(`Note not found. Creating new note: '${lakeNoteName}'`);
             const newNote = notes.Note({name: lakeNoteName});
             drainageFolder.notes.push(newNote);
             lakeNote = newNote;
-        } else {
-            console.log(`Found existing note: '${lakeNote.name()}'`);
-            // Update the note name if emoji status changed
-            if (lakeNote.name() !== lakeNoteName) {
-                console.log(`Updating note name from '${lakeNote.name()}' to '${lakeNoteName}'`);
-                lakeNote.name = lakeNoteName;
-            }
-        }
 
-        // --- Build Bidirectional Note Body with Beautiful HTML Formatting ---
-        // (emoji logic moved above)
-        
-        let noteBody = `<h1>${baseName}${titleEmoji}</h1><br>`;
-        
-        // ABOVE ===== (Editable Section)
-        // Always include Status line (even if empty) for editing
-        noteBody += `<p><b>Status:</b> ${lakeStatus || ''}</p>`;
-        
-        // Always include Jed's Notes section (even if empty) for editing
-        noteBody += "<br><h2>Jed's Notes</h2>";
-        if (jedNotes) {
-            // Check if content is already HTML formatted
-            if (jedNotes.includes('<br>') || jedNotes.includes('<i>') || jedNotes.includes('<b>') || jedNotes.includes('<div>')) {
-                // Already HTML formatted, wrap in div for structure
-                noteBody += `<div>${jedNotes}</div><br>`;
+            aboveEditable = `${freshTitle}<br>`;
+            aboveEditable += `<p><b>Status:</b> ${lakeStatus || ''}</p>`;
+            aboveEditable += "<br><h2>Jed's Notes</h2>";
+            if (jedNotes) {
+                aboveEditable += (jedNotes.includes('<br>') || jedNotes.includes('<i>') || jedNotes.includes('<b>') || jedNotes.includes('<div>'))
+                    ? `<div>${jedNotes}</div><br>`
+                    : `<p>${jedNotes.replace(/\n/g, '<br>')}</p><br>`;
             } else {
-                // Legacy plain text format, convert newlines to breaks
-                noteBody += `<p>${jedNotes.replace(/\n/g, '<br>')}</p><br>`;
+                aboveEditable += "<p><i>Add your notes here...</i></p><br>";
             }
-        } else {
-            noteBody += "<p><i>Add your notes here...</i></p><br>";
-        }
-        
-        // Always include Trip Reports section (even if empty) for editing
-        noteBody += "<h2>Trip Reports</h2>";
-        if (tripReports) {
-            // Check if trip reports are already in HTML list format
-            if (tripReports.includes('<ul') && tripReports.includes('<li>')) {
-                // Already HTML format, use as-is
-                noteBody += tripReports + "<br>";
-            } else {
-                // Legacy text format, convert to list
-                const trips = tripReports.split('\n');
-                noteBody += `<ul class="Apple-dash-list">`;
-                trips.forEach(trip => {
-                    if (trip.trim()) {
-                        noteBody += `<li>${trip}</li>`;
-                    }
-                });
-                noteBody += "</ul><br>";
-            }
-        } else {
-            noteBody += "<p><i>Add trip reports here...</i></p><br>";
-        }
-        
-        // Add delimiter - use a clearer visual separator
-        noteBody += "<p>═════════════════════════════════════</p>";
-        
-        // BELOW ===== (Auto-generated Section - Beautiful formatting restored)
-        noteBody += "<ul>";
-        noteBody += `<li><b>Drainage:</b> ${drainageName}</li>`;
-        noteBody += `<li><b>Elevation:</b> ${lakeElevation || 'Unknown'} ft</li>`;
-        noteBody += `<li><b>Size:</b> ${lakeSize || 'Unknown'} acres</li>`;
-        noteBody += `<li><b>Max Depth:</b> ${lakeDepth || 'Unknown'} ft</li>`;
-        noteBody += `<li><b>Fishing Pressure:</b> ${lakePressure || 'Unknown'}</li>`;
-        noteBody += `<li><b>Fish Species:</b> ${lakeSpecies || 'Unknown'}</li>`;
-        noteBody += "</ul><br>";
-
-        if (junesuckerNotes) {
-            noteBody += "<h2>Junesucker.com Notes</h2>";
-            // Convert all ## headers to bold text with empty line above them
-            let formattedJunesuckerNotes = junesuckerNotes.replace(/## (.*?):/g, '<br><br><b>$1:</b><br>');
-            // Convert regular line breaks to <br> tags
-            formattedJunesuckerNotes = formattedJunesuckerNotes.replace(/\n/g, '<br>');
-            // Remove the leading <br><br> from the very first subheader (keep just one <br>)
-            formattedJunesuckerNotes = formattedJunesuckerNotes.replace(/^<br><br><b>/, '<b>');
-            noteBody += formattedJunesuckerNotes + "<br><br>";
-        }
-
-        noteBody += "<h2>Stocking Records</h2>";
-        if (stockingRecords.length > 0 && stockingRecords[0].trim() !== "") {
-            noteBody += "<ul>";
-            stockingRecords.forEach(record => {
-                if (record.trim() !== "") {
-                    const [stockDate, species, quantity, fishLength] = record.split('\u001E');
-                    noteBody += `<li>${stockDate} - ${quantity} ${species}, ${fishLength}"</li>`;
+            aboveEditable += "<h2>Trip Reports</h2>";
+            if (tripReports) {
+                if (tripReports.includes('<ul') && tripReports.includes('<li>')) {
+                    aboveEditable += tripReports + "<br>";
+                } else {
+                    aboveEditable += `<ul class="Apple-dash-list">`;
+                    tripReports.split('\n').forEach(trip => { if (trip.trim()) aboveEditable += `<li>${trip}</li>`; });
+                    aboveEditable += "</ul><br>";
                 }
-            });
-            noteBody += "</ul><br>";
+            } else {
+                aboveEditable += "<p><i>Add trip reports here...</i></p><br>";
+            }
         } else {
-            noteBody += "<p>No stocking records found.</p><br>";
+            // EXISTING note: preserve everything above the ═══ delimiter VERBATIM
+            // (the user's Status / Jed's Notes / Trip Reports). Only refresh the
+            // <h1> title emoji. Refuse to touch a note that has no delimiter.
+            console.log(`Found existing note: '${lakeNote.name()}'`);
+            const oldBody = lakeNote.body();
+            const delimMatch = oldBody.match(/═{5,}/);
+            if (!delimMatch) {
+                console.log(`  SKIP ${letterNumber}: no ═ delimiter in note; refusing to overwrite (flag left set).`);
+                skippedCount++;
+                return;  // continue; do NOT clear the flag
+            }
+            // Everything before the delimiter run, minus a dangling open tag that
+            // wrapped the delimiter paragraph.
+            let above = oldBody.slice(0, delimMatch.index).replace(/<[a-zA-Z][^>]*>\s*$/, '');
+            // Refresh only the title line; leave Status / Jed's / Trip verbatim.
+            above = /<h1[\s\S]*?<\/h1>/i.test(above)
+                ? above.replace(/<h1[\s\S]*?<\/h1>/i, freshTitle)
+                : freshTitle + above;
+            aboveEditable = above;
+
+            if (dryRun) {
+                console.log(`  [dry-run] would UPDATE '${lakeNote.name()}' — preserve ${aboveEditable.length} chars above ═, refresh auto-data. No write.`);
+                return;
+            }
+            backupNoteBody(letterNumber, oldBody);
         }
 
-        if (dwrNotes) {
-            noteBody += "<h2>DWR Notes</h2>";
-            noteBody += `<p>${dwrNotes.replace(/\n/g, '<br>')}</p>`;
-        }
-
-        lakeNote.body = noteBody;
+        lakeNote.body = `${aboveEditable}${DELIMITER}${autoBelow}`;
+        lakeNote.name = lakeNoteName;
         updatedCount++;
 
         // --- Clear the flag ---
@@ -300,5 +332,7 @@ function run() {
         console.log(`Cleared update flag for ${letterNumber}`);
     });
 
-    return `Updated ${updatedCount} lake notes.`;
+    const summary = `Updated ${updatedCount} lake notes` + (skippedCount ? `, skipped ${skippedCount} (no delimiter)` : "") + (dryRun ? " [dry run]" : "") + ".";
+    console.log(summary);
+    return summary;
 }
