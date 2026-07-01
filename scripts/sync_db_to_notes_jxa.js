@@ -61,98 +61,37 @@ function run() {
         }
     }
 
-    function findLakeNote(folder, lakeName, letterNumber, notes) {
+    function findLakeNote(letterNumber, notes) {
+        // Match on the unique designation token across ALL folders: a note whose
+        // name contains "(LETTER-NUMBER)" (named lakes) or is exactly the
+        // designation (unnamed lakes), with an optional trailing status emoji.
+        //
+        // Folder-agnostic ON PURPOSE. Apple Notes here has duplicate drainage
+        // folders (e.g. two "Duchesne River Drainage"), and some notes have
+        // renamed / typo'd title prefixes (e.g. "QUARTER CORNER LG103 (G-103)").
+        // Requiring an exact name in a specific folder missed those and would
+        // CREATE duplicates. The designation is globally unique, so matching it
+        // anywhere resolves the real note and we UPDATE it in place.
+        const esc = letterNumber.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const re = new RegExp('(^|\\()' + esc + '(\\)|\\s|$)');
+        console.log(`Searching for note matching (${letterNumber})...`);
+        let results;
         try {
-            // Create proper note name (no parentheses if no lake name)
-            const baseName = lakeName && lakeName.trim() ? `${lakeName.trim()} (${letterNumber})` : letterNumber;
-
-            console.log(`Searching for lake ${letterNumber} using Apple Notes search API`);
-
-            // Use Notes' built-in search to find notes containing the letter-number
-            // This is much more efficient than looping through all notes in folder
-            let searchResults;
-            try {
-                searchResults = notes.notes.whose({ name: { _contains: letterNumber } })();
-                console.log(`  Found ${searchResults.length} notes containing '${letterNumber}' across all folders`);
-            } catch (e) {
-                console.log(`  Search API failed, falling back to folder iteration: ${e}`);
-                return findLakeNoteFallback(folder, lakeName, letterNumber);
-            }
-
-            // All possible note name variations
-            const possibleNames = [
-                baseName,                    // No emoji
-                `${baseName} 🎣`,           // CAUGHT
-                `${baseName} 👥🎣`,         // OTHERS (matches the in-app icon)
-                `${baseName} ✖️`,           // NONE (and legacy OTHERS notes)
-                `${baseName} 🚫`            // NO_FISH
-            ];
-
-            // Filter search results to only notes in our target folder with exact title match
-            for (let i = 0; i < searchResults.length; i++) {
-                const note = searchResults[i];
-
-                try {
-                    // Check if note is in the target folder
-                    const noteFolder = note.container();
-                    if (noteFolder.id() === folder.id()) {
-                        const noteName = note.name();
-                        console.log(`  Checking note in correct folder: '${noteName}'`);
-
-                        // Check for exact title match
-                        for (const possibleName of possibleNames) {
-                            if (noteName === possibleName) {
-                                console.log(`  Found exact match: '${possibleName}'`);
-                                return note;
-                            }
-                        }
-                    }
-                } catch (e) {
-                    console.log(`  Error checking search result ${i}: ${e}`);
-                }
-            }
-
-            console.log(`  No matching note found for ${letterNumber}`);
-            return null;
+            results = notes.notes.whose({ name: { _contains: letterNumber } })();
         } catch (e) {
-            console.log(`Error in findLakeNote: ${e}`);
-            return findLakeNoteFallback(folder, lakeName, letterNumber);
-        }
-    }
-
-    function findLakeNoteFallback(folder, lakeName, letterNumber) {
-        // Fallback to original method if search API fails
-        try {
-            console.log(`  Using fallback method for ${letterNumber}`);
-            const notesInFolder = folder.notes();
-
-            // Create proper note name (no parentheses if no lake name)
-            const baseName = lakeName && lakeName.trim() ? `${lakeName.trim()} (${letterNumber})` : letterNumber;
-
-            // All possible note name variations
-            const possibleNames = [
-                baseName,                    // No emoji
-                `${baseName} 🎣`,           // CAUGHT
-                `${baseName} 👥🎣`,         // OTHERS (matches the in-app icon)
-                `${baseName} ✖️`,           // NONE (and legacy OTHERS notes)
-                `${baseName} 🚫`            // NO_FISH
-            ];
-
-            for (let i = 0; i < notesInFolder.length; i++) {
-                const noteName = notesInFolder[i].name();
-
-                for (const possibleName of possibleNames) {
-                    if (noteName === possibleName) {
-                        console.log(`  Found matching note (fallback): '${possibleName}'`);
-                        return notesInFolder[i];
-                    }
-                }
-            }
-            return null;
-        } catch (e) {
-            console.log(`Error in fallback search: ${e}`);
+            console.log(`  Search API failed for ${letterNumber}: ${e}`);
             return null;
         }
+        for (let i = 0; i < results.length; i++) {
+            let noteName;
+            try { noteName = results[i].name(); } catch (e) { continue; }
+            if (re.test(noteName)) {
+                console.log(`  Matched existing note: '${noteName}'`);
+                return results[i];
+            }
+        }
+        console.log(`  No existing note found for ${letterNumber}`);
+        return null;
     }
 
     // --- Find Lakes Needing Updates ---
@@ -202,8 +141,8 @@ function run() {
             drainageFolder = newFolder;
         }
 
-        // Find existing note (searches all possible emoji variations)
-        let lakeNote = findLakeNote(drainageFolder, lakeName, letterNumber, notes);
+        // Find existing note by its unique designation, across all folders.
+        let lakeNote = findLakeNote(letterNumber, notes);
 
         // Build the note name with current status emoji
         let titleEmoji = "";
