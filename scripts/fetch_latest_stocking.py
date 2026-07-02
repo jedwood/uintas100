@@ -5,6 +5,7 @@ import sqlite3
 import csv
 import os
 import subprocess
+import sys
 from database_utils import (
     create_database, extract_letter_number, stocking_record_exists, find_matching_lake,
     find_fringe_water, upsert_other_water, other_stocking_exists,
@@ -205,6 +206,65 @@ def commit_and_push_changes(log_file, new_records_count, refreshed_count=0):
         # Restore original working directory
         os.chdir(original_cwd)
 
+# The Notes-sync LaunchAgent's log (path fixed by deploy/*.plist — deliberately
+# on the internal disk, NOT under this repo's external-volume home).
+NOTES_AGENT_LOG = "/Users/jed/Library/Logs/uintas-notes-sync.log"
+NOTES_AGENT_MAX_AGE_HOURS = 24  # agent runs every 6h; 24h missed = something's wrong
+
+
+def check_notes_agent_health():
+    """Watchdog for the Notes-sync LaunchAgent, piggybacked on the daily fetch.
+
+    FDA (Full Disk Access) grants have been observed to silently turn themselves
+    off, and the agent then no-ops forever with only a log line to show for it.
+    This runs on the Mini's daily stocking fetch — the one job with a Telegram
+    alert on nonzero exit — and inspects the agent's OWN log (ground truth;
+    probing TCC from this process would test the wrong TCC context).
+
+    Returns a list of human-readable problems; empty list = healthy.
+    """
+    try:
+        with open(NOTES_AGENT_LOG, 'r', encoding='utf-8') as f:
+            content = f.read()
+    except FileNotFoundError:
+        return [f"Notes-sync agent log missing ({NOTES_AGENT_LOG}) — has the LaunchAgent ever run?"]
+    except OSError as e:
+        return [f"Cannot read Notes-sync agent log: {e}"]
+
+    # Each run opens with "[YYYY-MM-DD HH:MM:SS] Starting Notes → Database sync".
+    # Inspect only the LAST run: old failures that later recovered must not alert.
+    marker = "Starting Notes"
+    idx = content.rfind(marker)
+    if idx == -1:
+        return ["Notes-sync agent log has no run sections — agent misconfigured?"]
+    line_start = content.rfind("\n", 0, idx) + 1
+    last_run = content[line_start:]
+
+    problems = []
+    if "PERMISSION ERROR" in last_run:
+        problems.append(
+            "Notes-sync agent hit PERMISSION ERROR on its last run — the Full Disk "
+            "Access grant for the venv python has been revoked. Re-add the resolved "
+            "binary (readlink -f venv/bin/python3) in System Settings > Privacy & "
+            "Security > Full Disk Access, then: launchctl kickstart -k "
+            "gui/$(id -u)/com.limechile.uintas-notes-sync"
+        )
+
+    try:
+        stamp = last_run[1:20]  # "[2026-07-02 09:39:37]" -> "2026-07-02 09:39:37"
+        last_time = datetime.strptime(stamp, '%Y-%m-%d %H:%M:%S')
+        age_hours = (datetime.now() - last_time).total_seconds() / 3600
+        if age_hours > NOTES_AGENT_MAX_AGE_HOURS:
+            problems.append(
+                f"Notes-sync agent has not run for {age_hours:.0f}h (expected every 6h) — "
+                "LaunchAgent unloaded? Check: launchctl print gui/$(id -u)/com.limechile.uintas-notes-sync"
+            )
+    except ValueError:
+        problems.append("Could not parse the last run timestamp in the Notes-sync agent log.")
+
+    return problems
+
+
 def main():
     """Main function to fetch and update stocking data."""
     # Single-writer guard: on a read-only mirror (e.g. the MacBook) this becomes
@@ -316,7 +376,22 @@ def main():
             log_file.write(f"Total unmatched lakes: {len(all_unmatched)}\n")
             log_file.write(f"CSV file updated: {csv_path}\n")
             log_file.write(f"Run completed at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
-            
+
+            # Notes-agent watchdog. Runs AFTER commit/push so fresh stocking data
+            # still lands even when we alert. The jedOS daily wrapper alerts via
+            # Telegram purely on exit code and points at stocking_update.log, so:
+            # write the reason as ERROR: lines in this run's section, flush, and
+            # exit 2 (distinguishable from a generic crash's exit 1). Do NOT print
+            # the "Total new records added:" line on this path — the wrapper
+            # regexes stdout for it to detect new records.
+            agent_problems = check_notes_agent_health()
+            if agent_problems:
+                for p in agent_problems:
+                    log_file.write(f"ERROR: {p}\n")
+                log_file.flush()
+                print("Notes-sync agent health check FAILED — see stocking_update.log", file=sys.stderr)
+                sys.exit(2)
+
             print(f"\n=== FINAL SUMMARY ===")
             print(f"Total new records added: {total_new_records}")
             print(f"Unmatched lakes: {len(all_unmatched)}")
