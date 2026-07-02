@@ -141,8 +141,12 @@ section(s) by hand on that device.
 python3 scripts/seed_coordinates.py            # uses cached OSM data if present
 python3 scripts/seed_coordinates.py --refresh  # re-fetch from Overpass
 
-# 2. Manually place/verify the rest in the Lake Locator (local web tool)
-python3 scripts/locator_server.py              # open http://localhost:8777/locator.html
+# 2. Manually place/verify the rest in the Lake Locator (local web tool).
+#    The Locator WRITES the DB, so under the single-writer model it must run on
+#    the Mini (it refuses to start on a mirror). Serve it over the LAN and click
+#    from any machine's browser:
+python3 scripts/locator_server.py --host 0.0.0.0   # on the Mini; prints the LAN URL
+#    (--host defaults to 127.0.0.1 — localhost-only — if you're at the Mini itself)
 
 # 3. Push verified coords into the PWA data
 python3 scripts/export_web_data.py
@@ -151,7 +155,7 @@ Coordinate columns on `lakes`: `lat`, `lng`, `coord_source` (`osm-designation`/`
 `coord_status` (`seed_unverified` | `seed_suspect` | `confirmed` | `manual` | `cant_find`).
 Only `confirmed`/`manual` coordinates are exported to the PWA (which shows an "Open in Maps"
 link); seeds stay internal to the Locator until you eyeball them. The Locator writes straight
-back into `uinta_lakes.db`.
+back into `uinta_lakes.db` — which is why it obeys the `.db-readonly` writer guard.
 
 ### PWA Cache Management
 ```bash

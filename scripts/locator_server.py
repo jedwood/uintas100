@@ -6,9 +6,15 @@ Serves the repo (so locator.html, drainage maps, and pamphlet PDFs load) and
 exposes a tiny JSON API that writes coordinates straight back into
 uinta_lakes.db. This is a LOCAL admin tool, not part of the deployed PWA.
 
+Because it WRITES the DB, it obeys the single-writer model: it refuses to start
+on a read-only mirror (a clone with the `.db-readonly` marker). Run it on the
+writer machine (the Mac Mini) and browse to it from anywhere on the LAN.
+
 Usage:
-    python3 scripts/locator_server.py          # then open http://localhost:8777/locator.html
+    python3 scripts/locator_server.py                  # then open http://localhost:8777/locator.html
     python3 scripts/locator_server.py --port 9000
+    python3 scripts/locator_server.py --host 0.0.0.0   # allow LAN access (run on the Mini,
+                                                       # click from the MacBook's browser)
 
 Workflow:
     1. (optional) python3 scripts/seed_coordinates.py   # pre-place ~70% of pins
@@ -18,11 +24,14 @@ Workflow:
 
 import argparse
 import json
+import socket
 import sqlite3
+import sys
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 
 from coord_utils import DB_PATH, REPO_ROOT, ensure_coord_columns
+from writer_guard import is_readonly_mirror
 
 # Each drainage -> the DWR pamphlet PDF(s) whose maps show its lake designations.
 # (Several drainages share a pamphlet.)
@@ -154,11 +163,25 @@ class LocatorHandler(SimpleHTTPRequestHandler):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--port", type=int, default=8777)
+    parser.add_argument(
+        "--host",
+        default="127.0.0.1",
+        help="bind address; use 0.0.0.0 to allow LAN access (run on the Mini, browse from another machine)",
+    )
     args = parser.parse_args()
 
+    if is_readonly_mirror():
+        print("[writer-guard] .db-readonly present — this clone is a read-only mirror.")
+        print("The Locator writes uinta_lakes.db, so it must run on the writer machine (the Mini):")
+        print("    python3 scripts/locator_server.py --host 0.0.0.0")
+        print("then open the LAN URL it prints from this machine's browser.")
+        sys.exit(1)
+
     handler = partial(LocatorHandler, directory=str(REPO_ROOT))
-    server = ThreadingHTTPServer(("127.0.0.1", args.port), handler)
+    server = ThreadingHTTPServer((args.host, args.port), handler)
     print(f"Lake Locator running:  http://localhost:{args.port}/locator.html")
+    if args.host not in ("127.0.0.1", "localhost"):
+        print(f"LAN access:            http://{socket.gethostname()}:{args.port}/locator.html")
     print("Coordinates are written straight into uinta_lakes.db. Ctrl-C to stop.")
     try:
         server.serve_forever()
