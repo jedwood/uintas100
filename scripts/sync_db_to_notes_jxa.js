@@ -8,6 +8,15 @@
 // the body as: preserved-above + fresh delimiter + DB-regenerated auto-data. Only
 // the <h1> title emoji is refreshed. Safety nets: the old body is backed up before
 // any overwrite, and a note with no delimiter is skipped rather than overwritten.
+//
+// Hard-won rules (2026-07-01 incident):
+//  - Wait for iCloud to settle before reading (see settle window below): reading
+//    a stale replica and rewriting it makes iCloud concatenate both versions.
+//  - The title round-trips as a <div><b><span 24px> line, NOT <h1> — replace that
+//    line, never blindly prepend a fresh <h1> (doubled every title).
+//  - NEVER set note.name after setting body — the body's first line already
+//    becomes the name; setting both doubled the title text.
+//  - Skip notes that already look conflict-merged (2+ delimiters / doubled title).
 // Dry run (preview, no writes):  UINTAS_DRYRUN=1 osascript scripts/sync_db_to_notes_jxa.js
 
 ObjC.import('Foundation');
@@ -30,6 +39,23 @@ function run() {
     const dryRun = ObjC.unwrap($.NSProcessInfo.processInfo.environment.objectForKey('UINTAS_DRYRUN')) === '1';
     const BACKUP_DIR = projectDir + "/logs/notes_backups";
     if (dryRun) console.log("=== DRY RUN — no notes will be modified ===");
+
+    // --- iCloud settle window ---
+    // 2026-07-01 incident: this script launched Notes and immediately read a
+    // STALE local replica (the user's recent edits hadn't synced down yet), then
+    // rewrote notes from it. iCloud saw two conflicting edits and "resolved" by
+    // concatenating both versions into one note. There is no scriptable
+    // "sync now / sync done" API, so the mitigation is: make sure Notes is
+    // running, then give iCloud time to pull before reading anything.
+    // Override with UINTAS_SYNC_SETTLE=<seconds> (0 skips, e.g. when Notes has
+    // already been open and syncing for a while).
+    const settleRaw = ObjC.unwrap($.NSProcessInfo.processInfo.environment.objectForKey('UINTAS_SYNC_SETTLE'));
+    const settleSecs = settleRaw !== undefined && settleRaw !== null ? parseInt(settleRaw, 10) || 0 : 30;
+    if (settleSecs > 0) {
+        notes.activate();
+        console.log(`Waiting ${settleSecs}s for Notes to sync with iCloud (UINTAS_SYNC_SETTLE=0 to skip)...`);
+        delay(settleSecs);
+    }
 
     // --- Helper Functions ---
     function runQuery(query) {
@@ -82,16 +108,24 @@ function run() {
             console.log(`  Search API failed for ${letterNumber}: ${e}`);
             return null;
         }
+        const matches = [];
         for (let i = 0; i < results.length; i++) {
             let noteName;
             try { noteName = results[i].name(); } catch (e) { continue; }
-            if (re.test(noteName)) {
-                console.log(`  Matched existing note: '${noteName}'`);
-                return results[i];
-            }
+            if (re.test(noteName)) matches.push({ note: results[i], name: noteName });
         }
-        console.log(`  No existing note found for ${letterNumber}`);
-        return null;
+        if (matches.length === 0) {
+            console.log(`  No existing note found for ${letterNumber}`);
+            return null;
+        }
+        if (matches.length > 1) {
+            // e.g. "Lower Lyman (G-25)" AND "Little Lyman (G-25)" both exist.
+            // Updating the first arbitrary one may hit the wrong note.
+            console.log(`  WARNING: ${matches.length} notes match (${letterNumber}): ` +
+                matches.map(m => `'${m.name}'`).join(', ') + ` — using '${matches[0].name}'.`);
+        }
+        console.log(`  Matched existing note: '${matches[0].name}'`);
+        return matches[0].note;
     }
 
     // --- Find Lakes Needing Updates ---
@@ -245,13 +279,35 @@ function run() {
                 skippedCount++;
                 return;  // continue; do NOT clear the flag
             }
+            // Sanity guard: a body with 2+ delimiters or a doubled title line is
+            // an unresolved iCloud conflict-merge (or leftover damage). Rewriting
+            // it would bake the duplication in — skip and leave the flag set.
+            const delimCount = (oldBody.match(/═{5,}/g) || []).length;
+            const oldLines = oldBody.split('\n');
+            const doubledTitle = oldLines.length > 1 &&
+                oldLines[0].indexOf('font-size: 24px') !== -1 &&
+                oldLines[1].indexOf('font-size: 24px') !== -1;
+            if (delimCount > 1 || doubledTitle) {
+                console.log(`  SKIP ${letterNumber}: note looks conflict-merged (delims=${delimCount}, doubledTitle=${doubledTitle}); fix the note manually, flag left set.`);
+                skippedCount++;
+                return;
+            }
             // Everything before the delimiter run, minus a dangling open tag that
             // wrapped the delimiter paragraph.
             let above = oldBody.slice(0, delimMatch.index).replace(/<[a-zA-Z][^>]*>\s*$/, '');
             // Refresh only the title line; leave Status / Jed's / Trip verbatim.
-            above = /<h1[\s\S]*?<\/h1>/i.test(above)
-                ? above.replace(/<h1[\s\S]*?<\/h1>/i, freshTitle)
-                : freshTitle + above;
+            // The title we wrote as <h1> comes back from Notes round-tripped as
+            // <div><b><span style="font-size: 24px">…</span></b></div>, so match
+            // either form; only prepend when there is genuinely no title line.
+            const aboveLines = above.split('\n');
+            const firstIsTitle = /<h1[\s\S]*?<\/h1>/i.test(aboveLines[0]) ||
+                aboveLines[0].indexOf('font-size: 24px') !== -1;
+            if (firstIsTitle) {
+                aboveLines[0] = freshTitle;
+                above = aboveLines.join('\n');
+            } else {
+                above = freshTitle + above;
+            }
             aboveEditable = above;
 
             if (dryRun) {
@@ -261,8 +317,10 @@ function run() {
             backupNoteBody(letterNumber, oldBody);
         }
 
+        // Setting the body is enough: Apple Notes derives the note's name from
+        // the first line. ALSO setting .name here corrupted titles (the name
+        // setter re-edits the first line, doubling the text) — never set both.
         lakeNote.body = `${aboveEditable}${DELIMITER}${autoBelow}`;
-        lakeNote.name = lakeNoteName;
         updatedCount++;
 
         // --- Clear the flag ---
