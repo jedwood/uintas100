@@ -37,14 +37,24 @@ launchd execs the venv python **directly** so that python is the TCC responsible
 process for the in-process `NoteStore.sqlite` read. Until it has FDA the log shows
 `PERMISSION ERROR: Cannot read NoteStore.sqlite` and the sync no-ops.
 
-System Settings → Privacy & Security → **Full Disk Access** → add:
+System Settings → Privacy & Security → **Full Disk Access** → **+**. The venv
+path (`venv/bin/python3`) is a symlink and shows GREYED OUT in the picker — add
+the resolved real binary instead: in the picker press **Cmd+Shift+G** and paste
+the output of
 
-```
-/Volumes/OLAF-EXT/jedwoodx/repos/uintas/venv/bin/python3
+```bash
+readlink -f /Volumes/OLAF-EXT/jedwoodx/repos/uintas/venv/bin/python3
+# e.g. /opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/bin/python3.13
 ```
 
-(That resolves to the Homebrew `python3.13`. Recreating the venv changes the
-binary's cdhash and invalidates the grant — re-add it after any venv rebuild.)
+That real binary is what the kernel actually execs for the LaunchAgent, so the
+grant covers it. Re-add the grant after a Homebrew python upgrade (the Cellar
+path moves) or a venv rebuild. Verify with:
+
+```bash
+launchctl kickstart -k gui/$(id -u)/com.limechile.uintas-notes-sync
+tail -20 /Users/jed/Library/Logs/uintas-notes-sync.log   # no PERMISSION ERROR
+```
 Removing the `*update` tag also needs Automation→Notes, but that's best-effort;
 the DB still updates without it.
 
