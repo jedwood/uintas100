@@ -18,10 +18,14 @@ Guards:
     nothing. (At boot the agent-bootstrapper only bootstraps us AFTER the volume
     mounts, but this is a cheap belt-and-suspenders check.)
 
-Deliberately does NOT run DB -> Notes: sync_db_to_notes_jxa.js rebuilds the whole
-note body and wipes everything above the ═══ delimiter (un-captured trip reports
-/ status) — a known data-loss bug. That direction stays manual until a wipe-safe
-version exists.
+Round trip: after Notes -> DB captures the user's note edits, this agent ALSO
+runs DB -> Notes (sync_db_to_notes_jxa.js) when any lakes are flagged
+notes_needs_update (set by stocking updates), so fresh stocking data lands in the
+lake notes within one agent cycle. The JXA script is wipe-safe (preserves
+everything above the ═══ delimiter from the live note, backs up old bodies,
+skips conflict-merged notes, waits for iCloud to settle) — see its header for
+the 2026-07-01 incident rules. DB -> Notes is skipped if Notes -> DB failed
+(capture first, then write).
 
 The pre-commit hook (core.hooksPath .githooks) regenerates data/seeds/ and
 lakes_data.json from the DB on commit, so we never do that here.
@@ -56,6 +60,28 @@ def main():
     # 3. Apple Notes -> DB. Reads NoteStore.sqlite IN THIS PROCESS, so this is the
     #    step that needs Full Disk Access on this python binary.
     rc = sync_notes_to_db.sync(dry_run=False)
+
+    # 3b. DB -> Notes round trip: push flagged stocking updates into the lake
+    #     notes. Only when Notes -> DB succeeded (capture the user's edits first)
+    #     and something is actually flagged. Runs BEFORE the commit so the flag
+    #     clears land in the same commit.
+    if rc == 0:
+        flagged = subprocess.run(
+            ["sqlite3", db, "SELECT COUNT(*) FROM lakes WHERE notes_needs_update = TRUE;"],
+            capture_output=True, text=True,
+        )
+        n_flagged = int(flagged.stdout.strip() or 0) if flagged.returncode == 0 else 0
+        if n_flagged:
+            print(f"[notes-agent] {n_flagged} lakes flagged — running DB -> Notes.")
+            r = subprocess.run(
+                ["osascript", os.path.join(SCRIPT_DIR, "sync_db_to_notes_jxa.js")],
+                cwd=REPO, capture_output=True, text=True, timeout=1800,
+            )
+            sys.stdout.write(r.stdout + r.stderr)
+            if r.returncode != 0:
+                print("[notes-agent] WARNING: DB -> Notes failed; flags stay set, will retry next cycle.")
+    else:
+        print(f"[notes-agent] Notes -> DB failed (rc={rc}); skipping DB -> Notes this cycle.")
 
     # 4. Persist iff the sync actually changed the DB. (A permission failure
     #    returns non-zero BEFORE any DB write, so `changed` stays False and we

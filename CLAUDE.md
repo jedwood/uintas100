@@ -78,13 +78,20 @@ two-machine write-conflict class (e.g. the binary-DB autostash conflicts).
   `sync_notes_to_db.sh`, and `sync_notes_and_push.sh` call
   `writer_guard.exit_if_readonly()` (or the bash equivalent) and exit early when
   the marker exists — so even if a scheduler fires the job, it does nothing.
+  Exception: on a mirror, `fetch_latest_stocking.py` runs `git pull --ff-only`
+  instead (`writer_guard.pull_and_exit_if_readonly()`) — so the MacBook's Tauri
+  app scheduler, which fires the stocking job periodically, doubles as the
+  mirror's auto-refresh: the clone (and the web app served from it on
+  localhost:8000) picks up whatever the Mini pushed. Reload the app window to
+  see fresh data (the PWA cache version bump makes the reload pick it up).
   - Mirror (MacBook): `touch .db-readonly`
   - Writer (Mini): the marker must NOT exist (`ls .db-readonly` → absent)
 - The Mini is the only machine that should run the schedulers/cron for fetch and
   Notes sync. You edit Apple Notes on any device; iCloud syncs them to the Mini,
   which is the only place Notes↔DB is translated.
-- Notes→DB runs on the Mini as the `com.limechile.uintas-notes-sync` LaunchAgent
-  (every 6h; `scripts/notes_sync_agent.py` → Notes→DB then commit+push). Because
+- Notes sync runs on the Mini as the `com.limechile.uintas-notes-sync` LaunchAgent
+  (every 6h; `scripts/notes_sync_agent.py` → Notes→DB, then DB→Notes for lakes
+  flagged by stocking updates, then commit+push). Because
   the home is on an external `/Volumes` disk, its deployment is non-standard
   (internal-disk plist, FDA on the venv python, reboot revival via the
   agent-bootstrapper). Full runbook: `deploy/README.md`.
@@ -111,10 +118,22 @@ preserved-above + fresh delimiter + DB-regenerated auto-data; only the `<h1>`
 title emoji is refreshed. It does NOT source your editable content from the DB, so
 it can't clobber un-captured edits regardless of the `*update`-tag/ordering.
 Safety nets: it **backs up** each old note body to `logs/notes_backups/` before
-overwriting, and **skips** (won't touch) any note lacking a ═══ delimiter.
+overwriting, **skips** (won't touch) any note lacking a ═══ delimiter or that looks
+conflict-merged (2+ delimiters / doubled title), and **waits 30s after launching
+Notes** for iCloud to pull before reading (`UINTAS_SYNC_SETTLE=<secs>` to tune, `0`
+to skip) — rewriting from a stale replica makes iCloud concatenate both versions
+into one note (the 2026-07-01 incident). Never set `note.name` after setting
+`body` (the first body line already becomes the name; setting both doubles the
+title text).
 Preview without writing: `UINTAS_DRYRUN=1 osascript scripts/sync_db_to_notes_jxa.js`.
-Still run/verify it manually before considering a schedule. `sync_notes_and_push.sh`
-(the Notes→DB LaunchAgent path) deliberately does not run DB→Notes.
+The Mini's LaunchAgent (`notes_sync_agent.py`) now runs the full **round trip**:
+Notes→DB first (capture edits), then DB→Notes for any lakes flagged
+`notes_needs_update` (set by stocking updates), then commit+push — so stocking
+data reaches the lake notes within one 6h cycle. `sync_notes_and_push.sh` (the
+manual wrapper) remains Notes→DB only. Known hiccup: if a lake note is OPEN on
+another device while DB→Notes rewrites it, that device may iCloud-conflict-merge
+and show a duplicated section — fix is simply deleting the duplicated lower
+section(s) by hand on that device.
 
 ### Coordinates & Mapping
 ```bash
