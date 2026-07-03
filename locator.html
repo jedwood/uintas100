@@ -33,6 +33,7 @@
         .badge.seed_unverified { background: #ca8a04; color: #1c1917; }
         .badge.seed_suspect { background: #dc2626; color: #fff; }
         .badge.confirmed, .badge.manual { background: #16a34a; color: #fff; }
+        .badge.plss_estimate { background: #06b6d4; color: #083344; }
         .badge.cant_find { background: #7c3aed; color: #fff; }
         .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0; }
         .stat { background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 8px 10px; }
@@ -83,6 +84,7 @@
             <option value="suspect">⚠ Suspect seeds only</option>
             <option value="unplaced">Unplaced only</option>
             <option value="seeds">Seeds to verify</option>
+            <option value="plss">◆ PLSS estimates (Forest Service TRS)</option>
             <option value="done">Done (confirmed/manual)</option>
             <option value="all">All lakes</option>
         </select>
@@ -159,7 +161,7 @@
 
     function statusLabel(s) {
         return ({ seed_unverified: 'seed', seed_suspect: 'suspect ⚠', confirmed: 'confirmed',
-                  manual: 'placed', cant_find: "can't find" })[s] || 'unplaced';
+                  manual: 'placed', plss_estimate: 'PLSS est ◆', cant_find: "can't find" })[s] || 'unplaced';
     }
 
     async function load() {
@@ -180,6 +182,7 @@
             case 'suspect': return s === 'seed_suspect';
             case 'unplaced': return !l.lat && s !== 'cant_find';
             case 'seeds': return s === 'seed_unverified' || s === 'seed_suspect';
+            case 'plss': return s === 'plss_estimate';
             case 'done': return placed;
             default: return true;
         }
@@ -211,8 +214,10 @@
         lakes.filter(l => l.drainage === lake.drainage && l.id !== lake.id && l.lat)
             .forEach(l => {
                 const done = ['confirmed', 'manual'].includes(l.coord_status);
+                const dotColor = done ? '#22c55e'
+                    : l.coord_status === 'plss_estimate' ? '#06b6d4' : '#eab308';
                 L.circleMarker([l.lat, l.lng], {
-                    radius: 5, color: done ? '#22c55e' : '#eab308', weight: 1,
+                    radius: 5, color: dotColor, weight: 1,
                     fillOpacity: 0.5, opacity: 0.7
                 }).bindTooltip(`${l.letter_number}${l.name ? ' ' + l.name : ''}`, { direction: 'top' })
                   .addTo(neighborLayer);
@@ -282,7 +287,8 @@
                 <div class="hint">
                     Click the map to drop a pin, or drag it to fine-tune. Faint dots are this
                     drainage's other lakes (<span style="color:#eab308">●</span> seeded,
-                    <span style="color:#22c55e">●</span> done) — use them to triangulate.<br>
+                    <span style="color:#06b6d4">●</span> PLSS est, <span style="color:#22c55e">●</span> done)
+                    — use them to triangulate.<br>
                     <kbd>Enter</kbd> confirm · <kbd>F</kbd> can't find · <kbd>S</kbd>/<kbd>→</kbd> skip ·
                     <kbd>P</kbd>/<kbd>←</kbd> prev
                 </div>

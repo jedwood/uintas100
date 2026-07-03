@@ -57,7 +57,13 @@ DRAINAGE_PAMPHLETS = {
 }
 PAMPHLET_DIR = "data/dwr_original_pamphlets"
 
-VALID_STATUSES = {"confirmed", "manual", "seed_unverified", "seed_suspect", "cant_find"}
+# plss_estimate: a coarse coordinate derived from the lake's PLSS Township/Range/
+# Section (section centroid, ~0.5 mi typical error) from the Forest Service data
+# sheet. NOT human-verified and NOT exported to the PWA — it just pre-drops a pin
+# in the Locator for the user to nudge onto the real lake and Confirm.
+VALID_STATUSES = {"confirmed", "manual", "seed_unverified", "seed_suspect",
+                  "plss_estimate", "cant_find"}
+_COORD_REQUIRED = ("confirmed", "manual", "seed_unverified", "seed_suspect", "plss_estimate")
 
 
 def get_lakes():
@@ -105,7 +111,7 @@ def save_lake(payload):
         return False, "missing/invalid letter_number or status"
 
     lat, lng = payload.get("lat"), payload.get("lng")
-    if status in ("confirmed", "manual", "seed_unverified", "seed_suspect") and (lat is None or lng is None):
+    if status in _COORD_REQUIRED and (lat is None or lng is None):
         return False, "coordinates required for this status"
 
     conn = sqlite3.connect(DB_PATH)
