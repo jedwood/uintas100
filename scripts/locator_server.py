@@ -155,8 +155,11 @@ class LocatorHandler(SimpleHTTPRequestHandler):
         return self._json({"ok": ok, "message": msg}, 200 if ok else 400)
 
     def log_message(self, fmt, *args):
-        # Quieter: only log the API writes, not every tile/asset request
-        if "api/save" in (args[0] if args else ""):
+        # Quieter: only log the API writes, not every tile/asset request.
+        # NB: send_error() logs via log_error() with a non-str first arg
+        # (an HTTPStatus), so guard the type before the substring check.
+        first = args[0] if args else ""
+        if isinstance(first, str) and "api/save" in first:
             super().log_message(fmt, *args)
 
 
