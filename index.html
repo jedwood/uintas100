@@ -44,7 +44,7 @@
         .leaflet-bar .locate-btn.locating { animation: pulse 1s infinite; }
         @keyframes pulse { 50% { opacity: .4; } }
         /* Detail/About modals must sit above Leaflet panes & controls (z-index up to 1000) */
-        #lake-detail-modal, #about-modal { z-index: 1200; }
+        #lake-detail-modal, #about-modal, #rotenone-modal { z-index: 1200; }
     </style>
 </head>
 <body class="bg-slate-50 min-h-screen">
@@ -90,6 +90,12 @@
                     <button id="map-all" type="button"
                             class="w-full flex items-center justify-center gap-2 text-sm font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg px-4 py-2 transition-colors">
                         🗺️ Browse all lakes on the map
+                    </button>
+
+                    <!-- Quiet link to the rotenone treatment list (data-driven from DWR notes) -->
+                    <button id="rotenone-link" type="button"
+                            class="w-full text-center text-xs text-gray-500 hover:text-gray-600 underline mt-2">
+                        ⚠️ Lakes treated with rotenone
                     </button>
 
                     <!-- Collapsible Filters -->
@@ -336,6 +342,26 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Rotenone Treatments Modal (content built from DWR notes at open time) -->
+                <div id="rotenone-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+                    <div class="flex items-center justify-center min-h-screen p-4">
+                        <div id="rotenone-modal-card" class="bg-white rounded-lg max-w-4xl w-full max-h-screen overflow-y-auto">
+                            <div class="p-6">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h2 class="text-2xl font-bold">⚠️ Rotenone Treatments</h2>
+                                    <button id="close-rotenone-modal" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-4">
+                                    The DWR occasionally treats lakes with rotenone to remove existing fish
+                                    (usually to restore native cutthroat). Treated lakes are fishless until
+                                    restocked — check recent stocking records before making the hike.
+                                </p>
+                                <div id="rotenone-content" class="space-y-6"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- About Link -->
@@ -530,6 +556,8 @@
             updateViewToggle();
             document.getElementById('about-link').addEventListener('click', openAboutModal);
             document.getElementById('close-about-modal').addEventListener('click', closeAboutModal);
+            document.getElementById('rotenone-link').addEventListener('click', openRotenoneModal);
+            document.getElementById('close-rotenone-modal').addEventListener('click', closeModal);
 
             // Close modals on backdrop click
             document.getElementById('lake-detail-modal').addEventListener('click', (e) => {
@@ -537,6 +565,9 @@
             });
             document.getElementById('about-modal').addEventListener('click', (e) => {
                 if (!e.target.closest('#about-modal-card')) closeAboutModal();
+            });
+            document.getElementById('rotenone-modal').addEventListener('click', (e) => {
+                if (!e.target.closest('#rotenone-modal-card')) closeModal();
             });
 
             // Close modals on Escape
@@ -546,6 +577,8 @@
                     closeModal();
                 } else if (!document.getElementById('about-modal').classList.contains('hidden')) {
                     closeAboutModal();
+                } else if (!document.getElementById('rotenone-modal').classList.contains('hidden')) {
+                    closeModal();
                 }
             });
 
@@ -559,6 +592,9 @@
                     }
                 } else if (e.state && e.state.modal === 'about') {
                     openAboutModal();
+                    return;
+                } else if (e.state && e.state.modal === 'rotenone') {
+                    openRotenoneModal();
                     return;
                 }
                 hideModals();
@@ -1165,6 +1201,7 @@
         function hideModals() {
             document.getElementById('lake-detail-modal').classList.add('hidden');
             document.getElementById('about-modal').classList.add('hidden');
+            document.getElementById('rotenone-modal').classList.add('hidden');
             if (location.hash) {
                 history.replaceState(null, '', location.pathname + location.search);
             }
@@ -1181,6 +1218,57 @@
         function openAboutModal() {
             document.getElementById('about-modal').classList.remove('hidden');
             pushModalState('about', '#about');
+        }
+
+        // Rotenone report: derived live from DWR notes flagged "⚠️ ROTENONE TREATED (…)".
+        // The uppercase match is deliberate — it skips prose that merely *mentions*
+        // rotenone (e.g. G-19 Marsh debunking a bogus 1954 treatment claim).
+        function buildRotenoneGroups() {
+            const groups = {};
+            lakes.forEach(lake => {
+                const m = (lake.dwr_notes || '').match(/ROTENONE TREATED \(([^)]*)\)\.?\s*(?:-\s*([^\n]*))?/);
+                if (!m) return;
+                const parts = m[1].split(',').map(s => s.trim());
+                const project = parts.find(p => /project/i.test(p)) || 'Other treatments';
+                const when = parts.filter(p => !/project/i.test(p)).join(', ');
+                (groups[project] = groups[project] || []).push({
+                    lake, when, extra: (m[2] || '').replace(/\.$/, '').trim()
+                });
+            });
+            return groups;
+        }
+
+        function openRotenoneModal() {
+            const groups = buildRotenoneGroups();
+            const content = document.getElementById('rotenone-content');
+            const names = Object.keys(groups).sort((a, b) =>
+                (a === 'Other treatments') - (b === 'Other treatments') || a.localeCompare(b));
+            content.innerHTML = names.map(project => `
+                <div class="rounded-lg p-4 border border-slate-200 bg-slate-50">
+                    <h3 class="text-lg font-semibold mb-3">${project.replace(/\b\w/, c => c.toUpperCase())}</h3>
+                    <div class="space-y-2">
+                        ${groups[project]
+                            .sort((a, b) => a.when.localeCompare(b.when) || a.lake.letter_number.localeCompare(b.lake.letter_number))
+                            .map(({ lake, when, extra }) => `
+                            <div class="text-sm p-2 bg-white rounded-lg border border-slate-200 cursor-pointer hover:bg-slate-50 flex justify-between items-center gap-2"
+                                 onclick="openLakeFromRotenone('${lake.letter_number}')">
+                                <span>
+                                    <span class="font-medium">${lake.name ? `${lake.name} (${lake.letter_number})` : lake.letter_number}</span>
+                                    <span class="text-gray-500"> — ${lake.drainage.replace(' Drainage', '').replace(' Drainages', '')}</span>
+                                </span>
+                                <span class="text-gray-500 text-right">${when}${extra ? ` · <span class="italic">${extra.toLowerCase()}</span>` : ''}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('') || '<p class="text-gray-600">No treated lakes on record.</p>';
+            document.getElementById('rotenone-modal').classList.remove('hidden');
+            pushModalState('rotenone', '#rotenone');
+        }
+
+        function openLakeFromRotenone(letterNumber) {
+            document.getElementById('rotenone-modal').classList.add('hidden');
+            showLakeDetail(letterNumber);
         }
 
         function closeAboutModal() {
