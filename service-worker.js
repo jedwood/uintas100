@@ -1,4 +1,4 @@
-const CACHE_NAME = 'uintas-v1783875704';
+const CACHE_NAME = 'uintas-v1783981090';
 const MAX_CACHE_SIZE = 45 * 1024 * 1024; // Stay under iOS 50MB limit
 
 // Resources to cache immediately. Everything is served locally — no CDN
@@ -102,6 +102,16 @@ async function handleFetch(request) {
             }
         }
 
+        // lakes_data.json changes ~daily (stocking + notes sync). Serve it
+        // stale-while-revalidate: hand back the cached copy instantly (fast +
+        // offline), but always re-fetch in the background, update the cache,
+        // and ping open clients when the bytes actually changed so a
+        // long-running app can refresh itself without a restart or a
+        // cache-version bump. Everything else stays cache-first.
+        if (new URL(request.url).pathname.endsWith('lakes_data.json')) {
+            return staleWhileRevalidate(request);
+        }
+
         // For static assets, try cache first
         const cachedResponse = await caches.match(request);
         if (cachedResponse) {
@@ -157,6 +167,39 @@ async function handleFetch(request) {
         // For other requests, return a generic error
         return new Response('Offline', { status: 503 });
     }
+}
+
+async function staleWhileRevalidate(request) {
+    const cache = await caches.open(CACHE_NAME);
+    const cached = await cache.match(request);
+
+    // Kick off the revalidation regardless of a cache hit.
+    const revalidate = fetch(request).then(async networkResponse => {
+        if (!networkResponse || networkResponse.status !== 200 || request.headers.get('range')) {
+            return networkResponse;
+        }
+        // Did the payload actually change? Compare clones so neither the
+        // returned nor the cached body gets consumed.
+        let changed = true;
+        if (cached) {
+            try {
+                const [oldText, newText] = await Promise.all([
+                    cached.clone().text(),
+                    networkResponse.clone().text()
+                ]);
+                changed = oldText !== newText;
+            } catch (e) { changed = true; }
+        }
+        await cache.put(request, networkResponse.clone());
+        if (changed) {
+            const clients = await self.clients.matchAll({ includeUncontrolled: true });
+            clients.forEach(client => client.postMessage({ type: 'DATA_UPDATED' }));
+        }
+        return networkResponse;
+    }).catch(() => null);
+
+    // Offline (no cache yet) still needs the network attempt to resolve.
+    return cached || (await revalidate) || new Response('Offline', { status: 503 });
 }
 
 async function cacheResponse(request, response) {

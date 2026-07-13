@@ -3117,17 +3117,17 @@ DWR_LAKE_ENTRIES = [
     {
         'designation': 'W-14',
         'name': None,
-        'text': "Various small numbered lakes throughout the Weber drainage system, ranging from 1.1 to 7.5 acres, elevations from 9,680 to 10,460 feet. Some sustain fish life while others do not. Those that do contain fish are typically stocked with brook trout. Access varies from easy trail access to difficult cross-country routes. Camping and spring water availability varies by location."
+        'text': "This lake does not sustain fish life. It is shown on the map as a landmark."
     },
     {
         'designation': 'W-15',
         'name': None,
-        'text': "Various small numbered lakes throughout the Weber drainage system, ranging from 1.1 to 7.5 acres, elevations from 9,680 to 10,460 feet. Some sustain fish life while others do not. Those that do contain fish are typically stocked with brook trout. Access varies from easy trail access to difficult cross-country routes. Camping and spring water availability varies by location."
+        'text': "This lake does not sustain fish life. It is shown on the map as a landmark."
     },
     {
         'designation': 'W-16',
         'name': None,
-        'text': "Various small numbered lakes throughout the Weber drainage system, ranging from 1.1 to 7.5 acres, elevations from 9,680 to 10,460 feet. Some sustain fish life while others do not. Those that do contain fish are typically stocked with brook trout. Access varies from easy trail access to difficult cross-country routes. Camping and spring water availability varies by location."
+        'text': "W-16 is a scenic natural lake located in a small glacial depression in the Main Fork of the Weber River Drainage. Most of the lake is surrounded by dense timber with a steep unstable talus slope to the west. Suitable camping areas are located north and east of the lake. Horse feed is limited and springs are absent. The lake is stocked with brook trout."
     },
     {
         'designation': 'W-21',
@@ -3242,7 +3242,7 @@ DWR_LAKE_ENTRIES = [
     {
         'designation': 'W-5',
         'name': None,
-        'text': "Various small numbered lakes throughout the Weber drainage system, ranging from 1.1 to 7.5 acres, elevations from 9,680 to 10,460 feet. Some sustain fish life while others do not. Those that do contain fish are typically stocked with brook trout. Access varies from easy trail access to difficult cross-country routes. Camping and spring water availability varies by location."
+        'text': "This lake does not sustain fish life. It is shown on the map as a landmark."
     },
     {
         'designation': 'W-51',
@@ -3252,27 +3252,27 @@ DWR_LAKE_ENTRIES = [
     {
         'designation': 'W-52',
         'name': None,
-        'text': "Various small numbered lakes throughout the Weber drainage system, ranging from 1.1 to 7.5 acres, elevations from 9,680 to 10,460 feet. Some sustain fish life while others do not. Those that do contain fish are typically stocked with brook trout. Access varies from easy trail access to difficult cross-country routes. Camping and spring water availability varies by location."
+        'text': "W-52 is a productive natural water with floating banks. It is 3.6 acres, 9,780 feet in elevation, with 25 feet maximum depth. Campsites are poor and running water is not present in the lake vicinity. Horse feed is scattered and sparse. Access is about 1/4 mile east of Carol or 3/4 mile northeast of the Dry Fork Trail in the vicinity of Sand Lake. There are no trails and the lake is difficult to locate due to the rough and heavily timbered terrain. W-52 contains a moderate population of brook trout and receives moderate angling pressure."
     },
     {
         'designation': 'W-53',
         'name': None,
-        'text': "Various small numbered lakes throughout the Weber drainage system, ranging from 1.1 to 7.5 acres, elevations from 9,680 to 10,460 feet. Some sustain fish life while others do not. Those that do contain fish are typically stocked with brook trout. Access varies from easy trail access to difficult cross-country routes. Camping and spring water availability varies by location."
+        'text': "W-53 is a productive meadow lake with boggy banks situated at the base of a shale ledge in the Dry Fork Drainage. It is 2.2 acres, 10,060 feet in elevation, with 9 feet maximum depth. Several potential camping areas are present and horse feed is limited to the surrounding meadow. Spring water may be available early in the season. Access is about 1/4 mile east of the Dry Fork Trail from the Sand Reservoir vicinity over rocky timbered terrain with no direct access trail. This lake may occasionally winterkill but it is being stocked with brook trout."
     },
     {
         'designation': 'W-54',
         'name': None,
-        'text': "Various small numbered lakes throughout the Weber drainage system, ranging from 1.1 to 7.5 acres, elevations from 9,680 to 10,460 feet. Some sustain fish life while others do not. Those that do contain fish are typically stocked with brook trout. Access varies from easy trail access to difficult cross-country routes. Camping and spring water availability varies by location."
+        'text': "This lake does not sustain fish life. It is shown on the map as a landmark."
     },
     {
         'designation': 'W-56',
         'name': None,
-        'text': "Various small numbered lakes throughout the Weber drainage system, ranging from 1.1 to 7.5 acres, elevations from 9,680 to 10,460 feet. Some sustain fish life while others do not. Those that do contain fish are typically stocked with brook trout. Access varies from easy trail access to difficult cross-country routes. Camping and spring water availability varies by location."
+        'text': "This lake does not sustain fish life. It is shown on the map as a landmark."
     },
     {
         'designation': 'W-57',
         'name': None,
-        'text': "Various small numbered lakes throughout the Weber drainage system, ranging from 1.1 to 7.5 acres, elevations from 9,680 to 10,460 feet. Some sustain fish life while others do not. Those that do contain fish are typically stocked with brook trout. Access varies from easy trail access to difficult cross-country routes. Camping and spring water availability varies by location."
+        'text': "W-57 is a shallow natural lake located about 1/2 mile east of Fish Reservoir over ledge rock and scattered meadows. It is 3 acres, 10,340 feet in elevation, with 8 feet maximum depth. W-57 may be subject to occasional winterkill. Campsites are not established, but horse feed is present in several pockets of meadow grass. W-57 receives moderate day use from anglers camped at Fish and Sand. The lake is stocked with brook trout."
     },
     {
         'designation': 'W-58',
@@ -3282,22 +3282,22 @@ DWR_LAKE_ENTRIES = [
     {
         'designation': 'W-59',
         'name': None,
-        'text': "Various small numbered lakes throughout the Weber drainage system, ranging from 1.1 to 7.5 acres, elevations from 9,680 to 10,460 feet. Some sustain fish life while others do not. Those that do contain fish are typically stocked with brook trout. Access varies from easy trail access to difficult cross-country routes. Camping and spring water availability varies by location."
+        'text': "W-59 is an irregularly shaped natural lake located about 1/2 mile southwest of Adax Lake in the Middle Fork Drainage. It is 4 acres, 10,140 feet in elevation, with 10 feet maximum depth. Access is also possible over the top from Gardner's Fork. The surrounding terrain is composed of bedrock shelves and scattered conifers and is extremely rough. Obvious trails do not exist, and access on horseback is difficult. Marginal campsites are available with no spring water sources. The small population of brook trout is maintained by natural reproduction and infrequent stocking."
     },
     {
         'designation': 'W-60',
         'name': None,
-        'text': "Various small numbered lakes throughout the Weber drainage system, ranging from 1.1 to 7.5 acres, elevations from 9,680 to 10,460 feet. Some sustain fish life while others do not. Those that do contain fish are typically stocked with brook trout. Access varies from easy trail access to difficult cross-country routes. Camping and spring water availability varies by location."
+        'text': "This lake does not sustain fish life. It is shown on the map as a landmark."
     },
     {
         'designation': 'W-61',
         'name': None,
-        'text': "Various small numbered lakes throughout the Weber drainage system, ranging from 1.1 to 7.5 acres, elevations from 9,680 to 10,460 feet. Some sustain fish life while others do not. Those that do contain fish are typically stocked with brook trout. Access varies from easy trail access to difficult cross-country routes. Camping and spring water availability varies by location."
+        'text': "This lake does not sustain fish life. It is shown on the map as a landmark."
     },
     {
         'designation': 'W-62',
         'name': None,
-        'text': "Various small numbered lakes throughout the Weber drainage system, ranging from 1.1 to 7.5 acres, elevations from 9,680 to 10,460 feet. Some sustain fish life while others do not. Those that do contain fish are typically stocked with brook trout. Access varies from easy trail access to difficult cross-country routes. Camping and spring water availability varies by location. YELLOWPINE, LOWER, W-66. Lower Yellowpine is a small glacial lake situated at the base of Flat Iron Mountain in the Beaver Creek Drainage. It is 2 acres, 9,620 feet in elevation, with 7 feet maximum depth. The lake abuts a talus slope and a steep ledge. Access is 1/4 miles northeast of U-150 on the Yellowpine Trail which originates near the Yellowpine Campground. The trail is heavily used and well marked by signs. Campsites are present with no source of spring water. Horse feed is very limited. Lower Yellowpine is stocked with brook trout. YELLOWPINE, UPPER, W-65. Upper Yellowpine is a small natural water located on the ridge directly north of Lower Yellowpine. It is 3 acres, 9,700 feet in elevation, with 12 feet maximum depth. The lake lies at the base of a steep talus slope. Several overused campsites are available along the eastern margin of the lake. Drinking water should be carried in. Horse pasture can be located to the north. The lake receives intensive fishing pressure and annual stocks of brook trout."
+        'text': "W-62 is a small glacial lake located in a pocket of meadow grass between bedrock shelves. It is 2.1 acres, 10,340 feet in elevation, with 18 feet maximum depth. Access is about 3 3/4 miles west of Crystal Lake Trailhead on the Lake Country Trail to the summit above Island Lake in the Provo Drainage, or about 5 3/4 miles southeast of the Erickson Basin Trailhead on the Smith-Morehouse Trail. W-62 is seldom visited but provides good camping possibilities with horse feed and spring water. Brook trout are being stocked."
     },
     {
         'designation': 'W-64',

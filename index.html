@@ -28,6 +28,30 @@
         .loaded .loading { display: block; }
         .loaded .not-loaded { display: none; }
         #results-map { height: 70vh; min-height: 340px; }
+        /* Interactive mini-map inside a lake's detail modal */
+        #detail-map { height: 260px; width: 100%; }
+        /* Compact multi-select popovers (species / drainage). Kept tight when
+           idle; the checkbox list only appears while the popover is open. */
+        .ms-btn { width: 100%; display: flex; align-items: center; justify-content: space-between;
+                  padding: .5rem .75rem; border: 1px solid #d1d5db; border-radius: .5rem;
+                  background: #fff; text-align: left; color: #4b5563; cursor: pointer; }
+        .ms-btn:focus { outline: none; box-shadow: 0 0 0 2px #64748b; }
+        .ms-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .ms-caret { color: #9ca3af; margin-left: .5rem; flex: none; }
+        .ms-panel { position: absolute; z-index: 50; margin-top: 4px; width: 100%; background: #fff;
+                    border: 1px solid #e5e7eb; border-radius: .5rem;
+                    box-shadow: 0 10px 15px -3px rgba(0,0,0,.12), 0 4px 6px -4px rgba(0,0,0,.1);
+                    max-height: 16rem; overflow-y: auto; padding: .375rem; }
+        .ms-row { display: flex; align-items: center; gap: .5rem; padding: .375rem .5rem;
+                  border-radius: .375rem; cursor: pointer; font-size: .875rem; color: #374151; }
+        .ms-row:hover { background: #f8fafc; }
+        .ms-row input { accent-color: #334155; width: 1rem; height: 1rem; flex: none; }
+        .ms-row .ms-count { margin-left: auto; color: #9ca3af; font-size: .75rem; }
+        .ms-mode { display: inline-flex; border: 1px solid #e5e7eb; border-radius: .375rem;
+                   overflow: hidden; font-size: .75rem; }
+        .ms-mode button { padding: .125rem .5rem; font-weight: 500; background: #fff;
+                          color: #6b7280; cursor: pointer; }
+        .ms-mode button.active { background: #334155; color: #fff; }
         /* "You are here" GPS marker — red, with an optional compass heading arrow */
         .gps-marker { position: relative; width: 16px; height: 16px; }
         .gps-dot { width: 16px; height: 16px; background: #ef4444; border: 3px solid #fff;
@@ -118,23 +142,30 @@
                     <div id="filters-panel" class="hidden mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Drainage</label>
-                            <select id="drainage-filter" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500">
-                                <option value="">All drainages</option>
-                            </select>
+                            <div class="relative">
+                                <button type="button" id="drainage-ms-btn" class="ms-btn">
+                                    <span id="drainage-ms-label" class="ms-label">All drainages</span>
+                                    <span class="ms-caret">▾</span>
+                                </button>
+                                <div id="drainage-ms-panel" class="ms-panel hidden"></div>
+                            </div>
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Fish Species</label>
-                            <select id="species-filter" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500">
-                                <option value="">Any species</option>
-                                <option value="brookies">Brookies</option>
-                                <option value="tigers">Tigers</option>
-                                <option value="cutthroats">Cutthroats</option>
-                                <option value="rainbows">Rainbows</option>
-                                <option value="goldens">Goldens</option>
-                                <option value="grayling">Grayling</option>
-                                <option value="splake">Splake</option>
-                            </select>
+                            <div class="flex items-center justify-between mb-2">
+                                <label class="block text-sm font-medium text-gray-700">Fish Species</label>
+                                <div id="species-mode" class="ms-mode" title="Match lakes with ANY of the selected species, or ALL of them">
+                                    <button type="button" data-mode="or" class="active">Any</button>
+                                    <button type="button" data-mode="and">All</button>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <button type="button" id="species-ms-btn" class="ms-btn">
+                                    <span id="species-ms-label" class="ms-label">Any species</span>
+                                    <span class="ms-caret">▾</span>
+                                </button>
+                                <div id="species-ms-panel" class="ms-panel hidden"></div>
+                            </div>
                         </div>
 
                         <div>
@@ -186,8 +217,9 @@
                     </div><!-- /filters wrapper -->
                 </div>
 
-                <!-- Drainages Section -->
-                <div class="bg-white rounded-lg shadow-md p-6">
+                <!-- Drainages Section — hidden for now; drainage selection lives in the
+                     multi-select filter above (with per-drainage lake counts). -->
+                <div class="bg-white rounded-lg shadow-md p-6 hidden">
                     <h2 class="text-xl font-semibold mb-4">Browse by Drainage</h2>
                     <div id="drainages-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                         <!-- Drainage links will be populated here -->
@@ -397,28 +429,38 @@
         }
 
         // Initialize the app
+        // Raw text of the currently-loaded data, so refreshes can cheaply tell
+        // whether anything actually changed before re-rendering.
+        let lastDataText = null;
+
+        // Populate the in-memory model from a parsed data object. Reused by the
+        // initial load and every background refresh.
+        function hydrate(data) {
+            lakes = data.lakes;
+            drainagesInfo = data.drainages;
+            // Stocking records are exported newest-first, so each lake's
+            // unique years come out newest-first too
+            lakes.forEach(lake => {
+                lake.stockYears = [...new Set(lake.stocking.map(s => s.stock_date.split('-')[0]))];
+            });
+        }
+
         async function initApp() {
             try {
-                let data;
+                let text;
                 try {
                     const response = await fetch('lakes_data.json');
                     if (!response.ok) {
                         throw new Error(`Data fetch failed: ${response.status}`);
                     }
-                    data = await response.json();
+                    text = await response.text();
                 } catch (fetchError) {
                     console.error('Failed to load lake data:', fetchError);
                     throw new Error('Lake data not accessible. Make sure you are connected to the internet for the first load.');
                 }
 
-                lakes = data.lakes;
-                drainagesInfo = data.drainages;
-
-                // Stocking records are exported newest-first, so each lake's
-                // unique years come out newest-first too
-                lakes.forEach(lake => {
-                    lake.stockYears = [...new Set(lake.stocking.map(s => s.stock_date.split('-')[0]))];
-                });
+                lastDataText = text;
+                hydrate(JSON.parse(text));
 
                 console.log(`Data loaded successfully: ${lakes.length} lakes`);
 
@@ -441,6 +483,9 @@
                     }
                 }
 
+                // Keep a long-open window fresh without a manual restart.
+                startAutoRefresh();
+
             } catch (error) {
                 console.error('Failed to initialize app:', error);
 
@@ -452,6 +497,76 @@
                 document.querySelector('.not-loaded p').textContent = errorMsg;
                 document.querySelector('.animate-spin').style.display = 'none';
             }
+        }
+
+        // ---- Live refresh -------------------------------------------------
+        // Keep a long-open window (e.g. the desktop app you leave running) in
+        // sync without a manual reload. The service worker serves
+        // lakes_data.json stale-while-revalidate and pings us (DATA_UPDATED)
+        // when the cached bytes change; we also poll on a timer and whenever
+        // the window regains focus or the network returns. All triggers funnel
+        // through refreshData(), which is a no-op when nothing changed.
+        let refreshing = false;
+        let deferredRefresh = false;
+
+        async function refreshData() {
+            if (refreshing) return;
+            refreshing = true;
+            try {
+                // Cache-bust to pull the freshest bytes straight from the
+                // server/disk when online; offline this throws and we simply
+                // keep the data we already have.
+                const response = await fetch(`lakes_data.json?_=${Date.now()}`, { cache: 'no-store' });
+                if (!response.ok) return;
+                const text = await response.text();
+                if (text === lastDataText) return;   // unchanged — nothing to do
+                lastDataText = text;
+                applyRefresh(JSON.parse(text));
+                console.log('Data refreshed with newer lake data');
+            } catch (e) {
+                /* offline or transient — keep current data silently */
+            } finally {
+                refreshing = false;
+            }
+        }
+
+        function applyRefresh(data) {
+            // Remember the current result set by designation so we can rebuild
+            // the same view against the refreshed lake objects.
+            const resultIds = view.results.map(l => l.letter_number);
+            hydrate(data);
+
+            // Header summaries are always safe to update in place.
+            updateMissionProgress();
+            populateStats();
+            // Drainage counts in the filter may have shifted.
+            buildDrainageOptions();
+
+            if (resultIds.length) {
+                const byId = new Map(lakes.map(l => [l.letter_number, l]));
+                view.results = resultIds.map(id => byId.get(id)).filter(Boolean);
+            }
+
+            const lakeModalOpen = !document.getElementById('lake-detail-modal').classList.contains('hidden');
+            if (lakeModalOpen) {
+                // Don't yank the list/map out from under an open modal; do it on close.
+                deferredRefresh = true;
+            } else if (!document.getElementById('results-section').classList.contains('hidden')) {
+                renderCurrentView();
+            }
+        }
+
+        function startAutoRefresh() {
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.addEventListener('message', e => {
+                    if (e.data && e.data.type === 'DATA_UPDATED') refreshData();
+                });
+            }
+            setInterval(refreshData, 15 * 60 * 1000);   // 15-minute heartbeat
+            document.addEventListener('visibilitychange', () => {
+                if (document.visibilityState === 'visible') refreshData();
+            });
+            window.addEventListener('online', refreshData);
         }
 
         function updateMissionProgress() {
@@ -526,19 +641,47 @@
         }
 
         function initializeUI() {
-            // Populate drainage filter
-            const drainageFilter = document.getElementById('drainage-filter');
-            const drainages = [...new Set(lakes.map(lake => lake.drainage))].sort();
-            drainages.forEach(drainage => {
-                const option = document.createElement('option');
-                option.value = drainage;
-                option.textContent = drainage;
-                drainageFilter.appendChild(option);
-            });
+            // Build the multi-select filter popovers (drainage carries counts)
+            buildDrainageOptions();
+            buildSpeciesOptions();
+            updateMsLabels();
 
+            // Multi-select popovers: toggle open on button, keep clicks inside
+            // from closing them, and close any open panel on an outside click.
+            [['drainage-ms-btn', 'drainage-ms-panel'], ['species-ms-btn', 'species-ms-panel']]
+                .forEach(([btnId, panelId]) => {
+                    const btn = document.getElementById(btnId);
+                    const panel = document.getElementById(panelId);
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const isOpen = !panel.classList.contains('hidden');
+                        closeAllMsPanels();
+                        if (!isOpen) panel.classList.remove('hidden');
+                    });
+                    panel.addEventListener('click', (e) => e.stopPropagation());
+                });
+            document.addEventListener('click', closeAllMsPanels);
+
+            // Species Any/All (OR/AND) toggle
+            document.querySelectorAll('#species-mode button').forEach(b => {
+                b.addEventListener('click', () => {
+                    filterState.speciesMode = b.dataset.mode;
+                    document.querySelectorAll('#species-mode button')
+                        .forEach(x => x.classList.toggle('active', x === b));
+                    updateFilterButtonState();
+                });
+            });
 
             // Event listeners
             document.getElementById('lake-search').addEventListener('input', handleLakeSearch);
+            // Enter in the search box: jump straight to the single match, or put
+            // all matches on the map.
+            document.getElementById('lake-search').addEventListener('keydown', (e) => {
+                if (e.key !== 'Enter') return;
+                e.preventDefault();
+                if (searchMatches.length === 1) showLakeDetail(searchMatches[0].letter_number);
+                else if (searchMatches.length > 1) showSearchMatches();
+            });
             document.getElementById('apply-filters').addEventListener('click', applyFilters);
             document.getElementById('clear-filters').addEventListener('click', clearFilters);
             document.getElementById('close-modal').addEventListener('click', closeModal);
@@ -600,10 +743,8 @@
                 hideModals();
             });
 
-            // Filter state management
-            ['drainage-filter', 'species-filter'].forEach(id => {
-                document.getElementById(id).addEventListener('change', updateFilterButtonState);
-            });
+            // Filter state management (drainage/species handled by their
+            // multi-select change handlers)
             ['depth-min', 'depth-max', 'elevation-min', 'elevation-max', 'size-min', 'size-max', 'year-min', 'year-max'].forEach(id => {
                 const element = document.getElementById(id);
                 element.addEventListener('input', updateFilterButtonState);
@@ -629,26 +770,36 @@
             });
         }
 
+        // Current name/designation search matches (full set; the dropdown shows
+        // the first handful, but "show on map" / Enter act on all of them).
+        let searchMatches = [];
+
         function handleLakeSearch(e) {
             const query = e.target.value.toLowerCase().trim();
             const resultsDiv = document.getElementById('search-results');
 
             if (query.length < 2) {
+                searchMatches = [];
                 resultsDiv.classList.add('hidden');
                 return;
             }
 
-            const matches = lakes.filter(lake => {
+            searchMatches = lakes.filter(lake => {
                 const name = (lake.name || '').toLowerCase();
                 const designation = lake.letter_number.toLowerCase();
                 return name.includes(query) || designation.includes(query);
-            }).slice(0, 10);
+            });
 
-            if (matches.length > 0) {
-                resultsDiv.innerHTML = matches.map(lake => {
+            if (searchMatches.length > 0) {
+                const shown = searchMatches.slice(0, 10);
+                const header = searchMatches.length > 1 ? `
+                    <button type="button" onclick="showSearchMatches()"
+                            class="w-full text-left p-2 text-sm font-medium text-slate-700 bg-slate-50 hover:bg-slate-100 border-b transition-colors">
+                        🗺️ Show all ${searchMatches.length} matches on the map
+                    </button>` : '';
+                const rows = shown.map(lake => {
                     const noFishEmoji = lake.no_fish ? ' 🚫' : '';
                     const opacityClass = lake.no_fish ? 'opacity-60' : '';
-
                     return `
                     <div class="p-2 hover:bg-slate-50 cursor-pointer border-b last:border-b-0 transition-colors ${opacityClass}"
                          onclick="showLakeDetail('${lake.letter_number}')">
@@ -657,19 +808,101 @@
                     </div>
                     `;
                 }).join('');
+                const more = searchMatches.length > shown.length
+                    ? `<div class="p-2 text-xs text-gray-400">…and ${searchMatches.length - shown.length} more (use “Show all … on the map”)</div>`
+                    : '';
+                resultsDiv.innerHTML = header + rows + more;
                 resultsDiv.classList.remove('hidden');
             } else {
                 resultsDiv.classList.add('hidden');
             }
         }
 
+        // Put the current search matches on the map as a filtered result set.
+        function showSearchMatches() {
+            if (!searchMatches.length) return;
+            document.getElementById('search-results').classList.add('hidden');
+            view.mode = 'map';
+            localStorage.setItem('uintas-view', 'map');
+            updateViewToggle();
+            setResults(searchMatches, {
+                title: `Search matches on the map (${searchMatches.length})`,
+                showDrainage: true
+            });
+        }
+
         const val = id => document.getElementById(id).value;
+
+        // ---- Multi-select filters (species + drainage) --------------------
+        // Compact popovers: the button shows a summary and the checkbox list
+        // only appears while open, so the panel stays tight when idle.
+        const SPECIES_OPTIONS = [
+            ['brookies', 'Brookies'], ['tigers', 'Tigers'], ['cutthroats', 'Cutthroats'],
+            ['rainbows', 'Rainbows'], ['goldens', 'Goldens'], ['grayling', 'Grayling'],
+            ['splake', 'Splake']
+        ];
+        const filterState = {
+            drainages: new Set(),
+            species: new Set(),
+            speciesMode: 'or',   // 'or' = any of, 'and' = all of
+        };
+        const escHtml = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        const escAttr = s => escHtml(s).replace(/"/g, '&quot;');
+
+        function wireMsCheckboxes(panel, set) {
+            panel.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+                cb.checked = set.has(cb.value);
+                cb.addEventListener('change', () => {
+                    if (cb.checked) set.add(cb.value); else set.delete(cb.value);
+                    updateMsLabels();
+                    updateFilterButtonState();
+                });
+            });
+        }
+
+        // Drainage options carry the per-drainage lake count (moved here from
+        // the old "Browse by Drainage" section).
+        function buildDrainageOptions() {
+            const panel = document.getElementById('drainage-ms-panel');
+            if (!panel) return;
+            const counts = {};
+            lakes.forEach(l => { counts[l.drainage] = (counts[l.drainage] || 0) + 1; });
+            const names = Object.keys(counts).sort();
+            panel.innerHTML = names.map(n =>
+                `<label class="ms-row"><input type="checkbox" value="${escAttr(n)}"><span>${escHtml(n)}</span><span class="ms-count">${counts[n]}</span></label>`
+            ).join('');
+            wireMsCheckboxes(panel, filterState.drainages);
+        }
+
+        function buildSpeciesOptions() {
+            const panel = document.getElementById('species-ms-panel');
+            if (!panel) return;
+            panel.innerHTML = SPECIES_OPTIONS.map(([v, l]) =>
+                `<label class="ms-row"><input type="checkbox" value="${v}"><span>${l}</span></label>`
+            ).join('');
+            wireMsCheckboxes(panel, filterState.species);
+        }
+
+        function updateMsLabels() {
+            const d = filterState.drainages;
+            document.getElementById('drainage-ms-label').textContent =
+                d.size === 0 ? 'All drainages' : d.size === 1 ? [...d][0] : `${d.size} drainages`;
+
+            const s = filterState.species;
+            const labelFor = v => (SPECIES_OPTIONS.find(o => o[0] === v) || [null, v])[1];
+            document.getElementById('species-ms-label').textContent =
+                s.size === 0 ? 'Any species' : s.size === 1 ? labelFor([...s][0]) : `${s.size} species`;
+        }
+
+        function closeAllMsPanels() {
+            document.querySelectorAll('.ms-panel').forEach(p => p.classList.add('hidden'));
+        }
 
         // Count active filters, grouping each min/max pair as one
         function activeFilterCount() {
             let n = 0;
-            if (val('drainage-filter')) n++;
-            if (val('species-filter')) n++;
+            if (filterState.drainages.size) n++;
+            if (filterState.species.size) n++;
             if (val('depth-min') || val('depth-max')) n++;
             if (val('elevation-min') || val('elevation-max')) n++;
             if (val('size-min') || val('size-max')) n++;
@@ -708,31 +941,50 @@
 
         function clearFilters(e) {
             if (e) e.stopPropagation();  // don't toggle the panel when clicking Clear
-            ['drainage-filter', 'species-filter', 'depth-min', 'depth-max', 'elevation-min',
-             'elevation-max', 'size-min', 'size-max', 'year-min', 'year-max'].forEach(id => {
+            filterState.drainages.clear();
+            filterState.species.clear();
+            filterState.speciesMode = 'or';
+            document.querySelectorAll('#drainage-ms-panel input, #species-ms-panel input')
+                .forEach(cb => cb.checked = false);
+            document.querySelectorAll('#species-mode button')
+                .forEach(b => b.classList.toggle('active', b.dataset.mode === 'or'));
+            updateMsLabels();
+            ['depth-min', 'depth-max', 'elevation-min', 'elevation-max',
+             'size-min', 'size-max', 'year-min', 'year-max'].forEach(id => {
                 document.getElementById(id).value = '';
             });
             document.getElementById('results-section').classList.add('hidden');
             updateFilterButtonState();
         }
 
+        // Does a lake have this species, via its stocking history or its
+        // free-text fish_species field? (substring match, matching the DB's
+        // normalized species names)
+        function lakeHasSpecies(lake, sp) {
+            sp = sp.toLowerCase();
+            if (lake.stocking.some(r => r.species && r.species.toLowerCase().includes(sp))) return true;
+            return (lake.fish_species || '').toLowerCase().includes(sp);
+        }
+
         function applyFilters() {
-            const drainage = document.getElementById('drainage-filter').value;
-            const species = document.getElementById('species-filter').value;
-            const depthMin = document.getElementById('depth-min').value;
-            const depthMax = document.getElementById('depth-max').value;
-            const elevationMin = document.getElementById('elevation-min').value;
-            const elevationMax = document.getElementById('elevation-max').value;
-            const sizeMin = document.getElementById('size-min').value;
-            const sizeMax = document.getElementById('size-max').value;
-            const yearMin = document.getElementById('year-min').value;
-            const yearMax = document.getElementById('year-max').value;
+            const depthMin = val('depth-min');
+            const depthMax = val('depth-max');
+            const elevationMin = val('elevation-min');
+            const elevationMax = val('elevation-max');
+            const sizeMin = val('size-min');
+            const sizeMax = val('size-max');
+            const yearMin = val('year-min');
+            const yearMax = val('year-max');
+            const drainages = filterState.drainages;
+            const speciesSel = [...filterState.species];
+            const speciesMode = filterState.speciesMode;
 
             let filteredLakes = [...lakes];
 
-            // Filter by drainage
-            if (drainage) {
-                filteredLakes = filteredLakes.filter(lake => lake.drainage === drainage);
+            // Filter by drainage (multi-select = union / OR — a lake belongs to
+            // exactly one drainage, so "all of" would never match)
+            if (drainages.size) {
+                filteredLakes = filteredLakes.filter(lake => drainages.has(lake.drainage));
             }
 
             // Filter by depth range
@@ -769,47 +1021,33 @@
             }
 
             // Combined species and year filter
-            if (species || yearMin || yearMax) {
+            if (speciesSel.length || yearMin || yearMax) {
                 filteredLakes = filteredLakes.filter(lake => {
-                    // If no stocking records, only include if no species or year filters are set
-                    if (lake.stocking.length === 0) {
-                        // Check if lake has species in fish_species field (for non-stocked natural populations)
-                        if (species) {
-                            const fishSpecies = (lake.fish_species || '').toLowerCase();
-                            return fishSpecies.includes(species.toLowerCase());
-                        }
-                        return !yearMin && !yearMax; // Only include if no year filters
+                    // Species membership: ANY (OR) or ALL (AND) of the picks
+                    if (speciesSel.length) {
+                        const ok = speciesMode === 'and'
+                            ? speciesSel.every(sp => lakeHasSpecies(lake, sp))
+                            : speciesSel.some(sp => lakeHasSpecies(lake, sp));
+                        if (!ok) return false;
                     }
 
-                    // Filter stocking records by species if specified
-                    let relevantStocking = lake.stocking;
-                    if (species) {
-                        relevantStocking = lake.stocking.filter(record =>
-                            record.species && record.species.toLowerCase().includes(species.toLowerCase())
-                        );
-                        // If no stocking records match the species, check fish_species field
-                        if (relevantStocking.length === 0) {
-                            const fishSpecies = (lake.fish_species || '').toLowerCase();
-                            if (!fishSpecies.includes(species.toLowerCase())) {
-                                return false;
-                            }
-                            // If fish_species matches but no stocking records, only include if no year filter
-                            return !yearMin && !yearMax;
-                        }
-                    }
-
-                    // Filter by year range based on the lake's MOST RECENT stocking.
-                    // A max year means "not stocked since then" (e.g. max 2022 excludes
-                    // lakes stocked in 2023+), a min means "stocked at least that recently".
+                    // Filter by year range based on the lake's MOST RECENT stocking
+                    // of a relevant species. A max year means "not stocked since
+                    // then"; a min means "stocked at least that recently". Restrict
+                    // to the selected species' records when any are picked.
                     if (yearMin || yearMax) {
-                        const years = relevantStocking
+                        let relevant = lake.stocking;
+                        if (speciesSel.length) {
+                            relevant = lake.stocking.filter(r => r.species &&
+                                speciesSel.some(sp => r.species.toLowerCase().includes(sp)));
+                        }
+                        const years = relevant
                             .map(record => parseInt(record.stock_date.split('-')[0]))
                             .filter(year => !isNaN(year));
                         if (years.length === 0) return false;
                         const latestYear = Math.max(...years);
-                        const minCheck = !yearMin || latestYear >= parseInt(yearMin);
-                        const maxCheck = !yearMax || latestYear <= parseInt(yearMax);
-                        return minCheck && maxCheck;
+                        if (yearMin && latestYear < parseInt(yearMin)) return false;
+                        if (yearMax && latestYear > parseInt(yearMax)) return false;
                     }
 
                     return true;
@@ -932,6 +1170,7 @@
                              opts: { maxZoom: 17, attribution: 'OpenTopoMap (CC-BY-SA)' } },
         };
         let resultsMap = null, resultsMarkers = null, gpsMarker = null;
+        let detailMap = null;   // the mini-map inside an open lake modal
         let gpsHeadingEl = null, headingListening = false, lastHeading = null;
 
         // ---- Compass heading arrow (#2) ----
@@ -991,6 +1230,33 @@
             if (lake.status === 'CAUGHT') return '#16a34a';   // caught — green
             if (lake.no_fish) return '#9ca3af';               // no fish — gray
             return '#2563eb';                                  // default — blue
+        }
+
+        // Interactive mini-map inside a lake's detail modal, centered on our
+        // recorded coordinates. Rebuilt from scratch each time a modal opens
+        // (the modal content HTML — and thus #detail-map — is regenerated).
+        function destroyDetailMap() {
+            if (detailMap) { detailMap.remove(); detailMap = null; }
+        }
+        function initDetailMap(lake) {
+            destroyDetailMap();
+            const el = document.getElementById('detail-map');
+            if (!el || lake.lat == null) return;
+            detailMap = L.map('detail-map', { attributionControl: true });
+            const layers = {};
+            Object.entries(MAP_LAYERS).forEach(([name, l], i) => {
+                layers[name] = L.tileLayer(l.url, l.opts);
+                if (i === 0) layers[name].addTo(detailMap);
+            });
+            L.control.layers(layers, null, { position: 'topright' }).addTo(detailMap);
+            const label = lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number;
+            L.circleMarker([lake.lat, lake.lng], {
+                radius: 8, color: '#fff', weight: 2,
+                fillColor: statusColor(lake), fillOpacity: 0.9
+            }).bindTooltip(label, { direction: 'top' }).addTo(detailMap);
+            detailMap.setView([lake.lat, lake.lng], 14);
+            // Container was hidden until the modal opened — fix its size.
+            requestAnimationFrame(() => detailMap && detailMap.invalidateSize());
         }
 
         function renderMap() {
@@ -1134,6 +1400,13 @@
                     </div>
                 </div>
 
+                <!-- Where it is (our coordinates) — interactive mini-map -->
+                ${lake.lat != null ? `
+                <div class="rounded-lg overflow-hidden border border-slate-200">
+                    <div id="detail-map"></div>
+                </div>
+                ` : ''}
+
                 <!-- Stocking Records -->
                 <div class="rounded-lg p-4 border border-slate-200">
                     <h3 class="text-lg font-semibold mb-3">Stocking Records</h3>
@@ -1185,6 +1458,7 @@
 
             modal.classList.remove('hidden');
             pushModalState('lake', `#${encodeURIComponent(lake.letter_number)}`);
+            initDetailMap(lake);
         }
 
         // Add a history entry when a modal opens so the back button/swipe
@@ -1202,8 +1476,17 @@
             document.getElementById('lake-detail-modal').classList.add('hidden');
             document.getElementById('about-modal').classList.add('hidden');
             document.getElementById('rotenone-modal').classList.add('hidden');
+            destroyDetailMap();
             if (location.hash) {
                 history.replaceState(null, '', location.pathname + location.search);
+            }
+            // A background data refresh was held back while the modal was open;
+            // fold it into the visible view now that it's closing.
+            if (deferredRefresh) {
+                deferredRefresh = false;
+                if (!document.getElementById('results-section').classList.contains('hidden')) {
+                    renderCurrentView();
+                }
             }
         }
 
