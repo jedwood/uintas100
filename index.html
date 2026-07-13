@@ -562,6 +562,12 @@
                     if (e.data && e.data.type === 'DATA_UPDATED') refreshData();
                 });
             }
+            // Refresh shortly after launch too: initApp may have loaded a stale
+            // copy from the service-worker cache (e.g. a mirror that just pulled,
+            // or right after a cache-version bump). This cache-busting fetch
+            // pulls the freshest bytes from the local server so a fresh launch
+            // self-heals in seconds instead of waiting for the first heartbeat.
+            setTimeout(refreshData, 3000);
             setInterval(refreshData, 15 * 60 * 1000);   // 15-minute heartbeat
             document.addEventListener('visibilitychange', () => {
                 if (document.visibilityState === 'visible') refreshData();
