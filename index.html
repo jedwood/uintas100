@@ -562,6 +562,12 @@
                     if (e.data && e.data.type === 'DATA_UPDATED') refreshData();
                 });
             }
+            // The desktop (Tauri) shell embeds this page in an iframe and
+            // pings it right after a scheduled stocking run lands fresh data,
+            // so updates show up in seconds instead of at the next heartbeat.
+            window.addEventListener('message', e => {
+                if (e.data && e.data.type === 'REFRESH_DATA') refreshData();
+            });
             // Refresh shortly after launch too: initApp may have loaded a stale
             // copy from the service-worker cache (e.g. a mirror that just pulled,
             // or right after a cache-version bump). This cache-busting fetch

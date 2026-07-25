@@ -198,13 +198,13 @@
         <div class="sched-header">
           <span class="sched-label">Stocking Updates</span>
           <label class="toggle">
-            <input type="checkbox" id="sched-stocking-enabled">
+            <input type="checkbox" id="sched-stocking-enabled" onchange="saveSchedule()">
             <span class="slider"></span>
           </label>
         </div>
         <div class="sched-interval">
           <span>Every</span>
-          <select id="sched-stocking-interval">
+          <select id="sched-stocking-interval" onchange="saveSchedule()">
             <option value="6">6 hours</option>
             <option value="12">12 hours</option>
             <option value="24">24 hours</option>
@@ -218,13 +218,13 @@
         <div class="sched-header">
           <span class="sched-label">Notes Sync</span>
           <label class="toggle green">
-            <input type="checkbox" id="sched-notes-enabled">
+            <input type="checkbox" id="sched-notes-enabled" onchange="saveSchedule()">
             <span class="slider"></span>
           </label>
         </div>
         <div class="sched-interval">
           <span>Every</span>
-          <select id="sched-notes-interval">
+          <select id="sched-notes-interval" onchange="saveSchedule()">
             <option value="1">1 hour</option>
             <option value="3">3 hours</option>
             <option value="6">6 hours</option>
@@ -233,7 +233,7 @@
           </select>
         </div>
       </div>
-      <button class="save-btn" id="btn-save-schedule" onclick="saveSchedule()">Save Schedule</button>
+      <div id="sched-status" class="status-detail" style="min-height: 15px; margin-top: 4px;"></div>
     </div>
 
     <!-- Logs -->
@@ -418,6 +418,7 @@
       out.querySelector('pre').textContent = text;
       out.classList.add('visible');
       refreshStatus();
+      if (cmd === 'run_stocking_update' && r.success) refreshWebApp();
     } catch (e) {
       out.querySelector('pre').textContent = 'Error: ' + e;
       out.classList.add('visible');
@@ -441,8 +442,12 @@
     }
   }
 
+  // Every schedule control auto-saves on change — there is no Save button to
+  // forget, so what the toggles show is always what the scheduler is doing.
+  let schedStatusTimer = null;
   async function saveSchedule() {
-    const btn = document.getElementById('btn-save-schedule');
+    const status = document.getElementById('sched-status');
+    clearTimeout(schedStatusTimer);
     try {
       const c = await invoke('get_schedule');
       c.stocking_update.enabled = document.getElementById('sched-stocking-enabled').checked;
@@ -450,12 +455,16 @@
       c.notes_sync.enabled = document.getElementById('sched-notes-enabled').checked;
       c.notes_sync.interval_hours = parseInt(document.getElementById('sched-notes-interval').value);
       await invoke('set_schedule', { config: c });
-      btn.textContent = 'Saved!';
-      setTimeout(() => { btn.textContent = 'Save Schedule'; }, 1500);
+      status.textContent = 'Saved';
+      status.style.color = '#16a34a';
+      schedStatusTimer = setTimeout(() => { status.textContent = ''; }, 1500);
+      refreshStatus();
     } catch (e) {
-      btn.textContent = 'Error';
       console.error('Save schedule error:', e);
-      setTimeout(() => { btn.textContent = 'Save Schedule'; }, 2000);
+      status.textContent = 'Save failed: ' + e;
+      status.style.color = '#dc2626';
+      // Re-sync the controls with what the scheduler actually has.
+      refreshSchedule();
     }
   }
 
@@ -566,7 +575,20 @@
     refreshStatus();
     if (activeLogTab === 'stocking' && ev.payload.task === 'stocking_update') refreshLog();
     if (activeLogTab === 'notes' && ev.payload.task === 'notes_sync') refreshLog();
+    // A finished stocking run means the clone may have just pulled fresh data
+    // (mirror) or written it (writer) — tell the web app to re-fetch. The PWA
+    // refreshes in place and no-ops when the bytes are unchanged.
+    if (ev.payload.task === 'stocking_update' && ev.payload.success) refreshWebApp();
   });
+
+  function refreshWebApp() {
+    const iframe = document.getElementById('webapp-iframe');
+    try {
+      iframe.contentWindow.postMessage({ type: 'REFRESH_DATA' }, '*');
+    } catch (e) {
+      console.error('refreshWebApp postMessage error:', e);
+    }
+  }
 
   // --- Helpers ---
   function fmtTime(v) {

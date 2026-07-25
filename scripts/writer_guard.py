@@ -33,12 +33,16 @@ def exit_if_readonly(job="this job"):
 
 
 def pull_and_exit_if_readonly(job="this job"):
-    """On a read-only mirror, refresh the clone (`git pull --ff-only`) and exit 0.
+    """On a read-only mirror, refresh the clone (`git pull --ff-only`) and exit.
 
     A mirror's version of "fetch the latest data" is pulling what the Mini
     pushed. Used by the stocking-fetch path so a scheduler firing the job on a
     mirror (e.g. the Tauri app on the MacBook) keeps that clone — and the web
     app it serves — up to date instead of silently no-oping.
+
+    Exit 0 only when the pull succeeds. A failed pull exits 1 with the git
+    output on stderr so the scheduler records the failure and notifies,
+    instead of a stale mirror masquerading as a successful run.
     """
     if not is_readonly_mirror():
         return
@@ -46,7 +50,9 @@ def pull_and_exit_if_readonly(job="this job"):
     result = subprocess.run(
         ["git", "pull", "--ff-only"], cwd=REPO_ROOT, capture_output=True, text=True
     )
-    sys.stdout.write(result.stdout + result.stderr)
     if result.returncode != 0:
-        print("[writer-guard] WARNING: git pull failed; mirror may be stale.")
+        sys.stderr.write(result.stdout + result.stderr)
+        print("[writer-guard] ERROR: git pull --ff-only failed; mirror is stale.", file=sys.stderr)
+        sys.exit(1)
+    sys.stdout.write(result.stdout + result.stderr)
     sys.exit(0)
