@@ -1,0 +1,3 @@
+data/raw_stocking/
+__pycache__/
+*.pyc

@@ -1,0 +1,89 @@
+dwr_name,area,confidence,basis
+# Curated regional classification for DWR waters in Wayne and Garfield counties
+# that carry NO unit code. Waters WITH a code (NBS, BTS, GT, TLM, ...) are
+# classified automatically by water_utils.classify() and are absent from this
+# file.
+#
+# area values:
+#   Boulder Mountain      -- "the Boulders" proper (boulder_mountain = 1)
+#   Griffin Top           -- Aquarius Plateau, not Boulder proper
+#   Escalante Mountains   -- Aquarius Plateau, west edge
+#   Aquarius Plateau      -- on the plateau, sub-area not established
+#   Thousand Lake Mountain-- separate mountain north of Boulder
+#   Fremont Valley        -- valley floor between Thousand Lake and Boulder
+#   Southwest Garfield    -- Panguitch / Bryce / Escalante-town lowland
+#   Henry Mountains       -- far east Garfield
+#   Southwest Utah        -- outside the study area entirely
+#   Unclassified          -- could not be established from any source
+#
+# confidence: high (named in an authoritative area list or an unambiguous GNIS
+# match), medium (drainage logic or a single supporting source), low (guess).
+#
+# Primary source for the slope-area assignments below is the Boulder Mountain
+# Blue Ribbon fishery guide, which groups waters as North Creek Lakes / North
+# Slope / South Slope / East Slope / West Slope / Boulder Top / Escalante
+# Mountain-Griffin Top -- the same scheme as the DWR unit codes.
+#
+# --- Boulder Mountain: stillwaters -------------------------------------------
+"BOWNS RES, LOWER",Boulder Mountain,high,guide lists Lower Bowns Reservoir under East Slope; GNIS 38.1077 -111.2711
+"BULLBERRY L, SOUTH",Boulder Mountain,high,guide lists Bulberry Lake #1 (South) under North Slope; GNIS Bullberry Lakes 38.2447 -111.5032
+BULLBERRY L#4(NORTH),Boulder Mountain,high,guide lists Bulberry Lake #4 (North) under North Slope
+DONKEY POND,Boulder Mountain,high,guide lists Donkey Pond under North Slope; GNIS Donkey Reservoir 38.2026 -111.4931
+LAKE EMILY,Boulder Mountain,high,GNIS Emily Lake 38.1556 -111.4252 on Boulder Top
+LONG WILLOW BOTTOMS,Boulder Mountain,high,guide lists Long Willow Bottom Reservoir under North Creek Lakes; GNIS 37.9079 -111.8467
+ROUND WILLOW BOTTOM,Boulder Mountain,high,guide lists Round Willow Bottom Reservoir under North Creek Lakes; GNIS 37.9067 -111.8924
+TALL FOUR RES,Boulder Mountain,high,guide lists Tall Four Reservoir under North Creek Lakes; GNIS 37.9200 -111.8342
+NORTH CR RES,Boulder Mountain,high,guide lists North Creek Reservoir under North Creek Lakes; GNIS 37.8437 -111.7586
+JOHNNY L,Boulder Mountain,high,guide lists Johnny Lake under North Creek Lakes
+POSEY L,Boulder Mountain,high,guide lists Posey Lake under South Slope; GNIS spells it Posy Lake 37.9372 -111.6960
+TULE L,Boulder Mountain,high,guide lists Tule Lake under South Slope; GNIS Tule Lakes 37.9320 -111.7059
+SHORT L,Boulder Mountain,high,guide lists Short Lake under South Slope
+"GARKANE IMP, MAIN FK",Boulder Mountain,high,guide lists Garkane Main Impoundment under South Slope
+GARKANE EAST FK,Boulder Mountain,high,guide lists Garkane East (King's Pasture) under South Slope; pairs with KINGS PASTURE EBS
+"TWIN L, UPPER",Boulder Mountain,medium,GNIS Twin Lakes 38.1380 -111.5275 on Boulder Top
+"TWIN L, LOWER",Boulder Mountain,medium,GNIS Twin Lakes 38.1380 -111.5275 on Boulder Top
+"BIG HOLLOW, UPPER",Boulder Mountain,medium,GNIS Big Hollow 37.8778 -111.4993 on the south Boulder slope
+# --- Boulder Mountain: streams draining the mountain -------------------------
+SPRING CR,Boulder Mountain,medium,GNIS 38.2028 -111.3938 on the north Boulder slope
+PINE CR,Boulder Mountain,medium,GNIS 38.3030 -111.5346; drains the north slope below Pine Creek Reservoir (BTN)
+SAND CR,Boulder Mountain,medium,GNIS 38.3166 -111.3674; drains the north-east slope
+PLEASANT CR,Boulder Mountain,medium,rises on Boulder Top at Pleasant Creek Lake (BTS) and flows east through Capitol Reef
+CALF CR,Boulder Mountain,medium,GNIS 37.7758 -111.4182; drains the south slope to the Escalante River
+"BOULDER CR, W FK",Boulder Mountain,medium,GNIS West Fork Boulder Creek 38.0003 -111.4668 on the south slope
+TWITCHELL CR,Boulder Mountain,medium,GNIS 37.9078 -111.7921 in the North Creek Lakes area
+NORTH CR,Boulder Mountain,medium,the North Creek that drains the Boulder south-west extension (GNIS 37.8675 -111.7732)
+DEEP CR,Boulder Mountain,low,GNIS 37.9175 -111.6466 on the south Aquarius near Posey/Tule; distinct from DEEP CR L TLM
+# --- Aquarius Plateau but not Boulder proper ---------------------------------
+JACOBS VALLEY RES,Griffin Top,medium,GNIS Jacobs Valley 38.0403 -111.6052 beside Purple Lake (GT)
+LOST L,Aquarius Plateau,low,GNIS Lost Lake 38.0495 -111.7847 between Griffin Top and the North Creek Lakes; NOT the North Slope Lost Lake (LOST L(GOVERNMENT)NBS)
+CENTER CR,Escalante Mountains,medium,GNIS 38.0194 -111.9374 near the EMW cluster
+COTTONWOOD CR,Escalante Mountains,medium,GNIS 37.9553 -111.9799 near the EMW cluster
+# --- Thousand Lake Mountain --------------------------------------------------
+"ELKHORN L, SOUTH",Thousand Lake Mountain,medium,pairs with ELKHORN L TLM on Thousand Lake Mountain
+# --- Fremont Valley ----------------------------------------------------------
+FREMONT R,Fremont Valley,high,the Fremont River flows the valley floor between Thousand Lake and Boulder; not a mountain water
+# --- Southwest Garfield: Panguitch / Bryce / Escalante-town lowland ----------
+PANGUITCH L,Southwest Garfield,high,GNIS 37.7159 -112.6414; 69 mi from Boulder Top
+PANGUITCH CR,Southwest Garfield,high,GNIS 37.8450 -112.4288
+MAMMOTH CR,Southwest Garfield,high,GNIS 37.6261 -112.4455
+ASAY CR,Southwest Garfield,high,GNIS 37.5839 -112.4755
+CASTLE CR,Southwest Garfield,high,GNIS 37.5503 -112.4858
+SKUNK CR,Southwest Garfield,high,GNIS 37.5705 -112.2694
+SKUNK CREEK POND,Southwest Garfield,medium,adjacent to Skunk Creek
+SEVIER R,Southwest Garfield,high,the Sevier drains the Markagunt/Panguitch valley westward
+"SEVIER R, E FK",Southwest Garfield,high,East Fork Sevier; Bryce/Tropic side of Garfield
+TROPIC RES,Southwest Garfield,high,GNIS 37.6122 -112.2494 on the East Fork Sevier
+PINE L,Southwest Garfield,high,GNIS 37.7399 -111.9566 in the Table Cliff/Bryce area; not the Boulder Pine Creek waters
+WIDE HOLLOW RES,Southwest Garfield,high,GNIS 37.7873 -111.6378; the Escalante town reservoir
+"HUNT CR, E FK",Southwest Garfield,medium,GNIS East Fork Hunt Creek 37.8116 -112.1041
+"HUNT CR, W FK",Southwest Garfield,medium,GNIS West Fork Hunt Creek 37.8116 -112.1041
+# --- Elsewhere ---------------------------------------------------------------
+BASTIAN RES,Henry Mountains,medium,GNIS 37.9172 -110.7102; far east Garfield near the Henry Mountains
+GUNLOCK TOWN POND,Southwest Utah,high,DATA ERROR - DWR labels this Wayne county but Gunlock is in Washington county near St George
+# --- Not established ---------------------------------------------------------
+MAY DAY POND,Unclassified,low,no GNIS feature and absent from the Boulder Mountain area guide
+GATES L,Unclassified,low,DWR says Garfield but the only GNIS Gates Lake is in Sevier county (38.7677 -111.6844) - county may be wrong
+THREE MILE CR,Unclassified,low,no GNIS feature in the Wayne/Garfield high country
+"THREE MILE CR, N FK",Unclassified,low,no GNIS feature in the Wayne/Garfield high country
+DEER CR-MITCHELL,Unclassified,low,ambiguous - several Deer Creeks in Garfield; Mitchell Canyon is at 37.7172 -111.6461
+SPRING L,Unclassified,low,no Wayne county Spring Lake in GNIS; the brown trout/channel catfish mix suggests a valley pond

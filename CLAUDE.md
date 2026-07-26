@@ -276,7 +276,38 @@ Auto-generated lake data   ← System content
 - `utah_dwr_stocking_data.csv` - DWR stocking records
 - `norrick_lakes.txt` - Physical lake characteristics
 - `dwr_original_pamphlets/` - Historical DWR PDFs
+- `dwr_archive/` - **Statewide** DWR stocking snapshot (all counties, 2002-2026,
+  59,357 records) plus the raw year pages, so no future project has to re-scrape.
+  See its README for the three working URL facets (`label` / `county` / `species`)
+  and the archive-wide data quirks.
 
 ### Generated Files (`logs/`)
 - `lake_dump.txt` - Human-readable lake export
 - `notes_sync.log` - Apple Notes sync history
+
+## Boulder Mountain sub-project (`boulders/`)
+
+A second, independent database for Boulder Mountain ("the Boulders") in Wayne +
+Garfield counties — data only, no front end. Fully self-contained under
+`boulders/`; it does not touch `uinta_lakes.db` and is not part of the
+single-writer/Notes/PWA machinery. Full write-up: `boulders/README.md`.
+
+```bash
+cd boulders
+python3 scripts/fetch_stocking.py     # DWR -> data/raw_stocking/ (cached)
+python3 scripts/build_database.py     # rebuild boulders.db + QA report
+python3 scripts/query.py species --has Grayling --only
+```
+
+Two things worth knowing before touching it:
+
+- **DWR appends undocumented geographic unit codes** to water names in these
+  counties (`BLIND L NBS` vs `BLIND L TLM` are different lakes 30 mi apart).
+  Never match Wayne/Garfield waters on the bare name. Decoded in
+  `boulders/scripts/water_utils.py`.
+- **Golden trout do not exist on Boulder Mountain.** A full-archive sweep found
+  only 9 golden records statewide, all 2012-2015, all Uinta lakes (U-16, Z-16,
+  W-58, U-19, U-13, GR-39) — matching the 6 waters in `uinta_lakes.db`.
+
+It shares `data/gnis/` with this project rather than duplicating the 3.5 MB
+GNIS file, so don't move or rename that directory.
