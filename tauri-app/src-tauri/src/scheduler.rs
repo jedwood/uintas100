@@ -22,7 +22,7 @@ impl Default for TaskSchedule {
     fn default() -> Self {
         Self {
             enabled: false,
-            interval_hours: 72,
+            interval_hours: 6,
             last_run: Utc::now() - Duration::days(365),
             last_success: true,
             last_error: None,
@@ -39,8 +39,12 @@ pub struct ScheduleConfig {
 impl Default for ScheduleConfig {
     fn default() -> Self {
         Self {
+            // A mirror's "stocking update" is really just `git pull` (see
+            // writer_guard.pull_and_exit_if_readonly), so a stale default here
+            // directly sets how far behind the mirror can drift. 72h was far
+            // too long for a clone whose whole job is mirroring.
             stocking_update: TaskSchedule {
-                interval_hours: 72,
+                interval_hours: 6,
                 ..Default::default()
             },
             notes_sync: TaskSchedule {
