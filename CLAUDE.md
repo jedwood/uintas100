@@ -173,6 +173,29 @@ python3 -m http.server 8000
 npx serve .
 ```
 
+### Tauri control-panel app (`tauri-app/`)
+The desktop wrapper (`/Applications/Uintas.app`) that runs the schedulers, serves
+the web app on :8000, and exposes a gear-icon control panel. Build + install:
+```bash
+cd tauri-app && cargo tauri build --bundles app
+rm -rf /Applications/Uintas.app && cp -R src-tauri/target/release/bundle/macos/Uintas.app /Applications/
+```
+- **Schedule lives in a store, not in the repo.** Live intervals are in
+  `~/Library/Application Support/com.jedwood.uintas/schedule.json`; the values in
+  `scheduler.rs` are only defaults for a machine with no store yet. Don't read the
+  source and conclude what a given machine is doing — read that file (or the panel).
+- **On a mirror, the "Stocking Updates" interval IS the mirror-refresh cadence.**
+  `writer_guard.pull_and_exit_if_readonly()` turns that job into a
+  `git pull --ff-only`, so the interval sets how far behind the clone can drift.
+  The MacBook runs it hourly. End-to-end freshness is still capped by how often the
+  *Mini* actually fetches from DWR — a mirror can't be fresher than what was pushed.
+- The frontend is embedded at compile time by `tauri::generate_context!()`.
+  `build.rs` emits `rerun-if-changed` for `frontend/` to force a recompile on
+  frontend-only edits — `tauri_build::build()` does NOT do this itself, and without
+  it cargo skips the rebuild and silently ships a stale UI.
+- Editing an interval by hand in `schedule.json` requires quitting the app first;
+  a running app holds the config in memory and overwrites the file on its next save.
+
 ## High-Level Architecture
 
 ### Database (SQLite)
