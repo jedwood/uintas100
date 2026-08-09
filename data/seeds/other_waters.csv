@@ -2,6 +2,7 @@ water_name,water_type,likely_drainage,inferred_from,county,notes
 BEAR CR BEAVER POND,creek,Bear River Drainage,BR-10 Beaver,Daggett,\N
 BEAVER CR,creek,Bear River Drainage,BR-10 Beaver,Summit,\N
 BENCH CR,creek,Weber River Drainage,W-37 Bench,Wasatch,\N
+DAGGETT CR,creek,Sheep/Carter Creek Drainages,GR-6 Daggett,Daggett,\N
 DEADMAN CR,creek,Ashley Creek Drainage,GR-38 Deadman,Summit,\N
 EAST CENTER OWEEP CR,creek,Lake Fork Drainage,LF-30 Oweep,Duchesne,\N
 EAST OWEEP CR,creek,Lake Fork Drainage,LF-30 Oweep,Duchesne,\N
