@@ -2,6 +2,11 @@
 
 import re
 
+# A species not stocked since this year is shown as historical (asterisked).
+# Single source of truth for both the per-lake update and the full sweep.
+DEFAULT_SPECIES_CUTOFF_YEAR = 2016
+
+
 def normalize_species_name(species_text):
     """
     Normalize species names to standardized display format.
@@ -105,7 +110,7 @@ def format_species_display(species_list, asterisk_species=None):
     
     return ", ".join(display_list)
 
-def update_lake_fish_species(cursor, lake_id, cutoff_year=2015):
+def update_lake_fish_species(cursor, lake_id, cutoff_year=DEFAULT_SPECIES_CUTOFF_YEAR):
     """
     Update a lake's fish_species field by merging existing historical data with stocking records.
     
@@ -161,7 +166,7 @@ def update_lake_fish_species(cursor, lake_id, cutoff_year=2015):
     
     return None
 
-def refresh_all_fish_species(cursor, cutoff_year=2015):
+def refresh_all_fish_species(cursor, cutoff_year=DEFAULT_SPECIES_CUTOFF_YEAR):
     """
     Recompute the denormalized fish_species field for every lake.
 
