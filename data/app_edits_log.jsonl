@@ -1,1 +1,4 @@
 {"id": "fix-g17-junk", "lake": "G-17", "field": "jed_notes", "value": null, "ts": "2026-08-10T15:45:55Z", "device": "mini-claude", "applied_at": "2026-08-10T15:45:55+00:00"}
+{"id": "e-1786379931382-v95ae0", "lake": "W-21", "field": "status", "value": "OTHERS", "ts": "2026-08-10T16:38:51.382Z", "device": "dev-wdkmbgi1", "applied_at": "2026-08-10T16:38:51+00:00"}
+{"id": "e-1786379931383-4x3dlc", "lake": "W-21", "field": "jed_notes", "value": "Could be a fun one to use a packraft on, as walking all around the perimeter is a little tricky", "ts": "2026-08-10T16:38:51.383Z", "device": "dev-wdkmbgi1", "applied_at": "2026-08-10T16:38:51+00:00"}
+{"id": "e-1786379931383-uadsx8", "lake": "W-21", "field": "trip_reports", "value": "July 2026 - Dilworth caught a nice 18 inch brookie here. It was delicious. :)", "ts": "2026-08-10T16:38:51.383Z", "device": "dev-wdkmbgi1", "applied_at": "2026-08-10T16:38:51+00:00"}
