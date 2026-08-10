@@ -1,4 +1,4 @@
-const CACHE_NAME = 'uintas-v1786372428';
+const CACHE_NAME = 'uintas-v1786376736';
 const MAX_CACHE_SIZE = 45 * 1024 * 1024; // Stay under iOS 50MB limit
 
 // Resources to cache immediately. Everything is served locally — no CDN
@@ -87,6 +87,14 @@ self.addEventListener('fetch', event => {
 
 async function handleFetch(request) {
     try {
+        // Sync API traffic (the edits server on :8802, or any /api/ path) must
+        // never be answered from cache — pass it straight to the network. This
+        // also covers POSTs, which the cache can't hold anyway.
+        const reqUrl = new URL(request.url);
+        if (request.method !== 'GET' || reqUrl.pathname.startsWith('/api/') || reqUrl.port === '8802') {
+            return fetch(request);
+        }
+
         // For navigation requests, always try network first, fall back to cache
         if (request.mode === 'navigate') {
             try {

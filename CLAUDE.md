@@ -96,7 +96,43 @@ two-machine write-conflict class (e.g. the binary-DB autostash conflicts).
   (internal-disk plist, FDA on the venv python, reboot revival via the
   agent-bootstrapper). Full runbook: `deploy/README.md`.
 
-### Apple Notes Sync
+### App edits (status / Jed's Notes / trip reports) — the PWA write path
+Since 2026-08-10 the user-owned lake fields (`status`, `jed_notes`,
+`trip_reports`) are edited **in the PWA itself** ("My Record" section of the
+lake modal), not in Apple Notes. This keeps the single-writer model intact
+while allowing edits to *originate* on any device:
+
+- **Client side (`index.html`)**: saves land in `localStorage` instantly
+  (fully offline — designed for multi-day trips), overlay the loaded data, and
+  are flushed to the edits server whenever it's reachable. A header chip shows
+  the pending count; the "Sync" link (next to "About") opens a panel with a
+  manual sync button and a server-URL override. Server auto-resolution tries
+  the page's own host on :8802, then `http://olaf.local:8802`.
+- **Server side (`scripts/edits_server.py`)**: runs ONLY on the Mini (writer
+  guard) as the `com.limechile.uintas-edits-server` LaunchAgent, port 8802.
+  Applies edits last-write-wins per (lake, field) using the committed audit log
+  `data/app_edits_log.jsonl` (kept OUTSIDE the DB on purpose, so the
+  seeds/rebuild/verify machinery is untouched), then commits + pushes in the
+  background — the pre-commit hook regenerates seeds + `lakes_data.json`, and
+  mirrors pick the edits up on their next pull. A device that was offline for a
+  week gets "superseded" (not applied) for any edit older than what another
+  device already wrote to the same field.
+- **Test harness**: `python3 scripts/edits_server.py --db /tmp/x.db --log
+  /tmp/x.jsonl --no-git --port 8899` — also serves the repo statically, so one
+  process backs a full browser test.
+
+```bash
+curl http://olaf.local:8802/api/ping        # is the writer up?
+tail -f /Users/jed/Library/Logs/uintas-edits-server.log
+```
+
+### Apple Notes Sync (RETIRED as a write path, 2026-08-10)
+The Notes round trip is retired: `notes_sync_agent.py` exits immediately unless
+run with `UINTAS_NOTES_SYNC=force`. Reason: the user fields are now edited in
+the app (above), and a Notes→DB run would overwrite them with stale note
+content (most notes still carry pre-migration placeholders — see the
+2026-08-10 data-loss investigation). The JXA scripts below remain for manual /
+archival use only.
 ```bash
 # Sync changes from Apple Notes to database
 osascript scripts/sync_notes_to_db_jxa.js

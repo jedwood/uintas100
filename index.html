@@ -73,7 +73,7 @@
         .leaflet-control-scale-line { background: rgba(255,255,255,.85); color: #0f172a;
                    font-size: 11px; font-weight: 600; border-color: #0f172a; }
         /* Detail/About modals must sit above Leaflet panes & controls (z-index up to 1000) */
-        #lake-detail-modal, #about-modal, #rotenone-modal { z-index: 1200; }
+        #lake-detail-modal, #about-modal, #rotenone-modal, #sync-modal { z-index: 1200; }
     </style>
 </head>
 <body class="bg-slate-50 min-h-screen">
@@ -90,6 +90,8 @@
                     <div id="mission-bar" class="bg-slate-700 h-2.5 rounded-full transition-all duration-700" style="width: 0%"></div>
                 </div>
             </div>
+            <!-- Offline-edit sync status: hidden when everything is synced -->
+            <button id="sync-chip" type="button" class="hidden"></button>
         </header>
 
         <div class="not-loaded">
@@ -401,9 +403,39 @@
                 </div>
             </div>
 
+                <!-- Sync panel: server URL + manual flush for the My Record edits -->
+                <div id="sync-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+                    <div class="flex items-center justify-center min-h-screen p-4">
+                        <div id="sync-modal-card" class="bg-white rounded-lg max-w-md w-full">
+                            <div class="p-6">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h2 class="text-2xl font-bold">Sync</h2>
+                                    <button id="close-sync-modal" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-3">
+                                    Status and notes you edit here are saved on this device immediately
+                                    (works fully offline) and sync to the database whenever the Mac Mini
+                                    is reachable.
+                                </p>
+                                <div id="sync-status-line" class="text-sm font-medium text-gray-800 mb-4"></div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Sync server</label>
+                                <input type="text" id="sync-url-input" placeholder="auto (this host, then olaf.local)"
+                                       class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500 text-sm mb-1"
+                                       autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                                <p class="text-xs text-gray-500 mb-4">Leave blank for automatic. On a machine that runs its own copy of the app, set <span class="font-mono">http://olaf.local:8802</span> once.</p>
+                                <div class="flex gap-2">
+                                    <button id="sync-now-btn" class="flex-1 bg-slate-700 text-white px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors">Sync now</button>
+                                    <button id="sync-save-url" class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-slate-50 transition-colors">Save URL</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             <!-- About Link -->
             <div class="mt-8 text-center">
                 <button id="about-link" class="text-slate-600 hover:text-slate-800 text-sm transition-colors underline cursor-pointer bg-transparent border-none">About this project</button>
+                <span class="text-gray-300 mx-2">•</span>
+                <button id="sync-settings-link" class="text-slate-600 hover:text-slate-800 text-sm transition-colors underline cursor-pointer bg-transparent border-none">Sync</button>
             </div>
         </div>
     </div>
@@ -448,6 +480,9 @@
             lakes.forEach(lake => {
                 lake.stockYears = [...new Set(lake.stocking.map(s => s.stock_date.split('-')[0]))];
             });
+            // Overlay this device's local (possibly not-yet-synced) edits on
+            // top of the exported data.
+            applyLocalEdits();
         }
 
         async function initApp() {
@@ -471,6 +506,7 @@
 
                 // Initialize UI
                 initializeUI();
+                initSyncUI();
                 populateDrainages();
                 updateMissionProgress();
                 populateStats();
@@ -739,6 +775,8 @@
                     closeAboutModal();
                 } else if (!document.getElementById('rotenone-modal').classList.contains('hidden')) {
                     closeModal();
+                } else if (!document.getElementById('sync-modal').classList.contains('hidden')) {
+                    closeSyncModal();
                 }
             });
 
@@ -1418,10 +1456,38 @@
                             <span class="font-medium">Fish Species:</span> ${lake.fish_species || 'Unknown'}
                             ${lake.fish_species && lake.fish_species.includes('*') ? '<div class="text-xs text-gray-500 mt-1">*not stocked since 2015 or earlier</div>' : ''}
                         </div>
-                        ${lake.status ? `<div class="col-span-2"><span class="font-medium">Status:</span> ${getStatusButton(lake.status, true)}</div>` : ''}
                         ${lake.lat ? `<div class="col-span-2"><a href="https://maps.apple.com/?ll=${lake.lat},${lake.lng}&q=${encodeURIComponent(lake.name ? `${lake.name} (${lake.letter_number})` : lake.letter_number)}" target="_blank" class="inline-flex items-center gap-1 text-slate-700 underline hover:text-slate-900">📍 Open in Maps</a></div>` : ''}
-                        ${lake.jed_notes ? `<div class="col-span-2"><span class="font-medium">Jed's Notes:</span> ${lake.jed_notes}</div>` : ''}
                     </div>
+                </div>
+
+                <!-- My Record: the user-owned fields, editable in-app. Saves are
+                     queued locally (offline-safe) and synced to the Mini. -->
+                <div id="record-editor" class="rounded-lg p-4 border border-slate-200">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-lg font-semibold">My Record</h3>
+                        <span id="record-sync-note" class="text-xs text-gray-500"></span>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Status</label>
+                        <div class="flex flex-wrap gap-2">
+                            <button type="button" data-status="" title="No status">—</button>
+                            <button type="button" data-status="CAUGHT">🎣 Caught</button>
+                            <button type="button" data-status="OTHERS">👥🎣 Others caught</button>
+                            <button type="button" data-status="NONE">✖️ Skunked</button>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Jed's Notes</label>
+                        <textarea id="edit-jed-notes" rows="3" placeholder="Beta, plans, gear notes…"
+                                  class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500 text-sm">${escHtml(lake.jed_notes || '')}</textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Trip Reports</label>
+                        <textarea id="edit-trip-reports" rows="4" placeholder="Date, conditions, what worked…"
+                                  class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500 text-sm">${escHtml(lake.trip_reports || '')}</textarea>
+                    </div>
+                    <button id="save-record" disabled
+                            class="w-full bg-gray-300 text-gray-500 px-4 py-2 rounded-lg cursor-not-allowed transition-colors">Save</button>
                 </div>
 
                 <!-- Where it is (our coordinates) — interactive mini-map -->
@@ -1483,6 +1549,57 @@
             modal.classList.remove('hidden');
             pushModalState('lake', `#${encodeURIComponent(lake.letter_number)}`);
             initDetailMap(lake);
+            wireRecordEditor(lake);
+        }
+
+        // ---- My Record editor (inside the lake modal) ----
+        function wireRecordEditor(lake) {
+            const sec = document.getElementById('record-editor');
+            if (!sec) return;
+            const statusBtns = sec.querySelectorAll('[data-status]');
+            const jn = document.getElementById('edit-jed-notes');
+            const tr = document.getElementById('edit-trip-reports');
+            const save = document.getElementById('save-record');
+            const note = document.getElementById('record-sync-note');
+            let sel = lake.status || '';
+
+            const paintStatus = () => statusBtns.forEach(b => {
+                const on = b.dataset.status === sel;
+                b.className = 'px-3 py-2 rounded-lg border text-sm transition-colors ' +
+                    (on ? 'bg-slate-700 text-white border-slate-700'
+                        : 'bg-white text-gray-700 border-gray-300 hover:bg-slate-50');
+            });
+            const setSaveEnabled = (on) => {
+                save.disabled = !on;
+                save.textContent = 'Save';
+                save.className = on
+                    ? 'w-full bg-slate-700 text-white px-4 py-2 rounded-lg hover:bg-slate-800 cursor-pointer transition-colors'
+                    : 'w-full bg-gray-300 text-gray-500 px-4 py-2 rounded-lg cursor-not-allowed transition-colors';
+            };
+            const markDirty = () => { setSaveEnabled(true); note.textContent = ''; };
+
+            paintStatus();
+            statusBtns.forEach(b => b.addEventListener('click', () => {
+                sel = b.dataset.status; paintStatus(); markDirty();
+            }));
+            jn.addEventListener('input', markDirty);
+            tr.addEventListener('input', markDirty);
+
+            save.addEventListener('click', () => {
+                if ((lake.status || '') !== sel) queueEdit(lake, 'status', sel);
+                if ((lake.jed_notes || '') !== jn.value.trim()) queueEdit(lake, 'jed_notes', jn.value.trim());
+                if ((lake.trip_reports || '') !== tr.value.trim()) queueEdit(lake, 'trip_reports', tr.value.trim());
+                updateMissionProgress();
+                deferredRefresh = true;   // repaint list/map pins on modal close
+                setSaveEnabled(false);
+                save.textContent = 'Saved ✓';
+                note.textContent = 'saved on this device — syncing…';
+                syncNow().then(() => {
+                    note.textContent = pendingCount()
+                        ? 'saved on this device — will sync when the Mini is reachable'
+                        : 'synced ✓';
+                });
+            });
         }
 
         // Add a history entry when a modal opens so the back button/swipe
@@ -1580,6 +1697,222 @@
 
         function closeAboutModal() {
             closeModal();
+        }
+
+        // ---- Offline edit queue + sync to the Mini's edits server ----
+        // Edits are stored in localStorage the instant they're saved (fully
+        // offline-capable), overlaid onto the loaded data, and flushed to the
+        // edits server (scripts/edits_server.py on the Mini — the single DB
+        // writer) whenever it's reachable. The server answers "superseded" for
+        // an edit that lost last-write-wins to another device.
+        const SYNC_PORT = 8802;
+        const SYNC_FALLBACK = 'http://olaf.local:8802';
+        const USER_FIELDS = ['status', 'jed_notes', 'trip_reports'];
+        // { "G-15": { status: {id, v, ts, synced}, ... }, ... }
+        let localEdits = {};
+        try { localEdits = JSON.parse(localStorage.getItem('uintas-local-edits') || '{}'); } catch (e) {}
+        const deviceId = (() => {
+            let d = localStorage.getItem('uintas-device-id');
+            if (!d) {
+                d = 'dev-' + Math.random().toString(36).slice(2, 10);
+                localStorage.setItem('uintas-device-id', d);
+            }
+            return d;
+        })();
+
+        const saveLocalEdits = () => localStorage.setItem('uintas-local-edits', JSON.stringify(localEdits));
+
+        function pendingEdits() {
+            const out = [];
+            for (const [ln, fields] of Object.entries(localEdits))
+                for (const [f, e] of Object.entries(fields))
+                    if (!e.synced) out.push({ id: e.id, lake: ln, field: f, value: e.v, ts: e.ts });
+            return out;
+        }
+        const pendingCount = () => pendingEdits().length;
+
+        // Overlay local edits onto the in-memory lake objects, and prune
+        // entries the exported data already reflects (the edit has completed
+        // its round trip through the DB into lakes_data.json).
+        function applyLocalEdits() {
+            const byId = new Map(lakes.map(l => [l.letter_number, l]));
+            for (const [ln, fields] of Object.entries(localEdits)) {
+                const lake = byId.get(ln);
+                if (!lake) continue;
+                for (const [f, e] of Object.entries(fields)) {
+                    if (e.synced && (lake[f] || null) === (e.v || null)) { delete fields[f]; continue; }
+                    lake[f] = e.v;
+                }
+                if (!Object.keys(fields).length) delete localEdits[ln];
+            }
+            saveLocalEdits();
+            updateSyncChip();
+        }
+
+        function queueEdit(lake, field, value) {
+            (localEdits[lake.letter_number] = localEdits[lake.letter_number] || {})[field] = {
+                id: 'e-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8),
+                v: value || null,
+                ts: new Date().toISOString(),
+                synced: false
+            };
+            lake[field] = value || null;
+            saveLocalEdits();
+            updateSyncChip();
+        }
+
+        // ---- Server resolution: manual override -> last good -> this host -> olaf.local
+        let syncUrl = null;
+        async function pingServer(base) {
+            try {
+                const c = new AbortController();
+                const t = setTimeout(() => c.abort(), 2500);
+                const r = await fetch(base + '/api/ping', { signal: c.signal, cache: 'no-store' });
+                clearTimeout(t);
+                return r.ok && (await r.json()).ok === true;
+            } catch (e) { return false; }
+        }
+        async function resolveSyncUrl() {
+            const candidates = [...new Set([
+                syncUrl,
+                localStorage.getItem('uintas-sync-url'),
+                localStorage.getItem('uintas-sync-url-auto'),
+                `${location.protocol}//${location.hostname}:${SYNC_PORT}`,
+                SYNC_FALLBACK
+            ].filter(Boolean))];
+            for (const c of candidates) {
+                if (await pingServer(c)) {
+                    syncUrl = c;
+                    localStorage.setItem('uintas-sync-url-auto', c);
+                    return c;
+                }
+            }
+            syncUrl = null;
+            return null;
+        }
+
+        let syncing = false;
+        let lastSyncNote = 'Not synced yet this session';
+        async function syncNow() {
+            if (syncing) return;
+            syncing = true;
+            updateSyncChip('busy');
+            try {
+                const base = await resolveSyncUrl();
+                if (!base) { lastSyncNote = 'Sync server unreachable (offline?) — edits are safe on this device'; return; }
+
+                const edits = pendingEdits();
+                if (edits.length) {
+                    const r = await fetch(base + '/api/edits', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ device: deviceId, edits })
+                    });
+                    if (!r.ok) { lastSyncNote = `Sync failed (HTTP ${r.status})`; return; }
+                    const { results } = await r.json();
+                    for (const res of results || []) {
+                        for (const fields of Object.values(localEdits)) {
+                            for (const [f, e] of Object.entries(fields)) {
+                                if (e.id !== res.id) continue;
+                                if (res.result === 'applied') e.synced = true;
+                                else delete fields[f];   // superseded/error: server wins, folded in below
+                            }
+                        }
+                    }
+                    saveLocalEdits();
+                }
+
+                // Fold in the server's view of the user fields — this is how
+                // edits made on OTHER devices show up here immediately.
+                try {
+                    const ud = await (await fetch(base + '/api/user-data', { cache: 'no-store' })).json();
+                    lakes.forEach(l => {
+                        const server = ud.lakes[l.letter_number] || {};
+                        USER_FIELDS.forEach(f => {
+                            const mine = localEdits[l.letter_number] && localEdits[l.letter_number][f];
+                            if (mine && !mine.synced) return;  // local pending edit outranks
+                            l[f] = server[f] !== undefined ? server[f] : null;
+                        });
+                    });
+                } catch (e) { /* freshness fold-in is best-effort */ }
+
+                lastSyncNote = pendingCount() ? 'Partially synced' : 'All edits synced';
+                updateMissionProgress();
+                const lakeModalOpen = !document.getElementById('lake-detail-modal').classList.contains('hidden');
+                if (lakeModalOpen) deferredRefresh = true;
+                else if (!document.getElementById('results-section').classList.contains('hidden')) renderCurrentView();
+            } finally {
+                syncing = false;
+                updateSyncChip();
+            }
+        }
+
+        // ---- Sync UI: header chip + settings panel ----
+        let chipFlashTimer = null;
+        function updateSyncChip(state) {
+            const chip = document.getElementById('sync-chip');
+            if (!chip) return;
+            const n = pendingCount();
+            const base = 'mt-3 text-xs font-medium px-3 py-1 rounded-full border transition-colors cursor-pointer ';
+            if (state === 'busy') {
+                chip.className = base + 'bg-slate-100 text-slate-600 border-slate-300';
+                chip.textContent = '↻ Syncing…';
+            } else if (n > 0) {
+                chip.className = base + 'bg-amber-100 text-amber-800 border-amber-300';
+                chip.textContent = `● ${n} edit${n === 1 ? '' : 's'} pending — tap to sync`;
+            } else if (state === 'flash') {
+                chip.className = base + 'bg-green-100 text-green-800 border-green-300';
+                chip.textContent = '✓ Synced';
+                clearTimeout(chipFlashTimer);
+                chipFlashTimer = setTimeout(() => updateSyncChip(), 4000);
+            } else {
+                chip.className = 'hidden';
+            }
+        }
+
+        function openSyncModal() {
+            document.getElementById('sync-url-input').value = localStorage.getItem('uintas-sync-url') || '';
+            refreshSyncModalStatus();
+            document.getElementById('sync-modal').classList.remove('hidden');
+        }
+        function refreshSyncModalStatus() {
+            const n = pendingCount();
+            document.getElementById('sync-status-line').textContent =
+                `${n ? `${n} edit${n === 1 ? '' : 's'} waiting to sync` : 'No pending edits'}` +
+                ` · ${lastSyncNote}` + (syncUrl ? ` · server: ${syncUrl}` : '');
+        }
+        function closeSyncModal() {
+            document.getElementById('sync-modal').classList.add('hidden');
+        }
+        function initSyncUI() {
+            document.getElementById('sync-chip').addEventListener('click', () =>
+                syncNow().then(() => updateSyncChip(pendingCount() ? undefined : 'flash')));
+            document.getElementById('sync-settings-link').addEventListener('click', openSyncModal);
+            document.getElementById('close-sync-modal').addEventListener('click', closeSyncModal);
+            document.getElementById('sync-modal').addEventListener('click', (e) => {
+                if (!e.target.closest('#sync-modal-card')) closeSyncModal();
+            });
+            document.getElementById('sync-save-url').addEventListener('click', () => {
+                const v = document.getElementById('sync-url-input').value.trim().replace(/\/+$/, '');
+                if (v) localStorage.setItem('uintas-sync-url', v);
+                else localStorage.removeItem('uintas-sync-url');
+                syncUrl = null;   // force re-resolution with the new setting
+                syncNow().then(refreshSyncModalStatus);
+            });
+            document.getElementById('sync-now-btn').addEventListener('click', () =>
+                syncNow().then(refreshSyncModalStatus));
+
+            // Background flush triggers: shortly after launch, when connectivity
+            // returns, when the app comes back to the foreground, and a slow
+            // heartbeat. All are no-ops when there's nothing pending AND the
+            // server already answered this session (syncNow also pulls other
+            // devices' edits, so it still runs when reachable).
+            setTimeout(syncNow, 4000);
+            setInterval(syncNow, 5 * 60 * 1000);
+            window.addEventListener('online', syncNow);
+            document.addEventListener('visibilitychange', () => {
+                if (document.visibilityState === 'visible') syncNow();
+            });
         }
 
         // Service Worker Registration

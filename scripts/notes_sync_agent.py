@@ -48,6 +48,18 @@ def git(*args):
 
 
 def main():
+    # 0. RETIRED (2026-08-10): status / jed_notes / trip_reports are now edited
+    #    in the PWA and land in the DB via scripts/edits_server.py. Running
+    #    Notes -> DB would OVERWRITE those app edits with stale note content
+    #    (the notes still carry pre-migration placeholders), so the round trip
+    #    must stay off. The JXA scripts remain for manual/archival use; to
+    #    force one supervised run anyway: UINTAS_NOTES_SYNC=force.
+    if os.environ.get("UINTAS_NOTES_SYNC") != "force":
+        print("[notes-agent] RETIRED — app edits (edits_server.py) replaced the "
+              "Apple Notes round trip; doing nothing. Set UINTAS_NOTES_SYNC=force "
+              "for a one-off supervised run.")
+        return 0
+
     # 1. Single-writer guard — a read-only mirror must never write/commit.
     exit_if_readonly("notes sync agent")
 

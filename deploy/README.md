@@ -1,8 +1,22 @@
-# Deploy: Notes→DB LaunchAgent (Mac Mini only)
+# Deploy: Mini-only LaunchAgents
 
-The Mini is the sole DB writer. This LaunchAgent runs `scripts/notes_sync_agent.py`
-every 6h: Apple Notes → DB, then commit + push if the DB changed. (No DB→Notes —
-that direction has a note-wipe bug and stays manual.)
+The Mini is the sole DB writer. Two LaunchAgents live here:
+
+- **`com.limechile.uintas-edits-server`** — the ACTIVE write path. Runs
+  `scripts/edits_server.py` continuously (KeepAlive) on `:8802`; the PWA on any
+  device (iPhone/MacBook/Mini) queues status / Jed's-Notes / trip-report edits
+  offline and flushes them here; the server applies them to `uinta_lakes.db` and
+  commits + pushes. Needs no FDA and no GUI grants — install is just copy +
+  bootstrap. Same install/verify/reboot rules as below, with label
+  `uintas-edits-server` and log `/Users/jed/Library/Logs/uintas-edits-server.log`.
+  Health check: `curl http://olaf.local:8802/api/ping`.
+
+- **`com.limechile.uintas-notes-sync`** — **RETIRED 2026-08-10** (the script
+  exits immediately unless `UINTAS_NOTES_SYNC=force`). It ran the Apple Notes
+  round trip; the PWA + edits server replaced it, and running Notes→DB now would
+  overwrite app edits with stale note content. The plist can stay loaded (the
+  no-op is cheap) or be `launchctl bootout`-ed. The FDA notes below are kept for
+  a supervised `force` run.
 
 This machine's home is on an external `/Volumes` disk, which makes LaunchAgents
 non-standard. The rules below are load-bearing.

@@ -61,7 +61,7 @@ def export():
     for row in conn.execute(
         """SELECT id, letter_number, name, drainage, size_acres, max_depth_ft,
                   elevation_ft, fish_species, fishing_pressure, jed_notes,
-                  status, junesucker_notes, dwr_notes, no_fish,
+                  status, trip_reports, junesucker_notes, dwr_notes, no_fish,
                   lat, lng, coord_status
            FROM lakes"""
     ):
@@ -78,6 +78,7 @@ def export():
                 "fishing_pressure": row["fishing_pressure"],
                 "jed_notes": row["jed_notes"],
                 "status": row["status"],
+                "trip_reports": row["trip_reports"],
                 "junesucker_notes": row["junesucker_notes"],
                 "dwr_notes": row["dwr_notes"],
                 "no_fish": row["no_fish"] or 0,
