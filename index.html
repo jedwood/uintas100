@@ -422,7 +422,7 @@
                                 <input type="text" id="sync-url-input" placeholder="auto (this host, then olaf.local)"
                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500 text-sm mb-1"
                                        autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-                                <p class="text-xs text-gray-500 mb-4">Leave blank for automatic. On a machine that runs its own copy of the app, set <span class="font-mono">http://olaf.local:8802</span> once.</p>
+                                <p class="text-xs text-gray-500 mb-4">Leave blank for automatic — it tries the LAN (<span class="font-mono">olaf.local:8802</span>) and the Mini's Tailscale HTTPS address. On iPhone (installed from github.io), turn the Tailscale VPN on to sync.</p>
                                 <div class="flex gap-2">
                                     <button id="sync-now-btn" class="flex-1 bg-slate-700 text-white px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors">Sync now</button>
                                     <button id="sync-save-url" class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-slate-50 transition-colors">Save URL</button>
@@ -1706,7 +1706,13 @@
         // writer) whenever it's reachable. The server answers "superseded" for
         // an edit that lost last-write-wins to another device.
         const SYNC_PORT = 8802;
-        const SYNC_FALLBACK = 'http://olaf.local:8802';
+        // Fallback candidates, tried in order after the page's own host:
+        // - olaf.local: direct LAN path (works from http origins on the home network)
+        // - the Mini's Tailscale HTTPS URL: the ONLY path that works from the
+        //   https github.io install (a secure page can't fetch http:// LAN URLs —
+        //   Safari silently blocks mixed content), and it works from anywhere
+        //   the device's Tailscale VPN is on, not just at home.
+        const SYNC_FALLBACKS = ['http://olaf.local:8802', 'https://olaf.tailbf6340.ts.net'];
         const USER_FIELDS = ['status', 'jed_notes', 'trip_reports'];
         // { "G-15": { status: {id, v, ts, synced}, ... }, ... }
         let localEdits = {};
@@ -1778,7 +1784,7 @@
                 localStorage.getItem('uintas-sync-url'),
                 localStorage.getItem('uintas-sync-url-auto'),
                 `${location.protocol}//${location.hostname}:${SYNC_PORT}`,
-                SYNC_FALLBACK
+                ...SYNC_FALLBACKS
             ].filter(Boolean))];
             for (const c of candidates) {
                 if (await pingServer(c)) {

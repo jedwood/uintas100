@@ -107,7 +107,13 @@ while allowing edits to *originate* on any device:
   are flushed to the edits server whenever it's reachable. A header chip shows
   the pending count; the "Sync" link (next to "About") opens a panel with a
   manual sync button and a server-URL override. Server auto-resolution tries
-  the page's own host on :8802, then `http://olaf.local:8802`.
+  the page's own host on :8802, then `http://olaf.local:8802` (LAN), then
+  `https://olaf.tailbf6340.ts.net` (Tailscale). The Tailscale HTTPS proxy
+  (`tailscale serve --bg localhost:8802` on the Mini; config persists across
+  reboots) exists because the iPhone's PWA is installed from the **https**
+  github.io page, and a secure page cannot fetch `http://` LAN URLs (Safari
+  silently blocks mixed content) — so the iPhone syncs only via the Tailscale
+  URL, and only while its Tailscale VPN is on (from anywhere, not just home).
 - **Server side (`scripts/edits_server.py`)**: runs ONLY on the Mini (writer
   guard) as the `com.limechile.uintas-edits-server` LaunchAgent, port 8802.
   Applies edits last-write-wins per (lake, field) using the committed audit log
