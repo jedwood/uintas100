@@ -300,6 +300,18 @@ def main():
                 csv_writer.writeheader()
                 log_file.write("Created new CSV file with headers\n")
             
+            # Was the DB already dirty before we touched it? If so, someone
+            # else's uncommitted edits are sitting in the working tree (Lake
+            # Locator coordinates, a manual `sync_notes_to_db.sh`, an ad-hoc
+            # script) and the no-op reset at the end MUST NOT run -- it would
+            # silently destroy them. See the reset block below.
+            db_dirty_at_start = subprocess.run(
+                ['git', 'diff', '--quiet', '--', 'uinta_lakes.db'],
+                cwd=project_dir).returncode != 0
+            if db_dirty_at_start:
+                log_file.write("NOTE: uinta_lakes.db was already modified before this "
+                               "run; the no-op reset is disabled for this run.\n")
+
             # Connect to database
             conn = create_database()
             cursor = conn.cursor()
@@ -363,12 +375,23 @@ def main():
                 # `git pull --autostash` stashes the binary DB and the pop
                 # conflicts ("unmerged files") — exactly the failure this avoids.
                 # Reset the DB to HEAD so each run ends with a clean tree.
-                try:
-                    subprocess.run(['git', 'checkout', 'HEAD', '--', 'uinta_lakes.db'],
-                                   cwd=project_dir, check=True)
-                    log_file.write("Reset no-op DB churn to keep the working tree clean\n")
-                except subprocess.CalledProcessError as e:
-                    log_file.write(f"WARNING: could not reset DB to HEAD: {e}\n")
+                #
+                # ONLY when the DB was clean when this run started. `git checkout
+                # HEAD --` cannot tell page churn from real work, so on a tree
+                # that was already dirty it is a data-loss bug, not a tidy-up:
+                # on 2026-08-10 it erased 40 freshly scraped junesucker_notes.
+                # A dirty tree is someone else's uncommitted edit — leave it.
+                if db_dirty_at_start:
+                    log_file.write("Skipped no-op DB reset: the DB had uncommitted "
+                                   "changes before this run (not ours to discard)\n")
+                    print("DB was already modified before this run — leaving it alone")
+                else:
+                    try:
+                        subprocess.run(['git', 'checkout', 'HEAD', '--', 'uinta_lakes.db'],
+                                       cwd=project_dir, check=True)
+                        log_file.write("Reset no-op DB churn to keep the working tree clean\n")
+                    except subprocess.CalledProcessError as e:
+                        log_file.write(f"WARNING: could not reset DB to HEAD: {e}\n")
             
             # Final summary
             log_file.write(f"\n=== SUMMARY ===\n")
