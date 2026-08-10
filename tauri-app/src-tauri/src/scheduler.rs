@@ -30,10 +30,12 @@ impl Default for TaskSchedule {
     }
 }
 
+// Notes sync was removed 2026-08-10 (status/notes edits moved into the PWA +
+// edits_server; the Notes round trip is retired). A stale `notes_sync` key in
+// an existing schedule.json store is silently ignored on deserialize.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct ScheduleConfig {
     pub stocking_update: TaskSchedule,
-    pub notes_sync: TaskSchedule,
 }
 
 impl Default for ScheduleConfig {
@@ -44,10 +46,6 @@ impl Default for ScheduleConfig {
             // directly sets how far behind the mirror can drift. 72h was far
             // too long for a clone whose whole job is mirroring.
             stocking_update: TaskSchedule {
-                interval_hours: 6,
-                ..Default::default()
-            },
-            notes_sync: TaskSchedule {
                 interval_hours: 6,
                 ..Default::default()
             },
@@ -102,17 +100,12 @@ pub fn start_scheduler(app: AppHandle, state: Arc<Mutex<SchedulerState>>) {
                 let now = Utc::now();
 
                 // Read current config
-                let (_stocking_enabled, stocking_due, _notes_enabled, notes_due, project_dir) = {
+                let (stocking_due, project_dir) = {
                     let state_guard = state.lock().unwrap();
                     let sc = &state_guard.config.stocking_update;
-                    let nc = &state_guard.config.notes_sync;
                     let stocking_next = sc.last_run + Duration::hours(sc.interval_hours as i64);
-                    let notes_next = nc.last_run + Duration::hours(nc.interval_hours as i64);
                     (
-                        sc.enabled,
                         sc.enabled && now >= stocking_next,
-                        nc.enabled,
-                        nc.enabled && now >= notes_next,
                         state_guard.project_dir.clone(),
                     )
                 };
@@ -151,34 +144,6 @@ pub fn start_scheduler(app: AppHandle, state: Arc<Mutex<SchedulerState>>) {
                     }
                 }
 
-                // Run notes sync if due
-                if notes_due {
-                    let result = scripts::run_notes_sync_script(&project_dir);
-
-                    let mut state_guard = state.lock().unwrap();
-                    state_guard.config.notes_sync.last_run = now;
-                    state_guard.config.notes_sync.last_success = result.success;
-                    state_guard.config.notes_sync.last_error = if result.success {
-                        None
-                    } else {
-                        Some(result.stderr.clone())
-                    };
-                    save_config(&app, &state_guard.config);
-
-                    let _ = app.emit(
-                        "schedule-update",
-                        &ScheduleEvent {
-                            task: "notes_sync".into(),
-                            success: result.success,
-                            error: if result.success { None } else { Some(result.stderr.clone()) },
-                            timestamp: now,
-                        },
-                    );
-
-                    if !result.success {
-                        send_notification(&app, "Notes Sync Failed", &result.stderr);
-                    }
-                }
             }
         })
         .expect("failed to spawn scheduler thread");

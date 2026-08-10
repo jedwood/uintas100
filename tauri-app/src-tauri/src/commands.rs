@@ -23,7 +23,6 @@ pub struct RunResult {
 #[derive(Debug, Serialize)]
 pub struct AppStatus {
     pub stocking: TaskStatus,
-    pub notes_sync: TaskStatus,
     pub db_size_bytes: u64,
     pub db_modified: Option<String>,
 }
@@ -90,69 +89,6 @@ pub async fn run_stocking_update(
     Ok(result)
 }
 
-#[tauri::command]
-pub async fn run_notes_sync(
-    state: State<'_, Arc<Mutex<SchedulerState>>>,
-    app: tauri::AppHandle,
-) -> Result<RunResult, String> {
-    let project_dir = {
-        let state_guard = state.lock().map_err(|e| e.to_string())?;
-        state_guard.project_dir.clone()
-    };
-
-    let result = tauri::async_runtime::spawn_blocking(move || {
-        let r = scripts::run_notes_sync_script(&project_dir);
-        RunResult {
-            success: r.success,
-            stdout: r.stdout,
-            stderr: r.stderr,
-        }
-    })
-    .await
-    .map_err(|e| e.to_string())?;
-
-    {
-        let mut state_guard = state.lock().map_err(|e| e.to_string())?;
-        state_guard.config.notes_sync.last_run = chrono::Utc::now();
-        state_guard.config.notes_sync.last_success = result.success;
-        state_guard.config.notes_sync.last_error = if result.success {
-            None
-        } else {
-            Some(result.stderr.clone())
-        };
-        save_config(&app, &state_guard.config);
-    }
-
-    if !result.success {
-        send_failure_notification(&app, "Notes Sync Failed", &result.stderr);
-    }
-
-    Ok(result)
-}
-
-#[tauri::command]
-pub async fn run_notes_push(
-    state: State<'_, Arc<Mutex<SchedulerState>>>,
-) -> Result<RunResult, String> {
-    let project_dir = {
-        let state_guard = state.lock().map_err(|e| e.to_string())?;
-        state_guard.project_dir.clone()
-    };
-
-    let result = tauri::async_runtime::spawn_blocking(move || {
-        let r = scripts::run_notes_push_script(&project_dir);
-        RunResult {
-            success: r.success,
-            stdout: r.stdout,
-            stderr: r.stderr,
-        }
-    })
-    .await
-    .map_err(|e| e.to_string())?;
-
-    Ok(result)
-}
-
 // -- Schedule management --
 
 #[tauri::command]
@@ -189,7 +125,6 @@ pub async fn read_log(
             state_guard.project_dir.join("stocking_fetch.log"),
             state_guard.project_dir.join("logs/stocking_update.log"),
         ],
-        "notes" => vec![state_guard.project_dir.join("logs/notes_sync.log")],
         _ => return Err(format!("Unknown log: {}", log_name)),
     };
     drop(state_guard);
@@ -252,17 +187,6 @@ pub async fn get_status(
         None
     };
 
-    let notes_next = if config.notes_sync.enabled {
-        Some(
-            (config.notes_sync.last_run
-                + chrono::Duration::hours(config.notes_sync.interval_hours as i64))
-            .format("%Y-%m-%d %H:%M:%S UTC")
-            .to_string(),
-        )
-    } else {
-        None
-    };
-
     Ok(AppStatus {
         stocking: TaskStatus {
             last_run: config
@@ -275,18 +199,6 @@ pub async fn get_status(
             next_run: stocking_next,
             enabled: config.stocking_update.enabled,
             interval_hours: config.stocking_update.interval_hours,
-        },
-        notes_sync: TaskStatus {
-            last_run: config
-                .notes_sync
-                .last_run
-                .format("%Y-%m-%d %H:%M:%S UTC")
-                .to_string(),
-            last_success: config.notes_sync.last_success,
-            last_error: config.notes_sync.last_error.clone(),
-            next_run: notes_next,
-            enabled: config.notes_sync.enabled,
-            interval_hours: config.notes_sync.interval_hours,
         },
         db_size_bytes,
         db_modified,

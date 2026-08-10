@@ -125,8 +125,6 @@ fn main() {
         })
         .invoke_handler(tauri::generate_handler![
             commands::run_stocking_update,
-            commands::run_notes_sync,
-            commands::run_notes_push,
             commands::get_schedule,
             commands::set_schedule,
             commands::read_log,

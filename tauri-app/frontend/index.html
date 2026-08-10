@@ -185,8 +185,6 @@
       <div class="section-title">Run Now</div>
       <div class="run-btns">
         <button id="btn-stocking" class="run-btn blue" onclick="runScript('btn-stocking','run_stocking_update')">Fetch Stocking</button>
-        <button id="btn-notes-sync" class="run-btn green" onclick="runScript('btn-notes-sync','run_notes_sync')">Sync Notes to DB</button>
-        <button id="btn-notes-push" class="run-btn purple" onclick="runScript('btn-notes-push','run_notes_push')">Push DB to Notes</button>
       </div>
       <div id="run-output" class="run-output"><pre></pre></div>
     </div>
@@ -216,25 +214,6 @@
           </select>
         </div>
       </div>
-      <div class="sched-row">
-        <div class="sched-header">
-          <span class="sched-label">Notes Sync</span>
-          <label class="toggle green">
-            <input type="checkbox" id="sched-notes-enabled" onchange="saveSchedule()">
-            <span class="slider"></span>
-          </label>
-        </div>
-        <div class="sched-interval">
-          <span>Every</span>
-          <select id="sched-notes-interval" onchange="saveSchedule()">
-            <option value="1">1 hour</option>
-            <option value="3">3 hours</option>
-            <option value="6">6 hours</option>
-            <option value="12">12 hours</option>
-            <option value="24">24 hours</option>
-          </select>
-        </div>
-      </div>
       <div id="sched-status" class="status-detail" style="min-height: 15px; margin-top: 4px;"></div>
     </div>
 
@@ -243,7 +222,6 @@
       <div class="section-title">Logs</div>
       <div class="log-tabs">
         <button class="log-tab active" data-tab="stocking" onclick="switchLog('stocking')">Stocking</button>
-        <button class="log-tab" data-tab="notes" onclick="switchLog('notes')">Notes</button>
       </div>
       <pre id="log-viewer" class="log-viewer">Loading...</pre>
       <button class="log-refresh" onclick="refreshLog()">Refresh</button>
@@ -376,7 +354,6 @@
       const cards = document.getElementById('status-cards');
       cards.innerHTML =
         statusCard('Stocking', s.stocking) +
-        statusCard('Notes Sync', s.notes_sync) +
         dbCard(s);
     } catch (e) {
       console.error('Status error:', e);
@@ -437,8 +414,6 @@
       const c = await invoke('get_schedule');
       document.getElementById('sched-stocking-enabled').checked = c.stocking_update.enabled;
       document.getElementById('sched-stocking-interval').value = String(c.stocking_update.interval_hours);
-      document.getElementById('sched-notes-enabled').checked = c.notes_sync.enabled;
-      document.getElementById('sched-notes-interval').value = String(c.notes_sync.interval_hours);
     } catch (e) {
       console.error('Schedule error:', e);
     }
@@ -454,8 +429,6 @@
       const c = await invoke('get_schedule');
       c.stocking_update.enabled = document.getElementById('sched-stocking-enabled').checked;
       c.stocking_update.interval_hours = parseInt(document.getElementById('sched-stocking-interval').value);
-      c.notes_sync.enabled = document.getElementById('sched-notes-enabled').checked;
-      c.notes_sync.interval_hours = parseInt(document.getElementById('sched-notes-interval').value);
       await invoke('set_schedule', { config: c });
       status.textContent = 'Saved';
       status.style.color = '#16a34a';
@@ -576,7 +549,6 @@
   listen('schedule-update', (ev) => {
     refreshStatus();
     if (activeLogTab === 'stocking' && ev.payload.task === 'stocking_update') refreshLog();
-    if (activeLogTab === 'notes' && ev.payload.task === 'notes_sync') refreshLog();
     // A finished stocking run means the clone may have just pulled fresh data
     // (mirror) or written it (writer) — tell the web app to re-fetch. The PWA
     // refreshes in place and no-ops when the bytes are unchanged.
