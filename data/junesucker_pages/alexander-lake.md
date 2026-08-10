@@ -1,0 +1,29 @@
+## Directions
+
+Alexander Lake is located in Summit County, Utah in the Uinta Mountains. The lake is part of the Uinta-Wasatch-Cache National Forest and is part of the Provo River Drainage. The lake is marked as A-1 on the UInta's lakes designation maps.
+
+From the city of Kamas take the Mirror Lake highway UT-150 for 17.8 miles. Turn onto FR-041 which is across the street from the Duchesne Tunnel. Follow FR-041 for a little over 3 miles. If you have a high clearance vehicle you can take FR-946. I would not recommend taking a trailer past this point although you will see it happen every year. FR-496 becomes FR-938. You can follow this road right to the northeast shore, or take one of the FR-939 roads to the north shore.
+
+From the south side of the lake you can take FR-941 right to the shore. I wouldn't recommend this route in a truck. A 4 wheeler would be best suited for this path.
+
+You could also enter from the Trial Lake turn off and follow Spring Canyon - FR-41 to the FR-946 turnoff.
+
+## The Hike
+
+For some reason All Trails has you hike in directly from FR-041. The route they recommend isn't a very well cut trail and takes you through some thick brush. I highly recommend not following their advice on this route. If you have a lower clearance vehicle and want to hike in you should turn onto FR-946, and hike in on the dirt road. This will make the hike in a bit longer but it will be so much easier to traverse that it should take the same amount of time.
+
+## Fish Species
+
+Fishing from the shore here can be difficult, and I recommend you use a canoe if possible. Brook trout are the only fish species stocked in the lake. The lake is typically stocked every other year.
+
+2019 there was 1378 brook trout stocked at an average size of 2.68 inches.
+
+2017 there was 2305 brook trout stocked at an average size of 2.29 inches.
+
+2015 there was 2000 brook trout stocked at an average size of 2.5 inches.
+
+2013 there was 2322 brook trout stocked at an average size of 2.61 inches.
+
+## Other info
+
+The lake is listed in the book Utah Place Names by John W Van Cott. According to the book the namesake comes from an early explorer and settler. The book does not list who this early explorer or settler is. From my research I believe the lake was named after Quince Alexander. Quince was a settler in the area that later became the city of Francis.

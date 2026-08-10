@@ -135,6 +135,28 @@ another device while DB→Notes rewrites it, that device may iCloud-conflict-mer
 and show a duplicated section — fix is simply deleting the duplicated lower
 section(s) by hand on that device.
 
+### June Sucker notes (`lakes.junesucker_notes`)
+```bash
+python3 scripts/scrape_junesucker.py --dry-run   # report what would change
+python3 scripts/scrape_junesucker.py             # scrape junesucker.com + update the DB
+```
+Re-scrapes every lake page linked from `https://junesucker.com/lakes/uintas/`. It is
+**idempotent** (re-running with no site changes reports `lakes updated: 0`) and stores
+markdown with `## ` section headings, which `index.html` styles in the lake modal.
+
+- **Two section types are deliberately dropped:** anything whose heading mentions DWR
+  ("Historical DWR Info", "DWR Historical Data", "DWR Info", "Historical Information")
+  because it repeats `dwr_notes`, and "Nearby Areas to Fish" because it's a directory of
+  *other* lakes. Older pages express these as a bold lead-in paragraph
+  (`Historical DWR Info: ...`) rather than an `<h4>`; both markups are handled.
+- **Matching is designation-first** (title → index link text → body, and only if the body
+  names exactly one lake), with an exact unique whole-name match as the last resort. The
+  original loose matcher mis-filed the *Julius Park Reservoir* page onto DF-17 Little Elk.
+- Cloudflare 403s a bare urllib/curl UA — the browser-like `HEADERS` are required.
+- Cleaned markdown is also written to `data/junesucker_pages/<slug>.md` (git-diffable
+  record of what the site said), and `data/uinta_lake_links.csv` is refreshed each run.
+- Supersedes the one-off `data/process_all_lake_pages.py`.
+
 ### Coordinates & Mapping
 ```bash
 # 1. Seed ~70% of lake coordinates from OpenStreetMap (matched by designation + name)

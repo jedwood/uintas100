@@ -4,10 +4,11 @@ Running list of ideas and follow-ups that aren't urgent enough to do now.
 
 ## Content / data
 
-- **Revamp the June Sucker notes.** When this project started, junesucker.com info
-  was expected to be a major part of the app. It no longer is. Decide whether to keep
-  the `junesucker_notes` at all; if kept, they need editing/trimming so they don't read
-  as a dominant source. (Surfaces in the lake detail modal and `lakes.junesucker_notes`.)
+- ~~**Revamp the June Sucker notes.**~~ Done 2026-08-10: `scripts/scrape_junesucker.py`
+  re-scrapes all 40 matched lakes section-aware, dropping the DWR-pamphlet and
+  "Nearby Areas to Fish" sections that duplicated `dwr_notes`. Remaining judgement
+  call: whether the surviving prose (directions / hike / fish species / history)
+  should be trimmed further, and whether the modal should de-emphasize the section.
 
 - **Find P-11's location.** Provo River drainage; currently `coord_status = cant_find`
   with no name. It has recent DWR stocking records, so it's a real, stocked water —
