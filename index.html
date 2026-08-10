@@ -69,6 +69,9 @@
                    width: 34px; height: 34px; display: block; background: #fff; cursor: pointer; }
         .leaflet-bar .locate-btn.locating { animation: pulse 1s infinite; }
         @keyframes pulse { 50% { opacity: .4; } }
+        /* Scale bar: default Leaflet styling is low-contrast over satellite tiles */
+        .leaflet-control-scale-line { background: rgba(255,255,255,.85); color: #0f172a;
+                   font-size: 11px; font-weight: 600; border-color: #0f172a; }
         /* Detail/About modals must sit above Leaflet panes & controls (z-index up to 1000) */
         #lake-detail-modal, #about-modal, #rotenone-modal { z-index: 1200; }
     </style>
@@ -1237,6 +1240,9 @@
                 if (i === 0) layers[name].addTo(resultsMap);
             });
             L.control.layers(layers, null, { position: 'topright' }).addTo(resultsMap);
+            // Imperial-only scale bar; stays accurate under leaflet-rotate because
+            // Web Mercator is conformal (scale depends on latitude, not bearing).
+            L.control.scale({ imperial: true, metric: false, maxWidth: 140 }).addTo(resultsMap);
             resultsMarkers = L.layerGroup().addTo(resultsMap);
             addLocateControl();
             // Keep the heading arrow pointing true as the map is manually rotated
@@ -1266,6 +1272,7 @@
                 if (i === 0) layers[name].addTo(detailMap);
             });
             L.control.layers(layers, null, { position: 'topright' }).addTo(detailMap);
+            L.control.scale({ imperial: true, metric: false, maxWidth: 100 }).addTo(detailMap);
             const label = lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number;
             L.circleMarker([lake.lat, lake.lng], {
                 radius: 8, color: '#fff', weight: 2,
