@@ -2479,11 +2479,12 @@ DWR_LAKE_ENTRIES = [
         'name': 'CRATER',
         'text': "This large natural lake sits next to the trail in Lambert Meadows. It is 40.7 acres, 10,480 feet in elevation, with 20 feet maximum depth. Access is along the well-marked Lake Fork Trail for 11 miles from Moon Lake. Abundant horse feed exists in large wet meadows around the lake. Campsites and spring water are available. Cutthroat trout reproduce naturally and the lake also receives stocking. Angling pressure is moderate to heavy."
     },
-    {
-        'designation': 'LF-4',
-        'name': 'PORCUPINE',
-        'text': "This natural lake sits in a timbered basin and has a small earthen dam on the outlet. It is 11.4 acres, 10,540 feet in elevation, with 20 feet maximum depth. Access is 12 miles from Moon Lake via the Lake Fork Trail to Lambert Meadows, then cross-country southwest for 1 mile. Limited horse feed is available in small meadows near the lake. Both cutthroat and brook trout reproduce naturally. Angling pressure is moderate."
-    },
+    # "LF-4 PORCUPINE" removed 2026-08-10: phantom entry from the pamphlet OCR
+    # extraction. Porcupine in Lake Fork is LF-22 (per lake_data.csv, Norrick,
+    # and DWR's own stocking records — "PORCUPINE L LF-22"); no LF-4 appears
+    # anywhere in the 2002-2026 statewide DWR stocking archive. It briefly
+    # existed as a duplicate lake row (id 697) and even collected a rotenone
+    # banner in the 2026-08-05 audit before being deleted from the DB.
     {
         'designation': 'LF-16',
         'name': None,
