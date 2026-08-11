@@ -125,6 +125,12 @@
                         <div id="search-results" class="mt-2 bg-white border border-gray-200 rounded-md hidden max-h-60 overflow-y-auto"></div>
                     </div>
 
+                    <!-- Starred lakes (device-local; hidden until something is starred).
+                         Deliberately ignores any active filters. -->
+                    <button id="starred-link" type="button"
+                            class="w-full flex items-center justify-center gap-2 text-sm font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg px-4 py-2 mb-2 transition-colors hidden">
+                    </button>
+
                     <!-- Always-available full map (no filter required) -->
                     <button id="map-all" type="button"
                             class="w-full flex items-center justify-center gap-2 text-sm font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg px-4 py-2 transition-colors">
@@ -273,7 +279,10 @@
                             <div class="p-6">
                                 <div class="flex justify-between items-center mb-4">
                                     <h2 id="modal-title" class="text-2xl font-bold"></h2>
-                                    <button id="close-modal" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+                                    <div class="flex items-center gap-3">
+                                        <button id="star-lake" title="Star this lake" class="text-2xl leading-none"></button>
+                                        <button id="close-modal" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+                                    </div>
                                 </div>
                                 <div id="modal-content" class="space-y-6">
                                     <!-- Lake details will be populated here -->
@@ -759,6 +768,8 @@
             document.getElementById('view-list').addEventListener('click', () => setView('list'));
             document.getElementById('view-map').addEventListener('click', () => setView('map'));
             document.getElementById('map-all').addEventListener('click', showAllOnMap);
+            document.getElementById('starred-link').addEventListener('click', showStarredLakes);
+            updateStarredLink();
             updateViewToggle();
             document.getElementById('about-link').addEventListener('click', openAboutModal);
             document.getElementById('close-about-modal').addEventListener('click', closeAboutModal);
@@ -1523,6 +1534,38 @@
 
         const STATUS_LABELS = { CAUGHT: '🎣 Caught', OTHERS: '👥🎣 Others caught', NONE: '✖️ Skunked' };
 
+        // ---- Starred lakes (device-local, stored in localStorage) ----
+        const STARS_KEY = 'starredLakes';
+        function getStars() {
+            try { return new Set(JSON.parse(localStorage.getItem(STARS_KEY)) || []); }
+            catch { return new Set(); }
+        }
+        function toggleStar(letterNumber) {
+            const s = getStars();
+            s.has(letterNumber) ? s.delete(letterNumber) : s.add(letterNumber);
+            localStorage.setItem(STARS_KEY, JSON.stringify([...s]));
+            updateStarredLink();
+        }
+        function updateStarredLink() {
+            const btn = document.getElementById('starred-link');
+            const n = getStars().size;
+            btn.classList.toggle('hidden', n === 0);
+            btn.textContent = `★ (${n})`;
+        }
+        // Deliberately ignores active filters: always the full starred list.
+        function showStarredLakes() {
+            const stars = getStars();
+            const starred = lakes.filter(l => stars.has(l.letter_number));
+            setResults(starred, { title: `★ Starred lakes (${starred.length})` });
+        }
+        function paintStarButton(letterNumber) {
+            const b = document.getElementById('star-lake');
+            const on = getStars().has(letterNumber);
+            b.textContent = on ? '★' : '☆';
+            b.className = 'text-2xl leading-none transition-colors ' +
+                (on ? 'text-amber-500 hover:text-amber-600' : 'text-gray-300 hover:text-gray-400');
+        }
+
         function showLakeDetail(letterNumber) {
             const lake = lakes.find(l => l.letter_number === letterNumber);
             if (!lake) return;
@@ -1532,23 +1575,26 @@
             const content = document.getElementById('modal-content');
 
             const noFishEmoji = lake.no_fish ? ' 🚫' : '';
-            title.textContent = `${lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number}${noFishEmoji}`;
+            title.innerHTML = `${escHtml(lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number)}${noFishEmoji}
+                <span class="text-base font-normal text-gray-500 ml-1 whitespace-nowrap">${escHtml(lake.drainage || '')}</span>`;
 
             content.innerHTML = `
                 <!-- Lake Info -->
                 <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
-                    <h3 class="text-lg font-semibold mb-3">Lake Information</h3>
                     <div class="grid grid-cols-2 gap-4 text-sm">
-                        <div><span class="font-medium">Drainage:</span> ${lake.drainage}</div>
-                        <div><span class="font-medium">Size:</span> ${lake.size_acres ? `${lake.size_acres} acres` : 'Unknown'}</div>
-                        <div><span class="font-medium">Max Depth:</span> ${lake.max_depth_ft ? `${lake.max_depth_ft} ft` : 'Unknown'}</div>
-                        <div><span class="font-medium">Elevation:</span> ${lake.elevation_ft ? `${lake.elevation_ft.toLocaleString()} ft` : 'Unknown'}</div>
-                        <div><span class="font-medium">Fishing Pressure:</span> ${lake.fishing_pressure || 'Unknown'}</div>
-                        <div class="col-span-2">
-                            <span class="font-medium">Fish Species:</span> ${lake.fish_species || 'Unknown'}
-                            ${lake.fish_species && lake.fish_species.includes('*') ? '<div class="text-xs text-gray-500 mt-1">*not stocked since 2015 or earlier</div>' : ''}
+                        <div class="space-y-2">
+                            <div>
+                                <span class="font-medium">Species:</span> ${lake.fish_species || 'Unknown'}
+                                ${lake.fish_species && lake.fish_species.includes('*') ? '<div class="text-xs text-gray-500 mt-1">*not stocked since 2015 or earlier</div>' : ''}
+                            </div>
+                            <div><span class="font-medium">Pressure:</span> ${lake.fishing_pressure || 'Unknown'}</div>
                         </div>
-                        ${lake.lat ? `<div class="col-span-2"><a href="https://maps.apple.com/?ll=${lake.lat},${lake.lng}&q=${encodeURIComponent(lake.name ? `${lake.name} (${lake.letter_number})` : lake.letter_number)}" target="_blank" class="inline-flex items-center gap-1 text-slate-700 underline hover:text-slate-900">📍 Open in Maps</a></div>` : ''}
+                        <div class="space-y-2">
+                            <div><span class="font-medium">Elevation:</span> ${lake.elevation_ft ? `${lake.elevation_ft.toLocaleString()} ft` : 'Unknown'}</div>
+                            <div><span class="font-medium">Size:</span> ${lake.size_acres ? `${lake.size_acres} acres` : 'Unknown'}</div>
+                            <div><span class="font-medium">Depth:</span> ${lake.max_depth_ft ? `${lake.max_depth_ft} ft` : 'Unknown'}</div>
+                            ${lake.lat ? `<div><a href="https://maps.apple.com/?ll=${lake.lat},${lake.lng}&q=${encodeURIComponent(lake.name ? `${lake.name} (${lake.letter_number})` : lake.letter_number)}" target="_blank" class="inline-flex items-center gap-1 text-slate-700 underline hover:text-slate-900">📍 Open in Maps</a></div>` : ''}
+                        </div>
                     </div>
                 </div>
 
@@ -1656,8 +1702,7 @@
                 <!-- From Cordell Andersen's book (collapsed to a 2-line preview) -->
                 ${lake.cma_notes ? `
                     <div class="rounded-lg p-4 border border-slate-200">
-                        <h3 class="text-lg font-semibold mb-1">From "The High Uinta Mountains"</h3>
-                        <p class="text-xs text-gray-500 mb-3">Cordell M. Andersen's book — page numbers refer to the printed book</p>
+                        <h3 class="text-lg font-semibold mb-3">From Cordell Andersen</h3>
                         ${collapsibleNotes('cma-notes', cmaHtml(lake.cma_notes), notePreview(lake.cma_notes))}
                     </div>
                 ` : ''}
@@ -1692,6 +1737,9 @@
 
             modal.classList.remove('hidden');
             pushModalState('lake', `#${encodeURIComponent(lake.letter_number)}`);
+            const starBtn = document.getElementById('star-lake');
+            starBtn.onclick = () => { toggleStar(lake.letter_number); paintStarButton(lake.letter_number); };
+            paintStarButton(lake.letter_number);
             initDetailMap(lake);
             wireRecordEditor(lake);
         }
