@@ -56,7 +56,7 @@ def rebuild(output_path):
         "coordinates", "map_link", "size_acres", "max_depth_ft", "elevation_ft",
         "dwr_notes", "fish_species", "fishing_pressure", "jed_notes", "status",
         "trip_reports", "notes_needs_update", "no_fish", "lat", "lng",
-        "coord_source", "coord_status", "cma_notes",
+        "coord_source", "coord_status", "cma_notes", "starred",
     ]
     placeholders = ",".join("?" * len(lake_cols))
     for row in _read_seed("lakes.csv"):

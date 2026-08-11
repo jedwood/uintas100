@@ -46,7 +46,8 @@ def create_database(db_path=None):
             lng REAL,
             coord_source TEXT,
             coord_status TEXT,
-            cma_notes TEXT
+            cma_notes TEXT,
+            starred BOOLEAN
         )
     ''')
 
@@ -176,6 +177,7 @@ def create_database(db_path=None):
         ('no_fish', 'BOOLEAN DEFAULT 0'),
         ('last_modified', 'TIMESTAMP'),
         ('cma_notes', 'TEXT'),
+        ('starred', 'BOOLEAN'),
     ]
     for col, decl in lake_column_adds:
         try:

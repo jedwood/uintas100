@@ -44,14 +44,14 @@ SEEDS = {
             "elevation_ft", "dwr_notes", "fish_species", "fishing_pressure",
             "jed_notes", "status", "trip_reports", "notes_needs_update",
             "no_fish", "lat", "lng", "coord_source", "coord_status",
-            "cma_notes",
+            "cma_notes", "starred",
         ],
         "sql": """
             SELECT letter_number, name, drainage, basin, junesucker_notes,
                    coordinates, map_link, size_acres, max_depth_ft, elevation_ft,
                    dwr_notes, fish_species, fishing_pressure, jed_notes, status,
                    trip_reports, notes_needs_update, no_fish, lat, lng,
-                   coord_source, coord_status, cma_notes
+                   coord_source, coord_status, cma_notes, starred
             FROM lakes
             ORDER BY letter_number
         """,

@@ -32,7 +32,7 @@ TABLE_QUERIES = {
                coordinates, map_link, size_acres, max_depth_ft, elevation_ft,
                dwr_notes, fish_species, fishing_pressure, jed_notes, status,
                trip_reports, notes_needs_update, no_fish, lat, lng,
-               coord_source, coord_status, cma_notes
+               coord_source, coord_status, cma_notes, starred
         FROM lakes""",
     "drainages": "SELECT name, info, map FROM drainages",
     "trailheads": "SELECT name, region, drainage, pages, info FROM trailheads",

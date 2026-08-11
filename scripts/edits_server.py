@@ -61,7 +61,7 @@ DEFAULT_DB = os.path.join(REPO_ROOT, "uinta_lakes.db")
 DEFAULT_LOG = os.path.join(REPO_ROOT, "data", "app_edits_log.jsonl")
 EDIT_LOG = DEFAULT_LOG  # overridden by --log (tests)
 
-EDITABLE_FIELDS = {"status", "jed_notes", "trip_reports"}
+EDITABLE_FIELDS = {"status", "jed_notes", "trip_reports", "starred"}
 VALID_STATUSES = {"CAUGHT", "NONE", "OTHERS"}  # DB CHECK constraint; NULL = unset
 
 # One lock serializes DB writes + log appends across request threads.
@@ -127,6 +127,10 @@ def apply_edits(db_path, device, edits):
                 if field == "status" and value is not None and value not in VALID_STATUSES:
                     results.append({"id": edit_id, "result": "error",
                                     "message": f"bad status {value!r}"})
+                    continue
+                if field == "starred" and value not in (None, 0, 1):
+                    results.append({"id": edit_id, "result": "error",
+                                    "message": f"bad starred {value!r}"})
                     continue
                 row = conn.execute(
                     f"SELECT {field} AS v FROM lakes WHERE letter_number = ?", (lake,)

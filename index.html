@@ -502,6 +502,8 @@
             // Overlay this device's local (possibly not-yet-synced) edits on
             // top of the exported data.
             applyLocalEdits();
+            migrateLocalStars();
+            updateStarredLink();
         }
 
         async function initApp() {
@@ -1534,36 +1536,36 @@
 
         const STATUS_LABELS = { CAUGHT: '🎣 Caught', OTHERS: '👥🎣 Others caught', NONE: '✖️ Skunked' };
 
-        // ---- Starred lakes (device-local, stored in localStorage) ----
-        const STARS_KEY = 'starredLakes';
-        function getStars() {
-            try { return new Set(JSON.parse(localStorage.getItem(STARS_KEY)) || []); }
-            catch { return new Set(); }
-        }
-        function toggleStar(letterNumber) {
-            const s = getStars();
-            s.has(letterNumber) ? s.delete(letterNumber) : s.add(letterNumber);
-            localStorage.setItem(STARS_KEY, JSON.stringify([...s]));
-            updateStarredLink();
-        }
+        // ---- Starred lakes: lakes.starred is a user-owned field synced across
+        // devices through the same edits pipeline as My Record (offline queue,
+        // last-write-wins per lake on the Mini). ----
         function updateStarredLink() {
             const btn = document.getElementById('starred-link');
-            const n = getStars().size;
+            const n = lakes.filter(l => l.starred).length;
             btn.classList.toggle('hidden', n === 0);
             btn.textContent = `★ (${n})`;
         }
         // Deliberately ignores active filters: always the full starred list.
         function showStarredLakes() {
-            const stars = getStars();
-            const starred = lakes.filter(l => stars.has(l.letter_number));
+            const starred = lakes.filter(l => l.starred);
             setResults(starred, { title: `★ Starred lakes (${starred.length})` });
         }
-        function paintStarButton(letterNumber) {
+        function paintStarButton(lake) {
             const b = document.getElementById('star-lake');
-            const on = getStars().has(letterNumber);
+            const on = !!lake.starred;
             b.textContent = on ? '★' : '☆';
             b.className = 'text-2xl leading-none transition-colors ' +
                 (on ? 'text-amber-500 hover:text-amber-600' : 'text-gray-300 hover:text-gray-400');
+        }
+        // One-time migration: stars briefly lived only in this device's
+        // localStorage before they became a synced field.
+        function migrateLocalStars() {
+            try {
+                const old = JSON.parse(localStorage.getItem('starredLakes') || '[]');
+                lakes.filter(l => old.includes(l.letter_number) && !l.starred)
+                     .forEach(l => queueEdit(l, 'starred', 1));
+            } catch (e) { /* malformed leftover — just drop it */ }
+            localStorage.removeItem('starredLakes');
         }
 
         function showLakeDetail(letterNumber) {
@@ -1738,8 +1740,13 @@
             modal.classList.remove('hidden');
             pushModalState('lake', `#${encodeURIComponent(lake.letter_number)}`);
             const starBtn = document.getElementById('star-lake');
-            starBtn.onclick = () => { toggleStar(lake.letter_number); paintStarButton(lake.letter_number); };
-            paintStarButton(lake.letter_number);
+            starBtn.onclick = () => {
+                queueEdit(lake, 'starred', lake.starred ? '' : 1);   // '' -> NULL server-side
+                paintStarButton(lake);
+                updateStarredLink();
+                syncNow().then(() => updateSyncChip(pendingCount() ? undefined : 'flash'));
+            };
+            paintStarButton(lake);
             initDetailMap(lake);
             wireRecordEditor(lake);
         }
