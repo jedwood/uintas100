@@ -45,7 +45,8 @@ def create_database(db_path=None):
             lat REAL,
             lng REAL,
             coord_source TEXT,
-            coord_status TEXT
+            coord_status TEXT,
+            cma_notes TEXT
         )
     ''')
 
@@ -130,6 +131,33 @@ def create_database(db_path=None):
         )
     ''')
 
+    # Trailheads mined from Cordell Andersen's "The High Uinta Mountains" book
+    # (scripts/import_cma_book.py). `pages` = printed book pages (comma list);
+    # `drainage` = majority drainage of the lakes mentioned on those pages.
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS trailheads (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT UNIQUE,
+            region TEXT,
+            drainage TEXT,
+            pages TEXT,
+            info TEXT
+        )
+    ''')
+
+    # A trailhead is linked to every lake whose (X-nn) designation appears on
+    # the trailhead's book pages.
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS trailhead_lakes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            trailhead_id INTEGER,
+            lake_id INTEGER,
+            UNIQUE (trailhead_id, lake_id),
+            FOREIGN KEY (trailhead_id) REFERENCES trailheads (id),
+            FOREIGN KEY (lake_id) REFERENCES lakes (id)
+        )
+    ''')
+
     # Idempotent safety net: back-fill any lakes column an OLDER database might
     # be missing. No-ops on a fresh build (the full CREATE above already has
     # them) and on the current live DB. Keeps any create_database() entry point
@@ -147,6 +175,7 @@ def create_database(db_path=None):
         ('notes_needs_update', 'BOOLEAN DEFAULT FALSE'),
         ('no_fish', 'BOOLEAN DEFAULT 0'),
         ('last_modified', 'TIMESTAMP'),
+        ('cma_notes', 'TEXT'),
     ]
     for col, decl in lake_column_adds:
         try:

@@ -21,3 +21,7 @@ logs/stocking_update.log
 # Pre-overwrite Apple Notes backups written by sync_db_to_notes_jxa.js
 logs/notes_backups/
 .playwright-cli/
+
+# Cordell M. Andersen's self-published book (148MB scan) — derived data is
+# committed (data/cma_*, DB seeds), the PDF itself stays local-only
+data/the-high-uinta-mountains-by-cma.pdf

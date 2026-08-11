@@ -44,15 +44,30 @@ SEEDS = {
             "elevation_ft", "dwr_notes", "fish_species", "fishing_pressure",
             "jed_notes", "status", "trip_reports", "notes_needs_update",
             "no_fish", "lat", "lng", "coord_source", "coord_status",
+            "cma_notes",
         ],
         "sql": """
             SELECT letter_number, name, drainage, basin, junesucker_notes,
                    coordinates, map_link, size_acres, max_depth_ft, elevation_ft,
                    dwr_notes, fish_species, fishing_pressure, jed_notes, status,
                    trip_reports, notes_needs_update, no_fish, lat, lng,
-                   coord_source, coord_status
+                   coord_source, coord_status, cma_notes
             FROM lakes
             ORDER BY letter_number
+        """,
+    },
+    "trailheads.csv": {
+        "columns": ["name", "region", "drainage", "pages", "info"],
+        "sql": "SELECT name, region, drainage, pages, info FROM trailheads ORDER BY name",
+    },
+    "trailhead_lakes.csv": {
+        "columns": ["trailhead_name", "letter_number"],
+        "sql": """
+            SELECT t.name, l.letter_number
+            FROM trailhead_lakes tl
+            LEFT JOIN trailheads t ON tl.trailhead_id = t.id
+            LEFT JOIN lakes l ON tl.lake_id = l.id
+            ORDER BY t.name, l.letter_number
         """,
     },
     "drainages.csv": {

@@ -32,9 +32,15 @@ TABLE_QUERIES = {
                coordinates, map_link, size_acres, max_depth_ft, elevation_ft,
                dwr_notes, fish_species, fishing_pressure, jed_notes, status,
                trip_reports, notes_needs_update, no_fish, lat, lng,
-               coord_source, coord_status
+               coord_source, coord_status, cma_notes
         FROM lakes""",
     "drainages": "SELECT name, info, map FROM drainages",
+    "trailheads": "SELECT name, region, drainage, pages, info FROM trailheads",
+    "trailhead_lakes": """
+        SELECT t.name, l.letter_number
+        FROM trailhead_lakes tl
+        LEFT JOIN trailheads t ON tl.trailhead_id = t.id
+        LEFT JOIN lakes l ON tl.lake_id = l.id""",
     "photos": """
         SELECT l.letter_number, p.filename, p.source_url, p.downloaded_path
         FROM photos p LEFT JOIN lakes l ON p.lake_id = l.id""",

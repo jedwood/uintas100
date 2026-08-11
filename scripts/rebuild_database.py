@@ -56,7 +56,7 @@ def rebuild(output_path):
         "coordinates", "map_link", "size_acres", "max_depth_ft", "elevation_ft",
         "dwr_notes", "fish_species", "fishing_pressure", "jed_notes", "status",
         "trip_reports", "notes_needs_update", "no_fish", "lat", "lng",
-        "coord_source", "coord_status",
+        "coord_source", "coord_status", "cma_notes",
     ]
     placeholders = ",".join("?" * len(lake_cols))
     for row in _read_seed("lakes.csv"):
@@ -71,6 +71,17 @@ def rebuild(output_path):
     for row in _read_seed("drainages.csv"):
         cur.execute("INSERT INTO drainages (name, info, map) VALUES (?, ?, ?)",
                     (row["name"], row["info"], row["map"]))
+
+    # --- trailheads (parent of trailhead_lakes) ---
+    for row in _read_seed("trailheads.csv"):
+        cur.execute(
+            """INSERT INTO trailheads (name, region, drainage, pages, info)
+               VALUES (?, ?, ?, ?, ?)""",
+            (row["name"], row["region"], row["drainage"], row["pages"],
+             row["info"]),
+        )
+    trailhead_id = {tn: tid for tid, tn in cur.execute(
+        "SELECT id, name FROM trailheads")}
 
     # --- other_waters (parent of other_stocking_records) ---
     for row in _read_seed("other_waters.csv"):
@@ -115,6 +126,16 @@ def rebuild(output_path):
         cur.execute(
             "INSERT INTO fishing_reports (lake_id, date, success, notes) VALUES (?, ?, ?, ?)",
             (lid(row["letter_number"]), row["date"], row["success"], row["notes"]),
+        )
+
+    for row in _read_seed("trailhead_lakes.csv"):
+        tid = trailhead_id.get(row["trailhead_name"])
+        if tid is None:
+            skipped += 1
+            continue
+        cur.execute(
+            "INSERT INTO trailhead_lakes (trailhead_id, lake_id) VALUES (?, ?)",
+            (tid, lid(row["letter_number"])),
         )
 
     for row in _read_seed("other_stocking_records.csv"):

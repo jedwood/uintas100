@@ -61,8 +61,8 @@ def export():
     for row in conn.execute(
         """SELECT id, letter_number, name, drainage, size_acres, max_depth_ft,
                   elevation_ft, fish_species, fishing_pressure, jed_notes,
-                  status, trip_reports, junesucker_notes, dwr_notes, no_fish,
-                  lat, lng, coord_status
+                  status, trip_reports, junesucker_notes, dwr_notes, cma_notes,
+                  no_fish, lat, lng, coord_status
            FROM lakes"""
     ):
         coords_ok = row["coord_status"] in verified and row["lat"] is not None
@@ -81,6 +81,7 @@ def export():
                 "trip_reports": row["trip_reports"],
                 "junesucker_notes": row["junesucker_notes"],
                 "dwr_notes": row["dwr_notes"],
+                "cma_notes": row["cma_notes"],
                 "no_fish": row["no_fish"] or 0,
                 "lat": row["lat"] if coords_ok else None,
                 "lng": row["lng"] if coords_ok else None,
@@ -98,9 +99,30 @@ def export():
         for row in conn.execute("SELECT name, info, map FROM drainages ORDER BY name")
     ]
 
+    # Trailheads (mined from the CMA book): each carries the letter_numbers of
+    # the lakes its book pages mention, so the frontend can join both ways.
+    trailheads = []
+    for row in conn.execute(
+        "SELECT id, name, region, drainage, pages, info FROM trailheads ORDER BY name"
+    ):
+        lake_lns = [r[0] for r in conn.execute(
+            """SELECT l.letter_number FROM trailhead_lakes tl
+               JOIN lakes l ON tl.lake_id = l.id
+               WHERE tl.trailhead_id = ? ORDER BY l.letter_number""", (row["id"],))]
+        trailheads.append(
+            {
+                "name": row["name"],
+                "region": row["region"],
+                "drainage": row["drainage"],
+                "pages": row["pages"],
+                "info": row["info"],
+                "lakes": lake_lns,
+            }
+        )
+
     conn.close()
 
-    data = {"lakes": lakes, "drainages": drainages}
+    data = {"lakes": lakes, "drainages": drainages, "trailheads": trailheads}
     OUTPUT_PATH.write_text(
         json.dumps(data, ensure_ascii=False, separators=(",", ":"))
     )
@@ -109,7 +131,8 @@ def export():
     size_kb = OUTPUT_PATH.stat().st_size / 1024
     print(
         f"Exported {len(lakes)} lakes, {n_stocking} stocking records, "
-        f"{len(drainages)} drainages -> {OUTPUT_PATH.name} ({size_kb:.0f} KB)"
+        f"{len(drainages)} drainages, {len(trailheads)} trailheads "
+        f"-> {OUTPUT_PATH.name} ({size_kb:.0f} KB)"
     )
 
 
