@@ -11,12 +11,19 @@ The Mini is the sole DB writer. Two LaunchAgents live here:
   `uintas-edits-server` and log `/Users/jed/Library/Logs/uintas-edits-server.log`.
   Health check: `curl http://olaf.local:8802/api/ping`.
 
-- **`com.limechile.uintas-notes-sync`** — **RETIRED 2026-08-10** (the script
-  exits immediately unless `UINTAS_NOTES_SYNC=force`). It ran the Apple Notes
-  round trip; the PWA + edits server replaced it, and running Notes→DB now would
-  overwrite app edits with stale note content. The plist can stay loaded (the
-  no-op is cheap) or be `launchctl bootout`-ed. The FDA notes below are kept for
-  a supervised `force` run.
+- **`com.limechile.uintas-notes-sync`** — **RETIRED 2026-08-10, UNDEPLOYED
+  2026-08-12.** It ran the Apple Notes round trip; the PWA + edits server
+  replaced it, and running Notes→DB now would overwrite app edits with stale
+  note content. Leaving the plist loaded (even as a cheap no-op) also broke
+  `scripts/fetch_latest_stocking.py`'s notes-agent watchdog, which alerted
+  every run once the agent stopped writing its "Starting Notes → Database
+  sync" log line — so the watchdog was removed from that script too, and the
+  plist was `launchctl bootout`-ed and deleted from
+  `/Users/jed/Library/LaunchAgents/`. This file (`deploy/`) remains the source
+  of truth if it's ever reinstalled — see Install/update above. The FDA notes
+  below are kept for a supervised, manually-invoked `force` run (no LaunchAgent
+  needed for that — just run `UINTAS_NOTES_SYNC=force python3
+  scripts/notes_sync_agent.py` directly).
 
 This machine's home is on an external `/Volumes` disk, which makes LaunchAgents
 non-standard. The rules below are load-bearing.

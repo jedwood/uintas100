@@ -132,12 +132,17 @@ curl http://olaf.local:8802/api/ping        # is the writer up?
 tail -f /Users/jed/Library/Logs/uintas-edits-server.log
 ```
 
-### Apple Notes Sync (RETIRED as a write path, 2026-08-10)
+### Apple Notes Sync (RETIRED as a write path, 2026-08-10; LaunchAgent undeployed 2026-08-12)
 The Notes round trip is retired: `notes_sync_agent.py` exits immediately unless
 run with `UINTAS_NOTES_SYNC=force`. Reason: the user fields are now edited in
 the app (above), and a Notes→DB run would overwrite them with stale note
 content (most notes still carry pre-migration placeholders — see the
-2026-08-10 data-loss investigation). The JXA scripts below remain for manual /
+2026-08-10 data-loss investigation). The `com.limechile.uintas-notes-sync`
+LaunchAgent is no longer loaded or scheduled at all (`launchctl bootout`-ed,
+plist removed from `/Users/jed/Library/LaunchAgents/` — source of truth stays
+in `deploy/`, see `deploy/README.md`); leaving it loaded as a no-op used to
+also trip a stale-log watchdog in `fetch_latest_stocking.py` on every stocking
+run, which has since been removed. The JXA scripts below remain for manual /
 archival use only.
 ```bash
 # Sync changes from Apple Notes to database
@@ -168,10 +173,10 @@ into one note (the 2026-07-01 incident). Never set `note.name` after setting
 `body` (the first body line already becomes the name; setting both doubles the
 title text).
 Preview without writing: `UINTAS_DRYRUN=1 osascript scripts/sync_db_to_notes_jxa.js`.
-The Mini's LaunchAgent (`notes_sync_agent.py`) now runs the full **round trip**:
-Notes→DB first (capture edits), then DB→Notes for any lakes flagged
-`notes_needs_update` (set by stocking updates), then commit+push — so stocking
-data reaches the lake notes within one 6h cycle. `sync_notes_and_push.sh` (the
+`notes_sync_agent.py` still implements the full **round trip** (Notes→DB, then
+DB→Notes for any lakes flagged `notes_needs_update`, then commit+push) but only
+runs it when manually invoked with `UINTAS_NOTES_SYNC=force` — there is no
+longer a LaunchAgent firing it automatically. `sync_notes_and_push.sh` (the
 manual wrapper) remains Notes→DB only. Known hiccup: if a lake note is OPEN on
 another device while DB→Notes rewrites it, that device may iCloud-conflict-merge
 and show a duplicated section — fix is simply deleting the duplicated lower
