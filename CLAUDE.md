@@ -82,7 +82,7 @@ two-machine write-conflict class (e.g. the binary-DB autostash conflicts).
   instead (`writer_guard.pull_and_exit_if_readonly()`) — so the MacBook's Tauri
   app scheduler, which fires the stocking job periodically, doubles as the
   mirror's auto-refresh: the clone (and the web app served from it on
-  localhost:8000) picks up whatever the Mini pushed. Reload the app window to
+  localhost:8804) picks up whatever the Mini pushed. Reload the app window to
   see fresh data (the PWA cache version bump makes the reload pick it up).
   - Mirror (MacBook): `touch .db-readonly`
   - Writer (Mini): the marker must NOT exist (`ls .db-readonly` → absent)
@@ -232,14 +232,15 @@ git commit -m "your changes"  # Bumps cache version + re-exports data/seeds when
 ### Development Server
 Since this is a static web app, serve locally with:
 ```bash
-python3 -m http.server 8000
+python3 -m http.server 8804   # NOT 8000 — the Qwen3 embeddings LaunchAgent owns :8000 on the Mini
 # or
 npx serve .
 ```
 
 ### Tauri control-panel app (`tauri-app/`)
 The desktop wrapper (`/Applications/Uintas.app`) that runs the schedulers, serves
-the web app on :8000, and exposes a gear-icon control panel. Build + install:
+the web app on :8804 (moved off :8000 2026-08-12 — the shared Qwen3 embeddings
+LaunchAgent claims :8000), and exposes a gear-icon control panel. Build + install:
 ```bash
 cd tauri-app && cargo tauri build --bundles app
 rm -rf /Applications/Uintas.app && cp -R src-tauri/target/release/bundle/macos/Uintas.app /Applications/
@@ -289,6 +290,7 @@ rm -rf /Applications/Uintas.app && cp -R src-tauri/target/release/bundle/macos/U
 
 ### Frontend Asset Regeneration
 - `lakes_data.json` - regenerate with `python3 scripts/export_web_data.py` after db changes (pre-commit hook does this automatically when the db is committed)
+- `cma_book.html` - full text of Cordell Andersen's book, one `<section id="cma-pNNN">` per printed page; regenerate with `python3 scripts/export_cma_book.py` (Mini-only — needs the gitignored PDF). The lake modal's "(p. NNN)" citation links and trailhead "book p. N" links fetch this file and jump to the cited page in an in-modal viewer (back arrow returns to the lake). It is deliberately NOT in the service-worker precache list (a missing file must not break install); `initApp` warm-fetches it so the SW caches it lazily for offline use.
 - `tailwind.css` - regenerate only if new Tailwind classes are added to index.html: `npx tailwindcss@3.4.17 -o tailwind.css --content "./index.html" --minify`
 
 ### Data Sources Integration

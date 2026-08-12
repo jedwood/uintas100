@@ -13,7 +13,12 @@ use tauri::Manager;
 use tauri_plugin_autostart::MacosLauncher;
 use tauri_plugin_store::StoreExt;
 
-const KNOWN_PROJECT_DIR: &str = "/Users/jed/repos/uintas";
+// Per-machine repo locations: MacBook keeps it under $HOME, the Mini's home
+// lives on the external OLAF-EXT volume.
+const KNOWN_PROJECT_DIRS: &[&str] = &[
+    "/Users/jed/repos/uintas",
+    "/Volumes/OLAF-EXT/jedwoodx/repos/uintas",
+];
 
 fn find_project_dir(app: &tauri::App) -> PathBuf {
     // 1. Check if we saved a path from a previous run
@@ -38,10 +43,12 @@ fn find_project_dir(app: &tauri::App) -> PathBuf {
         }
     }
 
-    // 3. Known project directory
-    let known = PathBuf::from(KNOWN_PROJECT_DIR);
-    if known.join("uinta_lakes.db").exists() {
-        return known;
+    // 3. Known project directories
+    for dir in KNOWN_PROJECT_DIRS {
+        let known = PathBuf::from(dir);
+        if known.join("uinta_lakes.db").exists() {
+            return known;
+        }
     }
 
     // 4. Current working directory
@@ -66,7 +73,7 @@ fn find_project_dir(app: &tauri::App) -> PathBuf {
     }
 
     // Fallback
-    PathBuf::from(KNOWN_PROJECT_DIR)
+    PathBuf::from(KNOWN_PROJECT_DIRS[0])
 }
 
 fn main() {
@@ -102,7 +109,7 @@ fn main() {
             {
                 let project_dir = state.lock().unwrap().project_dir.clone();
                 match Command::new("python3")
-                    .args(["-m", "http.server", "8000"])
+                    .args(["-m", "http.server", "8804"])
                     .current_dir(&project_dir)
                     .stdout(Stdio::null())
                     .stderr(Stdio::null())

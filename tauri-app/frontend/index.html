@@ -144,7 +144,7 @@
 
 <!-- Web app view -->
 <div id="webapp-view">
-  <iframe id="webapp-iframe" src="http://localhost:8000"></iframe>
+  <iframe id="webapp-iframe" src="http://localhost:8804"></iframe>
   <div id="webapp-overlay">
     <div id="overlay-content" style="text-align: center;">
       <div class="spinner" style="width: 24px; height: 24px; border-width: 3px; color: #9ca3af;"></div>
@@ -284,7 +284,7 @@
 
   async function checkServerHealth() {
     try {
-      const resp = await fetch('http://localhost:8000', { method: 'HEAD', mode: 'no-cors' });
+      const resp = await fetch('http://localhost:8804', { method: 'HEAD', mode: 'no-cors' });
       return true;
     } catch {
       return false;
@@ -302,7 +302,7 @@
       overlay.classList.add('hidden');
       // Reload iframe if it was showing an error
       if (!iframe.contentWindow || iframe.contentWindow.location.href === 'about:blank') {
-        iframe.src = 'http://localhost:8000';
+        iframe.src = 'http://localhost:8804';
       }
     } else {
       serverHealthy = false;
@@ -336,13 +336,13 @@
     const healthy = await checkServerHealth();
     if (healthy) {
       serverHealthy = true;
-      document.getElementById('webapp-iframe').src = 'http://localhost:8000';
+      document.getElementById('webapp-iframe').src = 'http://localhost:8804';
       overlay.classList.add('hidden');
       refreshServerStatus();
     } else {
       content.innerHTML = '<div style="font-size: 32px; margin-bottom: 8px; color: #d1d5db;">&#x1F3D4;</div>' +
         '<div style="color: #374151; font-weight: 500;">Still can\'t connect</div>' +
-        '<div style="margin-top: 4px; font-size: 12px; color: #9ca3af;">Check that nothing else is using port 8000</div>' +
+        '<div style="margin-top: 4px; font-size: 12px; color: #9ca3af;">Check that nothing else is using port 8804</div>' +
         '<button class="reconnect-btn" onclick="reconnect()">Try Again</button>';
     }
   }
@@ -501,7 +501,7 @@
     if (serverRunning) {
       startBtn.style.display = 'none';
       stopBtn.style.display = 'block';
-      detail.innerHTML = '<span class="status-dot green" style="display:inline-block;vertical-align:middle;margin-right:4px;"></span>Running on localhost:8000';
+      detail.innerHTML = '<span class="status-dot green" style="display:inline-block;vertical-align:middle;margin-right:4px;"></span>Running on localhost:8804';
     } else {
       startBtn.style.display = 'block';
       stopBtn.style.display = 'none';
@@ -519,7 +519,7 @@
       updateServerUI();
       btn.disabled = false;
       btn.textContent = 'Start';
-      document.getElementById('webapp-iframe').src = 'http://localhost:8000';
+      document.getElementById('webapp-iframe').src = 'http://localhost:8804';
     } catch (e) {
       console.error('Server start error:', e);
       btn.disabled = false;

@@ -23,5 +23,8 @@ logs/notes_backups/
 .playwright-cli/
 
 # Cordell M. Andersen's self-published book (148MB scan) — derived data is
-# committed (data/cma_*, DB seeds), the PDF itself stays local-only
+# committed (data/cma_*, DB seeds, cma_book.html, cma_photos/), the source PDF
+# itself and the Tailscale-served compressed copy stay local-only
 data/the-high-uinta-mountains-by-cma.pdf
+data/cma-book-web.pdf
+data/tailscale_book/

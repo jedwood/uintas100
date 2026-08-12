@@ -82,6 +82,14 @@
 
         /* Detail/About modals must sit above Leaflet panes & controls (z-index up to 1000) */
         #lake-detail-modal, #about-modal, #rotenone-modal, #sync-modal { z-index: 1200; }
+
+        /* Cordell Andersen book pages (sections injected from cma_book.html) */
+        #book-content .cma-page { border-top: 1px dashed #cbd5e1; padding-top: .75rem; margin-top: .75rem; scroll-margin-top: 4rem; }
+        #book-content .cma-page-num { font-size: .75rem; color: #94a3b8; font-weight: 600; }
+        #book-content .cma-page p { margin: .5rem 0 .75rem; line-height: 1.6; }
+        #book-content .cma-empty { color: #9ca3af; font-style: italic; }
+        #book-content .cma-page-target { background: #fefce8; }
+        #book-content .cma-photo { display: block; max-width: 100%; height: auto; margin: .5rem 0; border-radius: .25rem; }
     </style>
 </head>
 <body class="bg-slate-50 min-h-screen">
@@ -276,7 +284,7 @@
                 <div id="lake-detail-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
                     <div class="flex items-center justify-center min-h-screen p-4">
                         <div id="lake-modal-card" class="bg-white rounded-lg max-w-4xl w-full max-h-screen overflow-y-auto">
-                            <div class="p-6">
+                            <div id="lake-view" class="p-6">
                                 <div class="flex justify-between items-center mb-4">
                                     <h2 id="modal-title" class="text-2xl font-bold"></h2>
                                     <div class="flex items-center gap-3">
@@ -287,6 +295,20 @@
                                 <div id="modal-content" class="space-y-6">
                                     <!-- Lake details will be populated here -->
                                 </div>
+                            </div>
+                            <!-- In-modal Cordell Andersen book viewer: page-number
+                                 citations swap the lake view for the full book text
+                                 (fetched once from cma_book.html), scrolled to the
+                                 cited page. The back arrow returns to the lake. -->
+                            <div id="book-view" class="hidden p-6 pt-0">
+                                <div class="sticky top-0 z-10 -mx-6 px-6 py-3 bg-white border-b border-slate-200 flex items-center gap-3">
+                                    <button id="book-back" title="Back to lake" class="text-2xl leading-none text-slate-500 hover:text-slate-800">&larr;</button>
+                                    <div class="min-w-0 flex-1">
+                                        <div class="font-semibold text-gray-800 truncate">The High Uinta Mountains</div>
+                                        <div class="text-xs text-gray-500">Cordell M. Andersen</div>
+                                    </div>
+                                </div>
+                                <div id="book-content" class="text-sm text-gray-700 pt-2"></div>
                             </div>
                         </div>
                     </div>
@@ -535,11 +557,22 @@
                 // Mark as loaded
                 document.body.classList.add('loaded');
 
-                // Deep link: open a lake (#BR-25) or the about page (#about)
+                // Warm the service-worker cache with the Cordell Andersen book
+                // (~1.3MB) so page-citation links work offline on the trail even
+                // if the book was never opened at home. Fire-and-forget; it's
+                // deliberately NOT in the SW precache list so a missing file
+                // can't break the install.
+                setTimeout(() => { fetch('cma_book.html').catch(() => {}); }, 4000);
+
+                // Deep link: open a lake (#BR-25), the about page (#about), or
+                // a page of the Andersen book (#book-p356)
                 if (location.hash.length > 1) {
                     const target = decodeURIComponent(location.hash.slice(1));
+                    const bookPage = target.match(/^book-p(\d+)$/);
                     if (target === 'about') {
                         openAboutModal();
+                    } else if (bookPage) {
+                        openBookPage(parseInt(bookPage[1], 10));
                     } else if (lakes.some(l => l.letter_number === target)) {
                         showLakeDetail(target);
                     }
@@ -759,6 +792,13 @@
             document.getElementById('apply-filters').addEventListener('click', applyFilters);
             document.getElementById('clear-filters').addEventListener('click', clearFilters);
             document.getElementById('close-modal').addEventListener('click', closeModal);
+            document.getElementById('book-back').addEventListener('click', () => {
+                if (history.state && history.state.modal === 'book') {
+                    history.back();  // popstate swaps back to the lake view (or closes)
+                } else {
+                    closeBookView();
+                }
+            });
 
             // Collapsible filter panel
             document.getElementById('filters-toggle').addEventListener('click', () => {
@@ -808,9 +848,21 @@
                 if (e.state && e.state.modal === 'lake') {
                     const target = decodeURIComponent(location.hash.slice(1));
                     if (lakes.some(l => l.letter_number === target)) {
+                        // Popping back from the book viewer: just swap views so
+                        // the lake keeps its scroll position and expanded notes.
+                        const lakeModalOpen = !document.getElementById('lake-detail-modal').classList.contains('hidden');
+                        if (lakeModalOpen && !document.getElementById('book-view').classList.contains('hidden')) {
+                            closeBookView();
+                            return;
+                        }
                         showLakeDetail(target);
                         return;
                     }
+                } else if (e.state && e.state.modal === 'book') {
+                    // Forward-navigation back into the book entry
+                    const pg = (location.hash.match(/^#book-p(\d+)/) || [])[1];
+                    if (pg) { revealBookPage(parseInt(pg, 10)); }
+                    return;
                 } else if (e.state && e.state.modal === 'about') {
                     openAboutModal();
                     return;
@@ -1500,13 +1552,93 @@
             return `<div class="text-gray-700 leading-relaxed">${text.replace(/^## (.+)$/gm, '<h6 class="font-semibold text-base mt-4 mb-1">$1</h6>').replace(/<\/h6>\n+/g, '</h6>').replace(/\n/g, '<br>')}</div>`;
         }
 
-        // cma_notes: escaped book text; *italic* citations, blank-line paragraphs
+        // cma_notes: escaped book text; *italic* citations, blank-line paragraphs.
+        // "(p. NNN)" citations become links into the in-modal book viewer.
         function cmaHtml(text) {
             const body = escHtml(text)
+                .replace(/\*\(p\. (\d+)\)\*/g, (m, pg) =>
+                    `<a href="#book-p${pg}" onclick="openBookPage(${pg});return false;" class="text-slate-500 italic underline decoration-dotted hover:text-slate-700">(p. ${pg})</a>`)
                 .replace(/\*([^*\n]+)\*/g, '<em class="text-gray-500">$1</em>')
                 .split(/\n\n+/)
                 .map(p => `<p class="mb-3">${p}</p>`) .join('');
             return `<div class="text-gray-700 leading-relaxed">${body}</div>`;
+        }
+
+        // ---- Cordell Andersen book viewer (inside the lake modal) ----
+        // The full book text lives in cma_book.html (generated by
+        // scripts/export_cma_book.py, one <section id="cma-pNNN"> per printed
+        // page). It's fetched once per app load and injected into #book-content;
+        // the service worker caches it after the first fetch, so it works
+        // offline on later trips.
+        let cmaBookLoaded = false;
+        let bookReturnScroll = null;  // lake-view scroll position to restore on back
+
+        async function loadBook(contentEl) {
+            if (cmaBookLoaded) return true;
+            contentEl.innerHTML = '<p class="text-gray-500 py-4">Loading the book…</p>';
+            try {
+                const resp = await fetch('cma_book.html');
+                if (!resp.ok) throw new Error('HTTP ' + resp.status);
+                const doc = new DOMParser().parseFromString(await resp.text(), 'text/html');
+                contentEl.innerHTML = doc.getElementById('book').innerHTML;
+                cmaBookLoaded = true;
+                return true;
+            } catch (e) {
+                contentEl.innerHTML = '<p class="text-gray-500 py-4">Couldn\'t load the book text — you may be offline and it isn\'t cached yet.</p>';
+                return false;
+            }
+        }
+
+        async function openBookPage(page) {
+            const modal = document.getElementById('lake-detail-modal');
+            const card = document.getElementById('lake-modal-card');
+            const modalWasOpen = !modal.classList.contains('hidden');
+            if (modalWasOpen) {
+                bookReturnScroll = card.scrollTop;
+                // Stack on top of the lake's history entry so back (swipe or
+                // the ← arrow) returns to the lake view, not out of the app.
+                history.pushState({ modal: 'book' }, '', '#book-p' + page);
+            } else {
+                // Opened from the drainage view: modal shows only the book.
+                bookReturnScroll = null;
+                pushModalState('book', '#book-p' + page);
+            }
+            await revealBookPage(page);
+        }
+
+        // Display half of openBookPage — no history side effects, so popstate
+        // (forward navigation back into the book) can reuse it.
+        async function revealBookPage(page) {
+            const modal = document.getElementById('lake-detail-modal');
+            const card = document.getElementById('lake-modal-card');
+            modal.classList.remove('hidden');
+            document.getElementById('lake-view').classList.add('hidden');
+            document.getElementById('book-view').classList.remove('hidden');
+            const contentEl = document.getElementById('book-content');
+            if (!(await loadBook(contentEl))) return;
+            contentEl.querySelectorAll('.cma-page-target').forEach(el => el.classList.remove('cma-page-target'));
+            const target = document.getElementById('cma-p' + page);
+            if (target) {
+                target.classList.add('cma-page-target');
+                target.scrollIntoView();
+            } else {
+                card.scrollTop = 0;
+            }
+        }
+
+        // Swap back to the lake view without re-rendering it (keeps expanded
+        // notes + scroll position). Used by popstate when the book entry pops.
+        function closeBookView() {
+            resetBookView();
+            if (bookReturnScroll !== null) {
+                document.getElementById('lake-modal-card').scrollTop = bookReturnScroll;
+                bookReturnScroll = null;
+            }
+        }
+
+        function resetBookView() {
+            document.getElementById('book-view').classList.add('hidden');
+            document.getElementById('lake-view').classList.remove('hidden');
         }
 
         // ---- Trailheads (from the CMA book) ----
@@ -1522,7 +1654,10 @@
                 <details class="border border-slate-200 rounded-lg px-3 py-2">
                     <summary class="cursor-pointer text-sm font-medium text-gray-800">
                         🥾 ${escHtml(th.name)}
-                        <span class="text-xs text-gray-500 font-normal">— book p. ${escHtml((th.pages || '').split(',')[0])}</span>
+                        <span class="text-xs text-gray-500 font-normal">— book
+                            <a href="#book-p${parseInt((th.pages || '').split(',')[0], 10) || 1}"
+                               onclick="openBookPage(${parseInt((th.pages || '').split(',')[0], 10) || 1});return false;"
+                               class="underline decoration-dotted hover:text-slate-700">p. ${escHtml((th.pages || '').split(',')[0])}</a></span>
                     </summary>
                     <div class="mt-2 text-sm text-gray-700 leading-relaxed">${info}${lakeChips}</div>
                 </details>`;
@@ -1571,6 +1706,7 @@
         function showLakeDetail(letterNumber) {
             const lake = lakes.find(l => l.letter_number === letterNumber);
             if (!lake) return;
+            resetBookView();
 
             const modal = document.getElementById('lake-detail-modal');
             const title = document.getElementById('modal-title');
@@ -1819,6 +1955,8 @@
         }
 
         function hideModals() {
+            resetBookView();
+            bookReturnScroll = null;
             document.getElementById('lake-detail-modal').classList.add('hidden');
             document.getElementById('about-modal').classList.add('hidden');
             document.getElementById('rotenone-modal').classList.add('hidden');

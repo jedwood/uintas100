@@ -269,7 +269,7 @@ pub async fn start_web_server(
     }
 
     let child = Command::new("python3")
-        .args(["-m", "http.server", "8000"])
+        .args(["-m", "http.server", "8804"])
         .current_dir(&project_dir)
         .stdout(Stdio::null())
         .stderr(Stdio::null())
