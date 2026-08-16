@@ -2,3 +2,4 @@ requests==2.31.0
 beautifulsoup4==4.12.2
 lxml==4.9.3
 sqlite3
+pywebpush==2.4.0   # Web Push (iOS PWA notifications) — see scripts/push_utils.py

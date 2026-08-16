@@ -1,5 +1,13 @@
-const CACHE_NAME = 'uintas-v1786716025';
+const CACHE_NAME = 'uintas-v1786845228';
 const MAX_CACHE_SIZE = 45 * 1024 * 1024; // Stay under iOS 50MB limit
+
+// A version-INDEPENDENT cache used as a tiny key/value store shared between this
+// service worker and the page (the unseen-badge count, the last stocking report,
+// and the push config the SW needs to re-subscribe). It must survive cache
+// version bumps, so the activate cleanup below deliberately spares it. Both
+// contexts read/write it via caches.open(PUSH_STATE_CACHE) — never via fetch(),
+// so it bypasses the fetch handler entirely.
+const PUSH_STATE_CACHE = 'uintas-push-state';
 
 // Resources to cache immediately. Everything is served locally — no CDN
 // dependence — so the app works offline even on its first install.
@@ -67,7 +75,10 @@ self.addEventListener('activate', event => {
             .then(cacheNames => {
                 return Promise.all(
                     cacheNames.map(cacheName => {
-                        if (cacheName !== CACHE_NAME) {
+                        // Spare the current app cache AND the push-state store
+                        // (badge count / last report) — the latter must persist
+                        // across version bumps.
+                        if (cacheName !== CACHE_NAME && cacheName !== PUSH_STATE_CACHE) {
                             console.log('Service Worker: Deleting old cache', cacheName);
                             return caches.delete(cacheName);
                         }
@@ -230,7 +241,145 @@ async function cacheResponse(request, response) {
 
 // Handle messages from the main thread
 self.addEventListener('message', event => {
-    if (event.data && event.data.type === 'SKIP_WAITING') {
+    if (!event.data) return;
+    if (event.data.type === 'SKIP_WAITING') {
         self.skipWaiting();
     }
+    // The page clears the app badge when it's opened/focused (the updates have
+    // been seen), and resets our unseen counter so the next push starts fresh.
+    if (event.data.type === 'CLEAR_BADGE') {
+        event.waitUntil((async () => {
+            await pushStateSet('badge', { n: 0 });
+            if (self.navigator && self.navigator.clearAppBadge) {
+                try { await self.navigator.clearAppBadge(); } catch (e) {}
+            }
+        })());
+    }
+    // The page hands us the info we need to re-subscribe on our own if the
+    // push subscription is rotated by the OS while the app is closed.
+    if (event.data.type === 'PUSH_CONFIG' && event.data.config) {
+        event.waitUntil(pushStateSet('config', event.data.config));
+    }
+});
+
+// ---- Web Push (iOS 16.4+ Home-Screen PWAs; standard VAPID) ----------------
+
+// Tiny key/value helpers over PUSH_STATE_CACHE. Values are JSON. Reading via
+// caches.open(...).match(...) bypasses the fetch handler, so these synthetic
+// URLs never hit the network and never collide with real assets.
+async function pushStateSet(key, value) {
+    try {
+        const cache = await caches.open(PUSH_STATE_CACHE);
+        await cache.put('/__push__/' + key, new Response(JSON.stringify(value), {
+            headers: { 'Content-Type': 'application/json' }
+        }));
+    } catch (e) { /* best-effort */ }
+}
+async function pushStateGet(key, fallback) {
+    try {
+        const cache = await caches.open(PUSH_STATE_CACHE);
+        const res = await cache.match('/__push__/' + key);
+        return res ? await res.json() : fallback;
+    } catch (e) { return fallback; }
+}
+
+function b64ToU8(base64) {
+    const padding = '='.repeat((4 - base64.length % 4) % 4);
+    const b64 = (base64 + padding).replace(/-/g, '+').replace(/_/g, '/');
+    const raw = atob(b64);
+    const arr = new Uint8Array(raw.length);
+    for (let i = 0; i < raw.length; i++) arr[i] = raw.charCodeAt(i);
+    return arr;
+}
+
+self.addEventListener('push', event => {
+    event.waitUntil(handlePush(event));
+});
+
+async function handlePush(event) {
+    let payload = {};
+    try {
+        payload = event.data ? event.data.json() : {};
+    } catch (e) {
+        try { payload = { body: event.data.text() }; } catch (_) { payload = {}; }
+    }
+    const title = payload.title || '🏔️ Uintas';
+    const body = payload.body || 'New stocking update';
+
+    // Cumulative badge: this batch adds to whatever the user hasn't opened yet.
+    // setAppBadge takes an absolute number, so we track the running total here.
+    const batch = Number(payload.badge) || 0;
+    if (batch > 0) {
+        const prev = (await pushStateGet('badge', { n: 0 })).n || 0;
+        const total = prev + batch;
+        await pushStateSet('badge', { n: total });
+        if (self.navigator && self.navigator.setAppBadge) {
+            try { await self.navigator.setAppBadge(total); } catch (e) {}
+        }
+    }
+
+    // Stash the full report so tapping the notification shows all of it even on
+    // a cold start — the payload is the source of truth, so this never races the
+    // github.io redeploy of lakes_data.json (which can lag the push by a minute).
+    if (payload.report) await pushStateSet('report', payload.report);
+
+    // If a window is already open, let it fold in the report/badge live.
+    const clients = await self.clients.matchAll({ includeUncontrolled: true, type: 'window' });
+    clients.forEach(c => c.postMessage({ type: 'PUSH_RECEIVED', report: payload.report || null }));
+
+    await self.registration.showNotification(title, {
+        body,
+        icon: './icon-192.png',
+        badge: './icon-192.png',
+        tag: 'uintas-stocking',   // collapse a burst into one notification
+        renotify: true,
+        data: { path: payload.path || './?view=stocking-report' }
+    });
+}
+
+self.addEventListener('notificationclick', event => {
+    event.notification.close();
+    const path = (event.notification.data && event.notification.data.path)
+        || './?view=stocking-report';
+    event.waitUntil((async () => {
+        const all = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
+        for (const c of all) {
+            if ('focus' in c) {
+                await c.focus();
+                c.postMessage({ type: 'SHOW_STOCKING_REPORT' });
+                return;
+            }
+        }
+        if (self.clients.openWindow) await self.clients.openWindow(path);
+    })());
+});
+
+// If iOS rotates/expires the subscription while the app is closed, re-subscribe
+// using the config the page stashed, and re-register it with the Mini. Falls
+// back to a pending stash the page flushes on its next open.
+self.addEventListener('pushsubscriptionchange', event => {
+    event.waitUntil((async () => {
+        const cfg = await pushStateGet('config', null);
+        if (!cfg || !cfg.appServerKey) return;
+        let sub;
+        try {
+            sub = await self.registration.pushManager.subscribe({
+                userVisibleOnly: true,
+                applicationServerKey: b64ToU8(cfg.appServerKey)
+            });
+        } catch (e) { return; }
+        const subJson = sub.toJSON();
+        let posted = false;
+        if (cfg.serverUrl) {
+            try {
+                const r = await fetch(cfg.serverUrl + '/api/push/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ subscription: subJson, device: cfg.deviceId || 'sw' })
+                });
+                posted = r.ok;
+            } catch (e) { /* stash below */ }
+        }
+        if (!posted) await pushStateSet('pendingSubscription', subJson);
+    })());
 });

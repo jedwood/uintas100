@@ -56,6 +56,7 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from writer_guard import REPO_ROOT, is_readonly_mirror  # noqa: E402
+import push_utils  # noqa: E402  (Web Push subscribe/unsubscribe + VAPID public key)
 
 DEFAULT_DB = os.path.join(REPO_ROOT, "uinta_lakes.db")
 DEFAULT_LOG = os.path.join(REPO_ROOT, "data", "app_edits_log.jsonl")
@@ -238,15 +239,37 @@ class EditsHandler(SimpleHTTPRequestHandler):
             return self._json({"ok": True, "role": "writer"})
         if self.path == "/api/user-data":
             return self._json({"lakes": get_user_data(self.db_path)})
+        if self.path == "/api/push/public-key":
+            # The VAPID application server key the PWA passes to
+            # pushManager.subscribe(). Public by design; also embedded in
+            # index.html, but serving it lets the app confirm the live key.
+            try:
+                return self._json({"key": push_utils.application_server_key()})
+            except FileNotFoundError:
+                return self._json({"error": "no vapid key on server"}, 503)
         return super().do_GET()  # also serves the repo statically (test harness)
 
-    def do_POST(self):
-        if self.path != "/api/edits":
-            return self._json({"error": "not found"}, 404)
+    def _read_json(self):
         length = int(self.headers.get("Content-Length", 0))
         try:
-            payload = json.loads(self.rfile.read(length) or b"{}")
+            return json.loads(self.rfile.read(length) or b"{}")
         except json.JSONDecodeError:
+            return None
+
+    def do_POST(self):
+        if self.path == "/api/edits":
+            return self._post_edits()
+        if self.path == "/api/push/subscribe":
+            return self._post_subscribe()
+        if self.path == "/api/push/unsubscribe":
+            return self._post_unsubscribe()
+        if self.path == "/api/push/test":
+            return self._post_test()
+        return self._json({"error": "not found"}, 404)
+
+    def _post_edits(self):
+        payload = self._read_json()
+        if payload is None:
             return self._json({"error": "bad json"}, 400)
         edits = payload.get("edits") or []
         if not isinstance(edits, list) or len(edits) > 500:
@@ -256,6 +279,38 @@ class EditsHandler(SimpleHTTPRequestHandler):
         if applied_any and self.use_git:
             _commit_signal.set()
         return self._json({"results": results})
+
+    def _post_subscribe(self):
+        # Store a device's Web Push subscription so the stocking job can notify
+        # it. Subscriptions are secrets kept OUT of git (data/push/), so this
+        # touches nothing the commit/seed machinery cares about.
+        payload = self._read_json()
+        if payload is None:
+            return self._json({"error": "bad json"}, 400)
+        try:
+            count = push_utils.add_subscription(
+                payload.get("subscription"), device=payload.get("device", ""))
+        except ValueError as e:
+            return self._json({"error": str(e)}, 400)
+        return self._json({"ok": True, "subscriptions": count})
+
+    def _post_unsubscribe(self):
+        payload = self._read_json()
+        if payload is None:
+            return self._json({"error": "bad json"}, 400)
+        removed = push_utils.remove_subscription(payload.get("endpoint", ""))
+        return self._json({"ok": True, "removed": removed})
+
+    def _post_test(self):
+        # "Send test" button in the app: fire a real push to every subscribed
+        # device so a fresh install can confirm delivery + badging end to end.
+        payload = self._read_json() or {}
+        msg = str(payload.get("message") or "Test push from the Uintas Mini 🏔️")[:200]
+        result = push_utils.broadcast(
+            title="🏔️ Uintas test", body=msg, badge=1,
+            report={"when": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                    "total": 0, "items": [], "test": True, "message": msg})
+        return self._json({"ok": True, **result})
 
     def log_message(self, fmt, *args):
         first = args[0] if args else ""

@@ -11,6 +11,7 @@
 
     <!-- iOS PWA Meta Tags -->
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Uintas 💯">
     <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
@@ -466,7 +467,32 @@
                                     <button id="sync-now-btn" class="flex-1 bg-slate-700 text-white px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors">Sync now</button>
                                     <button id="sync-save-url" class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-slate-50 transition-colors">Save URL</button>
                                 </div>
+
+                                <!-- Notifications: iOS 16.4+ Web Push + home-screen badge -->
+                                <div class="mt-6 pt-5 border-t border-gray-200">
+                                    <h3 class="text-lg font-bold mb-1">Notifications</h3>
+                                    <p class="text-xs text-gray-500 mb-3">Get a push and a home-screen badge when the DWR stocks a new lake. On iPhone: add the app to your Home Screen and turn on the Tailscale VPN, then enable.</p>
+                                    <div id="notif-status-line" class="text-sm font-medium text-gray-800 mb-3"></div>
+                                    <div class="flex gap-2">
+                                        <button id="notif-toggle-btn" class="flex-1 bg-slate-700 text-white px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors">Enable notifications</button>
+                                        <button id="notif-test-btn" class="hidden px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-slate-50 transition-colors">Send test</button>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stocking report modal: opened from a stocking push notification -->
+                <div id="stocking-report-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+                    <div class="flex items-center justify-center min-h-screen p-4">
+                        <div id="stocking-report-card" class="bg-white rounded-lg max-w-md w-full flex flex-col" style="max-height:85vh">
+                            <div class="p-6 pb-3 flex justify-between items-center border-b border-gray-200">
+                                <h2 class="text-xl font-bold">🎣 New stockings</h2>
+                                <button id="close-stocking-report" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+                            </div>
+                            <div id="stocking-report-meta" class="px-6 pt-3 text-xs text-gray-500"></div>
+                            <div id="stocking-report-body" class="px-6 py-3 overflow-y-auto"></div>
                         </div>
                     </div>
                 </div>
@@ -578,6 +604,19 @@
                     }
                 }
 
+                // Opened by tapping a stocking notification (cold start): show
+                // the full report from the payload the SW stashed, then strip the
+                // param so a refresh doesn't reopen it.
+                if (new URLSearchParams(location.search).get('view') === 'stocking-report') {
+                    openStockingReportFromStash();
+                    history.replaceState(null, '', location.pathname + location.hash);
+                }
+
+                // Notifications: re-register the subscription if enabled, and
+                // clear the badge (the app is now open → updates seen).
+                ensurePushRegistered();
+                clearAppBadgeNow();
+
                 // Keep a long-open window fresh without a manual restart.
                 startAutoRefresh();
 
@@ -654,7 +693,13 @@
         function startAutoRefresh() {
             if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.addEventListener('message', e => {
-                    if (e.data && e.data.type === 'DATA_UPDATED') refreshData();
+                    if (!e.data) return;
+                    if (e.data.type === 'DATA_UPDATED') refreshData();
+                    // Tapped a stocking notification while the app was open.
+                    else if (e.data.type === 'SHOW_STOCKING_REPORT') openStockingReportFromStash();
+                    // A push arrived while the app is open — pull fresh data so the
+                    // stocked lake shows up without waiting for the heartbeat.
+                    else if (e.data.type === 'PUSH_RECEIVED') refreshData();
                 });
             }
             // The desktop (Tauri) shell embeds this page in an iframe and
@@ -2057,6 +2102,14 @@
         //   the device's Tailscale VPN is on, not just at home.
         const SYNC_FALLBACKS = ['http://olaf.local:8802', 'https://olaf.tailbf6340.ts.net'];
         const USER_FIELDS = ['status', 'jed_notes', 'trip_reports'];
+
+        // VAPID application server key (public half of the Mini's keypair — safe
+        // to publish). The private half stays on the Mini in data/push/ and signs
+        // each push. Regenerated only via `python3 scripts/push_utils.py
+        // generate-keys` (which reprints this string; pasting a new one here
+        // invalidates every existing subscription).
+        const VAPID_PUBLIC_KEY = 'BI8lnl8tYO1vV5am4Hsas0z--PTU0kc7Ljs_RzuqtYNKTDbn18WOK2620cZdCzvJlCls-rfIszywJxw0o1H8hTU';
+        const PUSH_STATE_CACHE = 'uintas-push-state';  // must match service-worker.js
         // { "G-15": { status: {id, v, ts, synced}, ... }, ... }
         let localEdits = {};
         try { localEdits = JSON.parse(localStorage.getItem('uintas-local-edits') || '{}'); } catch (e) {}
@@ -2222,6 +2275,7 @@
         function openSyncModal() {
             document.getElementById('sync-url-input').value = localStorage.getItem('uintas-sync-url') || '';
             refreshSyncModalStatus();
+            refreshNotifStatus();
             document.getElementById('sync-modal').classList.remove('hidden');
         }
         function refreshSyncModalStatus() {
@@ -2251,6 +2305,18 @@
             document.getElementById('sync-now-btn').addEventListener('click', () =>
                 syncNow().then(refreshSyncModalStatus));
 
+            // Notifications (Web Push) controls
+            document.getElementById('notif-toggle-btn').addEventListener('click', (e) => {
+                const btn = e.currentTarget;
+                if (btn.dataset.on) disableNotifications();
+                else enableNotifications();
+            });
+            document.getElementById('notif-test-btn').addEventListener('click', sendTestPush);
+            document.getElementById('close-stocking-report').addEventListener('click', closeStockingReport);
+            document.getElementById('stocking-report-modal').addEventListener('click', (e) => {
+                if (!e.target.closest('#stocking-report-card')) closeStockingReport();
+            });
+
             // Background flush triggers: shortly after launch, when connectivity
             // returns, when the app comes back to the foreground, and a slow
             // heartbeat. All are no-ops when there's nothing pending AND the
@@ -2260,8 +2326,201 @@
             setInterval(syncNow, 5 * 60 * 1000);
             window.addEventListener('online', syncNow);
             document.addEventListener('visibilitychange', () => {
-                if (document.visibilityState === 'visible') syncNow();
+                if (document.visibilityState === 'visible') { syncNow(); clearAppBadgeNow(); }
             });
+        }
+
+        // ---- Notifications / Web Push -------------------------------------
+        // iOS 16.4+ supports Web Push and the Badging API, but ONLY for a PWA
+        // installed to the Home Screen, and permission MUST be asked from a user
+        // gesture (the Enable button). The subscribe POST goes to the Mini via
+        // the same server resolution the edits sync uses (Tailscale on iPhone).
+        function pushSupported() {
+            return 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
+        }
+        function urlB64ToUint8Array(base64String) {
+            const padding = '='.repeat((4 - base64String.length % 4) % 4);
+            const b64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
+            const raw = atob(b64);
+            const out = new Uint8Array(raw.length);
+            for (let i = 0; i < raw.length; ++i) out[i] = raw.charCodeAt(i);
+            return out;
+        }
+        function setNotifStatus(state) {
+            const line = document.getElementById('notif-status-line');
+            const btn = document.getElementById('notif-toggle-btn');
+            const testBtn = document.getElementById('notif-test-btn');
+            if (!line || !btn) return;
+            const messages = {
+                on: '✓ Notifications on for this device',
+                off: 'Notifications are off',
+                unsupported: 'This browser can’t do web push. On iPhone, open in Safari and Add to Home Screen.',
+                'need-install': 'Add to Home Screen first (Share → Add to Home Screen), then open the installed app and enable.',
+                blocked: 'Blocked — turn on in iOS Settings → Notifications → Uintas 💯.',
+                'no-server': 'Can’t reach the Mini. Turn on the Tailscale VPN and try again.',
+                'server-error': 'The server couldn’t register this device. Try again.',
+                working: 'Working…'
+            };
+            line.textContent = messages[state] || messages.off;
+            const isOn = state === 'on';
+            btn.textContent = isOn ? 'Turn off notifications' : 'Enable notifications';
+            btn.dataset.on = isOn ? '1' : '';
+            btn.disabled = state === 'working';
+            if (testBtn) testBtn.classList.toggle('hidden', !isOn);
+        }
+        async function currentPushSubscription() {
+            if (!pushSupported()) return null;
+            try {
+                const reg = await navigator.serviceWorker.ready;
+                return await reg.pushManager.getSubscription();
+            } catch (e) { return null; }
+        }
+        async function refreshNotifStatus() {
+            if (!pushSupported()) return setNotifStatus('unsupported');
+            if (Notification.permission === 'denied') return setNotifStatus('blocked');
+            const sub = await currentPushSubscription();
+            setNotifStatus(sub && localStorage.getItem('uintas-notif-enabled') ? 'on' : 'off');
+        }
+        // Hand the SW the info it needs to re-subscribe on its own if iOS rotates
+        // the subscription while the app is closed.
+        function stashPushConfig(base) {
+            const c = navigator.serviceWorker && navigator.serviceWorker.controller;
+            if (c) c.postMessage({ type: 'PUSH_CONFIG',
+                config: { appServerKey: VAPID_PUBLIC_KEY, serverUrl: base, deviceId } });
+        }
+        async function enableNotifications() {
+            if (!pushSupported()) return setNotifStatus('unsupported');
+            if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !isPWA())
+                return setNotifStatus('need-install');
+            setNotifStatus('working');
+            let perm;
+            try { perm = await Notification.requestPermission(); }
+            catch (e) { perm = Notification.permission; }
+            if (perm !== 'granted')
+                return setNotifStatus(perm === 'denied' ? 'blocked' : 'off');
+            try {
+                const reg = await navigator.serviceWorker.ready;
+                let sub = await reg.pushManager.getSubscription();
+                if (!sub) {
+                    sub = await reg.pushManager.subscribe({
+                        userVisibleOnly: true,
+                        applicationServerKey: urlB64ToUint8Array(VAPID_PUBLIC_KEY)
+                    });
+                }
+                const base = await resolveSyncUrl();
+                if (!base) return setNotifStatus('no-server');
+                const r = await fetch(base + '/api/push/subscribe', {
+                    method: 'POST', headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ subscription: sub.toJSON(), device: deviceId })
+                });
+                if (!r.ok) return setNotifStatus('server-error');
+                stashPushConfig(base);
+                localStorage.setItem('uintas-notif-enabled', '1');
+                setNotifStatus('on');
+            } catch (e) {
+                console.warn('enableNotifications failed', e);
+                setNotifStatus('server-error');
+            }
+        }
+        async function disableNotifications() {
+            localStorage.removeItem('uintas-notif-enabled');
+            const sub = await currentPushSubscription();
+            if (sub) {
+                try {
+                    const base = await resolveSyncUrl();
+                    if (base) await fetch(base + '/api/push/unsubscribe', {
+                        method: 'POST', headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ endpoint: sub.endpoint })
+                    });
+                } catch (e) { /* best-effort; still unsubscribe locally */ }
+                try { await sub.unsubscribe(); } catch (e) {}
+            }
+            setNotifStatus('off');
+        }
+        async function sendTestPush() {
+            const testBtn = document.getElementById('notif-test-btn');
+            if (testBtn) { testBtn.disabled = true; testBtn.textContent = 'Sending…'; }
+            try {
+                const base = await resolveSyncUrl();
+                if (!base) { setNotifStatus('no-server'); return; }
+                await fetch(base + '/api/push/test', {
+                    method: 'POST', headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: 'It works! You’ll get these when a lake is stocked.' })
+                });
+            } catch (e) { /* ignore */ }
+            finally { if (testBtn) { testBtn.disabled = false; testBtn.textContent = 'Send test'; } }
+        }
+        // Re-register the current subscription with the Mini on each open when
+        // notifications are enabled — idempotent (server dedupes by endpoint) and
+        // covers a subscription the OS quietly rotated.
+        async function ensurePushRegistered() {
+            if (!localStorage.getItem('uintas-notif-enabled')) return;
+            if (!pushSupported() || Notification.permission !== 'granted') return;
+            try {
+                const reg = await navigator.serviceWorker.ready;
+                let sub = await reg.pushManager.getSubscription();
+                if (!sub) sub = await reg.pushManager.subscribe({
+                    userVisibleOnly: true,
+                    applicationServerKey: urlB64ToUint8Array(VAPID_PUBLIC_KEY)
+                });
+                const base = await resolveSyncUrl();
+                if (!base) return;
+                await fetch(base + '/api/push/subscribe', {
+                    method: 'POST', headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ subscription: sub.toJSON(), device: deviceId })
+                });
+                stashPushConfig(base);
+            } catch (e) { /* best-effort */ }
+        }
+
+        // ---- App badge + stocking-report view -----------------------------
+        function clearAppBadgeNow() {
+            if (navigator.clearAppBadge) { try { navigator.clearAppBadge(); } catch (e) {} }
+            const c = navigator.serviceWorker && navigator.serviceWorker.controller;
+            if (c) c.postMessage({ type: 'CLEAR_BADGE' });
+        }
+        function escapeHtml(s) {
+            return String(s == null ? '' : s).replace(/[&<>"']/g, ch => (
+                { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+        }
+        async function readStashedReport() {
+            try {
+                const cache = await caches.open(PUSH_STATE_CACHE);
+                const res = await cache.match('/__push__/report');
+                return res ? await res.json() : null;
+            } catch (e) { return null; }
+        }
+        function showStockingReport(report) {
+            const modal = document.getElementById('stocking-report-modal');
+            const body = document.getElementById('stocking-report-body');
+            const meta = document.getElementById('stocking-report-meta');
+            const items = (report && report.items) || [];
+            meta.textContent = report && report.when
+                ? new Date(report.when).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' })
+                : '';
+            if (report && report.test) {
+                body.innerHTML = `<p class="text-gray-700 text-sm py-2">${escapeHtml(report.message || 'Test notification.')}</p>`;
+            } else if (!items.length) {
+                body.innerHTML = '<p class="text-gray-600 text-sm py-2">No stocking details available.</p>';
+            } else {
+                body.innerHTML = items.map(it => {
+                    const name = it.name ? `${it.name} (${it.lake})` : it.lake;
+                    const qty = (it.qty != null) ? Number(it.qty).toLocaleString() : '';
+                    const len = it.len ? ` · ${it.len}"` : '';
+                    return `<div class="py-2 border-b border-gray-100 last:border-0">
+                        <div class="font-semibold text-gray-800">${escapeHtml(name)}</div>
+                        <div class="text-sm text-gray-600">${escapeHtml(it.species || '')}${qty ? ' ×' + qty : ''}${len}${it.date ? ' · ' + escapeHtml(it.date) : ''}</div>
+                    </div>`;
+                }).join('');
+            }
+            modal.classList.remove('hidden');
+            clearAppBadgeNow();
+        }
+        function closeStockingReport() {
+            document.getElementById('stocking-report-modal').classList.add('hidden');
+        }
+        async function openStockingReportFromStash() {
+            showStockingReport(await readStashedReport());
         }
 
         // Service Worker Registration

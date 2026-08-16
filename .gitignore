@@ -28,3 +28,8 @@ logs/notes_backups/
 data/the-high-uinta-mountains-by-cma.pdf
 data/cma-book-web.pdf
 data/tailscale_book/
+
+# Web Push secrets (Mini-only): VAPID private key + per-device subscription list.
+# The repo is public — these MUST never be committed. The VAPID *public* key is
+# embedded in index.html (public by design). See scripts/push_utils.py.
+data/push/

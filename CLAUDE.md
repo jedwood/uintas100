@@ -132,6 +132,48 @@ curl http://olaf.local:8802/api/ping        # is the writer up?
 tail -f /Users/jed/Library/Logs/uintas-edits-server.log
 ```
 
+### Push notifications + home-screen badge (iOS 16.4+ Web Push, added 2026-08-15)
+Replaces the old external Telegram "new stockings" ping with native PWA push
+notifications and an app-icon badge. iOS 16.4+ supports Web Push **and** the
+Badging API for a PWA **installed to the Home Screen** — using standard VAPID,
+so **no Apple Developer account / APNs certs** are needed (Apple runs the relay).
+
+- **Keys/secrets (Mini-only, gitignored `data/push/`):** one VAPID keypair.
+  The private key + the per-device `subscriptions.json` are secrets and MUST NOT
+  be committed (the repo is public). The **public** key is embedded in
+  `index.html` (`VAPID_PUBLIC_KEY`). Regenerate only via
+  `python3 scripts/push_utils.py generate-keys` — it reprints the public key to
+  paste into `index.html`; a new key invalidates every existing subscription.
+- **`scripts/push_utils.py`** — shared module: key handling, subscription store,
+  and `broadcast(title, body, report, badge)` which sends to every device and
+  **auto-prunes** any subscription the push service 404/410s. Never raises (a
+  push failure can't break the stocking run). Honors `UINTAS_PUSH_DIR` for tests.
+- **Server (reuses the edits server on :8802, Mini-only):** `edits_server.py`
+  adds `GET /api/push/public-key`, `POST /api/push/subscribe`,
+  `POST /api/push/unsubscribe`, `POST /api/push/test`. The iPhone reaches these
+  over the **same** Tailscale HTTPS proxy the edits sync uses (a secure github.io
+  page can't fetch http:// LAN URLs), so enabling/testing needs Tailscale on.
+- **Client (`index.html` "Notifications" block in the Sync panel):** an
+  **Enable notifications** button (iOS requires a user gesture) requests
+  permission → `pushManager.subscribe()` → POSTs the subscription. A **Send
+  test** button hits `/api/push/test`. The app clears the badge when it's opened.
+- **Service worker (`service-worker.js`):** `push` shows the notification, bumps
+  a **cumulative** badge (`setAppBadge`), and stashes the full report in a
+  version-independent cache (`uintas-push-state`, spared by the activate cleanup);
+  `notificationclick` opens the app to the **full stocking report** built from the
+  payload (race-free — no dependency on the github.io redeploy);
+  `pushsubscriptionchange` re-subscribes on its own.
+- **Trigger (`fetch_latest_stocking.py`):** after committing, if there are new
+  **lettered-lake** stockings (fringe creeks/ponds aren't in the PWA, so they're
+  not pushed) it calls `push_utils.broadcast(...)` with a summary + the full list.
+
+```bash
+python3 scripts/push_utils.py list             # which devices are subscribed
+python3 scripts/push_utils.py test "message"   # send a real test push to all devices
+# After changing edits_server.py, restart so endpoints reload:
+launchctl kickstart -k gui/$(id -u)/com.limechile.uintas-edits-server
+```
+
 ### Apple Notes Sync (RETIRED as a write path, 2026-08-10; LaunchAgent undeployed 2026-08-12)
 The Notes round trip is retired: `notes_sync_agent.py` exits immediately unless
 run with `UINTAS_NOTES_SYNC=force`. Reason: the user fields are now edited in

@@ -11,7 +11,8 @@ from database_utils import (
 )
 from species_utils import standardize_stocking_species, update_lake_fish_species, refresh_all_fish_species
 from writer_guard import pull_and_exit_if_readonly
-from datetime import datetime
+import push_utils
+from datetime import datetime, timezone
 
 def insert_stocking_record(cursor, lake_id, species, quantity, length, stock_date, source_year, county):
     """Insert a new stocking record."""
@@ -45,6 +46,7 @@ def parse_and_insert_data(html_content, conn, cursor, county, csv_writer, log_fi
     new_fringe_records = 0
     unmatched_lakes = set()
     new_csv_records = []
+    new_lake_details = []  # for the push notification (lettered lakes only)
 
     for row in rows:
         cols = row.find_all('td')
@@ -118,10 +120,18 @@ def parse_and_insert_data(html_content, conn, cursor, county, csv_writer, log_fi
                 
                 # Log the new record
                 # Show the lake's designation (e.g. WR-33), not the meaningless internal id
-                designation = conn.execute(
-                    "SELECT letter_number FROM lakes WHERE id = ?", (lake_id,)
-                ).fetchone()[0] or lake_id
+                lrow = conn.execute(
+                    "SELECT letter_number, name FROM lakes WHERE id = ?", (lake_id,)
+                ).fetchone()
+                designation = (lrow[0] if lrow else None) or lake_id
+                lake_name = lrow[1] if lrow else None
                 log_file.write(f"  NEW: {water_name} ({designation}) - {species} x {quantity} on {stock_date}\n")
+
+                # Collect for the push notification / stocking-report view.
+                new_lake_details.append({
+                    "lake": designation, "name": lake_name, "species": species,
+                    "quantity": quantity, "length": length, "stock_date": stock_date,
+                })
 
     # Write new records to CSV
     for record in new_csv_records:
@@ -139,7 +149,39 @@ def parse_and_insert_data(html_content, conn, cursor, county, csv_writer, log_fi
             log_file.write(f"    - {lake}\n")
 
     print(f"Inserted {new_records} new stocking records ({new_fringe_records} fringe) for {county} county.")
-    return new_records, new_fringe_records, unmatched_lakes
+    return new_records, new_fringe_records, unmatched_lakes, new_lake_details
+
+def notify_new_stockings(details, log_file):
+    """Push a notification (+ home-screen badge) to every subscribed device for
+    the new lettered-lake stockings this run added. The full list is carried in
+    the payload so tapping the notification shows the whole report offline,
+    without waiting for the github.io redeploy. Never raises — a push failure
+    must not affect the stocking run."""
+    try:
+        n = len(details)
+        title = f"🎣 {n} new Uinta stocking{'s' if n != 1 else ''}"
+        lines = []
+        for d in details[:4]:
+            name = f"{d['name']} ({d['lake']})" if d.get("name") else d["lake"]
+            qty = f"{d['quantity']:,}" if d.get("quantity") is not None else ""
+            lines.append(f"{name}: {d['species']}" + (f" ×{qty}" if qty else ""))
+        if n > 4:
+            lines.append(f"…and {n - 4} more")
+        report = {
+            "when": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "total": n,
+            "items": [
+                {"lake": d["lake"], "name": d.get("name"), "species": d["species"],
+                 "qty": d.get("quantity"), "len": d.get("length"), "date": d.get("stock_date")}
+                for d in details[:50]  # keep the payload well under the ~4KB limit
+            ],
+        }
+        result = push_utils.broadcast(
+            title=title, body="\n".join(lines), report=report, badge=n)
+        log_file.write(f"Push notification: {result} for {n} new stockings\n")
+    except Exception as e:  # noqa: BLE001
+        log_file.write(f"WARNING: push notification failed ({e})\n")
+
 
 def commit_and_push_changes(log_file, new_records_count, refreshed_count=0):
     """Commit database changes and push to remote if new records were added."""
@@ -259,6 +301,7 @@ def main():
             total_new_records = 0
             total_fringe_records = 0
             all_unmatched = set()
+            all_new_details = []  # lettered-lake stockings, for the push
 
             # Fetch current year and prior year (catches late-season stocking added after year rolls over)
             current_year = datetime.now().year
@@ -274,12 +317,13 @@ def main():
 
                     html_content = fetch_stocking_data(county, year)
                     if html_content:
-                        new_records, new_fringe, unmatched = parse_and_insert_data(
+                        new_records, new_fringe, unmatched, new_details = parse_and_insert_data(
                             html_content, conn, cursor, county, csv_writer, log_file
                         )
                         total_new_records += new_records
                         total_fringe_records += new_fringe
                         all_unmatched.update(unmatched)
+                        all_new_details.extend(new_details)
                     else:
                         log_file.write(f"  ERROR: Failed to fetch data for {county} ({year})\n")
             
@@ -306,6 +350,12 @@ def main():
                     log_file.write(f"Plus {total_fringe_records} new fringe (creek/pond) records\n")
                 print(f"\nCommitting and pushing {total_new_records} new records ({total_fringe_records} fringe)...")
                 commit_and_push_changes(log_file, total_new_records, changed)
+
+                # Notify subscribed devices about the new lettered-lake stockings
+                # (fringe creek/pond records aren't in the PWA, so they're not
+                # pushed). Runs after the commit; the payload is self-contained.
+                if all_new_details:
+                    notify_new_stockings(all_new_details, log_file)
             else:
                 log_file.write(f"\nNo new records added, skipping git commit\n")
                 print("No new records added, skipping git operations")
