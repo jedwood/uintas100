@@ -1,4 +1,4 @@
-const CACHE_NAME = 'uintas-v1786845228';
+const CACHE_NAME = 'uintas-v1787148013';
 const MAX_CACHE_SIZE = 45 * 1024 * 1024; // Stay under iOS 50MB limit
 
 // A version-INDEPENDENT cache used as a tiny key/value store shared between this
