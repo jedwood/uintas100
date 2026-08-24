@@ -66,8 +66,9 @@
         .gps-arrow { position: absolute; left: 50%; top: -13px; transform: translateX(-50%);
                    width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent;
                    border-bottom: 10px solid #ef4444; filter: drop-shadow(0 0 1px #fff); }
-        .leaflet-bar .locate-btn { font-size: 18px; line-height: 30px; text-align: center;
+        .leaflet-bar .locate-btn, .leaflet-bar .offline-btn { font-size: 18px; line-height: 30px; text-align: center;
                    width: 34px; height: 34px; display: block; background: #fff; cursor: pointer; }
+        .leaflet-bar .offline-btn { font-weight: bold; }
         .leaflet-bar .locate-btn.locating { animation: pulse 1s infinite; }
         @keyframes pulse { 50% { opacity: .4; } }
         /* Scale bar: default Leaflet styling is low-contrast over satellite tiles */
@@ -82,7 +83,7 @@
         }
 
         /* Detail/About modals must sit above Leaflet panes & controls (z-index up to 1000) */
-        #lake-detail-modal, #about-modal, #rotenone-modal, #sync-modal { z-index: 1200; }
+        #lake-detail-modal, #about-modal, #rotenone-modal, #sync-modal, #offline-modal { z-index: 1200; }
 
         /* Cordell Andersen book pages (sections injected from cma_book.html) */
         #book-content .cma-page { border-top: 1px dashed #cbd5e1; padding-top: .75rem; margin-top: .75rem; scroll-margin-top: 4rem; }
@@ -483,6 +484,49 @@
                     </div>
                 </div>
 
+                <!-- Offline maps: download the current map view's tile pyramid so the
+                     map keeps working with zero connectivity (Safari's HTTP cache
+                     evicts tiles within ~a day — this store is permanent until deleted) -->
+                <div id="offline-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+                    <div class="flex items-center justify-center min-h-screen p-4">
+                        <div id="offline-modal-card" class="bg-white rounded-lg max-w-md w-full max-h-screen overflow-y-auto">
+                            <div class="p-6">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h2 class="text-2xl font-bold">Offline maps</h2>
+                                    <button id="close-offline-modal" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-3">
+                                    Tiles you browse online are saved automatically now, but for a
+                                    <b>guaranteed</b> offline map, download the area shown on the map
+                                    before your trip. Pan/zoom the map to frame your trip area first.
+                                </p>
+                                <div id="offline-storage-line" class="text-xs text-gray-500 mb-4"></div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Map layer</label>
+                                <select id="offline-layer" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm mb-1 bg-white"></select>
+                                <p class="text-xs text-gray-500 mb-3">Bulk download is limited to the USGS layers (public domain). OpenTopoMap is volunteer-run, so it only saves passively as you browse.</p>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Detail level</label>
+                                <select id="offline-maxzoom" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm mb-4 bg-white"></select>
+                                <button id="offline-download-btn" class="w-full bg-slate-700 text-white px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors disabled:opacity-50">Download this area</button>
+                                <div id="offline-progress-wrap" class="hidden mt-3">
+                                    <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                                        <div id="offline-progress-bar" class="bg-slate-700 h-2 rounded-full transition-all" style="width:0%"></div>
+                                    </div>
+                                    <div class="flex items-center justify-between mt-2">
+                                        <span id="offline-progress-text" class="text-xs text-gray-600"></span>
+                                        <button id="offline-cancel-btn" class="text-xs text-red-600 underline">Cancel</button>
+                                    </div>
+                                    <p id="offline-progress-note" class="text-xs text-amber-600 mt-1">Keep this panel open until the download finishes. It resumes where it left off if interrupted.</p>
+                                </div>
+                                <div id="offline-areas-wrap" class="mt-6 pt-5 border-t border-gray-200 hidden">
+                                    <h3 class="text-lg font-bold mb-2">Downloaded areas</h3>
+                                    <div id="offline-areas" class="space-y-2"></div>
+                                    <button id="offline-clear-all" class="mt-3 text-xs text-red-600 underline">Delete all offline map tiles</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Stocking report modal: opened from a stocking push notification -->
                 <div id="stocking-report-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
                     <div class="flex items-center justify-center min-h-screen p-4">
@@ -863,6 +907,38 @@
             document.getElementById('rotenone-link').addEventListener('click', openRotenoneModal);
             document.getElementById('close-rotenone-modal').addEventListener('click', closeModal);
 
+            // Offline maps panel
+            document.getElementById('close-offline-modal').addEventListener('click', closeOfflineModal);
+            document.getElementById('offline-download-btn').addEventListener('click', startOfflineDownload);
+            document.getElementById('offline-cancel-btn').addEventListener('click', () => {
+                if (offlineAbort) offlineAbort.abort();
+            });
+            document.getElementById('offline-clear-all').addEventListener('click', clearAllOfflineTiles);
+            document.getElementById('offline-areas').addEventListener('click', (e) => {
+                const show = e.target.closest('[data-area-show]');
+                const update = e.target.closest('[data-area-update]');
+                const del = e.target.closest('[data-area-delete]');
+                const areas = loadOfflineAreas();
+                if (show) {
+                    const a = areas.find(x => x.id === show.dataset.areaShow);
+                    if (a) {
+                        closeOfflineModal();
+                        resultsMap.fitBounds([[a.bounds.s, a.bounds.w], [a.bounds.n, a.bounds.e]]);
+                    }
+                } else if (update) {
+                    const a = areas.find(x => x.id === update.dataset.areaUpdate);
+                    if (a) runAreaDownload(a);
+                } else if (del) {
+                    const a = areas.find(x => x.id === del.dataset.areaDelete);
+                    if (a && confirm(`Delete "${a.name}" (~${(a.tiles || 0).toLocaleString()} tiles)?`)) {
+                        deleteOfflineArea(a.id);
+                    }
+                }
+            });
+            document.getElementById('offline-modal').addEventListener('click', (e) => {
+                if (!e.target.closest('#offline-modal-card')) closeOfflineModal();
+            });
+
             // Close modals on backdrop click
             document.getElementById('lake-detail-modal').addEventListener('click', (e) => {
                 if (!e.target.closest('#lake-modal-card')) closeModal();
@@ -885,6 +961,8 @@
                     closeModal();
                 } else if (!document.getElementById('sync-modal').classList.contains('hidden')) {
                     closeSyncModal();
+                } else if (!document.getElementById('offline-modal').classList.contains('hidden')) {
+                    closeOfflineModal();
                 }
             });
 
@@ -1337,17 +1415,21 @@
         // ---- Map view (USGS layers, status-colored pins, GPS locate) ----
         // Toggleable basemaps (first is the default). All USGS layers are
         // public-domain; OpenTopoMap adds contours.
+        // crossOrigin makes tile requests CORS (both servers send
+        // Access-Control-Allow-Origin: *) so the service worker caches clean
+        // 200 responses into the persistent tile store instead of opaque ones.
         const MAP_LAYERS = {
             'USGS Topo': { url: 'https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}',
-                           opts: { maxZoom: 16, attribution: 'USGS The National Map' } },
+                           opts: { maxZoom: 16, crossOrigin: 'anonymous', attribution: 'USGS The National Map' } },
             'Satellite': { url: 'https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}',
-                           opts: { maxZoom: 16, attribution: 'USGS The National Map' } },
+                           opts: { maxZoom: 16, crossOrigin: 'anonymous', attribution: 'USGS The National Map' } },
             'Satellite + Labels': { url: 'https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer/tile/{z}/{y}/{x}',
-                                    opts: { maxZoom: 16, attribution: 'USGS The National Map' } },
+                                    opts: { maxZoom: 16, crossOrigin: 'anonymous', attribution: 'USGS The National Map' } },
             'OpenTopoMap': { url: 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
-                             opts: { maxZoom: 17, attribution: 'OpenTopoMap (CC-BY-SA)' } },
+                             opts: { maxZoom: 17, crossOrigin: 'anonymous', attribution: 'OpenTopoMap (CC-BY-SA)' } },
         };
         let resultsMap = null, resultsMarkers = null, gpsMarker = null;
+        let activeLayerName = 'USGS Topo';   // tracked via baselayerchange
         let detailMap = null;   // the mini-map inside an open lake modal
         let gpsHeadingEl = null, headingListening = false, lastHeading = null;
 
@@ -1403,6 +1485,9 @@
             L.control.scale({ imperial: true, metric: false, maxWidth: 140 }).addTo(resultsMap);
             resultsMarkers = L.layerGroup().addTo(resultsMap);
             addLocateControl();
+            addOfflineControl();
+            // Track the active basemap so the offline downloader defaults to it
+            resultsMap.on('baselayerchange', e => { activeLayerName = e.name; });
             // Keep the heading arrow pointing true as the map is manually rotated
             resultsMap.on('rotate', applyHeading);
         }
@@ -1523,6 +1608,270 @@
             const cov = document.getElementById('results-coverage');
             cov.classList.remove('hidden');
             cov.textContent = msg;
+        }
+
+        // ---- Offline maps: bulk tile download (the CalTopo-style guarantee) ----
+        // The service worker already saves every tile viewed online into the
+        // persistent 'uintas-tiles' cache; this panel fills that same cache with
+        // the complete pyramid for the current map view, so navigation works with
+        // zero connectivity. Bulk download is limited to the USGS layers — public
+        // domain, government-run; OpenTopoMap's volunteer servers shouldn't be
+        // bulk-scraped (their tiles still cache passively as browsed).
+        const TILE_CACHE_NAME = 'uintas-tiles';           // must match service-worker.js
+        const OFFLINE_MIN_ZOOM = 6;                       // always include overview zooms (cheap)
+        const OFFLINE_MAX_TILES = 30000;                  // refuse absurd downloads (~700MB+)
+        const OFFLINE_LAYERS = ['USGS Topo', 'Satellite', 'Satellite + Labels'];
+        const OFFLINE_KB_PER_TILE = { 'USGS Topo': 22, 'Satellite': 30, 'Satellite + Labels': 35 };
+        let offlineDraft = null;                          // bounds captured when the panel opens
+        let offlineAbort = null;
+
+        // Web-Mercator "slippy map" tile math
+        function lng2tileX(lng, z) { return Math.floor((lng + 180) / 360 * Math.pow(2, z)); }
+        function lat2tileY(lat, z) {
+            const r = lat * Math.PI / 180;
+            return Math.floor((1 - Math.log(Math.tan(r) + 1 / Math.cos(r)) / Math.PI) / 2 * Math.pow(2, z));
+        }
+        function tileRange(bounds, z) {
+            const max = Math.pow(2, z) - 1;
+            const clamp = v => Math.max(0, Math.min(max, v));
+            const xMin = clamp(lng2tileX(bounds.w, z)), xMax = clamp(lng2tileX(bounds.e, z));
+            const yMin = clamp(lat2tileY(bounds.n, z)), yMax = clamp(lat2tileY(bounds.s, z));
+            return { xMin, xMax, yMin, yMax, count: (xMax - xMin + 1) * (yMax - yMin + 1) };
+        }
+        function countTiles(bounds, minZ, maxZ) {
+            let n = 0;
+            for (let z = minZ; z <= maxZ; z++) n += tileRange(bounds, z).count;
+            return n;
+        }
+        function tileUrlFor(layerName, z, x, y) {
+            return MAP_LAYERS[layerName].url
+                .replace('{z}', z).replace('{x}', x).replace('{y}', y).replace('{s}', 'a');
+        }
+        function* areaTiles(area) {
+            for (let z = area.minZ; z <= area.maxZ; z++) {
+                const r = tileRange(area.bounds, z);
+                for (let x = r.xMin; x <= r.xMax; x++)
+                    for (let y = r.yMin; y <= r.yMax; y++)
+                        yield [z, x, y];
+            }
+        }
+
+        function loadOfflineAreas() {
+            try { return JSON.parse(localStorage.getItem('uintas-offline-areas') || '[]'); } catch (e) { return []; }
+        }
+        function saveOfflineAreas(areas) {
+            localStorage.setItem('uintas-offline-areas', JSON.stringify(areas));
+        }
+
+        function fmtMB(bytes) {
+            return bytes >= 1024 * 1024 * 1024
+                ? (bytes / (1024 * 1024 * 1024)).toFixed(1) + ' GB'
+                : Math.max(1, Math.round(bytes / (1024 * 1024))) + ' MB';
+        }
+
+        function addOfflineControl() {
+            const Offline = L.Control.extend({
+                options: { position: 'topleft' },
+                onAdd() {
+                    const div = L.DomUtil.create('div', 'leaflet-bar');
+                    const a = L.DomUtil.create('a', 'offline-btn', div);
+                    a.href = '#'; a.title = 'Download this area for offline use'; a.innerHTML = '⤓';
+                    L.DomEvent.on(a, 'click', L.DomEvent.stop).on(a, 'click', openOfflineModal);
+                    return div;
+                }
+            });
+            resultsMap.addControl(new Offline());
+        }
+
+        async function updateOfflineStorageLine() {
+            const el = document.getElementById('offline-storage-line');
+            let line = '';
+            try {
+                const cache = await caches.open(TILE_CACHE_NAME);
+                const keys = await cache.keys();
+                line = `${keys.length.toLocaleString()} tiles saved on this device`;
+                if (navigator.storage && navigator.storage.estimate) {
+                    const est = await navigator.storage.estimate();
+                    if (est && est.usage) line += ` — app storage ${fmtMB(est.usage)} of ~${fmtMB(est.quota || 0)} available`;
+                }
+            } catch (e) { line = ''; }
+            el.textContent = line;
+        }
+
+        function openOfflineModal() {
+            offlineDraft = { bounds: null };
+            const b = resultsMap.getBounds();
+            offlineDraft.bounds = { s: b.getSouth(), w: b.getWest(), n: b.getNorth(), e: b.getEast() };
+
+            // Layer choices (default to the active basemap when it's downloadable)
+            const layerSel = document.getElementById('offline-layer');
+            layerSel.innerHTML = OFFLINE_LAYERS.map(n => `<option value="${n}">${n}</option>`).join('');
+            layerSel.value = OFFLINE_LAYERS.includes(activeLayerName) ? activeLayerName : 'USGS Topo';
+
+            renderOfflineZoomOptions();
+            layerSel.onchange = renderOfflineZoomOptions;
+
+            renderOfflineAreas();
+            updateOfflineStorageLine();
+            document.getElementById('offline-progress-wrap').classList.add('hidden');
+            document.getElementById('offline-download-btn').disabled = false;
+            document.getElementById('offline-modal').classList.remove('hidden');
+        }
+        function closeOfflineModal() {
+            if (offlineAbort) offlineAbort.abort();   // resumable — cached tiles are kept
+            document.getElementById('offline-modal').classList.add('hidden');
+        }
+
+        function renderOfflineZoomOptions() {
+            const layer = document.getElementById('offline-layer').value;
+            const kb = OFFLINE_KB_PER_TILE[layer] || 25;
+            const sel = document.getElementById('offline-maxzoom');
+            const labels = { 13: 'Overview', 14: 'Good', 15: 'High (recommended)', 16: 'Maximum' };
+            let html = '', firstOk = null;
+            for (let maxZ = 13; maxZ <= 16; maxZ++) {
+                const n = countTiles(offlineDraft.bounds, OFFLINE_MIN_ZOOM, maxZ);
+                const tooBig = n > OFFLINE_MAX_TILES;
+                if (!tooBig && labels[maxZ].includes('recommended')) firstOk = maxZ;
+                html += `<option value="${maxZ}" ${tooBig ? 'disabled' : ''}>` +
+                        `${labels[maxZ]} — ~${n.toLocaleString()} tiles, ~${fmtMB(n * kb * 1024)}` +
+                        `${tooBig ? ' (zoom the map in first)' : ''}</option>`;
+            }
+            sel.innerHTML = html;
+            // Prefer the recommended level; otherwise the deepest non-disabled one
+            const opts = Array.from(sel.options).filter(o => !o.disabled);
+            sel.value = firstOk != null ? String(firstOk) : (opts.length ? opts[opts.length - 1].value : '13');
+        }
+
+        async function startOfflineDownload() {
+            const layer = document.getElementById('offline-layer').value;
+            const maxZ = parseInt(document.getElementById('offline-maxzoom').value, 10);
+            const area = {
+                id: 'area-' + Date.now(),
+                name: `${layer} — ${new Date().toISOString().slice(0, 10)}`,
+                layer, bounds: offlineDraft.bounds,
+                minZ: OFFLINE_MIN_ZOOM, maxZ,
+                tiles: countTiles(offlineDraft.bounds, OFFLINE_MIN_ZOOM, maxZ),
+                bytes: 0, complete: false, date: new Date().toISOString()
+            };
+            // Best-effort: ask iOS/the browser never to evict this origin's storage
+            if (navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(() => {});
+
+            const areas = loadOfflineAreas();
+            areas.push(area);
+            saveOfflineAreas(areas);
+            await runAreaDownload(area);
+        }
+
+        // Downloads (or completes) an area: skips tiles already in the cache, so
+        // it doubles as resume and as "update" for a partial area.
+        async function runAreaDownload(area) {
+            const btn = document.getElementById('offline-download-btn');
+            const wrap = document.getElementById('offline-progress-wrap');
+            const bar = document.getElementById('offline-progress-bar');
+            const text = document.getElementById('offline-progress-text');
+            btn.disabled = true;
+            wrap.classList.remove('hidden');
+            document.getElementById('offline-cancel-btn').classList.remove('hidden');
+            document.getElementById('offline-progress-note').classList.remove('hidden');
+
+            offlineAbort = new AbortController();
+            const signal = offlineAbort.signal;
+            const cache = await caches.open(TILE_CACHE_NAME);
+            const jobs = Array.from(areaTiles(area));
+            let idx = 0, done = 0, failed = 0, bytes = 0;
+
+            const report = () => {
+                bar.style.width = Math.round(done / jobs.length * 100) + '%';
+                text.textContent = `${done.toLocaleString()} / ${jobs.length.toLocaleString()} tiles` +
+                    (bytes ? ` — ${fmtMB(bytes)}` : '') + (failed ? ` — ${failed} failed` : '');
+            };
+            async function worker() {
+                while (idx < jobs.length && !signal.aborted) {
+                    const [z, x, y] = jobs[idx++];
+                    const url = tileUrlFor(area.layer, z, x, y);
+                    try {
+                        if (!(await cache.match(url))) {
+                            const resp = await fetch(url, { signal });
+                            if (resp.ok) {
+                                bytes += Number(resp.headers.get('content-length')) || 0;
+                                await cache.put(url, resp);
+                            } else failed++;
+                        }
+                    } catch (e) { if (signal.aborted) return; failed++; }
+                    done++;
+                    if (done % 10 === 0 || done === jobs.length) report();
+                }
+            }
+            report();
+            await Promise.all(Array.from({ length: 6 }, worker));
+
+            const areas = loadOfflineAreas();
+            const rec = areas.find(a => a.id === area.id);
+            if (rec) {
+                rec.bytes = (rec.bytes || 0) + bytes;
+                rec.complete = !signal.aborted && done === jobs.length && failed === 0;
+                saveOfflineAreas(areas);
+            }
+            offlineAbort = null;
+            btn.disabled = false;
+            document.getElementById('offline-cancel-btn').classList.add('hidden');
+            document.getElementById('offline-progress-note').classList.add('hidden');
+            if (!signal.aborted) {
+                text.textContent = failed
+                    ? `Done with ${failed} failed tiles — tap Update on the area to retry.`
+                    : `✓ Downloaded ${done.toLocaleString()} tiles${bytes ? ` (${fmtMB(bytes)})` : ''}. This area now works fully offline.`;
+                bar.style.width = '100%';
+            } else {
+                text.textContent = 'Cancelled — already-downloaded tiles are kept.';
+            }
+            renderOfflineAreas();
+            updateOfflineStorageLine();
+        }
+
+        function renderOfflineAreas() {
+            const areas = loadOfflineAreas();
+            document.getElementById('offline-areas-wrap').classList.toggle('hidden', areas.length === 0);
+            document.getElementById('offline-areas').innerHTML = areas.map(a => `
+                <div class="border border-gray-200 rounded-lg p-3 text-sm">
+                    <div class="font-medium text-gray-800">${a.name}</div>
+                    <div class="text-xs text-gray-500 mt-0.5">
+                        ${a.complete ? '✓ complete' : '⚠︎ partial'} — ~${(a.tiles || 0).toLocaleString()} tiles,
+                        detail to z${a.maxZ}${a.bytes ? `, ${fmtMB(a.bytes)}` : ''}
+                    </div>
+                    <div class="mt-2 flex gap-3">
+                        <button data-area-show="${a.id}" class="text-xs text-slate-600 underline">Show on map</button>
+                        <button data-area-update="${a.id}" class="text-xs text-slate-600 underline">${a.complete ? 'Re-check' : 'Resume'}</button>
+                        <button data-area-delete="${a.id}" class="text-xs text-red-600 underline">Delete</button>
+                    </div>
+                </div>`).join('');
+        }
+
+        // Delete an area's tiles — but never a tile another saved area (same layer)
+        // still covers.
+        async function deleteOfflineArea(id) {
+            const areas = loadOfflineAreas();
+            const area = areas.find(a => a.id === id);
+            if (!area) return;
+            const others = areas.filter(a => a.id !== id && a.layer === area.layer);
+            const keep = new Set();
+            others.forEach(o => { for (const [z, x, y] of areaTiles(o)) keep.add(`${z}/${x}/${y}`); });
+            const cache = await caches.open(TILE_CACHE_NAME);
+            for (const [z, x, y] of areaTiles(area)) {
+                if (!keep.has(`${z}/${x}/${y}`)) {
+                    try { await cache.delete(tileUrlFor(area.layer, z, x, y)); } catch (e) {}
+                }
+            }
+            saveOfflineAreas(areas.filter(a => a.id !== id));
+            renderOfflineAreas();
+            updateOfflineStorageLine();
+        }
+
+        async function clearAllOfflineTiles() {
+            if (!confirm('Delete ALL saved map tiles (downloaded areas and browsed tiles)?')) return;
+            try { await caches.delete(TILE_CACHE_NAME); } catch (e) {}
+            saveOfflineAreas([]);
+            renderOfflineAreas();
+            updateOfflineStorageLine();
         }
 
         function showDrainageLakes(drainage) {

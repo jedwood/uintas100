@@ -330,7 +330,22 @@ rm -rf /Applications/Uintas.app && cp -R src-tauri/target/release/bundle/macos/U
 - **Progressive Web App**: Full offline functionality with service worker, no CDN dependencies (Tailwind CSS vendored as `tailwind.css`, Leaflet vendored under `vendor/leaflet/`)
 - **JSON Data**: Loads `lakes_data.json` (generated from the database by `scripts/export_web_data.py`) with stocking records and photos nested per lake
 - **Search & Filtering**: By drainage, species, depth, elevation, size, stocking years. Filters collapse by default with an active-count badge.
-- **List / Map views**: One filtered result set, toggle between a list and a Leaflet map (USGS Topo + Imagery layers, status-colored pins, auto-fit, GPS "locate me"). A "Browse all lakes on the map" button opens the whole range without first picking a filter/drainage. View choice persists. Map tiles need a connection; pins/data work offline. Only `confirmed`/`manual` coordinates appear.
+- **List / Map views**: One filtered result set, toggle between a list and a Leaflet map (USGS Topo + Imagery layers, status-colored pins, auto-fit, GPS "locate me"). A "Browse all lakes on the map" button opens the whole range without first picking a filter/drainage. View choice persists. Only `confirmed`/`manual` coordinates appear.
+- **Offline map tiles (added 2026-08-24)**: tiles live in the version-INDEPENDENT
+  `uintas-tiles` cache (spared by the SW activate cleanup, like `uintas-push-state`),
+  served cache-first. Two fill paths: every tile viewed online is stored passively on
+  the way through, and the **⤓ map control** opens an "Offline maps" panel that bulk
+  downloads the current view's full tile pyramid (z6→chosen max, USGS layers only —
+  OpenTopoMap is volunteer-run so it's passive-only) with progress/resume, saved-area
+  management (`uintas-offline-areas` in localStorage), and `navigator.storage.persist()`.
+  Background: Safari's HTTP cache evicts tiles within ~a day (USGS sends
+  `max-age=86400`), which is why pre-panning an area used to go blank mid-trip.
+  Tile layers set `crossOrigin: 'anonymous'` so responses are clean CORS 200s (both
+  tile hosts send `ACAO: *`) — required for the SW to see cacheable statuses. The SW
+  normalizes OpenTopoMap's `{a,b,c}` subdomains to one cache key. The old global
+  "45MB iOS limit" gate in `cacheResponse` was removed deliberately: modern iOS grants
+  installed PWAs gigabytes, and since `estimate()` counts ALL storage a single map
+  download would have tripped it and silently stopped photo caching.
 - **Map orientation**: The red GPS marker shows a compass heading arrow (DeviceOrientation; iOS prompts for permission on the locate tap). The map supports rotation — two-finger twist on mobile, Shift+drag on desktop — via the vendored `leaflet-rotate` plugin (`vendor/leaflet/leaflet-rotate.js`); the heading arrow compensates for the current map bearing.
 - **Lake Details**: Modal views with stocking history, photos, DWR notes, "Open in Maps" link when coordinates exist
 - **Mission Progress**: Header shows CAUGHT-status count toward the 100-waters goal

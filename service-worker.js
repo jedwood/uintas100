@@ -1,5 +1,4 @@
-const CACHE_NAME = 'uintas-v1787531603';
-const MAX_CACHE_SIZE = 45 * 1024 * 1024; // Stay under iOS 50MB limit
+const CACHE_NAME = 'uintas-v1787606199';
 
 // A version-INDEPENDENT cache used as a tiny key/value store shared between this
 // service worker and the page (the unseen-badge count, the last stocking report,
@@ -8,6 +7,26 @@ const MAX_CACHE_SIZE = 45 * 1024 * 1024; // Stay under iOS 50MB limit
 // contexts read/write it via caches.open(PUSH_STATE_CACHE) — never via fetch(),
 // so it bypasses the fetch handler entirely.
 const PUSH_STATE_CACHE = 'uintas-push-state';
+
+// Map tiles live in their own version-INDEPENDENT cache (spared by the activate
+// cleanup, like the push state). Two reasons: tiles saved for a trip must survive
+// the cache-version bump every deploy triggers, and the tile store can grow far
+// larger than the app shell so it must never be wiped along with it. Tiles get
+// here two ways: passively (every tile viewed online is stored on the way through)
+// and in bulk via the "Offline maps" download panel in index.html, which writes
+// this same cache directly from the page.
+const TILE_CACHE = 'uintas-tiles';
+
+// A tile request is recognized by host. OpenTopoMap shards across subdomains
+// a/b/c, so the SAME tile can be requested under three URLs — normalize to one
+// cache key or two-thirds of cached tiles would be invisible on re-request.
+function tileCacheKey(url) {
+    if (url.hostname === 'basemap.nationalmap.gov') return url.href;
+    if (/^[abc]\.tile\.opentopomap\.org$/.test(url.hostname)) {
+        return url.href.replace(url.hostname, 'a.tile.opentopomap.org');
+    }
+    return null;
+}
 
 // Resources to cache immediately. Everything is served locally — no CDN
 // dependence — so the app works offline even on its first install.
@@ -75,10 +94,10 @@ self.addEventListener('activate', event => {
             .then(cacheNames => {
                 return Promise.all(
                     cacheNames.map(cacheName => {
-                        // Spare the current app cache AND the push-state store
-                        // (badge count / last report) — the latter must persist
-                        // across version bumps.
-                        if (cacheName !== CACHE_NAME && cacheName !== PUSH_STATE_CACHE) {
+                        // Spare the current app cache AND the version-independent
+                        // stores: push state (badge count / last report) and the
+                        // offline map tiles — both must persist across version bumps.
+                        if (cacheName !== CACHE_NAME && cacheName !== PUSH_STATE_CACHE && cacheName !== TILE_CACHE) {
                             console.log('Service Worker: Deleting old cache', cacheName);
                             return caches.delete(cacheName);
                         }
@@ -104,6 +123,15 @@ async function handleFetch(request) {
         const reqUrl = new URL(request.url);
         if (request.method !== 'GET' || reqUrl.pathname.startsWith('/api/') || reqUrl.port === '8802') {
             return fetch(request);
+        }
+
+        // Map tiles: cache-first from the persistent tile store. Without this,
+        // tiles only ever lived in Safari's HTTP cache — which iOS evicts within
+        // ~a day (USGS sends max-age=86400), which is exactly how the map went
+        // blank on day 2 of a trip despite pre-panning the whole area online.
+        const tileKey = tileCacheKey(reqUrl);
+        if (tileKey) {
+            return handleTile(request, tileKey);
         }
 
         // For navigation requests, always try network first, fall back to cache
@@ -188,6 +216,25 @@ async function handleFetch(request) {
     }
 }
 
+// Cache-first for map tiles. Tiles are immutable in practice (USGS quads change
+// on a years-long cadence), so a cached tile is always preferred — it's faster
+// online and it's the whole point offline. On a miss we fetch and store the tile
+// on the way through, so simply browsing the map while online builds up offline
+// coverage that persists until explicitly cleared.
+async function handleTile(request, tileKey) {
+    const cache = await caches.open(TILE_CACHE);
+    const cached = await cache.match(tileKey);
+    if (cached) return cached;
+    const networkResponse = await fetch(request);
+    // The layers request tiles with crossOrigin=anonymous, so normally these are
+    // clean 200s — but accept opaque responses too (e.g. a cached pre-upgrade
+    // request shape) rather than silently not caching.
+    if (networkResponse && (networkResponse.ok || networkResponse.type === 'opaque')) {
+        try { await cache.put(tileKey, networkResponse.clone()); } catch (e) { /* quota — serve anyway */ }
+    }
+    return networkResponse;
+}
+
 async function staleWhileRevalidate(request) {
     const cache = await caches.open(CACHE_NAME);
     const cached = await cache.match(request);
@@ -224,14 +271,11 @@ async function staleWhileRevalidate(request) {
 async function cacheResponse(request, response) {
     try {
         const cache = await caches.open(CACHE_NAME);
-
-        // Check cache size before adding
-        const usage = await navigator.storage?.estimate?.();
-        if (usage && usage.usage > MAX_CACHE_SIZE * 0.8) {
-            console.log('Service Worker: Cache approaching limit, skipping cache');
-            return;
-        }
-
+        // No size gate here: the old "stay under iOS's 50MB" estimate() check
+        // dates from iOS 13 — modern iOS grants installed PWAs gigabytes — and
+        // since estimate() counts ALL storage, a single offline-map download
+        // would have tripped it and silently stopped photo caching forever.
+        // Quota pressure is handled by the catch below instead.
         await cache.put(request, response);
     } catch (error) {
         // iOS 17 cache bugs - fail silently
