@@ -2268,6 +2268,26 @@
                     ` : '<p class="text-gray-600">No stocking records available</p>'}
                 </div>
 
+                <!-- From the Falcon guidebook: hikes that reach this lake.
+                     Placed above the Junesucker/Cordell notes at Jed's request —
+                     the guidebook is the primary reference layer. -->
+                ${(() => {
+                    const hs = hikesData
+                        .filter(h => h.lakes.some(l => l.letter_number === lake.letter_number))
+                        .sort((a, b) => {
+                            const ap = a.lakes.find(l => l.letter_number === lake.letter_number).primary ? 0 : 1;
+                            const bp = b.lakes.find(l => l.letter_number === lake.letter_number).primary ? 0 : 1;
+                            return ap - bp || a.number - b.number;
+                        });
+                    if (!hs.length) return '';
+                    return `
+                        <div class="rounded-lg p-4 border border-slate-200">
+                            <h3 class="text-lg font-semibold mb-1">From <em>Hiking Utah's High Uintas</em></h3>
+                            <p class="text-xs text-gray-500 mb-3">${hs.length} hike${hs.length > 1 ? 's' : ''} in the Falcon guide reach${hs.length > 1 ? '' : 'es'} this lake.</p>
+                            <div class="space-y-2">${hs.map(h => hikeDetailsHtml(h, lake.letter_number)).join('')}</div>
+                        </div>`;
+                })()}
+
                 <!-- Notes from Junesucker.com (collapsed to a 2-line preview) -->
                 ${lake.junesucker_notes ? `
                     <div class="rounded-lg p-4 border border-slate-200">
@@ -2287,24 +2307,6 @@
                         `, notePreview(lake.junesucker_notes))}
                     </div>
                 ` : ''}
-
-                <!-- From the Falcon guidebook: hikes that reach this lake -->
-                ${(() => {
-                    const hs = hikesData
-                        .filter(h => h.lakes.some(l => l.letter_number === lake.letter_number))
-                        .sort((a, b) => {
-                            const ap = a.lakes.find(l => l.letter_number === lake.letter_number).primary ? 0 : 1;
-                            const bp = b.lakes.find(l => l.letter_number === lake.letter_number).primary ? 0 : 1;
-                            return ap - bp || a.number - b.number;
-                        });
-                    if (!hs.length) return '';
-                    return `
-                        <div class="rounded-lg p-4 border border-slate-200">
-                            <h3 class="text-lg font-semibold mb-1">From <em>Hiking Utah's High Uintas</em></h3>
-                            <p class="text-xs text-gray-500 mb-3">${hs.length} hike${hs.length > 1 ? 's' : ''} in the Falcon guide reach${hs.length > 1 ? '' : 'es'} this lake.</p>
-                            <div class="space-y-2">${hs.map(h => hikeDetailsHtml(h, lake.letter_number)).join('')}</div>
-                        </div>`;
-                })()}
 
                 <!-- From Cordell Andersen's book (collapsed to a 2-line preview) -->
                 ${lake.cma_notes ? `
@@ -2954,18 +2956,37 @@
                     .then(registration => {
                         console.log('Service Worker registered successfully:', registration.scope);
 
+                        // Reload exactly once, when the NEW worker has actually
+                        // taken control — not immediately after SKIP_WAITING.
+                        // Reloading before the new SW is the controller (the old
+                        // flow) races the takeover, so iOS often reloaded still
+                        // served by the old worker and stayed on the stale bundle.
+                        let reloadingForUpdate = false;
+                        navigator.serviceWorker.addEventListener('controllerchange', () => {
+                            if (reloadingForUpdate) return;
+                            reloadingForUpdate = true;
+                            window.location.reload();
+                        });
+
                         // Handle updates
                         registration.addEventListener('updatefound', () => {
                             const newWorker = registration.installing;
                             newWorker.addEventListener('statechange', () => {
                                 if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                                    // New update available
+                                    // New update available — activate it; the
+                                    // controllerchange handler above does the reload.
                                     if (confirm('New version available! Refresh to update?')) {
                                         newWorker.postMessage({ type: 'SKIP_WAITING' });
-                                        window.location.reload();
                                     }
                                 }
                             });
+                        });
+
+                        // Proactively check for a new worker whenever the app is
+                        // brought to the foreground, so updates surface promptly
+                        // instead of waiting for iOS's own ~daily SW check.
+                        document.addEventListener('visibilitychange', () => {
+                            if (document.visibilityState === 'visible') registration.update();
                         });
                     })
                     .catch(error => {
