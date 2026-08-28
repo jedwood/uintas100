@@ -39,7 +39,8 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)
 PROJECT_DIR = os.path.dirname(SCRIPT_DIR)
 
-from database_utils import find_matching_lake  # noqa: E402
+from database_utils import (LAKE_SUFFIX_WORDS, _strip_trailing,  # noqa: E402
+                            extract_letter_number, normalize_lake_name)
 from writer_guard import exit_if_readonly       # noqa: E402
 
 DB_PATH = os.path.join(PROJECT_DIR, "uinta_lakes.db")
@@ -146,8 +147,13 @@ _DESIG_RE = re.compile(r"\b([A-Z]{1,3})[-–](\d{1,3})\b")
 _NAME_RE = re.compile(r"\b((?:[A-Z][a-z]+\s+){0,2}[A-Z][a-z]+)\s+Lakes?\b")
 
 
-def _lake_candidates(*texts):
-    """Yield candidate 'water name' strings to feed find_matching_lake."""
+def _candidate_groups(*texts):
+    """Yield candidate GROUPS — one list of water-name strings per mention,
+    ordered longest-first. The matcher must take the first candidate in a
+    group that names any lake at all and go no further: "Lower Red Castle
+    Lake" has to stop at G-12, never fall through to a phantom "Castle Lake"
+    (D-14, a different drainage entirely). The shorter fallbacks exist only
+    for sentence-start noise ("Follow Big Elk Lake" -> "Big Elk Lake")."""
     seen = set()
     for text in texts:
         if not text:
@@ -157,17 +163,19 @@ def _lake_candidates(*texts):
             c = f"{a}-{b}"
             if c not in seen:
                 seen.add(c)
-                yield c
-        # "X Lake" / "A, B, and C Lakes" — feed the full phrase and, as a
-        # fallback for sentence-start noise, its last one/two words.
+                yield [c]
         for phrase in _NAME_RE.findall(text):
             words = phrase.split()
-            for cand in {phrase, words[-1],
-                         " ".join(words[-2:]) if len(words) >= 2 else words[-1]}:
-                key = cand.lower()
-                if key not in seen:
-                    seen.add(key)
-                    yield cand + " Lake"
+            group = [phrase]
+            if len(words) >= 3:
+                group.append(" ".join(words[-2:]))
+            if len(words) >= 2:
+                group.append(words[-1])
+            group = [g + " Lake" for g in group]
+            key = tuple(g.lower() for g in group)
+            if key not in seen:
+                seen.add(key)
+                yield group
         # comma/and lists sharing a trailing "Lakes": "Jean, Dean, and Daynes Lakes"
         for lst in re.findall(
             r"((?:[A-Z][a-z]+,\s+)+(?:and\s+)?[A-Z][a-z]+)\s+Lakes\b", text):
@@ -175,7 +183,7 @@ def _lake_candidates(*texts):
                 part = part.strip()
                 if part and part.lower() not in seen:
                     seen.add(part.lower())
-                    yield part + " Lake"
+                    yield [part + " Lake"]
 
 
 # --------------------------------------------------------------------------- #
@@ -325,28 +333,216 @@ def _trailhead_description(body):
     return "\n\n".join(out).strip() or None
 
 
+# The book's "Drainage:" field -> lakes.drainage value(s). Lake NAMES repeat
+# across the range (two Crystals, four Islands, ...), so an exact-name match
+# alone picks an arbitrary duplicate — the original import credited the
+# Provo-side Crystal Lake hikes to GR-128 Crystal in Burnt Fork. A hike's own
+# Drainage field is the book's ground truth for which duplicate it means.
+_BOOK_TO_DB_DRAINAGE = {
+    "Ashley Creek": "Ashley Creek Drainage",
+    "Bear River": "Bear River Drainage",
+    "Beaver Creek": "Beaver Creek Drainage",
+    "Burnt Fork": "Burnt Fork Drainage",
+    "Carter Creek": "Sheep/Carter Creek Drainages",
+    "Duchesne River": "Duchesne River Drainage",
+    "East Fork Blacks Fork": "Blacks Fork Drainage",
+    "Henrys Fork": "Henrys Fork Drainage",
+    "Lake Fork": "Lake Fork Drainage",
+    "Provo River": "Provo River Drainage",
+    "Rock Creek": "Rock Creek Drainage",
+    "Sheep Creek": "Sheep/Carter Creek Drainages",
+    "Smiths Fork": "Smiths Fork Drainage",
+    "Swift Creek": "Swift Creek Drainage",
+    "Uinta River": "Uinta River Drainage",
+    "Weber River": "Weber River Drainage",
+    "Whiterocks River": "White Rocks Drainage",
+    "Yellowstone River": "Yellowstone Drainage",
+}
+
+
+def _hike_db_drainages(book_drainage):
+    """DB drainage(s) for a hike's Drainage field ("A or B" yields both)."""
+    out = set()
+    for part in re.split(r"\s+or\s+", book_drainage or ""):
+        db = _BOOK_TO_DB_DRAINAGE.get(part.strip())
+        if db:
+            out.add(db)
+    return out
+
+
+# Lakes the DB names as members of a family — directional ("Kidney East"/
+# "Kidney West"), numbered ("Divide, #1"/"Divide #2", "Chain 1 (Lower)"),
+# or with a parenthetical alternate ("Shallow (Haystack #2)") — are what
+# the book calls collectively or plainly ("Kidney Lakes", "Divide Lakes",
+# "Haystack Lake"). Index them under those base names too, as non-exact
+# ALIASES. An alias never outranks an exact name, but its presence marks a
+# bare name as geographically ambiguous: "Kidney Lakes" in a Uinta River
+# hike must not fall through to Lake Fork's X-35 just because bare
+# "Kidney" is unique among exact names.
+_DIRECTIONAL = {"EAST", "WEST", "NORTH", "SOUTH", "UPPER", "LOWER", "MIDDLE"}
+
+
+def _alias_bases(key):
+    """Alternate lookup keys for a normalized DB lake name (see above)."""
+    bases = set()
+    stripped = re.sub(r"\s*\([^)]*\)$", "", key).strip()
+    inner = re.search(r"\(([^)]*)\)$", key)
+    for variant in {stripped, inner.group(1).strip() if inner else ""}:
+        if not variant:
+            continue
+        bases.add(variant)
+        bases.add(re.sub(r"[,\s]*#?\d+$", "", variant).strip())
+        words = variant.split()
+        if len(words) >= 2:
+            if words[-1] in _DIRECTIONAL:
+                bases.add(" ".join(words[:-1]))
+            elif words[0] in _DIRECTIONAL:
+                bases.add(" ".join(words[1:]))
+    return {b for b in bases if b and b != key and b not in _DIRECTIONAL}
+
+
 def link_lakes(cursor, hikes):
-    """Attach matched lake letter_numbers to each hike dict."""
-    id_to_ln = {lid: ln for lid, ln in cursor.execute(
-        "SELECT id, letter_number FROM lakes")}
+    """Attach matched lake letter_numbers to each hike dict.
+
+    Matching mirrors database_utils.find_matching_lake (exact designation,
+    else exact normalized name) but resolves DUPLICATE names by drainage:
+    "Crystal Lake" in a Provo River hike is A-51, not Burnt Fork's GR-128.
+    Two passes per hike — first against the hike's own Drainage field, then
+    (for hikes that cross a divide, e.g. the Weber-drainage hikes starting at
+    Crystal Lake trailhead) against the drainages of the lakes the hike has
+    already matched unambiguously. A duplicate name with no single candidate
+    in either scope is dropped rather than guessed.
+    """
+    by_designation, by_name, id_to_ln = {}, {}, {}
+    lake_drainage, lake_coords = {}, {}
+    for lid, ln, name, drainage, lat, lng in cursor.execute(
+            "SELECT id, letter_number, name, drainage, lat, lng FROM lakes"):
+        by_designation[ln] = lid
+        id_to_ln[lid] = ln
+        lake_drainage[lid] = drainage
+        if lat is not None and lng is not None:
+            lake_coords[lid] = (lat, lng)
+        key = _strip_trailing(normalize_lake_name(name or ""),
+                              LAKE_SUFFIX_WORDS)
+        if not key:
+            continue
+        by_name.setdefault(key, []).append((lid, drainage, True))
+        for base in _alias_bases(key):
+            by_name.setdefault(base, []).append((lid, drainage, False))
+
+    dropped = set()
+
+    def lone_exact_in_basin(cands, ctx_pts):
+        """A key with ONE exact-named lake plus directional aliases, none in
+        scope ("Red Castle Lake" in an East Fork Blacks Fork hike): keep the
+        exact only if coordinates prove it sits in the same basin as the
+        candidate nearest the hike's other lakes — every candidate must have
+        coords, or we can't rule the aliases out (Kidney: U-25/U-26 have no
+        coords, so a Whiterocks hike's "Kidney Lakes" is dropped instead of
+        mis-crediting Lake Fork's X-35)."""
+        exact = [c for c in cands if c[2]]
+        if len(exact) != 1 or not ctx_pts:
+            return None
+        if any(c[0] not in lake_coords for c in cands):
+            return None
+        cy = sum(p[0] for p in ctx_pts) / len(ctx_pts)
+        cx = sum(p[1] for p in ctx_pts) / len(ctx_pts)
+
+        def km(lid):
+            lat, lng = lake_coords[lid]
+            return (((lat - cy) * 111.0) ** 2 +
+                    ((lng - cx) * 85.0) ** 2) ** 0.5
+        dists = {c[0]: km(c[0]) for c in cands}
+        if dists[exact[0][0]] <= min(dists.values()) + 3.0:
+            return exact[0][0]
+        return None
+
+    def resolve(cand, drainages, ctx_pts=None):
+        """(list_of_lake_ids, method) or ([], ambiguous_bool)."""
+        ln = extract_letter_number(cand)
+        if ln and ln in by_designation:
+            return [by_designation[ln]], "exact"
+        key = _strip_trailing(normalize_lake_name(cand), LAKE_SUFFIX_WORDS)
+        cands = by_name.get(key, [])
+        if len(cands) == 1 and cands[0][2]:
+            return [cands[0][0]], "name"
+        scoped = [c for c in cands if c[1] in drainages]
+        exact_scoped = [c for c in scoped if c[2]]
+        if len(exact_scoped) == 1:
+            return [exact_scoped[0][0]], "name-drainage"
+        if scoped and not exact_scoped:
+            # A directional family the book names collectively ("Kidney
+            # Lakes" -> Kidney East + Kidney West): link the whole group.
+            return ([c[0] for c in scoped],
+                    "name-drainage" if len(scoped) == 1 else "name-group")
+        if scoped:
+            return [], True
+        if ctx_pts is not None:
+            lid = lone_exact_in_basin(cands, ctx_pts)
+            if lid is not None:
+                return [lid], "name"
+        return [], bool(cands)
+
+    def group_candidate(group):
+        """First candidate in the group that names any lake; None if none."""
+        for cand in group:
+            ln = extract_letter_number(cand)
+            if ln and ln in by_designation:
+                return cand
+            key = _strip_trailing(normalize_lake_name(cand),
+                                  LAKE_SUFFIX_WORDS)
+            if key in by_name:
+                return cand
+        return None
+
     for h in hikes:
-        primary_texts = [h["name"] or ""]
-        body_texts = [h.get("narrative"), h.get("finding_trailhead"), h["name"]]
+        drainages = _hike_db_drainages(h.get("drainage"))
+        body_cands = [c for c in map(group_candidate, _candidate_groups(
+            h.get("narrative"), h.get("finding_trailhead"), h["name"])) if c]
+        matches, pending = {}, []
+        for cand in body_cands:
+            lids, method = resolve(cand, drainages)
+            for lid in lids:
+                matches.setdefault(lid, method)
+            if not lids and method:
+                pending.append(cand)
+        # Second pass: a hike that crosses a divide names lakes outside its
+        # own drainage — widen the scope to every drainage it already
+        # matched a lake in, and keep only still-unique candidates. The
+        # matched lakes' coordinates also anchor the lone-exact basin check.
+        widened = drainages | {lake_drainage[lid] for lid in matches}
+        ctx_pts = [lake_coords[lid] for lid in matches if lid in lake_coords]
+        for cand in pending:
+            lids, method = resolve(cand, widened, ctx_pts)
+            if lids:
+                for lid in lids:
+                    matches.setdefault(
+                        lid, "name-group" if len(lids) > 1 else "name-context")
+            else:
+                key = _strip_trailing(normalize_lake_name(cand),
+                                      LAKE_SUFFIX_WORDS)
+                alts = tuple(sorted(id_to_ln[l]
+                                    for l, _, _ in by_name.get(key, [])))
+                dropped.add((h["hike_number"], cand, alts))
+
         primary_ids = set()
-        for cand in _lake_candidates(*primary_texts):
-            lid, method, _ = find_matching_lake(cursor, cand)
-            if lid:
-                primary_ids.add(lid)
-        matches = {}
-        for cand in _lake_candidates(*body_texts):
-            lid, method, _ = find_matching_lake(cursor, cand)
-            if lid and lid not in matches:
-                matches[lid] = method
+        for group in _candidate_groups(h["name"] or ""):
+            cand = group_candidate(group)
+            if cand:
+                lids, method = resolve(cand, widened, ctx_pts)
+                primary_ids.update(lids)
+
         h["lakes"] = [
             {"letter_number": id_to_ln[lid], "method": method,
              "is_primary": 1 if lid in primary_ids else 0}
             for lid, method in matches.items()
         ]
+
+    if dropped:
+        print(f"Ambiguous names dropped (no single candidate in scope): "
+              f"{len(dropped)}")
+        for hn, cand, lns in sorted(dropped, key=lambda x: (x[0] or 0, x[1])):
+            print(f"  hike #{hn}: {cand} -> {', '.join(lns)}")
 
 
 # --------------------------------------------------------------------------- #
