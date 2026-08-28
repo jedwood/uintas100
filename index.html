@@ -552,6 +552,34 @@
     <script src="vendor/leaflet/leaflet.js"></script>
     <script src="vendor/leaflet/leaflet-rotate.js"></script>
     <script>
+        // leaflet-rotate wires the map's 'rotate' event to Renderer._update, which
+        // re-baselines the renderer's _zoom/_topLeft to the CURRENT (fractional)
+        // view. With touchRotate on, every two-finger pinch also fires setBearing
+        // each frame (finger micro-jitter), so that re-baseline runs mid-pinch
+        // while the SVG paths are still projected at the gesture-start zoom —
+        // _updateTransform then computes ~identity and the lake dots freeze in
+        // place until zoomend, then snap. Skip the rotate re-baseline while a
+        // two-finger gesture is in progress; the gesture-end _animateZoom /
+        // moveend path restores a consistent baseline anyway.
+        (function () {
+            const getEvents = L.Renderer.prototype.getEvents;
+            L.Renderer.include({
+                getEvents: function () {
+                    const events = getEvents.apply(this, arguments);
+                    const onRotate = events.rotate;
+                    if (onRotate) {
+                        events.rotate = function () {
+                            const tg = this._map && this._map.touchGestures;
+                            if (tg && (tg._zooming || tg._rotating)) return;
+                            return onRotate.apply(this, arguments);
+                        };
+                    }
+                    return events;
+                }
+            });
+        })();
+    </script>
+    <script>
         let lakes = [];
         let drainagesInfo = [];
         let trailheadsData = [];
@@ -941,8 +969,12 @@
                 if (!e.target.closest('#offline-modal-card')) closeOfflineModal();
             });
 
-            // Close modals on backdrop click
+            // Close modals on backdrop click. A detached target means the click
+            // came from an element the handler itself removed mid-dispatch (the
+            // lake→lake chips rebuild #modal-content before the event bubbles
+            // here) — that's an in-card click, not a backdrop click.
             document.getElementById('lake-detail-modal').addEventListener('click', (e) => {
+                if (!e.target.isConnected) return;
                 if (!e.target.closest('#lake-modal-card')) closeModal();
             });
             document.getElementById('about-modal').addEventListener('click', (e) => {
@@ -2345,6 +2377,10 @@
             `;
 
             modal.classList.remove('hidden');
+            // Start at the top — matters when navigating lake→lake from a chip
+            // deep in the previous lake's content (scroll position persists on
+            // the card element across the innerHTML swap).
+            document.getElementById('lake-modal-card').scrollTop = 0;
             pushModalState('lake', `#${encodeURIComponent(lake.letter_number)}`);
             const starBtn = document.getElementById('star-lake');
             starBtn.onclick = () => {
