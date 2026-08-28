@@ -193,8 +193,10 @@ hike_number,letter_number,match_method,is_primary
 46,LF-30,name,0
 46,LF-35,exact,0
 46,LF-36,name,0
+46,X-94,manual,0
 47,LF-25,name,1
 48,X-104,name,0
+48,X-106,name-drainage,0
 48,X-109,name,1
 48,X-110,name,0
 48,Y-36,exact,0
@@ -219,6 +221,7 @@ hike_number,letter_number,match_method,is_primary
 53,X-23,name,0
 53,X-55,name,0
 53,Y-25,name-drainage,1
+54,X-106,name-drainage,0
 54,X-107,name,0
 54,X-108,name,1
 54,Y-2,exact,0
@@ -249,6 +252,7 @@ hike_number,letter_number,match_method,is_primary
 60,U-48,name,0
 60,U-49,name-drainage,0
 60,U-54,name-drainage,0
+60,WR-7,manual,0
 61,GR-143,name,0
 61,GR-3,name,0
 61,U-23,name-drainage,0
@@ -266,12 +270,14 @@ hike_number,letter_number,match_method,is_primary
 62,U-34,name-group,1
 62,U-46,name-group,1
 62,U-47,name,0
+62,WR-7,manual,0
 63,WR-64,name,0
 63,WR-66,name,1
 64,WR-52,name,0
 64,WR-64,name,0
 65,WR-40,name,0
 65,WR-42,name-drainage,0
+65,WR-46,name-drainage,0
 65,WR-48,name,0
 65,WR-49,name-drainage,1
 65,WR-50,name,0
@@ -289,9 +295,8 @@ hike_number,letter_number,match_method,is_primary
 68,GR-51,name,0
 68,GR-57,name-drainage,0
 69,GR-34,name,1
+69,GR-35,name-drainage,0
 69,GR-40,name,0
-69,GR-49,name-group,0
-69,GR-50,name-group,0
 70,G-15,name-context,0
 70,GR-40,name,0
 70,LF-22,name,0
@@ -350,11 +355,14 @@ hike_number,letter_number,match_method,is_primary
 85,GR-135,name-group,0
 85,GR-140,name,0
 85,GR-143,name,0
+85,GR-147,manual,0
+86,GR-112,manual,0
 86,GR-115,name,0
 86,GR-2,name,1
 86,GR-25,name,0
 86,GR-3,name,0
 86,GR-4,name-drainage,0
+87,GR-125,manual,0
 87,GR-2,name,0
 88,GR-3,name,0
 88,GR-6,name,1
@@ -362,6 +370,7 @@ hike_number,letter_number,match_method,is_primary
 89,GR-12,name,0
 89,GR-17,name,0
 89,GR-3,name,0
+89,GR-7,manual,0
 89,GR-9,name-group,1
 90,GR-18,name,0
 90,GR-19,name,1

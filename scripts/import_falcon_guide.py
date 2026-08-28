@@ -387,7 +387,17 @@ def _alias_bases(key):
     bases = set()
     stripped = re.sub(r"\s*\([^)]*\)$", "", key).strip()
     inner = re.search(r"\(([^)]*)\)$", key)
-    for variant in {stripped, inner.group(1).strip() if inner else ""}:
+    variants = {stripped, inner.group(1).strip() if inner else ""}
+    # The book says "Five Point Lake" for what the DB names "Five Point
+    # Reservoir" (X-106) — index reservoir names minus the suffix as
+    # aliases too. This is the REVERSE of the DWR stocking rule ("Echo
+    # Reservoir" must never name-match the Z-16 "Echo" lake): here the
+    # RESERVOIR is on the curated-lake side, and the alias only ever
+    # matches in-drainage, so a lowland water can't sneak in.
+    for v in list(variants):
+        if v.endswith(" RESERVOIR"):
+            variants.add(v[: -len(" RESERVOIR")].strip())
+    for variant in variants:
         if not variant:
             continue
         bases.add(variant)
@@ -399,6 +409,27 @@ def _alias_bases(key):
             elif words[0] in _DIRECTIONAL:
                 bases.add(" ".join(words[1:]))
     return {b for b in bases if b and b != key and b not in _DIRECTIONAL}
+
+
+# Hand-reviewed resolutions (2026-08-28, checked against the DWR pamphlet
+# notes in this DB) for the mentions the conservative matcher reports as
+# unresolvable — keyed by (hike_number, normalized mention key). A
+# letter_number links that lake with method 'manual'; None records
+# "reviewed: correctly no link" (a trailhead name-drop, or an alternate
+# name for a lake the hike already links) so re-imports only report NEW,
+# unreviewed drops.
+_MANUAL_LINKS = {
+    (8,  "NORTH TWIN"): None,   # the Provo Twins (A-32/A-33) already linked; GR-50 is Dry Fork's
+    (23, "CRYSTAL"): None,      # "...Lakes Country Trail of Crystal Lake trailhead fame" — name-drop
+    (46, "CRATER"): "X-94",     # DWR: "northeast base of Explorer Peak"; LF-2 is Lambert Meadows' Crater
+    (56, "ISLAND"): None,       # "Pippen Lake (sometimes called Island Lake)" — U-9 already linked
+    (60, "CLEVELAND"): "WR-7",  # before Fox-Queant Pass: the Whiterocks-side Cleveland
+    (62, "CLEVELAND"): "WR-7",
+    (85, "BEAVER"): "GR-147",   # right off Burnt Ridge into Middle Fork Beaver Creek (hike 83's lake)
+    (86, "HIDDEN"): "GR-112",   # DWR: "0.8 miles northwest of the Spirit Lake campground" (by Tamarack)
+    (87, "FISH"): "GR-125",     # DWR: "atop the divide between the Burnt Fork and Sheep Creek drainage"
+    (89, "HIDDEN"): "GR-7",     # DWR: "0.7 miles northwest of Lower Anson Lake in Weyman Lakes Basin"
+}
 
 
 def link_lakes(cursor, hikes):
@@ -521,9 +552,14 @@ def link_lakes(cursor, hikes):
             else:
                 key = _strip_trailing(normalize_lake_name(cand),
                                       LAKE_SUFFIX_WORDS)
-                alts = tuple(sorted(id_to_ln[l]
-                                    for l, _, _ in by_name.get(key, [])))
-                dropped.add((h["hike_number"], cand, alts))
+                if (h["hike_number"], key) in _MANUAL_LINKS:
+                    ln = _MANUAL_LINKS[(h["hike_number"], key)]
+                    if ln:
+                        matches.setdefault(by_designation[ln], "manual")
+                else:
+                    alts = tuple(sorted(id_to_ln[l]
+                                        for l, _, _ in by_name.get(key, [])))
+                    dropped.add((h["hike_number"], cand, alts))
 
         primary_ids = set()
         for group in _candidate_groups(h["name"] or ""):
