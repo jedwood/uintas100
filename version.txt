@@ -1,0 +1,4 @@
+BUILD MARKER — if you can read this on your phone, the network path to GitHub Pages is fine.
+commit: 966aa2c (Falcon guidebook)
+marker: FALCON-SENTINEL-8827
+Content that should be live: lake modal shows "From Hiking Utah's High Uintas" above Junesucker/Cordell.
