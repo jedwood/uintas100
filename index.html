@@ -555,6 +555,7 @@
         let lakes = [];
         let drainagesInfo = [];
         let trailheadsData = [];
+        let hikesData = [];
         const MISSION_GOAL = 100;
         const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -586,6 +587,7 @@
             lakes = data.lakes;
             drainagesInfo = data.drainages;
             trailheadsData = data.trailheads || [];
+            hikesData = data.hikes || [];
             // Stocking records are exported newest-first, so each lake's
             // unique years come out newest-first too
             lakes.forEach(lake => {
@@ -2057,6 +2059,61 @@
                 </details>`;
         }
 
+        // ---- Falcon guidebook hikes (Hiking Utah's High Uintas, 3rd ed.) ----
+        // Rendered in the lake modal for every hike that reaches this lake.
+        // `thisLn` is the lake we're viewing from, so we can flag it as the
+        // hike's primary destination and list the OTHER lakes it also reaches.
+        function hikeDetailsHtml(hike, thisLn) {
+            const isPrimary = (hike.lakes.find(l => l.letter_number === thisLn) || {}).primary;
+            const paras = txt => escHtml(txt || '').split(/\n\n+/)
+                .filter(p => p.trim())
+                .map(p => `<p class="mb-2">${p}</p>`).join('');
+            const fieldRow = (label, val) => val ? `
+                <div class="flex gap-2">
+                    <span class="text-gray-500 shrink-0">${label}:</span>
+                    <span class="text-gray-800">${escHtml(val)}</span>
+                </div>` : '';
+            const others = hike.lakes.filter(l => l.letter_number !== thisLn);
+            const otherChips = others.length ? `
+                <div class="mt-3">
+                    <div class="text-xs text-gray-500 mb-1">Other lakes on this hike:</div>
+                    <div class="flex flex-wrap gap-1">
+                        ${others.map(l => `<button type="button" onclick="showLakeDetail('${l.letter_number}')"
+                            class="px-2 py-0.5 text-xs border border-slate-300 rounded-full hover:bg-slate-100">${l.letter_number}</button>`).join('')}
+                    </div>
+                </div>` : '';
+            const finding = hike.finding_trailhead ? `
+                <details class="mt-3">
+                    <summary class="cursor-pointer text-xs font-medium text-slate-600">Finding the trailhead</summary>
+                    <div class="mt-1 text-sm text-gray-700 leading-relaxed">${paras(hike.finding_trailhead)}</div>
+                </details>` : '';
+            return `
+                <details class="border border-slate-200 rounded-lg px-3 py-2">
+                    <summary class="cursor-pointer text-sm font-medium text-gray-800">
+                        🥾 Hike ${hike.number}: ${escHtml(hike.name)}
+                        ${isPrimary ? '<span class="ml-1 px-1.5 py-0.5 text-[10px] uppercase tracking-wide bg-emerald-100 text-emerald-700 rounded">destination</span>' : ''}
+                        <span class="block text-xs text-gray-500 font-normal mt-0.5">
+                            ${[hike.distance, hike.difficulty].filter(Boolean).map(escHtml).join(' · ')}
+                        </span>
+                    </summary>
+                    <div class="mt-2 text-sm space-y-1">
+                        ${fieldRow('Start', hike.trailhead || hike.start)}
+                        ${fieldRow('Distance', hike.distance)}
+                        ${fieldRow('Destination elevation', hike.destination_elevation)}
+                        ${fieldRow('Hiking time', hike.hiking_time)}
+                        ${fieldRow('Difficulty', hike.difficulty)}
+                        ${fieldRow('Usage', hike.usage)}
+                        ${fieldRow('Nearest town', hike.nearest_town)}
+                        ${fieldRow('Drainage', hike.drainage)}
+                    </div>
+                    ${hike.narrative ? `<div class="mt-3 text-sm text-gray-700 leading-relaxed">${paras(hike.narrative)}</div>` : ''}
+                    ${finding}
+                    ${hike.maps ? `<div class="mt-3 text-xs text-gray-500">Maps: ${escHtml(hike.maps)}</div>` : ''}
+                    ${otherChips}
+                    <div class="mt-2 text-[11px] text-gray-400 italic">Hiking Utah's High Uintas, 3rd ed. (Falcon)${hike.source_pages ? ` — pp. ${escHtml(hike.source_pages)}` : ''}</div>
+                </details>`;
+        }
+
         function openDrainageFromLake(drainage) {
             closeModal();
             showDrainageLakes(drainage);
@@ -2230,6 +2287,24 @@
                         `, notePreview(lake.junesucker_notes))}
                     </div>
                 ` : ''}
+
+                <!-- From the Falcon guidebook: hikes that reach this lake -->
+                ${(() => {
+                    const hs = hikesData
+                        .filter(h => h.lakes.some(l => l.letter_number === lake.letter_number))
+                        .sort((a, b) => {
+                            const ap = a.lakes.find(l => l.letter_number === lake.letter_number).primary ? 0 : 1;
+                            const bp = b.lakes.find(l => l.letter_number === lake.letter_number).primary ? 0 : 1;
+                            return ap - bp || a.number - b.number;
+                        });
+                    if (!hs.length) return '';
+                    return `
+                        <div class="rounded-lg p-4 border border-slate-200">
+                            <h3 class="text-lg font-semibold mb-1">From <em>Hiking Utah's High Uintas</em></h3>
+                            <p class="text-xs text-gray-500 mb-3">${hs.length} hike${hs.length > 1 ? 's' : ''} in the Falcon guide reach${hs.length > 1 ? '' : 'es'} this lake.</p>
+                            <div class="space-y-2">${hs.map(h => hikeDetailsHtml(h, lake.letter_number)).join('')}</div>
+                        </div>`;
+                })()}
 
                 <!-- From Cordell Andersen's book (collapsed to a 2-line preview) -->
                 ${lake.cma_notes ? `

@@ -125,6 +125,50 @@ SEEDS = {
             ORDER BY l.letter_number, f.date
         """,
     },
+    # --- Falcon guidebook (guide_*), FKs resolved to natural keys -----------
+    "guide_regions.csv": {
+        "columns": ["part_number", "name", "description"],
+        "sql": ("SELECT part_number, name, description FROM guide_regions "
+                "ORDER BY part_number"),
+    },
+    "guide_trailheads.csv": {
+        "columns": ["name", "region_part", "description", "maps"],
+        "sql": """
+            SELECT t.name, r.part_number, t.description, t.maps
+            FROM guide_trailheads t
+            LEFT JOIN guide_regions r ON t.region_id = r.id
+            ORDER BY t.name
+        """,
+    },
+    "guide_hikes.csv": {
+        "columns": ["hike_number", "name", "region_part", "trailhead_name",
+                    "start_trailhead", "distance", "destination_elevation",
+                    "hiking_time", "difficulty", "usage", "nearest_town",
+                    "drainage", "narrative", "finding_trailhead", "source_pages",
+                    "source_file"],
+        "sql": """
+            SELECT h.hike_number, h.name, r.part_number, t.name,
+                   h.start_trailhead, h.distance, h.destination_elevation,
+                   h.hiking_time, h.difficulty, h.usage, h.nearest_town,
+                   h.drainage, h.narrative, h.finding_trailhead, h.source_pages,
+                   h.source_file
+            FROM guide_hikes h
+            LEFT JOIN guide_regions r ON h.region_id = r.id
+            LEFT JOIN guide_trailheads t ON h.trailhead_id = t.id
+            ORDER BY h.hike_number
+        """,
+    },
+    "guide_hike_lakes.csv": {
+        "columns": ["hike_number", "letter_number", "match_method",
+                    "is_primary"],
+        "sql": """
+            SELECT h.hike_number, l.letter_number, hl.match_method, hl.is_primary
+            FROM guide_hike_lakes hl
+            LEFT JOIN guide_hikes h ON hl.hike_id = h.id
+            LEFT JOIN lakes l ON hl.lake_id = l.id
+            ORDER BY h.hike_number, l.letter_number
+        """,
+    },
 }
 
 

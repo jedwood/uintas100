@@ -151,6 +151,53 @@ def rebuild(output_path):
              row["stock_date"], row["source_year"]),
         )
 
+    # --- Falcon guide_* (regions -> trailheads -> hikes -> hike_lakes) ------
+    region_id = {}
+    for row in _read_seed("guide_regions.csv"):
+        cur.execute(
+            "INSERT INTO guide_regions (part_number, name, description) "
+            "VALUES (?, ?, ?)",
+            (row["part_number"], row["name"], row["description"]))
+        region_id[row["part_number"]] = cur.lastrowid
+
+    gth_id = {}
+    for row in _read_seed("guide_trailheads.csv"):
+        cur.execute(
+            "INSERT INTO guide_trailheads (name, region_id, description, maps) "
+            "VALUES (?, ?, ?, ?)",
+            (row["name"], region_id.get(row["region_part"]), row["description"],
+             row["maps"]))
+        gth_id[row["name"]] = cur.lastrowid
+
+    ghike_id = {}
+    for row in _read_seed("guide_hikes.csv"):
+        cur.execute(
+            """INSERT INTO guide_hikes
+               (hike_number, name, region_id, trailhead_id, start_trailhead,
+                distance, destination_elevation, hiking_time, difficulty, usage,
+                nearest_town, drainage, narrative, finding_trailhead,
+                source_pages, source_file)
+               VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+            (row["hike_number"], row["name"], region_id.get(row["region_part"]),
+             gth_id.get(row["trailhead_name"]), row["start_trailhead"],
+             row["distance"], row["destination_elevation"], row["hiking_time"],
+             row["difficulty"], row["usage"], row["nearest_town"],
+             row["drainage"], row["narrative"], row["finding_trailhead"],
+             row["source_pages"], row["source_file"]))
+        ghike_id[row["hike_number"]] = cur.lastrowid
+
+    for row in _read_seed("guide_hike_lakes.csv"):
+        hid = ghike_id.get(row["hike_number"])
+        if hid is None:
+            skipped += 1
+            continue
+        cur.execute(
+            """INSERT INTO guide_hike_lakes
+               (hike_id, lake_id, match_method, is_primary)
+               VALUES (?, ?, ?, ?)""",
+            (hid, lid(row["letter_number"]), row["match_method"],
+             row["is_primary"]))
+
     conn.commit()
     conn.close()
     if skipped:

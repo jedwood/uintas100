@@ -58,6 +58,23 @@ TABLE_QUERIES = {
     "fishing_reports": """
         SELECT l.letter_number, f.date, f.success, f.notes
         FROM fishing_reports f LEFT JOIN lakes l ON f.lake_id = l.id""",
+    "guide_regions": "SELECT part_number, name, description FROM guide_regions",
+    "guide_trailheads": """
+        SELECT t.name, r.part_number, t.description, t.maps
+        FROM guide_trailheads t LEFT JOIN guide_regions r ON t.region_id = r.id""",
+    "guide_hikes": """
+        SELECT h.hike_number, h.name, r.part_number, t.name, h.start_trailhead,
+               h.distance, h.destination_elevation, h.hiking_time, h.difficulty,
+               h.usage, h.nearest_town, h.drainage, h.narrative,
+               h.finding_trailhead, h.source_pages, h.source_file
+        FROM guide_hikes h
+        LEFT JOIN guide_regions r ON h.region_id = r.id
+        LEFT JOIN guide_trailheads t ON h.trailhead_id = t.id""",
+    "guide_hike_lakes": """
+        SELECT h.hike_number, l.letter_number, hl.match_method, hl.is_primary
+        FROM guide_hike_lakes hl
+        LEFT JOIN guide_hikes h ON hl.hike_id = h.id
+        LEFT JOIN lakes l ON hl.lake_id = l.id""",
 }
 
 

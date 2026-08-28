@@ -121,9 +121,56 @@ def export():
             }
         )
 
+    # Falcon guidebook hikes: emitted once as a top-level array (like
+    # `trailheads`), each carrying the letter_numbers of the lakes it reaches so
+    # the lake modal can filter without duplicating the (long) narratives.
+    hikes = []
+    for row in conn.execute(
+        """SELECT h.id, h.hike_number, h.name, r.name AS region,
+                  h.start_trailhead, t.name AS trailhead, t.maps,
+                  h.distance, h.destination_elevation, h.hiking_time,
+                  h.difficulty, h.usage, h.nearest_town, h.drainage,
+                  h.narrative, h.finding_trailhead, h.source_pages
+           FROM guide_hikes h
+           LEFT JOIN guide_regions r ON h.region_id = r.id
+           LEFT JOIN guide_trailheads t ON h.trailhead_id = t.id
+           ORDER BY h.hike_number"""
+    ):
+        lake_links = [
+            {"letter_number": r["letter_number"], "primary": r["is_primary"]}
+            for r in conn.execute(
+                """SELECT l.letter_number, hl.is_primary
+                   FROM guide_hike_lakes hl
+                   JOIN lakes l ON hl.lake_id = l.id
+                   WHERE hl.hike_id = ?
+                   ORDER BY hl.is_primary DESC, l.letter_number""", (row["id"],))
+        ]
+        hikes.append(
+            {
+                "number": row["hike_number"],
+                "name": row["name"],
+                "region": row["region"],
+                "trailhead": row["trailhead"] or row["start_trailhead"],
+                "start": row["start_trailhead"],
+                "maps": row["maps"],
+                "distance": row["distance"],
+                "destination_elevation": row["destination_elevation"],
+                "hiking_time": row["hiking_time"],
+                "difficulty": row["difficulty"],
+                "usage": row["usage"],
+                "nearest_town": row["nearest_town"],
+                "drainage": row["drainage"],
+                "narrative": row["narrative"],
+                "finding_trailhead": row["finding_trailhead"],
+                "source_pages": row["source_pages"],
+                "lakes": lake_links,
+            }
+        )
+
     conn.close()
 
-    data = {"lakes": lakes, "drainages": drainages, "trailheads": trailheads}
+    data = {"lakes": lakes, "drainages": drainages, "trailheads": trailheads,
+            "hikes": hikes}
     OUTPUT_PATH.write_text(
         json.dumps(data, ensure_ascii=False, separators=(",", ":"))
     )
@@ -132,7 +179,8 @@ def export():
     size_kb = OUTPUT_PATH.stat().st_size / 1024
     print(
         f"Exported {len(lakes)} lakes, {n_stocking} stocking records, "
-        f"{len(drainages)} drainages, {len(trailheads)} trailheads "
+        f"{len(drainages)} drainages, {len(trailheads)} trailheads, "
+        f"{len(hikes)} hikes "
         f"-> {OUTPUT_PATH.name} ({size_kb:.0f} KB)"
     )
 

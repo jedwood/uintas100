@@ -159,6 +159,66 @@ def create_database(db_path=None):
         )
     ''')
 
+    # --- Falcon "Hiking Utah's High Uintas" (3rd ed., Gillman, 2024) ---------
+    # A second guidebook, kept as a parallel source layer alongside the Cordell
+    # Andersen trailheads above (they are NOT merged — see import_falcon_guide.py).
+    # The book is organized as 3 regional Parts -> named trailhead sections ->
+    # 90 numbered hikes, each linked to the lakes it reaches. All guide_* rows
+    # are wholly derived from the (gitignored) purchased EPUB.
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS guide_regions (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            part_number INTEGER UNIQUE,
+            name TEXT,
+            description TEXT
+        )
+    ''')
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS guide_trailheads (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT UNIQUE,
+            region_id INTEGER,
+            description TEXT,
+            maps TEXT,
+            FOREIGN KEY (region_id) REFERENCES guide_regions (id)
+        )
+    ''')
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS guide_hikes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            hike_number INTEGER UNIQUE,
+            name TEXT,
+            region_id INTEGER,
+            trailhead_id INTEGER,
+            start_trailhead TEXT,
+            distance TEXT,
+            destination_elevation TEXT,
+            hiking_time TEXT,
+            difficulty TEXT,
+            usage TEXT,
+            nearest_town TEXT,
+            drainage TEXT,
+            narrative TEXT,
+            finding_trailhead TEXT,
+            source_pages TEXT,
+            source_file TEXT,
+            FOREIGN KEY (region_id) REFERENCES guide_regions (id),
+            FOREIGN KEY (trailhead_id) REFERENCES guide_trailheads (id)
+        )
+    ''')
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS guide_hike_lakes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            hike_id INTEGER,
+            lake_id INTEGER,
+            match_method TEXT,
+            is_primary INTEGER DEFAULT 0,
+            UNIQUE (hike_id, lake_id),
+            FOREIGN KEY (hike_id) REFERENCES guide_hikes (id),
+            FOREIGN KEY (lake_id) REFERENCES lakes (id)
+        )
+    ''')
+
     # Idempotent safety net: back-fill any lakes column an OLDER database might
     # be missing. No-ops on a fresh build (the full CREATE above already has
     # them) and on the current live DB. Keeps any create_database() entry point

@@ -29,6 +29,14 @@ data/the-high-uinta-mountains-by-cma.pdf
 data/cma-book-web.pdf
 data/tailscale_book/
 
+# Falcon "Hiking Utah's High Uintas" (3rd ed, Gillman, 2024) — purchased Kobo
+# EPUB. Like the CMA book, derived data will be committed but the copyrighted
+# source EPUB (DRM'd original + decrypted copy) and the Adobe .acsm tickets
+# stay local-only. The repo is public.
+data/falcon_guide/*.epub
+*.acsm
+/HIKING UTAHS HIGH UINTAS.epub
+
 # Web Push secrets (Mini-only): VAPID private key + per-device subscription list.
 # The repo is public — these MUST never be committed. The VAPID *public* key is
 # embedded in index.html (public by design). See scripts/push_utils.py.
