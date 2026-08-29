@@ -6,6 +6,18 @@ import re
 # Single source of truth for both the per-lake update and the full sweep.
 DEFAULT_SPECIES_CUTOFF_YEAR = 2016
 
+# Curated wild, self-sustaining populations confirmed present but never (or not
+# recently) stocked, keyed by letter_number. These species are always included in
+# fish_species and always display WITHOUT an asterisk — the asterisk means
+# "not stocked since the cutoff", which is meaningless for a population that
+# reproduces on its own. Without this, the refresh sweep would permanently
+# render them as historical.
+# A-51 Crystal (Provo River Drainage): Grayling confirmed by Jed's own catches
+# (hundreds of fish, 2026-08-29); wild population, not stocking-derived.
+WILD_SPECIES = {
+    'A-51': {'Grayling'},
+}
+
 
 def normalize_species_name(species_text):
     """
@@ -120,8 +132,12 @@ def update_lake_fish_species(cursor, lake_id, cutoff_year=DEFAULT_SPECIES_CUTOFF
         cutoff_year: Year cutoff for asterisk logic (species not stocked since this year get *)
     """
     # Get current fish_species (contains manual edits and historical data)
-    cursor.execute('SELECT fish_species FROM lakes WHERE id = ?', (lake_id,))
-    current_species_text = cursor.fetchone()[0] or ''
+    cursor.execute('SELECT letter_number, fish_species FROM lakes WHERE id = ?', (lake_id,))
+    letter_number, current_species_text = cursor.fetchone()
+    current_species_text = current_species_text or ''
+
+    # Curated wild populations for this lake (always present, never asterisked)
+    wild_species = WILD_SPECIES.get(letter_number, set())
     
     # Parse current species (removing asterisks for processing)
     current_species = set()
@@ -152,11 +168,12 @@ def update_lake_fish_species(cursor, lake_id, cutoff_year=DEFAULT_SPECIES_CUTOFF
     ''', (lake_id, cutoff_year))
     recent_stocking_species = set(row[0] for row in cursor.fetchall())
     
-    # Merge all species
-    all_species = current_species.union(stocking_species)
-    
-    # Apply asterisk logic: species not stocked since cutoff_year get asterisks
-    asterisk_species = all_species - recent_stocking_species
+    # Merge all species (curated wild populations included)
+    all_species = current_species.union(stocking_species).union(wild_species)
+
+    # Apply asterisk logic: species not stocked since cutoff_year get asterisks;
+    # wild self-sustaining species are exempt (present regardless of stocking)
+    asterisk_species = all_species - recent_stocking_species - wild_species
     
     # Format for display
     if all_species:

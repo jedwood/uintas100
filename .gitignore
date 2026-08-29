@@ -36,6 +36,10 @@ data/tailscale_book/
 data/falcon_guide/*.epub
 *.acsm
 /HIKING UTAHS HIGH UINTAS.epub
+# The verification report for the Tailscale-only HTML rendering of the book
+# (export_falcon_book.py) — its screenshots capture book pages/maps, so it
+# stays local-only like the book itself.
+reports/2026-08-29-falcon-book-html/
 
 # Web Push secrets (Mini-only): VAPID private key + per-device subscription list.
 # The repo is public — these MUST never be committed. The VAPID *public* key is

@@ -85,6 +85,15 @@
         /* Detail/About modals must sit above Leaflet panes & controls (z-index up to 1000) */
         #lake-detail-modal, #about-modal, #rotenone-modal, #sync-modal, #offline-modal { z-index: 1200; }
 
+        /* Modal scroll containment: a scroll that hits the card's extremes must
+           not chain to the page behind it. */
+        #lake-modal-card, #about-modal-card, #rotenone-modal-card, #sync-modal-card,
+        #offline-modal-card, #stocking-report-body { overscroll-behavior: contain; }
+        /* Body freeze while any full-screen overlay is open. Plain
+           overflow:hidden doesn't hold in iOS Safari, so lockBodyScroll() uses
+           the position:fixed technique (top:-scrollY inline, restored on unlock). */
+        body.scroll-locked { position: fixed; left: 0; right: 0; width: 100%; }
+
         /* Cordell Andersen book pages (sections injected from cma_book.html) */
         #book-content .cma-page { border-top: 1px dashed #cbd5e1; padding-top: .75rem; margin-top: .75rem; scroll-margin-top: 4rem; }
         #book-content .cma-page-num { font-size: .75rem; color: #94a3b8; font-weight: 600; }
@@ -287,9 +296,14 @@
                     <div class="flex items-center justify-center min-h-screen p-4">
                         <div id="lake-modal-card" class="bg-white rounded-lg max-w-4xl w-full max-h-screen overflow-y-auto">
                             <div id="lake-view" class="p-6">
-                                <div class="flex justify-between items-center mb-4">
-                                    <h2 id="modal-title" class="text-2xl font-bold"></h2>
-                                    <div class="flex items-center gap-3">
+                                <div class="flex justify-between items-center mb-4 gap-3">
+                                    <div class="flex items-center gap-3 min-w-0">
+                                        <button id="modal-back" title="Back"
+                                                class="text-gray-400 hover:text-gray-600 text-2xl leading-none shrink-0"
+                                                style="padding:.25rem .5rem;margin:-.25rem -.5rem">&larr;</button>
+                                        <h2 id="modal-title" class="text-2xl font-bold"></h2>
+                                    </div>
+                                    <div class="flex items-center gap-3 shrink-0">
                                         <button id="star-lake" title="Star this lake" class="text-2xl leading-none"></button>
                                         <button id="close-modal" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
                                     </div>
@@ -359,7 +373,8 @@
                                             <div>
                                                 <h3 class="text-xl font-semibold text-gray-700 mb-3">Books</h3>
                                                 <ul class="space-y-2 ml-4">
-                                                    <li><a href="https://www.amazon.com/Hiking-Utahs-Uintas-Andrew-Gillman/dp/1493075691" target="_blank" class="text-slate-700 underline hover:text-slate-900">Hiking Utah's High Uintas</a></li>
+                                                    <li><a href="https://www.amazon.com/Hiking-Utahs-Uintas-Andrew-Gillman/dp/1493075691" target="_blank" class="text-slate-700 underline hover:text-slate-900">Hiking Utah's High Uintas</a>
+                                                        <span class="text-sm text-gray-500">— <a href="https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html" target="_blank" class="underline decoration-dotted hover:text-slate-700" title="Private full copy with maps — needs the Tailscale VPN on">Jed's copy (Tailscale)</a></span></li>
                                                     <li><a href="https://www.amazon.com/High-Uintas-Adventures-Backcountry-Planner/dp/B08FPGJ214" target="_blank" class="text-slate-700 underline hover:text-slate-900">High Uintas Adventures</a></li>
                                                 </ul>
                                             </div>
@@ -911,6 +926,7 @@
             document.getElementById('apply-filters').addEventListener('click', applyFilters);
             document.getElementById('clear-filters').addEventListener('click', clearFilters);
             document.getElementById('close-modal').addEventListener('click', closeModal);
+            document.getElementById('modal-back').addEventListener('click', modalBack);
             document.getElementById('book-back').addEventListener('click', () => {
                 if (history.state && history.state.modal === 'book') {
                     history.back();  // popstate swaps back to the lake view (or closes)
@@ -1750,10 +1766,12 @@
             document.getElementById('offline-progress-wrap').classList.add('hidden');
             document.getElementById('offline-download-btn').disabled = false;
             document.getElementById('offline-modal').classList.remove('hidden');
+            lockBodyScroll('offline');
         }
         function closeOfflineModal() {
             if (offlineAbort) offlineAbort.abort();   // resumable — cached tiles are kept
             document.getElementById('offline-modal').classList.add('hidden');
+            unlockBodyScroll('offline');
         }
 
         function renderOfflineZoomOptions() {
@@ -2040,6 +2058,7 @@
             const modal = document.getElementById('lake-detail-modal');
             const card = document.getElementById('lake-modal-card');
             modal.classList.remove('hidden');
+            lockBodyScroll('lake');   // same modal element; hideModals unlocks it
             document.getElementById('lake-view').classList.add('hidden');
             document.getElementById('book-view').classList.remove('hidden');
             const contentEl = document.getElementById('book-content');
@@ -2092,6 +2111,11 @@
         }
 
         // ---- Falcon guidebook hikes (Hiking Utah's High Uintas, 3rd ed.) ----
+        // Full private HTML rendering of the book (with maps), built by
+        // scripts/export_falcon_book.py into the gitignored data/tailscale_book/
+        // on the Mini and served only over the Tailscale proxy — the link is
+        // useless without Jed's VPN on, which is the point (copyright).
+        const FALCON_BOOK_URL = 'https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html';
         // Rendered in the lake modal for every hike that reaches this lake.
         // `thisLn` is the lake we're viewing from, so we can flag it as the
         // hike's primary destination and list the OTHER lakes it also reaches.
@@ -2142,6 +2166,10 @@
                     ${finding}
                     ${hike.maps ? `<div class="mt-3 text-xs text-gray-500">Maps: ${escHtml(hike.maps)}</div>` : ''}
                     ${otherChips}
+                    ${hike.number ? `
+                    <div class="mt-3"><a href="${FALCON_BOOK_URL}#hike-${hike.number}" target="_blank" rel="noopener"
+                        class="text-xs text-slate-600 underline decoration-dotted hover:text-slate-800"
+                        title="Private full copy with maps — needs the Tailscale VPN on">📖 Full hike in the book (Tailscale)</a></div>` : ''}
                     <div class="mt-2 text-[11px] text-gray-400 italic">Hiking Utah's High Uintas, 3rd ed. (Falcon)${hike.source_pages ? ` — pp. ${escHtml(hike.source_pages)}` : ''}</div>
                 </details>`;
         }
@@ -2149,6 +2177,10 @@
         function openDrainageFromLake(drainage) {
             closeModal();
             showDrainageLakes(drainage);
+            // closeModal unlocks the body asynchronously (history.back →
+            // popstate → hideModals); aim its scroll restore at the top so we
+            // land on the drainage section, not back at the old list position.
+            scrollLockY = 0;
             window.scrollTo(0, 0);
         }
 
@@ -2192,6 +2224,18 @@
             resetBookView();
 
             const modal = document.getElementById('lake-detail-modal');
+
+            // ← stack bookkeeping. Fresh open: clean slate. Lake→lake hop:
+            // remember where we came from — unless this IS the ← pop, or a
+            // re-show of the same lake (e.g. a popstate replay), which must
+            // leave the stack alone.
+            if (modal.classList.contains('hidden')) {
+                lakeNavStack.length = 0;
+            } else if (!lakeNavPopping && currentModalLake && currentModalLake !== letterNumber) {
+                lakeNavStack.push(currentModalLake);
+            }
+            currentModalLake = letterNumber;
+
             const title = document.getElementById('modal-title');
             const content = document.getElementById('modal-content');
 
@@ -2377,6 +2421,7 @@
             `;
 
             modal.classList.remove('hidden');
+            lockBodyScroll('lake');
             // Start at the top — matters when navigating lake→lake from a chip
             // deep in the previous lake's content (scroll position persists on
             // the card element across the innerHTML swap).
@@ -2450,6 +2495,64 @@
             });
         }
 
+        // ---- Body scroll lock (iOS-safe) ----
+        // Freeze the page behind any full-screen overlay. Plain overflow:hidden
+        // on <body> is unreliable in iOS Safari, so this uses the
+        // position:fixed technique: save scrollY, pin the body at -scrollY, and
+        // restore the exact position when the last overlay closes. Tracked as a
+        // Set of open overlay names, so it's idempotent per overlay and
+        // ref-counted across overlaps (lake→lake navigation re-locks 'lake'
+        // harmlessly; rotenone→lake hands off without ever unlocking).
+        const openOverlays = new Set();
+        let scrollLockY = 0;
+        // The app's only history entries are modal opens, and while a modal is
+        // open the body is position:fixed (so the browser records scrollY 0 on
+        // them). Left on 'auto', the browser's own scroll restoration fires
+        // after our popstate handler and stomps the unlock's precise restore —
+        // so we own scroll positioning outright.
+        if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+        function lockBodyScroll(name) {
+            if (openOverlays.has(name)) return;
+            if (openOverlays.size === 0) {
+                scrollLockY = window.scrollY || 0;
+                document.body.style.top = `-${scrollLockY}px`;
+                document.body.classList.add('scroll-locked');
+            }
+            openOverlays.add(name);
+        }
+        function unlockBodyScroll(name) {
+            if (!openOverlays.delete(name)) return;
+            if (openOverlays.size === 0) {
+                document.body.classList.remove('scroll-locked');
+                document.body.style.top = '';
+                window.scrollTo(0, scrollLockY);
+            }
+        }
+
+        // ---- In-modal lake→lake navigation stack ----
+        // Hike chips / trailhead chips / the rotenone list call showLakeDetail
+        // while the modal is already open; each hop records where it came from
+        // so the header's ← button can walk back. The stack holds
+        // letter_numbers only; it resets on a fresh open and clears in
+        // hideModals. Browser back/swipe is untouched: pushModalState keeps a
+        // single history entry per modal, so popstate still closes it outright.
+        let lakeNavStack = [];
+        let currentModalLake = null;   // letter_number the modal is showing
+        let lakeNavPopping = false;    // ← in flight: re-show without re-pushing
+
+        // ← in the lake modal header: step back through the in-modal trail;
+        // with nothing left to pop it behaves exactly like ×.
+        function modalBack() {
+            if (lakeNavStack.length) {
+                const prev = lakeNavStack.pop();
+                lakeNavPopping = true;
+                showLakeDetail(prev);   // pushModalState replaces the hash
+                lakeNavPopping = false;
+            } else {
+                closeModal();
+            }
+        }
+
         // Add a history entry when a modal opens so the back button/swipe
         // closes it instead of leaving the app. Replace (don't stack) if a
         // modal is already open.
@@ -2464,9 +2567,14 @@
         function hideModals() {
             resetBookView();
             bookReturnScroll = null;
+            lakeNavStack.length = 0;
+            currentModalLake = null;
             document.getElementById('lake-detail-modal').classList.add('hidden');
             document.getElementById('about-modal').classList.add('hidden');
             document.getElementById('rotenone-modal').classList.add('hidden');
+            unlockBodyScroll('lake');
+            unlockBodyScroll('about');
+            unlockBodyScroll('rotenone');
             destroyDetailMap();
             if (location.hash) {
                 history.replaceState(null, '', location.pathname + location.search);
@@ -2491,6 +2599,7 @@
 
         function openAboutModal() {
             document.getElementById('about-modal').classList.remove('hidden');
+            lockBodyScroll('about');
             pushModalState('about', '#about');
         }
 
@@ -2537,12 +2646,14 @@
                 </div>
             `).join('') || '<p class="text-gray-600">No treated lakes on record.</p>';
             document.getElementById('rotenone-modal').classList.remove('hidden');
+            lockBodyScroll('rotenone');
             pushModalState('rotenone', '#rotenone');
         }
 
         function openLakeFromRotenone(letterNumber) {
             document.getElementById('rotenone-modal').classList.add('hidden');
-            showLakeDetail(letterNumber);
+            showLakeDetail(letterNumber);   // locks 'lake' before we release
+            unlockBodyScroll('rotenone');   // 'rotenone', so the body stays put
         }
 
         function closeAboutModal() {
@@ -2739,6 +2850,7 @@
             refreshSyncModalStatus();
             refreshNotifStatus();
             document.getElementById('sync-modal').classList.remove('hidden');
+            lockBodyScroll('sync');
         }
         function refreshSyncModalStatus() {
             const n = pendingCount();
@@ -2748,6 +2860,7 @@
         }
         function closeSyncModal() {
             document.getElementById('sync-modal').classList.add('hidden');
+            unlockBodyScroll('sync');
         }
         function initSyncUI() {
             document.getElementById('sync-chip').addEventListener('click', () =>
@@ -2976,10 +3089,12 @@
                 }).join('');
             }
             modal.classList.remove('hidden');
+            lockBodyScroll('stocking');
             clearAppBadgeNow();
         }
         function closeStockingReport() {
             document.getElementById('stocking-report-modal').classList.add('hidden');
+            unlockBodyScroll('stocking');
         }
         async function openStockingReportFromStash() {
             showStockingReport(await readStashedReport());
