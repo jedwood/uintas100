@@ -302,6 +302,11 @@
                             <span id="results-count" class="text-sm text-gray-600"></span>
                         </div>
 
+                        <!-- Lead block (drainage info/map, view title) — rendered
+                             for BOTH views, so "More about <drainage>" shows the
+                             drainage writeup even when the map view is active -->
+                        <div id="results-lead" class="hidden p-4 sm:p-6" style="padding-bottom:0"></div>
+
                         <!-- List view -->
                         <div id="results-list" class="p-4 sm:p-6 space-y-4">
                             <!-- Results will be populated here -->
@@ -1470,6 +1475,13 @@
         function renderCurrentView() {
             const listEl = document.getElementById('results-list');
             const mapWrap = document.getElementById('results-map-wrap');
+            // Lead + title live above the list/map toggle so drainage info
+            // (and the "Lakes in …" heading) survives in map view too.
+            const leadEl = document.getElementById('results-lead');
+            leadEl.innerHTML = `
+                ${view.leadHtml}
+                ${view.title ? `<h3 class="text-lg font-semibold">${view.title}</h3>` : ''}`;
+            leadEl.classList.toggle('hidden', !view.leadHtml && !view.title);
             if (view.mode === 'map') {
                 listEl.classList.add('hidden');
                 mapWrap.classList.remove('hidden');
@@ -1485,8 +1497,6 @@
             const withFish = view.results.filter(lake => !lake.no_fish);
             const noFish = view.results.filter(lake => lake.no_fish);
             document.getElementById('results-list').innerHTML = `
-                ${view.leadHtml}
-                ${view.title ? `<h3 class="text-lg font-semibold mb-4">${view.title}</h3>` : ''}
                 ${withFish.map(lake => renderLakeCard(lake, view.showDrainage)).join('')}
                 ${noFish.length > 0 ? `
                     <div class="mt-6 pt-4 border-t border-gray-300">
