@@ -85,6 +85,18 @@
         /* Detail/About modals must sit above Leaflet panes & controls (z-index up to 1000) */
         #lake-detail-modal, #about-modal, #rotenone-modal, #sync-modal, #offline-modal { z-index: 1200; }
 
+        /* Small flag-style labels pinned to map circles (permanent Leaflet
+           tooltips, toggled by updatePinLabels when few enough pins are in
+           view). Kept compact so clustered basins stay legible. */
+        .pin-label {
+            background: rgba(255,255,255,.92); color: #1f2937;
+            border: 1px solid #cbd5e1; border-radius: 4px;
+            padding: 1px 5px; font-size: 11px; font-weight: 500;
+            box-shadow: 0 1px 2px rgba(0,0,0,.15);
+            white-space: nowrap;
+        }
+        .pin-label::before { border-right-color: #cbd5e1; }
+
         /* Lake modal: iOS-style sticky header. The ←/title/★/× row pins to the
            top of the scrolling card and condenses (smaller title, tighter
            padding, hairline shadow) once the content is scrolled; the drainage
@@ -1579,12 +1591,40 @@
             // Web Mercator is conformal (scale depends on latitude, not bearing).
             L.control.scale({ imperial: true, metric: false, maxWidth: 140 }).addTo(resultsMap);
             resultsMarkers = L.layerGroup().addTo(resultsMap);
+            resultsMap.on('zoomend moveend', updatePinLabels);
             addLocateControl();
             addOfflineControl();
             // Track the active basemap so the offline downloader defaults to it
             resultsMap.on('baselayerchange', e => { activeLayerName = e.name; });
             // Keep the heading arrow pointing true as the map is manually rotated
             resultsMap.on('rotate', applyHeading);
+        }
+
+        // ---- Flag labels on map pins ----
+        // Every pin gets a permanent boxed label whenever the (slightly padded)
+        // viewport holds few enough pins to stay readable. Self-adapting: a
+        // drainage view labels immediately, "browse all" stays clean until you
+        // zoom into a basin. Toggling means unbind+rebind because Leaflet fixes
+        // a tooltip's permanence at bind time; interactive:true forwards taps
+        // on the label to the marker, so the label itself is a tap target.
+        const PIN_LABEL_MAX = 30;
+        let pinRefs = [];
+        function setPinLabel(p, permanent) {
+            if (p.labeled === permanent) return;
+            p.marker.unbindTooltip();
+            p.marker.bindTooltip(permanent ? p.flag : p.hover, permanent
+                ? { permanent: true, direction: 'right', offset: [7, 0],
+                    className: 'pin-label', interactive: true }
+                : { direction: 'top' });
+            p.labeled = permanent;
+        }
+        function updatePinLabels() {
+            if (!resultsMap || !pinRefs.length) return;
+            const b = resultsMap.getBounds().pad(0.1);
+            const inView = pinRefs.filter(p => b.contains(p.marker.getLatLng()));
+            const show = inView.length > 0 && inView.length <= PIN_LABEL_MAX;
+            const inViewSet = new Set(inView);
+            pinRefs.forEach(p => setPinLabel(p, show && inViewSet.has(p)));
         }
 
         function statusColor(lake) {
@@ -1628,16 +1668,20 @@
 
             const withCoords = view.results.filter(lake => lake.lat != null);
             const bounds = [];
-            withCoords.forEach(lake => {
-                const label = lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number;
-                L.circleMarker([lake.lat, lake.lng], {
-                    radius: 7, color: '#fff', weight: 2,
+            pinRefs = withCoords.map(lake => {
+                const full = lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number;
+                const caught = lake.status === 'CAUGHT' ? ' 🎣' : '';
+                const marker = L.circleMarker([lake.lat, lake.lng], {
+                    radius: 9, color: '#fff', weight: 2,
                     fillColor: statusColor(lake), fillOpacity: 0.9
-                }).bindTooltip(`${label}${lake.status === 'CAUGHT' ? ' 🎣' : ''}`, { direction: 'top' })
-                  .on('click', () => showLakeDetail(lake.letter_number))
+                }).on('click', () => showLakeDetail(lake.letter_number))
                   .addTo(resultsMarkers);
                 bounds.push([lake.lat, lake.lng]);
+                // hover: full name+designation; flag label: just the short name
+                return { marker, hover: `${full}${caught}`,
+                         flag: `${lake.name || lake.letter_number}${caught}`, labeled: null };
             });
+            pinRefs.forEach(p => setPinLabel(p, false));
 
             // Honest coverage note when some results lack coordinates
             const cov = document.getElementById('results-coverage');
@@ -1656,6 +1700,9 @@
             } else {
                 resultsMap.setView([40.72, -110.40], 9);
             }
+            // fitBounds that actually moves fires moveend (handled), but a
+            // same-view render wouldn't — evaluate the labels directly too.
+            updatePinLabels();
         }
 
         function addLocateControl() {
