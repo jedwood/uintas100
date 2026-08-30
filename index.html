@@ -85,6 +85,30 @@
         /* Detail/About modals must sit above Leaflet panes & controls (z-index up to 1000) */
         #lake-detail-modal, #about-modal, #rotenone-modal, #sync-modal, #offline-modal { z-index: 1200; }
 
+        /* Lake modal: iOS-style sticky header. The ←/title/★/× row pins to the
+           top of the scrolling card and condenses (smaller title, tighter
+           padding, hairline shadow) once the content is scrolled; the drainage
+           line lives in the scroll flow below it. Negative margins span it
+           edge-to-edge across #lake-view's p-6 so content can't peek past its
+           background; z-index clears the in-modal Leaflet map (controls reach
+           z-index 1000). */
+        #lake-modal-header {
+            position: sticky; top: 0; z-index: 1050;
+            background: #fff;
+            margin: -1.5rem -1.5rem 0;
+            padding: 1.5rem 1.5rem .5rem;
+            border-radius: .5rem .5rem 0 0;
+            transition: padding .2s ease, box-shadow .2s ease;
+        }
+        #modal-title {
+            font-size: 1.5rem; line-height: 2rem;
+            min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+            transition: font-size .2s ease;
+        }
+        #lake-modal-header.condensed { padding-top: .625rem; padding-bottom: .625rem;
+            box-shadow: 0 1px 0 rgba(0,0,0,.06), 0 2px 8px rgba(0,0,0,.06); }
+        #lake-modal-header.condensed #modal-title { font-size: 1.125rem; line-height: 1.75rem; }
+
         /* Modal scroll containment: a scroll that hits the card's extremes must
            not chain to the page behind it. */
         #lake-modal-card, #about-modal-card, #rotenone-modal-card, #sync-modal-card,
@@ -296,18 +320,19 @@
                     <div class="flex items-center justify-center min-h-screen p-4">
                         <div id="lake-modal-card" class="bg-white rounded-lg max-w-4xl w-full max-h-screen overflow-y-auto">
                             <div id="lake-view" class="p-6">
-                                <div class="flex justify-between items-center mb-4 gap-3">
+                                <div id="lake-modal-header" class="flex justify-between items-center gap-3">
                                     <div class="flex items-center gap-3 min-w-0">
                                         <button id="modal-back" title="Back"
                                                 class="text-gray-400 hover:text-gray-600 text-2xl leading-none shrink-0"
                                                 style="padding:.25rem .5rem;margin:-.25rem -.5rem">&larr;</button>
-                                        <h2 id="modal-title" class="text-2xl font-bold"></h2>
+                                        <h2 id="modal-title" class="font-bold"></h2>
                                     </div>
                                     <div class="flex items-center gap-3 shrink-0">
                                         <button id="star-lake" title="Star this lake" class="text-2xl leading-none"></button>
                                         <button id="close-modal" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
                                     </div>
                                 </div>
+                                <div id="modal-drainage" class="text-base text-gray-500 mb-4"></div>
                                 <div id="modal-content" class="space-y-6">
                                     <!-- Lake details will be populated here -->
                                 </div>
@@ -927,6 +952,16 @@
             document.getElementById('clear-filters').addEventListener('click', clearFilters);
             document.getElementById('close-modal').addEventListener('click', closeModal);
             document.getElementById('modal-back').addEventListener('click', modalBack);
+            // iOS-style header condensing: shrink once genuinely scrolled,
+            // expand only near the very top (the 8–32px dead band keeps the
+            // transition from flickering when the scroll rests on a boundary).
+            const lakeCard = document.getElementById('lake-modal-card');
+            const lakeHeader = document.getElementById('lake-modal-header');
+            lakeCard.addEventListener('scroll', () => {
+                const y = lakeCard.scrollTop;
+                if (y > 32) lakeHeader.classList.add('condensed');
+                else if (y < 8) lakeHeader.classList.remove('condensed');
+            }, { passive: true });
             document.getElementById('book-back').addEventListener('click', () => {
                 if (history.state && history.state.modal === 'book') {
                     history.back();  // popstate swaps back to the lake view (or closes)
@@ -2240,8 +2275,10 @@
             const content = document.getElementById('modal-content');
 
             const noFishEmoji = lake.no_fish ? ' 🚫' : '';
-            title.innerHTML = `${escHtml(lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number)}${noFishEmoji}
-                <span class="text-base font-normal text-gray-500 ml-1 whitespace-nowrap">${escHtml(lake.drainage || '')}</span>`;
+            title.innerHTML = `${escHtml(lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number)}${noFishEmoji}`;
+            const drainageEl = document.getElementById('modal-drainage');
+            drainageEl.textContent = lake.drainage || '';
+            drainageEl.classList.toggle('hidden', !lake.drainage);
 
             content.innerHTML = `
                 <!-- Lake Info -->
@@ -2424,8 +2461,11 @@
             lockBodyScroll('lake');
             // Start at the top — matters when navigating lake→lake from a chip
             // deep in the previous lake's content (scroll position persists on
-            // the card element across the innerHTML swap).
+            // the card element across the innerHTML swap). Reset the header to
+            // its large state directly: the scroll event fires async, so
+            // leaving it to the listener flashes a condensed header first.
             document.getElementById('lake-modal-card').scrollTop = 0;
+            document.getElementById('lake-modal-header').classList.remove('condensed');
             pushModalState('lake', `#${encodeURIComponent(lake.letter_number)}`);
             const starBtn = document.getElementById('star-lake');
             starBtn.onclick = () => {
