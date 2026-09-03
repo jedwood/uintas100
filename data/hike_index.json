@@ -52,7 +52,7 @@
    "usage_text": "Moderate",
    "usage_rank": 3,
    "lake_count": 6,
-   "lake_count_all_mentions": 6,
+   "lake_count_all_mentions": 7,
    "primary_lakes": [
     "W-25",
     "W-26"
@@ -84,14 +84,15 @@
     "navigation",
     "steep",
     "mountain-pass",
-    "bugs"
+    "bugs",
+    "4wd"
    ],
    "summary": "North Erickson Lake sits at the head of Smith and Morehouse Creek in Erickson Basin. It can be reached from the Smith and Morehouse trailhead, but it is easier to start hiking from the end of Upper Setting Road in the Provo River Drainage.",
    "summary_source": "narrative",
    "source_pages": null,
    "book_url": "https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html#hike-01",
    "narrative": "North Erickson Lake sits at the head of Smith and Morehouse Creek in Erickson Basin. It can be reached from the Smith and Morehouse trailhead, but it is easier to start hiking from the end of Upper Setting Road in the Provo River Drainage. It is less than 3 miles to North Erickson on a good trail with generally gradual evaluation gain. The 6-mile-long Shingle Creek Trail that begins right off Highway 150 merges with Upper Setting 1.2 miles in, at which point you’re only 0.2 mile from East Shingle Creek Lake, an option for camping or fishing for tiger trout. Continuing on, you have to go over the mountain to reach Erickson Basin, but it’s not very steep (as mountain passes go). Stay with the trail, or you might walk right past the lake. It is in a bit of a hole surrounded by pines. A\n\n\n \n \n \n \n\n View over the slickrock and South Erickson Lake from the pass between Erickson Basin and Big Elk Lake \n\n\n\n \n\n Though the camping is better at North Erickson, South Erickson is a pretty little lake worth visiting. \n\n\n\n mile farther and you’ll reach the steep but manageable drop down the ridge to Big Elk Lake—just pay extra attention to the trail and your GPS on the return climb.\n\n\n\n The best campsites are on the west side of the lake, just off the trail. Spring water is plentiful around the lake. If you camp on the west side as suggested, an ice-cold spring that feeds into the southwest corner of the lake will serve your water needs nicely. And a quick UV or other filtration process will kill the bugs and keep you hydrated and safe.\n\n\n\n South Erickson is just a hop, skip, and a jump to the south (0.25 mile). This pretty alpine lake abuts a talus slope and provides some excellent photo opportunities, but camping and fishing are better at North Erickson Lake. Large slickrock formations are prevalent between the two lakes. It is worth the hike over to South Erickson just to experience the unique terrain.\n\n\n\n Back at North Erickson, the fish await. Actually, you’ll probably do most of the waiting. The fish seem to feed mostly at dusk and dawn, especially the big ones. Brook trout exceeding 18 inches in length and 2 pounds in weight can be caught if you’re patient—and lucky—enough and can cast longer distances.",
-   "finding_trailhead": null,
+   "finding_trailhead": "From Kamas, take the Mirror Lake Scenic Byway (Highway 150) about 8.7 miles to Upper Setting Road. Turn left onto the dirt road and twist your way up the mountain until the road ends. Though the road is graded, high-clearance or four-wheel drive may be necessary in some conditions or for a few rough spots.",
    "lakes": [
     {
      "letter_number": "W-25",
@@ -137,6 +138,34 @@
      "jed_status": null,
      "starred": false,
      "has_coords": true,
+     "has_cma_notes": true,
+     "has_junesucker_notes": true,
+     "has_jed_notes": false
+    },
+    {
+     "letter_number": "Z-3",
+     "name": "Mirror",
+     "is_primary": false,
+     "match_method": "name",
+     "mention_context": "reference",
+     "drainage": "Duchesne River Drainage",
+     "basin": null,
+     "elevation_ft": 10200,
+     "size_acres": 42.0,
+     "max_depth_ft": 37,
+     "species_current": [
+      "Brookies",
+      "Rainbows",
+      "Tigers"
+     ],
+     "species_historical": [
+      "Grayling"
+     ],
+     "fishing_pressure": "High",
+     "no_fish": false,
+     "jed_status": "CAUGHT",
+     "starred": false,
+     "has_coords": false,
      "has_cma_notes": true,
      "has_junesucker_notes": true,
      "has_jed_notes": false
@@ -304,14 +333,15 @@
     "fishing",
     "crowded",
     "bugs",
-    "wildflowers"
+    "wildflowers",
+    "4wd"
    ],
    "summary": "From the end of Norway Flats Road, Little Elk Lake is about 0.3 mile to the west of the trail. Continue another 0.8 mile to a trail junction and Big Elk Lake.",
    "summary_source": "narrative",
    "source_pages": null,
    "book_url": "https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html#hike-02",
    "narrative": "From the end of Norway Flats Road, Little Elk Lake is about 0.3 mile to the west of the trail. Continue another 0.8 mile to a trail junction and Big Elk Lake. The trail itself is often shaded as it rises and falls through the forest. It passes a meadow around 0.5 mile that can fill with wildflowers in the summer.\n\n\n\n At Big Elk Lake, fishing is generally good for stocked brook and cutthroat trout. A raft or canoe would be nice to escape the crowds and the bugs, but you can do just fine from shore. When the mosquitoes swarmed at dusk during my visit, the fish rose and flopped all over the lake. I braved the bugs for a few obligatory casts. Fish with a small fly during the morning and evening, and you should have little trouble catching enough for a hearty meal.\n\n\n \n \n\n \n\n Daybreak at Big Elk Lake \n\n\n\n Campsites are available on the south and east sides of this deep reservoir. Big Elk receives heavy pressure, especially on weekends. If you visit during the week, there might not be anybody else there. Pack out your litter and help keep Big Elk a clean and fun place to explore.",
-   "finding_trailhead": null,
+   "finding_trailhead": "One of the hardest parts about this trek is finding the right road. From Kamas, go 15 miles west on Highway 150 to FR 035 and turn left. This road climbs onto Norway Flats. Norway Flats Road starts innocently enough as it turns off Highway 150, but it forks several times where there are no markers. Stay with the road that shows the most wear until you are about 6 miles from Highway 150; turn right (east). If you stay on the road most traveled (to the left), you will end up at a beaver pond just below Hourglass Lake. This is the wrong starting place. Go back to the road that turned east and follow it down to the trailhead. You may need a high-clearance, 4WD vehicle with exceptional tires to cover the last couple of miles to the trailhead. Most drivers pull over to park when it gets rough and hike the rest of the way.",
    "lakes": [
     {
      "letter_number": "A-18",
@@ -2663,7 +2693,7 @@
    "usage_text": "Moderate",
    "usage_rank": 3,
    "lake_count": 2,
-   "lake_count_all_mentions": 2,
+   "lake_count_all_mentions": 3,
    "primary_lakes": [
     "Z-1",
     "D-14"
@@ -2700,7 +2730,7 @@
    "source_pages": null,
    "book_url": "https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html#hike-15",
    "narrative": "Cliffs parallel Castle Lake just beyond its northern shore. This is a quiet little place (1 acre) that can be a welcome reprieve from the public campground scene. A round-trip from Butterfly Lake to beautiful Castle Lake makes a wonderful evening stroll that should only take an hour, unless you stop to sit awhile, do some birdwatching, or try the fishing. There is no trail to Castle Lake from Butterfly Lake, but with a good sense of direction and navigation skills through the forest, it’s relatively easy to reach by going west from the inlet of Butterfly Lake near the campground. Another bonus are the views back to Bald Mountain and Reid Peak during the hike.\n\n\n\n Open shorelines make casting easy, but also make for wary trout; Castle Lake has both. Cutthroat trout are the fish of the day at Castle. This is a good second option if the shores at Butterfly are crowded, which is usually the case. There are a few moist areas around the lake, so mosquitoes can be a nuisance. Give yourself a good dose of insect repellent, and you’ll breathe easier while enjoying this secluded spot. It seems farther away than it is from the crowded campgrounds and the highway.",
-   "finding_trailhead": null,
+   "finding_trailhead": "Start at Butterfly Lake. From Kamas, take the Mirror Lake Scenic Byway (Highway 150) for about 33 miles. The trailhead is on the west side of the road.",
    "lakes": [
     {
      "letter_number": "Z-1",
@@ -2753,6 +2783,34 @@
      "has_coords": false,
      "has_cma_notes": true,
      "has_junesucker_notes": false,
+     "has_jed_notes": false
+    },
+    {
+     "letter_number": "Z-3",
+     "name": "Mirror",
+     "is_primary": false,
+     "match_method": "name",
+     "mention_context": "reference",
+     "drainage": "Duchesne River Drainage",
+     "basin": null,
+     "elevation_ft": 10200,
+     "size_acres": 42.0,
+     "max_depth_ft": 37,
+     "species_current": [
+      "Brookies",
+      "Rainbows",
+      "Tigers"
+     ],
+     "species_historical": [
+      "Grayling"
+     ],
+     "fishing_pressure": "High",
+     "no_fish": false,
+     "jed_status": "CAUGHT",
+     "starred": false,
+     "has_coords": false,
+     "has_cma_notes": true,
+     "has_junesucker_notes": true,
      "has_jed_notes": false
     }
    ]
@@ -4598,6 +4656,13 @@
    "lake_acres_total": 43.5,
    "largest_lake_acres": 30.0,
    "tags": [
+    "camping",
+    "fishing",
+    "navigation",
+    "crowded",
+    "waterfall",
+    "family",
+    "multi-day",
     "paved-access",
     "toilets"
    ],
@@ -4605,8 +4670,8 @@
    "summary_source": "book-intro",
    "source_pages": null,
    "book_url": "https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html#hike-26",
-   "narrative": null,
-   "finding_trailhead": "From Evanston, take the Mirror Lake Scenic Byway (Highway 150) about 42 miles to the Ruth Lake trailhead, which is a roadside pull-off with a sign pointing to Ruth Lake. There are nice restrooms and paved parking. \n\n\n\n \n\n Scenes like this one at Ruth Lake are why people return for a lifetime of discovery in the Uinta Mountains. PHOTO BY MATT MCKELL/UTAH DIVISION OF WILDLIFE RESOURCES \n\n\n \n \n\n THE HIKE \n\n This is a short, easy hike that even young kids enjoy for either a day trip or their first backpacking experience. The Forest Service posted the trail with nature signs, and there are a variety of natural sights along the way. Everything from miniature meadows and waterfalls to playful chipmunks are scattered along this hike that goes only 0.8 mile west of the trailhead and back.\n\n\n\n At 0.5 mile the trail forks. Though this hike stays to the right, the left fork is a short spur to the Ruth Lake Cliffs, a set of stunning vertical rock walls that are popular with climbers and feature routes rated from 5.7 to 5.12+. Of course, you can go farther if you like—adding the loop around the lake brings the full hike to 2 miles. There are several other small lakes in the area. You can spend just a couple of hours or a couple of days exploring this basin. The trail dissolves at Ruth Lake though, so have your map and compass handy if you’re continuing on.\n\n\n\n Camping and fishing pressure is heavy at Ruth Lake, but the crowds fan out past this point. The fish in these parts see mostly day-use anglers. If you are one of them, the most productive fishing times are early morning and late evening. The hike in/out is short enough that you should have no problem managing your hike around prime fishing hours. If it’s fish you’re after, don’t stop at Ruth Lake very long. You will probably have better success at nearby lakes such as Hayden, Cutthroat, Jewel, and Teal.\n\n\n\n As with any popular area, litter can be a problem. But this area seems to be well preserved. Let’s keep it that way. Pack out what you pack in and avoid building any new fire rings.\n\n\n\n A marked trail leads south from Ruth Lake and ties into the trail leading from Scout Lake to Lofty Lake.",
+   "narrative": "This is a short, easy hike that even young kids enjoy for either a day trip or their first backpacking experience. The Forest Service posted the trail with nature signs, and there are a variety of natural sights along the way. Everything from miniature meadows and waterfalls to playful chipmunks are scattered along this hike that goes only 0.8 mile west of the trailhead and back.\n\n\n\n At 0.5 mile the trail forks. Though this hike stays to the right, the left fork is a short spur to the Ruth Lake Cliffs, a set of stunning vertical rock walls that are popular with climbers and feature routes rated from 5.7 to 5.12+. Of course, you can go farther if you like—adding the loop around the lake brings the full hike to 2 miles. There are several other small lakes in the area. You can spend just a couple of hours or a couple of days exploring this basin. The trail dissolves at Ruth Lake though, so have your map and compass handy if you’re continuing on.\n\n\n\n Camping and fishing pressure is heavy at Ruth Lake, but the crowds fan out past this point. The fish in these parts see mostly day-use anglers. If you are one of them, the most productive fishing times are early morning and late evening. The hike in/out is short enough that you should have no problem managing your hike around prime fishing hours. If it’s fish you’re after, don’t stop at Ruth Lake very long. You will probably have better success at nearby lakes such as Hayden, Cutthroat, Jewel, and Teal.\n\n\n\n As with any popular area, litter can be a problem. But this area seems to be well preserved. Let’s keep it that way. Pack out what you pack in and avoid building any new fire rings.\n\n\n\n A marked trail leads south from Ruth Lake and ties into the trail leading from Scout Lake to Lofty Lake.",
+   "finding_trailhead": "From Evanston, take the Mirror Lake Scenic Byway (Highway 150) about 42 miles to the Ruth Lake trailhead, which is a roadside pull-off with a sign pointing to Ruth Lake. There are nice restrooms and paved parking. \n\n\n\n \n\n Scenes like this one at Ruth Lake are why people return for a lifetime of discovery in the Uinta Mountains. PHOTO BY MATT MCKELL/UTAH DIVISION OF WILDLIFE RESOURCES",
    "lakes": [
     {
      "letter_number": "BR-40",
@@ -4763,6 +4828,10 @@
    "lake_acres_total": 5.7,
    "largest_lake_acres": 5.0,
    "tags": [
+    "fishing",
+    "wildflowers",
+    "family",
+    "multi-day",
     "4wd",
     "toilets"
    ],
@@ -4770,8 +4839,8 @@
    "summary_source": "book-intro",
    "source_pages": null,
    "book_url": "https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html#hike-27",
-   "narrative": null,
-   "finding_trailhead": "From Evanston (or Kamas—this one’s about equidistant), take the Mirror Lake Scenic Byway (Highway 150) about 39 miles to mile marker 39. The beginning of Whiskey Creek Trail is signed alongside a pullout with around a dozen places to park on the west side of the road, directly across the highway from the entrance to Sulphur Campground. Do not confuse the Whiskey Creek Trail to Bourbon Lake with nearby Whiskey Island Lake, which is a 5.4-mile, round-trip hike with two-thirds of its trail on a very rough road followed by cross-country navigating. \n\n\n\n THE HIKE \n\n The dotted trail lines for so many High Uintas hikes snake their way deep into wilderness. Those can be daunting or take extra planning. Sometimes, the day calls for a shorter adventure. Though under 1.5 miles out, Whiskey Creek Trail still checks all the boxes for area hikes by furnishing a gentle creek, asking hikers to work a little with some elevation, and landing at a scenic lake at the foot of a jagged peak. Its short length also makes it more attractive for hauling in gear.\n\n\n\n The trail starts with a gentle set of switchbacks and some sun-exposed sections of trail. At around 0.3 mile, the trail runs parallel to Whiskey Creek for around 0.3 mile, before climbing a second set of switchbacks to the north and west away from the creek. Be careful not to become too enamored with the creek as the trail comes closest to it or you’ll miss the arrow directing you up a switchback.\n\n\n\n The trail gets more forested as you hike (which may produce some downed trees), and the combined terrain lends itself to both wildflowers and wildlife—moose have been spotted on this trail (among other wildlife) so keep dogs on leash if they’re prone to chasing fauna. Consider this your public service announcement reminding you it’s illegal for dogs to chase and harass hoofed wildlife—and some hoofed wildlife may turn aggressive if spooked or threatened, so give them space.\n\n\n \n \n\n Though the distance may not be “worth it” or far enough for many backpackers to consider hauling in gear (first-timers or those with young kids get all the credit for any distance!), Bourbon Lake is relatively easy to get to and has a few decent campsites established around the lake. Anglers are most likely to encounter brook trout thanks to stocking by the Division of Wildlife Resources every few years. A fishable pond about half the size of Bourbon known as BR-2 can be found in a meadow about 100 yards down the trail. Hiking a loop around Bourbon Lake brings the total trip to around 3 miles.\n\n\n\n \n\n The spirit is strong at Bourbon, a small, shallow lake up the Whiskey Creek Trail.",
+   "narrative": "The dotted trail lines for so many High Uintas hikes snake their way deep into wilderness. Those can be daunting or take extra planning. Sometimes, the day calls for a shorter adventure. Though under 1.5 miles out, Whiskey Creek Trail still checks all the boxes for area hikes by furnishing a gentle creek, asking hikers to work a little with some elevation, and landing at a scenic lake at the foot of a jagged peak. Its short length also makes it more attractive for hauling in gear.\n\n\n\n The trail starts with a gentle set of switchbacks and some sun-exposed sections of trail. At around 0.3 mile, the trail runs parallel to Whiskey Creek for around 0.3 mile, before climbing a second set of switchbacks to the north and west away from the creek. Be careful not to become too enamored with the creek as the trail comes closest to it or you’ll miss the arrow directing you up a switchback.\n\n\n\n The trail gets more forested as you hike (which may produce some downed trees), and the combined terrain lends itself to both wildflowers and wildlife—moose have been spotted on this trail (among other wildlife) so keep dogs on leash if they’re prone to chasing fauna. Consider this your public service announcement reminding you it’s illegal for dogs to chase and harass hoofed wildlife—and some hoofed wildlife may turn aggressive if spooked or threatened, so give them space.\n\n\n \n \n\n Though the distance may not be “worth it” or far enough for many backpackers to consider hauling in gear (first-timers or those with young kids get all the credit for any distance!), Bourbon Lake is relatively easy to get to and has a few decent campsites established around the lake. Anglers are most likely to encounter brook trout thanks to stocking by the Division of Wildlife Resources every few years. A fishable pond about half the size of Bourbon known as BR-2 can be found in a meadow about 100 yards down the trail. Hiking a loop around Bourbon Lake brings the total trip to around 3 miles.\n\n\n\n \n\n The spirit is strong at Bourbon, a small, shallow lake up the Whiskey Creek Trail.",
+   "finding_trailhead": "From Evanston (or Kamas—this one’s about equidistant), take the Mirror Lake Scenic Byway (Highway 150) about 39 miles to mile marker 39. The beginning of Whiskey Creek Trail is signed alongside a pullout with around a dozen places to park on the west side of the road, directly across the highway from the entrance to Sulphur Campground. Do not confuse the Whiskey Creek Trail to Bourbon Lake with nearby Whiskey Island Lake, which is a 5.4-mile, round-trip hike with two-thirds of its trail on a very rough road followed by cross-country navigating.",
    "lakes": [
     {
      "letter_number": "BR-2",
@@ -4906,14 +4975,22 @@
    "lake_acres_total": 32.1,
    "largest_lake_acres": 23.0,
    "tags": [
+    "camping",
+    "fishing",
+    "navigation",
+    "steep",
+    "peak",
+    "river-crossing",
+    "horses",
+    "multi-day",
     "toilets"
    ],
    "summary": "There are faster, more scenic ways to get into the High Uintas Wilderness. But that fact also means you may have more solitude at Hell Hole than other lakes. And from a base camp by the lake, you can have a go at two nearby peaks. As for anglers, Hell Hole is a gamble. Some years it’s hot, and some years it’s not. It’s a relatively small lake and will depend on the planting schedules, winter survival, and catch-and-release rates. Equestrians: There’s plenty of feed but watch out for the very rocky second half of the hike. Everyone: The marshlands of Hell Hole are extremely buggy early in the season.",
    "summary_source": "book-intro",
    "source_pages": null,
    "book_url": "https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html#hike-28",
-   "narrative": null,
-   "finding_trailhead": "From Evanston, take the Mirror Lake Scenic Byway (Highway 150) about 34 miles. The unmarked trail starts just off Highway 150. Look right across the road from the Gold Hill turnoff. The other trailhead adds a mile to the hike out but avoids a sometimes-challenging marsh. It begins at a locked gate on FR 306, which is the first right off Christmas Meadows Road. \n\n\n\n THE HIKE \n\n From Highway 150, hike the old jeep trail for about 1 mile. There is a river crossing and a marsh that can become very muddy and difficult to pass, but you should find success following GPS routes to the right. Reach a gravel road limited to authorized vehicles only. This is the route along FR 306 followed from the other trailhead described in “Finding the trailhead” above. Follow the road about 1.5 miles to a stream channel. Look for a small trail sign before crossing the bridge and then follow the trail for 2.5 miles to the lake.\n\n\n\n Most of the lake is shallow, which makes for good morning and evening fishing for healthy cutthroat trout. During midday the only feasible spot to fish is the deeper northeast corner of the lake. A small rubber raft may be worthwhile here. Maybe there are deeper holes out in the middle that the fish retreat to during the day. No other fishing opportunities exist nearby if Hell Hole doesn’t produce.\n\n\n \n \n\n \n\n The Stillwater Fork of the Bear River near the forest road trailhead \n\n\n\n Hell Hole does have a lot to offer, especially if you are looking for a short weekend trip. Excellent campsites are available for backpackers and equestrians. The latter would probably prefer the east side of the lake for horse pasture, while backpackers should like the west side and its pine-sheltered camps. A good spring for filtering flows into the northeast corner of the lake.\n\n\n\n Last, but not least, from your base camp at Hell Hole you have the option to bag a couple of 12ers: the 12,327-foot A-1 Peak to the southeast and the 12,041-foot Kletting Peak to the southwest. A-1 is a bit closer but requires tackling an extremely loose and steep field of scree. These loose rocks make for much longer and slower hikes than you might be comfortable tackling, but patience is rewarded with stunning views. It’s a little over 1.5 miles to the summit. The ridge between A-1 and Kletting is about 1.25 miles. Return to the saddle to hit Kletting, then return one more time and carefully descend back to Hell Hole. Give yourself a lot of extra time and try to summit earlier in the day to avoid afternoon thunderstorms.",
+   "narrative": "From Highway 150, hike the old jeep trail for about 1 mile. There is a river crossing and a marsh that can become very muddy and difficult to pass, but you should find success following GPS routes to the right. Reach a gravel road limited to authorized vehicles only. This is the route along FR 306 followed from the other trailhead described in “Finding the trailhead” above. Follow the road about 1.5 miles to a stream channel. Look for a small trail sign before crossing the bridge and then follow the trail for 2.5 miles to the lake.\n\n\n\n Most of the lake is shallow, which makes for good morning and evening fishing for healthy cutthroat trout. During midday the only feasible spot to fish is the deeper northeast corner of the lake. A small rubber raft may be worthwhile here. Maybe there are deeper holes out in the middle that the fish retreat to during the day. No other fishing opportunities exist nearby if Hell Hole doesn’t produce.\n\n\n \n \n\n \n\n The Stillwater Fork of the Bear River near the forest road trailhead \n\n\n\n Hell Hole does have a lot to offer, especially if you are looking for a short weekend trip. Excellent campsites are available for backpackers and equestrians. The latter would probably prefer the east side of the lake for horse pasture, while backpackers should like the west side and its pine-sheltered camps. A good spring for filtering flows into the northeast corner of the lake.\n\n\n\n Last, but not least, from your base camp at Hell Hole you have the option to bag a couple of 12ers: the 12,327-foot A-1 Peak to the southeast and the 12,041-foot Kletting Peak to the southwest. A-1 is a bit closer but requires tackling an extremely loose and steep field of scree. These loose rocks make for much longer and slower hikes than you might be comfortable tackling, but patience is rewarded with stunning views. It’s a little over 1.5 miles to the summit. The ridge between A-1 and Kletting is about 1.25 miles. Return to the saddle to hit Kletting, then return one more time and carefully descend back to Hell Hole. Give yourself a lot of extra time and try to summit earlier in the day to avoid afternoon thunderstorms.",
+   "finding_trailhead": "From Evanston, take the Mirror Lake Scenic Byway (Highway 150) about 34 miles. The unmarked trail starts just off Highway 150. Look right across the road from the Gold Hill turnoff. The other trailhead adds a mile to the hike out but avoids a sometimes-challenging marsh. It begins at a locked gate on FR 306, which is the first right off Christmas Meadows Road.",
    "lakes": [
     {
      "letter_number": "BR-29",
@@ -7215,6 +7292,12 @@
    "lake_acres_total": 184.4,
    "largest_lake_acres": 173.0,
    "tags": [
+    "fishing",
+    "navigation",
+    "steep",
+    "peak",
+    "solitude",
+    "multi-day",
     "paved-access",
     "toilets"
    ],
@@ -7222,8 +7305,8 @@
    "summary_source": "book-intro",
    "source_pages": null,
    "book_url": "https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html#hike-41",
-   "narrative": null,
-   "finding_trailhead": "From Heber City, take US 40 east 69 miles to Duchesne. Then take SR 87 north 14 miles to Mountain Home. Rock Creek trailhead is 22 miles northwest of Mountain Home on FR 134; the road is paved to Upper Stillwater Reservoir. Turn west on FR 135 and continue past the Rock Creek trailhead. After 2 miles, at the junction of FR 135 and FR 143, turn right and continue about 4.5 miles to the end of FR 143. \n\n\n\n \n\n Here’s what to expect on the very rough route to Arta Lake. \n\n\n \n \n \n \n\n THE HIKE \n\n It is only a 0.75-mile trek to Arta Lake from the end of FR 143, but it seems longer. A faint trail begins where the road ends but disappears after a couple hundred yards. Then you are left to pick your own route around lots of deadfall timber. Just keep heading due west and you will soon run into Arta Lake. Although attractive and quiet, this lake doesn’t offer much in the way of good overnight campsites. The ground is strewn with boulders and pines. Water can be found on the northwest side, where it drains down a steep hill from Survey Lake, but you will need to purify it.\n\n\n\n If you’ve come as far as Arta Lake, consider making the extra effort to hike the short, steep hill up to Survey Lake. The vista from the top of the hill overlooking Arta is magnificent, and on the other side of the hill Survey Lake lies in a great little alpine cirque (more pristine solitude). If you’re really feeling ambitious, trek up the mountain behind Survey Lake and look down on Grandaddy Lake—what a view!\n\n\n\n These lakes may experience winterkill, limiting your catch. You never know, though—fishing could improve after periodic stocking, or as the thousands of minnows observable early in the season grow up. It would at least be worth a try if you were making the trip anyway. Regardless, it’s fun to go beyond the paved road. Unmarked routes from Arta to nearby East Grandaddy Mountain’s 11,659-foot summit might be possible to locate, but they are described as Class 3 and Class 4, meaning scrambles with some exposed areas that should not be taken casually.",
+   "narrative": "It is only a 0.75-mile trek to Arta Lake from the end of FR 143, but it seems longer. A faint trail begins where the road ends but disappears after a couple hundred yards. Then you are left to pick your own route around lots of deadfall timber. Just keep heading due west and you will soon run into Arta Lake. Although attractive and quiet, this lake doesn’t offer much in the way of good overnight campsites. The ground is strewn with boulders and pines. Water can be found on the northwest side, where it drains down a steep hill from Survey Lake, but you will need to purify it.\n\n\n\n If you’ve come as far as Arta Lake, consider making the extra effort to hike the short, steep hill up to Survey Lake. The vista from the top of the hill overlooking Arta is magnificent, and on the other side of the hill Survey Lake lies in a great little alpine cirque (more pristine solitude). If you’re really feeling ambitious, trek up the mountain behind Survey Lake and look down on Grandaddy Lake—what a view!\n\n\n\n These lakes may experience winterkill, limiting your catch. You never know, though—fishing could improve after periodic stocking, or as the thousands of minnows observable early in the season grow up. It would at least be worth a try if you were making the trip anyway. Regardless, it’s fun to go beyond the paved road. Unmarked routes from Arta to nearby East Grandaddy Mountain’s 11,659-foot summit might be possible to locate, but they are described as Class 3 and Class 4, meaning scrambles with some exposed areas that should not be taken casually.",
+   "finding_trailhead": "From Heber City, take US 40 east 69 miles to Duchesne. Then take SR 87 north 14 miles to Mountain Home. Rock Creek trailhead is 22 miles northwest of Mountain Home on FR 134; the road is paved to Upper Stillwater Reservoir. Turn west on FR 135 and continue past the Rock Creek trailhead. After 2 miles, at the junction of FR 135 and FR 143, turn right and continue about 4.5 miles to the end of FR 143. \n\n\n\n \n\n Here’s what to expect on the very rough route to Arta Lake.",
    "lakes": [
     {
      "letter_number": "RC-23",
@@ -12502,14 +12585,18 @@
    "lake_acres_total": 43.5,
    "largest_lake_acres": 25.0,
    "tags": [
+    "fishing",
+    "steep",
+    "mountain-pass",
+    "horses",
     "4wd"
    ],
    "summary": "If sightseeing is on your agenda, then Lakeshore is a great place to visit. This picture-perfect lake rests in a meadow encased by partly timbered slopes and rolling tundra. The Alps from The Sound of Music come to mind. Oh and, unless you’re traveling with small children, there is the matter of bagging Leidy Peak.",
    "summary_source": "book-intro",
    "source_pages": null,
    "book_url": "https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html#hike-69",
-   "narrative": null,
-   "finding_trailhead": "From Vernal, take the Taylor Mountain and Red Cloud Loop Scenic Backway toward East Park Reservoir; continue on toward Hacking Lake. You can camp at Hacking Lake or drive up the road another mile to the Leidy Peak trailhead at this eastern point on the Highline Trail. The total distance from Vernal is about 36 miles. \n\n\n\n THE HIKE \n\n The shortest route to Lakeshore Lake begins at Leidy Peak trailhead, on the east end of the Highline Trail above Hacking Lake; the other starts at Ashley Twin Lakes at the end of a high-clearance road. Both trails are well marked, though the trail from Hacking Lake can be difficult to follow as it goes around Leidy Peak. The Hacking Lake route is at least a mile shorter and can be reached by car. Ashley Twin Lakes can only be reached by jeep, after figuring out your way through a maze of brutally rocky roads.\n\n\n\n From Leidy Peak trailhead, take the North Leidy Peak route of the Highline Trail west along the north side of Leidy Peak for 1.9 miles. Head west 1.3 miles to a fork and veer left 0.2 mile to a junction with the South Fork Ashley Trail. Alternatively, go 0.8 or 1.4 miles due south to one of two trail junctions heading west. There are a couple of High-line Trail paths on the south side of Leidy Peak but both routes travel around 2.5 miles to the fork. Stay left (west), go 0.2 mile to the second junction, and turn left (southeast). Lakeshore Lake is 0.9 mile from the second fork.\n\n\n\n Lakeshore Lake is named for the basin. It is just off a good forest service trail in the upper end of Lakeshore Basin. Good campsites are present, along with an abundant supply of horse pasture and spring water. Sometimes, you can pinpoint a major source of potential waterborne illness. In this area, sheep grazing can foul the surrounding water-shed. Be sure to treat all water before drinking.\n\n\n \n \n\n Known as a decent fishing lake, Lakeshore holds a good population of fish. You should be able to catch enough for a tasty shore lunch.\n\n\n\n Another lake in Lakeshore Basin is Lake Wilde, a cirque lake that sits on the trail 1 mile northwest of Lakeshore Lake at the base of Gabbro Pass. Do you like wind? You can have as much as you want here. During unsettled weather, the wind blows constantly and continues to blow even when you least expect it. No campsites or trout exist here, but several springs pop up around the lake.\n\n\n\n Take your time as you explore this wonderful wilderness—and definitely take your camera.\n\n\n\n If you have three or so extra hours, why not tackle the 12,028-foot Leidy Peak? Aside from snow lingering deep into summer on the northeast face, there are a lot of ways up. The shortest from the trailhead is a route up the east face, but the climb is not quite as steep from the west face.",
+   "narrative": "The shortest route to Lakeshore Lake begins at Leidy Peak trailhead, on the east end of the Highline Trail above Hacking Lake; the other starts at Ashley Twin Lakes at the end of a high-clearance road. Both trails are well marked, though the trail from Hacking Lake can be difficult to follow as it goes around Leidy Peak. The Hacking Lake route is at least a mile shorter and can be reached by car. Ashley Twin Lakes can only be reached by jeep, after figuring out your way through a maze of brutally rocky roads.\n\n\n\n From Leidy Peak trailhead, take the North Leidy Peak route of the Highline Trail west along the north side of Leidy Peak for 1.9 miles. Head west 1.3 miles to a fork and veer left 0.2 mile to a junction with the South Fork Ashley Trail. Alternatively, go 0.8 or 1.4 miles due south to one of two trail junctions heading west. There are a couple of High-line Trail paths on the south side of Leidy Peak but both routes travel around 2.5 miles to the fork. Stay left (west), go 0.2 mile to the second junction, and turn left (southeast). Lakeshore Lake is 0.9 mile from the second fork.\n\n\n\n Lakeshore Lake is named for the basin. It is just off a good forest service trail in the upper end of Lakeshore Basin. Good campsites are present, along with an abundant supply of horse pasture and spring water. Sometimes, you can pinpoint a major source of potential waterborne illness. In this area, sheep grazing can foul the surrounding water-shed. Be sure to treat all water before drinking.\n\n\n \n \n\n Known as a decent fishing lake, Lakeshore holds a good population of fish. You should be able to catch enough for a tasty shore lunch.\n\n\n\n Another lake in Lakeshore Basin is Lake Wilde, a cirque lake that sits on the trail 1 mile northwest of Lakeshore Lake at the base of Gabbro Pass. Do you like wind? You can have as much as you want here. During unsettled weather, the wind blows constantly and continues to blow even when you least expect it. No campsites or trout exist here, but several springs pop up around the lake.\n\n\n\n Take your time as you explore this wonderful wilderness—and definitely take your camera.\n\n\n\n If you have three or so extra hours, why not tackle the 12,028-foot Leidy Peak? Aside from snow lingering deep into summer on the northeast face, there are a lot of ways up. The shortest from the trailhead is a route up the east face, but the climb is not quite as steep from the west face.",
+   "finding_trailhead": "From Vernal, take the Taylor Mountain and Red Cloud Loop Scenic Backway toward East Park Reservoir; continue on toward Hacking Lake. You can camp at Hacking Lake or drive up the road another mile to the Leidy Peak trailhead at this eastern point on the Highline Trail. The total distance from Vernal is about 36 miles.",
    "lakes": [
     {
      "letter_number": "GR-34",
@@ -12654,6 +12741,11 @@
    "lake_acres_total": 341.7,
    "largest_lake_acres": 168.2,
    "tags": [
+    "camping",
+    "steep",
+    "mountain-pass",
+    "horses",
+    "multi-day",
     "4wd",
     "toilets"
    ],
@@ -12661,8 +12753,8 @@
    "summary_source": "book-intro",
    "source_pages": null,
    "book_url": "https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html#hike-70",
-   "narrative": null,
-   "finding_trailhead": "The Highline is the most popular trail of the High Uintas Wilderness. From Kamas, take the Mirror Lake Scenic Byway (Highway 150) 34 miles to a large sign on the east side of the road that says “Highline Trail.” This trailhead has a listed capacity of twenty-four vehicles, but there are often considerably more parked here on busy weekends. This crowded trailhead is equipped with toilets, water, stock ramp, and nearby campsites. Highline is Trail 083 for 8 miles in the Uinta-Wasatch-Cache National Forest and Trail 025 for the 96 miles it winds through the Ashley National Forest. \n\n\n\n The other end of the trail is at McKee Draw off U.S. 191. From Vernal, drive north on 191 (the Flaming Gorge–Uintas Scenic Byway) for 28.8 miles and turn left. About 0.5 mile up the road there is parking and a vault toilet. For the Leidy Peak trailhead, travel from Vernal by way of Taylor Mountain and Red Cloud Loop Scenic Backway toward East Park Reservoir and continue on toward Hacking Lake. You can camp at Hacking Lake or drive up the road another mile to the Leidy Peak trailhead at the eastern end of the Highline Trail. Total distance from Vernal is about 36 miles.\n\n\n \n \n\n \n\n The view below Nahguch Pass looking east over Porcupine Lake along the Highline Trail’s path through Porcupine Pass, the 12,236-foot route between Wilson Peak and Porcupine Peak. PHOTO BY MATT MCKELL/UTAH DIVISION OF WILDLIFE RESOURCES \n\n\n\n THE HIKE \n\n The trail begins at either the Highline trailhead west end (at Hayden Peak off Highway 150), Highline trailhead east end (at McKee Draw off U.S. 191), or at the Leidy Peak trailhead near the eastern end of the High Uinta Mountains. An underappreciated fourth option starts at Chepeta trailhead and logs only 65 miles of hiking. You will surely still receive impressed and possibly envious looks when you tell people you backpacked 65 miles mostly above 10,000 feet. But thanks to the visual impact of the west end—and the more gradual start of McKee Draw for the full point-to-point trail—many choose to start from the east and head west.\n\n\n\n Indeed, if you need a little time to acclimate to elevation, a strong case can be made for starting from the eastern side. At around 8,200 feet, it may come as less of a shock to your system than the approximately 10,800 feet at Leidy or 10,150 at Hayden. But if you’re tackling Highline, the truth is you’ve come prepared, and you’re conditioned for long distance and high elevation. For some, starting at a lower elevation may have little overall effect on the total wear and tear of this lengthy trek.\n\n\n\n \n\n A high-elevation lake alongside the Highline Trail between Chepeta Lake and Reader Lake \n\n\n\n The Highline Trail takes you up and down eight mountain passes. They are (east to west) Gabbro, North Pole, Anderson, Tungsten, Porcupine, Red Knob, Dead Horse, and Rocky Sea. These passes are what make this journey something special. From atop the backbone of the High Uintas, you’ll witness one spectacular vista after another.\n\n\n\n Almost all the Highline experience happens on the south slope of the Uintas. The main exception is where the trail takes a brief detour over Dead Horse Pass into the West Fork Blacks Fork drainage. After less than 4 miles, the trail winds its way back to the south slope over Red Knob Pass. There are also a couple of short 1.5-to 2-mile stretches on the east side that cross onto the North Slope. Those are about 10 miles into the trek and where the trail first begins flirting with 10,000 feet above sea level.\n\n\n\n Because much of the Highline Trail is above timberline, plan carefully where to spend your nights. Choose camps with pines for shelter from wind and rain. Low stands of pines are also the safest place to be when lightning is flashing. Speaking of bad weather, allow yourself at least a couple of extra days to complete this hike. You might get holed up for a while waiting for the skies to settle down.\n\n\n\n Camps near water can also help with planning when and where you filter and refill hydration bladders and bottles. If starting from the east, East Park Reservoir and Little Brush Creek beckon a mere 4 miles in because trailside water is comparatively scarce for the 20-mile stretch between East Park and Hacking Lake, which is near the Leidy Peak trailhead to Highline. Inspect and carry larger-scale topographical maps (those with smaller ratios and greater detail) for possible springs and creeks along the way. Fortunately, this stretch of the trail all occurs ahead of the first major mountain pass. After Leidy Peak, water is abundant and there are camp options at Deadman, Whiterocks, Chepeta, Reader, Fox, Kidney, North Star, Dead Horse, Ledge, and Carolyn Lakes, as well as near multiple other basin lakes or creeks.\n\n\n\n \n\n Highline Trail carves a high-elevation path along the South Slope near the divide, with options to bag a few peaks along the way, including Wilson (center) and Kings (far right). PHOTO BY MATT MCKELL/UTAH DIVISION OF WILDLIFE RESOURCES \n\n\n\n As for mileage, that can vary wildly due to hiker skill and fitness, terrain, and trail conditions. Average pace may range from 1 to 3 miles per hour, meaning 20-minute miles at the fast end and hour-long miles at the slower end. A 20-mile day at an average of 2 miles per hour means 10 hours of hiking, with a pack, and potentially with one or more mountain passes adding thousands of punishing feet of elevation both up and down. Plan for shorter, stretch hiking goals, and always have a Plan B and C on your map if conditions change or your speed varies, taking into account the needs and pace of others in your group.\n\n\n\n It should go without saying that excellent physical conditioning is a prerequisite for this alpine adventure. The steep, rocky miles will tear at your muscles, and the high mountain passes will take your breath away. But then, so will the scenery.\n\n\n\n \n\n Red Castle Peak and Red Castle Lakes are jewels of the North Slope. PHOTO BY MATT MCKELL/UTAH DIVISION OF WILDLIFE RESOURCES",
+   "narrative": "The trail begins at either the Highline trailhead west end (at Hayden Peak off Highway 150), Highline trailhead east end (at McKee Draw off U.S. 191), or at the Leidy Peak trailhead near the eastern end of the High Uinta Mountains. An underappreciated fourth option starts at Chepeta trailhead and logs only 65 miles of hiking. You will surely still receive impressed and possibly envious looks when you tell people you backpacked 65 miles mostly above 10,000 feet. But thanks to the visual impact of the west end—and the more gradual start of McKee Draw for the full point-to-point trail—many choose to start from the east and head west.\n\n\n\n Indeed, if you need a little time to acclimate to elevation, a strong case can be made for starting from the eastern side. At around 8,200 feet, it may come as less of a shock to your system than the approximately 10,800 feet at Leidy or 10,150 at Hayden. But if you’re tackling Highline, the truth is you’ve come prepared, and you’re conditioned for long distance and high elevation. For some, starting at a lower elevation may have little overall effect on the total wear and tear of this lengthy trek.\n\n\n\n \n\n A high-elevation lake alongside the Highline Trail between Chepeta Lake and Reader Lake \n\n\n\n The Highline Trail takes you up and down eight mountain passes. They are (east to west) Gabbro, North Pole, Anderson, Tungsten, Porcupine, Red Knob, Dead Horse, and Rocky Sea. These passes are what make this journey something special. From atop the backbone of the High Uintas, you’ll witness one spectacular vista after another.\n\n\n\n Almost all the Highline experience happens on the south slope of the Uintas. The main exception is where the trail takes a brief detour over Dead Horse Pass into the West Fork Blacks Fork drainage. After less than 4 miles, the trail winds its way back to the south slope over Red Knob Pass. There are also a couple of short 1.5-to 2-mile stretches on the east side that cross onto the North Slope. Those are about 10 miles into the trek and where the trail first begins flirting with 10,000 feet above sea level.\n\n\n\n Because much of the Highline Trail is above timberline, plan carefully where to spend your nights. Choose camps with pines for shelter from wind and rain. Low stands of pines are also the safest place to be when lightning is flashing. Speaking of bad weather, allow yourself at least a couple of extra days to complete this hike. You might get holed up for a while waiting for the skies to settle down.\n\n\n\n Camps near water can also help with planning when and where you filter and refill hydration bladders and bottles. If starting from the east, East Park Reservoir and Little Brush Creek beckon a mere 4 miles in because trailside water is comparatively scarce for the 20-mile stretch between East Park and Hacking Lake, which is near the Leidy Peak trailhead to Highline. Inspect and carry larger-scale topographical maps (those with smaller ratios and greater detail) for possible springs and creeks along the way. Fortunately, this stretch of the trail all occurs ahead of the first major mountain pass. After Leidy Peak, water is abundant and there are camp options at Deadman, Whiterocks, Chepeta, Reader, Fox, Kidney, North Star, Dead Horse, Ledge, and Carolyn Lakes, as well as near multiple other basin lakes or creeks.\n\n\n\n \n\n Highline Trail carves a high-elevation path along the South Slope near the divide, with options to bag a few peaks along the way, including Wilson (center) and Kings (far right). PHOTO BY MATT MCKELL/UTAH DIVISION OF WILDLIFE RESOURCES \n\n\n\n As for mileage, that can vary wildly due to hiker skill and fitness, terrain, and trail conditions. Average pace may range from 1 to 3 miles per hour, meaning 20-minute miles at the fast end and hour-long miles at the slower end. A 20-mile day at an average of 2 miles per hour means 10 hours of hiking, with a pack, and potentially with one or more mountain passes adding thousands of punishing feet of elevation both up and down. Plan for shorter, stretch hiking goals, and always have a Plan B and C on your map if conditions change or your speed varies, taking into account the needs and pace of others in your group.\n\n\n\n It should go without saying that excellent physical conditioning is a prerequisite for this alpine adventure. The steep, rocky miles will tear at your muscles, and the high mountain passes will take your breath away. But then, so will the scenery.\n\n\n\n \n\n Red Castle Peak and Red Castle Lakes are jewels of the North Slope. PHOTO BY MATT MCKELL/UTAH DIVISION OF WILDLIFE RESOURCES",
+   "finding_trailhead": "The Highline is the most popular trail of the High Uintas Wilderness. From Kamas, take the Mirror Lake Scenic Byway (Highway 150) 34 miles to a large sign on the east side of the road that says “Highline Trail.” This trailhead has a listed capacity of twenty-four vehicles, but there are often considerably more parked here on busy weekends. This crowded trailhead is equipped with toilets, water, stock ramp, and nearby campsites. Highline is Trail 083 for 8 miles in the Uinta-Wasatch-Cache National Forest and Trail 025 for the 96 miles it winds through the Ashley National Forest. \n\n\n\n The other end of the trail is at McKee Draw off U.S. 191. From Vernal, drive north on 191 (the Flaming Gorge–Uintas Scenic Byway) for 28.8 miles and turn left. About 0.5 mile up the road there is parking and a vault toilet. For the Leidy Peak trailhead, travel from Vernal by way of Taylor Mountain and Red Cloud Loop Scenic Backway toward East Park Reservoir and continue on toward Hacking Lake. You can camp at Hacking Lake or drive up the road another mile to the Leidy Peak trailhead at the eastern end of the Highline Trail. Total distance from Vernal is about 36 miles.\n\n\n \n \n\n \n\n The view below Nahguch Pass looking east over Porcupine Lake along the Highline Trail’s path through Porcupine Pass, the 12,236-foot route between Wilson Peak and Porcupine Peak. PHOTO BY MATT MCKELL/UTAH DIVISION OF WILDLIFE RESOURCES",
    "lakes": [
     {
      "letter_number": "GR-40",
@@ -14479,6 +14571,14 @@
    "lake_acres_total": 36.2,
    "largest_lake_acres": 15.2,
    "tags": [
+    "camping",
+    "fishing",
+    "navigation",
+    "steep",
+    "horses",
+    "solitude",
+    "bugs",
+    "multi-day",
     "4wd",
     "toilets"
    ],
@@ -14486,8 +14586,8 @@
    "summary_source": "book-intro",
    "source_pages": null,
    "book_url": "https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html#hike-82",
-   "narrative": null,
-   "finding_trailhead": "From Mountain View, take Wyoming State Highway 414 southeast of Mountain View for 21.5 miles. At Lonetree, turn right onto CR 290, then left onto CR 291. After 5 miles, turn right on FR 078 and travel for 3 miles. Turn right on FR 082 and drive 1.7 miles. Turn right to stay on FR 082 and continue for 3.4 miles to a turn, signed for West Fork Beaver Creek, and continue approximately 0.5 mile to the trail-head. High clearance may be necessary near the end of the route, especially if it has been raining. There are eight parking spaces. GPS or the USDA Forest Service map is helpful for finding this one. \n\n\n\n THE HIKE \n\n From the trailhead, the trail heads southwest. You’ll enter designated Wilderness at around 4.5 miles. At 5.7 miles, there is signage for the North Slope Highline and Middle Beaver. Turn left, cross the river, then head south following the signs toward Gilbert Lake, down the West Fork Beaver Trail. Gilbert Lake is 3 miles up the valley over fairly gentle terrain.\n\n\n \n \n\n Equestrians are attracted to this area too. Horse pasture is plentiful around the lush meadows, and flowing water is everywhere. Campsites are well suited to horse travelers\n\n\n \n \n\n \n\n It’s a short, but considerably rough, road to the West Fork Beaver Creek trailhead. \n\n\n\n who want to set up a large base camp. The best camping is found on the south side of Gilbert Lake or in the trees just north of GR–151. Because of the moist nature of the area, mosquitoes are often a problem. Plan your trip late in the summer, and always bring along lots of repellent and cover up.\n\n\n\n Although Gilbert Lake can offer fine fishing, check out some of the other lakes nearby. They are probably just as good, and maybe even better. South of Gilbert Lake lie GR–151, GR–152, and GR–153. These lakes and their connecting streams are stuffed with fish that seldom see an artificial lure. As with most other lakes in the High Uintas, great fishing is never guaranteed. If the lakes are not producing, then check out the streams. They can be hot when the lakes are not.\n\n\n\n The trail to Gilbert Lake is sometimes hit-or-miss and there might be a lot of deadfall obscuring the route, so check your map and compass often. There are several wet areas along the route, and a good riding horse or waterproof boots can serve you well to keep your feet dry. There is also a moderately difficult (steep, time-consuming, and rocky!) 3-mile route up Gilbert Peak from Gilbert Lake.\n\n\n\n \n\n A brook trout from the Beaver Creek drainage. PHOTO BY MATT MCKELL/UTAH DIVISION OF WILDLIFE RESOURCES",
+   "narrative": "From the trailhead, the trail heads southwest. You’ll enter designated Wilderness at around 4.5 miles. At 5.7 miles, there is signage for the North Slope Highline and Middle Beaver. Turn left, cross the river, then head south following the signs toward Gilbert Lake, down the West Fork Beaver Trail. Gilbert Lake is 3 miles up the valley over fairly gentle terrain.\n\n\n \n \n\n Equestrians are attracted to this area too. Horse pasture is plentiful around the lush meadows, and flowing water is everywhere. Campsites are well suited to horse travelers\n\n\n \n \n\n \n\n It’s a short, but considerably rough, road to the West Fork Beaver Creek trailhead. \n\n\n\n who want to set up a large base camp. The best camping is found on the south side of Gilbert Lake or in the trees just north of GR–151. Because of the moist nature of the area, mosquitoes are often a problem. Plan your trip late in the summer, and always bring along lots of repellent and cover up.\n\n\n\n Although Gilbert Lake can offer fine fishing, check out some of the other lakes nearby. They are probably just as good, and maybe even better. South of Gilbert Lake lie GR–151, GR–152, and GR–153. These lakes and their connecting streams are stuffed with fish that seldom see an artificial lure. As with most other lakes in the High Uintas, great fishing is never guaranteed. If the lakes are not producing, then check out the streams. They can be hot when the lakes are not.\n\n\n\n The trail to Gilbert Lake is sometimes hit-or-miss and there might be a lot of deadfall obscuring the route, so check your map and compass often. There are several wet areas along the route, and a good riding horse or waterproof boots can serve you well to keep your feet dry. There is also a moderately difficult (steep, time-consuming, and rocky!) 3-mile route up Gilbert Peak from Gilbert Lake.\n\n\n\n \n\n A brook trout from the Beaver Creek drainage. PHOTO BY MATT MCKELL/UTAH DIVISION OF WILDLIFE RESOURCES",
+   "finding_trailhead": "From Mountain View, take Wyoming State Highway 414 southeast of Mountain View for 21.5 miles. At Lonetree, turn right onto CR 290, then left onto CR 291. After 5 miles, turn right on FR 078 and travel for 3 miles. Turn right on FR 082 and drive 1.7 miles. Turn right to stay on FR 082 and continue for 3.4 miles to a turn, signed for West Fork Beaver Creek, and continue approximately 0.5 mile to the trail-head. High clearance may be necessary near the end of the route, especially if it has been raining. There are eight parking spaces. GPS or the USDA Forest Service map is helpful for finding this one.",
    "lakes": [
     {
      "letter_number": "GR-150",
@@ -14644,6 +14744,13 @@
    "lake_acres_total": 75.7,
    "largest_lake_acres": 38.3,
    "tags": [
+    "camping",
+    "fishing",
+    "cross-country",
+    "steep",
+    "river-crossing",
+    "horses",
+    "multi-day",
     "4wd",
     "toilets"
    ],
@@ -14651,8 +14758,8 @@
    "summary_source": "book-intro",
    "source_pages": "227",
    "book_url": "https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html#hike-83",
-   "narrative": null,
-   "finding_trailhead": "Take Wyoming State Highway 414 southeast of Mountain View for 21.5 miles. At Lonetree, turn right onto CR 290, then left onto CR 291. After 5 miles, turn right on FR 078 and travel 3 miles. Turn right on FR 082 and drive 1.7 miles. Turn right on FR 164 and follow for approximately 1.5 miles past Georges Park picnic area to the Middle Beaver Creek trailhead. High clearance may be necessary near the end of the route, especially if it has been raining. There are ten parking spots. \n\n\n\n THE HIKE \n\n Beaver Lake is located in the Middle Fork of Beaver Creek drainage. From Middle Beaver Creek trailhead, the trail heads southwest. There’s a sharp gain in elevation and a switchback around 0.8 mile and then some rolling terrain as the trail winds south and west across rocky creek crossings and an open meadow (whose trail might be muddled and horse-trampled) for 4 miles. At the next junction, stay to left and go another 1.5 miles to the lake.\n\n\n \n \n\n Just southwest of Beaver lies Coffin Lake. Coffin gets its name from its oblong shape and small shelves surrounding the water. No trail exists to the lake, but you can find it by following the inlet of Beaver 0.75 mile south then west to the base of some steep talus slopes. Rough and rocky describes the wilderness around this lake. Horse travel is quite difficult, and camping areas are a poor prospect. On the bright side, angling usage is light for unsophisticated cutthroat trout.\n\n\n\n \n\n Stunning views of the Middle Fork of the Beaver Creek Drainage are a reward for hiking off trail to Coffin Lake. PHOTO BY MATT MCKELL/UTAH DIVISION OF WILDLIFE RESOURCES \n\n\n\n Other lakes you might happen upon in the Beaver Lake Basin are Hidden and Dine. Hidden Lake lies 0.5 mile north of Long Meadow. There is no trail, but access is not difficult. Anglers and backpackers alike often pass up this lake. There is no spring water here, but there are several good camping areas near the inlet.\n\n\n\n Discover Dine Lake by following the inlet of Hidden Lake 1 mile southwest, or 0.5 mile west of Long Meadow. This lake is surrounded by rocky, timbered terrain and has a talus slope bordering the water on the southwest. Due to the rugged nature of this country, only mediocre campsites are available. There is no horse pasture in the vicinity, but there’s plenty of spring water. Although Dine Lake has been stocked throughout the years, it will sometimes experience winterkill during harsh winters.",
+   "narrative": "Beaver Lake is located in the Middle Fork of Beaver Creek drainage. From Middle Beaver Creek trailhead, the trail heads southwest. There’s a sharp gain in elevation and a switchback around 0.8 mile and then some rolling terrain as the trail winds south and west across rocky creek crossings and an open meadow (whose trail might be muddled and horse-trampled) for 4 miles. At the next junction, stay to left and go another 1.5 miles to the lake.\n\n\n \n \n\n Just southwest of Beaver lies Coffin Lake. Coffin gets its name from its oblong shape and small shelves surrounding the water. No trail exists to the lake, but you can find it by following the inlet of Beaver 0.75 mile south then west to the base of some steep talus slopes. Rough and rocky describes the wilderness around this lake. Horse travel is quite difficult, and camping areas are a poor prospect. On the bright side, angling usage is light for unsophisticated cutthroat trout.\n\n\n\n \n\n Stunning views of the Middle Fork of the Beaver Creek Drainage are a reward for hiking off trail to Coffin Lake. PHOTO BY MATT MCKELL/UTAH DIVISION OF WILDLIFE RESOURCES \n\n\n\n Other lakes you might happen upon in the Beaver Lake Basin are Hidden and Dine. Hidden Lake lies 0.5 mile north of Long Meadow. There is no trail, but access is not difficult. Anglers and backpackers alike often pass up this lake. There is no spring water here, but there are several good camping areas near the inlet.\n\n\n\n Discover Dine Lake by following the inlet of Hidden Lake 1 mile southwest, or 0.5 mile west of Long Meadow. This lake is surrounded by rocky, timbered terrain and has a talus slope bordering the water on the southwest. Due to the rugged nature of this country, only mediocre campsites are available. There is no horse pasture in the vicinity, but there’s plenty of spring water. Although Dine Lake has been stocked throughout the years, it will sometimes experience winterkill during harsh winters.",
+   "finding_trailhead": "Take Wyoming State Highway 414 southeast of Mountain View for 21.5 miles. At Lonetree, turn right onto CR 290, then left onto CR 291. After 5 miles, turn right on FR 078 and travel 3 miles. Turn right on FR 082 and drive 1.7 miles. Turn right on FR 164 and follow for approximately 1.5 miles past Georges Park picnic area to the Middle Beaver Creek trailhead. High clearance may be necessary near the end of the route, especially if it has been raining. There are ten parking spots.",
    "lakes": [
     {
      "letter_number": "GR-147",
@@ -15949,14 +16056,14 @@
    "difficulty_note": null,
    "usage_text": "Light",
    "usage_rank": 2,
-   "lake_count": 9,
-   "lake_count_all_mentions": 9,
+   "lake_count": 10,
+   "lake_count_all_mentions": 10,
    "primary_lakes": [
     "GR-19"
    ],
-   "fishable_lake_count": 9,
+   "fishable_lake_count": 10,
    "lakes_caught": 0,
-   "lakes_uncaught_fishable": 9,
+   "lakes_uncaught_fishable": 10,
    "lakes_starred": 0,
    "species_current": [
     "Brookies",
@@ -15964,7 +16071,9 @@
     "Grayling",
     "Tigers"
    ],
-   "species_historical_only": [],
+   "species_historical_only": [
+    "Rainbows"
+   ],
    "lake_drainages": [
     "Ashley Creek Drainage",
     "Sheep/Carter Creek Drainages"
@@ -15990,7 +16099,7 @@
    "source_pages": null,
    "book_url": "https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html#hike-90",
    "narrative": "From the 017 trailhead, the trail traces a meadow and crosses fields where it’s easy to lose site of the route. At a junction 2.5 miles in, turn left heading south toward Sheep Creek Canal through another grassy meadow. There’s a bridge crossing the canal before continuing another 2 miles to a creek crossing on West Fork. (Another westbound trail branches to the right just ahead of the creek, so keep left.) After crossing the creek, it’s\n\n\n \n \n\n \n\n The Browne Lake area features multiple trails for people on foot, horseback, or in ATVs. \n\n\n\n around 2.5 miles to either Potter Lake or the Lamb Lakes area. The trail climbs the slopes toward the top of the ridge for about 1 mile. The route to Potter Lake branches left. Or, before reaching tree line, turn right off the trail and contour 1 mile to Lamb Lakes.\n\n\n\n Though the landscape is rugged, backpackers will find suitable camping areas on the east side of Potter. The lake and East Fork Carter Creek areas (including Lower Tepee Lake) were treated by wildlife resources in recent years to remove non-native fish in an effort to establish native cutthroat trout.\n\n\n\n Lamb Lakes can provide prime angling. However, fishing is unpredictable. Although these lakes receive little pressure, most have a history of winterkill during long, hard winters. In the summer months, there’s an excellent elk population here. Signs of elk are everywhere, but actual sightings of these animals are rare. One sniff, sound, or sight of a human, and the only evidence of their existence will be the sound of hooves pounding through the trees.\n\n\n\n Several lakes occupy Lamb Lakes Basin: Bummer, Mutton, Lamb, Ram, Ewe, GR–20, and GR–21. All these lakes are in rough and rocky, timbered country, and campsites are few and far between. Except for the Bummer Lake area, treatable spring water can be found at all the lakes.\n\n\n\n To reach Mutton Lake, follow the inlet of Bummer Lake 0.5 mile south. This lake plays host to the best camping areas in Lamb Lakes Basin. Fishing pressure is considered light for stocked brook trout.\n\n\n\n Lamb Lake is next to a steep rocky slope 1 mile west of Bummer. There is no trail, and the going gets rough when crossing over rocks and dead timber. This lake may also experience winterkill during harsh winters. For better angling possibilities, try Ram Lake. It is a little deeper and is fed by a fresh supply of spring water for filtering. Ram Lake is just 1 mile southwest of Bummer Lake.\n\n\n\n Ewe Lake is a fishless pond sitting at the base of a talus slope 1 mile west of Bummer over very rough terrain Get out and see this remote wilderness. Few people do.\n\n\n\n Note: A 3.6-mile, round-trip trail near Browne Lake dam climbs Ute Mountain to the historic Ute Mountain Fire Tower National Historic Site (though the site is also accessible by car). Near the dam, the Old Carter Military Trail is a 35.6-mile route popular for off-highway vehicle (OHV) travel. It’s worth hiking up 2 or 3 miles to get a sense of difficulty of travel through the rugged Uinta mountains from when the trail was built by the U.S. Army in the 1880s. Parts of it are challenging even for modern ATVs!",
-   "finding_trailhead": null,
+   "finding_trailhead": "From Mountain View, take Wyoming Highway 414 east then south about 20 miles to Lonetree. After about 10 miles east on Highway 414 is a three-way junction that provides access to Spirit and Browne Lakes. At this junction, take the south dirt Road 221 13 miles to a junction with a posted sign. Browne Lake is 8 miles east on Road 221. \n\n\n\n Campsites, toilets, and water are located at Browne Lake, along with three different trailheads. Make sure to start on the correct trailhead (017).",
    "lakes": [
     {
      "letter_number": "GR-19",
@@ -16117,6 +16226,33 @@
      "starred": false,
      "has_coords": false,
      "has_cma_notes": true,
+     "has_junesucker_notes": false,
+     "has_jed_notes": false
+    },
+    {
+     "letter_number": "GR-3",
+     "name": "Spirit Lake",
+     "is_primary": false,
+     "match_method": "name",
+     "mention_context": "unknown",
+     "drainage": "Sheep/Carter Creek Drainages",
+     "basin": null,
+     "elevation_ft": null,
+     "size_acres": null,
+     "max_depth_ft": null,
+     "species_current": [
+      "Cutthroats",
+      "Tigers"
+     ],
+     "species_historical": [
+      "Rainbows"
+     ],
+     "fishing_pressure": null,
+     "no_fish": false,
+     "jed_status": null,
+     "starred": false,
+     "has_coords": false,
+     "has_cma_notes": false,
      "has_junesucker_notes": false,
      "has_jed_notes": false
     },
@@ -17475,7 +17611,8 @@
     61,
     86,
     88,
-    89
+    89,
+    90
    ],
    "primary_destination_of": []
   },
@@ -19480,9 +19617,11 @@
    "drainage": "Duchesne River Drainage",
    "jed_status": "CAUGHT",
    "hikes": [
+    1,
     10,
     13,
     14,
+    15,
     16,
     17,
     18,

@@ -99,16 +99,21 @@ def _clean(fragment):
 
 
 def _section_text(body_html, heading):
-    """Plain text between an <h5> whose text == heading and the next <h5>."""
+    """Plain text between a heading whose text == heading and the next heading.
+
+    The heading level varies by chapter: THE HIKE is an <h5> (82 chapters) or
+    <h6> (8); FINDING THE TRAILHEAD is an <h4> (26) or <h5> (8). Only hikes
+    with their own directions carry that section — the rest share the
+    trailhead chapter's directions ("See map and logistics on pages ...")."""
     m = re.search(
-        r"<h5[^>]*>\s*(?:<[^>]+>\s*)*" + re.escape(heading) +
-        r"\s*(?:</[^>]+>\s*)*</h5>(.*?)(?=<h5|\Z)",
+        r"<(h[3-6])[^>]*>\s*(?:<[^>]+>\s*)*" + re.escape(heading) +
+        r"\s*(?:</[^>]+>\s*)*</\1>(.*?)(?=<h[3-6]\b|\Z)",
         body_html, re.S | re.I,
     )
     if not m:
         return None
     # keep paragraph breaks as blank lines for readable markdown-ish output
-    chunk = re.sub(r"</p\s*>", "\n\n", m.group(1), flags=re.I)
+    chunk = re.sub(r"</p\s*>", "\n\n", m.group(2), flags=re.I)
     return _clean(chunk).strip() or None
 
 
@@ -430,6 +435,12 @@ _SPELLING_ALIASES = {
     "BETSEY": ("BETSY",),       # X-7 "Betsey" (DWR) — Falcon writes "Betsy Lake" (hikes 33, 34)
 }
 
+# Hand-reviewed links to DROP: the matcher resolves the name correctly but
+# the hike never goes there — keyed by (hike_number, letter_number).
+_NOT_VISITED = {
+    (2, "A-48"): "wrong-turn landmark: 'a beaver pond just below Hourglass Lake. This is the wrong starting place.'",
+}
+
 _MANUAL_LINKS = {
     (8,  "NORTH TWIN"): None,   # the Provo Twins (A-32/A-33) already linked; GR-50 is Dry Fork's
     (23, "CRYSTAL"): None,      # "...Lakes Country Trail of Crystal Lake trailhead fame" — name-drop
@@ -586,6 +597,7 @@ def link_lakes(cursor, hikes):
             {"letter_number": id_to_ln[lid], "method": method,
              "is_primary": 1 if lid in primary_ids else 0}
             for lid, method in matches.items()
+            if (h["hike_number"], id_to_ln[lid]) not in _NOT_VISITED
         ]
 
     if dropped:

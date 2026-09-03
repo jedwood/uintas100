@@ -108,7 +108,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 | 87 | Fish Lake | 3 | Spirit Lake Trailhead | 11.2 | O&B | 10880 | 6.5 | Moderate | Light | 2 | 2 | — |
 | 88 | Daggett Lake | 3 | Spirit Lake Trailhead | 5.6–6.9 | O&B | 10462 | 4.5 | Moderate | Heavy | 2 | 2 | GR-6 |
 | 89 | Anson Lakes | 3 | Spirit Lake Trailhead | 16 | O&B | 10575 | 9 | Moderate | Moderate | 6 | 5 | GR-9, GR-10 |
-| 90 | Brown Lake Area (Lamb Lakes or Potter) | 3 | Spirit Lake Trailhead | 13 | O&B | 10350 | 8 | Difficult | Light | 9 | 9 | GR-19 |
+| 90 | Brown Lake Area (Lamb Lakes or Potter) | 3 | Spirit Lake Trailhead | 13 | O&B | 10350 | 8 | Difficult | Light | 10 | 10 | GR-19 |
 
 ## Per-hike detail
 
@@ -118,9 +118,9 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** End of Upper Setting Road · **Town:** Kamas, Utah · **Drainage:** Weber River
 - **Distance:** 5.6 miles out and back · **Elev:** 10020 ft · **Time:** 4 hours · **Difficulty:** Easy—one steep section · **Usage:** Moderate
-- **Lakes (6 on route):** W-25 Erickson South (primary, Brookies, 10ac); W-26 Erickson North (primary, Brookies, 9ac); A-18 Big Elk (Tigers, 10020ft, 30ac); A-39 Shingle Creek East (Tigers, 9700ft, 7ac); P-62 Shingle Creek Lower (9620ft, 4ac); P-60 Shingle Creek West (OTHERS, Brookies, 9940ft, 5ac)
+- **Lakes (6 on route, 1 name-drop only):** W-25 Erickson South (primary, Brookies, 10ac); W-26 Erickson North (primary, Brookies, 9ac); Z-3 Mirror (name-drop only, CAUGHT, Brookies/Rainbows/Tigers, 10200ft, 42ac); A-18 Big Elk (Tigers, 10020ft, 30ac); A-39 Shingle Creek East (Tigers, 9700ft, 7ac); P-62 Shingle Creek Lower (9620ft, 4ac); P-60 Shingle Creek West (OTHERS, Brookies, 9940ft, 5ac)
 - **Aggregates:** 6 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Tigers (historical only: Cutthroats, Splake); lake elev 9620–10020 ft; 65 ac total, largest 30 ac
-- **Tags:** camping, fishing, tiger-trout, navigation, steep, mountain-pass, bugs
+- **Tags:** camping, fishing, tiger-trout, navigation, steep, mountain-pass, bugs, 4wd
 - **Summary:** North Erickson Lake sits at the head of Smith and Morehouse Creek in Erickson Basin. It can be reached from the Smith and Morehouse trailhead, but it is easier to start hiking from the end of Upper Setting Road in the Provo River Drainage.
 - **Book:** pp. ? · https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html#hike-01
 
@@ -130,7 +130,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Distance:** 3 to 5 miles out and back · **Elev:** 10020 ft · **Time:** 2 to 4 hours · **Difficulty:** Moderate—one steep section · **Usage:** Heavy
 - **Lakes (2 on route):** A-18 Big Elk (primary, Tigers, 10020ft, 30ac); A-19 Little Elk (Cutthroats/Grayling, 9780ft, 13.2ac)
 - **Aggregates:** 2 fishable & uncaught, 0 caught, 0 starred; species: Cutthroats, Grayling, Tigers (historical only: Brookies); lake elev 9780–10020 ft; 43.2 ac total, largest 30 ac
-- **Tags:** fishing, crowded, bugs, wildflowers
+- **Tags:** fishing, crowded, bugs, wildflowers, 4wd
 - **Summary:** From the end of Norway Flats Road, Little Elk Lake is about 0.3 mile to the west of the trail. Continue another 0.8 mile to a trail junction and Big Elk Lake.
 - **Book:** pp. ? · https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html#hike-02
 
@@ -258,7 +258,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** Butterfly Lake (section: Mirror Lake Area) · **Town:** Kamas, Utah · **Drainage:** Duchesne River
 - **Distance:** 0.8 mile out and back · **Elev:** 10300 ft · **Time:** 1 hour · **Difficulty:** Moderate—cross-country hiking · **Usage:** Moderate
-- **Lakes (2 on route):** Z-1 Butterfly (primary, Brookies/Rainbows/Tigers, 10300ft, 4.3ac); D-14 Castle (primary, Cutthroats/Tigers, 10300ft, 1ac)
+- **Lakes (2 on route, 1 name-drop only):** Z-1 Butterfly (primary, Brookies/Rainbows/Tigers, 10300ft, 4.3ac); D-14 Castle (primary, Cutthroats/Tigers, 10300ft, 1ac); Z-3 Mirror (name-drop only, CAUGHT, Brookies/Rainbows/Tigers, 10200ft, 42ac)
 - **Aggregates:** 2 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats, Rainbows, Tigers (historical only: Grayling); lake elev 10300–10300 ft; 5.3 ac total, largest 4.3 ac
 - **Tags:** fishing, cross-country, crowded, bugs, toilets
 - **Summary:** This hike is for the roadside camper looking for a short diversion. Castle Lake is less than half a mile west of Butterfly Lake. Butterfly Lake has excellent campground facilities, as well as a parking area for day-use anglers. It’s a rugged “route” rather than a clear trail to Castle Lake, but just head due west, stay close to the base of the cliffs and you can’t miss it. There are several small ponds on the way. Don’t mistake one of them for Castle Lake.
@@ -370,7 +370,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Distance:** 1.6 miles out and back · **Elev:** 10340 ft · **Time:** 1 hour · **Difficulty:** Easy · **Usage:** Heavy
 - **Lakes (3 on route, 1 name-drop only):** BR-40 Ruth (primary, Brookies, 10340ft, 9.5ac); Z-3 Mirror (name-drop only, CAUGHT, Brookies/Rainbows/Tigers, 10200ft, 42ac); Z-12 Scout (Brookies/Rainbows/Tigers, 10300ft, 30ac); W-41 Lofty (Cutthroats/Tigers, 10820ft, 4ac)
 - **Aggregates:** 3 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats, Rainbows, Tigers; lake elev 10300–10820 ft; 43.5 ac total, largest 30 ac
-- **Tags:** paved-access, toilets
+- **Tags:** camping, fishing, navigation, crowded, waterfall, family, multi-day, paved-access, toilets
 - **Summary:** When you get to Ruth Lake, don’t forget to look behind you. Hayden Peak looms larger than life just across the canyon to the west. The view from Ruth Lake is a must for shutterbugs looking for some real photo trophies. You’ll want to hang this one on your wall.
 - **Book:** pp. ? · https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html#hike-26
 
@@ -380,7 +380,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Distance:** 2.7 miles out and back · **Elev:** 9820 ft · **Time:** 1.5 to 2 hours · **Difficulty:** Easy to moderate · **Usage:** Heavy
 - **Lakes (2 on route, 1 name-drop only):** BR-2 (Brookies, 9780ft, 0.7ac); BR-3 Whiskey Island Lake (Grayling, 10340ft, 5ac); Z-3 Mirror (name-drop only, CAUGHT, Brookies/Rainbows/Tigers, 10200ft, 42ac)
 - **Aggregates:** 2 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Grayling; lake elev 9780–10340 ft; 5.7 ac total, largest 5 ac
-- **Tags:** 4wd, toilets
+- **Tags:** fishing, wildflowers, family, multi-day, 4wd, toilets
 - **Summary:** Everyone says this is an easy hike. Compared to many treks in the High Uintas, it is. But the 675 feet of elevation the trail picks up, although gradual, may catch up with some hikers. So take it easy, don’t rush the switchbacks, keep an eye out for moose, and raise a glass to this well-marked trail and gorgeous little lake.
 - **Book:** pp. ? · https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html#hike-27
 
@@ -390,7 +390,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Distance:** 10.5 or 12.5 miles out and back · **Elev:** 10340 ft · **Time:** 7 to 8 hours · **Difficulty:** Moderate · **Usage:** Moderate
 - **Lakes (2 on route, 1 name-drop only):** BR-29 Hell Hole (primary, CAUGHT, 10340ft, 9.1ac); A-1 Alexander (primary, Brookies, 9360ft, 23ac); Z-3 Mirror (name-drop only, CAUGHT, Brookies/Rainbows/Tigers, 10200ft, 42ac)
 - **Aggregates:** 1 fishable & uncaught, 1 caught, 0 starred; species: Brookies (historical only: Cutthroats); lake elev 9360–10340 ft; 32.1 ac total, largest 23 ac
-- **Tags:** toilets
+- **Tags:** camping, fishing, navigation, steep, peak, river-crossing, horses, multi-day, toilets
 - **Summary:** There are faster, more scenic ways to get into the High Uintas Wilderness. But that fact also means you may have more solitude at Hell Hole than other lakes. And from a base camp by the lake, you can have a go at two nearby peaks. As for anglers, Hell Hole is a gamble. Some years it’s hot, and some years it’s not. It’s a relatively small lake and will depend on the planting schedules, winter survival, and catch-and-release rates. Equestrians: There’s plenty of feed but watch out for the very rocky second half of the hike. Everyone: The marshlands of Hell Hole are extremely buggy early in the season.
 - **Book:** pp. ? · https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html#hike-28
 
@@ -522,7 +522,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Distance:** 1.5 mile out and back · **Elev:** 10450 ft · **Time:** 1.5 hours · **Difficulty:** Moderate—cross-country · **Usage:** Light
 - **Lakes (3 on route):** RC-23 Arta (primary, Cutthroats, 10450ft, 5.4ac); X-9 GranDaddy (Cutthroats, 10310ft, 173ac); RC-20 Survey (Brookies, 10700ft, 6ac)
 - **Aggregates:** 3 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats; lake elev 10310–10700 ft; 184.4 ac total, largest 173 ac
-- **Tags:** paved-access, toilets
+- **Tags:** fishing, navigation, steep, peak, solitude, multi-day, paved-access, toilets
 - **Summary:** Long drive, short hike, and solitude pretty well sum up this day trip. No matter which way you come from, you will probably be in for a long drive before you start hiking. But if you would rather spend more time driving through scenic country than hiking it, then this hike may interest you, especially if you’re looking to get away from other people.
 - **Book:** pp. ? · https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html#hike-41
 
@@ -801,7 +801,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Distance:** 10.4 miles out and back · **Elev:** 10792 ft · **Time:** 7 hours · **Difficulty:** Moderate · **Usage:** Moderate
 - **Lakes (3 on route):** GR-34 Lakeshore (primary, Tiger muskie, 10792ft, 11.1ac); GR-35 Ashley Twin Reservoir (Brookies, 10332ft, 25ac); GR-40 Hacking (Cutthroats/Rainbows/Tigers, 10625ft, 7.4ac)
 - **Aggregates:** 3 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats, Rainbows, Tiger muskie, Tigers; lake elev 10332–10792 ft; 43.5 ac total, largest 25 ac
-- **Tags:** 4wd
+- **Tags:** fishing, steep, mountain-pass, horses, 4wd
 - **Summary:** If sightseeing is on your agenda, then Lakeshore is a great place to visit. This picture-perfect lake rests in a meadow encased by partly timbered slopes and rolling tundra. The Alps from The Sound of Music come to mind. Oh and, unless you’re traveling with small children, there is the matter of bagging Leidy Peak.
 - **Book:** pp. ? · https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html#hike-69
 
@@ -811,7 +811,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Distance:** 79 to 104 miles one way · **Elev:** 12600 ft · **Time:** Variable · **Difficulty:** Extremely difficult · **Usage:** Moderate
 - **Lakes (7 on route, 1 name-drop only):** GR-40 Hacking (Cutthroats/Rainbows/Tigers, 10625ft, 7.4ac); Z-42 Carolyn (10430ft, 5ac); Z-3 Mirror (name-drop only, CAUGHT, Brookies/Rainbows/Tigers, 10200ft, 42ac); G-15 Red Castle (CAUGHT, Brookies/Tigers, 11295ft, 168.2ac); LF-22 Porcupine (Cutthroats, 11301ft, 12.8ac); X-113 Ledge (Brookies/Cutthroats, 10845ft, 3.1ac); WR-64 Chepeta (Brookies/Cutthroats, 10600ft, 135ac); WR-66 Reader (Cutthroats, 10960ft, 10.2ac)
 - **Aggregates:** 6 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Cutthroats, Rainbows, Tigers (historical only: Grayling); lake elev 10430–11301 ft; 341.7 ac total, largest 168.2 ac
-- **Tags:** 4wd, toilets
+- **Tags:** camping, steep, mountain-pass, horses, multi-day, 4wd, toilets
 - **Summary:** You’ve heard of the Appalachian Trail and the Pacific Crest Trail. Maybe you’ve heard of the John Muir Trail in California. But have you heard of Utah’s Highline Trail? With most of the trail above 10,000 feet, the 100-mile trek has a limited hiking season and its elevation commands respect. It takes a lot of stamina and willpower to take on a long hike lasting many days or even weeks—and may bring into immediate focus the reasons behind ultralight backpacking practices once you’ve gone just a few miles under the full weight of your pack. On that note, do not make Highline your first backpacking trip. Get in shape by taking on a trial trip or two—or three!—each time pushing your distance to know how many miles you are capable of covering in a day. But then, there is no “right way” to tackle Highline. If you are strong enough, conditioned enough, well prepared, and have enough time based on your chosen itinerary, then maybe you can join the elite long-haulers on the Highline Trail.
 - **Book:** pp. ? · https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html#hike-70
 
@@ -933,7 +933,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Distance:** 17.4 miles out and back · **Elev:** 10905 ft · **Time:** 10.5 hours · **Difficulty:** Moderate · **Usage:** Moderate
 - **Lakes (4 on route):** GR-150 Gilbert (primary, 10905ft, 15.2ac); GR-151 (11033ft, 12.6ac); GR-152 (Brookies, 11295ft, 4.8ac); GR-153 (11060ft, 3.6ac)
 - **Aggregates:** 4 fishable & uncaught, 0 caught, 0 starred; species: Brookies (historical only: Cutthroats); lake elev 10905–11295 ft; 36.2 ac total, largest 15.2 ac
-- **Tags:** 4wd, toilets
+- **Tags:** camping, fishing, navigation, steep, horses, solitude, bugs, multi-day, 4wd, toilets
 - **Summary:** If fly fishing is your thing, then Gilbert Lake might be your idea of heaven. Plenty of open shoreline and lots of eager trout make this a good fly-fishing lake. This lake is a must for fly fishers seeking fast action for brookies and cutthroat trout. Make sure your casting arm is in good shape. It will give out long before the fish do.
 - **Book:** pp. ? · https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html#hike-82
 
@@ -943,7 +943,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Distance:** 13.6 miles out and back · **Elev:** 10505 ft · **Time:** 9 hours · **Difficulty:** Moderate · **Usage:** Heavy
 - **Lakes (4 on route):** GR-147 Beaver (primary, 10505ft, 38.3ac); GR-144 Coffin (Cutthroats/Tigers, 10853ft, 25.8ac); GR-148 Dine (10460ft, 5.1ac); GR-149 Hidden (Brookies, 10148ft, 6.5ac)
 - **Aggregates:** 4 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats, Tigers (historical only: Rainbows); lake elev 10148–10853 ft; 75.7 ac total, largest 38.3 ac
-- **Tags:** 4wd, toilets
+- **Tags:** camping, fishing, cross-country, steep, river-crossing, horses, multi-day, 4wd, toilets
 - **Summary:** Beaver Lake is characterized by timbered shorelines, with shallow water prevailing on the east side of the lake. Excellent campsites are in a large park to the west, and several sources of treatable spring water and horse pasture are available in nearby meadows. Brook trout and a few cutthroat inhabit this lake.
 - **Book:** pp. 227 · https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html#hike-83
 
@@ -1011,8 +1011,8 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** Browne Lake (section: Spirit Lake Trailhead) · **Town:** Mountain View, Wyoming · **Drainage:** Carter Creek
 - **Distance:** 13 miles out and back · **Elev:** 10350 ft · **Time:** 8 hours · **Difficulty:** Difficult · **Usage:** Light
-- **Lakes (9 on route):** GR-19 Lamb (primary, Cutthroats/Tigers, 10540ft, 6ac); GR-22 Bummer (Brookies/Cutthroats, 10350ft, 1.9ac); GR-18 Ewe (Grayling, 10750ft, 3ac); GR-27 Lower Potter (10130ft, 3.4ac); GR-28 Upper Potter (Cutthroats, 4.3ac); GR-20 (Tigers, 10355ft, 5.7ac); GR-21 (Tigers, 10355ft, 3.7ac); GR-23 Mutton (Brookies/Cutthroats, 10570ft, 3.8ac); GR-24 Ram (Cutthroats/Tigers, 10380ft, 7ac)
-- **Aggregates:** 9 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats, Grayling, Tigers; lake elev 10130–10750 ft; 38.8 ac total, largest 7 ac
+- **Lakes (10 on route):** GR-19 Lamb (primary, Cutthroats/Tigers, 10540ft, 6ac); GR-22 Bummer (Brookies/Cutthroats, 10350ft, 1.9ac); GR-18 Ewe (Grayling, 10750ft, 3ac); GR-27 Lower Potter (10130ft, 3.4ac); GR-28 Upper Potter (Cutthroats, 4.3ac); GR-3 Spirit Lake (Cutthroats/Tigers); GR-20 (Tigers, 10355ft, 5.7ac); GR-21 (Tigers, 10355ft, 3.7ac); GR-23 Mutton (Brookies/Cutthroats, 10570ft, 3.8ac); GR-24 Ram (Cutthroats/Tigers, 10380ft, 7ac)
+- **Aggregates:** 10 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats, Grayling, Tigers (historical only: Rainbows); lake elev 10130–10750 ft; 38.8 ac total, largest 7 ac
 - **Tags:** camping, fishing, cross-country, steep, river-crossing, horses, crowded, solitude, multi-day, toilets
 - **Summary:** The Browne Lake area is, in many respects, an outdoor recreation hub of the northeastern Uintas thanks to the campground; the cooling lake at 8,200 feet known for rainbow trout, brook trout, and kokanee salmon; and a network of ATV trails, including the historic Carter Military Trail. There are also three hiking and backpacking trailheads, though seasonal deadfall has made some navigation difficult—on a recent visit, the trail to Tepee was nowhere to be found.
 - **Book:** pp. ? · https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html#hike-90
@@ -1123,7 +1123,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 | G-77 Dead Horse | Blacks Fork |  | 74 |
 | G-84 | Blacks Fork |  | 75 |
 | GR-2 Tamarack | Sheep/Carter Creeks |  | **86**, 87 |
-| GR-3 Spirit Lake | Sheep/Carter Creeks |  | 61, 86, 88, 89 |
+| GR-3 Spirit Lake | Sheep/Carter Creeks |  | 61, 86, 88, 89, 90 |
 | GR-4 Lost | Sheep/Carter Creeks |  | 86 |
 | GR-6 Daggett | Sheep/Carter Creeks |  | **88** |
 | GR-7 Hidden | Sheep/Carter Creeks |  | 89 |
@@ -1306,7 +1306,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 | Y-36 | Yellowstone |  | 48 |
 | Y-37 | Yellowstone |  | 48 |
 | Z-1 Butterfly | Duchesne River |  | **15** |
-| Z-3 Mirror | Duchesne River | CAUGHT | 10, **13**, 14, 16, 17, 18, 20, 21, 25, 26, 27, 28, 70 |
+| Z-3 Mirror | Duchesne River | CAUGHT | 1, 10, **13**, 14, 15, 16, 17, 18, 20, 21, 25, 26, 27, 28, 70 |
 | Z-5 Pass | Duchesne River | CAUGHT | 24 |
 | Z-7 Fehr | Duchesne River |  | **12** |
 | Z-8 Maba | Duchesne River |  | 12 |
