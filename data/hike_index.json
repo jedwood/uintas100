@@ -18,7 +18,7 @@
  "counts": {
   "hikes": 90,
   "trailheads": 22,
-  "lakes_linked": 284
+  "lakes_linked": 286
  },
  "hikes": [
   {
@@ -9886,30 +9886,239 @@
    "difficulty_note": "steep sections",
    "usage_text": "Light",
    "usage_rank": 2,
-   "lake_count": 0,
-   "lake_count_all_mentions": 0,
+   "lake_count": 8,
+   "lake_count_all_mentions": 8,
    "primary_lakes": [],
-   "fishable_lake_count": 0,
+   "fishable_lake_count": 8,
    "lakes_caught": 0,
-   "lakes_uncaught_fishable": 0,
+   "lakes_uncaught_fishable": 8,
    "lakes_starred": 0,
-   "species_current": [],
-   "species_historical_only": [],
-   "lake_drainages": [],
-   "lake_elevation_min_ft": null,
-   "lake_elevation_max_ft": null,
-   "lake_acres_total": null,
-   "largest_lake_acres": null,
+   "species_current": [
+    "Brookies",
+    "Cutthroats"
+   ],
+   "species_historical_only": [
+    "Grayling"
+   ],
+   "lake_drainages": [
+    "Rock Creek Drainage",
+    "Swift Creek Drainage",
+    "Uinta River Drainage"
+   ],
+   "lake_elevation_min_ft": 10390,
+   "lake_elevation_max_ft": 10995,
+   "lake_acres_total": 284.1,
+   "largest_lake_acres": 63.0,
    "tags": [
+    "camping",
+    "fishing",
+    "mountain-pass",
+    "river-crossing",
+    "crowded",
+    "family",
     "toilets"
    ],
    "summary": "Kings Peak, the highest point in the state of Utah, is the most popular destination of peak baggers in the High Uintas and in the entire Beehive State. Novice mountaineers with no special equipment can even reach it. However, it is a long, steep hike to the top of the 13,528-foot summit. Good health and conditioning are a must. More than 10,000 people attempt to reach the top of Utah each year according to the nonprofit group Friends of Kings Peak. There are several routes to the top of Kings Peak, all of them long and each providing a different backcountry hiking experience. This chapter describes two approaches from the South Slope. No matter the route, hikers should plan to head to the top early in the morning and return by early afternoon to avoid the trademark afternoon thunderstorms on the High Uintas. These summer storms frequently include lightning, and the highest point in Utah is the last place you want to be when the electrified bolts are coming from the sky. To time this correctly, most hikers plan at least one overnight at a nearby lake, basin, or pass—although from the south you’ll likely need two or more nights of backpacking preparedness.",
    "summary_source": "book-intro",
    "source_pages": "147, 149, 135, 151",
    "book_url": "https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html#hike-55",
-   "narrative": null,
+   "narrative": "In addition to increased distance, South Slope trails to Kings Peak also add 2,000 feet (or much, much more) of elevation change. The Swift Creek Trail starts at the Swift Creek campground, which serves as the access point to the Swift Creek and Yellowstone drainages. From the Swift Creek trailhead, it is 0.4 mile until the trail splits at the junction of Trails 057 and 056. Trail 056 climbs up the ridge and into the Swift Creek drainage, past Farmers Lake, and over Bluebell Pass before dropping back down into the Yellowstone drainage and rejoining Trail 057 at around 14 miles. Because of the extra pass, this route adds another 1,200 feet in elevation gain and around 2.5 miles one way, but it has more mountain views. It’s 4 miles to the junction with Highline 025. Turn right onto Trail 025 and continue for 3.5 miles through the alpine and scrub forest to the cirque basin below Kings Peak. Here the trail climbs up Anderson Pass below Kings Peak. Then turn right for the last 0.6 mile of careful boulder hopping. Traveling to Kings Peak and back on the same path you’ll hit 45 miles.\n\n\n\n For the “shorter,” nearly 40-mile round-trip route from Swift Creek, turn left onto Trail 057; the trail parallels the Yellowstone River for 15.2 miles until reaching the\n\n\n \n \n\n \n\n The view from the top of Utah in the direction of nearby South Kings Peak. PHOTO BY MATT MCKELL/UTAH DIVISION OF WILDLIFE RESOURCES \n\n\n\n \n\n Hikers enter designated Wilderness at around 6 miles from the Uinta trailhead, the longest but very scenic route to Kings Peak. \n\n\n \n \n\n junction of Trails 025, 054, and 057 where you’ll turn right on 025. The trail through the Yellowstone drainage combines the Uinta’s signature rocky trails with marshes and creek and river crossings, but trades in the mountain views for long stretches through dense forest.\n\n\n\n Most people take four days and three nights for this trip. This route gets you away from the crowds of Henrys Fork.\n\n\n\n An even more leisurely option (read: longer) is the 46- to 49-mile round-trip route from Uinta trailhead. (See directions to the trailhead in the next chapter.) There is time to relax, soak up the adventure, and go fishing. There are loop options, or you could arrange a shuttle by friends or family to drop you off and meet you at a different trailhead a couple of weeks later.\n\n\n\n Hikers should consider this as a multiple-day excursion with plenty to see and fish to catch along the way. Many make this a five-day, four-night outing, and some spend an entire week.\n\n\n\n Start at the Uinta trailhead (sometimes labeled Wandin Campground) and follow the old road 0.8 mile to the Smokey Springs Day Use Area. Stay to the right. Then follow the trail along the Uinta River through the forest for 3 miles to the sheep bridge crossing the river. The trail splits at this point. The shorter trail 044 heads up the Uinta River drainage, turning west (left) at around 13 miles and continuing 11 miles to Kings Peak. (Uinta River Trail 044 meets Highline 025 in Painter Basin approximately 20 miles into the hike.)\n\n\n\n The other route from Uinta trailhead adds about 1.5 miles one way and logs 7,250 feet in elevation gain thanks to two additional passes—but by extension is incredibly scenic. It crosses the sheep bridge at 3.8 miles to Trail 043 as described in Chain Lakes and Lake Atwood in the next chapter. Once on 043 you will start hitting a series of switch-backs, climbing more than 1,000 feet over 5 miles to Lower Chain Lake.\n\n\n\n The trail passes the four lakes of Chain Lakes—possible camping areas—and then heads over Roberts Pass to the Lake Atwood Basin. Continue past Lake Atwood—surrounded by Allred Lake, Allen Lake, Carrot Lake, B–29 Lake, and Lake George Beard, all possible camp spots. The main trail then climbs over Trail Rider Pass and drops into the Painter Basin below Kings Peak. Once at the three-way junction of Trails 043, 044, and 025, turn west on 025. Another option from 025 after another mile is to take Trail 068 at the junction to Gunsight Pass and then the Dome Peak Cutoff from Henrys Fork trail to the top.",
    "finding_trailhead": null,
-   "lakes": []
+   "lakes": [
+    {
+     "letter_number": "Z-44",
+     "name": "Allen",
+     "is_primary": false,
+     "match_method": "name",
+     "mention_context": "route",
+     "drainage": "Rock Creek Drainage",
+     "basin": null,
+     "elevation_ft": 10390,
+     "size_acres": 15.2,
+     "max_depth_ft": 16,
+     "species_current": [],
+     "species_historical": [
+      "Brookies",
+      "Grayling"
+     ],
+     "fishing_pressure": "Low",
+     "no_fish": false,
+     "jed_status": null,
+     "starred": false,
+     "has_coords": false,
+     "has_cma_notes": true,
+     "has_junesucker_notes": false,
+     "has_jed_notes": false
+    },
+    {
+     "letter_number": "X-23",
+     "name": "Farmers",
+     "is_primary": false,
+     "match_method": "name",
+     "mention_context": "route",
+     "drainage": "Swift Creek Drainage",
+     "basin": null,
+     "elevation_ft": 10990,
+     "size_acres": 63.0,
+     "max_depth_ft": 24,
+     "species_current": [
+      "Brookies"
+     ],
+     "species_historical": [],
+     "fishing_pressure": "Moderate",
+     "no_fish": false,
+     "jed_status": null,
+     "starred": false,
+     "has_coords": false,
+     "has_cma_notes": true,
+     "has_junesucker_notes": false,
+     "has_jed_notes": false
+    },
+    {
+     "letter_number": "U-14",
+     "name": "Allred",
+     "is_primary": false,
+     "match_method": "name",
+     "mention_context": "route",
+     "drainage": "Uinta River Drainage",
+     "basin": null,
+     "elevation_ft": 10995,
+     "size_acres": 34.0,
+     "max_depth_ft": 30,
+     "species_current": [],
+     "species_historical": [
+      "Brookies"
+     ],
+     "fishing_pressure": "Moderate",
+     "no_fish": false,
+     "jed_status": null,
+     "starred": false,
+     "has_coords": false,
+     "has_cma_notes": true,
+     "has_junesucker_notes": false,
+     "has_jed_notes": false
+    },
+    {
+     "letter_number": "U-17",
+     "name": "Carrot",
+     "is_primary": false,
+     "match_method": "name",
+     "mention_context": "route",
+     "drainage": "Uinta River Drainage",
+     "basin": null,
+     "elevation_ft": 10830,
+     "size_acres": 31.0,
+     "max_depth_ft": 31,
+     "species_current": [
+      "Brookies"
+     ],
+     "species_historical": [],
+     "fishing_pressure": "Low",
+     "no_fish": false,
+     "jed_status": null,
+     "starred": false,
+     "has_coords": false,
+     "has_cma_notes": true,
+     "has_junesucker_notes": false,
+     "has_jed_notes": false
+    },
+    {
+     "letter_number": "U-3",
+     "name": "Chain 1 (Lower)",
+     "is_primary": false,
+     "match_method": "name-group",
+     "mention_context": "route",
+     "drainage": "Uinta River Drainage",
+     "basin": null,
+     "elevation_ft": 10580,
+     "size_acres": 62.0,
+     "max_depth_ft": 38,
+     "species_current": [],
+     "species_historical": [
+      "Brookies"
+     ],
+     "fishing_pressure": "High",
+     "no_fish": false,
+     "jed_status": null,
+     "starred": false,
+     "has_coords": false,
+     "has_cma_notes": true,
+     "has_junesucker_notes": false,
+     "has_jed_notes": false
+    },
+    {
+     "letter_number": "U-2",
+     "name": "Chain 2 (middle)",
+     "is_primary": false,
+     "match_method": "name-group",
+     "mention_context": "route",
+     "drainage": "Uinta River Drainage",
+     "basin": null,
+     "elevation_ft": 10605,
+     "size_acres": 14.4,
+     "max_depth_ft": 13,
+     "species_current": [],
+     "species_historical": [
+      "Brookies"
+     ],
+     "fishing_pressure": "Moderate",
+     "no_fish": false,
+     "jed_status": null,
+     "starred": false,
+     "has_coords": false,
+     "has_cma_notes": true,
+     "has_junesucker_notes": false,
+     "has_jed_notes": false
+    },
+    {
+     "letter_number": "U-1",
+     "name": "Chain 3 (upper)",
+     "is_primary": false,
+     "match_method": "name-group",
+     "mention_context": "route",
+     "drainage": "Uinta River Drainage",
+     "basin": null,
+     "elevation_ft": 10623,
+     "size_acres": 51.0,
+     "max_depth_ft": 44,
+     "species_current": [],
+     "species_historical": [
+      "Brookies"
+     ],
+     "fishing_pressure": "Moderate",
+     "no_fish": false,
+     "jed_status": null,
+     "starred": false,
+     "has_coords": false,
+     "has_cma_notes": true,
+     "has_junesucker_notes": false,
+     "has_jed_notes": false
+    },
+    {
+     "letter_number": "U-4",
+     "name": "Chain 4",
+     "is_primary": false,
+     "match_method": "name-group",
+     "mention_context": "route",
+     "drainage": "Uinta River Drainage",
+     "basin": null,
+     "elevation_ft": 10870,
+     "size_acres": 13.5,
+     "max_depth_ft": 31,
+     "species_current": [
+      "Cutthroats"
+     ],
+     "species_historical": [],
+     "fishing_pressure": "Low",
+     "no_fish": false,
+     "jed_status": null,
+     "starred": false,
+     "has_coords": false,
+     "has_cma_notes": true,
+     "has_junesucker_notes": false,
+     "has_jed_notes": false
+    }
+   ]
   },
   {
    "hike_number": 56,
@@ -18248,6 +18457,7 @@
    "drainage": "Uinta River Drainage",
    "jed_status": null,
    "hikes": [
+    55,
     56,
     57
    ],
@@ -18261,6 +18471,7 @@
    "drainage": "Uinta River Drainage",
    "jed_status": null,
    "hikes": [
+    55,
     56,
     57
    ],
@@ -18274,6 +18485,7 @@
    "drainage": "Uinta River Drainage",
    "jed_status": null,
    "hikes": [
+    55,
     56,
     57
    ],
@@ -18287,6 +18499,7 @@
    "drainage": "Uinta River Drainage",
    "jed_status": null,
    "hikes": [
+    55,
     56,
     57
    ],
@@ -18315,12 +18528,32 @@
    "primary_destination_of": []
   },
   {
+   "letter_number": "U-14",
+   "name": "Allred",
+   "drainage": "Uinta River Drainage",
+   "jed_status": null,
+   "hikes": [
+    55
+   ],
+   "primary_destination_of": []
+  },
+  {
    "letter_number": "U-15",
    "name": "Roberts",
    "drainage": "Uinta River Drainage",
    "jed_status": null,
    "hikes": [
     57
+   ],
+   "primary_destination_of": []
+  },
+  {
+   "letter_number": "U-17",
+   "name": "Carrot",
+   "drainage": "Uinta River Drainage",
+   "jed_status": null,
+   "hikes": [
+    55
    ],
    "primary_destination_of": []
   },
@@ -19049,7 +19282,8 @@
    "hikes": [
     51,
     52,
-    53
+    53,
+    55
    ],
    "primary_destination_of": [
     51
@@ -19896,7 +20130,8 @@
    "drainage": "Rock Creek Drainage",
    "jed_status": null,
    "hikes": [
-    37
+    37,
+    55
    ],
    "primary_destination_of": [
     37

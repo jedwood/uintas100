@@ -239,6 +239,14 @@ hike_number,letter_number,match_method,is_primary
 54,Y-2,exact,0
 54,Y-4,exact,0
 54,Y-5,exact,0
+55,U-1,name-group,0
+55,U-14,name,0
+55,U-17,name,0
+55,U-2,name-group,0
+55,U-3,name-group,0
+55,U-4,name-group,0
+55,X-23,name,0
+55,Z-44,name,0
 56,U-1,name-group,1
 56,U-2,name-group,1
 56,U-3,name-group,1

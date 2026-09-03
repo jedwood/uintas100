@@ -73,7 +73,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 | 52 | Timothy Lakes | 2 | Swift Creek Trailhead | 18.4 | O&B | 11000 | 12 | Moderate | Moderate | 7 | 7 | X-16, X-19 |
 | 53 | Milk Lake | 2 | Swift Creek Trailhead | 24 | O&B | 10983 | 15 | Moderate–Difficult | Light | 3 | 3 | Y-25 |
 | 54 | North Star Lake | 2 | Swift Creek Trailhead | 34.8 | O&B | 11395 | Var. | Moderate | Light | 6 | 6 | X-108 |
-| 55 | Kings Peak via the South Slope (Swift Creek or Uinta) | 2 | Swift Creek Trailhead | 39.6–49 | O&B | 13528 | Var. | Difficult | Light | 0 | 0 | — |
+| 55 | Kings Peak via the South Slope (Swift Creek or Uinta) | 2 | Swift Creek Trailhead | 39.6–49 | O&B | 13528 | Var. | Difficult | Light | 8 | 8 | — |
 | 56 | Chain Lakes | 2 | Uinta Trailhead | 19–20.2 | O&B | 10893 | 11–12 | Moderate | Heavy | 6 | 6 | U-3, U-2, U-1, U-4 |
 | 57 | Lake Atwood | 2 | Uinta Trailhead | 28.6 | O&B | 11030 | 16 | Difficult | Moderate | 7 | 7 | — |
 | 58 | Painter Lakes | 2 | Uinta Trailhead | 32.5 | O&B | 11030 | 18 | Difficult | Light | 6 | 6 | — |
@@ -660,8 +660,9 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** Swift Creek or Uinta trailhead (section: Swift Creek Trailhead) · **Town:** Duchesne, Utah · **Drainage:** Yellowstone River or Uinta River
 - **Distance:** 39.6 to 49 miles out and back · **Elev:** 13528 ft · **Time:** Variable · **Difficulty:** Difficult—steep sections · **Usage:** Light
-- **Lakes:** none linked
-- **Tags:** toilets
+- **Lakes (8 on route):** Z-44 Allen (10390ft, 15.2ac); X-23 Farmers (Brookies, 10990ft, 63ac); U-14 Allred (10995ft, 34ac); U-17 Carrot (Brookies, 10830ft, 31ac); U-3 Chain 1 (Lower) (10580ft, 62ac); U-2 Chain 2 (middle) (10605ft, 14.4ac); U-1 Chain 3 (upper) (10623ft, 51ac); U-4 Chain 4 (Cutthroats, 10870ft, 13.5ac)
+- **Aggregates:** 8 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats (historical only: Grayling); lake elev 10390–10995 ft; 284.1 ac total, largest 63 ac
+- **Tags:** camping, fishing, mountain-pass, river-crossing, crowded, family, toilets
 - **Summary:** Kings Peak, the highest point in the state of Utah, is the most popular destination of peak baggers in the High Uintas and in the entire Beehive State. Novice mountaineers with no special equipment can even reach it. However, it is a long, steep hike to the top of the 13,528-foot summit. Good health and conditioning are a must. More than 10,000 people attempt to reach the top of Utah each year according to the nonprofit group Friends of Kings Peak. There are several routes to the top of Kings Peak, all of them long and each providing a different backcountry hiking experience. This chapter describes two approaches from the South Slope. No matter the route, hikers should plan to head to the top early in the morning and return by early afternoon to avoid the trademark afternoon thunderstorms on the High Uintas. These summer storms frequently include lightning, and the highest point in Utah is the last place you want to be when the electrified bolts are coming from the sky. To time this correctly, most hikers plan at least one overnight at a nearby lake, basin, or pass—although from the south you’ll likely need two or more nights of backpacking preparedness.
 - **Book:** pp. 147, 149, 135, 151 · https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html#hike-55
 
@@ -1183,13 +1184,15 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 | RC-23 Arta | Rock Creek |  | **41** |
 | RC-42 Cabin | Rock Creek |  | 40 |
 | S-15 Lily | Swift Creek |  | **49** |
-| U-1 Chain 3 (upper) | Uinta River |  | **56**, 57 |
-| U-2 Chain 2 (middle) | Uinta River |  | **56**, 57 |
-| U-3 Chain 1 (Lower) | Uinta River |  | **56**, 57 |
-| U-4 Chain 4 | Uinta River |  | **56**, 57 |
+| U-1 Chain 3 (upper) | Uinta River |  | 55, **56**, 57 |
+| U-2 Chain 2 (middle) | Uinta River |  | 55, **56**, 57 |
+| U-3 Chain 1 (Lower) | Uinta River |  | 55, **56**, 57 |
+| U-4 Chain 4 | Uinta River |  | 55, **56**, 57 |
 | U-5 Oke Doke | Uinta River |  | 56 |
 | U-9 Pippen | Uinta River |  | 56 |
+| U-14 Allred | Uinta River |  | 55 |
 | U-15 Roberts | Uinta River |  | 57 |
+| U-17 Carrot | Uinta River |  | 55 |
 | U-19 | Uinta River |  | 57 |
 | U-21 George Beard | Uinta River |  | 57 |
 | U-23 Lily | Uinta River |  | 61 |
@@ -1253,7 +1256,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 | X-19 Timothy West | Swift Creek |  | 51, **52** |
 | X-21 Carrol East | Swift Creek |  | 51, 52 |
 | X-22 Pinto | Rock Creek |  | 14, 36 |
-| X-23 Farmers | Swift Creek |  | **51**, 52, 53 |
+| X-23 Farmers | Swift Creek |  | **51**, 52, 53, 55 |
 | X-26 | Swift Creek |  | 51 |
 | X-31 Brown Duck | Lake Fork |  | 42, 43 |
 | X-34 Island | Lake Fork |  | 42 |
@@ -1330,5 +1333,5 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 | Z-40 Dean | Rock Creek |  | 20 |
 | Z-41 Jean | Rock Creek |  | 20 |
 | Z-42 Carolyn | Duchesne River |  | **19**, 70 |
-| Z-44 Allen | Rock Creek |  | **37** |
+| Z-44 Allen | Rock Creek |  | **37**, 55 |
 | Z-46 Bedground | Rock Creek |  | 37 |

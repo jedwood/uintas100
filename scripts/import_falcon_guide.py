@@ -264,7 +264,10 @@ def parse_book(epub_path):
                 "hike_number": num,
                 "name": name,
                 "part_number": pnum,
-                "narrative": _section_text(body, "THE HIKE"),
+                # hike 55 (Kings Peak via the South Slope) covers two routes
+                # and heads its narrative "THE HIKES"
+                "narrative": (_section_text(body, "THE HIKE")
+                              or _section_text(body, "THE HIKES")),
                 "finding_trailhead": _section_text(body, "FINDING THE TRAILHEAD"),
                 "source_pages": pages,
                 "source_file": f,
