@@ -96,6 +96,12 @@
             white-space: nowrap;
         }
         .pin-label::before { border-right-color: #cbd5e1; }
+        .pin-label-focus { font-weight: 700; border-color: #64748b; }
+        .pin-label-focus::before { border-right-color: #64748b; }
+
+        /* Focus-lake marker in the modal mini-map (the lake the modal is about;
+           neighbors are the standard circles). Color = status, shape = "this one". */
+        .focus-pin { filter: drop-shadow(0 1px 2px rgba(0,0,0,.4)); }
 
         /* Lake modal: iOS-style sticky header. The ←/title/★/× row pins to the
            top of the scrolling card and condenses (smaller title, tighter
@@ -1591,7 +1597,7 @@
             // Web Mercator is conformal (scale depends on latitude, not bearing).
             L.control.scale({ imperial: true, metric: false, maxWidth: 140 }).addTo(resultsMap);
             resultsMarkers = L.layerGroup().addTo(resultsMap);
-            resultsMap.on('zoomend moveend', updatePinLabels);
+            resultsMap.on('zoomend moveend', () => updatePinLabels());  // wrapped: Leaflet passes the event as arg 1
             addLocateControl();
             addOfflineControl();
             // Track the active basemap so the offline downloader defaults to it
@@ -1608,7 +1614,15 @@
         // a tooltip's permanence at bind time; interactive:true forwards taps
         // on the label to the marker, so the label itself is a tap target.
         const PIN_LABEL_MAX = 30;
-        let pinRefs = [];
+        let pinRefs = [];         // results map
+        let detailPinRefs = [];   // neighbor pins in the lake modal's mini-map
+        function pinRef(marker, lake) {
+            const full = lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number;
+            const caught = lake.status === 'CAUGHT' ? ' 🎣' : '';
+            // hover: full name+designation; flag label: just the short name
+            return { marker, hover: `${full}${caught}`,
+                     flag: `${lake.name || lake.letter_number}${caught}`, labeled: null };
+        }
         function setPinLabel(p, permanent) {
             if (p.labeled === permanent) return;
             p.marker.unbindTooltip();
@@ -1618,13 +1632,13 @@
                 : { direction: 'top' });
             p.labeled = permanent;
         }
-        function updatePinLabels() {
-            if (!resultsMap || !pinRefs.length) return;
-            const b = resultsMap.getBounds().pad(0.1);
-            const inView = pinRefs.filter(p => b.contains(p.marker.getLatLng()));
-            const show = inView.length > 0 && inView.length <= PIN_LABEL_MAX;
+        function updatePinLabels(map = resultsMap, refs = pinRefs, max = PIN_LABEL_MAX) {
+            if (!map || !refs.length) return;
+            const b = map.getBounds().pad(0.1);
+            const inView = refs.filter(p => b.contains(p.marker.getLatLng()));
+            const show = inView.length > 0 && inView.length <= max;
             const inViewSet = new Set(inView);
-            pinRefs.forEach(p => setPinLabel(p, show && inViewSet.has(p)));
+            refs.forEach(p => setPinLabel(p, show && inViewSet.has(p)));
         }
 
         function statusColor(lake) {
@@ -1651,14 +1665,51 @@
             });
             L.control.layers(layers, null, { position: 'topright' }).addTo(detailMap);
             L.control.scale({ imperial: true, metric: false, maxWidth: 100 }).addTo(detailMap);
+
+            // Every other placed lake as the standard status-colored circle, so
+            // the mini-map doubles as a "what's nearby" explorer. Tapping one
+            // hops to that lake (showLakeDetail keeps the ← stack, so ← returns
+            // here). Labels use the same self-adapting flag rule as the results
+            // map, with a lower cap because this map is small.
+            detailPinRefs = lakes
+                .filter(l => l.lat != null && l.letter_number !== lake.letter_number)
+                .map(l => {
+                    const marker = L.circleMarker([l.lat, l.lng], {
+                        radius: 8, color: '#fff', weight: 2,
+                        fillColor: statusColor(l), fillOpacity: 0.9
+                    }).on('click', () => showLakeDetail(l.letter_number)).addTo(detailMap);
+                    return pinRef(marker, l);
+                });
+            detailPinRefs.forEach(p => setPinLabel(p, false));
+            detailMap.on('zoomend moveend', () => updatePinLabels(detailMap, detailPinRefs, DETAIL_LABEL_MAX));
+
+            // The lake itself gets a distinct focus marker (always on top, always
+            // labeled) so it can't be confused with the neighbors.
+            // Own pane above the tooltip pane (650) so neighbor flag labels can
+            // never cover it.
+            detailMap.createPane('focus').style.zIndex = 660;
             const label = lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number;
-            L.circleMarker([lake.lat, lake.lng], {
-                radius: 8, color: '#fff', weight: 2,
-                fillColor: statusColor(lake), fillOpacity: 0.9
-            }).bindTooltip(label, { direction: 'top' }).addTo(detailMap);
+            L.marker([lake.lat, lake.lng], { icon: focusIcon(lake), pane: 'focus', keyboard: false })
+                .bindTooltip(label, { permanent: true, direction: 'right', offset: FOCUS_LABEL_OFFSET,
+                                      className: 'pin-label pin-label-focus', pane: 'focus' })
+                .addTo(detailMap);
             detailMap.setView([lake.lat, lake.lng], 14);
+            updatePinLabels(detailMap, detailPinRefs, DETAIL_LABEL_MAX);
             // Container was hidden until the modal opened — fix its size.
             requestAnimationFrame(() => detailMap && detailMap.invalidateSize());
+        }
+        const DETAIL_LABEL_MAX = 12;
+        // Focus-lake icon in the mini-map: a teardrop pin in the status color
+        // (color keeps its meaning; the shape says "this one"). Tip sits on the
+        // coordinate so it never hides a neighbor's circle.
+        const FOCUS_LABEL_OFFSET = [10, -14];
+        function focusIcon(lake) {
+            const c = statusColor(lake);
+            return L.divIcon({ className: '', iconSize: [26, 36], iconAnchor: [13, 34],
+                html: `<svg width="26" height="36" viewBox="0 0 26 36" class="focus-pin">
+                    <path d="M13 1C6.4 1 1 6.3 1 12.8c0 8.7 12 21.7 12 21.7s12-13 12-21.7C25 6.3 19.6 1 13 1z"
+                          fill="${c}" stroke="#fff" stroke-width="2"/>
+                    <circle cx="13" cy="12.8" r="4.5" fill="#fff"/></svg>` });
         }
 
         function renderMap() {
@@ -1669,17 +1720,13 @@
             const withCoords = view.results.filter(lake => lake.lat != null);
             const bounds = [];
             pinRefs = withCoords.map(lake => {
-                const full = lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number;
-                const caught = lake.status === 'CAUGHT' ? ' 🎣' : '';
                 const marker = L.circleMarker([lake.lat, lake.lng], {
                     radius: 9, color: '#fff', weight: 2,
                     fillColor: statusColor(lake), fillOpacity: 0.9
                 }).on('click', () => showLakeDetail(lake.letter_number))
                   .addTo(resultsMarkers);
                 bounds.push([lake.lat, lake.lng]);
-                // hover: full name+designation; flag label: just the short name
-                return { marker, hover: `${full}${caught}`,
-                         flag: `${lake.name || lake.letter_number}${caught}`, labeled: null };
+                return pinRef(marker, lake);
             });
             pinRefs.forEach(p => setPinLabel(p, false));
 
