@@ -246,6 +246,24 @@ markdown with `## ` section headings, which `index.html` styles in the lake moda
   record of what the site said), and `data/uinta_lake_links.csv` is refreshed each run.
 - Supersedes the one-off `data/process_all_lake_pages.py`.
 
+### Falcon guide hike index (reference only, not used by the app)
+```bash
+python3 scripts/build_hike_index.py     # -> data/hike_index.json + data/hike_index.md
+```
+For "find me a hike that ..." questions, **read `data/hike_index.md` / query
+`data/hike_index.json` instead of the `guide_*` tables** — the book's free-text
+fields are parsed there into numbers (`distance_mi_min/max`, `time_hr_min/max`,
+`destination_elevation_ft`, `difficulty` 1–4 + note, `usage_rank`, `route_types`),
+each hike carries its lakes with the lake's own attributes AND Jed's status
+(`jed_status`, `starred`, species, acres, elevation), plus aggregates
+(`lake_count`, `lakes_uncaught_fishable`, `species_current`, ...), narrative
+`tags`, the book's intro `summary`, and a reverse lake→hikes table. `lake_count`
+excludes name-drops the hike doesn't visit (`mention_context: "reference"`, e.g.
+"Mirror Lake Scenic Byway") — `lake_count_all_mentions` is the raw link count.
+Re-run after `import_falcon_guide.py` or when lake statuses change (the CAUGHT
+counts are baked in). On the Mini the EPUB adds the intro blurbs and the
+book-TOC trailhead sections; on a mirror it degrades gracefully.
+
 ### Coordinates & Mapping
 ```bash
 # 1. Seed ~70% of lake coordinates from OpenStreetMap (matched by designation + name)

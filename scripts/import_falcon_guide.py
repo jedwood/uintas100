@@ -176,9 +176,12 @@ def _candidate_groups(*texts):
             if key not in seen:
                 seen.add(key)
                 yield group
-        # comma/and lists sharing a trailing "Lakes": "Jean, Dean, and Daynes Lakes"
+        # comma/and lists sharing a trailing "Lakes": "Jean, Dean, and Daynes
+        # Lakes", and the two-name form "between Betsy and Grandaddy Lakes"
         for lst in re.findall(
-            r"((?:[A-Z][a-z]+,\s+)+(?:and\s+)?[A-Z][a-z]+)\s+Lakes\b", text):
+            r"((?:[A-Z][a-z]+,\s+)*[A-Z][a-z]+(?:,?\s+and\s+[A-Z][a-z]+)?)\s+Lakes\b", text):
+            if "," not in lst and " and " not in lst:
+                continue
             for part in re.split(r",\s*|\s+and\s+", lst):
                 part = part.strip()
                 if part and part.lower() not in seen:
@@ -418,6 +421,15 @@ def _alias_bases(key):
 # "reviewed: correctly no link" (a trailhead name-drop, or an alternate
 # name for a lake the hike already links) so re-imports only report NEW,
 # unreviewed drops.
+# Book spellings that differ from the DB/DWR name, keyed by the normalized
+# DB name -> alternate normalized spellings. Indexed as EXACT names (not
+# family aliases), so they resolve like the real name and stay subject to
+# the same drainage scoping. Add here when the book consistently misspells
+# a lake rather than hand-linking every hike that mentions it.
+_SPELLING_ALIASES = {
+    "BETSEY": ("BETSY",),       # X-7 "Betsey" (DWR) — Falcon writes "Betsy Lake" (hikes 33, 34)
+}
+
 _MANUAL_LINKS = {
     (8,  "NORTH TWIN"): None,   # the Provo Twins (A-32/A-33) already linked; GR-50 is Dry Fork's
     (23, "CRYSTAL"): None,      # "...Lakes Country Trail of Crystal Lake trailhead fame" — name-drop
@@ -458,6 +470,8 @@ def link_lakes(cursor, hikes):
         if not key:
             continue
         by_name.setdefault(key, []).append((lid, drainage, True))
+        for alt in _SPELLING_ALIASES.get(key, ()):
+            by_name.setdefault(alt, []).append((lid, drainage, True))
         for base in _alias_bases(key):
             by_name.setdefault(base, []).append((lid, drainage, False))
 
