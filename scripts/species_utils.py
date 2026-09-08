@@ -24,6 +24,9 @@ WILD_SPECIES = {
     'JW-1': {'Grayling'},
     # JW-2 Fish Reservoir (Blacks Fork): self-sustaining brook trout, never stocked.
     'JW-2': {'Brookies'},
+    # WR-77 Becky: 2025 cutthroat gillnet table lists it NR (natural reproduction,
+    # 6 fish netted) alongside the stocked brookies.
+    'WR-77': {'Cutthroats'},
 }
 
 
