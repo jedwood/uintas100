@@ -19,8 +19,8 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 | # | Hike | Part | Trailhead | Dist (mi) | Route | Elev | Time (h) | Diff | Use | Lakes | Uncaught | Primary |
 |--:|---|:-:|---|--:|---|--:|--:|---|---|--:|--:|---|
-| 1 | Upper Setting Road to East Shingle Creek and Erickson Lakes | 1 | End of Upper Setting Road | 5.6 | O&B | 10020 | 4 | Easy | Moderate | 6 | 6 | W-25, W-26 |
-| 2 | Norway Flats Road to Big Elk Lake | 1 | Norway Flats | 3–5 | O&B | 10020 | 2–4 | Moderate | Heavy | 2 | 2 | A-18 |
+| 1 | Upper Setting Road to East Shingle Creek and Erickson Lakes | 1 | End of Upper Setting Road | 5.6 | O&B | 10020 | 4 | Easy | Moderate | 6 | 5 | W-25, W-26 |
+| 2 | Norway Flats Road to Big Elk Lake | 1 | Norway Flats | 3–5 | O&B | 10020 | 2–4 | Moderate | Heavy | 2 | 1 | A-18 |
 | 3 | Long Pond | 1 | Crystal Lake Trailhead | 4 | O&B | 10100 | 2.5 | Easy | Moderate | 1 | 0 | — |
 | 4 | Island Lake | 1 | Crystal Lake Trailhead | 7.6 | O&B | 10140 | 4.5 | Moderate | Moderate | 6 | 4 | A-57 |
 | 5 | Lakes Country | 1 | Crystal Lake Trailhead | 7.4 | loop | 10325 | 4.5 | Moderate | Heavy | 4 | 2 | — |
@@ -118,8 +118,8 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** End of Upper Setting Road · **Town:** Kamas, Utah · **Drainage:** Weber River
 - **Distance:** 5.6 miles out and back · **Elev:** 10020 ft · **Time:** 4 hours · **Difficulty:** Easy—one steep section · **Usage:** Moderate
-- **Lakes (6 on route, 1 name-drop only):** W-25 Erickson South (primary, Brookies, 10ac); W-26 Erickson North (primary, Brookies, 9ac); Z-3 Mirror (name-drop only, CAUGHT, Brookies/Rainbows/Tigers, 10200ft, 42ac); A-18 Big Elk (Tigers, 10020ft, 30ac); A-39 Shingle Creek East (Tigers, 9700ft, 7ac); P-62 Shingle Creek Lower (9620ft, 4ac); P-60 Shingle Creek West (OTHERS, Brookies, 9940ft, 5ac)
-- **Aggregates:** 6 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Tigers (historical only: Cutthroats, Splake); lake elev 9620–10020 ft; 65 ac total, largest 30 ac
+- **Lakes (6 on route, 1 name-drop only):** W-25 Erickson South (primary, Brookies, 10ac); W-26 Erickson North (primary, Brookies, 9ac); Z-3 Mirror (name-drop only, CAUGHT, Brookies/Rainbows/Tigers, 10200ft, 42ac); A-18 Big Elk (CAUGHT, Tigers, 10020ft, 30ac); A-39 Shingle Creek East (Tigers, 9700ft, 7ac); P-62 Shingle Creek Lower (9620ft, 4ac); P-60 Shingle Creek West (OTHERS, Brookies, 9940ft, 5ac)
+- **Aggregates:** 5 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Tigers (historical only: Cutthroats, Splake); lake elev 9620–10020 ft; 65 ac total, largest 30 ac
 - **Tags:** camping, fishing, tiger-trout, navigation, steep, mountain-pass, bugs, 4wd
 - **Summary:** North Erickson Lake sits at the head of Smith and Morehouse Creek in Erickson Basin. It can be reached from the Smith and Morehouse trailhead, but it is easier to start hiking from the end of Upper Setting Road in the Provo River Drainage.
 - **Book:** pp. ? · https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html#hike-01
@@ -128,8 +128,8 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** Norway Flats · **Town:** Kamas, Utah · **Drainage:** Provo River
 - **Distance:** 3 to 5 miles out and back · **Elev:** 10020 ft · **Time:** 2 to 4 hours · **Difficulty:** Moderate—one steep section · **Usage:** Heavy
-- **Lakes (2 on route):** A-18 Big Elk (primary, Tigers, 10020ft, 30ac); A-19 Little Elk (Cutthroats/Grayling, 9780ft, 13.2ac)
-- **Aggregates:** 2 fishable & uncaught, 0 caught, 0 starred; species: Cutthroats, Grayling, Tigers (historical only: Brookies); lake elev 9780–10020 ft; 43.2 ac total, largest 30 ac
+- **Lakes (2 on route):** A-18 Big Elk (primary, CAUGHT, Tigers, 10020ft, 30ac); A-19 Little Elk (Cutthroats/Grayling, 9780ft, 13.2ac)
+- **Aggregates:** 1 fishable & uncaught, 1 caught, 0 starred; species: Cutthroats, Grayling, Tigers (historical only: Brookies); lake elev 9780–10020 ft; 43.2 ac total, largest 30 ac
 - **Tags:** fishing, crowded, bugs, wildflowers, 4wd
 - **Summary:** From the end of Norway Flats Road, Little Elk Lake is about 0.3 mile to the west of the trail. Continue another 0.8 mile to a trail junction and Big Elk Lake.
 - **Book:** pp. ? · https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html#hike-02
@@ -1054,7 +1054,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 | A-12 Marjorie | Provo River |  | 5 |
 | A-14 Fire | Provo River |  | 4 |
 | A-17 Beaver | Provo River |  | 4 |
-| A-18 Big Elk | Provo River |  | 1, **2** |
+| A-18 Big Elk | Provo River | CAUGHT | 1, **2** |
 | A-19 Little Elk | Provo River |  | 2 |
 | A-23 Washington | Provo River | CAUGHT | 4 |
 | A-26 Petit (Junior #5) | Provo River |  | 7 |

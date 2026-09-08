@@ -58,8 +58,8 @@
     "W-26"
    ],
    "fishable_lake_count": 6,
-   "lakes_caught": 0,
-   "lakes_uncaught_fishable": 6,
+   "lakes_caught": 1,
+   "lakes_uncaught_fishable": 5,
    "lakes_starred": 0,
    "species_current": [
     "Brookies",
@@ -190,12 +190,12 @@
      ],
      "fishing_pressure": "High",
      "no_fish": false,
-     "jed_status": null,
+     "jed_status": "CAUGHT",
      "starred": false,
      "has_coords": true,
      "has_cma_notes": true,
      "has_junesucker_notes": true,
-     "has_jed_notes": false
+     "has_jed_notes": true
     },
     {
      "letter_number": "A-39",
@@ -311,8 +311,8 @@
     "A-18"
    ],
    "fishable_lake_count": 2,
-   "lakes_caught": 0,
-   "lakes_uncaught_fishable": 2,
+   "lakes_caught": 1,
+   "lakes_uncaught_fishable": 1,
    "lakes_starred": 0,
    "species_current": [
     "Cutthroats",
@@ -363,12 +363,12 @@
      ],
      "fishing_pressure": "High",
      "no_fish": false,
-     "jed_status": null,
+     "jed_status": "CAUGHT",
      "starred": false,
      "has_coords": true,
      "has_cma_notes": true,
      "has_junesucker_notes": true,
-     "has_jed_notes": false
+     "has_jed_notes": true
     },
     {
      "letter_number": "A-19",
@@ -17037,7 +17037,7 @@
    "letter_number": "A-18",
    "name": "Big Elk",
    "drainage": "Provo River Drainage",
-   "jed_status": null,
+   "jed_status": "CAUGHT",
    "hikes": [
     1,
     2

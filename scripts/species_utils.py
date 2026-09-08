@@ -14,8 +14,11 @@ DEFAULT_SPECIES_CUTOFF_YEAR = 2016
 # render them as historical.
 # A-51 Crystal (Provo River Drainage): Grayling confirmed by Jed's own catches
 # (hundreds of fish, 2026-08-29); wild population, not stocking-derived.
+# WR-3 R.C. No. 2 (White Rocks Drainage): never stocked; DWR pamphlet says it
+# "relies on migration from R.C. No. 1 for fish" (WR-2, stocked cutthroat).
 WILD_SPECIES = {
     'A-51': {'Grayling'},
+    'WR-3': {'Cutthroats'},
 }
 
 
