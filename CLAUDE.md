@@ -67,11 +67,16 @@ distinction (e.g. `basin`) round-trips. Schema lives in one place —
 coordinate columns); `setup_database.py`/`update_stocking.py` no longer patch it
 ad hoc. Full recovery write-up: `docs/db-recovery-plan.md`.
 
-### Single-writer model (the Mac Mini writes; everything else mirrors)
+### Single-writer model (the Mac Mini writes; everything else is a client)
 Exactly ONE machine — the Mac Mini — writes `uinta_lakes.db` and pushes. Every
-other clone (MacBook, etc.) is a **read-only mirror**: it only `git pull`s and
-runs the app, and must never run a sync/fetch or commit the DB. This removes the
-two-machine write-conflict class (e.g. the binary-DB autostash conflicts).
+other device is a **client of the published app**: since 2026-09-08 the MacBook
+runs no clone and no Tauri shell at all — Jed uses a Dock-installed PWA (Safari
+web app of the github.io page), exactly like the iPhone. A device "sees" a
+change when the PWA picks up the new service-worker cache version after a push.
+Any other clone that does exist (a dev checkout, say) is a **read-only mirror**:
+it only `git pull`s and runs the app, and must never run a sync/fetch or commit
+the DB. This removes the two-machine write-conflict class (e.g. the binary-DB
+autostash conflicts).
 
 - **Enforcement:** a gitignored `.db-readonly` marker in the repo root makes a
   clone a mirror. `fetch_latest_stocking.py`, `update_stocking.py`,
@@ -79,12 +84,11 @@ two-machine write-conflict class (e.g. the binary-DB autostash conflicts).
   `writer_guard.exit_if_readonly()` (or the bash equivalent) and exit early when
   the marker exists — so even if a scheduler fires the job, it does nothing.
   Exception: on a mirror, `fetch_latest_stocking.py` runs `git pull --ff-only`
-  instead (`writer_guard.pull_and_exit_if_readonly()`) — so the MacBook's Tauri
-  app scheduler, which fires the stocking job periodically, doubles as the
-  mirror's auto-refresh: the clone (and the web app served from it on
-  localhost:8804) picks up whatever the Mini pushed. Reload the app window to
-  see fresh data (the PWA cache version bump makes the reload pick it up).
-  - Mirror (MacBook): `touch .db-readonly`
+  instead (`writer_guard.pull_and_exit_if_readonly()`), so a scheduler that
+  fires the stocking job on a mirror doubles as that clone's auto-refresh. (This
+  was how the MacBook's Tauri app stayed fresh before it was retired; nothing
+  uses it routinely now.)
+  - Mirror (any non-Mini clone): `touch .db-readonly`
   - Writer (Mini): the marker must NOT exist (`ls .db-readonly` → absent)
 - The Mini is the only machine that should run the schedulers/cron for fetch and
   Notes sync. You edit Apple Notes on any device; iCloud syncs them to the Mini,
@@ -119,8 +123,9 @@ while allowing edits to *originate* on any device:
   Applies edits last-write-wins per (lake, field) using the committed audit log
   `data/app_edits_log.jsonl` (kept OUTSIDE the DB on purpose, so the
   seeds/rebuild/verify machinery is untouched), then commits + pushes in the
-  background — the pre-commit hook regenerates seeds + `lakes_data.json`, and
-  mirrors pick the edits up on their next pull. A device that was offline for a
+  background — the pre-commit hook regenerates seeds + `lakes_data.json`, the
+  github.io deploy publishes them, and every PWA picks them up on its next
+  service-worker update. A device that was offline for a
   week gets "superseded" (not applied) for any edit older than what another
   device already wrote to the same field.
 - **Test harness**: `python3 scripts/edits_server.py --db /tmp/x.db --log
@@ -356,10 +361,13 @@ python3 -m http.server 8804   # NOT 8000 — the Qwen3 embeddings LaunchAgent ow
 npx serve .
 ```
 
-### Tauri control-panel app (`tauri-app/`)
-The desktop wrapper (`/Applications/Uintas.app`) that runs the schedulers, serves
+### Tauri control-panel app (`tauri-app/`) — retired on the MacBook 2026-09-08
+The MacBook no longer runs this; Jed dropped the Tauri shell there, separated
+pull from build, and uses a Dock-installed PWA instead (see Single-writer model).
+The source stays in the repo for reference or for the Mini. What it was: a
+desktop wrapper (`/Applications/Uintas.app`) that ran the schedulers, served
 the web app on :8804 (moved off :8000 2026-08-12 — the shared Qwen3 embeddings
-LaunchAgent claims :8000), and exposes a gear-icon control panel. Build + install:
+LaunchAgent claims :8000), and exposed a gear-icon control panel. Build + install:
 ```bash
 cd tauri-app && cargo tauri build --bundles app
 rm -rf /Applications/Uintas.app && cp -R src-tauri/target/release/bundle/macos/Uintas.app /Applications/
@@ -371,8 +379,9 @@ rm -rf /Applications/Uintas.app && cp -R src-tauri/target/release/bundle/macos/U
 - **On a mirror, the "Stocking Updates" interval IS the mirror-refresh cadence.**
   `writer_guard.pull_and_exit_if_readonly()` turns that job into a
   `git pull --ff-only`, so the interval sets how far behind the clone can drift.
-  The MacBook runs it hourly. End-to-end freshness is still capped by how often the
-  *Mini* actually fetches from DWR — a mirror can't be fresher than what was pushed.
+  (The MacBook ran it hourly until it dropped the app.) End-to-end freshness is
+  still capped by how often the *Mini* actually fetches from DWR — a mirror
+  can't be fresher than what was pushed.
 - The frontend is embedded at compile time by `tauri::generate_context!()`.
   `build.rs` emits `rerun-if-changed` for `frontend/` to force a recompile on
   frontend-only edits — `tauri_build::build()` does NOT do this itself, and without
