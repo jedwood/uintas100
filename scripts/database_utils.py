@@ -47,7 +47,9 @@ def create_database(db_path=None):
             coord_source TEXT,
             coord_status TEXT,
             cma_notes TEXT,
-            starred BOOLEAN
+            starred BOOLEAN,
+            dwr_edition INTEGER,
+            dwr_notes_prev TEXT
         )
     ''')
 
@@ -238,6 +240,11 @@ def create_database(db_path=None):
         ('last_modified', 'TIMESTAMP'),
         ('cma_notes', 'TEXT'),
         ('starred', 'BOOLEAN'),
+        # Which DWR "Lakes of the High Uintas" pamphlet edition dwr_notes came
+        # from (publication year, e.g. 1987 or 2025) and, when a newer edition
+        # replaced a materially different write-up, the superseded text.
+        ('dwr_edition', 'INTEGER'),
+        ('dwr_notes_prev', 'TEXT'),
     ]
     for col, decl in lake_column_adds:
         try:

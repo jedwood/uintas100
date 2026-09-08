@@ -19,6 +19,11 @@ PROJECT_DIR = os.path.dirname(SCRIPT_DIR)
 DB_PATH = os.path.join(PROJECT_DIR, "uinta_lakes.db")
 NEW_PAMPHLETS_DIR = os.path.join(PROJECT_DIR, "data", "dwr_new_pamphlets")
 
+# Publication year of the pamphlets in NEW_PAMPHLETS_DIR. Written to
+# lakes.dwr_edition on apply; the text it replaces (when materially different)
+# is kept in lakes.dwr_notes_prev so the app can show "previous edition".
+PAMPHLET_EDITION = 2025
+
 # Map text file -> drainage prefix patterns for validation
 PAMPHLET_FILES = {
     "bear-river-text.txt": ["BR-"],
@@ -89,13 +94,17 @@ def parse_lake_entries(text):
     # Format 1: "Lake Name, BR-42" or just "BR-42" (most common)
     # Note: use [ ] (space only) instead of \s in name group to prevent matching across lines
     header_pattern1 = re.compile(
-        r'^(?:([A-Z][A-Za-z \'\-\(\)\.]+?),?[ ]+)?'   # Optional name with comma (single line)
+        # Optional name with comma (single line). Digits and the curly
+        # apostrophe are allowed: "R.C. No. 1, WR-2", "Rasmussen 1, WR-35",
+        # "Ted’s Lake, WR-44" — the 2026-03 pass silently skipped 16 such
+        # headings because the name class lacked them.
+        r'^(?:([A-Z][A-Za-z0-9 \'’\-\(\)\.]+?),?[ ]+)?'
         r'([A-Z]{1,3}-\d+[A-Za-z]?)[ ]*$',             # Designation like BR-42, G-15, WR-74
         re.MULTILINE
     )
     # Format 2: "G-105 (Wagonwheel Lake)" - designation then name in parens
     header_pattern2 = re.compile(
-        r'^([A-Z]{1,3}-\d+[A-Za-z]?)\s+\(([A-Z][A-Za-z\s\'\-\.]+)\)\s*$',
+        r'^([A-Z]{1,3}-\d+[A-Za-z]?)\s+\(([A-Z][A-Za-z0-9\s\'’\-\.]+)\)\s*$',
         re.MULTILINE
     )
 
@@ -121,6 +130,14 @@ def parse_lake_entries(text):
         start = h_end
         end = headers[i + 1][0] if i + 1 < len(headers) else len(text)
         body = text[start:end].strip()
+
+        # The last lake in a pamphlet is followed by the gillnet survey tables
+        # ("Brook trout gillnetting samples", "Table 1. Mean and maximum
+        # length..."); cut the body there so the table doesn't ride along
+        # (WR-50 Workman carried 5 KB of it after the 2026-03 pass).
+        tbl = re.search(r'\n\s*(?:[A-Z][a-z]+ trout|Grayling|Splake) gillnetting samples\s*\n|\nTable \d+\.', body)
+        if tbl:
+            body = body[:tbl.start()]
 
         # Clean up any remaining page headers in body
         body = re.sub(r'\n[A-Z][A-Z ]+ DRAINAGE \| \d+\n', '\n', body)
@@ -301,6 +318,16 @@ def print_report(results):
             print(f"  {e['designation']} ({e['name']})")
 
 
+def materially_different(old_text, new_text, threshold=0.9):
+    """True when two write-ups differ beyond whitespace/OCR-noise/light edits."""
+    import difflib
+    a = ' '.join((old_text or '').split()).lower()
+    b = ' '.join((new_text or '').split()).lower()
+    if not a or not b:
+        return bool(a) != bool(b)
+    return difflib.SequenceMatcher(None, a, b).ratio() < threshold
+
+
 def apply_updates(results, conn):
     """Apply the new/updated entries to the database."""
     cursor = conn.cursor()
@@ -311,8 +338,8 @@ def apply_updates(results, conn):
         extracted = entry["extracted"]
         designation = entry["designation"]
 
-        updates = ["dwr_notes = ?", "notes_needs_update = TRUE"]
-        values = [entry["text"]]
+        updates = ["dwr_notes = ?", "dwr_edition = ?", "notes_needs_update = TRUE"]
+        values = [entry["text"], PAMPHLET_EDITION]
 
         if extracted["no_fish"]:
             updates.append("no_fish = 1")
@@ -328,17 +355,27 @@ def apply_updates(results, conn):
         designation = entry["designation"]
         new_text = entry["text"]
 
-        # Preserve any rotenone warnings we've added
-        cursor.execute("SELECT dwr_notes FROM lakes WHERE letter_number = ?", (designation,))
+        # Preserve any rotenone warnings we've added, and keep the superseded
+        # write-up as dwr_notes_prev when this is a NEW edition replacing a
+        # materially different text (re-applying the same edition leaves the
+        # previously stored prev alone).
+        cursor.execute("SELECT dwr_notes, dwr_edition, dwr_notes_prev FROM lakes "
+                       "WHERE letter_number = ?", (designation,))
         row = cursor.fetchone()
+        prev_text = row[2] if row else None
         if row and row[0]:
             rotenone_match = re.match(r'(⚠️ ROTENONE.*?\n\n)', row[0], re.DOTALL)
             if rotenone_match:
                 new_text = rotenone_match.group(1) + new_text
+            if row[1] != PAMPHLET_EDITION:
+                old_body = re.sub(r'^⚠️ ROTENONE.*?\n\n', '', row[0], flags=re.DOTALL)
+                if materially_different(old_body, entry["text"]):
+                    prev_text = old_body
 
         cursor.execute(
-            "UPDATE lakes SET dwr_notes = ?, notes_needs_update = TRUE WHERE letter_number = ?",
-            (new_text, designation)
+            "UPDATE lakes SET dwr_notes = ?, dwr_edition = ?, dwr_notes_prev = ?, "
+            "notes_needs_update = TRUE WHERE letter_number = ?",
+            (new_text, PAMPHLET_EDITION, prev_text, designation)
         )
         count += 1
         print(f"  Updated notes for {designation}")

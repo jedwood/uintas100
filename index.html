@@ -2102,6 +2102,28 @@
         }
 
         // ---- Collapsed note sections: 2-line preview with a more…/less… toggle ----
+        // DWR pamphlet edition labels. dwr_edition is the publication year of the
+        // "Lakes of the High Uintas" pamphlet the write-up came from (2025 = the
+        // revised editions DWR started reissuing in 2025; earlier years are the
+        // 1981-1999 originals). The original year for a drainage is what a 2025
+        // lake's "previous edition" text came from.
+        const DWR_ORIGINAL_EDITION = {
+            'Ashley Creek Drainage': 1981, 'Bear River Drainage': 1985, 'Blacks Fork Drainage': 1985,
+            'Dry Gulch Drainage': 1997, 'Uinta River Drainage': 1997, 'Duchesne River Drainage': 1996,
+            'Provo River Drainage': 1999, 'Weber River Drainage': 1999, 'Rock Creek Drainage': 1997,
+            'Sheep/Carter Creek Drainages': 1996, 'Burnt Fork Drainage': 1996, 'Smiths Fork Drainage': 1986,
+            'Henrys Fork Drainage': 1986, 'Beaver Creek Drainage': 1986, 'White Rocks Drainage': 1987,
+            'Yellowstone Drainage': 1996, 'Lake Fork Drainage': 1996, 'Swift Creek Drainage': 1996,
+        };
+        function dwrEditionLabel(year) {
+            if (!year) return '(pamphlet, historical)';
+            return year >= 2020 ? `(${year} pamphlet)` : `(${year} pamphlet, historical)`;
+        }
+        function dwrPrevEditionLabel(lake) {
+            const y = DWR_ORIGINAL_EDITION[lake.drainage];
+            return y ? ` (${y} pamphlet)` : '';
+        }
+
         function collapsibleNotes(id, fullHtml, previewText) {
             return `
                 <div id="${id}">
@@ -2533,11 +2555,22 @@
                     </div>
                 ` : ''}
 
-                <!-- DWR Notes -->
+                <!-- DWR Notes: heading names the pamphlet edition the write-up came
+                     from (2025 revised vs. the 1980s/90s originals); when a newer
+                     edition replaced a materially different write-up, the old text
+                     is available under a collapsed "previous edition" toggle. -->
                 ${lake.dwr_notes ? `
                     <div class="rounded-lg p-4 border border-slate-200">
-                        <h3 class="text-lg font-semibold mb-3">Historical DWR Notes</h3>
+                        <h3 class="text-lg font-semibold mb-3">DWR Notes
+                            <span class="text-sm font-normal text-slate-500">${dwrEditionLabel(lake.dwr_edition)}</span>
+                        </h3>
                         <div class="text-gray-700 leading-relaxed">${lake.dwr_notes.replace(/\n/g, '<br>')}</div>
+                        ${lake.dwr_notes_prev ? `
+                            <details class="mt-3 border-t pt-3">
+                                <summary class="text-sm text-slate-500 underline cursor-pointer">Previous edition${dwrPrevEditionLabel(lake)}</summary>
+                                <div class="mt-2 text-sm text-gray-600 leading-relaxed italic">${lake.dwr_notes_prev.replace(/\n/g, '<br>')}</div>
+                            </details>
+                        ` : ''}
                     </div>
                 ` : ''}
 

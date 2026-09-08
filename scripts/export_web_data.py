@@ -62,7 +62,8 @@ def export():
         """SELECT id, letter_number, name, drainage, size_acres, max_depth_ft,
                   elevation_ft, fish_species, fishing_pressure, jed_notes,
                   status, trip_reports, junesucker_notes, dwr_notes, cma_notes,
-                  no_fish, lat, lng, coord_status, starred
+                  no_fish, lat, lng, coord_status, starred,
+                  dwr_edition, dwr_notes_prev
            FROM lakes"""
     ):
         coords_ok = row["coord_status"] in verified and row["lat"] is not None
@@ -81,6 +82,8 @@ def export():
                 "trip_reports": row["trip_reports"],
                 "junesucker_notes": row["junesucker_notes"],
                 "dwr_notes": row["dwr_notes"],
+                "dwr_edition": row["dwr_edition"],
+                "dwr_notes_prev": row["dwr_notes_prev"],
                 "cma_notes": row["cma_notes"],
                 "starred": row["starred"],
                 "no_fish": row["no_fish"] or 0,

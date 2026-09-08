@@ -224,6 +224,30 @@ another device while DB→Notes rewrites it, that device may iCloud-conflict-mer
 and show a duplicated section — fix is simply deleting the duplicated lower
 section(s) by hand on that device.
 
+### DWR pamphlet editions (`lakes.dwr_edition`, `lakes.dwr_notes_prev`)
+`dwr_notes` is the lake write-up from DWR's "Lakes of the High Uintas" pamphlet
+series. `dwr_edition` records the **publication year** it came from: `2025` for
+the revised editions DWR began reissuing in 2025 (Bear River, Blacks Fork,
+Whiterocks so far — `data/dwr_new_pamphlets/`), otherwise the original pamphlet
+for the drainage (1981–1999; the year map is `ORIGINAL_EDITION` in
+`scripts/backfill_dwr_editions.py` and `DWR_ORIGINAL_EDITION` in `index.html`,
+taken from the series list on the back of the 1999 Provo/Weber pamphlet).
+When a new edition replaces a *materially different* write-up (difflib ratio
+< 0.9), the superseded text is kept in `dwr_notes_prev`; the lake modal shows
+the edition in the "DWR Notes" heading and the old text under a collapsed
+"Previous edition" toggle. The 2025 pass was originally applied in place
+(2026-03-03) with no provenance — `backfill_dwr_editions.py` reconstructed
+both columns from the pre-March DB in git (`git show 36a0ffc^:uinta_lakes.db`).
+```bash
+python3 scripts/compare_new_pamphlets.py          # dry run: new pamphlet text vs DB
+python3 scripts/compare_new_pamphlets.py apply    # sets dwr_edition + keeps dwr_notes_prev
+```
+When DWR reissues another drainage: drop its `pdftotext` output in
+`data/dwr_new_pamphlets/`, add it to `PAMPHLET_FILES`, bump `PAMPHLET_EDITION`
+if the year differs, dry-run, apply. The heading parser accepts digits and
+curly apostrophes in names ("R.C. No. 1, WR-2", "Ted’s Lake, WR-44") — the
+first pass didn't and silently skipped 16 lakes.
+
 ### June Sucker notes (`lakes.junesucker_notes`)
 ```bash
 python3 scripts/scrape_junesucker.py --dry-run   # report what would change
