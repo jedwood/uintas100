@@ -150,6 +150,12 @@ def parse_lake_entries(text):
         body = re.sub(r'\n[A-Z][A-Z ]+ DRAINAGE \| \d+\n', '\n', body)
         # Collapse multiple newlines
         body = re.sub(r'\n{3,}', '\n\n', body)
+        # Unwrap the PDF's line wraps: a single newline is just a wrapped line,
+        # a blank line is a real paragraph break (index.html turns every \n into
+        # <br>, so wrapped text renders ragged — the 2026-03 pass shipped 102
+        # descriptions that way).
+        body = re.sub(r'(?<!\n)\n(?!\n)', ' ', body)
+        body = re.sub(r'[ \t]{2,}', ' ', body)
         body = body.strip()
 
         if not body:
