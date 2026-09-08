@@ -111,5 +111,38 @@
     "additionalDirectories": [
       "/Volumes"
     ]
+  },
+  "env": {
+    "JEDOS_VAULT": "/Volumes/OLAF-EXT/jedwoodx/jedOS-vault",
+    "JEDOS_ARCHIVE_DIR": "/Volumes/OLAF-EXT/jedwoodx/jedOS-vault/_archive/uintas"
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "test -x \"/Volumes/OLAF-EXT/jedwoodx/repos/jedOS/.venv/bin/python3\" && \"/Volumes/OLAF-EXT/jedwoodx/repos/jedOS/.venv/bin/python3\" \"/Volumes/OLAF-EXT/jedwoodx/repos/jedOS/.claude/hooks/archive_stop.py\" || true",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "test -x \"/Volumes/OLAF-EXT/jedwoodx/repos/jedOS/.venv/bin/python3\" && \"/Volumes/OLAF-EXT/jedwoodx/repos/jedOS/.venv/bin/python3\" \"/Volumes/OLAF-EXT/jedwoodx/repos/jedOS/src/archive/export.py\" || true",
+            "timeout": 30
+          },
+          {
+            "type": "command",
+            "command": "test -x \"/Volumes/OLAF-EXT/jedwoodx/repos/jedOS/.venv/bin/python3\" && \"/Volumes/OLAF-EXT/jedwoodx/repos/jedOS/.venv/bin/python3\" \"/Volumes/OLAF-EXT/jedwoodx/repos/jedOS/src/archive/embeddings.py\" || true",
+            "timeout": 60
+          }
+        ]
+      }
+    ]
   }
 }
