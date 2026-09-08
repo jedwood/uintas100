@@ -248,6 +248,23 @@ if the year differs, dry-run, apply. The heading parser accepts digits and
 curly apostrophes in names ("R.C. No. 1, WR-2", "Ted’s Lake, WR-44") — the
 first pass didn't and silently skipped 16 lakes.
 
+### DWR 2025 survey tables (`dwr_gillnet_samples`, `dwr_lake_summary`)
+```bash
+python3 scripts/import_dwr_survey_tables.py --dry-run   # parse the PDFs, report
+python3 scripts/import_dwr_survey_tables.py             # reload rows for the 2025 edition
+```
+Parses the tables at the back of the 2025 pamphlet PDFs via `pdftotext -layout`
+(poppler required): Whiterocks' per-species **gillnet sampling** stats (60 rows:
+stocking cycle, other species, n sampled, mean/max length and weight) and Bear
+River / Blacks Fork's **lake summary** rows (77: sub-drainage, access, trail
+miles, campsites / spring water / horse feed, fish, stocking cycle, or "Unable to
+support a fishery"). Exported nested per lake (`dwr_summary`, `dwr_gillnet`) and
+shown in the modal as "DWR survey". Rows whose printed name matches no lake
+(Deadfall, Fish in Blacks Fork, BR-54) keep `lake_id NULL`. Pamphlet designation
+typos are corrected by name match ("Middle Rock (WR-67)" → WR-16) or by the
+hand-reviewed `DESIGNATION_FIXES`; a `note` records what the pamphlet printed.
+Plan/details: `docs/dwr-survey-tables-plan.md`.
+
 ### June Sucker notes (`lakes.junesucker_notes`)
 ```bash
 python3 scripts/scrape_junesucker.py --dry-run   # report what would change

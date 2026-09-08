@@ -2115,6 +2115,67 @@
             'Henrys Fork Drainage': 1986, 'Beaver Creek Drainage': 1986, 'White Rocks Drainage': 1987,
             'Yellowstone Drainage': 1996, 'Lake Fork Drainage': 1996, 'Swift Creek Drainage': 1996,
         };
+        // Stocking-cycle codes as printed in the 2025 pamphlet tables.
+        function stockingCycleLabel(code) {
+            if (!code) return '';
+            const base = code.replace(/[a-d]$/, '');
+            const map = { 'NR': 'natural reproduction (not stocked)',
+                          'MIG': 'fish migrate in from the stream',
+                          '2/3': 'stocked every 2nd and 3rd year (winterkill-prone)',
+                          '-': 'not stocked' };
+            if (map[base]) return map[base];
+            if (/^\d$/.test(base)) return base === '1' ? 'stocked every year' : `stocked every ${base} years`;
+            return code;
+        }
+        function dwrSurveyHtml(lake) {
+            const s = lake.dwr_summary;
+            const g = lake.dwr_gillnet || [];
+            if (!s && !g.length) return '';
+            const yn = v => v === 'Y' ? 'yes' : v === 'N' ? 'no' : v === 'limited' ? 'limited' : (v || '—');
+            const edition = (s && s.source_edition) || (g[0] && g[0].source_edition) || 2025;
+            let facts = '';
+            if (s) {
+                if (s.note) {
+                    facts += `<div class="text-gray-700 mb-2">${s.note}</div>`;
+                } else {
+                    const cycle = s.stocking_cycle ? `${s.stocking_cycle} – ${stockingCycleLabel(s.stocking_cycle)}` : '—';
+                    facts += `<div class="grid grid-cols-2 gap-2 text-sm text-gray-700">
+                        <div><span class="text-slate-500">Stocking cycle</span><br>${cycle}</div>
+                        <div><span class="text-slate-500">Trail distance</span><br>${s.trail_miles != null ? s.trail_miles + ' mi' : 'road access'}</div>
+                        <div><span class="text-slate-500">Campsites</span><br>${yn(s.campsites)}</div>
+                        <div><span class="text-slate-500">Spring water</span><br>${yn(s.spring_water)}</div>
+                        <div><span class="text-slate-500">Horse feed</span><br>${yn(s.horse_feed)}</div>
+                        <div><span class="text-slate-500">Fish (pamphlet)</span><br>${s.fish_species || '—'}</div>
+                    </div>`;
+                }
+                if (s.sub_drainage || s.access) {
+                    facts += `<div class="mt-2 text-sm text-gray-700">${s.sub_drainage ? `<span class="text-slate-500">Sub-drainage</span> ${s.sub_drainage}` : ''}${s.sub_drainage && s.access ? ' · ' : ''}${s.access ? `<span class="text-slate-500">Access</span> ${s.access}` : ''}</div>`;
+                }
+            }
+            let net = '';
+            if (g.length) {
+                const rows = g.map(r => {
+                    const sampled = r.n_sampled ? `${r.n_sampled}` : 'none';
+                    const len = r.mean_length_in != null ? `${r.mean_length_in}" avg, ${r.max_length_in}" max` : '—';
+                    const wt = r.mean_weight_lb != null ? `${r.mean_weight_lb} lb avg, ${r.max_weight_lb} lb max` : '—';
+                    const other = r.other_species ? ` · also ${r.other_species}` : '';
+                    const cyc = r.stocking_cycle ? ` · ${stockingCycleLabel(r.stocking_cycle)}` : '';
+                    const note = r.note ? `<div class="text-xs text-slate-500">${r.note}</div>` : '';
+                    return `<div class="py-1 border-b border-slate-200 text-sm text-gray-700">
+                        <span class="font-medium">${r.species}</span><span class="text-slate-500">${cyc}${other}</span><br>
+                        ${sampled} netted · ${len} · ${wt}${note}</div>`;
+                }).join('');
+                net = `<div class="mt-3 text-sm font-medium text-gray-700">Gillnet surveys (1960s–present)</div>${rows}`;
+            }
+            return `
+                <div class="rounded-lg p-4 border border-slate-200">
+                    <h3 class="text-lg font-semibold mb-3">DWR survey
+                        <span class="text-sm font-normal text-slate-500">(${edition} pamphlet tables)</span>
+                    </h3>
+                    ${facts}${net}
+                </div>`;
+        }
+
         function dwrEditionLabel(year) {
             if (!year) return '(pamphlet, historical)';
             return year >= 2020 ? `(${year} pamphlet)` : `(${year} pamphlet, historical)`;
@@ -2554,6 +2615,10 @@
                         ${collapsibleNotes('cma-notes', cmaHtml(lake.cma_notes), notePreview(lake.cma_notes))}
                     </div>
                 ` : ''}
+
+                <!-- DWR survey tables (2025 pamphlets): stocking cycle, amenities,
+                     trail distance, and gillnet sampling stats per species -->
+                ${dwrSurveyHtml(lake)}
 
                 <!-- DWR Notes: heading names the pamphlet edition the write-up came
                      from (2025 revised vs. the 1980s/90s originals); when a newer

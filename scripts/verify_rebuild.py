@@ -58,6 +58,19 @@ TABLE_QUERIES = {
     "fishing_reports": """
         SELECT l.letter_number, f.date, f.success, f.notes
         FROM fishing_reports f LEFT JOIN lakes l ON f.lake_id = l.id""",
+    "dwr_gillnet_samples": """
+        SELECT l.letter_number, g.printed_name, g.species, g.stocking_cycle,
+               g.other_species, g.n_sampled, g.mean_length_in, g.max_length_in,
+               g.mean_weight_lb, g.max_weight_lb, g.note, g.source_edition
+        FROM dwr_gillnet_samples g LEFT JOIN lakes l ON g.lake_id = l.id
+        ORDER BY g.source_edition, g.species, l.letter_number, g.printed_name""",
+    "dwr_lake_summary": """
+        SELECT l.letter_number, s.printed_name, s.sub_drainage, s.access,
+               s.trail_miles, s.elevation_ft, s.size_acres, s.depth_ft,
+               s.campsites, s.spring_water, s.horse_feed, s.fish_species,
+               s.stocking_cycle, s.note, s.source_edition
+        FROM dwr_lake_summary s LEFT JOIN lakes l ON s.lake_id = l.id
+        ORDER BY s.source_edition, l.letter_number, s.printed_name""",
     "guide_regions": "SELECT part_number, name, description FROM guide_regions",
     "guide_trailheads": """
         SELECT t.name, r.part_number, t.description, t.maps

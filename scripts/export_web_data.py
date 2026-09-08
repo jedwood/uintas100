@@ -33,6 +33,29 @@ def export():
     except ImportError:
         pass
 
+    # DWR 2025 pamphlet survey tables (docs/dwr-survey-tables-plan.md)
+    gillnet_by_lake, summary_by_lake = {}, {}
+    for row in conn.execute(
+        """SELECT lake_id, species, stocking_cycle, other_species, n_sampled,
+                  mean_length_in, max_length_in, mean_weight_lb, max_weight_lb,
+                  note, source_edition
+           FROM dwr_gillnet_samples WHERE lake_id IS NOT NULL
+           ORDER BY species"""
+    ):
+        gillnet_by_lake.setdefault(row["lake_id"], []).append({
+            k: row[k] for k in ("species", "stocking_cycle", "other_species", "n_sampled",
+                                "mean_length_in", "max_length_in", "mean_weight_lb",
+                                "max_weight_lb", "note", "source_edition")})
+    for row in conn.execute(
+        """SELECT lake_id, sub_drainage, access, trail_miles, campsites, spring_water,
+                  horse_feed, fish_species, stocking_cycle, note, source_edition
+           FROM dwr_lake_summary WHERE lake_id IS NOT NULL"""
+    ):
+        summary_by_lake[row["lake_id"]] = {
+            k: row[k] for k in ("sub_drainage", "access", "trail_miles", "campsites",
+                                "spring_water", "horse_feed", "fish_species",
+                                "stocking_cycle", "note", "source_edition")}
+
     stocking_by_lake = {}
     for row in conn.execute(
         """SELECT lake_id, species, quantity, length, stock_date
@@ -91,6 +114,8 @@ def export():
                 "lng": row["lng"] if coords_ok else None,
                 "stocking": stocking_by_lake.get(row["id"], []),
                 "photos": photos_by_lake.get(row["id"], []),
+                "dwr_summary": summary_by_lake.get(row["id"]),
+                "dwr_gillnet": gillnet_by_lake.get(row["id"], []),
             }
         )
 

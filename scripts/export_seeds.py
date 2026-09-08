@@ -127,6 +127,34 @@ SEEDS = {
         """,
     },
     # --- Falcon guidebook (guide_*), FKs resolved to natural keys -----------
+    "dwr_gillnet_samples.csv": {
+        "columns": ["letter_number", "printed_name", "species", "stocking_cycle",
+                    "other_species", "n_sampled", "mean_length_in", "max_length_in",
+                    "mean_weight_lb", "max_weight_lb", "note", "source_edition"],
+        "sql": """
+            SELECT l.letter_number, g.printed_name, g.species, g.stocking_cycle,
+                   g.other_species, g.n_sampled, g.mean_length_in, g.max_length_in,
+                   g.mean_weight_lb, g.max_weight_lb, g.note, g.source_edition
+            FROM dwr_gillnet_samples g
+            LEFT JOIN lakes l ON g.lake_id = l.id
+            ORDER BY g.source_edition, g.species, l.letter_number, g.printed_name
+        """,
+    },
+    "dwr_lake_summary.csv": {
+        "columns": ["letter_number", "printed_name", "sub_drainage", "access",
+                    "trail_miles", "elevation_ft", "size_acres", "depth_ft",
+                    "campsites", "spring_water", "horse_feed", "fish_species",
+                    "stocking_cycle", "note", "source_edition"],
+        "sql": """
+            SELECT l.letter_number, s.printed_name, s.sub_drainage, s.access,
+                   s.trail_miles, s.elevation_ft, s.size_acres, s.depth_ft,
+                   s.campsites, s.spring_water, s.horse_feed, s.fish_species,
+                   s.stocking_cycle, s.note, s.source_edition
+            FROM dwr_lake_summary s
+            LEFT JOIN lakes l ON s.lake_id = l.id
+            ORDER BY s.source_edition, l.letter_number, s.printed_name
+        """,
+    },
     "guide_regions.csv": {
         "columns": ["part_number", "name", "description"],
         "sql": ("SELECT part_number, name, description FROM guide_regions "

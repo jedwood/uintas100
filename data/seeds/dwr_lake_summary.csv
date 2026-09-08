@@ -1,0 +1,78 @@
+letter_number,printed_name,sub_drainage,access,trail_miles,elevation_ft,size_acres,depth_ft,campsites,spring_water,horse_feed,fish_species,stocking_cycle,note,source_edition
+\N,BR-54,Hayden Fork,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
+\N,Fish,West Fork,"South half USFS, north half private; access from southeast",0.5,9800,42.6,\N,Y,N,Y,Brook,NR,\N,2025
+BR-1,Bourbon,Hayden Fork,Whiskey Cr Trail near Sulphur CG,1.0,9820,2.0,8,N,Y,N,Brook,1,\N,2025
+BR-10,Beaver,West Fork,"Road southwest of Whitney Dam, 9 mi from Hwy 150",\N,9420,13.2,32,Y,N,-,Rainbow,1,\N,2025
+BR-11,Lily,East Fork,2 mi on unimproved road from Hwy 150,\N,8890,10.5,20,Y,N,-,Rainbow,1,\N,2025
+BR-12,Scow,Stillwater Fork,East Fork Trailhead – Boundary Cr Trail,3.25,10100,21.4,6,Y,Y,Y,Brook,2,\N,2025
+BR-14,McPheters,Stillwater Fork – Middle Basin,Christmas Meadows TH to Middle Basin,9.0,10860,28.3,45,N,Y,N,Tiger,1b,\N,2025
+BR-15,Ryder,Stillwater Fork – Middle Basin,Christmas Meadows TH to Middle Basin,8.5,10620,24.4,55,Y,Y,limited,Brook,NR,\N,2025
+BR-16,BR-16,Stillwater Fork – Middle Basin,Christmas Meadows TH to Middle Basin,8.3,10610,1.3,5,Y,N,Y,Brook,NR,\N,2025
+BR-17,BR-17,Stillwater Fork – Middle Basin,Christmas Meadows TH to Middle Basin,8.7,10630,2.8,7,Y,Y,limited,Brook,NR,\N,2025
+BR-18,BR-18,Stillwater Fork – Middle Basin,Christmas Meadows TH to Middle Basin,8.7,10610,5.5,12,Y,Y,limited,Brook,NR,\N,2025
+BR-19,Meadow,Stillwater Fork – Middle Basin,Christmas Meadows TH to Middle Basin,8.7,10470,2.8,5,Y,Y,Y,Brook,NR,\N,2025
+BR-2,BR-2,Hayden Fork,100 yds downstream of Bourbon Lake,1.1,9780,0.7,5,Y,N,limited,Brook,3a,\N,2025
+BR-20,Kermsuh,Stillwater Fork – West Basin,Christmas Meadows TH to Kermsuh Lake Trail,6.75,10300,11.8,14,N,Y,Y,Cutthroat,NR,\N,2025
+BR-21,BR-21,Stillwater Fork – West Basin,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
+BR-22,BR-22,Stillwater Fork – West Basin,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
+BR-23,BR-23,Stillwater Fork – Middle Basin,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
+BR-24,BR-24,Stillwater Fork – Ostler Fork,Christmas Meadows TH to Ostler Fork Trail,5.1,10460,2.3,10,Y,Y,Y,Tiger,4,\N,2025
+BR-25,Toomset,Stillwater Fork – Ostler Fork,Christmas Meadows TH to Ostler Fork Trail,5.25,10300,2.3,11,N,N,N,Brook,NR,\N,2025
+BR-26,Salamander,Stillwater Fork – Ostler Basin,Christmas Meadows TH to Ostler Fork Trail,3.5,10020,3.7,13,N,N,N,Brook,3,\N,2025
+BR-27,Ostler,Stillwater Fork – Ostler Basin,Christmas Meadows TH to Ostler Fork Trail,5.5,10540,13.2,14,Y,Y,limited,Tiger,3,\N,2025
+BR-28,Amethyst,Stillwater Fork – Ostler Fork,Christmas Meadows TH to Ostler Fork Trail,6.25,10750,43.7,59,Y,Y,N,Brook,NR,\N,2025
+BR-29,Hell Hole,Stillwater Fork – Main Fork,Trail begins on Hwy 150 across from Gold Hill turnoff,5.0,10340,9.1,9,Y,Y,Y,Cutthroat,NR,\N,2025
+BR-3,Whiskey Island,Hayden Fork,"Hwy 150 to FR110 to FR636 to FR711, hike west/nw",0.6,10340,5.0,19,N,N,N,Grayling,1,\N,2025
+BR-30,BR-30,Stillwater Fork – Main Basin,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
+BR-31,Seidner,Stillwater Fork,Christmas Meadows TH to minor west side drainage,4.25,10460,3.0,8,Y,Y,Y,Brook,NR,\N,2025
+BR-32,Teal,Hayden Fork,1.25 mi northwest of Ruth Lake,2.0,10260,6.8,14,Y,N,N,Tiger,3a,\N,2025
+BR-34,BR-34,Hayden Fork,Hwy 150 to FR636,0.7,10390,2.1,7,Y,N,limited,Tiger,3,\N,2025
+BR-35,BR-35,Hayden Fork,0.4 mi west of BR-34,1.1,10470,1.3,4,Y,N,limited,Tiger,2,\N,2025
+BR-36,Hayden,Hayden Fork,0.25 mi west of Ruth Lake,1.1,10420,3.6,5,Y,Y,limited,Tiger,2,\N,2025
+BR-37,Cutthroat,Hayden Fork,1 mi west of Ruth Lake,1.7,10390,3.4,16,Y,Y,N,Brook,3a,\N,2025
+BR-38,Jewel,Hayden Fork,0.7 mi northwest of Ruth Lake,1.4,10300,2.4,13,Y,N,Y,Cutthroat,NR,\N,2025
+BR-39,Naomi,Hayden Fork,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
+BR-40,Ruth,Hayden Fork,Ruth Lake Trail,0.7,10340,9.5,30,Y,Y,limited,Brook,1a,\N,2025
+BR-41,BR-41,Mill Creek,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
+BR-42,Allsop,East Fork - Left Hand Fork,East Fork TH to Left Hand Fork Trail,8.5,10580,12.5,22,Y,Y,Y,Cutthroat,NR,\N,2025
+BR-43,BR-43,East Fork – Right Hand Fork,"East Fork TH to Right Hand Fork Trail, then 2 mi west",7.7,11120,1.7,10,N,Y,N,Tiger,2,\N,2025
+BR-44,BR-44,East Fork – Right Hand Fork,"East Fork TH to Right Hand Fork Trail, then 2 mi west",7.0,10900,3.5,15,Y,N,N,Tiger,3,\N,2025
+BR-45,Baker,East Fork - Boundary Creek,East Fork TH – Boundary Cr Trail,4.25,10420,3.4,8,Y,Y,Y,Tiger,2,\N,2025
+BR-46,Lorena,East Fork,2 mi up East Fork trail to cabin sites then southwest,3.5,10580,12.8,20,N,Y,N,Brook,5,\N,2025
+BR-47,Norice,East Fork – Right Hand Fork,East Fork TH to Right Hand Fork Trail,8.25,10470,3.2,3,Y,N,Y,Cutthroat,NR,\N,2025
+BR-48,Priord,East Fork – Right Hand Fork,East Fork TH to Right Hand Fork Trail,9.0,10860,10.5,20,Y,Y,limited,Tiger,3,\N,2025
+BR-49,BR-49,East Fork – Right Hand Fork,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
+BR-51,BR-51,West Fork,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
+BR-52,BR-52,East Fork – Right Hand Fork,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
+BR-53,BR-53,East Fork – Right Hand Fork,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
+BR-55,BR-55,Stillwater Fork – West Basin,1.25 mi northwest of Kermsuh Lake,7.3,10860,1.5,12,Y,N,limited,Brook,4,\N,2025
+BR-7,Lym,Mill Creek,6 mi up Mill Creek by unimproved road,\N,10115,8.1,20,Y,Y,limited,Brook,NR,\N,2025
+BR-8,Mt. Elizabeth,Mill Creek,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,"Private property, no public access",2025
+G-102,Moslander,Muddy Creek,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
+G-105,G-105,East Fork,"East Fork Trail 7 mi to tributary from west, then 1.5 mi southwest to lake",8.5,10820,2.2,3,Y,Y,Y,Cutthroat,NR,\N,2025
+G-25,Lower Lyman,West Fork,North Slope Road (FR 58) to Lyman Lakes,0.0,9276,4.5,25,Y,Y,-,Brook/Rainbow,1,\N,2025
+G-26,G-26,West Fork,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
+G-27,Upper Lyman,West Fork,North Slope Road (FR 58) to Lyman Lakes,0.0,9311,35.3,30,Y,Y,-,Brook/Rainbow,1,\N,2025
+G-37,Duck,East Fork,"East Fork Road north of trailhead, east across EF on bench",0.5,9161,6.2,5,Y,N,Y,Grayling,1,\N,2025
+G-65,G-65,Little East Fork,"East Fork Trail to Little East Fork, west from large meadow",6.75,10900,4.4,5,Y,N,limited,Brook,NR,\N,2025
+G-66,G-66,Little East Fork,"East Fork Trail to Little East Fork, west from large dry park",5.75,10561,3.8,12,Y,Y,N,Brook,NR,\N,2025
+G-67,G-67,Little East Fork,"East Fork Trail to Little East Fork, 1 mi north G-69",9.5,11158,7.1,25,N,Y,N,Brook,4,\N,2025
+G-68,G-68,Little East Fork,"East Fork Trail to Little East Fork, 0.75 mi north of G-69",9.25,11421,4.2,6,N,Y,limited,Brook,2,\N,2025
+G-69,G-69,Little East Fork,"East Fork Trail to Little East Fork, 1 mi west from head of large meadow",8.5,11109,4.8,13,N,N,limited,Cutthroat,NR,\N,2025
+G-70,G-70,Little East Fork,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
+G-71,G-71,Little East Fork,"East Fork Trail to Little East Fork, 1.25 mi west from foot of Squaw Pass",10.25,11527,2.7,14,N,Y,N,Brook,3,\N,2025
+G-72,G-72,Middle Fork,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
+G-73,Bobs,Middle Fork,Middle Fork Trail,10.25,11150,6.1,30,N,Y,N,Cutthroat,2,\N,2025
+G-74,G-74,Middle Fork,Middle Fork Trail,9.5,10934,2.9,3,Y,Y,Y,Brook,3,\N,2025
+G-75,G-75,Middle Fork,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
+G-76,Ejod,West Fork,"West Fork Trail, 0.25 mi northwest of Dead Horse",7.75,10900,5.7,12,N,N,limited,Cutthroat,NR,\N,2025
+G-77,Dead Horse,West Fork,West Fork Trail,7.5,10878,14.8,41,Y,N,Y,Cutthroat,2,\N,2025
+G-78,G-78,West Fork,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
+G-79,G-79,West Fork,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
+G-80,G-80,West Fork,"West Fork Trail to head of Buck Pasture, 0.75 mi west up steep ridge",3.25,10580,1.6,8,Y,Y,limited,Brook,4,\N,2025
+G-81,G-81,West Fork,0.75 mi southwest of G-82,3.0,10665,1.7,5,Y,Y,limited,Cutthroat,NR,\N,2025
+G-82,G-82,West Fork,0.5 mi southwest of lower end of meadow below Buck Pasture,2.25,10140,3.7,6,Y,N,Y,Brook,4,\N,2025
+G-83,G-83,West Fork,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
+G-84,G-84,East Fork,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
+G-85,G-85,Middle Fork,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
+G-86,G-86,East Fork,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025

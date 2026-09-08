@@ -221,6 +221,51 @@ def create_database(db_path=None):
         )
     ''')
 
+    # DWR 2025 pamphlet survey tables (docs/dwr-survey-tables-plan.md):
+    # gillnet sampling stats per lake x species (Whiterocks) and the per-lake
+    # summary rows (Bear River, Blacks Fork). Loaded by
+    # scripts/import_dwr_survey_tables.py; lake_id is NULL for the few rows
+    # whose printed name matches no lake.
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS dwr_gillnet_samples (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            lake_id INTEGER,
+            printed_name TEXT,
+            species TEXT,
+            stocking_cycle TEXT,
+            other_species TEXT,
+            n_sampled INTEGER,
+            mean_length_in REAL,
+            max_length_in REAL,
+            mean_weight_lb REAL,
+            max_weight_lb REAL,
+            note TEXT,
+            source_edition INTEGER,
+            FOREIGN KEY (lake_id) REFERENCES lakes (id)
+        )
+    ''')
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS dwr_lake_summary (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            lake_id INTEGER,
+            printed_name TEXT,
+            sub_drainage TEXT,
+            access TEXT,
+            trail_miles REAL,
+            elevation_ft INTEGER,
+            size_acres REAL,
+            depth_ft INTEGER,
+            campsites TEXT,
+            spring_water TEXT,
+            horse_feed TEXT,
+            fish_species TEXT,
+            stocking_cycle TEXT,
+            note TEXT,
+            source_edition INTEGER,
+            FOREIGN KEY (lake_id) REFERENCES lakes (id)
+        )
+    ''')
+
     # Idempotent safety net: back-fill any lakes column an OLDER database might
     # be missing. No-ops on a fresh build (the full CREATE above already has
     # them) and on the current live DB. Keeps any create_database() entry point

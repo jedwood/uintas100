@@ -187,6 +187,31 @@ def rebuild(output_path):
              row["source_pages"], row["source_file"]))
         ghike_id[row["hike_number"]] = cur.lastrowid
 
+    for row in _read_seed("dwr_gillnet_samples.csv"):
+        cur.execute(
+            """INSERT INTO dwr_gillnet_samples
+               (lake_id, printed_name, species, stocking_cycle, other_species,
+                n_sampled, mean_length_in, max_length_in, mean_weight_lb,
+                max_weight_lb, note, source_edition)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+            (lid(row["letter_number"]), row["printed_name"], row["species"],
+             row["stocking_cycle"], row["other_species"], row["n_sampled"],
+             row["mean_length_in"], row["max_length_in"], row["mean_weight_lb"],
+             row["max_weight_lb"], row["note"], row["source_edition"]))
+
+    for row in _read_seed("dwr_lake_summary.csv"):
+        cur.execute(
+            """INSERT INTO dwr_lake_summary
+               (lake_id, printed_name, sub_drainage, access, trail_miles,
+                elevation_ft, size_acres, depth_ft, campsites, spring_water,
+                horse_feed, fish_species, stocking_cycle, note, source_edition)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+            (lid(row["letter_number"]), row["printed_name"], row["sub_drainage"],
+             row["access"], row["trail_miles"], row["elevation_ft"],
+             row["size_acres"], row["depth_ft"], row["campsites"],
+             row["spring_water"], row["horse_feed"], row["fish_species"],
+             row["stocking_cycle"], row["note"], row["source_edition"]))
+
     for row in _read_seed("guide_hike_lakes.csv"):
         hid = ghike_id.get(row["hike_number"])
         if hid is None:
