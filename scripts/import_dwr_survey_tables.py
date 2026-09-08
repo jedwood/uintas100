@@ -35,6 +35,7 @@ SOURCE_EDITION = 2025
 # table: there is no WR-25; the cutthroat table prints Nellie as WR-75.
 DESIGNATION_FIXES = {
     ("Nellie", "WR-25"): "WR-75",
+    ("Denise", "WR-8"): "WR-9",     # brook table; Denise's description and DWR stocking say WR-9
 }
 
 # pdf file -> DB drainage(s) used to resolve name-only rows
@@ -238,7 +239,7 @@ def parse_summary(text):
 def _name_key(name):
     """'Rock Upper' == 'Upper Rock' == 'Upper Rock Lake'; 'Rassmussen #1' == 'Rassmussen 1'."""
     words = re.sub(r"[^a-z0-9 ]", "", (name or "").lower().replace("’", "").replace("'", "")).split()
-    return "".join(sorted(w for w in words if w not in ("lake", "lakes")))
+    return "".join(sorted(w for w in words if w not in ("lake", "lakes", "reservoir")))
 
 
 def _names_disagree(a, b):

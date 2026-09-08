@@ -24,6 +24,13 @@ NEW_PAMPHLETS_DIR = os.path.join(PROJECT_DIR, "data", "dwr_new_pamphlets")
 # is kept in lakes.dwr_notes_prev so the app can show "previous edition".
 PAMPHLET_EDITION = 2025
 
+# Description headings that print the wrong designation. "Becky Lake, WR-14"
+# duplicates Upper Rock's number; DWR's own stocking reports ("BECKY L WR-77"
+# since 2008), both gillnet tables, and the 1987 WR-77 write-up all say WR-77.
+HEADING_DESIGNATION_FIXES = {
+    ("Becky Lake", "WR-14"): "WR-77",
+}
+
 # Map text file -> drainage prefix patterns for validation
 PAMPHLET_FILES = {
     "bear-river-text.txt": ["BR-"],
@@ -152,6 +159,7 @@ def parse_lake_entries(text):
         if is_table_data(body):
             continue
 
+        designation = HEADING_DESIGNATION_FIXES.get((name, designation), designation)
         raw_entries.append({
             "designation": designation,
             "name": name,

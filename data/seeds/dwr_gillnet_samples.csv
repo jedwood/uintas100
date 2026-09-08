@@ -1,7 +1,6 @@
 letter_number,printed_name,species,stocking_cycle,other_species,n_sampled,mean_length_in,max_length_in,mean_weight_lb,max_weight_lb,note,source_edition
 WR-1,Robb,Brookies,2/3,\N,31,11.7,15.9,0.49,2.12,\N,2025
 WR-12,Larvae,Brookies,2,\N,17,9.6,14.0,0.31,1.01,\N,2025
-WR-14b,Becky,Brookies,2/3,CT,39,11.3,13.1,0.44,0.89,pamphlet prints WR-77,2025
 WR-17,Lower Rock,Brookies,NR,TG,40,12.2,15.2,0.66,1.46,Tiger trout are stocked every 5 years into Lower Rock.,2025
 WR-35,Rassmussen 1,Brookies,5,\N,117,9.6,13.0,0.33,0.76,\N,2025
 WR-36,Rassmussen 2,Brookies,5,\N,75,10.3,13.4,0.39,0.88,\N,2025
@@ -25,10 +24,10 @@ WR-64,Chepeta,Brookies,NR,CT,99,10.7,16.0,0.48,1.64,\N,2025
 WR-7,Cleveland,Brookies,5,CT,132,9.8,14.0,0.37,1.25,\N,2025
 WR-75,Nellie,Brookies,NR,CT,9,11.5,14.7,0.64,1.19,pamphlet prints WR-25,2025
 WR-76,Eric,Brookies,NR,CT,16,12.5,14.8,0.84,1.46,\N,2025
-WR-8,Denise,Brookies,3,\N,7,13.3,15.5,1.15,1.81,pamphlet prints 'Denise'; DB names WR-8 'Taylor',2025
+WR-77,Becky,Brookies,2/3,CT,39,11.3,13.1,0.44,0.89,\N,2025
 WR-8,Taylor,Brookies,5,\N,33,12.2,16.1,0.81,1.98,\N,2025
+WR-9,Denise,Brookies,3,\N,7,13.3,15.5,1.15,1.81,pamphlet prints WR-8,2025
 WR-14,Upper Rock,Cutthroats,2/3,\N,62,11.7,20.5,0.82,3.2,\N,2025
-WR-14b,Becky,Cutthroats,NR,BK,6,12.1,13.4,0.63,0.9,pamphlet prints WR-77,2025
 WR-16,Middle Rock,Cutthroats,2/3,\N,39,9.4,17.5,0.65,1.71,pamphlet prints WR-67,2025
 WR-17,Lower Rock,Cutthroats,NR,"TG,BK",9,13.4,16.5,1.24,1.83,\N,2025
 WR-19,Angel,Cutthroats,3,"GRY,TGMK",20,10.2,17.3,0.39,2.04,\N,2025
@@ -53,7 +52,8 @@ WR-73,Tamara,Cutthroats,5,\N,66,10.5,16.9,0.49,1.9,\N,2025
 WR-74,Ann,Cutthroats,3,\N,7,9.8,11.5,0.44,0.7,\N,2025
 WR-75,Nellie,Cutthroats,5,BK,19,11.1,14.6,0.57,1.21,\N,2025
 WR-76,Eric,Cutthroats,NR,BK,18,10.3,13.5,0.37,0.71,\N,2025
-\N,Deadfall,Grayling,3,\N,54,9.2,10.3,0.23,0.38,\N,2025
+WR-77,Becky,Cutthroats,NR,BK,6,12.1,13.4,0.63,0.9,\N,2025
+JW-1,Deadfall,Grayling,3,\N,54,9.2,10.3,0.23,0.38,\N,2025
 WR-19,Angel,Grayling,NR,"CT,TGMK",46,10.7,14.5,0.38,1.0,\N,2025
 WR-29,Dead,Grayling,3,\N,16,12.4,13.0,0.67,0.79,\N,2025
 WR-30,Johnson,Grayling,3,\N,0,\N,\N,\N,\N,\N,2025

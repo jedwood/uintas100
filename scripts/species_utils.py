@@ -19,6 +19,11 @@ DEFAULT_SPECIES_CUTOFF_YEAR = 2016
 WILD_SPECIES = {
     'A-51': {'Grayling'},
     'WR-3': {'Cutthroats'},
+    # JW-1 Deadfall: DWR stocks grayling every 3 years (2025 pamphlet) but the
+    # stockings never appear in the public report, so the sweep can't see them.
+    'JW-1': {'Grayling'},
+    # JW-2 Fish Reservoir (Blacks Fork): self-sustaining brook trout, never stocked.
+    'JW-2': {'Brookies'},
 }
 
 

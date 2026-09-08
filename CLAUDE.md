@@ -224,6 +224,19 @@ another device while DB→Notes rewrites it, that device may iCloud-conflict-mer
 and show a duplicated section — fix is simply deleting the duplicated lower
 section(s) by hand on that device.
 
+### Designation conventions (`lakes.letter_number`)
+DWR's letter-number is the primary key. Two house conventions on top of it:
+- **`b` suffix** when DWR reuses a number for two distinct lakes: `X-22b` (Swift
+  Creek's second X-22). `WR-14b` was retired 2026-09-08 — the 2025 pamphlet's
+  "Becky Lake, WR-14" heading is a typo; Becky is **WR-77** (DWR stocking reports
+  and both gillnet tables agree; `compare_new_pamphlets.HEADING_DESIGNATION_FIXES`
+  keeps a re-apply from recreating it).
+- **`JW-n`** (Jed's own numbering) for waters DWR describes in a pamphlet but
+  never lettered: `JW-1` Deadfall (White Rocks, grayling, never in the public
+  stocking report — see `WILD_SPECIES`), `JW-2` Fish Reservoir (Blacks Fork).
+  Next unlettered water gets `JW-3`. Every designation regex in the code accepts
+  the form, and name-only DWR stocking rows still match by exact name.
+
 ### DWR pamphlet editions (`lakes.dwr_edition`, `lakes.dwr_notes_prev`)
 `dwr_notes` is the lake write-up from DWR's "Lakes of the High Uintas" pamphlet
 series. `dwr_edition` records the **publication year** it came from: `2025` for

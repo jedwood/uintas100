@@ -1,6 +1,4 @@
 letter_number,printed_name,sub_drainage,access,trail_miles,elevation_ft,size_acres,depth_ft,campsites,spring_water,horse_feed,fish_species,stocking_cycle,note,source_edition
-\N,BR-54,Hayden Fork,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
-\N,Fish,West Fork,"South half USFS, north half private; access from southeast",0.5,9800,42.6,\N,Y,N,Y,Brook,NR,\N,2025
 BR-1,Bourbon,Hayden Fork,Whiskey Cr Trail near Sulphur CG,1.0,9820,2.0,8,N,Y,N,Brook,1,\N,2025
 BR-10,Beaver,West Fork,"Road southwest of Whitney Dam, 9 mi from Hwy 150",\N,9420,13.2,32,Y,N,-,Rainbow,1,\N,2025
 BR-11,Lily,East Fork,2 mi on unimproved road from Hwy 150,\N,8890,10.5,20,Y,N,-,Rainbow,1,\N,2025
@@ -45,6 +43,7 @@ BR-49,BR-49,East Fork – Right Hand Fork,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable t
 BR-51,BR-51,West Fork,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
 BR-52,BR-52,East Fork – Right Hand Fork,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
 BR-53,BR-53,East Fork – Right Hand Fork,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
+BR-54,BR-54,Hayden Fork,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
 BR-55,BR-55,Stillwater Fork – West Basin,1.25 mi northwest of Kermsuh Lake,7.3,10860,1.5,12,Y,N,limited,Brook,4,\N,2025
 BR-7,Lym,Mill Creek,6 mi up Mill Creek by unimproved road,\N,10115,8.1,20,Y,Y,limited,Brook,NR,\N,2025
 BR-8,Mt. Elizabeth,Mill Creek,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,"Private property, no public access",2025
@@ -76,3 +75,4 @@ G-83,G-83,West Fork,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,20
 G-84,G-84,East Fork,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
 G-85,G-85,Middle Fork,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
 G-86,G-86,East Fork,\N,\N,\N,\N,\N,\N,\N,\N,\N,\N,Unable to support a fishery,2025
+JW-2,Fish,West Fork,"South half USFS, north half private; access from southeast",0.5,9800,42.6,\N,Y,N,Y,Brook,NR,\N,2025
