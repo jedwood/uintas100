@@ -150,14 +150,21 @@
         <header class="text-center mb-8">
             <h1 class="text-3xl font-bold text-gray-800 mb-2">Uintas 💯</h1>
             <p id="header-subtitle" class="text-gray-600">500+ fishable lakes • 18 drainages</p>
+            <!-- Mission progress. Tapping the bar is a quiet Easter egg: it drops
+                 down the status breakdown (caught / skunked / others / unfished /
+                 no fish), each a one-tap list+map view in the status color. -->
             <div id="mission-progress" class="mt-4 max-w-xs mx-auto hidden">
-                <div class="flex justify-between text-sm text-gray-600 mb-1">
-                    <span>Mission progress</span>
-                    <span id="mission-count" class="font-semibold text-gray-800"></span>
+                <div id="mission-toggle" role="button" tabindex="0" title="Tap for the breakdown"
+                     class="cursor-pointer select-none rounded-lg -mx-2 px-2 py-1 hover:bg-slate-100 transition-colors">
+                    <div class="flex justify-between text-sm text-gray-600 mb-1">
+                        <span>Mission progress</span>
+                        <span id="mission-count" class="font-semibold text-gray-800"></span>
+                    </div>
+                    <div class="w-full bg-slate-200 rounded-full h-2.5">
+                        <div id="mission-bar" class="bg-slate-700 h-2.5 rounded-full transition-all duration-700" style="width: 0%"></div>
+                    </div>
                 </div>
-                <div class="w-full bg-slate-200 rounded-full h-2.5">
-                    <div id="mission-bar" class="bg-slate-700 h-2.5 rounded-full transition-all duration-700" style="width: 0%"></div>
-                </div>
+                <div id="mission-menu" class="hidden mt-2 bg-white border border-slate-200 rounded-lg shadow-md overflow-hidden text-left text-sm"></div>
             </div>
             <!-- Offline-edit sync status: hidden when everything is synced -->
             <button id="sync-chip" type="button" class="hidden"></button>
@@ -236,9 +243,9 @@
                         <div>
                             <div class="flex items-center justify-between mb-2">
                                 <label class="block text-sm font-medium text-gray-700">Fish Species</label>
-                                <div id="species-mode" class="ms-mode" title="Match lakes with ANY of the selected species, or ALL of them">
+                                <div id="species-mode" class="ms-mode" title="Any: lakes with at least one of the selected species. Only: lakes whose species are limited to the selection (no other listed species)">
                                     <button type="button" data-mode="or" class="active">Any</button>
-                                    <button type="button" data-mode="and">All</button>
+                                    <button type="button" data-mode="only">Only</button>
                                 </div>
                             </div>
                             <div class="relative">
@@ -424,6 +431,15 @@
                                                     <li><a href="https://www.amazon.com/Hiking-Utahs-Uintas-Andrew-Gillman/dp/1493075691" target="_blank" class="text-slate-700 underline hover:text-slate-900">Hiking Utah's High Uintas</a>
                                                         <span class="text-sm text-gray-500">— <a href="https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html" target="_blank" class="underline decoration-dotted hover:text-slate-700" title="Private full copy with maps — needs the Tailscale VPN on">Jed's copy (Tailscale)</a></span></li>
                                                     <li><a href="https://www.amazon.com/High-Uintas-Adventures-Backcountry-Planner/dp/B08FPGJ214" target="_blank" class="text-slate-700 underline hover:text-slate-900">High Uintas Adventures</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div>
+                                                <h3 class="text-xl font-semibold text-gray-700 mb-3">Updated DWR Pamphlets (2025)</h3>
+                                                <ul class="space-y-2 ml-4">
+                                                    <li><a href="data/dwr_new_pamphlets/bear-river-updated.pdf" target="_blank" class="text-slate-700 underline hover:text-slate-900">Bear River Drainage</a></li>
+                                                    <li><a href="data/dwr_new_pamphlets/blacks-fork-new.pdf" target="_blank" class="text-slate-700 underline hover:text-slate-900">Blacks Fork Drainage</a></li>
+                                                    <li><a href="data/dwr_new_pamphlets/whiterocks-new.pdf" target="_blank" class="text-slate-700 underline hover:text-slate-900">Whiterocks River Drainage</a></li>
                                                 </ul>
                                             </div>
 
@@ -650,6 +666,41 @@
         const MISSION_GOAL = 100;
         const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
+        // One place for "what does this lake's status look like": the emoji
+        // shown after the name everywhere (list cards, search rows, modal
+        // title, map flag labels) and the pin/card color.
+        const STATUS_EMOJI = { CAUGHT: '🎣', OTHERS: '👥🎣', NONE: '✖️' };
+        function statusEmoji(lake) {
+            const e = STATUS_EMOJI[lake.status];
+            return e ? ` ${e}` : '';
+        }
+        // Display name + designation + status/no-fish emoji, HTML-escaped.
+        function lakeTitle(lake) {
+            const base = lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number;
+            return `${escHtml(base)}${statusEmoji(lake)}${lake.no_fish ? ' 🚫' : ''}`;
+        }
+        // Status color scheme (pins, focus pin, list-card edge, mission menu):
+        //   green  = I caught fish        orange = fished it, skunked
+        //   yellow = others caught here   blue   = fishable, not yet fished
+        //   gray   = no fish
+        const STATUS_COLORS = {
+            CAUGHT: '#16a34a', NONE: '#ea580c', OTHERS: '#eab308', DEFAULT: '#2563eb', NO_FISH: '#9ca3af'
+        };
+        function statusColor(lake) {
+            if (STATUS_COLORS[lake.status]) return STATUS_COLORS[lake.status];
+            if (lake.no_fish) return STATUS_COLORS.NO_FISH;
+            return STATUS_COLORS.DEFAULT;
+        }
+        // The five status buckets, in mission-menu order. `match` is the bucket
+        // membership test; every lake lands in exactly one.
+        const STATUS_BUCKETS = [
+            { key: 'CAUGHT',  label: 'Caught',        emoji: '🎣',   color: STATUS_COLORS.CAUGHT,  match: l => l.status === 'CAUGHT' },
+            { key: 'NONE',    label: 'Skunked',       emoji: '✖️',   color: STATUS_COLORS.NONE,    match: l => l.status === 'NONE' },
+            { key: 'OTHERS',  label: 'Others caught', emoji: '👥🎣', color: STATUS_COLORS.OTHERS,  match: l => l.status === 'OTHERS' },
+            { key: 'UNFISHED',label: 'Not fished yet',emoji: '🐟',   color: STATUS_COLORS.DEFAULT, match: l => !l.status && !l.no_fish },
+            { key: 'NO_FISH', label: 'No fish',       emoji: '🚫',   color: STATUS_COLORS.NO_FISH, match: l => !l.status && !!l.no_fish },
+        ];
+
         function getStatusButton(status, isDisplay = false) {
             const buttonClass = isDisplay ?
                 "inline-flex items-center px-2 py-1 border border-slate-300 rounded-md text-sm" :
@@ -863,6 +914,41 @@
             document.getElementById('mission-count').textContent = `${caught} / ${MISSION_GOAL} 🎣`;
             document.getElementById('mission-bar').style.width = `${Math.min(100, (caught / MISSION_GOAL) * 100)}%`;
             document.getElementById('mission-progress').classList.remove('hidden');
+            renderMissionMenu();
+        }
+
+        // The dropdown under the mission bar: one row per status bucket with
+        // its color swatch, emoji, and live count. Tapping a row shows that
+        // bucket as a normal result set (list or map, whichever is active).
+        function renderMissionMenu() {
+            const menu = document.getElementById('mission-menu');
+            menu.innerHTML = STATUS_BUCKETS.map(b => {
+                const n = lakes.filter(b.match).length;
+                return `
+                <button type="button" data-bucket="${b.key}"
+                        class="w-full flex items-center gap-3 px-3 py-2 hover:bg-slate-50 transition-colors border-b border-slate-100 last:border-b-0">
+                    <span class="inline-block w-3 h-3 rounded-full shrink-0" style="background:${b.color}"></span>
+                    <span class="flex-1 text-left text-gray-800">${b.emoji} ${b.label}</span>
+                    <span class="text-gray-500 tabular-nums">${n}</span>
+                </button>`;
+            }).join('');
+            menu.querySelectorAll('button[data-bucket]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    toggleMissionMenu(false);
+                    showStatusBucket(btn.dataset.bucket);
+                });
+            });
+        }
+        function toggleMissionMenu(open) {
+            const menu = document.getElementById('mission-menu');
+            const isOpen = !menu.classList.contains('hidden');
+            menu.classList.toggle('hidden', open === undefined ? isOpen : !open);
+        }
+        function showStatusBucket(key) {
+            const b = STATUS_BUCKETS.find(x => x.key === key);
+            if (!b) return;
+            const matches = lakes.filter(b.match);
+            setResults(matches, { title: `${b.emoji} ${b.label} (${matches.length})`, showDrainage: true });
         }
 
         // Compute header subtitle, About-page fun facts, stocking totals, and
@@ -957,7 +1043,7 @@
                     filterState.speciesMode = b.dataset.mode;
                     document.querySelectorAll('#species-mode button')
                         .forEach(x => x.classList.toggle('active', x === b));
-                    updateFilterButtonState();
+                    onFilterChange();
                 });
             });
 
@@ -1003,6 +1089,14 @@
             document.getElementById('view-list').addEventListener('click', () => setView('list'));
             document.getElementById('view-map').addEventListener('click', () => setView('map'));
             document.getElementById('map-all').addEventListener('click', showAllOnMap);
+            // Mission bar Easter egg: tap (or Enter/Space) drops the status menu
+            const missionToggle = document.getElementById('mission-toggle');
+            missionToggle.addEventListener('click', (e) => { e.stopPropagation(); toggleMissionMenu(); });
+            missionToggle.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMissionMenu(); }
+            });
+            document.getElementById('mission-menu').addEventListener('click', (e) => e.stopPropagation());
+            document.addEventListener('click', () => toggleMissionMenu(false));
             document.getElementById('starred-link').addEventListener('click', showStarredLakes);
             updateStarredLink();
             updateViewToggle();
@@ -1108,8 +1202,8 @@
             // multi-select change handlers)
             ['depth-min', 'depth-max', 'elevation-min', 'elevation-max', 'size-min', 'size-max', 'year-min', 'year-max'].forEach(id => {
                 const element = document.getElementById(id);
-                element.addEventListener('input', updateFilterButtonState);
-                element.addEventListener('change', updateFilterButtonState);
+                element.addEventListener('input', onFilterChange);
+                element.addEventListener('change', onFilterChange);
             });
         }
 
@@ -1159,12 +1253,11 @@
                         🗺️ Show all ${searchMatches.length} matches on the map
                     </button>` : '';
                 const rows = shown.map(lake => {
-                    const noFishEmoji = lake.no_fish ? ' 🚫' : '';
                     const opacityClass = lake.no_fish ? 'opacity-60' : '';
                     return `
                     <div class="p-2 hover:bg-slate-50 cursor-pointer border-b last:border-b-0 transition-colors ${opacityClass}"
                          onclick="showLakeDetail('${lake.letter_number}')">
-                        <div class="font-medium">${lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number}${noFishEmoji}</div>
+                        <div class="font-medium">${lakeTitle(lake)}</div>
                         <div class="text-sm text-gray-600">${lake.drainage}</div>
                     </div>
                     `;
@@ -1208,7 +1301,7 @@
         const filterState = {
             drainages: new Set(),
             species: new Set(),
-            speciesMode: 'or',   // 'or' = any of, 'and' = all of
+            speciesMode: 'or',   // 'or' = any of the picks; 'only' = nothing but the picks
         };
         const escHtml = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
         const escAttr = s => escHtml(s).replace(/"/g, '&quot;');
@@ -1219,7 +1312,7 @@
                 cb.addEventListener('change', () => {
                     if (cb.checked) set.add(cb.value); else set.delete(cb.value);
                     updateMsLabels();
-                    updateFilterButtonState();
+                    onFilterChange();
                 });
             });
         }
@@ -1279,28 +1372,43 @@
             document.getElementById('filters-chevron').style.transform = expanded ? 'rotate(90deg)' : '';
         }
 
+        // Are the on-screen results the output of the filter panel? (vs. a
+        // drainage / starred / status-bucket / search view)
+        function filterResultsShowing() {
+            return view.fromFilters && !document.getElementById('results-section').classList.contains('hidden');
+        }
+
+        // Any filter control changed. Besides refreshing the button/badge
+        // state, re-run the filters live while their results are on screen —
+        // otherwise unticking the last species used to leave a stale list
+        // with no way back to "everything".
+        function onFilterChange() {
+            updateFilterButtonState();
+            if (filterResultsShowing()) applyFilters({ live: true });
+        }
+
         function updateFilterButtonState() {
             const count = activeFilterCount();
+            // Always usable: with nothing selected it simply shows every lake.
             const applyButton = document.getElementById('apply-filters');
-            if (count > 0) {
-                applyButton.disabled = false;
-                applyButton.className = "w-full bg-slate-700 text-white px-4 py-2 rounded-lg hover:bg-slate-800 cursor-pointer transition-colors";
-            } else {
-                applyButton.disabled = true;
-                applyButton.className = "w-full bg-gray-300 text-gray-500 px-4 py-2 rounded-lg cursor-not-allowed transition-colors";
-            }
+            applyButton.disabled = false;
+            applyButton.textContent = count > 0 ? 'Apply Filters' : 'Show All Lakes';
+            applyButton.className = count > 0
+                ? "w-full bg-slate-700 text-white px-4 py-2 rounded-lg hover:bg-slate-800 cursor-pointer transition-colors"
+                : "w-full bg-white text-slate-700 border border-slate-300 px-4 py-2 rounded-lg hover:bg-slate-50 cursor-pointer transition-colors";
 
-            // Active-filter indicator + clear button on the collapsed bar
+            // Active-filter indicator + clear button on the collapsed bar. Clear
+            // also stays while filter results are showing, so a zero-filter
+            // result set can still be dismissed.
             const badge = document.getElementById('filters-active-badge');
             const clear = document.getElementById('clear-filters');
             if (count > 0) {
                 badge.textContent = `${count} active`;
                 badge.classList.remove('hidden');
-                clear.classList.remove('hidden');
             } else {
                 badge.classList.add('hidden');
-                clear.classList.add('hidden');
             }
+            clear.classList.toggle('hidden', !(count > 0 || filterResultsShowing()));
         }
 
         function clearFilters(e) {
@@ -1318,6 +1426,7 @@
                 document.getElementById(id).value = '';
             });
             document.getElementById('results-section').classList.add('hidden');
+            view.fromFilters = false;
             updateFilterButtonState();
         }
 
@@ -1329,8 +1438,16 @@
             if (lake.stocking.some(r => r.species && r.species.toLowerCase().includes(sp))) return true;
             return (lake.fish_species || '').toLowerCase().includes(sp);
         }
+        // "Only" mode: the lake has at least one of the picked species and
+        // none of the OTHER species in the filter list. Vague tokens that
+        // aren't in the list ("Trout*", "Unknown*", "Chub") are ignored, so a
+        // "Cutthroats, Trout*" lake still counts as cutthroat-only.
+        function lakeHasOnlySpecies(lake, picks) {
+            if (!picks.some(sp => lakeHasSpecies(lake, sp))) return false;
+            return !SPECIES_OPTIONS.some(([key]) => !picks.includes(key) && lakeHasSpecies(lake, key));
+        }
 
-        function applyFilters() {
+        function applyFilters({ live = false } = {}) {
             const depthMin = val('depth-min');
             const depthMax = val('depth-max');
             const elevationMin = val('elevation-min');
@@ -1387,10 +1504,12 @@
             // Combined species and year filter
             if (speciesSel.length || yearMin || yearMax) {
                 filteredLakes = filteredLakes.filter(lake => {
-                    // Species membership: ANY (OR) or ALL (AND) of the picks
+                    // Species membership: ANY of the picks, or ONLY the picks
+                    // (the old "All" = has-every-pick mode was indistinguishable
+                    // from Any with a single species selected).
                     if (speciesSel.length) {
-                        const ok = speciesMode === 'and'
-                            ? speciesSel.every(sp => lakeHasSpecies(lake, sp))
+                        const ok = speciesMode === 'only'
+                            ? lakeHasOnlySpecies(lake, speciesSel)
                             : speciesSel.some(sp => lakeHasSpecies(lake, sp));
                         if (!ok) return false;
                     }
@@ -1418,16 +1537,20 @@
                 });
             }
 
-            setResults(filteredLakes, { title: `Filtered Results (${filteredLakes.length} lakes)`, showDrainage: true });
+            const title = activeFilterCount() > 0
+                ? `Filtered Results (${filteredLakes.length} lakes)`
+                : `All Lakes (${filteredLakes.length})`;
+            setResults(filteredLakes, { title, showDrainage: true, fromFilters: true, scroll: !live });
 
             // Collapse the filter panel so results take the stage; the active
-            // badge keeps showing that filters are on.
-            setFiltersExpanded(false);
+            // badge keeps showing that filters are on. A live re-filter (a
+            // checkbox changed while results were showing) leaves the panel
+            // open and the page where it is.
+            if (!live) setFiltersExpanded(false);
             updateFilterButtonState();
         }
 
         function renderLakeCard(lake, showDrainage) {
-            const noFishEmoji = lake.no_fish ? ' 🚫' : '';
             const opacityClass = lake.no_fish ? 'opacity-60' : '';
             const drainageShort = showDrainage && lake.drainage ? lake.drainage.replace(' Drainage', '') : '';
 
@@ -1440,10 +1563,12 @@
                 lake.stockYears.length > 0 ? `(${lake.stockYears.join(', ')})` : ''
             ].filter(Boolean).join(' • ');
 
+            // Left edge carries the status color so the list reads like the map.
             return `
-            <div class="border border-slate-200 rounded-lg p-4 hover:bg-slate-50 cursor-pointer transition-colors ${opacityClass}"
+            <div class="border border-slate-200 border-l-4 rounded-lg p-4 hover:bg-slate-50 cursor-pointer transition-colors ${opacityClass}"
+                 style="border-left-color:${statusColor(lake)}"
                  onclick="showLakeDetail('${lake.letter_number}')">
-                <div class="font-medium text-lg">${lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number}${noFishEmoji}</div>
+                <div class="font-medium text-lg">${lakeTitle(lake)}</div>
                 <div class="text-sm text-gray-600 mt-1">${details}</div>
             </div>
             `;
@@ -1452,19 +1577,22 @@
         // ---- Unified results: one filtered set, two views (list + map) ----
         const view = {
             mode: localStorage.getItem('uintas-view') || 'list',
-            results: [], title: '', showDrainage: false, leadHtml: ''
+            results: [], title: '', showDrainage: false, leadHtml: '',
+            fromFilters: false   // true while the results are the filter panel's output
         };
 
-        function setResults(results, { title = '', showDrainage = false, leadHtml = '' } = {}) {
+        function setResults(results, { title = '', showDrainage = false, leadHtml = '', fromFilters = false, scroll = true } = {}) {
             view.results = results;
             view.title = title;
             view.showDrainage = showDrainage;
             view.leadHtml = leadHtml;
+            view.fromFilters = fromFilters;
             document.getElementById('results-section').classList.remove('hidden');
             document.getElementById('results-count').textContent =
                 `${results.length} lake${results.length === 1 ? '' : 's'}`;
             renderCurrentView();
-            document.getElementById('results-section').scrollIntoView({ behavior: 'smooth' });
+            if (scroll) document.getElementById('results-section').scrollIntoView({ behavior: 'smooth' });
+            updateFilterButtonState();
         }
 
         function setView(mode) {
@@ -1618,10 +1746,10 @@
         let detailPinRefs = [];   // neighbor pins in the lake modal's mini-map
         function pinRef(marker, lake) {
             const full = lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number;
-            const caught = lake.status === 'CAUGHT' ? ' 🎣' : '';
+            const emoji = statusEmoji(lake);
             // hover: full name+designation; flag label: just the short name
-            return { marker, hover: `${full}${caught}`,
-                     flag: `${lake.name || lake.letter_number}${caught}`, labeled: null };
+            return { marker, hover: `${full}${emoji}`,
+                     flag: `${lake.name || lake.letter_number}${emoji}`, labeled: null };
         }
         function setPinLabel(p, permanent) {
             if (p.labeled === permanent) return;
@@ -1639,12 +1767,6 @@
             const show = inView.length > 0 && inView.length <= max;
             const inViewSet = new Set(inView);
             refs.forEach(p => setPinLabel(p, show && inViewSet.has(p)));
-        }
-
-        function statusColor(lake) {
-            if (lake.status === 'CAUGHT') return '#16a34a';   // caught — green
-            if (lake.no_fish) return '#9ca3af';               // no fish — gray
-            return '#2563eb';                                  // default — blue
         }
 
         // Interactive mini-map inside a lake's detail modal, centered on our
@@ -2461,8 +2583,7 @@
             const title = document.getElementById('modal-title');
             const content = document.getElementById('modal-content');
 
-            const noFishEmoji = lake.no_fish ? ' 🚫' : '';
-            title.innerHTML = `${escHtml(lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number)}${noFishEmoji}`;
+            title.innerHTML = lakeTitle(lake);
             const drainageEl = document.getElementById('modal-drainage');
             drainageEl.textContent = lake.drainage || '';
             drainageEl.classList.toggle('hidden', !lake.drainage);
