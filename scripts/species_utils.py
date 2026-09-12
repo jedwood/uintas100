@@ -57,6 +57,12 @@ def normalize_species_name(species_text):
     if re.search(r'rainbow', text):
         return 'Rainbows'
     
+    # Tiger muskie must be checked BEFORE the generic 'tiger' (trout) rule:
+    # this used to be unreachable, so re-parsing a lake's own "Tiger muskie"
+    # text on every stocking refresh silently added a phantom "Tigers*".
+    if re.search(r'tiger.*musk|musk.*tiger', text):
+        return 'Tiger muskie'
+
     if re.search(r'tiger', text):
         return 'Tigers'
     
@@ -69,9 +75,6 @@ def normalize_species_name(species_text):
     # Handle other species
     if re.search(r'splake', text):
         return 'Splake'
-    
-    if re.search(r'tiger.*muskie|muskie.*tiger', text):
-        return 'Tiger muskie'
     
     if re.search(r'channel.*catfish|catfish.*channel', text):
         return 'Channel catfish'
