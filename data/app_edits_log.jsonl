@@ -25,3 +25,4 @@
 {"id": "e-1789275357742-usefn4", "lake": "A-22", "field": "status", "value": "NONE", "ts": "2026-09-13T04:55:57.742Z", "device": "dev-vnewkcd0", "applied_at": "2026-09-13T04:55:57+00:00"}
 {"id": "e-1789275357742-cf6h3m", "lake": "A-22", "field": "trip_reports", "value": "Summer 2025 - Kenny and I thought we were at Start Lake, since we had mistaken a nameless pond to the south for Diamond.", "ts": "2026-09-13T04:55:57.742Z", "device": "dev-vnewkcd0", "applied_at": "2026-09-13T04:55:57+00:00"}
 {"id": "e-1789275471731-t8gvz1", "lake": "A-30", "field": "status", "value": "NONE", "ts": "2026-09-13T04:57:51.731Z", "device": "dev-vnewkcd0", "applied_at": "2026-09-13T04:57:51+00:00"}
+{"id": "e-1789275761633-r7y1u0", "lake": "A-56", "field": "status", "value": "CAUGHT", "ts": "2026-09-13T05:02:41.633Z", "device": "dev-vnewkcd0", "applied_at": "2026-09-13T05:02:41+00:00"}
