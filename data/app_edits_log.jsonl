@@ -19,3 +19,4 @@
 {"id": "e-1789274318895-vyt3fa", "lake": "DF-11", "field": "status", "value": "NONE", "ts": "2026-09-13T04:38:38.895Z", "device": "dev-vnewkcd0", "applied_at": "2026-09-13T04:38:39+00:00"}
 {"id": "e-1789274318895-vl31sz", "lake": "DF-11", "field": "trip_reports", "value": "Sep 2026- only a few casts, didn’t leave ourselves enough time.", "ts": "2026-09-13T04:38:38.895Z", "device": "dev-vnewkcd0", "applied_at": "2026-09-13T04:38:39+00:00"}
 {"id": "e-1789274326029-gp2si1", "lake": "DF-12", "field": "status", "value": "NONE", "ts": "2026-09-13T04:38:46.029Z", "device": "dev-vnewkcd0", "applied_at": "2026-09-13T04:38:46+00:00"}
+{"id": "e-1789274335213-1mhpxw", "lake": "DF-16", "field": "status", "value": "CAUGHT", "ts": "2026-09-13T04:38:55.213Z", "device": "dev-vnewkcd0", "applied_at": "2026-09-13T04:38:55+00:00"}
