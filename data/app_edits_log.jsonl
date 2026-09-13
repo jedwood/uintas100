@@ -21,3 +21,4 @@
 {"id": "e-1789274326029-gp2si1", "lake": "DF-12", "field": "status", "value": "NONE", "ts": "2026-09-13T04:38:46.029Z", "device": "dev-vnewkcd0", "applied_at": "2026-09-13T04:38:46+00:00"}
 {"id": "e-1789274335213-1mhpxw", "lake": "DF-16", "field": "status", "value": "CAUGHT", "ts": "2026-09-13T04:38:55.213Z", "device": "dev-vnewkcd0", "applied_at": "2026-09-13T04:38:55+00:00"}
 {"id": "e-1789274343196-a2ce4u", "lake": "DF-14", "field": "status", "value": "CAUGHT", "ts": "2026-09-13T04:39:03.196Z", "device": "dev-vnewkcd0", "applied_at": "2026-09-13T04:39:03+00:00"}
+{"id": "e-1789274370560-p3qi7e", "lake": "DF-14", "field": "jed_notes", "value": "Decent possible campsite on south side", "ts": "2026-09-13T04:39:30.560Z", "device": "dev-vnewkcd0", "applied_at": "2026-09-13T04:39:30+00:00"}
