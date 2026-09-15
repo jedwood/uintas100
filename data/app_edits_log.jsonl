@@ -28,3 +28,5 @@
 {"id": "e-1789275761633-r7y1u0", "lake": "A-56", "field": "status", "value": "CAUGHT", "ts": "2026-09-13T05:02:41.633Z", "device": "dev-vnewkcd0", "applied_at": "2026-09-13T05:02:41+00:00"}
 {"id": "e-1789276411302-pjcf2s", "lake": "A-62", "field": "status", "value": "NONE", "ts": "2026-09-13T05:13:31.302Z", "device": "dev-vnewkcd0", "applied_at": "2026-09-13T05:13:31+00:00"}
 {"id": "e-1789276437069-sfl15v", "lake": "A-12", "field": "status", "value": "NONE", "ts": "2026-09-13T05:13:57.069Z", "device": "dev-vnewkcd0", "applied_at": "2026-09-13T05:13:58+00:00"}
+{"id": "e-1789502988182-yj3f0e", "lake": "G-17", "field": "status", "value": "NONE", "ts": "2026-09-15T20:09:48.182Z", "device": "dev-7wvw8frc", "applied_at": "2026-09-15T21:07:49+00:00"}
+{"id": "e-1789502998901-3w7ka2", "lake": "G-16", "field": "status", "value": "OTHERS", "ts": "2026-09-15T20:09:58.901Z", "device": "dev-7wvw8frc", "applied_at": "2026-09-15T21:07:49+00:00"}
