@@ -113,8 +113,9 @@ while allowing edits to *originate* on any device:
   manual sync button and a server-URL override. Server auto-resolution tries
   the page's own host on :8802, then `http://olaf.local:8802` (LAN), then
   `https://olaf.tail89dcea.ts.net:8443` (Tailscale). The Tailscale HTTPS proxy
-  (`tailscale serve --bg localhost:8802` on the Mini; config persists across
-  reboots) exists because the iPhone's PWA is installed from the **https**
+  (`tailscale serve --bg --https=8443 http://127.0.0.1:8802` on the Mini; config
+  persists across reboots but NOT across a tailnet re-login — port **8443**, not
+  443, because the jedOS dashboard owns the :443 root on the same hostname) exists because the iPhone's PWA is installed from the **https**
   github.io page, and a secure page cannot fetch `http://` LAN URLs (Safari
   silently blocks mixed content) — so the iPhone syncs only via the Tailscale
   URL, and only while its Tailscale VPN is on (from anywhere, not just home).
