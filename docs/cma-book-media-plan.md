@@ -17,10 +17,10 @@ HTML-with-photos alone is good enough to drop the PDF link entirely.
   `revealBookPage()` / `#book-view` in `index.html`. Citations `*(p. NNN)*`
   in `cma_notes` are links into it.
 - The Mini already runs `tailscale serve --bg localhost:8802` proxying the
-  edits server to `https://olaf.tail89dcea.ts.net` (config persists across
+  edits server to `https://olaf.tail89dcea.ts.net:8443` (config persists across
   reboots). The iPhone PWA syncs through that URL. **Do not break the
   existing :8802 proxy** — `tailscale serve` path mounts merge, so add a
-  path, then verify `curl https://olaf.tail89dcea.ts.net/api/ping` still
+  path, then verify `curl https://olaf.tail89dcea.ts.net:8443/api/ping` still
   works.
 - Copyright note: the author is alive and local. The compressed full-book PDF
   scan stays **out of the public github.io repo** (gitignored, same as the
@@ -53,7 +53,7 @@ gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dPDFSETTINGS=/ebook \
   - in the `#book-view` sticky header, and
   - per page section is unnecessary — one link that targets the *currently
     viewed* page is better: track the last page passed to `openBookPage()`
-    and set `href = 'https://olaf.tail89dcea.ts.net/cma-book.pdf#page=' +
+    and set `href = 'https://olaf.tail89dcea.ts.net:8443/cma-book.pdf#page=' +
     (printedPage + 15)`, `target="_blank"`.
 - Known limits to note in the link title/tooltip, not to fight: `#page=`
   works in desktop browsers' PDF viewers; **iOS Safari ignores it** (opens
@@ -88,7 +88,7 @@ gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dPDFSETTINGS=/ebook \
   (e.g. X-81 Hook → citation link p. 356), screenshot the book view showing
   inline photos, and confirm the "Open scanned book" link href carries the
   right `#page=` for the visible page.
-- `curl -sI https://olaf.tail89dcea.ts.net/cma-book.pdf | head -3` → 200.
+- `curl -sI https://olaf.tail89dcea.ts.net:8443/cma-book.pdf | head -3` → 200.
 - Leave everything uncommitted for Jed's review, but say exactly what would
   be committed vs gitignored.
 

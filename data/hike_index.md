@@ -122,7 +122,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 5 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Tigers (historical only: Cutthroats, Splake); lake elev 9620–10020 ft; 65 ac total, largest 30 ac
 - **Tags:** camping, fishing, tiger-trout, navigation, steep, mountain-pass, bugs, 4wd
 - **Summary:** North Erickson Lake sits at the head of Smith and Morehouse Creek in Erickson Basin. It can be reached from the Smith and Morehouse trailhead, but it is easier to start hiking from the end of Upper Setting Road in the Provo River Drainage.
-- **Book:** pp. ? · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-01
+- **Book:** pp. ? · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-01
 
 #### 2. Norway Flats Road to Big Elk Lake
 
@@ -132,7 +132,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 1 fishable & uncaught, 1 caught, 0 starred; species: Cutthroats, Grayling, Tigers (historical only: Brookies); lake elev 9780–10020 ft; 43.2 ac total, largest 30 ac
 - **Tags:** fishing, crowded, bugs, wildflowers, 4wd
 - **Summary:** From the end of Norway Flats Road, Little Elk Lake is about 0.3 mile to the west of the trail. Continue another 0.8 mile to a trail junction and Big Elk Lake.
-- **Book:** pp. ? · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-02
+- **Book:** pp. ? · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-02
 
 #### 3. Long Pond
 
@@ -142,7 +142,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 0 fishable & uncaught, 1 caught, 0 starred; species: — (historical only: Brookies, Cutthroats); lake elev 10100–10100 ft; 35 ac total, largest 35 ac
 - **Tags:** camping, fishing, mountain-pass, horses, crowded, paved-access, toilets
 - **Summary:** Long Pond is just that—a long pond. It is immediately below the outlet of Long Lake. While the lake receives heavy usage, Long Pond is largely ignored, even though it has better fishing and more solitude than the lake. You might also hike around the more popular Loyng Lake and revel in the views of Mount Watson over the cool, clear waters.
-- **Book:** pp. 22–23 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-03
+- **Book:** pp. 22–23 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-03
 
 #### 4. Island Lake
 
@@ -152,7 +152,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 4 fishable & uncaught, 2 caught, 0 starred; species: Brookies, Cutthroats, Tigers; lake elev 9780–10200 ft; 91 ac total, largest 35 ac
 - **Tags:** camping, fishing, steep, mountain-pass, solitude, paved-access, toilets
 - **Summary:** “Which Island Lake?” you may ask. Just as there are many Hidden Lakes and Lost Lakes, it seems that every other drainage has an Island Lake. This one sits high on the Provo River drainage and can be reached fairly easily. The first mile is steep, and the last 0.5 mile is steep, but sandwiched between these sections is some easy and level hiking. The trail is quite popular among overnighters, so expect to see a few people, especially on weekends.
-- **Book:** pp. 22–23 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-04
+- **Book:** pp. 22–23 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-04
 
 #### 5. Lakes Country
 
@@ -162,7 +162,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 2 fishable & uncaught, 2 caught, 0 starred; species: Brookies, Grayling (historical only: Cutthroats); lake elev 9780–10100 ft; 67.7 ac total, largest 35 ac
 - **Tags:** camping, fishing, grayling, solitude, family, multi-day, paved-access, toilets
 - **Summary:** The Lakes Country trailhead from Crystal Lake offers a variety of hikes of all lengths. A lot of visitors understandably cluster near the trailhead’s amenities, but even the farther flung lakes on this trail see some traffic. Why? Reasonable elevation change and the multiple destination lakes that give this trail its name. Even better, Lakes Country offers a rare loop opportunity that isn’t solely suitable for overnight backpacking.
-- **Book:** pp. 22–23 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-05
+- **Book:** pp. 22–23 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-05
 
 #### 6. Cliff Lake
 
@@ -172,7 +172,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 3 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats, Tigers; lake elev 10140–10420 ft; 105 ac total, largest 80 ac
 - **Tags:** fishing, paved-access, toilets
 - **Summary:** You couldn’t ask for a prettier setting. The stage is set with picture-perfect campsites and rock-climbing routes that overlook a small lake dimpled by feeding fish. A stately cliff serves as a backdrop, with Mount Watson rising beyond. Grassy campsites are just off the trail on the eastern shore, providing an ideal place to watch the sunset and reflect on the finer things of life. The whole scene mirrors off the clear water.
-- **Book:** pp. 22–23 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-06
+- **Book:** pp. 22–23 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-06
 
 #### 7. Divide Lakes
 
@@ -182,7 +182,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 6 fishable & uncaught, 3 caught, 0 starred; species: Brookies, Cutthroats, Grayling, Rainbows, Tigers; lake elev 9800–10460 ft; 149.1 ac total, largest 98 ac
 - **Tags:** camping, fishing, cross-country, navigation, mountain-pass, multi-day, paved-access, toilets
 - **Summary:** Here’s a backpacking campout to take the kids on. You’ll see plenty of small lakes along the way, and the trail has a good mix of uphill and level stretches. They’re fairly easy to find, but the spur trail is easy to miss if your attention is on Clyde Lake. The trail is well marked from regular foot traffic all the way to Clyde. From the west side of Clyde, head due north to reach Divide Lakes.
-- **Book:** pp. 22–23 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-07
+- **Book:** pp. 22–23 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-07
 
 #### 8. Twin Lakes
 
@@ -192,7 +192,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 4 fishable & uncaught, 2 caught, 0 starred; species: Brookies, Cutthroats, Grayling, Rainbows, Tigers; lake elev 9800–10460 ft; 209.5 ac total, largest 98 ac
 - **Tags:** camping, fishing, steep, mountain-pass, paved-access, toilets
 - **Summary:** Most people proceed unknowingly right past these lakes. It seems everyone makes the extra effort to hike over Notch Pass to see the beautiful scenery that Ibantik Lake offers. And rightly so. From Notch Pass, the country is amazing. On the other hand, Twin Lakes may make a good base camp that gives you the serenity no other lakes in this area can provide. Don’t get us wrong; Twin Lakes get their fair share of attention, but they are often overlooked.
-- **Book:** pp. 22–23 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-08
+- **Book:** pp. 22–23 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-08
 
 #### 9. Ibantik Lake
 
@@ -202,7 +202,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 4 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Cutthroats, Grayling, Rainbows, Tigers; lake elev 9800–10300 ft; 219.7 ac total, largest 98 ac
 - **Tags:** fishing, mountain-pass, crowded, multi-day, paved-access, toilets
 - **Summary:** The trail goes right over Notch Pass. Even if you don’t visit Ibantik Lake, you should hike to the top of Notch Pass and gaze into the deep turquoise depths of Lovenia Lake directly below. Absolutely gorgeous! Words cannot describe its beauty. Pictures cannot depict its depth, nor the feeling you get at the top of a cliff looking down. The view is a must for hikers searching for awesome alpine scenery.
-- **Book:** pp. 39, 22 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-09
+- **Book:** pp. 39, 22 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-09
 
 #### 10. Bald Mountain
 
@@ -212,7 +212,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 0 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Rainbows, Tigers (historical only: Grayling); lake elev 10200–10200 ft; 42 ac total, largest 42 ac
 - **Tags:** steep, peak, paved-access, toilets
 - **Summary:** Bald Mountain—the best time investment you can make in the High Uintas. If you only have a few hours to spend and want to experience some grand vistas, then this is the place. Just 1.4 miles of steep hiking puts you atop this well-known peak, where you’ll have a bird’s-eye view of four of Utah’s major watersheds. Scan the cliffs and debris fields of Bald Mountain for moving white spots; there is a high chance of spotting mountain goats.
-- **Book:** pp. 38, 42 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-10
+- **Book:** pp. 38, 42 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-10
 
 #### 11. Notch Lake
 
@@ -222,7 +222,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 3 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Grayling (historical only: Cutthroats); lake elev 10060–10300 ft; 39.2 ac total, largest 20.2 ac
 - **Tags:** camping, fishing, mountain-pass, crowded, multi-day, paved-access, toilets
 - **Summary:** Going down anyone? Boy, you sure don’t find many hikes like this one in the High Uintas. You actually get to hike downhill on the hike in. A fast hiker should be able to cover the entire distance to the lake in an hour. But coming back out may be a bit slower, as you’ll have to make up 500 feet of elevation.
-- **Book:** pp. 38–39 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-11
+- **Book:** pp. 38–39 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-11
 
 #### 12. Fehr Lake
 
@@ -232,7 +232,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 5 fishable & uncaught, 0 caught, 0 starred; species: Brookies (historical only: Cutthroats, Grayling, Rainbows); lake elev 9900–10260 ft; 60.7 ac total, largest 18.6 ac
 - **Tags:** fishing, steep, mountain-pass, crowded, wildflowers, waterfall, family, paved-access, toilets
 - **Summary:** Even small kids can enjoy this hike. You don’t have to be in good shape either. This is a mini hike. If you only have a couple of hours to spend, you could take a leisurely stroll down to Fehr Lake, fish a bit, and still make it back in time for lunch.
-- **Book:** pp. 38, 42 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-12
+- **Book:** pp. 38, 42 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-12
 
 #### 13. Mirror Lake Shoreline Loop
 
@@ -242,7 +242,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 0 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Rainbows, Tigers (historical only: Grayling); lake elev 10200–10200 ft; 42 ac total, largest 42 ac
 - **Tags:** crowded, toilets
 - **Summary:** The gently rolling shoreline trail of Mirror Lake never climbs more than about 25 feet above the starting elevation, making this trail a wonderful way to stretch your legs without a lot of extra exertion—being mindful of the possibility of altitude sickness that can occur at 10,000 feet above sea level, of course. Whether you’re scouting a spot to have a picnic or from which to cast a line, this is a perfect introduction to the High Uintas landscape.
-- **Book:** pp. 42, 48 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-13
+- **Book:** pp. 42, 48 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-13
 
 #### 14. Duchesne River Trail (Meadow Muffin)
 
@@ -252,7 +252,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 1 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats; lake elev 10020–10020 ft; 9 ac total, largest 9 ac
 - **Tags:** fishing, river-crossing, toilets
 - **Summary:** Most people use the Mirror Lake entryway instead of Mill Flat on the South Slope and the Ashley National Forest side, solely because the trail loses elevation starting from Mirror Lake. Usually, two vehicles are used to support this trip. One vehicle transports the trekkers to Mirror Lake, while the other is left behind at Mill Flat (about 0.25 mile north of Iron Mine Campground). Another alternate route can be made via a branch off the Murdock Basin Road. This 4WD road takes you to the east portal of the Duchesne Tunnel.
-- **Book:** pp. 48, 49 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-14
+- **Book:** pp. 48, 49 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-14
 
 #### 15. Butterfly Lake to Castle Lake
 
@@ -262,7 +262,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 2 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats, Rainbows, Tigers (historical only: Grayling); lake elev 10300–10300 ft; 5.3 ac total, largest 4.3 ac
 - **Tags:** fishing, cross-country, crowded, bugs, toilets
 - **Summary:** This hike is for the roadside camper looking for a short diversion. Castle Lake is less than half a mile west of Butterfly Lake. Butterfly Lake has excellent campground facilities, as well as a parking area for day-use anglers. It’s a rugged “route” rather than a clear trail to Castle Lake, but just head due west, stay close to the base of the cliffs and you can’t miss it. There are several small ponds on the way. Don’t mistake one of them for Castle Lake.
-- **Book:** pp. ? · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-15
+- **Book:** pp. ? · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-15
 
 #### 16. Wilder, Wyman, and Packard Lakes
 
@@ -272,7 +272,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 3 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Grayling, Rainbows, Tigers; lake elev 9900–10200 ft; 56.7 ac total, largest 42 ac
 - **Tags:** camping, fishing, grayling, steep, horses, crowded, bugs, toilets
 - **Summary:** Wilder, Wyman, and Packard Lakes make a great day hike for kids and adults alike. Some people begin their adventure from Mirror Lake rather than the Highline trailhead because better accommodations are found at Mirror Lake, but that will add about a mile to the trip in each direction. (Scudder Lake is only 2 miles along this same trail but may still be unsuitable for camping after the 2018 Mirror Lake Complex fire.)
-- **Book:** pp. 55–56 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-16
+- **Book:** pp. 55–56 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-16
 
 #### 17. Jordan Lake
 
@@ -282,7 +282,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 2 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Cutthroats, Rainbows, Tigers (historical only: Grayling); lake elev 10200–10920 ft; 78.2 ac total, largest 42 ac
 - **Tags:** camping, fishing, steep, toilets
 - **Summary:** Considering the heavy usage thrown upon this area, Naturalist Basin remains remarkably clean. Thoughtful hikers and the Forest Service deserve kudos for keeping this beautiful wilderness free of debris and litter. To ensure this mountain range remains unscarred, fire restrictions are in effect throughout Naturalist Basin. Gas stoves will be necessary for cooking.
-- **Book:** pp. 55–56 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-17
+- **Book:** pp. 55–56 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-17
 
 #### 18. Morat and Blue Lakes (and Mount Agassiz)
 
@@ -292,7 +292,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 3 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Cutthroats, Rainbows, Tigers (historical only: Grayling); lake elev 10200–10940 ft; 70 ac total, largest 42 ac
 - **Tags:** camping, fishing, steep, peak, horses, waterfall, multi-day, toilets
 - **Summary:** The Morat Lakes receive heavy usage from both backpackers and day hikers. For anglers, fishing pressure remains somewhat moderate at these lakes because many anglers bypass the Morat Lakes and begin to fish at Blue Lake. However, large cutthroat trout can often be netted at Morat #1. This trail also grabs the attention of peak baggers eyeing the strenuous scramble up Mount Agassiz. Its challenging, but the most popular way up.
-- **Book:** pp. 55–56 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-18
+- **Book:** pp. 55–56 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-18
 
 #### 19. Carolyn Lake
 
@@ -302,7 +302,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 1 fishable & uncaught, 0 caught, 0 starred; species: — (historical only: Brookies, Cutthroats, Grayling); lake elev 10430–10430 ft; 5 ac total, largest 5 ac
 - **Tags:** camping, fishing, grayling, multi-day, toilets
 - **Summary:** Although Carolyn Lake is in a popular area, it is most often passed by. This small lake is in timbered country characterized by boggy shorelines and a small, wet meadow. Spring water is somewhat limited, but good running water can be found on the southeast side of the lake—it’s a pro tip to start with the cleanest water source possible when treating!
-- **Book:** pp. 55–56 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-19
+- **Book:** pp. 55–56 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-19
 
 #### 20. Four Lakes Basin
 
@@ -312,7 +312,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 3 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Rainbows, Tigers (historical only: Cutthroats, Grayling); lake elev 10200–10755 ft; 112.4 ac total, largest 42 ac
 - **Tags:** fishing, grayling, mountain-pass, horses, toilets
 - **Summary:** Jean, Dean, Dale, and Daynes Lakes make up Four Lakes Basin. The best places to stay are at Dale or Daynes Lake. Campsites, horse pasture, space for horses, and spring water are plentiful at both lakes. Backpackers might opt for a little more solitude at Dean Lake, which is not as suitable for horses. There is spring water at Dean Lake, but it is on the extreme northern shore (a long walk from the campsites).
-- **Book:** pp. 55–56 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-20
+- **Book:** pp. 55–56 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-20
 
 #### 21. Ouray Lake
 
@@ -322,7 +322,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 5 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Rainbows, Tigers (historical only: Cutthroats, Grayling); lake elev 10200–11096 ft; 82 ac total, largest 42 ac
 - **Tags:** camping, fishing, mountain-pass, toilets
 - **Summary:** It doesn’t look like much at first glance but give it a chance. For long-distance hikers or equestrians, Ouray Lake in the remote Rock Creek Basin is a good place to establish a base camp, or just hide out. Thanks to its distance and the “distraction” of Naturalist Basin, fewer backpackers make it here. At the north end of the lake is a great little campsite, complete with rock tables; nearby, a couple of springs enter the small streams that feed Ouray Lake. Equestrians particularly like this spot because it is situated in a box canyon with plenty of horse pasture.
-- **Book:** pp. 55–56 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-21
+- **Book:** pp. 55–56 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-21
 
 #### 22. Dry Fork Trailhead to Fish Lake
 
@@ -332,7 +332,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 3 fishable & uncaught, 0 caught, 0 starred; species: — (historical only: Brookies, Cutthroats, Grayling); lake elev 9940–10180 ft; 70.3 ac total, largest 46 ac
 - **Tags:** camping, fishing, grayling, navigation, steep, river-crossing, waterfall
 - **Summary:** Many enthusiastic people find the Dry Fork Loop Trail a rewarding day hike, despite the elevation gain—especially those on horseback. Backpackers with heavy loads usually avoid this steep, rugged trail, opting instead for an out-and-back hike.
-- **Book:** pp. 68–69 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-22
+- **Book:** pp. 68–69 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-22
 
 #### 23. Abes Lake
 
@@ -342,7 +342,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 3 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats (historical only: Tigers); lake elev 9820–10300 ft; 25.2 ac total, largest 21.6 ac
 - **Tags:** camping, fishing, steep, river-crossing, horses
 - **Summary:** Abes Lake sits all alone, and you might be too, if you take this short, steep hike along the Middle Fork Weber River from Gardners Fork trailhead.
-- **Book:** pp. 68–69 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-23
+- **Book:** pp. 68–69 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-23
 
 #### 24. Cuberant Lakes
 
@@ -352,7 +352,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 6 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Cutthroats, Rainbows, Tigers (historical only: Grayling, Unknown); lake elev 10250–10500 ft; 57.6 ac total, largest 22 ac
 - **Tags:** camping, fishing, mountain-pass, bugs, multi-day, toilets
 - **Summary:** Most of the Cuberant Lakes are nestled in the pines, except for Cuberant #4, which sits against a talus slope in a picture-book setting. Lake #4 is by far the largest and deepest of the Cuberant Lakes. This is a relatively short and easy hike for these mountains. Please note many online GPS services simply label the largest lake as Cuberant.
-- **Book:** pp. 72–73 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-24
+- **Book:** pp. 72–73 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-24
 
 #### 25. Lofty Lake Loop
 
@@ -362,7 +362,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 4 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats, Rainbows, Tigers; lake elev 10300–10820 ft; 54.5 ac total, largest 30 ac
 - **Tags:** camping, fishing, tiger-trout, steep, mountain-pass, peak, multi-day, toilets
 - **Summary:** A short, succinct loop trail with only 1,000 feet in elevation change makes for a rare treat in the vast forested lands of the High Uintas. A couple of trailside lakes make for beautiful picnic stops or campsites—or places simply to catch your breath and enjoy the setting. Extend your exploration with spur trails to Cutthroat Lake, the back-way into Ruth, or even a wayfinding scramble up Mount Marsell, Scout Peak, or Lofty Peak.
-- **Book:** pp. 72–73 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-25
+- **Book:** pp. 72–73 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-25
 
 #### 26. Ruth Lake Trailhead to Ruth Lake
 
@@ -372,7 +372,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 3 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats, Rainbows, Tigers; lake elev 10300–10820 ft; 43.5 ac total, largest 30 ac
 - **Tags:** camping, fishing, navigation, crowded, waterfall, family, multi-day, paved-access, toilets
 - **Summary:** When you get to Ruth Lake, don’t forget to look behind you. Hayden Peak looms larger than life just across the canyon to the west. The view from Ruth Lake is a must for shutterbugs looking for some real photo trophies. You’ll want to hang this one on your wall.
-- **Book:** pp. ? · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-26
+- **Book:** pp. ? · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-26
 
 #### 27. Whiskey Creek Trail to Bourbon Lake
 
@@ -382,7 +382,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 2 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Grayling; lake elev 9780–10340 ft; 5.7 ac total, largest 5 ac
 - **Tags:** fishing, wildflowers, family, multi-day, 4wd, toilets
 - **Summary:** Everyone says this is an easy hike. Compared to many treks in the High Uintas, it is. But the 675 feet of elevation the trail picks up, although gradual, may catch up with some hikers. So take it easy, don’t rush the switchbacks, keep an eye out for moose, and raise a glass to this well-marked trail and gorgeous little lake.
-- **Book:** pp. ? · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-27
+- **Book:** pp. ? · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-27
 
 #### 28. Main Fork Trailhead to Hell Hole Lake (and A-1 Peak)
 
@@ -392,7 +392,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 1 fishable & uncaught, 1 caught, 0 starred; species: Brookies (historical only: Cutthroats); lake elev 9360–10340 ft; 32.1 ac total, largest 23 ac
 - **Tags:** camping, fishing, navigation, steep, peak, river-crossing, horses, multi-day, toilets
 - **Summary:** There are faster, more scenic ways to get into the High Uintas Wilderness. But that fact also means you may have more solitude at Hell Hole than other lakes. And from a base camp by the lake, you can have a go at two nearby peaks. As for anglers, Hell Hole is a gamble. Some years it’s hot, and some years it’s not. It’s a relatively small lake and will depend on the planting schedules, winter survival, and catch-and-release rates. Equestrians: There’s plenty of feed but watch out for the very rocky second half of the hike. Everyone: The marshlands of Hell Hole are extremely buggy early in the season.
-- **Book:** pp. ? · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-28
+- **Book:** pp. ? · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-28
 
 #### 29. Ryder and McPheters Lakes
 
@@ -402,7 +402,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 1 fishable & uncaught, 3 caught, 0 starred; species: — (historical only: Brookies); lake elev 10470–10630 ft; 35.5 ac total, largest 24.4 ac
 - **Tags:** camping, fishing, navigation, steep, crowded, solitude, waterfall, toilets
 - **Summary:** The difficulty of the Stillwater Trail is a little deceiving. It’s not the elevation gain. It's the rocks, river crossings, and mud holes that can dampen spirits. The trail picks up some altitude. It's an easy climb until the Kermsuh-Ryder junction. Then the trail proceeds up, up, and up.
-- **Book:** pp. 87, 90 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-29
+- **Book:** pp. 87, 90 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-29
 
 #### 30. Kermsuh Lake
 
@@ -412,7 +412,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 1 fishable & uncaught, 0 caught, 0 starred; species: — (historical only: Cutthroats); lake elev 10300–10300 ft; 11.8 ac total, largest 11.8 ac
 - **Tags:** fishing, navigation, steep, river-crossing, horses, solitude, toilets
 - **Summary:** Do you want to get lost? No, this isn’t about losing your direction, but about contemplating losing the vast majority of crowds that trample the Stillwater Trail. Kermsuh is a gorgeous, isolated lake situated in rocky, timbered country just inside the Wilderness area. Upon arrival you’ll be greeted by several high peaks, including Hayden, Kletting, and A–1. These major peaks have connecting ridges that almost completely enclose the West Basin. This feature, and the fact that Kermsuh is the only lake in the basin, makes the area a remote and peaceful place.
-- **Book:** pp. 87, 90 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-30
+- **Book:** pp. 87, 90 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-30
 
 #### 31. Lake BR–24
 
@@ -422,7 +422,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 2 fishable & uncaught, 1 caught, 0 starred; species: Tigers (historical only: Brookies, Cutthroats); lake elev 10460–10750 ft; 59.2 ac total, largest 43.7 ac
 - **Tags:** camping, fishing, horses, toilets
 - **Summary:** In honor of all the great nameless lakes in the High Uintas, this book needed to spotlight one of the best. Some of the lakes without names are the least visited and have become some of the real jewels of the area. If solitude and a chance for some unspoiled fishing rank high on your list, then try the lakes with no names, especially the ones with no trails. That being said, BR–24 is known as Emerald Lake in some hiking circles.
-- **Book:** pp. 87, 90 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-31
+- **Book:** pp. 87, 90 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-31
 
 #### 32. Amethyst Lake
 
@@ -432,7 +432,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 2 fishable & uncaught, 1 caught, 0 starred; species: Tigers (historical only: Brookies, Cutthroats); lake elev 10460–10750 ft; 59.2 ac total, largest 43.7 ac
 - **Tags:** fishing, river-crossing, horses, toilets
 - **Summary:** Set in the top of a glacial cirque, this is one of the prettiest alpine lakes in the High Uintas. A few small pines dot its shores, and the massive cliffs and talus slopes add grandeur to the emerald-green waters. This large lake (42.5 acres) attracts moderate crowds because of its scenery and frequently fast fishing. The hike in is only 6.3 miles each way, but it seems longer. Two thousand feet of elevation is a lot to gain in such a short distance.
-- **Book:** pp. 87, 90 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-32
+- **Book:** pp. 87, 90 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-32
 
 ### Part 2: U.S. 40 to the South Slope
 
@@ -444,7 +444,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 5 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats; lake elev 10140–10500 ft; 271.2 ac total, largest 173 ac
 - **Tags:** camping, fishing, steep, mountain-pass, 4wd, toilets
 - **Summary:** Grandaddy Lake—the name implies it is the largest and best of all the lakes. Is it the largest? Yes, it is easily the largest natural lake in the High Uintas. Is it the best? Judging solely by the number of backcountry visitors, the answer to that question also is yes. Usage is very heavy at this well-known lake that can be extremely busy in July, August, and early September. If you are looking for solitude, a different wilderness destination should be considered. Litter can be a problem, so clean up your mess, leaving a spotless campsite for the next guests.
-- **Book:** pp. 98, 100 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-33
+- **Book:** pp. 98, 100 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-33
 
 #### 34. Fern Lake
 
@@ -454,7 +454,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 4 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats; lake elev 10140–10350 ft; 246.5 ac total, largest 173 ac
 - **Tags:** fishing, cross-country, steep, mountain-pass, solitude, 4wd, toilets
 - **Summary:** This hike is a pretty one, but it seems like it’s uphill both ways. You’ll rise more than 900 feet traversing Hades Pass, and then you’ll give almost all that elevation back as you descend to Fern Lake. Even though the elevation gain is a mere 100 feet in less than 6 miles, level ground is unheard of. If you’re not forging up, you’re headed down.
-- **Book:** pp. 98, 100 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-34
+- **Book:** pp. 98, 100 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-34
 
 #### 35. Pine Island Lake
 
@@ -464,7 +464,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 5 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats; lake elev 10230–10350 ft; 333.1 ac total, largest 173 ac
 - **Tags:** fishing, steep, mountain-pass, horses, 4wd, toilets
 - **Summary:** It’s no wonder this lake is popular—it is gorgeous. If aesthetics and a nice campsite are important to you, then check out Pine Island Lake. It is the gem of the West Fork of Rock Creek. Small, pine-covered islands rise peacefully out of the clear blue waters of this large natural lake. There is something especially appealing about islands on a wilderness lake. In the background, a steep talus slope adds to the alpine atmosphere. You can easily just sit in camp, munch granola bars, and enjoy the view.
-- **Book:** pp. 98, 100 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-35
+- **Book:** pp. 98, 100 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-35
 
 #### 36. Governor Dern Lake
 
@@ -474,7 +474,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 7 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats; lake elev 9930–10350 ft; 367.7 ac total, largest 173 ac
 - **Tags:** camping, fishing, steep, mountain-pass, horses, crowded, 4wd, toilets
 - **Summary:** A lot of equestrians use this area. Between Governor Dern Lake and the Pinto Lake area there are lots of places to graze your horses and plenty of roomy campsites. Once you get past Hades Pass, the journey is a gentle ride through the pine forests of the West Fork of the Rock Creek drainage. Or you can avoid the steep pass and reach Governor Dern Lake from the Highline trailhead. It is a couple of miles longer this way, but it may be easier on the animals. There are campfire and firewood gathering restrictions within 0.25 mile of Governor Dern, Pinto, and Rainbow Lakes.
-- **Book:** pp. 98, 100 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-36
+- **Book:** pp. 98, 100 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-36
 
 #### 37. Allen Lake
 
@@ -484,7 +484,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 6 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats, Grayling; lake elev 9980–10500 ft; 260.4 ac total, largest 173 ac
 - **Tags:** camping, fishing, navigation, mountain-pass, horses, 4wd, toilets
 - **Summary:** For backpackers arriving via Grandview (or via the Highline Trail to Four Lakes Basin), Allen provides a scenic retreat from the more pressured areas. Anglers seeking large arctic grayling must visit Allen Lake. Grayling over a pound are reported and fishing pressure is light. A few big brook trout inhabit this lake too. You won’t catch a lot of fish at Allen Lake, but what you do catch will be sizable.
-- **Book:** pp. 98, 100 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-37
+- **Book:** pp. 98, 100 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-37
 
 #### 38. Ledge Lake
 
@@ -494,7 +494,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 2 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats; lake elev 10590–11285 ft; 49.9 ac total, largest 27.4 ac
 - **Tags:** fishing, steep, mountain-pass, horses, paved-access, toilets
 - **Summary:** Geologically, this area is the oldest in the High Uintas. Some refer to it as the backbone of the Uintas, while others call it the heart. After all, the upper basins of Rock Creek are shaped somewhat like a heart. Ledge Lake is a haven in this vast heart, providing everything one could want in a camp. Spring water is abundant, as is horse pasture, but so are mosquitoes around the waterlogged outlet. The fishing may be surprising. Brook trout weigh in at well over a pound and seem to prefer an olive-green scud fly for dinner. The problem is finding out what time dinner is served.
-- **Book:** pp. 106–107 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-38
+- **Book:** pp. 106–107 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-38
 
 #### 39. Sinowauvf Basin
 
@@ -504,7 +504,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 8 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Grayling; lake elev 10230–10380 ft; 79.7 ac total, largest 25.6 ac
 - **Tags:** camping, fishing, cross-country, mountain-pass, peak, horses, crowded, solitude, multi-day, paved-access, toilets
 - **Summary:** A compass is a must in this heavily timbered area. It’s easy to get headed in the wrong direction as the trails twist, turn, intersect, and sometimes disappear in Sinowauvf Basin. Getting into the area is not a problem but finding your way around Sinowauvf Basin can be confusing. Keep your map and compass handy, keep your group together, and keep the insect repellent nearby. There is plenty of spring water, but remember to properly filter water before drinking.
-- **Book:** pp. 106–107 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-39
+- **Book:** pp. 106–107 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-39
 
 #### 40. Rudolph Lakes
 
@@ -514,7 +514,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 4 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats; lake elev 10450–10450 ft; 35.2 ac total, largest 25.6 ac
 - **Tags:** camping, fishing, paved-access, toilets
 - **Summary:** There are three different routes to Rudolph Lakes #1, #2, and #3. One trail begins at Moon Lake via Brown Duck Trail; total distance 9.5 miles one way. Another starts at the end of the challenging ATV Dry Ridge Road. Perhaps the most popular of the three begins right here at the Rock Creek trailhead.
-- **Book:** pp. 106–107 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-40
+- **Book:** pp. 106–107 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-40
 
 #### 41. End of FR 143 to Arta Lake
 
@@ -524,7 +524,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 3 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats; lake elev 10310–10700 ft; 184.4 ac total, largest 173 ac
 - **Tags:** fishing, navigation, steep, peak, solitude, multi-day, paved-access, toilets
 - **Summary:** Long drive, short hike, and solitude pretty well sum up this day trip. No matter which way you come from, you will probably be in for a long drive before you start hiking. But if you would rather spend more time driving through scenic country than hiking it, then this hike may interest you, especially if you’re looking to get away from other people.
-- **Book:** pp. ? · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-41
+- **Book:** pp. ? · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-41
 
 #### 42. Kidney Lake
 
@@ -534,7 +534,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 4 fishable & uncaught, 0 caught, 0 starred; species: Cutthroats, Grayling, Tiger muskie (historical only: Brookies, Channel catfish, Rainbows, Tigers); lake elev 10186–10731 ft; 306.7 ac total, largest 190 ac
 - **Tags:** fishing, mountain-pass, horses, crowded, solitude, multi-day, paved-access, toilets
 - **Summary:** Topping out at 190 acres, Kidney Lake is one of the largest reservoirs in the High Uintas backcountry. Just try walking around it, and you’ll become a believer. Because of its “kidney” shape, you don’t really see all of it at any one time, so it is even bigger than it looks.
-- **Book:** pp. 118–119 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-42
+- **Book:** pp. 118–119 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-42
 
 #### 43. Clements Reservoir
 
@@ -544,7 +544,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 10 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Chub, Cutthroats, Grayling, Tiger muskie (historical only: Channel catfish, Tigers); lake elev 10150–10594 ft; 375.9 ac total, largest 190 ac
 - **Tags:** fishing, cross-country, steep, mountain-pass, crowded, paved-access, toilets
 - **Summary:** After a long, steep climb, Clements Reservoir will look mighty good. Sheltered campsites are abundant along the northern shoreline, and you can easily imagine what it would be like to have a cabin overlooking the lake. The setting is rustic and peaceful.
-- **Book:** pp. 118–119 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-43
+- **Book:** pp. 118–119 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-43
 
 #### 44. Picture Lake and Three Lakes
 
@@ -554,7 +554,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 6 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Grayling (historical only: Cutthroats, Rainbows); lake elev 10550–10860 ft; 60.2 ac total, largest 21 ac
 - **Tags:** camping, fishing, cross-country, horses, multi-day, paved-access, toilets
 - **Summary:** Your arrival at East Basin Pass may lead you to believe that no one has ever been here before. An expanse of wilderness spreads out in front of your eyes, with Lambert Meadow at the base of the ridgeline 6 miles distant. It’s an inspirational view of the whole Upper Lake Fork drainage. It’s a lot of mileage whether on foot or on horseback, and your effort is sure to be rewarded.
-- **Book:** pp. 118–119 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-44
+- **Book:** pp. 118–119 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-44
 
 #### 45. Ottoson Basin
 
@@ -564,7 +564,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 2 fishable & uncaught, 0 caught, 0 starred; species: Cutthroats; 21.5 ac total, largest 12.4 ac
 - **Tags:** camping, fishing, mountain-pass, horses, paved-access, toilets
 - **Summary:** Ottoson Basin offers one of the grandest views in the High Uintas, especially when viewed from the top of Cleveland Pass. Shutterbugs will want to be on the pass in early morning when the sun illuminates the peaks. Mornings are also very good for fishing, but you can always find fast fishing in the evening. If you want superb photos, choose the early hike up Cleveland Pass.
-- **Book:** pp. 125, 118 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-45
+- **Book:** pp. 125, 118 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-45
 
 #### 46. Upper Lake Fork (Lambert Lake to Oweep Basin)
 
@@ -574,7 +574,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 5 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats, Splake, Tigers; lake elev 10865–11268 ft; 45.8 ac total, largest 28 ac
 - **Tags:** camping, fishing, cross-country, steep, mountain-pass, horses, paved-access, toilets
 - **Summary:** The upper regions of the Lake Fork drainage display some of the finest scenery in the High Uintas. From one pass to another, grand panoramas seem to enchant the mind. Red Knob Pass grants access to two other beautiful drainages, while Nahguch and Porcupine Passes branch into others. To say the least, this area is a gold mine for photographers. However, the Lake Fork Trail from Moon Lake is not as seductive as it winds through a 14-mile corridor of tall standing pines. Not much else can be seen until you get to the upper basins. If you prefer filtering spring water to drink, make a note of which lakes in the area have a supply.
-- **Book:** pp. 125, 118 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-46
+- **Book:** pp. 125, 118 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-46
 
 #### 47. Toquer Lake
 
@@ -584,7 +584,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 1 fishable & uncaught, 0 caught, 0 starred; species: Cutthroats (historical only: Brookies); lake elev 10470–10470 ft; 11.1 ac total, largest 11.1 ac
 - **Tags:** fishing, navigation, river-crossing, 4wd, toilets
 - **Summary:** This is one of those places where you go to be alone. Toquer Lake is the only body of water in the area deserving of the designation “lake.” It’s not on the way to anywhere else, so very few hikers bother checking it out. But if you’re looking for a short, mild hike that leads to serene scenery and a great chance for some genuine solitude, then look no further.
-- **Book:** pp. 129–130 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-47
+- **Book:** pp. 129–130 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-47
 
 #### 48. Spider Lake
 
@@ -594,7 +594,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 6 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats; lake elev 10820–11208 ft; 181.2 ac total, largest 82 ac
 - **Tags:** camping, fishing, bugs, multi-day, 4wd, toilets
 - **Summary:** This unique trail pairs 3,600 feet in elevation gain from one of the Uintas most dramatic up-and-down hikes with a plethora of outstanding lakes. Acclimated distance hikers comfortable on rocky trails should give this route a close look. Spider is named for its many elongated bays that can offer interesting fishing for cutthroat and brook trout. And it’s just one of many fishing holes in the Garfield Basin. Depending on your tolerance for elevation and distance, this hike may become a favorite you return to or the one you’re glad you did once.
-- **Book:** pp. 129–130 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-48
+- **Book:** pp. 129–130 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-48
 
 #### 49. Water Lily Lake
 
@@ -604,7 +604,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 1 fishable & uncaught, 0 caught, 0 starred; species: Brookies; lake elev 9346–9346 ft; 20 ac total, largest 20 ac
 - **Tags:** camping, fishing, steep, bugs, toilets
 - **Summary:** A short but strenuous day hike can put you at beautiful Lily Lake, surrounded by pines and quaking aspens that hiss in the breeze. The lake is clear and deep except for the southern end, where numerous aquatic plants grow in the shallows. If Swift Creek Campground is your base camp, Lily Lake is an excellent place to escape the crowds and find some peace and quiet.
-- **Book:** pp. 135–136 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-49
+- **Book:** pp. 135–136 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-49
 
 #### 50. Deer Lake
 
@@ -614,7 +614,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 2 fishable & uncaught, 0 caught, 0 starred; species: Cutthroats, Grayling (historical only: Brookies); lake elev 9980–10240 ft; 20.5 ac total, largest 12 ac
 - **Tags:** camping, fishing, grayling, horses, crowded, multi-day, toilets
 - **Summary:** Early in the summer season, before the higher country opens up, you may find yourself wanting some alpine adventure. Here’s a lake that just might provide some early relief from cabin fever; that is, if you call mid-June early. Pack some warm clothes. The temperatures can still be pretty brisk during June. Much of the hike is steep, but it’s not very far. Deer Lake makes an excellent primer hike that can easily fit into a weekend.
-- **Book:** pp. 135–136 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-50
+- **Book:** pp. 135–136 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-50
 
 #### 51. Farmers Lake
 
@@ -624,7 +624,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 9 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats; lake elev 10240–11008 ft; 232.7 ac total, largest 63 ac
 - **Tags:** camping, fishing, horses, multi-day, toilets
 - **Summary:** If you like to get a lot of elevation gain out of the way early, then this hike is for you. Right from the start, you’ll traverse a long series of switchbacks that pick up 1,000 feet in 1.5 miles. Then the trail levels off for a few miles before another steep ascent to Deer Lake. Deer Lake is a great place to stop for lunch, and maybe catch a few neglected brook trout.
-- **Book:** pp. 135–136 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-51
+- **Book:** pp. 135–136 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-51
 
 #### 52. Timothy Lakes
 
@@ -634,7 +634,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 7 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats; lake elev 10240–10990 ft; 214 ac total, largest 63 ac
 - **Tags:** camping, fishing, toilets
 - **Summary:** Timothy Lakes offer an excellent chance for an “above timberline” experience. A grueling 9-mile hike places you in an open basin where Swift Creek originates. Equestrians and fly fishers adore this area because of the wide-open tundra. Horses have plenty of room to roam, and anglers have plenty of room for back casting. Fishing is a primary reason for coming here. Combine the three Timothy Lakes with the three Carrol Lakes, and you have some of the finest fishing you can find packed into 2 miles.
-- **Book:** pp. 135–136 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-52
+- **Book:** pp. 135–136 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-52
 
 #### 53. Milk Lake
 
@@ -644,7 +644,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 3 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats; lake elev 10240–10990 ft; 92.5 ac total, largest 63 ac
 - **Tags:** camping, fishing, mountain-pass, horses, toilets
 - **Summary:** Milk Lake is for loners. In fact, Milk Lake is a loner itself. Situated high on the east side of the Yellowstone drainage, there are no other lakes for miles in any direction. It’s a long, steep hike whether you’re following Yellowstone Creek or coming over Bluebell Pass from the Swift Creek drainage. The Swift Creek route is shorter by 3 miles and is the suggested route. You’ll need to traverse Bluebell Pass, but it is not bad as mountain passes go, even by horseback.
-- **Book:** pp. 135–136 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-53
+- **Book:** pp. 135–136 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-53
 
 #### 54. North Star Lake
 
@@ -654,7 +654,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 6 fishable & uncaught, 0 caught, 0 starred; species: Cutthroats (historical only: Brookies, Grayling); lake elev 11009–11685 ft; 118.4 ac total, largest 82 ac
 - **Tags:** camping, fishing, mountain-pass, horses, crowded, solitude, multi-day, toilets
 - **Summary:** Of all the lakes in the High Uintas, North Star is considered to be closest to the exact center of this mountain range. Due to this fact, access is possible from several locations.
-- **Book:** pp. 135–136 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-54
+- **Book:** pp. 135–136 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-54
 
 #### 55. Kings Peak via the South Slope (Swift Creek or Uinta)
 
@@ -664,7 +664,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 8 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats (historical only: Grayling); lake elev 10390–10995 ft; 284.1 ac total, largest 63 ac
 - **Tags:** camping, fishing, mountain-pass, river-crossing, crowded, family, toilets
 - **Summary:** Kings Peak, the highest point in the state of Utah, is the most popular destination of peak baggers in the High Uintas and in the entire Beehive State. Novice mountaineers with no special equipment can even reach it. However, it is a long, steep hike to the top of the 13,528-foot summit. Good health and conditioning are a must. More than 10,000 people attempt to reach the top of Utah each year according to the nonprofit group Friends of Kings Peak. There are several routes to the top of Kings Peak, all of them long and each providing a different backcountry hiking experience. This chapter describes two approaches from the South Slope. No matter the route, hikers should plan to head to the top early in the morning and return by early afternoon to avoid the trademark afternoon thunderstorms on the High Uintas. These summer storms frequently include lightning, and the highest point in Utah is the last place you want to be when the electrified bolts are coming from the sky. To time this correctly, most hikers plan at least one overnight at a nearby lake, basin, or pass—although from the south you’ll likely need two or more nights of backpacking preparedness.
-- **Book:** pp. 147, 149, 135, 151 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-55
+- **Book:** pp. 147, 149, 135, 151 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-55
 
 #### 56. Chain Lakes
 
@@ -674,7 +674,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 6 fishable & uncaught, 0 caught, 0 starred; species: Cutthroats (historical only: Brookies); lake elev 10450–11320 ft; 157 ac total, largest 62 ac
 - **Tags:** camping, fishing, mountain-pass, horses, wilderness, multi-day, paved-access, toilets
 - **Summary:** Chain Lakes are three connecting reservoirs and one natural lake. Campsites and horse pasture are somewhat limited at all four lakes, but they receive heavy camping and fishing anyway—and at times hikers report seeing more equestrians than hikers on this trail. During the late summer months, the reservoirs experience serious fluctuation, and angling pressure decreases rapidly. However, from July to mid-August pan-size brookies are abundant at all reservoirs and should produce fast fishing. Chain #4 is a natural lake located up a few steep switchbacks on a plateau. Anglers don’t utilize this lake as much as the others, but this is often the best fishing hole during late summer.
-- **Book:** pp. 151–152 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-56
+- **Book:** pp. 151–152 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-56
 
 #### 57. Lake Atwood
 
@@ -684,7 +684,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 7 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats (historical only: Goldens); lake elev 10580–11550 ft; 186.6 ac total, largest 62 ac
 - **Tags:** fishing, steep, mountain-pass, paved-access, toilets
 - **Summary:** Lake Atwood houses one of the largest brook trout populations in the High Uintas. With this in mind, you just may want to throw your line in here and forget about all the surrounding lakes. That said, Atwood receives most of the attention in this basin, and angling may be hampered by semi-crowded shorelines. Allred and Mount Emmons Lakes have the same problem. Although fast fishing usually occurs, so do crowds. This is partly because Atwood and Allred offer the best camping opportunities in Atwood Basin. Lake Atwood loses much of its appeal later in the summer, when it draws down about 15 feet.
-- **Book:** pp. 151–152 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-57
+- **Book:** pp. 151–152 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-57
 
 #### 58. Painter Lakes
 
@@ -694,7 +694,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 6 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats; lake elev 10848–11402 ft; 79.6 ac total, largest 20 ac
 - **Tags:** fishing, steep, horses, paved-access, toilets
 - **Summary:** Painter Lakes take after their name. They are scattered about like little dabs of acrylic on a painter’s palette. This beautiful wilderness is characterized by gentle rolling hills and timbered terrain. Due to the remoteness and difficult travel to this basin, Painter Lakes remain blissfully free of people and debris.
-- **Book:** pp. 151–152 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-58
+- **Book:** pp. 151–152 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-58
 
 #### 59. Queant Lake
 
@@ -704,7 +704,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 1 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Cutthroats; lake elev 10700–10900 ft; 37 ac total, largest 23.1 ac
 - **Tags:** camping, fishing, horses, multi-day, 4wd, paved-access, toilets
 - **Summary:** A gentle hike, great camping, and a chance to get away from the campground masses—perhaps these are the reasons Queant Lake is so popular. While you’re likely to have neighbors here, it’s a whole lot better than spending the night with the RVs and roadside tenters. Besides, not all backpackers are loners. Many actually enjoy a little company, as long as backcountry etiquette is followed.
-- **Book:** pp. 160–161 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-59
+- **Book:** pp. 160–161 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-59
 
 #### 60. Fox Lake
 
@@ -714,7 +714,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 4 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Cutthroats; lake elev 10700–10950 ft; 177.6 ac total, largest 102 ac
 - **Tags:** camping, fishing, mountain-pass, horses, crowded, multi-day, 4wd, paved-access, toilets
 - **Summary:** Although Fox is a primitive lake, it just doesn’t always boast all the hallmarks of a designated Wilderness area. Large groups of campers bring horses loaded with all their “essentials” and settle in for a good time. Those who prefer a place that is a little less conspicuous may need to look elsewhere, depending on when you visit. Fox Lake gets more than its share of high-impact camping.
-- **Book:** pp. 160–161 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-60
+- **Book:** pp. 160–161 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-60
 
 #### 61. Kidney Lakes
 
@@ -724,7 +724,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 9 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Cutthroats, Tigers; lake elev 10700–11130 ft; 246.7 ac total, largest 102 ac
 - **Tags:** camping, fishing, mountain-pass, river-crossing, horses, 4wd, paved-access, toilets
 - **Summary:** Several lakes make up the Kidney Lakes Basin, and most receive substantial camping or fishing use. Kidney Lakes are no exception. Large recreational groups usually occupy both Kidney Lakes. Plenty of campsites can be found between the lakes and around West Kidney. Fishing is often good for brook trout and an occasional 1-pound rainbow. Moose are often seen feeding in the shallows of both Kidney Lakes. Be aware of these large animals and give them their space. Although usually docile, an upset moose is extremely dangerous.
-- **Book:** pp. 160–161 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-61
+- **Book:** pp. 160–161 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-61
 
 #### 62. Davis Lakes
 
@@ -734,7 +734,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 6 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Cutthroats; lake elev 10700–11060 ft; 203.2 ac total, largest 102 ac
 - **Tags:** camping, fishing, cross-country, navigation, 4wd, paved-access, toilets
 - **Summary:** Nestled in a high cirque, Davis Lakes offer a true alpine experience. The surrounding hills are composed of lush green grasses and scattered pines that may remind you of the Swiss Alps. Equestrians will appreciate all the space, pasture, and water for their animals, as well as the fact that horses cannot really roam any higher thanks to the steep divide rising behind them.
-- **Book:** pp. 160–161 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-62
+- **Book:** pp. 160–161 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-62
 
 #### 63. Reader Lake
 
@@ -744,7 +744,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 1 fishable & uncaught, 0 caught, 0 starred; species: Cutthroats (historical only: Grayling); lake elev 10960–10960 ft; 10.2 ac total, largest 10.2 ac
 - **Tags:** camping, navigation, steep, solitude, bugs, paved-access, toilets
 - **Summary:** You might take a hint from this lake’s name and bring a good book to read and binoculars to watch for wildlife. This is a good place to be alone and relax. Reader Lake is no longer managed as a fishery but does get some trout moving in from Reader Creek. Here is a respite for the non-fishing backpacker.
-- **Book:** pp. 170–171 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-63
+- **Book:** pp. 170–171 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-63
 
 #### 64. Walk-Up Lake
 
@@ -754,7 +754,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 2 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats; lake elev 10600–10607 ft; 151.8 ac total, largest 135 ac
 - **Tags:** fishing, steep, crowded, solitude, paved-access, toilets
 - **Summary:** Walk-Up Lake is not as easy as its name implies. You don’t want to be in a hurry going through this country. It’s both beautiful and treacherous. But cirque lovers will adore this bowl carved out eons ago when glaciers ruled the High Uintas, and solitude seekers should like this place, since it sees very few visitors.
-- **Book:** pp. 170–171 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-64
+- **Book:** pp. 170–171 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-64
 
 #### 65. Cliff Lake
 
@@ -764,7 +764,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 7 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats, Tigers; lake elev 10390–11000 ft; 335.1 ac total, largest 135 ac
 - **Tags:** camping, fishing, river-crossing, horses, paved-access, toilets
 - **Summary:** Simply put—this is quite a quiet, rugged place.
-- **Book:** pp. 170–171 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-65
+- **Book:** pp. 170–171 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-65
 
 #### 66. Kibah Lakes
 
@@ -774,7 +774,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 3 fishable & uncaught, 0 caught, 0 starred; species: Brookies (historical only: Rainbows); lake elev 10495–10750 ft; 23.2 ac total, largest 8 ac
 - **Tags:** camping, fishing, cross-country, navigation, solitude, multi-day, 4wd
 - **Summary:** Since there are only poor campsites and horse access is nearly impossible, most people visiting Kibah Lakes are on day hikes from Paradise or Blanchett Park. To reach Blanchett Park, hike from a trail-head near the entrance to Paradise Campground or take the shorter route after driving about 3 to 4 miles to the end of jeep road FR 296, a northeast turn 0.5 mile south of Paradise Park Campground. Great camping areas and plenty of horse munchies are available at the park.
-- **Book:** pp. 177–178 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-66
+- **Book:** pp. 177–178 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-66
 
 #### 67. Deadman Lake
 
@@ -784,7 +784,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 4 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats; lake elev 10740–11160 ft; 26.2 ac total, largest 10 ac
 - **Tags:** camping, fishing, navigation, steep, mountain-pass, solitude, multi-day, 4wd
 - **Summary:** Although Deadman Lake lies in unsheltered, windy terrain, it gets a fair amount of visitation and used to be frequented by Scouts. A few fair campsites are found along the south shore, but horse pasture is a scarce commodity. Three other lakes reside near the head of Dry Fork Creek. From Deadman, these lakes are 1.5 to 5 miles away.
-- **Book:** pp. 177–178 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-67
+- **Book:** pp. 177–178 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-67
 
 #### 68. North and South Twin Lakes
 
@@ -794,7 +794,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 4 fishable & uncaught, 0 caught, 0 starred; species: Cutthroats (historical only: Brookies, Tigers); lake elev 10300–10745 ft; 40.3 ac total, largest 17.5 ac
 - **Tags:** camping, fishing, navigation, steep, horses, crowded, 4wd
 - **Summary:** Twin Lakes lie in marshy terrain characterized by open meadows interspersed with timber. Although these lakes receive heavy usage, many camping areas are available, especially around South Twin Lake. There is spring water at North Twin, but remember to filter it. Horse pasture is present at either lake, but South Twin has more. During summer, angling usage remains steady, and fishing is usually good.
-- **Book:** pp. 177–178 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-68
+- **Book:** pp. 177–178 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-68
 
 #### 69. Leidy Peak (Highline) to Lakeshore Lake
 
@@ -804,7 +804,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 3 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats, Rainbows, Tiger muskie, Tigers; lake elev 10332–10792 ft; 43.5 ac total, largest 25 ac
 - **Tags:** fishing, steep, mountain-pass, horses, 4wd
 - **Summary:** If sightseeing is on your agenda, then Lakeshore is a great place to visit. This picture-perfect lake rests in a meadow encased by partly timbered slopes and rolling tundra. The Alps from The Sound of Music come to mind. Oh and, unless you’re traveling with small children, there is the matter of bagging Leidy Peak.
-- **Book:** pp. ? · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-69
+- **Book:** pp. ? · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-69
 
 #### 70. The Highline Trail
 
@@ -814,7 +814,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 6 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Cutthroats, Rainbows, Tigers (historical only: Grayling); lake elev 10430–11301 ft; 341.7 ac total, largest 168.2 ac
 - **Tags:** camping, steep, mountain-pass, horses, multi-day, 4wd, toilets
 - **Summary:** You’ve heard of the Appalachian Trail and the Pacific Crest Trail. Maybe you’ve heard of the John Muir Trail in California. But have you heard of Utah’s Highline Trail? With most of the trail above 10,000 feet, the 100-mile trek has a limited hiking season and its elevation commands respect. It takes a lot of stamina and willpower to take on a long hike lasting many days or even weeks—and may bring into immediate focus the reasons behind ultralight backpacking practices once you’ve gone just a few miles under the full weight of your pack. On that note, do not make Highline your first backpacking trip. Get in shape by taking on a trial trip or two—or three!—each time pushing your distance to know how many miles you are capable of covering in a day. But then, there is no “right way” to tackle Highline. If you are strong enough, conditioned enough, well prepared, and have enough time based on your chosen itinerary, then maybe you can join the elite long-haulers on the Highline Trail.
-- **Book:** pp. ? · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-70
+- **Book:** pp. ? · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-70
 
 ### Part 3: I-80 to the North Slope
 
@@ -826,7 +826,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 2 fishable & uncaught, 0 caught, 0 starred; species: Tigers (historical only: Cutthroats); lake elev 10470–10860 ft; 13.7 ac total, largest 10.5 ac
 - **Tags:** camping, fishing, cross-country, navigation, steep, mountain-pass, river-crossing, horses, bugs, 4wd, toilets
 - **Summary:** The hikes of the North Slope can feel increasingly remote the farther east you go. Here on the western side, proximity to Highway 150 can lead to considerable traffic at this trailhead. Despite sometimes muddy conditions, the East Fork Bear River drainage receives moderate to heavy usage from equestrians, backpackers, ambitious day hikers, and grazing cows on the open range—so keep chase-prone dogs on a leash and, you know, watch your step.
-- **Book:** pp. 194–195 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-71
+- **Book:** pp. 194–195 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-71
 
 #### 72. Allsop Lake
 
@@ -836,7 +836,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 1 fishable & uncaught, 0 caught, 0 starred; species: — (historical only: Cutthroats); lake elev 10580–10580 ft; 12.5 ac total, largest 12.5 ac
 - **Tags:** fishing, peak, horses, 4wd, toilets
 - **Summary:** What a pretty hike. The East Fork Bear River Trail caresses a wide, flowing river while steering leisurely by ruins of old log cabins, lush green meadows, and sky-reaching pines. Possible camping areas exist all along the river and all the way to the Allsop-Priord junction. After the junction, the Left Hand Fork Trail ascends high along the side of a steep ravine. Here you’ll find a stunning overlook of consecutive waterfalls gushing down a sheer rock canyon.
-- **Book:** pp. 194–195 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-72
+- **Book:** pp. 194–195 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-72
 
 #### 73. Bald Lake
 
@@ -846,7 +846,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 1 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Tigers (historical only: Cutthroats); lake elev 11030–11295 ft; 174.6 ac total, largest 168.2 ac
 - **Tags:** cross-country, navigation, crowded, bugs, wilderness, 4wd, toilets
 - **Summary:** Bald Lake is probably the only lake in the Smiths Fork drainage containing campsites that still only receive light fishing and camping use. This natural cirque lake harbors a large population of brook trout. Stocking has been discontinued, since natural reproduction has consistently met its quota. You should have no problem filling your skillet here. Bald Lake sits near a glacial talus slope with a snowy ice pack that is the main source of water for this alpine lake. Small, stunted pines dot the north and east shorelines where a few sheltered campsites are found. Just south of the lake, a spectacular panorama of the upper Smiths Fork drainage awaits your viewing.
-- **Book:** pp. 201, 204 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-73
+- **Book:** pp. 201, 204 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-73
 
 #### 74. East Fork Blacks Fork
 
@@ -856,7 +856,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 1 fishable & uncaught, 0 caught, 0 starred; species: Cutthroats, Tigers; lake elev 10878–10878 ft; 14.8 ac total, largest 14.8 ac
 - **Tags:** fishing, mountain-pass, horses, multi-day, 4wd, toilets
 - **Summary:** Some high mountain passes are inaccessible much of the summer. Red Knob is no exception. After a long, hard winter, the northeast side of Red Knob Pass is plagued with snowdrifts until the middle of August. You may try your luck during late July, but it could be a rugged trip. Snowdrifts are difficult to cross when hoisting a heavy pack; so is the East Fork River when the snowfields melt and fill its banks to capacity. Even when these mountains experience a light winter, Red Knob should not be attempted from the East Fork Trail until mid-July.
-- **Book:** pp. 201, 204 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-74
+- **Book:** pp. 201, 204 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-74
 
 #### 75. Little East Fork
 
@@ -866,7 +866,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 5 fishable & uncaught, 0 caught, 0 starred; species: Brookies (historical only: Cutthroats); lake elev 10561–11421 ft; 24.3 ac total, largest 7.1 ac
 - **Tags:** camping, fishing, navigation, mountain-pass, horses, multi-day, 4wd, toilets
 - **Summary:** Open, windswept tundra dotted with alpine lakes characterizes this remote hike. The Little East Fork Blacks Forks drainage has several tiny, high lakes that almost nobody visits. Camping opportunities are few, firewood is scarce, spring water is hard to find, horse pasture is scant, and there are no trails to the lakes. If you’re looking for solitude and a chance to discover some unknown waters, here it is. You’ve got to have a sense of adventure, but you’ll know you’ve been to some of the least-traveled country these mountains have to offer.
-- **Book:** pp. 201, 204 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-75
+- **Book:** pp. 201, 204 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-75
 
 #### 76. Hessie Lake
 
@@ -876,7 +876,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 2 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Cutthroats, Tigers; lake elev 10500–10669 ft; 18.8 ac total, largest 13.2 ac
 - **Tags:** camping, fishing, steep, river-crossing, horses, crowded, toilets, fee-area
 - **Summary:** Expect heavy weekend pressure at this popular lake. Several well-used camping areas are found along the east and south sides of the lake. However, firewood is limited. Heavily timbered shorelines make fly casting difficult, and for some reason cutthroat trout are quite skeptical. But by late evening, the fish become a little hungry and not so particular.
-- **Book:** pp. 209–210 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-76
+- **Book:** pp. 209–210 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-76
 
 #### 77. Red Castle Lakes
 
@@ -886,7 +886,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 2 fishable & uncaught, 2 caught, 0 starred; species: Brookies, Tigers (historical only: Cutthroats); lake elev 11152–11295 ft; 260.4 ac total, largest 168.2 ac
 - **Tags:** camping, fishing, steep, mountain-pass, river-crossing, horses, crowded, toilets, fee-area
 - **Summary:** Red Castle Lake is one of the largest and deepest lakes in the High Uintas. Red Castle is set in a beautiful steep-walled basin. The reddish-colored mountain is shaped like a medieval castle.
-- **Book:** pp. 209–210 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-77
+- **Book:** pp. 209–210 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-77
 
 #### 78. Alligator Lake
 
@@ -896,7 +896,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 1 fishable & uncaught, 0 caught, 0 starred; species: — (historical only: Brookies, Cutthroats); lake elev 10033–10033 ft; 14.5 ac total, largest 14.5 ac
 - **Tags:** camping, fishing, horses, family, toilets
 - **Summary:** No, this lake is not a swamp where alligators feed. In fact, it’s rather uncommon to encounter any reptile above 9,000 feet in the High Uintas. However, Alligator Lake can be enjoyed by human creatures, and its relatively shorter length and appealing name make it a good choice for families. Dominant pressure persists on weekends, but during the weekdays you should experience solitude.
-- **Book:** pp. 210, 216 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-78
+- **Book:** pp. 210, 216 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-78
 
 #### 79. Bear Lake
 
@@ -906,7 +906,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 2 fishable & uncaught, 0 caught, 0 starred; species: Brookies (historical only: Cutthroats); lake elev 10661–10767 ft; 24.1 ac total, largest 16.9 ac
 - **Tags:** camping, fishing, horses, toilets
 - **Summary:** Surrounded by mature pines, Bear Lake offers a quiet picture-book setting for the weary traveler. Its deep, placid waters seem to beckon, “Rest here, rest here.” And a lot of hikers do. Bear Lake receives its share of backpackers that come to visit the popular Henrys Fork drainage. You might have some company here, but there are plenty of nice campsites, and the pine trees will serve as privacy barriers.
-- **Book:** pp. 210, 216 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-79
+- **Book:** pp. 210, 216 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-79
 
 #### 80. Henrys Fork Lake
 
@@ -916,7 +916,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 6 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Cutthroats, Tigers; lake elev 10740–11443 ft; 126.6 ac total, largest 33.1 ac
 - **Tags:** camping, fishing, cross-country, navigation, mountain-pass, peak, waterfall, multi-day, toilets
 - **Summary:** Henrys Fork is a beautiful alpine mountain basin. Winding streams flow through misty meadows, and tall pines hiss in the wind while caressing big boulder formations. Campsites are plentiful below timberline, and fishing for brook and cutthroat trout is exciting at most lakes and rivers. It’s a great place to visit. Though not as pressured as Dollar Lake, you may nevertheless have company here.
-- **Book:** pp. 210, 216 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-80
+- **Book:** pp. 210, 216 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-80
 
 #### 81. Kings Peak
 
@@ -926,7 +926,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 2 fishable & uncaught, 0 caught, 0 starred; species: Tigers (historical only: Brookies, Cutthroats); lake elev 10033–10785 ft; 24.2 ac total, largest 14.5 ac
 - **Tags:** camping, navigation, steep, mountain-pass, peak, crowded, bugs, multi-day, toilets
 - **Summary:** There’s a long way and then there are longer ways to reach Kings Peak. This is a long way. Utah’s tallest mountain reaches to 13,528 feet in elevation. While that means Utah can claim no 14ers in its lineup of summits, there is something about the remoteness of Kings Peak and the effort it takes to reach it that adds to the sense of accomplishment. Of course, dedicated hikers never tire of the thrill of reaching virtually any mountaintop, but this one will make you work. While the main trail will tally just over 27 miles round-trip, if you can manage some non-technical scrambling up some rocks, you can shave off a couple of miles.
-- **Book:** pp. 210, 216 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-81
+- **Book:** pp. 210, 216 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-81
 
 #### 82. West Fork Beaver Creek to Gilbert Lake
 
@@ -936,7 +936,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 4 fishable & uncaught, 0 caught, 0 starred; species: Brookies (historical only: Cutthroats); lake elev 10905–11295 ft; 36.2 ac total, largest 15.2 ac
 - **Tags:** camping, fishing, navigation, steep, horses, solitude, bugs, multi-day, 4wd, toilets
 - **Summary:** If fly fishing is your thing, then Gilbert Lake might be your idea of heaven. Plenty of open shoreline and lots of eager trout make this a good fly-fishing lake. This lake is a must for fly fishers seeking fast action for brookies and cutthroat trout. Make sure your casting arm is in good shape. It will give out long before the fish do.
-- **Book:** pp. ? · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-82
+- **Book:** pp. ? · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-82
 
 #### 83. Middle Beaver Creek to Beaver Lake
 
@@ -946,7 +946,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 4 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats, Tigers (historical only: Rainbows); lake elev 10148–10853 ft; 75.7 ac total, largest 38.3 ac
 - **Tags:** camping, fishing, cross-country, steep, river-crossing, horses, multi-day, 4wd, toilets
 - **Summary:** Beaver Lake is characterized by timbered shorelines, with shallow water prevailing on the east side of the lake. Excellent campsites are in a large park to the west, and several sources of treatable spring water and horse pasture are available in nearby meadows. Brook trout and a few cutthroat inhabit this lake.
-- **Book:** pp. 227 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-83
+- **Book:** pp. 227 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-83
 
 #### 84. Kabell Lakes
 
@@ -956,7 +956,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 2 fishable & uncaught, 0 caught, 0 starred; species: Cutthroats, Grayling, Rainbows, Tigers (historical only: Brookies); lake elev 10348–10348 ft; 14.7 ac total, largest 14.7 ac
 - **Tags:** camping, fishing, horses, wilderness
 - **Summary:** Even though the Kabell Lakes area is popular, campsites are scarce and heavy timber surrounds the shoreline. You may ask, “Why then is this place so popular?” Probably because Kabell is the only lake destination within a day’s hiking distance (round-trip) that can be reached from the ever-popular Hoop Lake.
-- **Book:** pp. 231–232 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-84
+- **Book:** pp. 231–232 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-84
 
 #### 85. Island Lake
 
@@ -966,7 +966,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 9 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats, Grayling, Rainbows, Tigers; lake elev 10348–10970 ft; 228.7 ac total, largest 117.8 ac
 - **Tags:** camping, fishing, navigation, steep, horses, solitude
 - **Summary:** Many lakes in the High Uintas claim the name of Island. However, this lake is the king of all the Island Lakes—mainly because it’s the biggest. Island Lake is reached from either Hoop or Spirit Lake. The Spirit Lake Trail is about a mile longer, but the elevation gain is 1,000 feet less.
-- **Book:** pp. 231–232 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-85
+- **Book:** pp. 231–232 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-85
 
 #### 86. Tamarack Lake
 
@@ -976,7 +976,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 6 fishable & uncaught, 0 caught, 0 starred; species: Cutthroats, Tigers (historical only: Brookies, Rainbows); lake elev 10270–10830 ft; 95.8 ac total, largest 79.1 ac
 - **Tags:** camping, fishing, steep, horses, solitude, toilets
 - **Summary:** If you’re looking for a nice excursion for the entire family, then Tama-rack Lake is a good choice. A well-maintained (but sometimes very rocky!) forest service trail takes off from the southwest side of Spirit Lake Campground. From here, it is only 1.4 miles south then west on the Middle Fork Trail. The trail splits about 1 mile from the trailhead, but both trails reunite near the east side of Tamarack Lake. The left-hand trail is a little bit longer but passes Jessen Lake; the right-hand trail heads straight to Tamarack Lake.
-- **Book:** pp. 235–236 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-86
+- **Book:** pp. 235–236 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-86
 
 #### 87. Fish Lake
 
@@ -986,7 +986,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 2 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats, Tigers (historical only: Rainbows); lake elev 10429–10685 ft; 117.4 ac total, largest 79.1 ac
 - **Tags:** fishing, navigation, steep, wildflowers, wilderness, toilets
 - **Summary:** For strong hikers looking for some real wilderness, circle this Fish Lake on your map. Seriously, Fish Lake sits within the boundaries of the designated High Uintas Wilderness area, which means dedicated hikers and folks on horseback will uncover the protected solitude and primitive recreation that make America’s Wilderness so special.
-- **Book:** pp. 235–236 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-87
+- **Book:** pp. 235–236 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-87
 
 #### 88. Daggett Lake
 
@@ -996,7 +996,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 2 fishable & uncaught, 0 caught, 0 starred; species: Cutthroats, Tigers (historical only: Grayling, Rainbows); lake elev 10462–10462 ft; 42.6 ac total, largest 42.6 ac
 - **Tags:** steep, horses, bugs, toilets
 - **Summary:** With shorter hikes to lakes on the other side of Spirit, Daggett gets a little less traffic. Afternoon thunderstorms also regularly turn the trail into a muddy, impassable mess. For those who make the trip, a beautifully nestled lake will reward the effort as well as offer one of the better rainbow fisheries in the High Uintas.
-- **Book:** pp. 235–236 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-88
+- **Book:** pp. 235–236 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-88
 
 #### 89. Anson Lakes
 
@@ -1006,7 +1006,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 5 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats, Tigers (historical only: Grayling, Rainbows); lake elev 10380–10780 ft; 46.4 ac total, largest 14.5 ac
 - **Tags:** camping, fishing, river-crossing, horses, toilets
 - **Summary:** People staying at the Spirit Lake Lodge might consider a long day trip to the Weyman Basin and Upper and Lower Anson Lakes. The lakes are popular with anglers, but the scenery alone is worth the walk.
-- **Book:** pp. 235–236 · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-89
+- **Book:** pp. 235–236 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-89
 
 #### 90. Brown Lake Area (Lamb Lakes or Potter)
 
@@ -1016,7 +1016,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 - **Aggregates:** 10 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats, Grayling, Tigers (historical only: Rainbows); lake elev 10130–10750 ft; 38.8 ac total, largest 7 ac
 - **Tags:** camping, fishing, cross-country, steep, river-crossing, horses, crowded, solitude, multi-day, toilets
 - **Summary:** The Browne Lake area is, in many respects, an outdoor recreation hub of the northeastern Uintas thanks to the campground; the cooling lake at 8,200 feet known for rainbow trout, brook trout, and kokanee salmon; and a network of ATV trails, including the historic Carter Military Trail. There are also three hiking and backpacking trailheads, though seasonal deadfall has made some navigation difficult—on a recent visit, the trail to Tepee was nowhere to be found.
-- **Book:** pp. ? · https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html#hike-90
+- **Book:** pp. ? · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-90
 
 ## Trailhead sections
 
