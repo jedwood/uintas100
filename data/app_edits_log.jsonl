@@ -30,3 +30,5 @@
 {"id": "e-1789276437069-sfl15v", "lake": "A-12", "field": "status", "value": "NONE", "ts": "2026-09-13T05:13:57.069Z", "device": "dev-vnewkcd0", "applied_at": "2026-09-13T05:13:58+00:00"}
 {"id": "e-1789502988182-yj3f0e", "lake": "G-17", "field": "status", "value": "NONE", "ts": "2026-09-15T20:09:48.182Z", "device": "dev-7wvw8frc", "applied_at": "2026-09-15T21:07:49+00:00"}
 {"id": "e-1789502998901-3w7ka2", "lake": "G-16", "field": "status", "value": "OTHERS", "ts": "2026-09-15T20:09:58.901Z", "device": "dev-7wvw8frc", "applied_at": "2026-09-15T21:07:49+00:00"}
+{"id": "e-1789507114000-sjtvrf", "lake": "W-27", "field": "jed_notes", "value": "Only stocked with Tigers. Could be interesting. Probably still has natural cutthroats, but catching a 4 year old tiger could be nice.", "ts": "2026-09-15T21:18:34.000Z", "device": "dev-e1w1au3u", "applied_at": "2026-09-15T21:18:34+00:00"}
+{"id": "e-1789507115902-uv6oc0", "lake": "W-27", "field": "starred", "value": 1, "ts": "2026-09-15T21:18:35.902Z", "device": "dev-e1w1au3u", "applied_at": "2026-09-15T21:18:35+00:00"}
