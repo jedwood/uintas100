@@ -429,7 +429,7 @@
                                                 <h3 class="text-xl font-semibold text-gray-700 mb-3">Books</h3>
                                                 <ul class="space-y-2 ml-4">
                                                     <li><a href="https://www.amazon.com/Hiking-Utahs-Uintas-Andrew-Gillman/dp/1493075691" target="_blank" class="text-slate-700 underline hover:text-slate-900">Hiking Utah's High Uintas</a>
-                                                        <span class="text-sm text-gray-500">— <a href="https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html" target="_blank" class="underline decoration-dotted hover:text-slate-700" title="Private full copy with maps — needs the Tailscale VPN on">Jed's copy (Tailscale)</a></span></li>
+                                                        <span class="text-sm text-gray-500">— <a href="https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html" target="_blank" class="underline decoration-dotted hover:text-slate-700" title="Private full copy with maps — needs the Tailscale VPN on">Jed's copy (Tailscale)</a></span></li>
                                                     <li><a href="https://www.amazon.com/High-Uintas-Adventures-Backcountry-Planner/dp/B08FPGJ214" target="_blank" class="text-slate-700 underline hover:text-slate-900">High Uintas Adventures</a></li>
                                                 </ul>
                                             </div>
@@ -2503,7 +2503,7 @@
         // scripts/export_falcon_book.py into the gitignored data/tailscale_book/
         // on the Mini and served only over the Tailscale proxy — the link is
         // useless without Jed's VPN on, which is the point (copyright).
-        const FALCON_BOOK_URL = 'https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html';
+        const FALCON_BOOK_URL = 'https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html';
         // Rendered in the lake modal for every hike that reaches this lake.
         // `thisLn` is the lake we're viewing from, so we can flag it as the
         // hike's primary destination and list the OTHER lakes it also reaches.
@@ -3080,7 +3080,7 @@
         //   https github.io install (a secure page can't fetch http:// LAN URLs —
         //   Safari silently blocks mixed content), and it works from anywhere
         //   the device's Tailscale VPN is on, not just at home.
-        const SYNC_FALLBACKS = ['http://olaf.local:8802', 'https://olaf.tailbf6340.ts.net'];
+        const SYNC_FALLBACKS = ['http://olaf.local:8802', 'https://olaf.tail89dcea.ts.net'];
         const USER_FIELDS = ['status', 'jed_notes', 'trip_reports'];
 
         // VAPID application server key (public half of the Mini's keypair — safe

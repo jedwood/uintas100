@@ -112,7 +112,7 @@ while allowing edits to *originate* on any device:
   the pending count; the "Sync" link (next to "About") opens a panel with a
   manual sync button and a server-URL override. Server auto-resolution tries
   the page's own host on :8802, then `http://olaf.local:8802` (LAN), then
-  `https://olaf.tailbf6340.ts.net` (Tailscale). The Tailscale HTTPS proxy
+  `https://olaf.tail89dcea.ts.net` (Tailscale). The Tailscale HTTPS proxy
   (`tailscale serve --bg localhost:8802` on the Mini; config persists across
   reboots) exists because the iPhone's PWA is installed from the **https**
   github.io page, and a secure page cannot fetch `http://` LAN URLs (Safari

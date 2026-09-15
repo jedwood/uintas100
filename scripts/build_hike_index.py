@@ -43,7 +43,7 @@ EPUB_PATH = os.path.join(PROJECT_DIR, "data", "falcon_guide",
                          "hiking-utahs-high-uintas-3e.epub")
 JSON_OUT = os.path.join(PROJECT_DIR, "data", "hike_index.json")
 MD_OUT = os.path.join(PROJECT_DIR, "data", "hike_index.md")
-BOOK_URL = "https://olaf.tailbf6340.ts.net/data/tailscale_book/falcon_guide/index.html"
+BOOK_URL = "https://olaf.tail89dcea.ts.net/data/tailscale_book/falcon_guide/index.html"
 
 _NUM = r"\d+(?:\.\d+)?"
 
