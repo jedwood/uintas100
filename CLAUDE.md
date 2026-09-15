@@ -427,6 +427,13 @@ rm -rf /Applications/Uintas.app && cp -R src-tauri/target/release/bundle/macos/U
   "45MB iOS limit" gate in `cacheResponse` was removed deliberately: modern iOS grants
   installed PWAs gigabytes, and since `estimate()` counts ALL storage a single map
   download would have tripped it and silently stopped photo caching.
+  **Tiles self-heal (2026-09-15):** a stored tile is only trusted if it's a 200 with an
+  `image/*` content-type — the SW validates on write and on read (evicting + refetching
+  bad entries), never stores opaque responses, and retries a failed fetch once; the
+  bulk downloader applies the same rule (so "Re-check" repairs a poisoned area), and
+  every Leaflet layer's `tileerror` evicts a tile that fails to decode and reloads it
+  once. Cause: desktop Safari showed tile-aligned gray blocks that survived restarts —
+  bad responses had been cached forever by the old `ok || opaque` check.
 - **Map orientation**: The red GPS marker shows a compass heading arrow (DeviceOrientation; iOS prompts for permission on the locate tap). The map supports rotation — two-finger twist on mobile, Shift+drag on desktop — via the vendored `leaflet-rotate` plugin (`vendor/leaflet/leaflet-rotate.js`); the heading arrow compensates for the current map bearing.
 - **Lake Details**: Modal views with stocking history, photos, DWR notes, "Open in Maps" link when coordinates exist
 - **Mission Progress**: Header shows CAUGHT-status count toward the 100-waters goal

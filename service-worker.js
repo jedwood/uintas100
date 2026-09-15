@@ -1,4 +1,4 @@
-const CACHE_NAME = 'uintas-v1789495355';
+const CACHE_NAME = 'uintas-v1789497761';
 
 // A version-INDEPENDENT cache used as a tiny key/value store shared between this
 // service worker and the page (the unseen-badge count, the last stocking report,
@@ -221,18 +221,42 @@ async function handleFetch(request) {
 // online and it's the whole point offline. On a miss we fetch and store the tile
 // on the way through, so simply browsing the map while online builds up offline
 // coverage that persists until explicitly cleared.
+//
+// A stored entry is only worth keeping if it is an actual image. Under load the
+// USGS server can answer with something that isn't a tile, and a cache-first
+// store that kept such a response served it on every visit thereafter — the
+// symptom was tile-aligned gray blocks that survived quitting the app (Sept 2026,
+// desktop Safari). So responses are validated on write, validated again on read
+// (a bad entry is evicted and refetched), and opaque responses (status 0, which a
+// CORS-mode <img> cannot render anyway) are never stored. index.html applies the
+// same rule to its bulk downloader and evicts any tile whose image fails to decode.
+function isGoodTile(resp) {
+    return !!resp && resp.status === 200 && /^image\//i.test(resp.headers.get('content-type') || '');
+}
+// One retry after a short pause covers the common transient failures (a 429/5xx
+// from a throttled tile server, or a dropped connection on a big desktop viewport
+// that requests a hundred tiles at once). Leaflet itself never retries a tile.
+async function fetchTileWithRetry(request) {
+    let resp = null;
+    for (let attempt = 0; attempt < 2; attempt++) {
+        try { resp = await fetch(request); } catch (e) { resp = null; }
+        if (isGoodTile(resp)) return resp;
+        if (attempt === 0) await new Promise(r => setTimeout(r, 600));
+    }
+    return resp;
+}
 async function handleTile(request, tileKey) {
     const cache = await caches.open(TILE_CACHE);
     const cached = await cache.match(tileKey);
-    if (cached) return cached;
-    const networkResponse = await fetch(request);
-    // The layers request tiles with crossOrigin=anonymous, so normally these are
-    // clean 200s — but accept opaque responses too (e.g. a cached pre-upgrade
-    // request shape) rather than silently not caching.
-    if (networkResponse && (networkResponse.ok || networkResponse.type === 'opaque')) {
+    if (cached) {
+        if (isGoodTile(cached)) return cached;
+        try { await cache.delete(tileKey); } catch (e) { /* ignore */ }
+    }
+    const networkResponse = await fetchTileWithRetry(request);
+    if (isGoodTile(networkResponse)) {
         try { await cache.put(tileKey, networkResponse.clone()); } catch (e) { /* quota — serve anyway */ }
     }
-    return networkResponse;
+    return networkResponse || Response.error();
 }
 
 async function staleWhileRevalidate(request) {

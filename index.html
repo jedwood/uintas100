@@ -1671,6 +1671,33 @@
         };
         let resultsMap = null, resultsMarkers = null, gpsMarker = null;
         let activeLayerName = 'USGS Topo';   // tracked via baselayerchange
+
+        // Both maps build their layers here so every tile is self-healing: if a
+        // tile image fails to decode, evict it from the offline tile store (a bad
+        // entry there would otherwise be served forever — the gray-block bug, see
+        // handleTile in service-worker.js) and reload it once from the network.
+        function isGoodTileResponse(resp) {
+            return !!resp && resp.status === 200 && /^image\//i.test(resp.headers.get('content-type') || '');
+        }
+        async function evictTile(url) {
+            try {
+                const cache = await caches.open(TILE_CACHE_NAME);
+                await cache.delete(url);
+                // The SW keys OpenTopoMap's a/b/c mirrors under one host
+                await cache.delete(url.replace(/^https:\/\/[abc]\.tile\.opentopomap\.org/, 'https://a.tile.opentopomap.org'));
+            } catch (e) { /* no Cache API — nothing to evict */ }
+        }
+        function makeTileLayer(def) {
+            const layer = L.tileLayer(def.url, def.opts);
+            layer.on('tileerror', e => {
+                const img = e.tile;
+                if (!img || img.dataset.retried) return;
+                img.dataset.retried = '1';
+                const url = img.src;
+                evictTile(url).then(() => setTimeout(() => { img.src = ''; img.src = url; }, 500));
+            });
+            return layer;
+        }
         let detailMap = null;   // the mini-map inside an open lake modal
         let gpsHeadingEl = null, headingListening = false, lastHeading = null;
 
@@ -1717,7 +1744,7 @@
             }).setView([40.72, -110.40], 9);
             const layers = {};
             Object.entries(MAP_LAYERS).forEach(([name, l], i) => {
-                layers[name] = L.tileLayer(l.url, l.opts);
+                layers[name] = makeTileLayer(l);
                 if (i === 0) layers[name].addTo(resultsMap);
             });
             L.control.layers(layers, null, { position: 'topright' }).addTo(resultsMap);
@@ -1782,7 +1809,7 @@
             detailMap = L.map('detail-map', { attributionControl: true });
             const layers = {};
             Object.entries(MAP_LAYERS).forEach(([name, l], i) => {
-                layers[name] = L.tileLayer(l.url, l.opts);
+                layers[name] = makeTileLayer(l);
                 if (i === 0) layers[name].addTo(detailMap);
             });
             L.control.layers(layers, null, { position: 'topright' }).addTo(detailMap);
@@ -2075,6 +2102,18 @@
             await runAreaDownload(area);
         }
 
+        // One retry after a pause: bulk downloads hammer the tile server and a
+        // transient 429/5xx shouldn't leave a hole in the area.
+        async function fetchTileForDownload(url, signal) {
+            for (let attempt = 0; attempt < 2; attempt++) {
+                let resp = null;
+                try { resp = await fetch(url, { signal }); } catch (e) { if (signal.aborted) throw e; }
+                if (isGoodTileResponse(resp)) return resp;
+                if (attempt === 0) await new Promise(r => setTimeout(r, 800));
+            }
+            return null;
+        }
+
         // Downloads (or completes) an area: skips tiles already in the cache, so
         // it doubles as resume and as "update" for a partial area.
         async function runAreaDownload(area) {
@@ -2103,9 +2142,14 @@
                     const [z, x, y] = jobs[idx++];
                     const url = tileUrlFor(area.layer, z, x, y);
                     try {
-                        if (!(await cache.match(url))) {
-                            const resp = await fetch(url, { signal });
-                            if (resp.ok) {
+                        // A stored entry only counts if it's a real image; anything
+                        // else is evicted and fetched again (so "Re-check" repairs a
+                        // poisoned area instead of skipping it).
+                        const existing = await cache.match(url);
+                        if (!isGoodTileResponse(existing)) {
+                            if (existing) await cache.delete(url);
+                            const resp = await fetchTileForDownload(url, signal);
+                            if (resp) {
                                 bytes += Number(resp.headers.get('content-length')) || 0;
                                 await cache.put(url, resp);
                             } else failed++;
