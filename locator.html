@@ -62,7 +62,12 @@
         button.skip { background: #475569; color: #e2e8f0; }
         button.cant { background: #7c3aed; color: #fff; }
         button.nav { background: #334155; color: #e2e8f0; }
-        .hint { font-size: 11px; color: #64748b; margin-top: 8px; line-height: 1.6; }
+        /* Labels on the lakes the view was framed on (designation neighbours) */
+    .anchor-label { background: rgba(15,23,42,.88); color: #e2e8f0; border: 1px solid #475569;
+                    border-radius: 4px; padding: 0 5px; font-size: 11px; font-weight: 600;
+                    white-space: nowrap; box-shadow: none; }
+    .anchor-label::before { border-right-color: #475569; }
+    .hint { font-size: 11px; color: #64748b; margin-top: 8px; line-height: 1.6; }
         .hint kbd { background: #0f172a; border: 1px solid #475569; border-radius: 4px; padding: 1px 5px;
                     font-family: monospace; font-size: 10px; }
         .coordline { font-size: 11px; color: #64748b; margin-top: 6px; font-family: monospace; }
@@ -214,37 +219,101 @@
             `${done} / ${total} located • queue: ${queue.length} (#${Math.min(qIndex + 1, queue.length)})`;
     }
 
-    function drawNeighbors(lake) {
+    function drawNeighbors(lake, anchorIds) {
         neighborLayer.clearLayers();
+        const anchors = anchorIds || new Set();
         lakes.filter(l => l.drainage === lake.drainage && l.id !== lake.id && l.lat)
             .forEach(l => {
                 const done = ['confirmed', 'manual'].includes(l.coord_status);
                 const dotColor = done ? '#22c55e'
                     : l.coord_status === 'plss_estimate' ? '#06b6d4' : '#eab308';
-                L.circleMarker([l.lat, l.lng], {
-                    radius: 5, color: dotColor, weight: 1,
-                    fillOpacity: 0.5, opacity: 0.7
-                }).bindTooltip(`${l.letter_number}${l.name ? ' ' + l.name : ''}`, { direction: 'top' })
-                  .addTo(neighborLayer);
+                // The lakes the view was framed on get a bigger, opaque dot with a
+                // permanent label, so the survey-order neighbours this lake most
+                // likely sits between are obvious without hovering.
+                const isAnchor = anchors.has(l.id);
+                const m = L.circleMarker([l.lat, l.lng], {
+                    radius: isAnchor ? 7 : 5, color: isAnchor ? '#fff' : dotColor,
+                    weight: isAnchor ? 2 : 1, fillColor: dotColor,
+                    fillOpacity: isAnchor ? 0.95 : 0.5, opacity: isAnchor ? 1 : 0.7
+                }).addTo(neighborLayer);
+                const label = `${l.letter_number}${l.name ? ' ' + l.name : ''}`;
+                if (isAnchor) m.bindTooltip(label, { permanent: true, direction: 'right',
+                                                    offset: [6, 0], className: 'anchor-label' });
+                else m.bindTooltip(label, { direction: 'top' });
             });
     }
 
-    function bestCenter(lake) {
-        if (lake.lat) return [lake.lat, lake.lng];
-        // center on the drainage's other placed lakes
-        const pts = lakes.filter(l => l.drainage === lake.drainage && l.lat);
-        if (pts.length) return [pts.reduce((s, l) => s + l.lat, 0) / pts.length,
-                                 pts.reduce((s, l) => s + l.lng, 0) / pts.length];
-        return UINTA_CENTER;
+    // Where to point the map for a lake with no coordinates yet.
+    //
+    // The old version averaged every placed lake in the drainage and used a fixed
+    // zoom 12. In a sprawling drainage that centroid is nowhere near the lake --
+    // Weber's placed lakes reach 15.6 miles from their own centroid, Bear River
+    // 13.5 -- so you landed on empty map and had to re-find the basin every time.
+    //
+    // DWR numbered lakes in survey order, which tracks geography closely: measured
+    // across this DB, a placed lake's nearest designation-neighbour within +/-6 is
+    // a median 0.34-0.86 miles away (90th percentile 0.9-4.2). So frame on the
+    // numeric neighbours first and widen only if there aren't any.
+    // Framing on EVERY numeric neighbour still blows the view out when one of them
+    // is an outlier (W-67 spanned 32 miles that way). So pick the single closest
+    // number as the pivot -- the best available guess at where this lake is -- and
+    // show only what sits within a few miles of it. That keeps the view tight and
+    // still gives you several labelled lakes to triangulate against.
+    const RING_MI = 2.5;   // how far around the pivot counts as context
+    const RING_MAX = 12;   // ...and how many, so a dense basin can't blow the view out
+    function milesBetween(a, b) {
+        const R = 3958.8, p = Math.PI / 180;
+        const x = Math.sin((b[0] - a[0]) * p / 2) ** 2
+                + Math.cos(a[0] * p) * Math.cos(b[0] * p) * Math.sin((b[1] - a[1]) * p / 2) ** 2;
+        return 2 * R * Math.asin(Math.sqrt(x));
+    }
+    function framingFor(lake) {
+        const placed = lakes.filter(l => l.drainage === lake.drainage && l.id !== lake.id && l.lat);
+        if (!placed.length) return { pts: [], why: null };
+        const parts = /^([A-Z]+)-(\d+)/.exec(lake.letter_number || '');
+        if (parts) {
+            const [, prefix, numStr] = parts, num = parseInt(numStr, 10);
+            const sameBlock = placed
+                .map(l => {
+                    const q = /^([A-Z]+)-(\d+)/.exec(l.letter_number || '');
+                    return (q && q[1] === prefix)
+                        ? { lake: l, gap: Math.abs(parseInt(q[2], 10) - num) } : null;
+                })
+                .filter(Boolean)
+                .sort((a, b) => a.gap - b.gap);
+            if (sameBlock.length) {
+                const pivot = sameBlock[0].lake;
+                const ring = placed
+                    .map(l => ({ lake: l, mi: milesBetween([pivot.lat, pivot.lng], [l.lat, l.lng]) }))
+                    .filter(x => x.mi <= RING_MI)
+                    .sort((a, b) => a.mi - b.mi)
+                    .slice(0, RING_MAX)
+                    .map(x => x.lake);
+                if (!ring.some(l => l.id === pivot.id)) ring.push(pivot);
+                return { pts: ring, why: `nearest by number: ${pivot.letter_number}` };
+            }
+        }
+        return { pts: placed, why: 'this drainage' };
     }
 
     function showLake(lake) {
         current = lake;
         clearMarker();
-        drawNeighbors(lake);
-        const center = bestCenter(lake);
-        map.setView(center, lake.lat ? 15 : 12);
-        if (lake.lat) setMarker(lake.lat, lake.lng);
+        let framing = { pts: [], why: null };
+        if (lake.lat) {
+            drawNeighbors(lake);
+            map.setView([lake.lat, lake.lng], 15);
+            setMarker(lake.lat, lake.lng);
+        } else {
+            framing = framingFor(lake);
+            drawNeighbors(lake, new Set(framing.pts.map(l => l.id)));
+            if (framing.pts.length) {
+                map.fitBounds(framing.pts.map(l => [l.lat, l.lng]),
+                              { padding: [70, 70], maxZoom: 14 });
+            } else {
+                map.setView(UINTA_CENTER, 9);
+            }
+        }
 
         const titleName = lake.name ? `<span class="name">${lake.name}</span> ` : '';
         const status = lake.coord_status || 'unplaced';
@@ -259,6 +328,11 @@
             <div class="desig">${titleName}${lake.letter_number}
                 <span class="badge ${status}">${statusLabel(status)}</span></div>
             <div class="drainage">${lake.drainage}</div>
+            ${!lake.lat && framing.pts.length ? `<div class="hint" style="margin:-2px 0 8px">
+                framed on ${framing.pts.length} labelled neighbour${framing.pts.length === 1 ? '' : 's'}
+                (${framing.why}) — this lake is probably among them</div>` : ''}
+            ${!lake.lat && !framing.pts.length ? `<div class="hint" style="margin:-2px 0 8px">
+                nothing placed in this drainage yet — showing the whole range</div>` : ''}
             <div class="stat" style="margin-bottom:10px">
                 <div class="k">species / size / depth / elevation</div>
                 <div class="v" style="font-size:13px;font-weight:500">${fishLine || '—'}</div>
