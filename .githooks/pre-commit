@@ -12,10 +12,22 @@
 
 set -e
 
-# 1. PWA cache version
+# 1. PWA cache version — bump ONLY the CACHE_NAME line, and stage ONLY that
+#    change. The working-tree file is bumped too (so a clean tree stays clean),
+#    but what gets staged is the copy already in the index — HEAD's, or whatever
+#    the committer deliberately staged — with the bump applied. It used to be
+#    `git add service-worker.js`, which staged every in-progress edit to the
+#    file, so the unattended commits (edits server, stocking cron) repeatedly
+#    shipped half-finished worker rewrites. Those commits run against a private
+#    index (scripts/auto_commit.py), and this hook honours it via GIT_INDEX_FILE.
 NEW_VERSION="uintas-v$(date +%s)"
-sed -i '' "s/uintas-v[0-9]*/${NEW_VERSION}/g" service-worker.js
-git add service-worker.js
+BUMP="s/^const CACHE_NAME = 'uintas-v[0-9]*';/const CACHE_NAME = '${NEW_VERSION}';/"
+sed -i '' "${BUMP}" service-worker.js
+BUMP_TMP="$(mktemp)"
+git show :service-worker.js | sed "${BUMP}" > "${BUMP_TMP}"
+BUMP_BLOB="$(git hash-object -w "${BUMP_TMP}")"
+git update-index --cacheinfo "100644,${BUMP_BLOB},service-worker.js"
+rm -f "${BUMP_TMP}"
 echo "PWA cache version updated to: ${NEW_VERSION}"
 
 # 2. Keep DB-derived artifacts in lockstep with the DB being committed

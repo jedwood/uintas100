@@ -185,29 +185,23 @@ def get_user_data(db_path):
 
 def committer_loop():
     """Background thread: after a batch applies, wait for a quiet gap, then
-    commit + push. The pre-commit hook regenerates seeds + lakes_data.json."""
-    def git(*args):
-        return subprocess.run(["git", *args], cwd=REPO_ROOT,
-                              capture_output=True, text=True)
+    commit + push. The pre-commit hook regenerates seeds + lakes_data.json.
+
+    Goes through auto_commit.commit_own_files so ONLY the DB and the edit log
+    (plus what the hook derives from them) are committed — never whatever a dev
+    session has staged or half-edited in this same working tree."""
+    from auto_commit import commit_own_files
     while True:
         _commit_signal.wait()
         time.sleep(COMMIT_QUIET_SECS)
         _commit_signal.clear()
-        with _write_lock:
-            changed = git("diff", "--quiet", "--",
-                          "uinta_lakes.db", "data/app_edits_log.jsonl").returncode != 0
-            untracked_log = (not changed and
-                             git("ls-files", "--error-unmatch",
-                                 "data/app_edits_log.jsonl").returncode != 0
-                             and os.path.exists(EDIT_LOG))
-            if not changed and not untracked_log:
-                continue
-            git("add", "uinta_lakes.db", "data/app_edits_log.jsonl")
-            c = git("commit", "-m", "App edits: status/notes updates from the PWA")
-            sys.stdout.write(c.stdout + c.stderr)
-        p = git("push")
-        if p.returncode != 0:
-            print("[edits-server] WARNING: git push failed (committed locally).")
+        try:
+            with _write_lock:
+                commit_own_files(["uinta_lakes.db", "data/app_edits_log.jsonl"],
+                                 "App edits: status/notes updates from the PWA",
+                                 log=lambda m: print("[edits-server] " + m))
+        except subprocess.CalledProcessError as e:
+            print(f"[edits-server] WARNING: git commit failed: {e.stderr or e}")
         sys.stdout.flush()
 
 

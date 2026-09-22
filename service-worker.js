@@ -1,4 +1,4 @@
-const CACHE_NAME = 'uintas-v1790085610';
+const CACHE_NAME = 'uintas-v1790088992';
 
 // A version-INDEPENDENT cache used as a tiny key/value store shared between this
 // service worker and the page (the unseen-badge count, the last stocking report,
@@ -494,7 +494,10 @@ async function offlineRepair() {
 async function swLog(event, detail) {
     try {
         const log = await pushStateGet('swlog', []);
-        log.push({ t: Date.now(), v: CACHE_NAME.replace(/^uintas-v1790050738/, ''), e: event, d: detail || {} });
+        // (Just the number after "-v". Don't spell the cache-name prefix out
+        // here: the pre-commit hook rewrites every "uintas-v<digits>" in this
+        // file on each commit, and it would rewrite a literal pattern too.)
+        log.push({ t: Date.now(), v: CACHE_NAME.split('-v').pop(), e: event, d: detail || {} });
         while (log.length > 60) log.shift();
         await pushStateSet('swlog', log);
     } catch (e) { /* best-effort */ }

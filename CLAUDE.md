@@ -353,6 +353,71 @@ back into `uinta_lakes.db` — which is why it obeys the `.db-readonly` writer g
 # No manual intervention needed - just commit and the hook handles it
 git commit -m "your changes"  # Bumps cache version + re-exports data/seeds when the DB changed
 ```
+**Every** commit bumps the version — including the 08:00 stocking auto-update
+and every edits-server "App edits" commit — so a phone that checks in finds a
+"new version" most days. The bump only touches the `const CACHE_NAME = …` line.
+
+### Working in this tree while the automation commits (enforced, 2026-09-22)
+The edits server and the stocking cron commit + push **in this same working
+tree, at any moment**. Until 2026-09-22 they swept up in-progress work on
+nearly every dev session: a plain `git commit` took everything staged, and the
+hook's `git add service-worker.js` staged every half-finished edit to the
+worker (six "App edits" commits on 2026-09-21 shipped a mid-rewrite worker).
+Now enforced by code:
+- `scripts/auto_commit.py: commit_own_files(paths, msg)` — both automations
+  commit through a **private index** (`GIT_INDEX_FILE` = HEAD + only their own
+  paths; the hook inherits it and adds the bump + regenerated seeds/JSON), then
+  re-point the real index at the new HEAD for just the touched paths. Anything
+  a dev has staged or edited elsewhere is untouched. Use it for any new
+  unattended committer; never `git add -A` / `git commit -a` from automation.
+- The hook stages the bump by rewriting the **index copy** of
+  `service-worker.js` (`git show :service-worker.js` → sed →
+  `update-index --cacheinfo`) — never the working-tree file's other changes.
+  It still bumps the working-tree line so a clean tree stays clean, which is
+  why the Edit tool sometimes reports the file "changed on disk" mid-session.
+- `tests/auto_commit_isolation.sh` proves it in a throwaway clone (13 checks).
+Not covered, by design: the DB is committed as-is whenever the automation
+fires (run migrations as single scripts), and the hook runs the working-tree
+exporters (finish + commit an exporter change in one go).
+So: leave in-progress work uncommitted as long as you like; only what you
+`git add` yourself ships. When you DO want to publish, commit normally.
+
+### Offline guarantee (service-worker contract, rewritten 2026-09-22)
+Incident: 2026-09-21, a full day in a new drainage with the PWA showing "Lake
+data not accessible" despite being opened the night before. Root causes, all
+fixed — keep these invariants:
+- **A failed precache must fail the install.** `CRITICAL_URLS` (shell, data,
+  Leaflet, manifest, icons) are all-or-nothing; any failure rejects `waitUntil`
+  so the browser discards the new worker and the previous one keeps serving its
+  complete cache. The old code `.catch`-ed the error, activated with an EMPTY
+  cache, and deleted the good one — which a flaky trailhead link triggers
+  reliably (17 KB worker script downloads, 7 MB precache doesn't).
+  `OPTIONAL_URLS` (drainage JPGs) are best-effort. `activate` also refuses to
+  delete old caches unless the new cache verifiably holds every critical URL.
+- **Lookups are cache-agnostic.** `lakes_data.json` is looked up in this
+  version's cache, then any cache (`caches.match`), under one canonical
+  query-less key (`dataCacheKey`) — the `?_=<ts>` refresh polls used to add a
+  2 MB copy per poll. The shell is re-cached on every clean network navigation.
+- **Captive portals can't poison the cache**: `isCleanAssetResponse` rejects
+  redirects and cross-origin 200s, and HTML is never stored as data.
+- **Second copy outside the worker**: `index.html` keeps the last-good
+  `lakes_data.json` text in IndexedDB (`uintas-data`/`kv`); `loadLakeData()`
+  tries worker → any Cache Storage copy → IndexedDB, and only then shows the
+  (now honest, with a Details list + Try again) failure screen.
+- **"Sync & offline" panel** (bottom link): `OFFLINE_STATUS`/`OFFLINE_REPAIR`
+  messages ask the worker which precache URLs are really present; shows
+  ✓ Ready / ✗ Not ready + Repair, and the worker's event ring buffer
+  (`/__push__/swlog` in `uintas-push-state`: install/activate/repair/fallback
+  events) so the next failure is diagnosable from the phone. A startup
+  self-check (8 s after load) auto-repairs when online and shows a red header
+  chip otherwise. **Check for "✓ Ready" the night before a trip.**
+Regression suite: `tests/offline/run.sh` — a fault-injecting static server
+(`tests/offline/testserver.py`: version bump, 503 on one asset, captive
+portal, dropped connections) driven by playwright-cli through first load →
+offline reload → failed update (must not take over) → offline again →
+successful update → portal → lost data entry (IndexedDB fallback + Repair) →
+nothing left (honest error + Try again). 20 assertions; run it after touching
+`service-worker.js` or the data-loading path in `index.html`.
 
 ### Development Server
 Since this is a static web app, serve locally with:

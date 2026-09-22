@@ -168,6 +168,10 @@
             </div>
             <!-- Offline-edit sync status: hidden when everything is synced -->
             <button id="sync-chip" type="button" class="hidden"></button>
+            <!-- Offline-readiness warning: shown only when the startup check finds
+                 the app's offline copy incomplete (and, if online, auto-repair
+                 couldn't fix it). Tap opens the Sync & offline panel. -->
+            <button id="offline-chip" type="button" class="hidden"></button>
         </header>
 
         <div class="not-loaded">
@@ -529,9 +533,27 @@
                         <div id="sync-modal-card" class="bg-white rounded-lg max-w-md w-full">
                             <div class="p-6">
                                 <div class="flex justify-between items-center mb-4">
-                                    <h2 class="text-2xl font-bold">Sync</h2>
+                                    <h2 class="text-2xl font-bold">Sync &amp; offline</h2>
                                     <button id="close-sync-modal" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
                                 </div>
+
+                                <!-- Offline readiness: is everything the app needs to open with
+                                     zero signal actually stored on this device right now? First
+                                     in the panel because it's the thing to check the night before. -->
+                                <div class="mb-6 pb-5 border-b border-gray-200">
+                                    <h3 class="text-lg font-bold mb-1">Offline</h3>
+                                    <p class="text-xs text-gray-500 mb-3">Check this the night before a trip. <b>Ready</b> means the app, the lake data and the drainage maps are stored on this device. Map tiles are separate — use the ⤓ button on the map.</p>
+                                    <div id="offline-ready-line" class="text-sm font-medium text-gray-800 mb-3">Checking…</div>
+                                    <div class="flex gap-2">
+                                        <button id="offline-check-btn" class="flex-1 bg-slate-700 text-white px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors">Check again</button>
+                                        <button id="offline-repair-btn" class="hidden px-4 py-2 rounded-lg bg-amber-600 text-white hover:bg-amber-700 transition-colors">Repair</button>
+                                    </div>
+                                    <details class="mt-3 text-xs text-gray-500">
+                                        <summary class="cursor-pointer select-none">Details</summary>
+                                        <div id="offline-details" class="mt-2 font-mono whitespace-pre-wrap break-words leading-relaxed"></div>
+                                    </details>
+                                </div>
+                                <h3 class="text-lg font-bold mb-1">Sync</h3>
                                 <p class="text-sm text-gray-600 mb-3">
                                     Status and notes you edit here are saved on this device immediately
                                     (works fully offline) and sync to the database whenever the Mac Mini
@@ -623,7 +645,7 @@
             <div class="mt-8 text-center">
                 <button id="about-link" class="text-slate-600 hover:text-slate-800 text-sm transition-colors underline cursor-pointer bg-transparent border-none">About this project</button>
                 <span class="text-gray-300 mx-2">•</span>
-                <button id="sync-settings-link" class="text-slate-600 hover:text-slate-800 text-sm transition-colors underline cursor-pointer bg-transparent border-none">Sync</button>
+                <button id="sync-settings-link" class="text-slate-600 hover:text-slate-800 text-sm transition-colors underline cursor-pointer bg-transparent border-none">Sync &amp; offline</button>
             </div>
         </div>
     </div>
@@ -723,6 +745,111 @@
         // whether anything actually changed before re-rendering.
         let lastDataText = null;
 
+        // ---- Last-good data copy in IndexedDB ------------------------------
+        // A second home for lakes_data.json, written by the page itself and
+        // independent of the service worker and its versioned caches. On
+        // 2026-09-21 the worker's cache lost the data while the app shell
+        // survived, and there was nothing else to fall back on — a whole day
+        // in a new drainage with "Lake data not accessible". Now the loader
+        // tries the worker, then any Cache Storage copy, then this.
+        const DATA_DB = 'uintas-data';
+        const DATA_STORE = 'kv';
+        function openDataDb() {
+            return new Promise((resolve, reject) => {
+                if (!window.indexedDB) return reject(new Error('no indexedDB'));
+                const req = indexedDB.open(DATA_DB, 1);
+                req.onupgradeneeded = () => req.result.createObjectStore(DATA_STORE);
+                req.onsuccess = () => resolve(req.result);
+                req.onerror = () => reject(req.error);
+                req.onblocked = () => reject(new Error('blocked'));
+            });
+        }
+        async function idbGet(key) {
+            const db = await openDataDb();
+            try {
+                return await new Promise((resolve, reject) => {
+                    const req = db.transaction(DATA_STORE, 'readonly').objectStore(DATA_STORE).get(key);
+                    req.onsuccess = () => resolve(req.result);
+                    req.onerror = () => reject(req.error);
+                });
+            } finally { db.close(); }
+        }
+        async function idbSet(key, value) {
+            const db = await openDataDb();
+            try {
+                await new Promise((resolve, reject) => {
+                    const tx = db.transaction(DATA_STORE, 'readwrite');
+                    tx.objectStore(DATA_STORE).put(value, key);
+                    tx.oncomplete = resolve;
+                    tx.onerror = () => reject(tx.error);
+                    tx.onabort = () => reject(tx.error);
+                });
+            } finally { db.close(); }
+        }
+        // Store the raw text plus when we got it. Best-effort and off the
+        // critical path — never let a storage hiccup affect the app.
+        function saveDataCopy(text) {
+            idbSet('lakes_data', { text, saved: Date.now() }).catch(e => console.warn('IDB data copy failed:', e));
+        }
+        async function readDataCopy() {
+            try { return await idbGet('lakes_data'); } catch (e) { return null; }
+        }
+
+        // Where the data came from on this launch ('network/worker', 'cache',
+        // 'idb') — shown in the Offline panel so a fallback is visible, not silent.
+        let dataSource = null;
+
+        async function loadLakeData() {
+            const attempts = [];
+            // 1. The normal path: the service worker answers from its cache
+            //    (stale-while-revalidate) or the network.
+            try {
+                const response = await fetch('lakes_data.json');
+                if (response.ok) {
+                    const text = await response.text();
+                    JSON.parse(text);            // reject a truncated/poisoned body
+                    dataSource = 'worker';
+                    return text;
+                }
+                attempts.push(`fetch → HTTP ${response.status}`);
+            } catch (e) {
+                attempts.push(`fetch → ${e.message || e}`);
+            }
+            // 2. Any copy in Cache Storage, in any cache version — the page can
+            //    read the caches directly, so this works even if the worker
+            //    isn't controlling the page or answered 503.
+            try {
+                if (window.caches) {
+                    const cached = await caches.match('lakes_data.json', { ignoreSearch: true });
+                    if (cached) {
+                        const text = await cached.text();
+                        JSON.parse(text);
+                        dataSource = 'cache';
+                        return text;
+                    }
+                    attempts.push('Cache Storage → no copy');
+                } else {
+                    attempts.push('Cache Storage → unavailable');
+                }
+            } catch (e) {
+                attempts.push(`Cache Storage → ${e.message || e}`);
+            }
+            // 3. The page's own last-good copy in IndexedDB.
+            const copy = await readDataCopy();
+            if (copy && copy.text) {
+                try {
+                    JSON.parse(copy.text);
+                    dataSource = 'idb';
+                    return copy.text;
+                } catch (e) { attempts.push('IndexedDB copy → unreadable'); }
+            } else {
+                attempts.push('IndexedDB → no copy');
+            }
+            const err = new Error('Lake data not accessible.');
+            err.attempts = attempts;
+            throw err;
+        }
+
         // Populate the in-memory model from a parsed data object. Reused by the
         // initial load and every background refresh.
         function hydrate(data) {
@@ -744,22 +871,14 @@
 
         async function initApp() {
             try {
-                let text;
-                try {
-                    const response = await fetch('lakes_data.json');
-                    if (!response.ok) {
-                        throw new Error(`Data fetch failed: ${response.status}`);
-                    }
-                    text = await response.text();
-                } catch (fetchError) {
-                    console.error('Failed to load lake data:', fetchError);
-                    throw new Error('Lake data not accessible. Make sure you are connected to the internet for the first load.');
-                }
+                const text = await loadLakeData();
 
                 lastDataText = text;
                 hydrate(JSON.parse(text));
 
-                console.log(`Data loaded successfully: ${lakes.length} lakes`);
+                console.log(`Data loaded successfully: ${lakes.length} lakes (from ${dataSource})`);
+                // Refresh the page-owned fallback copy (off the critical path).
+                setTimeout(() => saveDataCopy(text), 1500);
 
                 // Initialize UI
                 initializeUI();
@@ -810,15 +929,36 @@
 
             } catch (error) {
                 console.error('Failed to initialize app:', error);
-
-                // Show user-friendly error message
-                const errorMsg = error.message.includes('Lake data not accessible')
-                    ? error.message
-                    : 'Failed to load the lake database. Please refresh the page or check your connection.';
-
-                document.querySelector('.not-loaded p').textContent = errorMsg;
-                document.querySelector('.animate-spin').style.display = 'none';
+                showLoadFailure(error);
             }
+        }
+
+        // Every fallback failed. Say so honestly (this is a lost offline copy,
+        // not a "you need internet" situation if the app was used before), show
+        // what was tried so the failure is diagnosable afterwards, and offer a
+        // retry that doesn't require killing the app.
+        function showLoadFailure(error) {
+            const box = document.querySelector('.not-loaded .text-center');
+            const attempts = (error && error.attempts) || [];
+            const isDataError = !!(error && error.attempts);
+            // navigator.onLine is not trustworthy (Wi-Fi with no internet, captive
+            // portals), so the wording doesn't depend on it.
+            const online = navigator.onLine;
+            const headline = isDataError
+                ? 'Lake data could not be fetched, and no offline copy of it was found on this device.'
+                : 'Failed to load the lake database.';
+            const hint = isDataError
+                ? 'The app needs one successful load while online to store its data. Next time, open it on a connection and check that "Sync & offline" shows Ready before the trip.'
+                : 'Refresh the page or check your connection.';
+            box.innerHTML = `
+                <p class="text-gray-800 font-medium mb-2">${escapeHtml(headline)}</p>
+                <p class="text-gray-600 text-sm mb-4">${escapeHtml(hint)}</p>
+                <button id="load-retry-btn" type="button" class="bg-slate-700 text-white px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors">Try again</button>
+                ${attempts.length ? `<details class="mt-4 text-left text-xs text-gray-500 max-w-sm mx-auto"><summary class="cursor-pointer text-center">Details</summary><ul class="mt-2 list-disc pl-5">${attempts.map(a => `<li>${escapeHtml(a)}</li>`).join('')}<li>controller: ${navigator.serviceWorker && navigator.serviceWorker.controller ? 'service worker active' : 'no service worker'}</li><li>online: ${online}</li></ul></details>` : ''}`;
+            document.getElementById('load-retry-btn').addEventListener('click', () => {
+                box.innerHTML = '<div class="animate-spin rounded-full h-12 w-12 border-b-2 border-slate-400 mx-auto mb-4"></div><p class="text-gray-600">Loading database...</p>';
+                initApp();
+            });
         }
 
         // ---- Live refresh -------------------------------------------------
@@ -842,8 +982,10 @@
                 if (!response.ok) return;
                 const text = await response.text();
                 if (text === lastDataText) return;   // unchanged — nothing to do
+                const parsed = JSON.parse(text);     // throws on a truncated body → keep current data
                 lastDataText = text;
-                applyRefresh(JSON.parse(text));
+                applyRefresh(parsed);
+                saveDataCopy(text);
                 console.log('Data refreshed with newer lake data');
             } catch (e) {
                 /* offline or transient — keep current data silently */
@@ -3256,6 +3398,7 @@
             document.getElementById('sync-url-input').value = localStorage.getItem('uintas-sync-url') || '';
             refreshSyncModalStatus();
             refreshNotifStatus();
+            runOfflineCheck({ show: true });
             document.getElementById('sync-modal').classList.remove('hidden');
             lockBodyScroll('sync');
         }
@@ -3299,6 +3442,11 @@
                 if (!e.target.closest('#stocking-report-card')) closeStockingReport();
             });
 
+            // Offline readiness controls
+            document.getElementById('offline-check-btn').addEventListener('click', () => runOfflineCheck({ show: true }));
+            document.getElementById('offline-repair-btn').addEventListener('click', () => runOfflineCheck({ show: true, repair: true }));
+            document.getElementById('offline-chip').addEventListener('click', openSyncModal);
+
             // Background flush triggers: shortly after launch, when connectivity
             // returns, when the app comes back to the foreground, and a slow
             // heartbeat. All are no-ops when there's nothing pending AND the
@@ -3310,6 +3458,122 @@
             document.addEventListener('visibilitychange', () => {
                 if (document.visibilityState === 'visible') { syncNow(); clearAppBadgeNow(); }
             });
+
+            // Offline-readiness self-check shortly after every launch: if the
+            // worker's cache has gaps and we're online, repair silently; if gaps
+            // remain (offline, or repair failed), show the header warning so a
+            // broken offline copy is visible BEFORE the trip, not at the trailhead.
+            setTimeout(() => runOfflineCheck({ repair: navigator.onLine }), 8000);
+        }
+
+        // ---- Offline readiness ------------------------------------------
+        // Asks the controlling service worker which precache assets are really
+        // present in its cache (OFFLINE_STATUS / OFFLINE_REPAIR over a
+        // MessageChannel), adds what the page can see itself (the IndexedDB
+        // backup copy, the tile store), and renders it in the Sync & offline
+        // panel + the header chip.
+        function askWorker(type, timeoutMs) {
+            return new Promise(resolve => {
+                const c = navigator.serviceWorker && navigator.serviceWorker.controller;
+                if (!c) return resolve(null);
+                const ch = new MessageChannel();
+                const timer = setTimeout(() => resolve(null), timeoutMs);
+                ch.port1.onmessage = e => { clearTimeout(timer); resolve(e.data); };
+                try { c.postMessage({ type }, [ch.port2]); } catch (e) { clearTimeout(timer); resolve(null); }
+            });
+        }
+        let offlineCheckRunning = false;
+        async function runOfflineCheck({ show = false, repair = false } = {}) {
+            if (offlineCheckRunning) return;
+            offlineCheckRunning = true;
+            const line = document.getElementById('offline-ready-line');
+            if (show) line.textContent = repair ? 'Repairing…' : 'Checking…';
+            try {
+                let status = await askWorker(repair ? 'OFFLINE_REPAIR' : 'OFFLINE_STATUS', repair ? 90000 : 8000);
+                // Page-side fallback when the worker isn't controlling or doesn't
+                // answer: the minimum the app needs, looked up in any cache.
+                let pageCheck = null;
+                if (!status && window.caches) {
+                    const urls = ['index.html', 'tailwind.css', 'lakes_data.json'];
+                    const hits = await Promise.all(urls.map(u => caches.match(u, { ignoreSearch: true }).catch(() => null)));
+                    pageCheck = { missing: urls.filter((u, i) => !hits[i]) };
+                }
+                const copy = await readDataCopy();
+                let tiles = null;
+                try { tiles = (await (await caches.open(TILE_CACHE_NAME)).keys()).length; } catch (e) {}
+                renderOfflineReadiness({ status, pageCheck, copy, tiles });
+            } finally {
+                offlineCheckRunning = false;
+            }
+        }
+        function renderOfflineReadiness({ status, pageCheck, copy, tiles }) {
+            const line = document.getElementById('offline-ready-line');
+            const repairBtn = document.getElementById('offline-repair-btn');
+            const chip = document.getElementById('offline-chip');
+            const details = document.getElementById('offline-details');
+            const fmtWhen = t => t ? new Date(t).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' }) : '—';
+
+            let ok, text, cls;
+            const parts = [];
+            if (status) {
+                const critMissing = status.criticalMissing.length;
+                const optMissing = status.optionalMissing.length;
+                ok = critMissing === 0;
+                if (ok) {
+                    parts.push(`lake data${status.dataDate ? ' from ' + fmtWhen(status.dataDate) : ''}`);
+                    parts.push(optMissing ? `${status.optionalTotal - optMissing} of ${status.optionalTotal} drainage maps`
+                                          : `${status.optionalTotal} drainage maps`);
+                    parts.push(copy && copy.text ? 'backup copy saved' : 'no backup copy yet');
+                    if (tiles != null) parts.push(`${tiles.toLocaleString()} map tiles`);
+                    text = (optMissing ? '⚠ Ready (some drainage maps missing) — ' : '✓ Ready for offline — ') + parts.join(', ');
+                    cls = optMissing ? 'text-amber-700' : 'text-green-700';
+                } else {
+                    text = `✗ Not ready — missing ${status.criticalMissing.map(u => u.replace(/^\.\//, '')).join(', ')}`
+                        + (copy && copy.text ? ' (a backup copy of the lake data exists)' : '');
+                    cls = 'text-red-700';
+                }
+                repairBtn.classList.toggle('hidden', critMissing + optMissing === 0);
+                if (status.repairFailed && status.repairFailed.length) {
+                    text += ` · repair failed for ${status.repairFailed.length} file${status.repairFailed.length === 1 ? '' : 's'}${navigator.onLine ? '' : ' (offline)'}`;
+                }
+            } else {
+                // No worker answer. Report what the page itself can see.
+                const missing = pageCheck ? pageCheck.missing : null;
+                ok = !!(missing && missing.length === 0) || !!(copy && copy.text);
+                text = (navigator.serviceWorker && navigator.serviceWorker.controller
+                        ? '⚠ Service worker did not answer'
+                        : '⚠ No service worker is controlling this page')
+                    + (missing ? (missing.length ? ` — cache missing ${missing.join(', ')}` : ' — app files are cached') : '')
+                    + (copy && copy.text ? ` · backup copy from ${fmtWhen(copy.saved)}` : ' · no backup copy');
+                cls = ok ? 'text-amber-700' : 'text-red-700';
+                repairBtn.classList.add('hidden');
+            }
+            line.textContent = text;
+            line.className = 'text-sm font-medium mb-3 ' + cls;
+
+            // Header chip: only when the offline copy is genuinely at risk.
+            if (!ok) {
+                chip.className = 'mt-3 text-xs font-medium px-3 py-1 rounded-full border transition-colors cursor-pointer bg-red-100 text-red-800 border-red-300';
+                chip.textContent = '⚠ Offline copy incomplete — tap for details';
+            } else {
+                chip.className = 'hidden';
+            }
+
+            // Details: versions, this launch's data source, the worker's event log.
+            const rows = [];
+            rows.push(`data loaded this launch from: ${dataSource || '—'}`);
+            if (status) rows.push(`worker cache: ${status.cacheName}`);
+            rows.push(`backup copy: ${copy && copy.text ? fmtWhen(copy.saved) + ` (${fmtMB(copy.text.length)})` : 'none'}`);
+            if (status && status.criticalMissing.length) rows.push(`missing (critical): ${status.criticalMissing.join(' ')}`);
+            if (status && status.optionalMissing.length) rows.push(`missing (drainage maps): ${status.optionalMissing.map(u => u.replace(/^\.\/drainages\//, '')).join(' ')}`);
+            if (status && status.log && status.log.length) {
+                rows.push('', 'worker events (newest first):');
+                status.log.slice(-15).reverse().forEach(ev => {
+                    const d = ev.d && Object.keys(ev.d).length ? ' ' + JSON.stringify(ev.d) : '';
+                    rows.push(`${fmtWhen(ev.t)}  v${ev.v}  ${ev.e}${d}`);
+                });
+            }
+            details.textContent = rows.join('\n');
         }
 
         // ---- Notifications / Web Push -------------------------------------

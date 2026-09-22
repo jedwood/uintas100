@@ -22,28 +22,61 @@ The web app (`index.html`) provides a complete interface for searching and filte
 3. Select "Add to Home Screen"
 4. The app will work offline indefinitely
 
-### 🔄 **IMPORTANT: Updating PWA After Code Changes**
+### ✅ Before a trip: check "Sync & offline" says Ready
+Open the app on the phone (any connection), tap **Sync & offline** at the
+bottom, and look for **✓ Ready for offline — lake data from …, 18 drainage
+maps, backup copy saved**. If it says **✗ Not ready**, tap **Repair** while
+you still have signal. The app also self-checks a few seconds after every
+launch and shows a red **⚠ Offline copy incomplete** chip in the header if
+something is missing, so a broken offline copy is visible at home, not at the
+trailhead. Map tiles are separate — download them from the ⤓ button on the map.
 
-**When you update the database or HTML files, you MUST update the PWA cache version to push updates to installed apps:**
+Why this exists: on 2026-09-21 the app opened all day to "Lake data not
+accessible" in a new drainage. A version update on a flaky connection had
+replaced a complete cache with an empty one. The service worker now refuses to
+activate unless every critical file downloaded, looks for data in every cache
+it has, keeps a second copy of the lake data in IndexedDB, and logs its
+lifecycle events (visible under **Details** in the same panel).
 
-1. **Before committing any changes**, update the cache version in `service-worker.js`:
-   ```javascript
-   const CACHE_NAME = 'uintas-v1'; // Change to 'uintas-v2', 'uintas-v3', etc.
-   ```
+### 🔄 Updating the PWA after code changes
 
-2. **Automated approach** - Run this before committing:
-   ```bash
-   # Update cache version automatically
-   sed -i '' "s/uintas-v[0-9]*/uintas-v$(date +%s)/g" service-worker.js
-   ```
+Nothing manual: the version-controlled pre-commit hook (`git config
+core.hooksPath .githooks`, once per clone) bumps the cache version in
+`service-worker.js` on **every** commit — including the unattended ones (the
+08:00 stocking update and every "App edits" commit from the phone sync). After
+the push and the github.io deploy, an installed app finds the new version on
+its next launch/foreground, precaches everything (all-or-nothing), then shows
+"New version available! Refresh to update?".
 
-3. **After pushing changes**, the PWA will automatically:
-   - Detect the cache version change
-   - Download new files in background
-   - Show "New version available! Refresh to update?" popup
-   - Update with new content after user confirms
+### 🧑‍💻 Working in this repo while the automation runs (read this)
 
-**Manual refresh for iPhone PWA**: If auto-update doesn't work, go to Settings → Safari → Clear History and Website Data, then reopen the PWA.
+The Mini's automation — the edits server (commits whenever the phone syncs)
+and the 08:00 stocking cron — commits **in this same working tree, at any
+moment, without asking**. Two rules keep your half-finished work out of those
+pushes, and both are enforced by code, not memory:
+
+- **Automation commits only what it owns.** `scripts/auto_commit.py` builds
+  each unattended commit in a private index (HEAD + just the DB/edit-log/CSV
+  and what the hook derives from them), so anything you have `git add`ed or
+  edited elsewhere is never included — it used to be: a plain `git commit`
+  took the whole index.
+- **The hook stages only the version bump**, not the whole
+  `service-worker.js`. It used to `git add` the file, which shipped every
+  in-progress edit to the worker on the next auto-commit — several
+  half-rewritten workers went live that way in Sept 2026.
+
+What that means for you: edit freely; nothing goes out until *you* commit it.
+Two things it can't protect: (1) the DB itself — if you run a migration, do it
+as one script (SQLite keeps each run consistent), because the DB is committed
+as-is whenever the automation fires; (2) the exporters
+(`scripts/export_seeds.py`, `scripts/export_web_data.py`) — the hook runs the
+working-tree copies, so finish and commit an exporter change in one go.
+`tests/auto_commit_isolation.sh` proves the isolation in a throwaway clone;
+`tests/offline/run.sh` proves the offline guarantee in a browser.
+
+**Manual refresh for iPhone PWA**: if an update doesn't show up, quit and
+reopen the app (it checks for a new worker on every foreground). Clearing
+Safari website data also deletes the offline data and map tiles — last resort.
 
 ## Database Overview
 
@@ -262,78 +295,43 @@ Each file includes detailed access information, fishing characteristics, and for
 
 This database provides the most comprehensive fishing resource available for the Uinta Mountains, combining official stocking data with detailed physical lake characteristics and drainage system information for informed trip planning.
 
-## Apple Notes Integration ✅ **COMPLETE**
+## Personal Notes & Status Sync
 
-The system provides full bidirectional synchronization between the SQLite database and Apple Notes, allowing you to manage lake data, notes, and trip reports seamlessly across both platforms.
+Lake `status`, Jed's Notes, and Trip Reports are edited directly in the PWA
+itself — the "My Record" section of the lake modal — from any device, online
+or offline. **Apple Notes is no longer used for this sync** (retired as a
+write path 2026-08-10); see below.
 
-### **Features**
-- **Automated bidirectional sync** - Changes flow both ways between database and Apple Notes
-- **Visual status indicators** - Emoji system for quick lake status identification
-- **Surgical updates** - Only processes lakes flagged for updates (efficient performance)
-- **Smart duplicate prevention** - Advanced search prevents duplicate note creation
-- **Comprehensive content** - Includes all lake data, stocking records, DWR notes, Junesucker notes
-- **Organized structure** - Notes organized by drainage in dedicated "Uintas 💯" folder
+### **How it works**
+- **Client (`index.html`)**: edits save instantly to `localStorage` (fully
+  offline, built for multi-day trips), overlay the loaded data, and flush to
+  the edits server whenever it's reachable. A header chip shows the pending
+  count; the "Sync" panel has a manual sync button and a server-URL override.
+- **Server (`scripts/edits_server.py`)**: runs only on the Mac Mini (the
+  sole database writer) as a LaunchAgent on port 8802. Applies edits
+  last-write-wins per (lake, field) against an audit log
+  (`data/app_edits_log.jsonl`), then commits and pushes in the background —
+  every installed PWA picks up the change on its next service-worker update.
+- The iPhone's PWA (installed from the https github.io page) reaches the
+  edits server over a Tailscale HTTPS proxy, since a secure page can't fetch
+  `http://` LAN URLs directly.
 
-### **Apple Notes Structure**
-```
-Lake Name (A-42) 🎣        ← Status emoji in title
-                             🎣=CAUGHT, ✖️=OTHERS/NONE, 🚫=NO_FISH
-
-Status: CAUGHT             ← Editable status field
-Jed's Notes               ← Always visible for editing
-Add your notes here...
-
-Trip Reports              ← Always visible for editing  
-Add trip reports here...
-
-═══════════════════════   ← Visual delimiter
-
-• Size, elevation, species ← Auto-generated from database
-• Stocking records        ← Updates automatically  
-• Junesucker/DWR notes    ← Reference information
-```
-
-### **Status Emoji System**
-- **🎣** = Fish caught at this lake
-- **✖️** = Status marked as OTHERS or NONE
-- **🚫** = Lake does not sustain fish (DWR confirmed)
-- **No emoji** = No status assigned
-
-### **Sync Scripts**
-- **`sync_notes_to_db_jxa.js`** - Scans Apple Notes for `*update` tags and syncs changes back to database
-- **`sync_db_to_notes_jxa.js`** - Processes flagged lakes (`notes_needs_update = TRUE`) and creates/updates Apple Notes
-- **`fetch_latest_stocking.py`** - Auto-flags lakes when new stocking data is added
-
-### **Automated Scheduling**
-Sync is managed by the **Uintas Admin** Tauri app (`/Applications/Uintas.app`), which replaces the old cron-based approach. The app provides:
-- Configurable intervals for stocking updates and notes sync
-- Manual run buttons for each sync task
-- Log viewer for stocking, notes, and fetch logs
-- macOS notifications on failure
-- Launch at Login support
-
-To run the admin app during development:
 ```bash
-cd tauri-app/src-tauri && cargo run
+curl http://olaf.local:8802/api/ping   # is the edits server up?
 ```
 
-To rebuild and install:
-```bash
-cargo tauri build
-cp -R tauri-app/src-tauri/target/release/bundle/macos/Uintas.app /Applications/
-```
+### **Apple Notes (retired as a write path, 2026-08-10)**
+Personal notes and status used to sync bidirectionally with Apple Notes via
+JXA scripts and an automatic LaunchAgent (`com.limechile.uintas-notes-sync`).
+That round trip is retired: user fields are now edited in the PWA (above),
+and re-enabling Notes→DB sync would overwrite them with stale note content.
+The scheduling LaunchAgent has been unloaded and is no longer deployed on any
+machine.
 
-### **Manual Sync Usage**
-To manually trigger updates, add `*update` to any Apple Note and run:
-```bash
-osascript scripts/sync_notes_to_db_jxa.js
-```
-
-To flag specific lakes for Apple Notes updates:
-```sql
-UPDATE lakes SET notes_needs_update = TRUE WHERE letter_number = 'G-15';
-```
-Then run: `osascript scripts/sync_db_to_notes_jxa.js`
+- **`sync_notes_to_db_jxa.js`** / **`sync_db_to_notes_jxa.js`** — the JXA
+  sync scripts remain in `scripts/` for manual/archival use only, and
+  `notes_sync_agent.py` (the combined round trip) now runs only when
+  explicitly invoked with `UINTAS_NOTES_SYNC=force`.
 
 # NEXT
 

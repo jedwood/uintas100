@@ -45,3 +45,7 @@ reports/2026-08-29-falcon-book-html/
 # The repo is public — these MUST never be committed. The VAPID *public* key is
 # embedded in index.html (public by design). See scripts/push_utils.py.
 data/push/
+
+# offline regression-suite byproducts (tests/offline/run.sh)
+tests/offline/results.txt
+tests/offline/last-run.log

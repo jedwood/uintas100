@@ -215,24 +215,22 @@ def commit_and_push_changes(log_file, new_records_count, refreshed_count=0):
         except Exception as e:
             log_file.write(f"WARNING: seed export failed ({e}); committing without seed refresh\n")
 
-        # Add changed files
-        subprocess.run(['git', 'add', 'uinta_lakes.db',
-                        'data/utah_dwr_stocking_data.csv', 'data/seeds'],
-                       check=True)
-        log_file.write("Added database, CSV, and seed files to git\n")
-        
         # Commit with descriptive message
         if new_records_count > 0:
             commit_msg = f"Auto-update: {new_records_count} new DWR stocking records"
         else:
             commit_msg = f"Auto-update: refresh fish_species for {refreshed_count} lakes"
-        subprocess.run(['git', 'commit', '-m', commit_msg], check=True)
-        log_file.write(f"Committed changes: {commit_msg}\n")
-        
-        # Push to remote
-        subprocess.run(['git', 'push'], check=True)
-        log_file.write("Pushed changes to remote repository\n")
-        
+        # Only the files this job owns are committed (via a private index —
+        # see auto_commit.py), so a dev session's staged or half-edited files
+        # in this working tree can't be swept into an unattended push.
+        from auto_commit import commit_own_files
+        sha = commit_own_files(['uinta_lakes.db', 'data/utah_dwr_stocking_data.csv', 'data/seeds'],
+                               commit_msg, log=lambda m: log_file.write(m + "\n"))
+        if not sha:
+            log_file.write("Nothing to commit in the owned files\n")
+            return
+        log_file.write(f"Committed + pushed: {commit_msg}\n")
+
         print(f"✓ Committed and pushed {new_records_count} new stocking records")
         
     except subprocess.CalledProcessError as e:
