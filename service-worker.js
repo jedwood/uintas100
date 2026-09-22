@@ -1,8 +1,8 @@
-const CACHE_NAME = 'uintas-v1789999208';
+const CACHE_NAME = 'uintas-v1790049934';
 
 // A version-INDEPENDENT cache used as a tiny key/value store shared between this
 // service worker and the page (the unseen-badge count, the last stocking report,
-// and the push config the SW needs to re-subscribe). It must survive cache
+// the push config the SW needs to re-subscribe, and the worker event log). It must survive cache
 // version bumps, so the activate cleanup below deliberately spares it. Both
 // contexts read/write it via caches.open(PUSH_STATE_CACHE) — never via fetch(),
 // so it bypasses the fetch handler entirely.
@@ -28,10 +28,20 @@ function tileCacheKey(url) {
     return null;
 }
 
-// Resources to cache immediately. Everything is served locally — no CDN
+// Resources to cache at install. Everything is served locally — no CDN
 // dependence — so the app works offline even on its first install.
 // Lake photos are cached lazily as they're viewed.
-const urlsToCache = [
+//
+// CRITICAL assets are what the app needs to open and show lakes with zero
+// connectivity. Install is all-or-nothing for these and FAILS if any one of
+// them can't be fetched — a failed install leaves the previous worker (and its
+// complete cache) in charge, and the browser simply retries the update at the
+// next check. This is the fix for the 2026-09-21 trailhead incident: the old
+// install swallowed precache errors, so on a flaky link the 17 KB worker
+// script would download, the 7 MB precache would not, and the new worker
+// activated anyway with an EMPTY cache and deleted the good one — "Lake data
+// not accessible" for the whole day, with no network to recover.
+const CRITICAL_URLS = [
     './',
     './index.html',
     './tailwind.css',
@@ -50,7 +60,13 @@ const urlsToCache = [
     './vendor/leaflet/images/marker-icon-2x.png',
     './vendor/leaflet/images/marker-shadow.png',
     './vendor/leaflet/images/layers.png',
-    './vendor/leaflet/images/layers-2x.png',
+    './vendor/leaflet/images/layers-2x.png'
+];
+// OPTIONAL assets (~5 MB of drainage maps): fetched at install too, but a
+// failure here only logs — it must not block a data update. Anything missing
+// is filled in later by the cache-first fetch path or the "Repair" button in
+// the app's Offline panel.
+const OPTIONAL_URLS = [
     // Drainage maps — the ones you want at the trailhead
     './drainages/ashley-creek-drainage.jpg',
     './drainages/bear-river-drainage.jpg',
@@ -72,39 +88,94 @@ const urlsToCache = [
     './drainages/yellowstone-river-drainage.jpg'
 ];
 
-// Install event - cache core resources
+// A same-origin response worth caching as an app asset: a real 200 from OUR
+// host, not a redirect. The redirect/origin test matters on the road — a
+// motel or trailhead captive portal answers every URL with its own 200 HTML
+// login page, and caching that as index.html or lakes_data.json would poison
+// the offline copy exactly when it's about to be needed.
+function isCleanAssetResponse(response, request) {
+    if (!response || response.status !== 200 || response.redirected) return false;
+    if (request && request.headers.get('range')) return false;
+    if (response.url) {
+        try { if (new URL(response.url).origin !== self.location.origin) return false; }
+        catch (e) { return false; }
+    }
+    return true;
+}
+function looksLikeHtml(response) {
+    return /text\/html/i.test(response.headers.get('content-type') || '');
+}
+
+// Fetch one asset for the precache. Every asset is fetched with cache: 'reload'
+// so a version bump never re-caches a stale copy from the HTTP cache.
+async function precacheOne(cache, url) {
+    let request;
+    try { request = new Request(url, { cache: 'reload' }); }
+    catch (e) { request = new Request(url); }   // engine without RequestCache support
+    const response = await fetch(request);
+    if (!isCleanAssetResponse(response, request)) {
+        throw new Error(`${url} → ${response.status}${response.redirected ? ' (redirected)' : ''}`);
+    }
+    await cache.put(url, response);
+}
+
+// Install: precache. Critical assets are all-or-nothing — the FIRST failure
+// rejects waitUntil, the browser discards this worker as redundant, and the
+// previous worker keeps serving its complete cache. Optional assets are
+// best-effort.
 self.addEventListener('install', event => {
-    event.waitUntil(
-        caches.open(CACHE_NAME)
-            .then(cache => {
-                console.log('Service Worker: Caching core resources');
-                return cache.addAll(urlsToCache);
-            })
-            .catch(error => {
-                console.warn('Service Worker: Install failed', error);
-            })
-    );
+    event.waitUntil((async () => {
+        await swLog('install:start', { critical: CRITICAL_URLS.length, optional: OPTIONAL_URLS.length });
+        // Only a cache this install created may be thrown away on failure. If
+        // the name already exists (a worker change shipped without the hook's
+        // version bump), it belongs to the ACTIVE worker — never delete that.
+        const createdHere = !(await caches.has(CACHE_NAME));
+        const cache = await caches.open(CACHE_NAME);
+        try {
+            await Promise.all(CRITICAL_URLS.map(url => precacheOne(cache, url)));
+        } catch (error) {
+            // Leave no half-filled cache behind for the next attempt to trust.
+            if (createdHere) { try { await caches.delete(CACHE_NAME); } catch (e) { /* ignore */ } }
+            await swLog('install:failed', { error: String(error && error.message || error) });
+            console.warn('Service Worker: Install failed — keeping the previous version', error);
+            throw error;
+        }
+        const optional = await Promise.allSettled(OPTIONAL_URLS.map(url => precacheOne(cache, url)));
+        const missing = OPTIONAL_URLS.filter((u, i) => optional[i].status === 'rejected');
+        await swLog('install:ok', { optionalMissing: missing });
+        console.log('Service Worker: Precache complete', missing.length ? `(optional missing: ${missing.join(', ')})` : '');
+    })());
     self.skipWaiting();
 });
 
-// Activate event - clean up old caches
+// Activate: clean up old caches — but only once this version's cache is proven
+// complete. If a critical asset is somehow missing (it shouldn't be, given the
+// install above), the old caches are KEPT so their copies remain reachable
+// through the any-cache lookups in the fetch handler.
 self.addEventListener('activate', event => {
-    event.waitUntil(
-        caches.keys()
-            .then(cacheNames => {
-                return Promise.all(
-                    cacheNames.map(cacheName => {
-                        // Spare the current app cache AND the version-independent
-                        // stores: push state (badge count / last report) and the
-                        // offline map tiles — both must persist across version bumps.
-                        if (cacheName !== CACHE_NAME && cacheName !== PUSH_STATE_CACHE && cacheName !== TILE_CACHE) {
-                            console.log('Service Worker: Deleting old cache', cacheName);
-                            return caches.delete(cacheName);
-                        }
-                    })
-                );
-            })
-    );
+    event.waitUntil((async () => {
+        const cache = await caches.open(CACHE_NAME);
+        const present = await Promise.all(CRITICAL_URLS.map(url => cache.match(url)));
+        const missing = CRITICAL_URLS.filter((u, i) => !present[i]);
+        if (missing.length) {
+            await swLog('activate:incomplete', { missing });
+            console.warn('Service Worker: Cache incomplete at activate, keeping old caches', missing);
+            return;
+        }
+        const cacheNames = await caches.keys();
+        const deleted = [];
+        await Promise.all(cacheNames.map(cacheName => {
+            // Spare the current app cache AND the version-independent
+            // stores: push state (badge count / last report) and the
+            // offline map tiles — both must persist across version bumps.
+            if (cacheName !== CACHE_NAME && cacheName !== PUSH_STATE_CACHE && cacheName !== TILE_CACHE) {
+                console.log('Service Worker: Deleting old cache', cacheName);
+                deleted.push(cacheName);
+                return caches.delete(cacheName);
+            }
+        }));
+        await swLog('activate:ok', { deleted });
+    })());
     self.clients.claim();
 });
 
@@ -134,14 +205,23 @@ async function handleFetch(request) {
             return handleTile(request, tileKey);
         }
 
-        // For navigation requests, always try network first, fall back to cache
+        // For navigation requests, always try network first, fall back to cache.
+        // A clean network copy of the app shell is stored on the way through, so
+        // the shell self-heals if the precached copy is ever lost — previously it
+        // was cached ONLY at install, and a lost cache stayed lost until the next
+        // complete precache.
         if (request.mode === 'navigate') {
             try {
                 const networkResponse = await fetch(request);
+                if (isCleanAssetResponse(networkResponse, request) && looksLikeHtml(networkResponse)
+                        && /\/(index\.html)?$/.test(reqUrl.pathname)) {
+                    await cacheResponse('./index.html', networkResponse.clone());
+                }
                 return networkResponse;
             } catch (error) {
                 console.log('Service Worker: Network failed for navigation, trying cache');
-                const cachedResponse = await caches.match('./index.html') || await caches.match('/index.html');
+                const cachedResponse = await caches.match('./index.html') || await caches.match('./');
+                if (!cachedResponse) swLog('navigate:no-shell', {});
                 return cachedResponse || new Response('Offline - Please check your connection', {
                     status: 503,
                     statusText: 'Service Unavailable'
@@ -155,11 +235,12 @@ async function handleFetch(request) {
         // and ping open clients when the bytes actually changed so a
         // long-running app can refresh itself without a restart or a
         // cache-version bump. Everything else stays cache-first.
-        if (new URL(request.url).pathname.endsWith('lakes_data.json')) {
+        if (reqUrl.pathname.endsWith('lakes_data.json')) {
             return staleWhileRevalidate(request);
         }
 
-        // For static assets, try cache first
+        // For static assets, try cache first — any cache, not just this
+        // version's, so a copy left by a previous version still counts offline.
         const cachedResponse = await caches.match(request);
         if (cachedResponse) {
             return cachedResponse;
@@ -168,8 +249,11 @@ async function handleFetch(request) {
         // If not in cache, try network
         const networkResponse = await fetch(request);
 
-        // Cache successful responses (excluding range requests)
-        if (networkResponse.status === 200 && !request.headers.get('range')) {
+        // Cache successful responses (excluding range requests). Same-origin
+        // assets must also pass the redirect/origin check (captive portals).
+        const sameOrigin = reqUrl.origin === self.location.origin;
+        if (sameOrigin ? isCleanAssetResponse(networkResponse, request)
+                       : (networkResponse.status === 200 && !request.headers.get('range'))) {
             await cacheResponse(request, networkResponse.clone());
         }
 
@@ -259,14 +343,38 @@ async function handleTile(request, tileKey) {
     return networkResponse || Response.error();
 }
 
+// The lake data is stored under ONE canonical key (the query-less URL) no
+// matter how it was requested. The page's refresh poll fetches
+// `lakes_data.json?_=<timestamp>` to bust the HTTP cache, and the old code
+// stored each of those under its unique URL — one more 2 MB copy on every
+// launch, foreground, and 15-minute heartbeat.
+function dataCacheKey(request) {
+    const u = new URL(request.url);
+    u.search = '';
+    u.hash = '';
+    return u.href;
+}
+
 async function staleWhileRevalidate(request) {
+    const key = dataCacheKey(request);
     const cache = await caches.open(CACHE_NAME);
-    const cached = await cache.match(request);
+    // This version's copy first, then ANY cache's — the app shell was always
+    // looked up across all caches, but the data wasn't, which is why a lost
+    // current cache showed a perfectly styled shell with no lakes.
+    let cached = await cache.match(key);
+    if (!cached) {
+        cached = await caches.match(key);
+        if (cached) swLog('data:from-other-cache', {});
+    }
+    // A cache-busting poll wants the network's bytes when it can get them.
+    const wantsFresh = request.cache === 'no-store' || new URL(request.url).search !== '';
 
     // Kick off the revalidation regardless of a cache hit.
     const revalidate = fetch(request).then(async networkResponse => {
-        if (!networkResponse || networkResponse.status !== 200 || request.headers.get('range')) {
-            return networkResponse;
+        // Not a clean same-origin JSON 200 (e.g. a captive portal's HTML login
+        // page) → don't touch the cache.
+        if (!isCleanAssetResponse(networkResponse, request) || looksLikeHtml(networkResponse)) {
+            return null;
         }
         // Did the payload actually change? Compare clones so neither the
         // returned nor the cached body gets consumed.
@@ -280,7 +388,7 @@ async function staleWhileRevalidate(request) {
                 changed = oldText !== newText;
             } catch (e) { changed = true; }
         }
-        await cache.put(request, networkResponse.clone());
+        await cache.put(key, networkResponse.clone());
         if (changed) {
             const clients = await self.clients.matchAll({ includeUncontrolled: true });
             clients.forEach(client => client.postMessage({ type: 'DATA_UPDATED' }));
@@ -288,8 +396,13 @@ async function staleWhileRevalidate(request) {
         return networkResponse;
     }).catch(() => null);
 
-    // Offline (no cache yet) still needs the network attempt to resolve.
-    return cached || (await revalidate) || new Response('Offline', { status: 503 });
+    if (cached && !wantsFresh) return cached;
+    // Offline (or a stale-poll while offline) falls back to whatever we have.
+    const fresh = await revalidate;
+    if (fresh) return fresh;
+    if (cached) return cached;
+    swLog('data:unavailable', {});
+    return new Response('Offline', { status: 503 });
 }
 
 async function cacheResponse(request, response) {
@@ -328,7 +441,64 @@ self.addEventListener('message', event => {
     if (event.data.type === 'PUSH_CONFIG' && event.data.config) {
         event.waitUntil(pushStateSet('config', event.data.config));
     }
+    // Offline-readiness check for the app's Offline panel: which precache
+    // assets are actually present in THIS version's cache, plus the event log.
+    // Replies on the MessageChannel port the page passed.
+    if (event.data.type === 'OFFLINE_STATUS' && event.ports && event.ports[0]) {
+        event.waitUntil(offlineStatus().then(status => event.ports[0].postMessage(status)));
+    }
+    // Repair: re-fetch whatever the status check found missing. Online only,
+    // obviously — offline it just reports the same gaps.
+    if (event.data.type === 'OFFLINE_REPAIR' && event.ports && event.ports[0]) {
+        event.waitUntil(offlineRepair().then(status => event.ports[0].postMessage(status)));
+    }
 });
+
+async function offlineStatus() {
+    const cache = await caches.open(CACHE_NAME);
+    const check = async urls => {
+        const hits = await Promise.all(urls.map(u => cache.match(u)));
+        return urls.filter((u, i) => !hits[i]);
+    };
+    const [criticalMissing, optionalMissing] = await Promise.all([check(CRITICAL_URLS), check(OPTIONAL_URLS)]);
+    const data = await cache.match('./lakes_data.json');
+    return {
+        cacheName: CACHE_NAME,
+        criticalTotal: CRITICAL_URLS.length,
+        optionalTotal: OPTIONAL_URLS.length,
+        criticalMissing,
+        optionalMissing,
+        dataDate: data ? (data.headers.get('last-modified') || data.headers.get('date') || null) : null,
+        log: await pushStateGet('swlog', [])
+    };
+}
+
+async function offlineRepair() {
+    const before = await offlineStatus();
+    const cache = await caches.open(CACHE_NAME);
+    const results = await Promise.allSettled(
+        before.criticalMissing.concat(before.optionalMissing).map(url => precacheOne(cache, url))
+    );
+    const failed = before.criticalMissing.concat(before.optionalMissing)
+        .filter((u, i) => results[i].status === 'rejected');
+    await swLog('repair', { attempted: results.length, failed });
+    const after = await offlineStatus();
+    after.repairFailed = failed;
+    return after;
+}
+
+// Ring buffer of worker lifecycle events (installs, activations, cache
+// deletions, data served from a fallback) in the version-independent KV
+// cache, shown under "Details" in the app's Offline panel. Without this the
+// 2026-09-21 failure was unreconstructable after the fact.
+async function swLog(event, detail) {
+    try {
+        const log = await pushStateGet('swlog', []);
+        log.push({ t: Date.now(), v: CACHE_NAME.replace(/^uintas-v1790049934/, ''), e: event, d: detail || {} });
+        while (log.length > 60) log.shift();
+        await pushStateSet('swlog', log);
+    } catch (e) { /* best-effort */ }
+}
 
 // ---- Web Push (iOS 16.4+ Home-Screen PWAs; standard VAPID) ----------------
 
