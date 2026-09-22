@@ -66,7 +66,8 @@
         .gps-arrow { position: absolute; left: 50%; top: -13px; transform: translateX(-50%);
                    width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent;
                    border-bottom: 10px solid #ef4444; filter: drop-shadow(0 0 1px #fff); }
-        .leaflet-bar .locate-btn, .leaflet-bar .offline-btn { font-size: 18px; line-height: 30px; text-align: center;
+        .leaflet-bar .locate-btn, .leaflet-bar .offline-btn, .leaflet-bar .fit-btn {
+                   font-size: 18px; line-height: 30px; text-align: center;
                    width: 34px; height: 34px; display: block; background: #fff; cursor: pointer; }
         .leaflet-bar .offline-btn { font-weight: bold; }
         .leaflet-bar .locate-btn.locating { animation: pulse 1s infinite; }
@@ -208,6 +209,20 @@
                             class="w-full flex items-center justify-center gap-2 text-sm font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg px-4 py-2 transition-colors">
                         🗺️ Browse all lakes on the map
                     </button>
+
+                    <!-- Jump straight to one drainage's map. Deliberately NOT the
+                         drainage filter below: that one is multi-select and stacks
+                         with species/depth/etc; this is a one-tap shortcut to a
+                         single drainage scoped on the map, filters untouched. -->
+                    <div class="mt-2">
+                        <button id="drainage-jump-toggle" type="button"
+                                class="w-full flex items-center justify-between gap-2 text-sm font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg px-4 py-2 transition-colors">
+                            <span>📍 Jump to a drainage</span>
+                            <span id="drainage-jump-chevron" class="text-gray-400 transition-transform inline-block">▸</span>
+                        </button>
+                        <div id="drainage-jump-panel"
+                             class="hidden mt-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2"></div>
+                    </div>
 
                     <!-- Quiet link to the rotenone treatment list (data-driven from DWR notes) -->
                     <button id="rotenone-link" type="button"
@@ -884,6 +899,7 @@
                 initializeUI();
                 initSyncUI();
                 populateDrainages();
+                populateDrainageJump();
                 updateMissionProgress();
                 populateStats();
 
@@ -1231,6 +1247,10 @@
             document.getElementById('view-list').addEventListener('click', () => setView('list'));
             document.getElementById('view-map').addEventListener('click', () => setView('map'));
             document.getElementById('map-all').addEventListener('click', showAllOnMap);
+            document.getElementById('drainage-jump-toggle').addEventListener('click', () => {
+                setDrainageJumpExpanded(
+                    document.getElementById('drainage-jump-panel').classList.contains('hidden'));
+            });
             // Mission bar Easter egg: tap (or Enter/Space) drops the status menu
             const missionToggle = document.getElementById('mission-toggle');
             missionToggle.addEventListener('click', (e) => { e.stopPropagation(); toggleMissionMenu(); });
@@ -1347,6 +1367,45 @@
                 element.addEventListener('input', onFilterChange);
                 element.addEventListener('change', onFilterChange);
             });
+        }
+
+        // ---- "Jump to a drainage": one-tap shortcut to a scoped map view ----
+        // Separate from the drainage FILTER (multi-select, stacks with the other
+        // filters). This picks exactly one drainage, forces map view, and scrolls
+        // to the map rather than the drainage write-up above it.
+        function setDrainageJumpExpanded(expanded) {
+            document.getElementById('drainage-jump-panel').classList.toggle('hidden', !expanded);
+            document.getElementById('drainage-jump-chevron').style.transform =
+                expanded ? 'rotate(90deg)' : '';
+        }
+
+        function populateDrainageJump() {
+            const panel = document.getElementById('drainage-jump-panel');
+            panel.innerHTML = '';
+            const drainages = [...new Set(lakes.map(l => l.drainage))].filter(Boolean).sort();
+            drainages.forEach(drainage => {
+                const all = lakes.filter(l => l.drainage === drainage);
+                const placed = all.filter(l => l.lat != null).length;
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'text-left text-sm px-3 py-2 rounded-lg border border-slate-200 '
+                    + 'bg-white hover:bg-slate-50 hover:border-slate-300 transition-colors';
+                // Drop the redundant "Drainage(s)" suffix — the heading already says it.
+                const short = drainage.replace(/\s+Drainages?$/, '');
+                btn.innerHTML = `<span class="font-medium text-slate-800">${short}</span>`
+                    + `<span class="block text-xs text-gray-500">${all.length} lakes`
+                    + `${placed < all.length ? ` · ${placed} mapped` : ''}</span>`;
+                btn.addEventListener('click', () => showDrainageMap(drainage));
+                panel.appendChild(btn);
+            });
+        }
+
+        function showDrainageMap(drainage) {
+            view.mode = 'map';
+            localStorage.setItem('uintas-view', 'map');
+            updateViewToggle();
+            setDrainageJumpExpanded(false);
+            showDrainageLakes(drainage, { scrollToMap: true });
         }
 
         function populateDrainages() {
@@ -1720,10 +1779,15 @@
         const view = {
             mode: localStorage.getItem('uintas-view') || 'list',
             results: [], title: '', showDrainage: false, leadHtml: '',
-            fromFilters: false   // true while the results are the filter panel's output
+            fromFilters: false,  // true while the results are the filter panel's output
+            // Bumped every time the result SET changes (new filter, new drainage,
+            // new search). renderMap auto-fits ONCE per token and then leaves the
+            // camera alone — see lastFitToken.
+            fitToken: 0
         };
 
         function setResults(results, { title = '', showDrainage = false, leadHtml = '', fromFilters = false, scroll = true } = {}) {
+            view.fitToken++;
             view.results = results;
             view.title = title;
             view.showDrainage = showDrainage;
@@ -1843,22 +1907,137 @@
         let detailMap = null;   // the mini-map inside an open lake modal
         let gpsHeadingEl = null, headingListening = false, lastHeading = null;
 
-        // ---- Compass heading arrow (#2) ----
-        // Point the arrow the way the phone faces. iOS gives webkitCompassHeading
-        // (0=N, clockwise); other browsers approximate from absolute orientation alpha.
+        // ---- Compass heading arrow ----
+        // Point the arrow the way you're actually facing. The previous version
+        // took the raw reading (webkitCompassHeading, or 360 - alpha) straight to
+        // the DOM, which produced three distinct defects:
+        //
+        //  1. BACKWARDS. Both of those numbers are only a compass heading when the
+        //     phone lies FLAT — they describe where the TOP EDGE points. Held
+        //     upright to read the map (i.e. how it's used), the top edge points at
+        //     the sky and its horizontal projection is degenerate: it flips a full
+        //     180° as you tilt through vertical. Fixed by rebuilding the whole
+        //     device->world rotation from (alpha, beta, gamma) and reading the
+        //     heading off a vector that is genuinely horizontal — the back camera's
+        //     direction (device -Z, = where you're looking) when upright, the top
+        //     of the SCREEN when flat — switching between them with hysteresis so
+        //     it can't flap at the crossover. Landscape rotation is compensated.
+        //  2. JITTER. Magnetometer samples land at up to 60 Hz and are noisy, and
+        //     every one wrote to the DOM. They're now low-passed as a unit VECTOR
+        //     (you cannot average angles across the 0°/360° seam) and flushed at
+        //     most once per animation frame.
+        //  3. 180° SPINS. `.gps-heading` carries a CSS transition, so writing
+        //     359deg then 1deg animates the long way round. The DOM now gets a
+        //     continuous, unwrapped angle that only ever moves by the short delta.
+        const DEG = Math.PI / 180;
+        const HEADING_SMOOTHING = 0.18;   // low-pass weight per sample
+        const HEADING_FLAT_ENTER = 0.80;  // |world-up component of the screen normal| => "flat"
+        const HEADING_FLAT_EXIT = 0.60;   // ...and below this => "upright" (hysteresis band)
+        let headingVec = null;            // smoothed {x: east, y: north}
+        let headingFlat = false;          // current flat/upright mode
+        let headingDisplay = 0;           // continuous (unwrapped) angle written to CSS
+        let headingFrame = null;          // pending rAF handle
+        let headingShown = false;
+        let headingWarned = false;
+
+        const mod360 = n => ((n % 360) + 360) % 360;
+
+        // Device axes expressed in the world frame (ENU: x East, y North, z Up),
+        // from the W3C Z-X'-Y'' intrinsic rotation R = Rz(alpha)·Rx(beta)·Ry(gamma).
+        // Each returned vector is a column of R — i.e. one device axis in world
+        // coordinates. Sanity check: flat, screen up, top pointing north
+        // (0,0,0) gives top=(0,1,0) and face=(0,0,1).
+        function orientationAxes(alpha, beta, gamma) {
+            const cZ = Math.cos(alpha * DEG), sZ = Math.sin(alpha * DEG);
+            const cX = Math.cos(beta * DEG), sX = Math.sin(beta * DEG);
+            const cY = Math.cos(gamma * DEG), sY = Math.sin(gamma * DEG);
+            return {
+                right: { x: cZ * cY - sZ * sX * sY, y: cY * sZ + cZ * sX * sY, z: -cX * sY },
+                top:   { x: -cX * sZ,               y: cZ * cX,                z: sX },
+                face:  { x: cY * sZ * sX + cZ * sY, y: sZ * sY - cZ * cY * sX, z: cX * cY }
+            };
+        }
+
+        function screenAngle() {
+            if (screen.orientation && typeof screen.orientation.angle === 'number') {
+                return screen.orientation.angle;
+            }
+            return typeof window.orientation === 'number' ? window.orientation : 0;
+        }
+
+        function onOrient(e) {
+            let alpha = e.alpha;
+            if (typeof e.webkitCompassHeading === 'number' && isFinite(e.webkitCompassHeading)) {
+                // iOS: `alpha` has an arbitrary zero, but webkitCompassHeading is
+                // true-north referenced and iOS derives one from the other as
+                // heading = 360 - alpha. Feeding the north-referenced value back in
+                // as alpha makes the tilt math below absolute. (This is NOT double
+                // compensation: webkitCompassHeading is just the flat-device
+                // projection of the same attitude — the projection that breaks when
+                // the phone is upright, which is exactly what we're replacing.)
+                alpha = 360 - e.webkitCompassHeading;
+                if (!headingWarned && typeof e.webkitCompassAccuracy === 'number'
+                    && (e.webkitCompassAccuracy < 0 || e.webkitCompassAccuracy > 25)) {
+                    headingWarned = true;
+                    showMapNote('Compass needs calibrating — wave the phone in a figure-8.');
+                }
+            } else if (!e.absolute) {
+                return;   // relative-only orientation can't be a compass
+            }
+            if (alpha == null || e.beta == null || e.gamma == null) return;
+
+            const axes = orientationAxes(alpha, e.beta, e.gamma);
+            // face.z is +1 flat screen-up, 0 upright, -1 flat screen-down.
+            const flatness = Math.abs(axes.face.z);
+            if (headingFlat ? flatness < HEADING_FLAT_EXIT : flatness > HEADING_FLAT_ENTER) {
+                headingFlat = !headingFlat;
+            }
+
+            let px, py;
+            if (headingFlat) {
+                // Laid flat: "facing" = where the top of the SCREEN points. At
+                // screen angle 0 that's device +Y; at 90 (landscape) it's +X.
+                const a = screenAngle() * DEG, sa = Math.sin(a), ca = Math.cos(a);
+                px = sa * axes.right.x + ca * axes.top.x;
+                py = sa * axes.right.y + ca * axes.top.y;
+            } else {
+                // Held up: "facing" = out the back of the phone, where you're looking.
+                px = -axes.face.x;
+                py = -axes.face.y;
+            }
+
+            const len = Math.hypot(px, py);
+            if (len < 1e-6) return;   // pointing straight up/down — no heading to read
+            px /= len; py /= len;
+
+            if (!headingVec) headingVec = { x: px, y: py };
+            else {
+                headingVec.x += HEADING_SMOOTHING * (px - headingVec.x);
+                headingVec.y += HEADING_SMOOTHING * (py - headingVec.y);
+            }
+            lastHeading = mod360(Math.atan2(headingVec.x, headingVec.y) / DEG);
+            scheduleHeading();
+        }
+
+        function scheduleHeading() {
+            if (headingFrame) return;
+            headingFrame = requestAnimationFrame(() => { headingFrame = null; applyHeading(); });
+        }
+
         function applyHeading() {
             if (lastHeading == null || !gpsHeadingEl) return;
             const bearing = (resultsMap && resultsMap.getBearing) ? resultsMap.getBearing() : 0;
+            // Unwrap against what's currently rendered: always take the short way
+            // round, so the CSS transition never spins 359° to move 1°.
+            const delta = mod360(lastHeading - bearing - headingDisplay + 180) - 180;
+            if (headingShown && Math.abs(delta) < 0.25) return;  // below visible resolution
+            headingDisplay += delta;
+            // Set the angle BEFORE unhiding: a display:none element doesn't run the
+            // CSS transition, so the arrow appears already pointing the right way
+            // instead of sweeping in from 0°.
+            gpsHeadingEl.style.setProperty('--heading', headingDisplay.toFixed(1) + 'deg');
             gpsHeadingEl.style.display = '';
-            gpsHeadingEl.style.setProperty('--heading', (lastHeading - bearing) + 'deg');
-        }
-        function onOrient(e) {
-            let hdg = null;
-            if (typeof e.webkitCompassHeading === 'number') hdg = e.webkitCompassHeading;
-            else if (e.absolute && typeof e.alpha === 'number') hdg = 360 - e.alpha;
-            if (hdg == null) return;
-            lastHeading = hdg;
-            applyHeading();
+            headingShown = true;
         }
         // Must run inside the user-gesture stack (the locate tap) for the iOS prompt.
         function requestHeading() {
@@ -1896,11 +2075,12 @@
             resultsMarkers = L.layerGroup().addTo(resultsMap);
             resultsMap.on('zoomend moveend', () => updatePinLabels());  // wrapped: Leaflet passes the event as arg 1
             addLocateControl();
+            addFitControl();
             addOfflineControl();
             // Track the active basemap so the offline downloader defaults to it
             resultsMap.on('baselayerchange', e => { activeLayerName = e.name; });
             // Keep the heading arrow pointing true as the map is manually rotated
-            resultsMap.on('rotate', applyHeading);
+            resultsMap.on('rotate', () => scheduleHeading());
         }
 
         // ---- Flag labels on map pins ----
@@ -1910,9 +2090,11 @@
         // zoom into a basin. Toggling means unbind+rebind because Leaflet fixes
         // a tooltip's permanence at bind time; interactive:true forwards taps
         // on the label to the marker, so the label itself is a tap target.
-        const PIN_LABEL_MAX = 30;
+        const PIN_LABEL_MAX = 50;
         let pinRefs = [];         // results map
         let detailPinRefs = [];   // neighbor pins in the lake modal's mini-map
+        let lastFitToken = -1;    // view.fitToken the results map last auto-fit to
+        let lastFitBounds = null; // pin bounds from the latest renderMap (for ⤢)
         function pinRef(marker, lake) {
             const full = lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number;
             const emoji = statusEmoji(lake);
@@ -1989,7 +2171,7 @@
             // Container was hidden until the modal opened — fix its size.
             requestAnimationFrame(() => detailMap && detailMap.invalidateSize());
         }
-        const DETAIL_LABEL_MAX = 12;
+        const DETAIL_LABEL_MAX = 20;
         // Focus-lake icon in the mini-map: a teardrop pin in the status color
         // (color keeps its meaning; the shape says "this one"). Tip sits on the
         // coordinate so it never hides a neighbor's circle.
@@ -2033,14 +2215,26 @@
                 cov.classList.add('hidden');
             }
 
-            if (bounds.length) {
-                resultsMap.fitBounds(bounds, { padding: [40, 40], maxZoom: 14 });
-            } else {
-                resultsMap.setView([40.72, -110.40], 9);
+            // Sticky camera: auto-fit only when the result SET changed. A plain
+            // re-render — closing a lake modal, a status save folding in a
+            // background sync, toggling list↔map — keeps exactly where you were
+            // zoomed. (Before this, every re-render refit and yanked you back to
+            // the whole-range overview mid-basin.) The ⤢ control refits on demand.
+            lastFitBounds = bounds.length ? bounds : null;
+            if (lastFitToken !== view.fitToken) {
+                lastFitToken = view.fitToken;
+                fitResults();
             }
             // fitBounds that actually moves fires moveend (handled), but a
             // same-view render wouldn't — evaluate the labels directly too.
             updatePinLabels();
+        }
+
+        // Frame the current results (the old unconditional behavior, now manual).
+        function fitResults() {
+            if (!resultsMap) return;
+            if (lastFitBounds) resultsMap.fitBounds(lastFitBounds, { padding: [40, 40], maxZoom: 14 });
+            else resultsMap.setView([40.72, -110.40], 9);
         }
 
         function addLocateControl() {
@@ -2055,6 +2249,22 @@
                 }
             });
             resultsMap.addControl(new Locate());
+        }
+
+        // Re-frame the current results. The camera is otherwise sticky (see
+        // renderMap), so this is the way back out after zooming into a basin.
+        function addFitControl() {
+            const Fit = L.Control.extend({
+                options: { position: 'topleft' },
+                onAdd() {
+                    const div = L.DomUtil.create('div', 'leaflet-bar');
+                    const a = L.DomUtil.create('a', 'fit-btn', div);
+                    a.href = '#'; a.title = 'Fit all results in view'; a.innerHTML = '⤢';
+                    L.DomEvent.on(a, 'click', L.DomEvent.stop).on(a, 'click', () => fitResults());
+                    return div;
+                }
+            });
+            resultsMap.addControl(new Fit());
         }
 
         function locateMe(btn) {
@@ -2073,6 +2283,10 @@
                     }).addTo(resultsMap);
                     const el = gpsMarker.getElement();
                     gpsHeadingEl = el ? el.querySelector('.gps-heading') : null;
+                    // Fresh element — its rendered angle is 0, so re-baseline the
+                    // continuous angle rather than replaying the accumulated one.
+                    headingDisplay = 0;
+                    headingShown = false;
                     applyHeading();  // show arrow immediately if we already have a heading
                     resultsMap.setView([latitude, longitude], Math.max(resultsMap.getZoom(), 13));
                 },
@@ -2373,7 +2587,7 @@
             updateOfflineStorageLine();
         }
 
-        function showDrainageLakes(drainage) {
+        function showDrainageLakes(drainage, { scrollToMap = false } = {}) {
             const drainageLakes = lakes.filter(lake => lake.drainage === drainage);
             const drainageInfo = drainagesInfo.find(d => d.name === drainage);
             const drainageTrailheads = trailheadsData.filter(t => t.drainage === drainage);
@@ -2406,7 +2620,14 @@
                 `;
             }
 
-            setResults(drainageLakes, { title: `Lakes in ${drainage} (${drainageLakes.length} lakes)`, leadHtml });
+            setResults(drainageLakes, { title: `Lakes in ${drainage} (${drainageLakes.length} lakes)`, leadHtml,
+                                        scroll: !scrollToMap });
+            // Jumped here for the map: the drainage write-up + map image + trailhead
+            // list sit above it, so aim the scroll at the map itself.
+            if (scrollToMap) {
+                requestAnimationFrame(() => document.getElementById('results-map-wrap')
+                    .scrollIntoView({ behavior: 'smooth', block: 'start' }));
+            }
         }
 
         // ---- Collapsed note sections: 2-line preview with a more…/less… toggle ----

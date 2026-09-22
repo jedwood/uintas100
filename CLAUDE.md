@@ -231,7 +231,24 @@ and show a duplicated section — fix is simply deleting the duplicated lower
 section(s) by hand on that device.
 
 ### Designation conventions (`lakes.letter_number`)
-DWR's letter-number is the primary key. Two house conventions on top of it:
+**The letter prefix is a survey block, NOT a drainage code** — do not "fix" a
+lake whose prefix doesn't match its drainage. DWR assigned letters by *when a
+lake was surveyed*, so a block routinely spans two drainages, and `lakes.drainage`
+means "which pamphlet booklet prints this lake's write-up" (i.e. watershed).
+Verified against the pamphlet OCR: the Duchesne booklet prints `D-*`, `X-11/12/14`
+(the Marsell Canyon three — Duchesne water, but the pamphlet sends you to the Rock
+Creek map for access) and `Z-1…21, 26, 27, 31…37, 42, 43` (Mirror Lake corridor +
+Naturalist Basin); the Rock Creek booklet prints the rest of the `Z-` block
+(Grandaddy + Four Lakes Basins) and its own `X-*`. Junesucker says so outright:
+"Some of the abbreviations such as X will be used in multiple drainage's."
+Split prefixes, all correct: `X` (Rock Creek/Lake Fork/Swift Creek/Yellowstone/
+Duchesne), `Z` (Duchesne/Rock Creek), `GR` (Ashley/Sheep-Carter/Beaver Creek/Burnt
+Fork — GR = Green River tributaries), `G` (Smiths Fork/Blacks Fork/Henrys Fork),
+`U` (Uinta River + Dry Gulch, which share one booklet).
+Gotcha for designation regexes: `U-150` in pamphlet text is **State Route 150**
+(the Mirror Lake Scenic Byway), not a lake.
+
+Two house conventions on top of DWR's numbering:
 - **`b` suffix** when DWR reuses a number for two distinct lakes: `X-22b` (Swift
   Creek's second X-22). `WR-14b` was retired 2026-09-08 — the 2025 pamphlet's
   "Becky Lake, WR-14" heading is a typo; Becky is **WR-77** (DWR stocking reports
@@ -340,6 +357,22 @@ python3 scripts/locator_server.py --host 0.0.0.0   # on the Mini; prints the LAN
 # 3. Push verified coords into the PWA data
 python3 scripts/export_web_data.py
 ```
+Seeding from the pamphlet text (fills the Locator's queue, never the PWA):
+```bash
+python3 scripts/seed_coordinates_from_text.py            # dry run + table
+python3 scripts/seed_coordinates_from_text.py --apply    # writes coord_source='dwr-text'
+python3 scripts/seed_coordinates_from_text.py --revert   # undo, back to unplaced
+```
+DWR write-ups usually locate a lake off a named neighbour with a real bearing and
+distance ("0.4 miles west of Island Lake"), which is enough to compute a position.
+Guards, learned the hard way — the loose first cut put Uinta River lakes ~20 miles
+away on Lake Fork's same-named Kidney, and anchored five Whiterocks lakes onto a
+*trailhead* that fuzzy-matched a lake name: **anchors must be in the same drainage**
+(the Uintas reuse names constantly), the reference must be called Lake/Reservoir/Pond
+right there and not name a trail/pass/meadow/creek/basin, and a lake whose anchor
+isn't placed yet is deferred to a later pass rather than falling through to a weaker
+phrase in the same paragraph. What's left unplaced after this has no usable text —
+mostly the "does not sustain fish life … shown on the map as a landmark" rows.
 Coordinate columns on `lakes`: `lat`, `lng`, `coord_source` (`osm-designation`/`osm-name`/`manual`),
 `coord_status` (`seed_unverified` | `seed_suspect` | `confirmed` | `manual` | `cant_find`).
 Only `confirmed`/`manual` coordinates are exported to the PWA (which shows an "Open in Maps"
@@ -573,6 +606,7 @@ Auto-generated lake data   ← System content
 - `.githooks/pre-commit` - Version-controlled hook: PWA cache bump + auto re-export of `data/seeds/` when the DB is committed (enable: `git config core.hooksPath .githooks`)
 - `scripts/species_utils.py` - Species name standardization
 - `scripts/seed_coordinates.py` - OSM coordinate seeder
+- `scripts/seed_coordinates_from_text.py` - seeds unplaced lakes from bearing/distance references in `dwr_notes` (same-drainage anchors only; writes `coord_source='dwr-text'` seeds, never PWA-visible)
 - `scripts/locator_server.py` + `locator.html` - Lake Locator tool for placing/verifying coordinates
 - `scripts/coord_utils.py` - Shared coordinate helpers (schema migration, name/designation normalization)
 
