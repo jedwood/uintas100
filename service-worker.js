@@ -1,4 +1,4 @@
-const CACHE_NAME = 'uintas-v1790049961';
+const CACHE_NAME = 'uintas-v1790050057';
 
 // A version-INDEPENDENT cache used as a tiny key/value store shared between this
 // service worker and the page (the unseen-badge count, the last stocking report,
@@ -494,7 +494,7 @@ async function offlineRepair() {
 async function swLog(event, detail) {
     try {
         const log = await pushStateGet('swlog', []);
-        log.push({ t: Date.now(), v: CACHE_NAME.replace(/^uintas-v1790049961/, ''), e: event, d: detail || {} });
+        log.push({ t: Date.now(), v: CACHE_NAME.replace(/^uintas-v1790050057/, ''), e: event, d: detail || {} });
         while (log.length > 60) log.shift();
         await pushStateSet('swlog', log);
     } catch (e) { /* best-effort */ }
