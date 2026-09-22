@@ -35,3 +35,4 @@
 {"id": "e-1789507204670-9n8yl3", "lake": "BR-43", "field": "starred", "value": 1, "ts": "2026-09-15T21:20:04.670Z", "device": "dev-e1w1au3u", "applied_at": "2026-09-15T21:20:04+00:00"}
 {"id": "e-1789507236826-fqwu1r", "lake": "BR-43", "field": "jed_notes", "value": "Only tigers, hard to get to!", "ts": "2026-09-15T21:20:36.826Z", "device": "dev-e1w1au3u", "applied_at": "2026-09-15T21:20:36+00:00"}
 {"id": "e-1790049928608-miwbsk", "lake": "RC-30", "field": "status", "value": "NONE", "ts": "2026-09-22T04:05:28.608Z", "device": "dev-7wvw8frc", "applied_at": "2026-09-22T04:05:28+00:00"}
+{"id": "e-1790049956100-tbefih", "lake": "X-7", "field": "status", "value": "CAUGHT", "ts": "2026-09-22T04:05:56.100Z", "device": "dev-7wvw8frc", "applied_at": "2026-09-22T04:05:56+00:00"}
