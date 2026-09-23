@@ -40,3 +40,4 @@
 {"id": "e-1790050683328-rj98x9", "lake": "X-10", "field": "status", "value": "CAUGHT", "ts": "2026-09-22T04:18:03.328Z", "device": "dev-7wvw8frc", "applied_at": "2026-09-22T04:18:11+00:00"}
 {"id": "e-1790050709409-rtjf69", "lake": "X-11", "field": "status", "value": "CAUGHT", "ts": "2026-09-22T04:18:29.409Z", "device": "dev-7wvw8frc", "applied_at": "2026-09-22T04:18:29+00:00"}
 {"id": "e-1790050731726-w3bl5v", "lake": "X-12", "field": "status", "value": "CAUGHT", "ts": "2026-09-22T04:18:51.726Z", "device": "dev-7wvw8frc", "applied_at": "2026-09-22T04:18:53+00:00"}
+{"id": "e-1790127818915-o4drxk", "lake": "RC-45", "field": "starred", "value": 1, "ts": "2026-09-23T01:43:38.915Z", "device": "dev-e1w1au3u", "applied_at": "2026-09-23T01:43:38+00:00"}
