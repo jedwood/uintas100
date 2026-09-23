@@ -92,6 +92,7 @@
             <option value="suspect">⚠ Suspect seeds only</option>
             <option value="unplaced">Unplaced only</option>
             <option value="seeds">Seeds to verify</option>
+            <option value="cant-find">✕ Can't find (give up pile)</option>
             <option value="plss">◆ PLSS estimates (Forest Service TRS)</option>
             <option value="done">Done (confirmed/manual)</option>
             <option value="all">All lakes</option>
@@ -192,6 +193,7 @@
             case 'suspect': return s === 'seed_suspect';
             case 'unplaced': return !l.lat && s !== 'cant_find';
             case 'seeds': return s === 'seed_unverified' || s === 'seed_suspect';
+            case 'cant-find': return s === 'cant_find';
             case 'plss': return s === 'plss_estimate';
             case 'done': return placed;
             default: return true;
