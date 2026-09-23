@@ -40,7 +40,7 @@ def create_database(db_path=None):
             status TEXT CHECK(status IN ("CAUGHT", "NONE", "OTHERS")),
             trip_reports TEXT,
             notes_needs_update BOOLEAN DEFAULT FALSE,
-            no_fish BOOLEAN DEFAULT 0,
+            no_fish BOOLEAN DEFAULT 0,  -- 0 fish/unknown, 1 no fish, 2 probably no fish (unconfirmed)
             last_modified TIMESTAMP,
             lat REAL,
             lng REAL,

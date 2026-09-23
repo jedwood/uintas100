@@ -714,27 +714,32 @@
         // Display name + designation + status/no-fish emoji, HTML-escaped.
         function lakeTitle(lake) {
             const base = lake.name ? `${lake.name} ${lake.letter_number}` : lake.letter_number;
-            return `${escHtml(base)}${statusEmoji(lake)}${lake.no_fish ? ' 🚫' : ''}`;
+            const fishMark = lake.no_fish ? ' 🚫' : lake.probably_no_fish ? ' ❓' : '';
+            return `${escHtml(base)}${statusEmoji(lake)}${fishMark}`;
         }
         // Status color scheme (pins, focus pin, list-card edge, mission menu):
         //   green  = I caught fish        orange = fished it, skunked
         //   yellow = others caught here   blue   = fishable, not yet fished
+        //   violet = probably no fish (never stocked, nothing says it holds fish)
         //   gray   = no fish
         const STATUS_COLORS = {
-            CAUGHT: '#16a34a', NONE: '#ea580c', OTHERS: '#eab308', DEFAULT: '#2563eb', NO_FISH: '#9ca3af'
+            CAUGHT: '#16a34a', NONE: '#ea580c', OTHERS: '#eab308', DEFAULT: '#2563eb',
+            MAYBE_NO_FISH: '#a78bfa', NO_FISH: '#9ca3af'
         };
         function statusColor(lake) {
             if (STATUS_COLORS[lake.status]) return STATUS_COLORS[lake.status];
             if (lake.no_fish) return STATUS_COLORS.NO_FISH;
+            if (lake.probably_no_fish) return STATUS_COLORS.MAYBE_NO_FISH;
             return STATUS_COLORS.DEFAULT;
         }
-        // The five status buckets, in mission-menu order. `match` is the bucket
+        // The six status buckets, in mission-menu order. `match` is the bucket
         // membership test; every lake lands in exactly one.
         const STATUS_BUCKETS = [
             { key: 'CAUGHT',  label: 'Caught',        emoji: '🎣',   color: STATUS_COLORS.CAUGHT,  match: l => l.status === 'CAUGHT' },
             { key: 'NONE',    label: 'Skunked',       emoji: '✖️',   color: STATUS_COLORS.NONE,    match: l => l.status === 'NONE' },
             { key: 'OTHERS',  label: 'Others caught', emoji: '👥🎣', color: STATUS_COLORS.OTHERS,  match: l => l.status === 'OTHERS' },
-            { key: 'UNFISHED',label: 'Not fished yet',emoji: '🐟',   color: STATUS_COLORS.DEFAULT, match: l => !l.status && !l.no_fish },
+            { key: 'UNFISHED',label: 'Not fished yet',emoji: '🐟',   color: STATUS_COLORS.DEFAULT, match: l => !l.status && !l.no_fish && !l.probably_no_fish },
+            { key: 'MAYBE_NO_FISH', label: 'Probably no fish', emoji: '❓', color: STATUS_COLORS.MAYBE_NO_FISH, match: l => !l.status && !l.no_fish && !!l.probably_no_fish },
             { key: 'NO_FISH', label: 'No fish',       emoji: '🚫',   color: STATUS_COLORS.NO_FISH, match: l => !l.status && !!l.no_fish },
         ];
 

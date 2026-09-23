@@ -387,7 +387,8 @@ def build(conn):
                 ("species_current", [s for s, hist in sp if not hist]),
                 ("species_historical", [s for s, hist in sp if hist]),
                 ("fishing_pressure", lk["fishing_pressure"]),
-                ("no_fish", bool(lk["no_fish"])),
+                ("no_fish", lk["no_fish"] == 1),
+                ("probably_no_fish", lk["no_fish"] == 2),
                 ("jed_status", lk["status"] or None),
                 ("starred", bool(lk["starred"])),
                 ("has_coords", lk["coord_status"] in ("confirmed", "manual")),
@@ -596,6 +597,8 @@ def to_markdown(idx):
                     bits.append("★")
                 if lr["no_fish"]:
                     bits.append("no fish")
+                elif lr["probably_no_fish"]:
+                    bits.append("probably no fish")
                 elif lr["species_current"]:
                     bits.append("/".join(lr["species_current"]))
                 if lr["elevation_ft"]:

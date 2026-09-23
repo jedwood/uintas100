@@ -109,7 +109,11 @@ def export():
                 "dwr_notes_prev": row["dwr_notes_prev"],
                 "cma_notes": row["cma_notes"],
                 "starred": row["starred"],
-                "no_fish": row["no_fish"] or 0,
+                # no_fish is tri-state in the DB (0 fish/unknown, 1 no fish,
+                # 2 probably no fish); the frontend gets two flags so every
+                # existing `lake.no_fish` truthiness check still means "confirmed".
+                "no_fish": 1 if row["no_fish"] == 1 else 0,
+                "probably_no_fish": row["no_fish"] == 2,
                 "lat": row["lat"] if coords_ok else None,
                 "lng": row["lng"] if coords_ok else None,
                 "stocking": stocking_by_lake.get(row["id"], []),
