@@ -1117,7 +1117,7 @@
         // Compute header subtitle, About-page fun facts, stocking totals, and
         // year filter bounds from the data so they never go stale
         function populateStats() {
-            const withFishCount = lakes.filter(lake => !lake.no_fish).length;
+            const withFishCount = lakes.filter(lake => !lake.no_fish && !lake.probably_no_fish).length;
             const drainageCount = new Set(lakes.map(lake => lake.drainage)).size;
 
             document.getElementById('header-subtitle').textContent =
