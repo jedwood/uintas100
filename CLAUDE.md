@@ -341,21 +341,32 @@ Re-run after `import_falcon_guide.py` or when lake statuses change (the CAUGHT
 counts are baked in). On the Mini the EPUB adds the intro blurbs and the
 book-TOC trailhead sections; on a mirror it degrades gracefully.
 
-### Coordinates & Mapping
+### Coordinates & Mapping (placing is DONE — Locator retired 2026-09-24)
+**The coordinate pass is finished.** 738 lakes are `coord_status='confirmed'`;
+the only 8 without coordinates are `cant_find`, and every one is a fishless,
+unnamed "does not sustain fish life … shown on the map as a landmark" row with
+no usable position in any source. The `seed_unverified` / `seed_suspect` review
+queue is **empty**, so there is nothing left to place or verify.
+
+Accordingly the **Lake Locator is retired**: `scripts/locator_server.py` now
+exits immediately unless run with `UINTAS_LOCATOR=force`. It had been left
+running on `--host 0.0.0.0` — a LAN-exposed writer into the canonical DB — for
+a queue of zero. The source is kept, not deleted, because it is still the only
+way to place a **new** water (a future `JW-n`, or a `cant_find` row that finally
+gets a position):
+
 ```bash
-# 1. Seed ~70% of lake coordinates from OpenStreetMap (matched by designation + name)
-python3 scripts/seed_coordinates.py            # uses cached OSM data if present
+UINTAS_LOCATOR=force python3 scripts/locator_server.py              # localhost only
+UINTAS_LOCATOR=force python3 scripts/locator_server.py --host 0.0.0.0   # LAN; prints the URL
+python3 scripts/export_web_data.py                                  # then push coords into the PWA
+```
+Stop it when you're done. It still obeys the single-writer model (refuses to
+start on a clone carrying `.db-readonly`).
+
+The seeding scripts below are likewise only needed if new lakes are ever added:
+```bash
+python3 scripts/seed_coordinates.py            # OSM seed; uses cached data if present
 python3 scripts/seed_coordinates.py --refresh  # re-fetch from Overpass
-
-# 2. Manually place/verify the rest in the Lake Locator (local web tool).
-#    The Locator WRITES the DB, so under the single-writer model it must run on
-#    the Mini (it refuses to start on a mirror). Serve it over the LAN and click
-#    from any machine's browser:
-python3 scripts/locator_server.py --host 0.0.0.0   # on the Mini; prints the LAN URL
-#    (--host defaults to 127.0.0.1 — localhost-only — if you're at the Mini itself)
-
-# 3. Push verified coords into the PWA data
-python3 scripts/export_web_data.py
 ```
 Seeding from the pamphlet text (fills the Locator's queue, never the PWA):
 ```bash
@@ -635,7 +646,7 @@ Auto-generated lake data   ← System content
 - `scripts/species_utils.py` - Species name standardization
 - `scripts/seed_coordinates.py` - OSM coordinate seeder
 - `scripts/seed_coordinates_from_text.py` - seeds unplaced lakes from bearing/distance references in `dwr_notes` (same-drainage anchors only; writes `coord_source='dwr-text'` seeds, never PWA-visible)
-- `scripts/locator_server.py` + `locator.html` - Lake Locator tool for placing/verifying coordinates
+- `scripts/locator_server.py` + `locator.html` - Lake Locator, **retired 2026-09-24** (coordinate pass complete). Still the only way to place a new water: `UINTAS_LOCATOR=force python3 scripts/locator_server.py`
 - `scripts/coord_utils.py` - Shared coordinate helpers (schema migration, name/designation normalization)
 
 ### Data Sources (`data/`)

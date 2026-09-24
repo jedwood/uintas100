@@ -247,8 +247,10 @@ def main():
         print(f"  (of which {suspect_count} flagged suspect, >30km from drainage median -- review first)")
     print(f"\nCoordinates now present for {placed}/{total} lakes "
           f"({100*placed//total}%). Remaining {total-placed} need manual placement.")
-    print("Run the Lake Locator to verify seeds and place the rest:")
-    print("  python3 scripts/locator_server.py")
+    print("Run the Lake Locator to verify seeds and place the rest.")
+    print("It was retired 2026-09-24 (the coordinate pass is complete), so it")
+    print("needs the force flag -- and stop it when you're done:")
+    print("  UINTAS_LOCATOR=force python3 scripts/locator_server.py")
 
 
 if __name__ == "__main__":

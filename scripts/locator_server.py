@@ -2,6 +2,22 @@
 """
 Lake Locator — a local tool for placing/verifying lake coordinates.
 
+RETIRED 2026-09-24. The job is done: all 738 lakes that can be placed are
+`coord_status = 'confirmed'`, and the only 8 without coordinates are
+`cant_find` — every one of them a fishless, unnamed "shown on the map as a
+landmark" row with no usable position in any source. Nothing is left in the
+`seed_unverified` / `seed_suspect` review queue, so there is nothing for this
+tool to do. It no longer starts by default (it was being left running on
+0.0.0.0, i.e. a LAN-exposed writer into the canonical DB, for a queue of zero).
+
+Kept rather than deleted because it is the only way to place a NEW water — if
+a JW-n lake is ever added, or a `cant_find` row finally gets a position, this
+is the tool. To run it again:
+
+    UINTAS_LOCATOR=force python3 scripts/locator_server.py
+
+and remember to stop it afterwards.
+
 Serves the repo (so locator.html, drainage maps, and pamphlet PDFs load) and
 exposes a tiny JSON API that writes coordinates straight back into
 uinta_lakes.db. This is a LOCAL admin tool, not part of the deployed PWA.
@@ -10,20 +26,21 @@ Because it WRITES the DB, it obeys the single-writer model: it refuses to start
 on a read-only mirror (a clone with the `.db-readonly` marker). Run it on the
 writer machine (the Mac Mini) and browse to it from anywhere on the LAN.
 
-Usage:
-    python3 scripts/locator_server.py                  # then open http://localhost:8777/locator.html
-    python3 scripts/locator_server.py --port 9000
-    python3 scripts/locator_server.py --host 0.0.0.0   # allow LAN access (run on the Mini,
-                                                       # click from the MacBook's browser)
+Usage (all of these need UINTAS_LOCATOR=force — see the retirement note above):
+    UINTAS_LOCATOR=force python3 scripts/locator_server.py                  # http://localhost:8777/locator.html
+    UINTAS_LOCATOR=force python3 scripts/locator_server.py --port 9000
+    UINTAS_LOCATOR=force python3 scripts/locator_server.py --host 0.0.0.0   # allow LAN access (run on the
+                                                                            # Mini, click from another browser)
 
-Workflow:
-    1. (optional) python3 scripts/seed_coordinates.py   # pre-place ~70% of pins
-    2. python3 scripts/locator_server.py                # confirm seeds, place the rest
-    3. python3 scripts/export_web_data.py               # push coords into the PWA data
+Workflow, if a new water ever needs placing:
+    1. (optional) python3 scripts/seed_coordinates.py                       # pre-place pins from OSM
+    2. UINTAS_LOCATOR=force python3 scripts/locator_server.py               # confirm seeds, place the rest
+    3. python3 scripts/export_web_data.py                                   # push coords into the PWA data
 """
 
 import argparse
 import json
+import os
 import socket
 import sqlite3
 import sys
@@ -179,10 +196,23 @@ def main():
     )
     args = parser.parse_args()
 
+    # Retired 2026-09-24 — see the module docstring. This is a LAN-exposed
+    # writer into the canonical DB, so it should not be trivially startable
+    # now that the coordinate queue is empty.
+    if os.environ.get("UINTAS_LOCATOR") != "force":
+        print("[retired] The Lake Locator finished its job on 2026-09-24:")
+        print("    738 lakes confirmed; the 8 without coordinates are all")
+        print("    fishless 'cant_find' landmark rows. The review queue is empty.")
+        print()
+        print("It still works — it is the only way to place a NEW water. To run it:")
+        print("    UINTAS_LOCATOR=force python3 scripts/locator_server.py")
+        print("(and stop it when you're done — it writes uinta_lakes.db over the LAN.)")
+        sys.exit(0)
+
     if is_readonly_mirror():
         print("[writer-guard] .db-readonly present — this clone is a read-only mirror.")
         print("The Locator writes uinta_lakes.db, so it must run on the writer machine (the Mini):")
-        print("    python3 scripts/locator_server.py --host 0.0.0.0")
+        print("    UINTAS_LOCATOR=force python3 scripts/locator_server.py --host 0.0.0.0")
         print("then open the LAN URL it prints from this machine's browser.")
         sys.exit(1)
 
