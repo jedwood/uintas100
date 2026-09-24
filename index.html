@@ -484,7 +484,7 @@
                                         <h2 class="text-2xl font-bold text-gray-800 mb-4">Fun Facts</h2>
                                         <div class="space-y-6">
                                             <p class="text-lg leading-relaxed">
-                                                This database tracks <span id="fact-total-lakes">722</span> lakes across <span id="fact-total-drainages">19</span> drainages, of which <span id="fact-with-fish">636</span> have fish. Many are stocked regularly, some were stocked years ago and have established naturally reproducing populations, some have no fish and likely never have, and some were once stocked but they gave up due to frequent winter kill.
+                                                This database tracks <span id="fact-total-lakes">746</span> lakes across <span id="fact-total-drainages">18</span> drainages, of which <span id="fact-with-fish">579</span> are fishable. Many are stocked regularly, and some were stocked years ago and have established naturally reproducing populations. Another <span id="fact-no-fish">121</span> are known to be fishless (some likely never had fish, and some were once stocked until DWR gave up due to frequent winter kill), and <span id="fact-probably-no-fish">46</span> more probably have no fish.
                                             </p>
 
                                             <div>
@@ -1125,6 +1125,8 @@
             document.getElementById('fact-total-lakes').textContent = lakes.length;
             document.getElementById('fact-total-drainages').textContent = drainageCount;
             document.getElementById('fact-with-fish').textContent = withFishCount;
+            document.getElementById('fact-no-fish').textContent = lakes.filter(lake => lake.no_fish).length;
+            document.getElementById('fact-probably-no-fish').textContent = lakes.filter(lake => lake.probably_no_fish).length;
 
             const lakeLabel = lake => `${lake.name ? `${lake.name} ` : ''}(${lake.letter_number})`;
             const deepest = lakes.reduce((a, b) => (b.max_depth_ft || 0) > (a.max_depth_ft || 0) ? b : a);
