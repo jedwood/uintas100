@@ -500,7 +500,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** Rock Creek trailhead (section: Rock Creek Trailhead) · **Town:** Duchesne, Utah · **Drainage:** Rock Creek
 - **Distance:** 21 miles out and back · **Elev:** 10400 ft · **Time:** 12 hours · **Difficulty:** Moderate—some steep sections · **Usage:** Moderate
-- **Lakes (8 on route):** X-43 Diamond (Brookies, 10230ft, 13ac); X-42 Mid (Brookies, 10380ft, 5.1ac); X-96 Rock 1 (Brookies, 10559ft, 4.8ac); X-97 Rock 2 (Grayling, 10550ft, 7.7ac); X-39 Rudolph 1 (Brookies, 10420ft, 25.6ac); X-40 Rudolph 2 (Brookies, 10470ft, 2.9ac); X-41 Rudolph 3 (10470ft, 2.4ac); X-98 Shamrock (Brookies, 10365ft, 18.2ac)
+- **Lakes (8 on route):** X-43 Diamond (Brookies, 10230ft, 13ac); X-42 Mid (Brookies, 10380ft, 5.1ac); X-96 Rock 1 (Brookies, 10559ft, 4.8ac); X-97 Rock 2 (Grayling, 10550ft, 7.7ac); X-39 Rudolph 1 (Brookies, 10420ft, 25.6ac); X-40 Rudolph 2 (Brookies, 10470ft, 2.9ac); X-41 Rudolph 3 (probably no fish, 10470ft, 2.4ac); X-98 Shamrock (Brookies, 10365ft, 18.2ac)
 - **Aggregates:** 8 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Grayling; lake elev 10230–10559 ft; 79.7 ac total, largest 25.6 ac
 - **Tags:** camping, fishing, cross-country, mountain-pass, peak, horses, crowded, solitude, multi-day, paved-access, toilets
 - **Summary:** A compass is a must in this heavily timbered area. It’s easy to get headed in the wrong direction as the trails twist, turn, intersect, and sometimes disappear in Sinowauvf Basin. Getting into the area is not a problem but finding your way around Sinowauvf Basin can be confusing. Keep your map and compass handy, keep your group together, and keep the insect repellent nearby. There is plenty of spring water, but remember to properly filter water before drinking.
@@ -510,7 +510,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** Rock Creek trailhead (section: Rock Creek Trailhead) · **Town:** Duchesne, Utah · **Drainage:** Rock Creek
 - **Distance:** 24 miles out and back · **Elev:** 10470 ft · **Time:** 14 hours · **Difficulty:** Moderate—some steep sections · **Usage:** Moderate
-- **Lakes (4 on route):** X-39 Rudolph 1 (primary, Brookies, 10420ft, 25.6ac); X-40 Rudolph 2 (primary, Brookies, 10470ft, 2.9ac); X-41 Rudolph 3 (primary, 10470ft, 2.4ac); RC-42 Cabin (Cutthroats, 10450ft, 4.3ac)
+- **Lakes (4 on route):** X-39 Rudolph 1 (primary, Brookies, 10420ft, 25.6ac); X-40 Rudolph 2 (primary, Brookies, 10470ft, 2.9ac); X-41 Rudolph 3 (primary, probably no fish, 10470ft, 2.4ac); RC-42 Cabin (Cutthroats, 10450ft, 4.3ac)
 - **Aggregates:** 4 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats; lake elev 10420–10470 ft; 35.2 ac total, largest 25.6 ac
 - **Tags:** camping, fishing, paved-access, toilets
 - **Summary:** There are three different routes to Rudolph Lakes #1, #2, and #3. One trail begins at Moon Lake via Brown Duck Trail; total distance 9.5 miles one way. Another starts at the end of the challenging ATV Dry Ridge Road. Perhaps the most popular of the three begins right here at the Rock Creek trailhead.
@@ -570,7 +570,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** Lake Fork trailhead before Moon Lake Campground (section: Lake Fork Trailhead) · **Town:** Duchesne, Utah · **Drainage:** Lake Fork
 - **Distance:** 30 miles out and back · **Elev:** 11200 ft · **Time:** 19 hours · **Difficulty:** Moderate to difficult · **Usage:** Light
-- **Lakes (5 on route):** LF-21 Lambert (primary, Brookies, 10990ft, 6.6ac); X-94 Crater (Splake/Tigers, 11268ft, 28ac); LF-35 (10098ft, 1ac); LF-36 Linda (Brookies, 10940ft, 3.8ac); LF-30 Oweep (Cutthroats, 10865ft, 6.4ac)
+- **Lakes (5 on route):** LF-21 Lambert (primary, Brookies, 10990ft, 6.6ac); X-94 Crater (Splake/Tigers, 11268ft, 28ac); LF-35 (probably no fish, 10098ft, 1ac); LF-36 Linda (Brookies, 10940ft, 3.8ac); LF-30 Oweep (Cutthroats, 10865ft, 6.4ac)
 - **Aggregates:** 5 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats, Splake, Tigers; lake elev 10098–11268 ft; 45.8 ac total, largest 28 ac
 - **Tags:** camping, fishing, cross-country, steep, mountain-pass, horses, paved-access, toilets
 - **Summary:** The upper regions of the Lake Fork drainage display some of the finest scenery in the High Uintas. From one pass to another, grand panoramas seem to enchant the mind. Red Knob Pass grants access to two other beautiful drainages, while Nahguch and Porcupine Passes branch into others. To say the least, this area is a gold mine for photographers. However, the Lake Fork Trail from Moon Lake is not as seductive as it winds through a 14-mile corridor of tall standing pines. Not much else can be seen until you get to the upper basins. If you prefer filtering spring water to drink, make a note of which lakes in the area have a supply.
@@ -760,7 +760,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** Chepeta Lake trailhead (section: Chepeta Trailhead) · **Town:** Roosevelt, Utah · **Drainage:** Whiterocks River
 - **Distance:** 11.2 miles out and back · **Elev:** 10348 ft · **Time:** 7 hours · **Difficulty:** Moderate · **Usage:** Light
-- **Lakes (7 on route):** WR-49 Cliff (primary, Brookies/Tigers, 11000ft, 68ac); WR-64 Chepeta (Brookies/Cutthroats, 10600ft, 135ac); WR-42 Sand (Cutthroats, 10435ft, 6.2ac); WR-48 Watkins (Brookies, 10390ft, 18.4ac); WR-46 Whiterocks Reservoir Lake (10800ft, 67ac); WR-40 Wooley (Brookies/Tigers, 10680ft, 20.5ac); WR-50 Workman (10500ft, 20ac)
+- **Lakes (7 on route):** WR-49 Cliff (primary, Brookies/Tigers, 11000ft, 68ac); WR-64 Chepeta (Brookies/Cutthroats, 10600ft, 135ac); WR-42 Sand (Cutthroats, 10435ft, 6.2ac); WR-48 Watkins (Brookies, 10390ft, 18.4ac); WR-46 Whiterocks Reservoir Lake (probably no fish, 10800ft, 67ac); WR-40 Wooley (Brookies/Tigers, 10680ft, 20.5ac); WR-50 Workman (10500ft, 20ac)
 - **Aggregates:** 7 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats, Tigers; lake elev 10390–11000 ft; 335.1 ac total, largest 135 ac
 - **Tags:** camping, fishing, river-crossing, horses, paved-access, toilets
 - **Summary:** Simply put—this is quite a quiet, rugged place.
@@ -962,7 +962,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** Hoop Lake trailhead (section: Hoop Lake Trailhead) · **Town:** Mountain View, Wyoming · **Drainage:** Burnt Fork
 - **Distance:** 15.5 miles out and back · **Elev:** 10777 ft · **Time:** 10 hours · **Difficulty:** Moderate · **Usage:** Heavy
-- **Lakes (9 on route):** GR-132 Island (primary, 10777ft, 117.8ac); GR-147 Beaver (10505ft, 38.3ac); GR-134 Lower Bennion (Brookies, 10950ft, 7.7ac); GR-130 Snow (Cutthroats, 10550ft, 9.4ac); GR-133 Whitewall (10900ft, 14.5ac); GR-135 Upper Bennion (10970ft, 2ac); GR-143 Hoop Lake (Grayling/Rainbows/Tigers); GR-140 Kabell (Cutthroats, 10348ft, 14.7ac); GR-131 Round (Cutthroats, 10662ft, 24.3ac)
+- **Lakes (9 on route):** GR-132 Island (primary, 10777ft, 117.8ac); GR-147 Beaver (10505ft, 38.3ac); GR-134 Lower Bennion (Brookies, 10950ft, 7.7ac); GR-130 Snow (Cutthroats, 10550ft, 9.4ac); GR-133 Whitewall (probably no fish, 10900ft, 14.5ac); GR-135 Upper Bennion (10970ft, 2ac); GR-143 Hoop Lake (Grayling/Rainbows/Tigers); GR-140 Kabell (Cutthroats, 10348ft, 14.7ac); GR-131 Round (Cutthroats, 10662ft, 24.3ac)
 - **Aggregates:** 9 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats, Grayling, Rainbows, Tigers; lake elev 10348–10970 ft; 228.7 ac total, largest 117.8 ac
 - **Tags:** camping, fishing, navigation, steep, horses, solitude
 - **Summary:** Many lakes in the High Uintas claim the name of Island. However, this lake is the king of all the Island Lakes—mainly because it’s the biggest. Island Lake is reached from either Hoop or Spirit Lake. The Spirit Lake Trail is about a mile longer, but the elevation gain is 1,000 feet less.
@@ -1012,7 +1012,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** Browne Lake (section: Spirit Lake Trailhead) · **Town:** Mountain View, Wyoming · **Drainage:** Carter Creek
 - **Distance:** 13 miles out and back · **Elev:** 10350 ft · **Time:** 8 hours · **Difficulty:** Difficult · **Usage:** Light
-- **Lakes (10 on route):** GR-19 Lamb (primary, Cutthroats/Tigers, 10540ft, 6ac); GR-22 Bummer (Brookies/Cutthroats, 10350ft, 1.9ac); GR-18 Ewe (Grayling, 10750ft, 3ac); GR-27 Lower Potter (10130ft, 3.4ac); GR-28 Upper Potter (Cutthroats, 10130ft, 4.3ac); GR-3 Spirit Lake (Cutthroats/Tigers); GR-20 (Tigers, 10355ft, 5.7ac); GR-21 (Tigers, 10355ft, 3.7ac); GR-23 Mutton (Brookies/Cutthroats, 10570ft, 3.8ac); GR-24 Ram (Cutthroats/Tigers, 10380ft, 7ac)
+- **Lakes (10 on route):** GR-19 Lamb (primary, Cutthroats/Tigers, 10540ft, 6ac); GR-22 Bummer (Brookies/Cutthroats, 10350ft, 1.9ac); GR-18 Ewe (Grayling, 10750ft, 3ac); GR-27 Lower Potter (probably no fish, 10130ft, 3.4ac); GR-28 Upper Potter (Cutthroats, 10130ft, 4.3ac); GR-3 Spirit Lake (Cutthroats/Tigers); GR-20 (Tigers, 10355ft, 5.7ac); GR-21 (Tigers, 10355ft, 3.7ac); GR-23 Mutton (Brookies/Cutthroats, 10570ft, 3.8ac); GR-24 Ram (Cutthroats/Tigers, 10380ft, 7ac)
 - **Aggregates:** 10 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats, Grayling, Tigers (historical only: Rainbows); lake elev 10130–10750 ft; 38.8 ac total, largest 7 ac
 - **Tags:** camping, fishing, cross-country, steep, river-crossing, horses, crowded, solitude, multi-day, toilets
 - **Summary:** The Browne Lake area is, in many respects, an outdoor recreation hub of the northeastern Uintas thanks to the campground; the cooling lake at 8,200 feet known for rainbow trout, brook trout, and kokanee salmon; and a network of ATV trails, including the historic Carter Military Trail. There are also three hiking and backpacking trailheads, though seasonal deadfall has made some navigation difficult—on a recent visit, the trail to Tepee was nowhere to be found.
