@@ -44,3 +44,4 @@
 {"id": "e-1790222128739-odwql8", "lake": "RC-36", "field": "starred", "value": 1, "ts": "2026-09-24T03:55:28.739Z", "device": "dev-7wvw8frc", "applied_at": "2026-09-24T03:55:29+00:00"}
 {"id": "e-1790285155563-1kol4b", "lake": "W-26", "field": "status", "value": "NONE", "ts": "2026-09-24T21:25:55.563Z", "device": "dev-7wvw8frc", "applied_at": "2026-09-24T21:25:55+00:00"}
 {"id": "e-1790285165708-vytznu", "lake": "W-25", "field": "status", "value": "NONE", "ts": "2026-09-24T21:26:05.708Z", "device": "dev-7wvw8frc", "applied_at": "2026-09-24T21:26:10+00:00"}
+{"id": "e-1790285181083-f8jfzt", "lake": "A-39", "field": "status", "value": "NONE", "ts": "2026-09-24T21:26:21.083Z", "device": "dev-7wvw8frc", "applied_at": "2026-09-24T21:26:23+00:00"}
