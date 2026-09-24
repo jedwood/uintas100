@@ -49,3 +49,7 @@ data/push/
 # offline regression-suite byproducts (tests/offline/run.sh)
 tests/offline/results.txt
 tests/offline/last-run.log
+
+# OSM route cache + derived remoteness artifacts (docs/less-visited-lakes.md).
+# Regenerate: scripts/fetch_osm_routes.py -> lake_trail_distance.py -> build_topo_sheets.py
+data/cache/
