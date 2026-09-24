@@ -537,6 +537,33 @@ rm -rf /Applications/Uintas.app && cp -R src-tauri/target/release/bundle/macos/U
 - **Lake Details**: Modal views with stocking history, photos, DWR notes, "Open in Maps" link when coordinates exist
 - **Mission Progress**: Header shows CAUGHT-status count toward the 100-waters goal
 
+### Curated lake collections (`data/collections.json`) — the "Collections" filter
+The reports in `docs/` (`less-visited-lakes.md`, `4x4-access-lakes.md`) are also
+selectable *in the app*: a **Collections** multi-select in the filter panel, first
+control, grouped by report. Picking one shows that set in the list/map like any
+other filter, and it **composes** with drainage/species/depth/etc. rather than
+replacing them.
+
+- **Source of truth is `data/collections.json`, hand-curated.** It is NOT parsed
+  from the markdown: those reports also list ruled-out lakes, traps and
+  heavy-pressure waters in prose and tables, and a parser would sweep them in.
+  The reports are the argument; this file is the pick list.
+- **Kept OUTSIDE `uinta_lakes.db` on purpose** (same reasoning as
+  `data/app_edits_log.jsonl`) so the seeds / `rebuild_database` / `verify_rebuild`
+  machinery is untouched. `export_web_data.py` reads it and nests it into
+  `lakes_data.json` as `collections`.
+- **Validation is hard and happens at export time**, i.e. in the pre-commit hook:
+  an unknown designation or a duplicate key/lake raises and *fails the commit*,
+  rather than silently shipping a filter chip that matches nothing.
+- Each lake may carry a `note` — the curated one-liner for why it is in that set.
+  It shows on the result card when exactly one collection is selected (two sets
+  would make a single note ambiguous), and in the lake modal's "Collections"
+  section, which links back to the whole set.
+
+Adding a set: append an object with a unique `key`, a short `label` (it becomes a
+filter chip — keep it under ~28 chars), a `group`, and the `lakes`. Then
+`python3 scripts/export_web_data.py`.
+
 ### Frontend Asset Regeneration
 - `lakes_data.json` - regenerate with `python3 scripts/export_web_data.py` after db changes (pre-commit hook does this automatically when the db is committed)
 - `cma_book.html` - full text of Cordell Andersen's book, one `<section id="cma-pNNN">` per printed page; regenerate with `python3 scripts/export_cma_book.py` (Mini-only — needs the gitignored PDF). The lake modal's "(p. NNN)" citation links and trailhead "book p. N" links fetch this file and jump to the cited page in an in-modal viewer (back arrow returns to the lake). It is deliberately NOT in the service-worker precache list (a missing file must not break install); `initApp` warm-fetches it so the SW caches it lazily for offline use.
@@ -593,6 +620,7 @@ Auto-generated lake data   ← System content
 ### Critical Files
 - `uinta_lakes.db` - Main database
 - `lakes_data.json` - Generated frontend data (do not edit by hand; regenerate via `scripts/export_web_data.py`)
+- `data/collections.json` - Hand-curated lake sets behind the PWA's "Collections" filter (see above)
 - `index.html` - Web app frontend
 - `tailwind.css` - Vendored static Tailwind build
 - `vendor/leaflet/` - Vendored Leaflet library + marker/layer-control images, plus the `leaflet-rotate` plugin (map view)

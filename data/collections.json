@@ -1,0 +1,234 @@
+{
+  "_comment": [
+    "Curated lake sets surfaced in the PWA's filter panel ('Collections').",
+    "",
+    "Hand-authored on purpose. These are editorial picks drawn from the reports",
+    "in docs/, NOT parsed from them: the reports also list ruled-out lakes,",
+    "traps and heavy-pressure waters in prose and tables, and a parser would",
+    "sweep those in. Source of truth is this file; the reports are the argument.",
+    "",
+    "Kept OUTSIDE uinta_lakes.db deliberately, like data/app_edits_log.jsonl, so",
+    "the seeds / rebuild_database / verify_rebuild machinery stays untouched.",
+    "scripts/export_web_data.py reads it, validates every designation against the",
+    "database, and nests it into lakes_data.json as `collections`.",
+    "",
+    "Adding a set: append an object with a unique key, a short label (it becomes",
+    "a filter chip, so keep it under ~28 chars), the group it sorts under, and",
+    "the lakes. `note` is optional per lake and shows on the result card while",
+    "that collection is the only one selected."
+  ],
+  "collections": [
+    {
+      "key": "lv-shortlist",
+      "label": "Less-visited: shortlist",
+      "group": "Less likely to be visited",
+      "source": "docs/less-visited-lakes.md",
+      "description": "Tier A. Text, geometry and topo all agree, and there is a real fishery at the end of it.",
+      "lakes": [
+        { "letter_number": "WR-34", "note": "DWR 2025: \"a good lake to visit and be by yourself.\" 45 ft at 11,200 ft." },
+        { "letter_number": "U-93", "note": "The only lake in the database rated Very low pressure. DWR: \"one of the most remote lakes in the Uinta River drainage.\"" },
+        { "letter_number": "U-88", "note": "Falcon: \"Angling pressure is almost nil.\" Wild brookies, largest lake in Painter Basin." },
+        { "letter_number": "U-98", "note": "43 ft and no trail — 3rd-most off-route lake in the range. Best odds of holdover fish out past 2 miles." },
+        { "letter_number": "RC-8", "note": "DWR: \"a remote lake... Fishing pressure is very light.\" Boulder fields, horse-impossible. Stocked 2026." },
+        { "letter_number": "BR-46", "note": "DWR 2025: \"a good opportunity for anglers seeking solitude.\" Only 3.5 trail miles — best solitude-per-mile." },
+        { "letter_number": "X-94", "note": "The deepest lake in the High Uintas at 147 ft. Splake stocked through 2026, still rated Low pressure." },
+        { "letter_number": "WR-73", "note": "DWR 2025: \"4.2 miles, all of it is cross-country\" — the most explicit off-trail line found anywhere." },
+        { "letter_number": "Y-16", "note": "42.5 acres and 47 ft behind a trailless ridge. Best size-to-solitude ratio in the range." },
+        { "letter_number": "G-5", "note": "33 acres, 69 ft, a mile of open tundra off the Highline. CMA notes \"the possibility of large fish.\"" },
+        { "letter_number": "WR-55", "note": "60 ft in a cirque with cliffs \"towering a thousand feet.\" Falcon rates usage Very light." },
+        { "letter_number": "RC-42", "note": "Falcon: \"gets very little usage... sits all by its lonesome.\" Tales of big, healthy brook trout." },
+        { "letter_number": "X-87", "note": "Last 2 miles trailless over open tundra, 10.5 mi from a road. Check rotenone status first." },
+        { "letter_number": "U-15", "note": "38 ft at 11,550 ft. A faint trail, a wet meadow, then a steep ravine. No camping." },
+        { "letter_number": "GR-144", "note": "25 acres and 28 ft in a talus cirque. The crowd stops at Beaver Lake, 3/4 mile short." },
+        { "letter_number": "X-15", "note": "45 ft, no trails, \"difficult to find\" in heavy timber. Lowest of the set at 9,882 ft, so it opens early." }
+      ]
+    },
+    {
+      "key": "lv-strong",
+      "label": "Less-visited: strong picks",
+      "group": "Less likely to be visited",
+      "source": "docs/less-visited-lakes.md",
+      "description": "Tier B. Strong evidence, but each carries one caveat — usually road proximity, depth, or an unproven fishery.",
+      "lakes": [
+        { "letter_number": "BR-43", "note": "The previous pamphlet said \"does not sustain fish life.\" Tigers stocked through 2026." },
+        { "letter_number": "BR-44", "note": "\"lies in an isolated basin and access is difficult.\" Pair it with BR-43." },
+        { "letter_number": "RC-11", "note": "DWR: \"one of the most inaccessible waters of the Rock Creek drainage.\" 12.7 mi in." },
+        { "letter_number": "RC-38", "note": "\"Difficult to find without a topographic map... seldom visited.\" Stocked 2026." },
+        { "letter_number": "RC-45", "note": "\"a remote, seldom visited pond\" in a cirque. Approach starts on the Miners Gulch jeep trail." },
+        { "letter_number": "U-73", "note": "35 ft. Falcon: \"If you feel alone and remote at Milk Lake, it's because, well, you are.\"" },
+        { "letter_number": "U-5", "note": "DWR: \"ideal for a small group of one to three backpackers who want to get off the beaten trail.\"" },
+        { "letter_number": "U-59", "note": "39 ft, \"light and limited to day use\" — nobody camps there. CMA: larger than normal fish." },
+        { "letter_number": "U-82", "note": "20.5 trail miles, the longest walk-in of any light-pressure lake. No Falcon hike goes there." },
+        { "letter_number": "X-14", "note": "Half-mile bushwhack; neighbouring Fish Hatchery absorbs the crowd. 17,981 grayling since 2005." },
+        { "letter_number": "G-73", "note": "DWR 2025: the trail \"disappears in large headwater meadows.\" 30 ft, cutts and tigers." },
+        { "letter_number": "G-74", "note": "Same vanished Middle Fork trail, but it has water and campsites — the basecamp for Bobs." },
+        { "letter_number": "G-105", "note": "Genetically pure Colorado River cutthroat, never stocked. Tiny and shallow — go for what the fish are." },
+        { "letter_number": "G-67", "note": "9.5 miles into a rugged above-timberline cirque. No campsites, no horse feed. Brookies 2026." },
+        { "letter_number": "GR-152", "note": "DWR: \"seldom visited by anglers.\" Two off-trail ridge climbs. Not ice-free until mid-July." },
+        { "letter_number": "GR-130", "note": "35 ft, \"surrounded on three sides by talus slides and ledges. Horse access is impossible.\"" },
+        { "letter_number": "GR-25", "note": "\"seldom visited\" — the barrier is a 400-foot headwall, not distance. 1.8 miles total." },
+        { "letter_number": "X-60", "note": "30 ft, \"up a trailless slope\" above Swasey Hole, which DWR calls popular and heavily fished." },
+        { "letter_number": "X-57", "note": "30 ft, a mile west of Swasey up a rocky timbered slope. No trail, horses difficult." },
+        { "letter_number": "X-78", "note": "17 acres, \"1 mile through trailless timber,\" and 10,183 cutthroat stocked — DWR's write-up is stale." },
+        { "letter_number": "W-28", "note": "DWR: \"This remote natural lake... no clearly defined trails.\" OSM tags the nearest route \"overgrown.\"" },
+        { "letter_number": "W-58", "note": "Both approaches are bad on purpose. Grayling, plus leftover goldens from 2014-15." },
+        { "letter_number": "DF-4", "note": "DWR 1981: \"This lake is for anglers who like solitude and ruggedness.\"" },
+        { "letter_number": "GR-28", "note": "75 ft of wild-brookie water — the DB had it wrong as a 4-acre pond until the 2026-09 fix." },
+        { "letter_number": "GR-62", "note": "\"Horse access is impossible... seldom receives anglers or campers.\" Grayling and brookies." },
+        { "letter_number": "X-81", "note": "18 miles in, then a bushwhacking mile. 21 acres with camping and water — you can base there." },
+        { "letter_number": "U-27", "note": "DWR recommends it outright: \"avoid the people usually present at the Kidney and Fox lakes.\"" },
+        { "letter_number": "U-39", "note": "The pamphlet says it is no longer managed for fishing; DWR has since stocked grayling 7 times." },
+        { "letter_number": "GR-148", "note": "DWR: \"a good choice for anglers seeking solitude.\" Brand-new grayling in 2026." },
+        { "letter_number": "A-15", "note": "\"situated in a small, remote basin and is difficult to locate. A topographic map may be helpful.\"" },
+        { "letter_number": "P-62", "note": "No trail and a 300-ft wall. Potts: \"A good lake for those who are more adventuresome.\"" }
+      ]
+    },
+    {
+      "key": "lv-undescribed",
+      "label": "Undescribed finds",
+      "group": "Less likely to be visited",
+      "source": "docs/less-visited-lakes.md",
+      "description": "Stocked by DWR but described by no pamphlet, book or website. Nobody can plan a trip to a lake no source mentions.",
+      "lakes": [
+        { "letter_number": "U-100", "note": "2.25 mi off any mapped route — 2nd-most off-route lake in the range. Grayling through 2026." },
+        { "letter_number": "RC-36", "note": "A shelf under Brown Duck Mountain. Stocked five times over twenty years, described by nobody." },
+        { "letter_number": "U-91", "note": "Inside the trailless Painter Lakes basin. The most consistently stocked of the undescribed lakes." },
+        { "letter_number": "U-79", "note": "A trailless bench in Gilbert Creek Basin, inside the High Uintas Wilderness." },
+        { "letter_number": "U-22", "note": "A high pocket near Trail Rider Pass. Close to a trail, but 10 miles from any road." }
+      ]
+    },
+    {
+      "key": "basin-crow-canyon",
+      "label": "Basin: upper Crow Canyon",
+      "group": "Trailless basins",
+      "source": "docs/less-visited-lakes.md",
+      "description": "Dry Gulch. Seven stocked lakes and not one mapped route in the basin. All stocked through 2025-26.",
+      "lakes": [
+        { "letter_number": "DG-9", "note": "27 ft — the deepest in the upper chain, so the least likely to winterkill." },
+        { "letter_number": "DG-10", "note": "DWR: \"Angling pressure is very light.\" Follow the DG-9 inlet a further mile." },
+        { "letter_number": "DG-14", "note": "DWR: \"There is no trail to the lake.\" Head of the canyon at 11,000 ft." },
+        { "letter_number": "DG-15", "note": "\"very light\" pressure. Good fairy shrimp population, but extreme level swings." },
+        { "letter_number": "DG-16", "note": "100 feet from DG-15, so it costs nothing to fish both. Shallowest of the trio." },
+        { "letter_number": "DG-17", "note": "The best fishery of the head-of-canyon trio — a large population, partly self-sustaining." },
+        { "letter_number": "DG-27", "note": "39 ft, the deepest in Dry Gulch. \"isolated lake in the head of Heller basin,\" poorly marked trail." }
+      ]
+    },
+    {
+      "key": "basin-rasmussen",
+      "label": "Basin: upper Rasmussen",
+      "group": "Trailless basins",
+      "source": "docs/less-visited-lakes.md",
+      "description": "Whiterocks. DWR states outright that there are no maintained trails in this basin. Only 3.5-4.4 miles from a road.",
+      "lakes": [
+        { "letter_number": "WR-73", "note": "At the very head of the basin. \"4.2 miles, all of it is cross-country.\"" },
+        { "letter_number": "WR-77", "note": "\"no trail and both routes are cross country... receives very little fishing pressure.\" 24 ft." },
+        { "letter_number": "WR-74", "note": "\"very light\" pressure. Cutthroat on a reliable 3-year cycle, stocked 2025." },
+        { "letter_number": "WR-75", "note": "Stocked cutts plus wild brookies moving up from below. A bonus stop en route to Ann." },
+        { "letter_number": "WR-76", "note": "Wild brookies AND cutthroat, no stocking needed. Meadow shoreline — the fly-casting lake here." },
+        { "letter_number": "WR-33", "note": "At the toe of a rock glacier. Grayling every three years, stocked 2026." }
+      ]
+    },
+    {
+      "key": "basin-painter",
+      "label": "Basin: Painter Lakes",
+      "group": "Trailless basins",
+      "source": "docs/less-visited-lakes.md",
+      "description": "Uinta River. The deepest-in cluster in the report — everything here is 9.5-10.7 miles from a drivable road. Falcon: 32.5 miles round trip, usage Light, difficulty High.",
+      "lakes": [
+        { "letter_number": "U-93", "note": "The only Very low pressure rating in the database. DWR: most remote in the drainage." },
+        { "letter_number": "U-88", "note": "Largest in the basin. Falcon: \"Angling pressure is almost nil.\" Wild brookies." },
+        { "letter_number": "U-89", "note": "11.5 acres at 11,037 ft. Brookies stocked through 2022." },
+        { "letter_number": "U-85", "note": "The gateway lake — it has the basin's only campsites, so parties stop here." },
+        { "letter_number": "U-91", "note": "No write-up in any source, yet stocked with cutthroat six times through 2024." },
+        { "letter_number": "U-76", "note": "At the base of Kings Peak in cold, windswept tundra. \"a true wilderness experience.\"" },
+        { "letter_number": "U-75", "note": "\"the lake receives few anglers\" — too windy and cold to camp. CMA caught a very large brookie here." },
+        { "letter_number": "U-74", "note": "11,740 ft, hidden 150 yards off the trail in its own cirque. DWR: brookies \"grow well.\"" }
+      ]
+    },
+    {
+      "key": "basin-beaver-cirques",
+      "label": "Basin: Beaver Lake cirques",
+      "group": "Trailless basins",
+      "source": "docs/less-visited-lakes.md",
+      "description": "Beaver Creek. Three off-trail lakes stacked above one busy basecamp. Basecamp at Beaver Lake; everything above it is quiet.",
+      "lakes": [
+        { "letter_number": "GR-144", "note": "25.8 acres and 28 ft. \"There is no trail to the lake and the terrain is rough.\"" },
+        { "letter_number": "GR-145", "note": "An eighth of a mile further \"up the talus ridge.\" Grayling water." },
+        { "letter_number": "GR-177", "note": "18 acres, reached by \"an obscure sheep trail... very difficult to locate and follow.\"" }
+      ]
+    },
+    {
+      "key": "basin-weyman",
+      "label": "Basin: Weyman Lakes",
+      "group": "Trailless basins",
+      "source": "docs/less-visited-lakes.md",
+      "description": "Sheep/Carter Creek. Everything past the point where DWR says to leave the horses at Anson Lakes.",
+      "lakes": [
+        { "letter_number": "GR-13", "note": "\"up rock slides and across rough boulder fields... Fishing pressure is very light.\"" },
+        { "letter_number": "GR-15", "note": "\"some of the roughest boulder fields in the Uintas... Even 5 ton boulders can sometimes shift.\" New grayling 2026." },
+        { "letter_number": "GR-12", "note": "10 acres at 25 ft. Horse access impossible beyond Anson. Tigers stocked through 2023." },
+        { "letter_number": "GR-7", "note": "26 ft. Cross-country through downed timber and boulder fields; CMA calls pressure very light." }
+      ]
+    },
+    {
+      "key": "4x4-tier1",
+      "label": "4x4: go here first",
+      "group": "Reachable by 4x4",
+      "source": "docs/4x4-access-lakes.md",
+      "description": "Tier 1 — the best measured fish and/or lowest pressure, where the truck genuinely saves a long walk.",
+      "lakes": [
+        { "letter_number": "WR-48", "note": "Gillnet mean 13.2 in, max 17.7 in / 2 lb — top 3 of 60 samples. 100 yards from the Cliff Lake road end." },
+        { "letter_number": "WR-50", "note": "Heaviest fish in the entire 2025 DWR survey: an 18.9 in / 4.13 lb brookie. Wild fish." },
+        { "letter_number": "WR-44", "note": "Gillnet brookies max 18.7 in / 2.96 lb. \"Large brook and cutthroat,\" evening bite." },
+        { "letter_number": "WR-19", "note": "Pressure Low. Cutts to 17.3 in / 2 lb. FR 235 OHV trail to within ~0.3 mi." },
+        { "letter_number": "WR-49", "note": "68 acres / 55 ft, \"far less angling attention\" than its neighbours. The basecamp for the four above." },
+        { "letter_number": "BR-3", "note": "Pressure Low, wild + stocked grayling, 1990 state-record history. A different species from the rest." },
+        { "letter_number": "DF-4", "note": "Pressure Low, 23 ft. The Blanchett Park jeep road cuts ~6 mi off the approach; still a rugged trailless 3.5 mi." }
+      ]
+    },
+    {
+      "key": "4x4-tier2",
+      "label": "4x4: low pressure",
+      "group": "Reachable by 4x4",
+      "source": "docs/4x4-access-lakes.md",
+      "description": "Tier 2 — low pressure, less hard evidence on fish size.",
+      "lakes": [
+        { "letter_number": "DG-27", "note": "Pressure Light, 39 ft. Dry Gulch Road \"4 tough miles to gate,\" then 4 mi on foot via Heller." },
+        { "letter_number": "U-96", "note": "Pressure Light. Primitive logging road past Jefferson Park, then a 2 mi rim trail." },
+        { "letter_number": "RC-45", "note": "Pressure Light, 25 ft, essentially unvisited. Miners Gulch jeep trail then 2.5 mi off-trail." },
+        { "letter_number": "RC-20", "note": "Falcon usage Light. FR 143 logging road end, then 0.5-0.75 mi. Winterkill risk at 12 ft." },
+        { "letter_number": "RC-23", "note": "Pressure Light. The easiest low-pressure pair on the list, with Survey." },
+        { "letter_number": "GR-24", "note": "Pressure Low, 27 ft, fresh cutthroat restock after the 2021 rotenone — fish should be growing fast." },
+        { "letter_number": "W-58", "note": "Pressure Low, 25 ft, grayling plus leftover goldens. Gardner's Fork jeep road, then 3.5 mi over a steep pass." },
+        { "letter_number": "G-73", "note": "Pressure Low, 30 ft. Honest caveat: the 4WD only saves about a mile of a 9-mile trail." },
+        { "letter_number": "A-2", "note": "The only Low-pressure lake in the Norway Flats / Spring Canyon cluster. Small fish, pure rock-crawl." }
+      ]
+    },
+    {
+      "key": "4x4-drive-to",
+      "label": "4x4: drive to the water",
+      "group": "Reachable by 4x4",
+      "source": "docs/4x4-access-lakes.md",
+      "description": "The vehicle reaches the shore or within a couple hundred yards. Mostly busy water — this is the bad-weather / short-day / bring-the-kids set, not a solitude list.",
+      "lakes": [
+        { "letter_number": "WR-49", "note": "The road ends at a 68-acre, 55-ft lake. Rough: ATV preferred, high-clearance 4WD possible." },
+        { "letter_number": "WR-48", "note": "About 100 yards from the Cliff Lake road end — and the best gillnet fish of the two." },
+        { "letter_number": "WR-64", "note": "Road ends at the lake. Brookies to 16.0 in, cutts to 16.5 — but heavy weekend pressure." },
+        { "letter_number": "WR-13", "note": "Forest Service campground on the shore. Ordinary passenger-car destination." },
+        { "letter_number": "WR-18", "note": "Drive-to reservoir with campground and guard station. Very heavy recreational use." },
+        { "letter_number": "Z-16", "note": "Murdock Basin. 44 ft with a large brookie population. JS: \"I broke the ball joint on my truck.\"" },
+        { "letter_number": "Z-17", "note": "The road stops about 100 ft away. \"There road is littered with huge rocks.\"" },
+        { "letter_number": "Z-10", "note": "A 400-480 ft walk from the 4WD road. Pressure high / \"excessive.\"" },
+        { "letter_number": "Z-11", "note": "Same Murdock Basin spur as Hoover. Brookies." },
+        { "letter_number": "GR-35", "note": "Jeep access, but \"Horses cannot be hauled the last 3 miles because of the rugged road.\"" },
+        { "letter_number": "GR-40", "note": "\"a very rough road goes in a short distance.\" Rainbow catchables, tigers, cutts. Heavy on weekends." },
+        { "letter_number": "BR-10", "note": "\"easily accessible on the Moffit Pass Road.\" Put-and-take rainbows every year." },
+        { "letter_number": "BR-11", "note": "Roadside beaver pond off SR-150. The Deadman Traverse is \"full of giant rocks that attack your vehicle.\"" },
+        { "letter_number": "A-18", "note": "\"The last mile of road is passable to 4-wheel drive only.\" JS: \"a strong history of popping tires.\"" },
+        { "letter_number": "A-19", "note": "Drive-to via the marked Little Elk turnoff, then north 1/4 mile. Subject to winterkill." },
+        { "letter_number": "A-9", "note": "\"a side road limited to four-wheel drive vehicles.\" Brookies, heavy pressure." },
+        { "letter_number": "D-33", "note": "Soapstone Basin and Iron Mine roads. 10-12 in rainbows and tigers stocked every year 2021-2026." }
+      ]
+    }
+  ]
+}

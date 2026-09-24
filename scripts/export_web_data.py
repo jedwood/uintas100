@@ -20,6 +20,50 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DB_PATH = REPO_ROOT / "uinta_lakes.db"
 OUTPUT_PATH = REPO_ROOT / "lakes_data.json"
+COLLECTIONS_PATH = REPO_ROOT / "data" / "collections.json"
+
+
+def load_collections(known_designations):
+    """Curated lake sets for the PWA's Collections filter.
+
+    Lives outside the database on purpose (see the header comment in
+    data/collections.json) so the seeds / rebuild / verify machinery is
+    untouched. Validated hard here rather than in the browser: this runs in
+    the pre-commit hook, so a typo'd designation fails the commit instead of
+    silently producing a filter chip that matches nothing.
+    """
+    if not COLLECTIONS_PATH.exists():
+        return []
+
+    raw = json.loads(COLLECTIONS_PATH.read_text())
+    out, seen_keys = [], set()
+    for coll in raw.get("collections", []):
+        key = coll["key"]
+        if key in seen_keys:
+            raise ValueError(f"collections.json: duplicate key {key!r}")
+        seen_keys.add(key)
+
+        lakes, seen = [], set()
+        for entry in coll["lakes"]:
+            ln = entry["letter_number"]
+            if ln not in known_designations:
+                raise ValueError(
+                    f"collections.json: {key!r} lists unknown lake {ln!r}"
+                )
+            if ln in seen:
+                raise ValueError(f"collections.json: {key!r} lists {ln!r} twice")
+            seen.add(ln)
+            lakes.append({"letter_number": ln, "note": entry.get("note", "")})
+
+        out.append({
+            "key": key,
+            "label": coll["label"],
+            "group": coll.get("group", ""),
+            "description": coll.get("description", ""),
+            "source": coll.get("source", ""),
+            "lakes": lakes,
+        })
+    return out
 
 
 def export():
@@ -201,8 +245,10 @@ def export():
 
     conn.close()
 
+    collections = load_collections({l["letter_number"] for l in lakes})
+
     data = {"lakes": lakes, "drainages": drainages, "trailheads": trailheads,
-            "hikes": hikes}
+            "hikes": hikes, "collections": collections}
     OUTPUT_PATH.write_text(
         json.dumps(data, ensure_ascii=False, separators=(",", ":"))
     )
@@ -212,7 +258,7 @@ def export():
     print(
         f"Exported {len(lakes)} lakes, {n_stocking} stocking records, "
         f"{len(drainages)} drainages, {len(trailheads)} trailheads, "
-        f"{len(hikes)} hikes "
+        f"{len(hikes)} hikes, {len(collections)} collections "
         f"-> {OUTPUT_PATH.name} ({size_kb:.0f} KB)"
     )
 

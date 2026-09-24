@@ -50,6 +50,14 @@
         .ms-row:hover { background: #f8fafc; }
         .ms-row input { accent-color: #334155; width: 1rem; height: 1rem; flex: none; }
         .ms-row .ms-count { margin-left: auto; color: #9ca3af; font-size: .75rem; }
+        /* Group heading inside a multi-select panel (Collections groups its
+           options by report). Not a row — no checkbox, not clickable. */
+        .ms-group { padding: .5rem .5rem .25rem; font-size: .6875rem; font-weight: 600;
+                    text-transform: uppercase; letter-spacing: .04em; color: #94a3b8; }
+        .ms-group + .ms-row { margin-top: 0; }
+        /* The curated one-liner explaining why a lake is in the chosen set. */
+        .coll-note { margin-top: .375rem; font-size: .8125rem; line-height: 1.35;
+                     color: #475569; border-left: 2px solid #cbd5e1; padding-left: .5rem; }
         .ms-mode { display: inline-flex; border: 1px solid #e5e7eb; border-radius: .375rem;
                    overflow: hidden; font-size: .75rem; }
         .ms-mode button { padding: .125rem .5rem; font-weight: 500; background: #fff;
@@ -248,6 +256,18 @@
 
                     <!-- Filters -->
                     <div id="filters-panel" class="hidden mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2"
+                                   title="Curated sets from the reports in docs/ — picks, not a computed filter">Collections</label>
+                            <div class="relative">
+                                <button type="button" id="collection-ms-btn" class="ms-btn">
+                                    <span id="collection-ms-label" class="ms-label">Any collection</span>
+                                    <span class="ms-caret">▾</span>
+                                </button>
+                                <div id="collection-ms-panel" class="ms-panel hidden"></div>
+                            </div>
+                        </div>
+
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Drainage</label>
                             <div class="relative">
@@ -700,6 +720,10 @@
         let drainagesInfo = [];
         let trailheadsData = [];
         let hikesData = [];
+        // Curated lake sets from the reports in docs/ (data/collections.json ->
+        // lakes_data.json). Membership lookup is built once per hydrate.
+        let collectionsData = [];
+        let collectionsByLake = new Map();   // letter_number -> [{key,label,note}]
         const MISSION_GOAL = 100;
         const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -877,6 +901,12 @@
             drainagesInfo = data.drainages;
             trailheadsData = data.trailheads || [];
             hikesData = data.hikes || [];
+            collectionsData = data.collections || [];
+            collectionsByLake = new Map();
+            collectionsData.forEach(c => c.lakes.forEach(({ letter_number, note }) => {
+                if (!collectionsByLake.has(letter_number)) collectionsByLake.set(letter_number, []);
+                collectionsByLake.get(letter_number).push({ key: c.key, label: c.label, note });
+            }));
             // Stocking records are exported newest-first, so each lake's
             // unique years come out newest-first too
             lakes.forEach(lake => {
@@ -1024,8 +1054,9 @@
             // Header summaries are always safe to update in place.
             updateMissionProgress();
             populateStats();
-            // Drainage counts in the filter may have shifted.
+            // Drainage counts — and the curated sets — may have shifted.
             buildDrainageOptions();
+            buildCollectionOptions();
 
             if (resultIds.length) {
                 const byId = new Map(lakes.map(l => [l.letter_number, l]));
@@ -1182,13 +1213,15 @@
 
         function initializeUI() {
             // Build the multi-select filter popovers (drainage carries counts)
+            buildCollectionOptions();
             buildDrainageOptions();
             buildSpeciesOptions();
             updateMsLabels();
 
             // Multi-select popovers: toggle open on button, keep clicks inside
             // from closing them, and close any open panel on an outside click.
-            [['drainage-ms-btn', 'drainage-ms-panel'], ['species-ms-btn', 'species-ms-panel']]
+            [['collection-ms-btn', 'collection-ms-panel'],
+             ['drainage-ms-btn', 'drainage-ms-panel'], ['species-ms-btn', 'species-ms-panel']]
                 .forEach(([btnId, panelId]) => {
                     const btn = document.getElementById(btnId);
                     const panel = document.getElementById(panelId);
@@ -1507,6 +1540,7 @@
             ['splake', 'Splake'], ['tiger muskie', 'Tiger muskie']
         ];
         const filterState = {
+            collections: new Set(),
             drainages: new Set(),
             species: new Set(),
             speciesMode: 'or',   // 'or' = any of the picks; 'only' = nothing but the picks
@@ -1539,6 +1573,31 @@
             wireMsCheckboxes(panel, filterState.drainages);
         }
 
+        // Collections are grouped by report; within a group they keep the
+        // order the JSON declares (shortlist before the long tail).
+        function buildCollectionOptions() {
+            const panel = document.getElementById('collection-ms-panel');
+            if (!panel) return;
+            const wrap = document.getElementById('collection-ms-btn').closest('div').parentElement;
+            // Nothing curated yet (or an older cached lakes_data.json) — hide the
+            // control entirely rather than showing an empty dropdown.
+            if (!collectionsData.length) { wrap.classList.add('hidden'); return; }
+            wrap.classList.remove('hidden');
+
+            let html = '', lastGroup = null;
+            collectionsData.forEach(c => {
+                if (c.group && c.group !== lastGroup) {
+                    html += `<div class="ms-group">${escHtml(c.group)}</div>`;
+                    lastGroup = c.group;
+                }
+                const title = c.description ? ` title="${escAttr(c.description)}"` : '';
+                html += `<label class="ms-row"${title}><input type="checkbox" value="${escAttr(c.key)}">` +
+                        `<span>${escHtml(c.label)}</span><span class="ms-count">${c.lakes.length}</span></label>`;
+            });
+            panel.innerHTML = html;
+            wireMsCheckboxes(panel, filterState.collections);
+        }
+
         function buildSpeciesOptions() {
             const panel = document.getElementById('species-ms-panel');
             if (!panel) return;
@@ -1549,6 +1608,14 @@
         }
 
         function updateMsLabels() {
+            const c = filterState.collections;
+            const collLabel = document.getElementById('collection-ms-label');
+            if (collLabel) {
+                const labelForKey = k => (collectionsData.find(x => x.key === k) || { label: k }).label;
+                collLabel.textContent =
+                    c.size === 0 ? 'Any collection' : c.size === 1 ? labelForKey([...c][0]) : `${c.size} collections`;
+            }
+
             const d = filterState.drainages;
             document.getElementById('drainage-ms-label').textContent =
                 d.size === 0 ? 'All drainages' : d.size === 1 ? [...d][0] : `${d.size} drainages`;
@@ -1566,6 +1633,7 @@
         // Count active filters, grouping each min/max pair as one
         function activeFilterCount() {
             let n = 0;
+            if (filterState.collections.size) n++;
             if (filterState.drainages.size) n++;
             if (filterState.species.size) n++;
             if (val('depth-min') || val('depth-max')) n++;
@@ -1621,10 +1689,11 @@
 
         function clearFilters(e) {
             if (e) e.stopPropagation();  // don't toggle the panel when clicking Clear
+            filterState.collections.clear();
             filterState.drainages.clear();
             filterState.species.clear();
             filterState.speciesMode = 'or';
-            document.querySelectorAll('#drainage-ms-panel input, #species-ms-panel input')
+            document.querySelectorAll('#collection-ms-panel input, #drainage-ms-panel input, #species-ms-panel input')
                 .forEach(cb => cb.checked = false);
             document.querySelectorAll('#species-mode button')
                 .forEach(b => b.classList.toggle('active', b.dataset.mode === 'or'));
@@ -1667,8 +1736,20 @@
             const drainages = filterState.drainages;
             const speciesSel = [...filterState.species];
             const speciesMode = filterState.speciesMode;
+            const collSel = filterState.collections;
 
             let filteredLakes = [...lakes];
+
+            // Filter by collection (union — a lake in ANY selected set passes,
+            // matching how drainage multi-select behaves). Composes with every
+            // other control, so "shortlist + Brookies" works.
+            if (collSel.size) {
+                const members = new Set();
+                collectionsData.forEach(c => {
+                    if (collSel.has(c.key)) c.lakes.forEach(l => members.add(l.letter_number));
+                });
+                filteredLakes = filteredLakes.filter(lake => members.has(lake.letter_number));
+            }
 
             // Filter by drainage (multi-select = union / OR — a lake belongs to
             // exactly one drainage, so "all of" would never match)
@@ -1745,10 +1826,24 @@
                 });
             }
 
-            const title = activeFilterCount() > 0
-                ? `Filtered Results (${filteredLakes.length} lakes)`
-                : `All Lakes (${filteredLakes.length})`;
-            setResults(filteredLakes, { title, showDrainage: true, fromFilters: true, scroll: !live });
+            // Name the view after the collection when one is driving it —
+            // "Less-visited: shortlist (16 lakes)" beats "Filtered Results".
+            const onlyColl = collSel.size === 1
+                ? collectionsData.find(c => c.key === [...collSel][0])
+                : null;
+            const collOnly = onlyColl && activeFilterCount() === 1;
+            const title = collOnly
+                ? `${onlyColl.label} (${filteredLakes.length} lakes)`
+                : activeFilterCount() > 0
+                    ? `Filtered Results (${filteredLakes.length} lakes)`
+                    : `All Lakes (${filteredLakes.length})`;
+            const leadHtml = collOnly && onlyColl.description
+                ? `<p class="text-sm text-gray-600 mb-1">${escHtml(onlyColl.description)}</p>`
+                : '';
+            setResults(filteredLakes, {
+                title, leadHtml, showDrainage: true, fromFilters: true, scroll: !live,
+                noteCollection: onlyColl ? onlyColl.key : null,
+            });
 
             // Collapse the filter panel so results take the stage; the active
             // badge keeps showing that filters are on. A live re-filter (a
@@ -1756,6 +1851,14 @@
             // open and the page where it is.
             if (!live) setFiltersExpanded(false);
             updateFilterButtonState();
+        }
+
+        // The curated one-liner for this lake in the single selected collection.
+        function collectionNoteHtml(lake) {
+            if (!view.noteCollection) return '';
+            const hit = (collectionsByLake.get(lake.letter_number) || [])
+                .find(c => c.key === view.noteCollection);
+            return hit && hit.note ? `<div class="coll-note">${escHtml(hit.note)}</div>` : '';
         }
 
         function renderLakeCard(lake, showDrainage) {
@@ -1778,6 +1881,7 @@
                  onclick="showLakeDetail('${lake.letter_number}')">
                 <div class="font-medium text-lg">${lakeTitle(lake)}</div>
                 <div class="text-sm text-gray-600 mt-1">${details}</div>
+                ${collectionNoteHtml(lake)}
             </div>
             `;
         }
@@ -1787,14 +1891,19 @@
             mode: localStorage.getItem('uintas-view') || 'list',
             results: [], title: '', showDrainage: false, leadHtml: '',
             fromFilters: false,  // true while the results are the filter panel's output
+            // Set to a collection key when exactly ONE collection is selected;
+            // renderLakeCard then shows that set's curated note per lake. With
+            // two sets selected a single note would be ambiguous, so it's null.
+            noteCollection: null,
             // Bumped every time the result SET changes (new filter, new drainage,
             // new search). renderMap auto-fits ONCE per token and then leaves the
             // camera alone — see lastFitToken.
             fitToken: 0
         };
 
-        function setResults(results, { title = '', showDrainage = false, leadHtml = '', fromFilters = false, scroll = true } = {}) {
+        function setResults(results, { title = '', showDrainage = false, leadHtml = '', fromFilters = false, scroll = true, noteCollection = null } = {}) {
             view.fitToken++;
+            view.noteCollection = noteCollection;
             view.results = results;
             view.title = title;
             view.showDrainage = showDrainage;
@@ -2932,6 +3041,41 @@
                 </details>`;
         }
 
+        // "This lake appears in ..." — the reverse of the Collections filter,
+        // with each set's curated note for THIS lake.
+        function collectionMembershipHtml(lake) {
+            const mine = collectionsByLake.get(lake.letter_number) || [];
+            if (!mine.length) return '';
+            return `
+                <div class="rounded-lg p-4 border border-slate-200">
+                    <h3 class="text-lg font-semibold mb-3">Collections</h3>
+                    <div class="space-y-2">
+                        ${mine.map(c => `
+                            <div>
+                                <a href="#" onclick="event.preventDefault(); openCollectionFromLake('${escAttr(c.key)}')"
+                                   class="text-slate-700 underline hover:text-slate-900 text-sm font-medium">${escHtml(c.label)} →</a>
+                                ${c.note ? `<div class="coll-note">${escHtml(c.note)}</div>` : ''}
+                            </div>`).join('')}
+                    </div>
+                </div>`;
+        }
+
+        // Jump from a lake to the whole set it belongs to. Replaces the current
+        // filter selection rather than adding to it — coming from a lake modal
+        // you want that set, not that set intersected with whatever was left on.
+        function openCollectionFromLake(key) {
+            closeModal();
+            clearFilters();
+            filterState.collections.add(key);
+            document.querySelectorAll('#collection-ms-panel input')
+                .forEach(cb => { cb.checked = cb.value === key; });
+            updateMsLabels();
+            applyFilters();
+            // closeModal restores the pre-modal scroll position asynchronously;
+            // aim it at the top so we land on the results, as openDrainageFromLake does.
+            scrollLockY = 0;
+        }
+
         function openDrainageFromLake(drainage) {
             closeModal();
             showDrainageLakes(drainage);
@@ -3173,6 +3317,9 @@
                         ` : ''}
                     </div>
                 ` : ''}
+
+                <!-- Curated sets this lake appears in (data/collections.json) -->
+                ${collectionMembershipHtml(lake)}
 
                 <!-- Drainage overview + trailheads that mention this lake -->
                 <div class="rounded-lg p-4 border border-slate-200">
