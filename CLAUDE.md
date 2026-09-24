@@ -1,674 +1,152 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Guidance for Claude Code (claude.ai/code) working in this repository.
 
 ## Overview
 
-This is a comprehensive SQLite-based web application for exploring fishing locations in Utah's Uinta Mountains. It combines a Python backend for data management with a Progressive Web App (PWA) frontend, plus Apple Notes integration for personal fishing notes.
+A SQLite database of every lettered lake in Utah's Uinta Mountains (746
+lakes, 24 years of DWR stocking records, DWR pamphlet write-ups, guidebook
+hikes, photos, and Jed's own catch record), plus the Progressive Web App
+that publishes it — <https://jedwood.github.io/uintas100>. The app is
+feature-complete and every lake is placed on the map; most work here now is
+**querying the data**, not changing the app.
 
-## Key Commands
+## Answering "find me lakes that…"
 
-### Database Management
-```bash
-# Initial setup (run once)
-python3 scripts/setup_database.py
-
-# Update with latest stocking data
-python3 scripts/fetch_latest_stocking.py
-python3 scripts/update_stocking.py
-
-# Regenerate the frontend data file after any database change
-# (the pre-commit hook also runs this automatically when uinta_lakes.db is committed)
-python3 scripts/export_web_data.py
-
-# Generate human-readable dumps
-python3 -c "from scripts.database_utils import *; import sqlite3; conn = sqlite3.connect('uinta_lakes.db'); dump_lake_data(conn); dump_stocking_data(conn); dump_combined_data(conn)"
-```
-
-### Database Reproducibility (seeds → rebuild → verify)
-`uinta_lakes.db` is canonical, but it is also fully reconstructable from committed,
-git-diffable CSV **seeds** in `data/seeds/` (one per table). This is the recovery
-path — and the regression guard that the DB never silently drifts.
+Use the **`find-lakes` skill** (`.claude/skills/find-lakes/`) — it loads the
+value vocabulary, the data gotchas, and query recipes. The short version:
 
 ```bash
-# Enable the version-controlled git hooks ONCE per clone (this is the only manual
-# step — afterward seeds stay in sync automatically):
-git config core.hooksPath .githooks
-
-# Rebuild a content-equivalent DB from the seeds, fully offline (writes a temp file)
-python3 scripts/rebuild_database.py                      # or --output PATH
-
-# Prove the seeds round-trip to the canonical DB (exit 0 = equivalent, 1 = drift)
-python3 scripts/verify_rebuild.py
-
-# Manual re-export (rarely needed — only if committing the DB with hooks disabled)
-python3 scripts/export_seeds.py
+python3 scripts/lakes.py "SELECT designation, name, drainage, last_stocked
+                          FROM lake_search WHERE ... ORDER BY ... LIMIT 20"
+python3 scripts/lakes.py --columns     # what you can filter on
 ```
 
-**Seeds regenerate automatically** — you do not need to remember `export_seeds.py`:
-- The `.githooks/pre-commit` hook regenerates + stages `data/seeds/` whenever
-  `uinta_lakes.db` is staged (covers every manual commit and the cron auto-update,
-  since both go through `git commit`). Enable it once with the `core.hooksPath`
-  command above; it also bumps the PWA cache version.
-- `fetch_latest_stocking.py` (the unattended cron path) also re-exports seeds in
-  its commit step, so it can't push a DB with stale seeds even on a machine where
-  the hook isn't enabled.
+`scripts/lakes.py` flattens six tables plus the hike index, the curated
+collections and the OSM trail-distance cache into one row per lake in
+`data/cache/lake_search.db` (gitignored, auto-rebuilt in ~1 s). It is
+read-only. Don't hand-roll the joins; don't query `uinta_lakes.db` directly
+for a multi-criteria search.
 
-Why seeds and not a replay of `utah_dwr_stocking_data.csv`: a clean matcher replay
-does **not** reproduce the curated DB. `find_matching_lake` strips `RESERVOIR`, so
-it mis-credits lowland reservoirs onto same-named Uinta lakes (e.g. "Echo Reservoir"
-→ Z-16 Echo, which the curated DB excludes), and it can't recreate the ~55
-manually-added lakes or the drainage/photo rows (their original sources aren't
-committed). The seeds capture the curated truth exactly; `verify_rebuild.py`
-confirms an exact, zero-diff round-trip on every table. SQL `NULL` is stored in the
-seeds as the sentinel `\N` (empty string stays empty) so the `NULL`-vs-`''`
-distinction (e.g. `basin`) round-trips. Schema lives in one place —
-`create_database()` builds the full canonical schema (all columns + triggers +
-coordinate columns); `setup_database.py`/`update_stocking.py` no longer patch it
-ad hoc. Full recovery write-up: `docs/db-recovery-plan.md`.
+## Hard invariants
 
-### Single-writer model (the Mac Mini writes; everything else is a client)
-Exactly ONE machine — the Mac Mini — writes `uinta_lakes.db` and pushes. Every
-other device is a **client of the published app**: since 2026-09-08 the MacBook
-runs no clone and no Tauri shell at all — Jed uses a Dock-installed PWA (Safari
-web app of the github.io page), exactly like the iPhone. A device "sees" a
-change when the PWA picks up the new service-worker cache version after a push.
-Any other clone that does exist (a dev checkout, say) is a **read-only mirror**:
-it only `git pull`s and runs the app, and must never run a sync/fetch or commit
-the DB. This removes the two-machine write-conflict class (e.g. the binary-DB
-autostash conflicts).
+Violating one of these causes real damage, so they live here rather than in
+a runbook:
 
-- **Enforcement:** a gitignored `.db-readonly` marker in the repo root makes a
-  clone a mirror. `fetch_latest_stocking.py`, `update_stocking.py`,
-  `sync_notes_to_db.sh`, and `sync_notes_and_push.sh` call
-  `writer_guard.exit_if_readonly()` (or the bash equivalent) and exit early when
-  the marker exists — so even if a scheduler fires the job, it does nothing.
-  Exception: on a mirror, `fetch_latest_stocking.py` runs `git pull --ff-only`
-  instead (`writer_guard.pull_and_exit_if_readonly()`), so a scheduler that
-  fires the stocking job on a mirror doubles as that clone's auto-refresh. (This
-  was how the MacBook's Tauri app stayed fresh before it was retired; nothing
-  uses it routinely now.)
-  - Mirror (any non-Mini clone): `touch .db-readonly`
-  - Writer (Mini): the marker must NOT exist (`ls .db-readonly` → absent)
-- The Mini is the only machine that should run the schedulers/cron for fetch and
-  Notes sync. You edit Apple Notes on any device; iCloud syncs them to the Mini,
-  which is the only place Notes↔DB is translated.
-- Notes sync runs on the Mini as the `com.limechile.uintas-notes-sync` LaunchAgent
-  (every 6h; `scripts/notes_sync_agent.py` → Notes→DB, then DB→Notes for lakes
-  flagged by stocking updates, then commit+push). Because
-  the home is on an external `/Volumes` disk, its deployment is non-standard
-  (internal-disk plist, FDA on the venv python, reboot revival via the
-  agent-bootstrapper). Full runbook: `deploy/README.md`.
+- **One machine writes.** The Mac Mini is the sole writer of
+  `uinta_lakes.db`; every other device is a client of the published app. A
+  clone carrying a gitignored `.db-readonly` marker is a read-only mirror
+  and the write scripts self-guard on it. Never add an unattended committer
+  that isn't guarded. → `docs/runbooks/edits-push.md`
+- **Automation commits in this same tree at any moment.** Leave in-progress
+  work uncommitted as long as you like — the edits server and the stocking
+  cron commit through a private index and take only their own files. Never
+  `git add -A` / `git commit -a` from automation.
+  → `docs/runbooks/publishing.md`
+- **Generated files are never hand-edited**: `lakes_data.json`
+  (`scripts/export_web_data.py`), `data/seeds/*.csv`
+  (`scripts/export_seeds.py`), `data/hike_index.*`
+  (`scripts/build_hike_index.py`), `cma_book.html`, `tailwind.css`. The
+  pre-commit hook regenerates the first two when the DB is committed.
+- **The DB must stay rebuildable from the seeds.** `scripts/verify_rebuild.py`
+  must exit 0. Adding a table or column to `uinta_lakes.db` means adding a
+  seed; derived data that doesn't belong in the canonical DB goes *outside*
+  it (that's why `data/collections.json`, `data/app_edits_log.jsonl` and
+  `data/cache/lake_search.db` are separate files).
+- **The letter prefix is a survey block, not a drainage code.** `X-` lakes
+  sit in five different drainages — don't "fix" a mismatch. Lakes are keyed
+  on `letter_number`; `name` is optional and heavily reused across the range.
+- **An asterisk in `fish_species` means historical**, not current
+  (`"Brookies, Cutthroats*"`). All species names are normalized by
+  `scripts/species_utils.py`.
+- **A failed service-worker precache must fail the install.** The offline
+  guarantee is a written contract with a regression suite; run
+  `tests/offline/run.sh` after touching `service-worker.js` or the
+  data-loading path in `index.html`. → `docs/runbooks/offline-pwa.md`
+- **Never commit `data/push/` secrets** (VAPID private key, per-device
+  subscriptions) — the repo is public.
 
-### App edits (status / Jed's Notes / trip reports) — the PWA write path
-Since 2026-08-10 the user-owned lake fields (`status`, `jed_notes`,
-`trip_reports`) are edited **in the PWA itself** ("My Record" section of the
-lake modal), not in Apple Notes. This keeps the single-writer model intact
-while allowing edits to *originate* on any device:
+## Common tasks
 
-- **Client side (`index.html`)**: saves land in `localStorage` instantly
-  (fully offline — designed for multi-day trips), overlay the loaded data, and
-  are flushed to the edits server whenever it's reachable. A header chip shows
-  the pending count; the "Sync" link (next to "About") opens a panel with a
-  manual sync button and a server-URL override. Server auto-resolution tries
-  the page's own host on :8802, then `http://olaf.local:8802` (LAN), then
-  `https://olaf.tail89dcea.ts.net:8443` (Tailscale). The Tailscale HTTPS proxy
-  (`tailscale serve --bg --https=8443 http://127.0.0.1:8802` on the Mini; config
-  persists across reboots but NOT across a tailnet re-login — port **8443**, not
-  443, because the jedOS dashboard owns the :443 root on the same hostname) exists because the iPhone's PWA is installed from the **https**
-  github.io page, and a secure page cannot fetch `http://` LAN URLs (Safari
-  silently blocks mixed content) — so the iPhone syncs only via the Tailscale
-  URL, and only while its Tailscale VPN is on (from anywhere, not just home).
-- **Server side (`scripts/edits_server.py`)**: runs ONLY on the Mini (writer
-  guard) as the `com.limechile.uintas-edits-server` LaunchAgent, port 8802.
-  Applies edits last-write-wins per (lake, field) using the committed audit log
-  `data/app_edits_log.jsonl` (kept OUTSIDE the DB on purpose, so the
-  seeds/rebuild/verify machinery is untouched), then commits + pushes in the
-  background — the pre-commit hook regenerates seeds + `lakes_data.json`, the
-  github.io deploy publishes them, and every PWA picks them up on its next
-  service-worker update. A device that was offline for a
-  week gets "superseded" (not applied) for any edit older than what another
-  device already wrote to the same field.
-- **Test harness**: `python3 scripts/edits_server.py --db /tmp/x.db --log
-  /tmp/x.jsonl --no-git --port 8899` — also serves the repo statically, so one
-  process backs a full browser test.
+| Task | Command | Detail |
+|---|---|---|
+| Find lakes matching criteria | `python3 scripts/lakes.py "SELECT …"` | `find-lakes` skill |
+| Pull the latest DWR stocking | `python3 scripts/fetch_latest_stocking.py` | publishing |
+| Regenerate the app's data file | `python3 scripts/export_web_data.py` | publishing |
+| Publish a change | `git commit` (the hook bumps the cache + re-exports) | publishing |
+| Prove the seeds still round-trip | `python3 scripts/verify_rebuild.py` | publishing |
+| Serve the app locally | `python3 -m http.server 8804` (**not** :8000) | publishing |
+| Check the writer is up | `curl http://olaf.local:8802/api/ping` | edits-push |
+| Send a test push | `python3 scripts/push_utils.py test "message"` | edits-push |
+| Re-import a new DWR pamphlet | `python3 scripts/compare_new_pamphlets.py apply` | data-imports |
+| Re-scrape junesucker.com | `python3 scripts/scrape_junesucker.py` | data-imports |
+| Rebuild the hike index | `python3 scripts/build_hike_index.py` | data-imports |
+| Verify a frontend change | Playwright (see `showboat` skill) | — |
 
-```bash
-curl http://olaf.local:8802/api/ping        # is the writer up?
-tail -f /Users/jed/Library/Logs/uintas-edits-server.log
-```
+One-time per clone: `git config core.hooksPath .githooks`.
 
-### Push notifications + home-screen badge (iOS 16.4+ Web Push, added 2026-08-15)
-Replaces the old external Telegram "new stockings" ping with native PWA push
-notifications and an app-icon badge. iOS 16.4+ supports Web Push **and** the
-Badging API for a PWA **installed to the Home Screen** — using standard VAPID,
-so **no Apple Developer account / APNs certs** are needed (Apple runs the relay).
+## Runbooks
 
-- **Keys/secrets (Mini-only, gitignored `data/push/`):** one VAPID keypair.
-  The private key + the per-device `subscriptions.json` are secrets and MUST NOT
-  be committed (the repo is public). The **public** key is embedded in
-  `index.html` (`VAPID_PUBLIC_KEY`). Regenerate only via
-  `python3 scripts/push_utils.py generate-keys` — it reprints the public key to
-  paste into `index.html`; a new key invalidates every existing subscription.
-- **`scripts/push_utils.py`** — shared module: key handling, subscription store,
-  and `broadcast(title, body, report, badge)` which sends to every device and
-  **auto-prunes** any subscription the push service 404/410s. Never raises (a
-  push failure can't break the stocking run). Honors `UINTAS_PUSH_DIR` for tests.
-- **Server (reuses the edits server on :8802, Mini-only):** `edits_server.py`
-  adds `GET /api/push/public-key`, `POST /api/push/subscribe`,
-  `POST /api/push/unsubscribe`, `POST /api/push/test`. The iPhone reaches these
-  over the **same** Tailscale HTTPS proxy the edits sync uses (a secure github.io
-  page can't fetch http:// LAN URLs), so enabling/testing needs Tailscale on.
-- **Client (`index.html` "Notifications" block in the Sync panel):** an
-  **Enable notifications** button (iOS requires a user gesture) requests
-  permission → `pushManager.subscribe()` → POSTs the subscription. A **Send
-  test** button hits `/api/push/test`. The app clears the badge when it's opened.
-- **Service worker (`service-worker.js`):** `push` shows the notification, bumps
-  a **cumulative** badge (`setAppBadge`), and stashes the full report in a
-  version-independent cache (`uintas-push-state`, spared by the activate cleanup);
-  `notificationclick` opens the app to the **full stocking report** built from the
-  payload (race-free — no dependency on the github.io redeploy);
-  `pushsubscriptionchange` re-subscribes on its own.
-- **Trigger (`fetch_latest_stocking.py`):** after committing, if there are new
-  **lettered-lake** stockings (fringe creeks/ponds aren't in the PWA, so they're
-  not pushed) it calls `push_utils.broadcast(...)` with a summary + the full list.
+Each is the full, unabridged text that used to live in this file.
 
-```bash
-python3 scripts/push_utils.py list             # which devices are subscribed
-python3 scripts/push_utils.py test "message"   # send a real test push to all devices
-# After changing edits_server.py, restart so endpoints reload:
-launchctl kickstart -k gui/$(id -u)/com.limechile.uintas-edits-server
-```
+| File | Covers |
+|---|---|
+| `docs/runbooks/publishing.md` | Seeds → rebuild → verify, the pre-commit hook, PWA cache bump, Collections, frontend asset regeneration, dev server, working in this tree while the automation commits |
+| `docs/runbooks/edits-push.md` | Single-writer model and the `.db-readonly` guard, the PWA edits server on :8802, Tailscale :8443, iOS Web Push + badge |
+| `docs/runbooks/offline-pwa.md` | Service-worker offline contract and its regression suite, offline map tiles, map views and rotation, lake modal |
+| `docs/runbooks/data-imports.md` | Designation conventions, DWR pamphlet editions, 2025 survey tables, junesucker scrape, Falcon hike index, coordinates, stocking matcher and fringe waters, `data/` inventory |
+| `docs/runbooks/retired.md` | Apple Notes sync, the Tauri control panel, the Lake Locator — why each was retired and how to run it manually if ever needed |
+| `docs/db-recovery-plan.md` | Full disaster-recovery write-up |
+| `deploy/README.md` | LaunchAgent deployment on the Mini (non-standard: home on an external volume) |
 
-### Apple Notes Sync (RETIRED as a write path, 2026-08-10; LaunchAgent undeployed 2026-08-12)
-The Notes round trip is retired: `notes_sync_agent.py` exits immediately unless
-run with `UINTAS_NOTES_SYNC=force`. Reason: the user fields are now edited in
-the app (above), and a Notes→DB run would overwrite them with stale note
-content (most notes still carry pre-migration placeholders — see the
-2026-08-10 data-loss investigation). The `com.limechile.uintas-notes-sync`
-LaunchAgent is no longer loaded or scheduled at all (`launchctl bootout`-ed,
-plist removed from `/Users/jed/Library/LaunchAgents/` — source of truth stays
-in `deploy/`, see `deploy/README.md`); leaving it loaded as a no-op used to
-also trip a stale-log watchdog in `fetch_latest_stocking.py` on every stocking
-run, which has since been removed. The JXA scripts below remain for manual /
-archival use only.
-```bash
-# Sync changes from Apple Notes to database
-osascript scripts/sync_notes_to_db_jxa.js
+## Architecture at a glance
 
-# Sync flagged database changes to Apple Notes
-osascript scripts/sync_db_to_notes_jxa.js
+**Database** — `uinta_lakes.db`, canonical, reconstructable from
+`data/seeds/*.csv`.
 
-# Shell wrapper for notes sync (Notes -> DB only; self-guards on mirrors)
-./scripts/sync_notes_to_db.sh
+| Table | Rows | What |
+|---|--:|---|
+| `lakes` | 746 | designation (`A-1`, `BR-25`, `X-64`), physical data, species, coordinates, DWR/junesucker/Andersen notes, Jed's status |
+| `stocking_records` | 7,357 | DWR stocking history, 2002–present, normalized species |
+| `drainages` | 18 | drainage systems with access info and maps |
+| `guide_hikes` / `guide_hike_lakes` / `guide_trailheads` | 90 / 405 / 22 | Falcon *Hiking Utah's High Uintas* (3rd ed.) |
+| `dwr_lake_summary` / `dwr_gillnet_samples` | 77 / 60 | tables from the 2025 DWR pamphlets |
+| `trailheads` / `trailhead_lakes` | 50 / — | Andersen book trailheads |
+| `other_waters` / `other_stocking_records` | 15 / — | "fringe" waters DWR stocks that are **not** lettered lakes (creeks, ponds). Deliberately outside `lakes` and the PWA |
+| `photos`, `fishing_reports` | 34 / — | junesucker photos; per-trip records |
 
-# Mini-only: Notes -> DB AND commit+push the result (durably persists note edits)
-./scripts/sync_notes_and_push.sh
-```
-**DB→Notes (`sync_db_to_notes_jxa.js`) is now wipe-safe.** Apple Notes has no
-surgical edit (writing a note replaces its whole body), so for an EXISTING note
-the script reads the live note and **preserves everything above the ═══ delimiter
-verbatim** (your Status / Jed's Notes / Trip Reports), rebuilding the body as
-preserved-above + fresh delimiter + DB-regenerated auto-data; only the `<h1>`
-title emoji is refreshed. It does NOT source your editable content from the DB, so
-it can't clobber un-captured edits regardless of the `*update`-tag/ordering.
-Safety nets: it **backs up** each old note body to `logs/notes_backups/` before
-overwriting, **skips** (won't touch) any note lacking a ═══ delimiter or that looks
-conflict-merged (2+ delimiters / doubled title), and **waits 30s after launching
-Notes** for iCloud to pull before reading (`UINTAS_SYNC_SETTLE=<secs>` to tune, `0`
-to skip) — rewriting from a stale replica makes iCloud concatenate both versions
-into one note (the 2026-07-01 incident). Never set `note.name` after setting
-`body` (the first body line already becomes the name; setting both doubles the
-title text).
-Preview without writing: `UINTAS_DRYRUN=1 osascript scripts/sync_db_to_notes_jxa.js`.
-`notes_sync_agent.py` still implements the full **round trip** (Notes→DB, then
-DB→Notes for any lakes flagged `notes_needs_update`, then commit+push) but only
-runs it when manually invoked with `UINTAS_NOTES_SYNC=force` — there is no
-longer a LaunchAgent firing it automatically. `sync_notes_and_push.sh` (the
-manual wrapper) remains Notes→DB only. Known hiccup: if a lake note is OPEN on
-another device while DB→Notes rewrites it, that device may iCloud-conflict-merge
-and show a duplicated section — fix is simply deleting the duplicated lower
-section(s) by hand on that device.
+**Frontend** — `index.html` is the whole app: a single-file PWA with no CDN
+dependencies (Tailwind vendored as `tailwind.css`, Leaflet under
+`vendor/leaflet/`). It loads `lakes_data.json`, offers search + filters
+(drainage, species, depth, elevation, size, stocking years, Collections),
+list and map views, lake modals, offline map tiles and Web Push. No build
+step. `#A-11` deep-links straight to a lake.
 
-### Designation conventions (`lakes.letter_number`)
-**The letter prefix is a survey block, NOT a drainage code** — do not "fix" a
-lake whose prefix doesn't match its drainage. DWR assigned letters by *when a
-lake was surveyed*, so a block routinely spans two drainages, and `lakes.drainage`
-means "which pamphlet booklet prints this lake's write-up" (i.e. watershed).
-Verified against the pamphlet OCR: the Duchesne booklet prints `D-*`, `X-11/12/14`
-(the Marsell Canyon three — Duchesne water, but the pamphlet sends you to the Rock
-Creek map for access) and `Z-1…21, 26, 27, 31…37, 42, 43` (Mirror Lake corridor +
-Naturalist Basin); the Rock Creek booklet prints the rest of the `Z-` block
-(Grandaddy + Four Lakes Basins) and its own `X-*`. Junesucker says so outright:
-"Some of the abbreviations such as X will be used in multiple drainage's."
-Split prefixes, all correct: `X` (Rock Creek/Lake Fork/Swift Creek/Yellowstone/
-Duchesne), `Z` (Duchesne/Rock Creek), `GR` (Ashley/Sheep-Carter/Beaver Creek/Burnt
-Fork — GR = Green River tributaries), `G` (Smiths Fork/Blacks Fork/Henrys Fork),
-`U` (Uinta River + Dry Gulch, which share one booklet).
-Gotcha for designation regexes: `U-150` in pamphlet text is **State Route 150**
-(the Mirror Lake Scenic Byway), not a lake.
+**Backend** — `scripts/`, plain Python 3 + sqlite3, no framework. Data
+pipeline is CSV/PDF/web sources → SQLite → `lakes_data.json`.
 
-Two house conventions on top of DWR's numbering:
-- **`b` suffix** when DWR reuses a number for two distinct lakes: `X-22b` (Swift
-  Creek's second X-22). `WR-14b` was retired 2026-09-08 — the 2025 pamphlet's
-  "Becky Lake, WR-14" heading is a typo; Becky is **WR-77** (DWR stocking reports
-  and both gillnet tables agree; `compare_new_pamphlets.HEADING_DESIGNATION_FIXES`
-  keeps a re-apply from recreating it).
-- **`JW-n`** (Jed's own numbering) for waters DWR describes in a pamphlet but
-  never lettered: `JW-1` Deadfall (White Rocks, grayling, never in the public
-  stocking report — see `WILD_SPECIES`), `JW-2` Fish Reservoir (Blacks Fork).
-  Next unlettered water gets `JW-3`. Every designation regex in the code accepts
-  the form, and name-only DWR stocking rows still match by exact name.
+## Critical files
 
-### DWR pamphlet editions (`lakes.dwr_edition`, `lakes.dwr_notes_prev`)
-`dwr_notes` is the lake write-up from DWR's "Lakes of the High Uintas" pamphlet
-series. `dwr_edition` records the **publication year** it came from: `2025` for
-the revised editions DWR began reissuing in 2025 (Bear River, Blacks Fork,
-Whiterocks so far — `data/dwr_new_pamphlets/`), otherwise the original pamphlet
-for the drainage (1981–1999; the year map is `ORIGINAL_EDITION` in
-`scripts/backfill_dwr_editions.py` and `DWR_ORIGINAL_EDITION` in `index.html`,
-taken from the series list on the back of the 1999 Provo/Weber pamphlet).
-When a new edition replaces a *materially different* write-up (difflib ratio
-< 0.9), the superseded text is kept in `dwr_notes_prev`; the lake modal shows
-the edition in the "DWR Notes" heading and the old text under a collapsed
-"Previous edition" toggle. The 2025 pass was originally applied in place
-(2026-03-03) with no provenance — `backfill_dwr_editions.py` reconstructed
-both columns from the pre-March DB in git (`git show 36a0ffc^:uinta_lakes.db`).
-```bash
-python3 scripts/compare_new_pamphlets.py          # dry run: new pamphlet text vs DB
-python3 scripts/compare_new_pamphlets.py apply    # sets dwr_edition + keeps dwr_notes_prev
-```
-When DWR reissues another drainage: drop its `pdftotext` output in
-`data/dwr_new_pamphlets/`, add it to `PAMPHLET_FILES`, bump `PAMPHLET_EDITION`
-if the year differs, dry-run, apply. The heading parser accepts digits and
-curly apostrophes in names ("R.C. No. 1, WR-2", "Ted’s Lake, WR-44") — the
-first pass didn't and silently skipped 16 lakes.
-
-### DWR 2025 survey tables (`dwr_gillnet_samples`, `dwr_lake_summary`)
-```bash
-python3 scripts/import_dwr_survey_tables.py --dry-run   # parse the PDFs, report
-python3 scripts/import_dwr_survey_tables.py             # reload rows for the 2025 edition
-```
-Parses the tables at the back of the 2025 pamphlet PDFs via `pdftotext -layout`
-(poppler required): Whiterocks' per-species **gillnet sampling** stats (60 rows:
-stocking cycle, other species, n sampled, mean/max length and weight) and Bear
-River / Blacks Fork's **lake summary** rows (77: sub-drainage, access, trail
-miles, campsites / spring water / horse feed, fish, stocking cycle, or "Unable to
-support a fishery"). Exported nested per lake (`dwr_summary`, `dwr_gillnet`) and
-shown in the modal as "DWR survey". Rows whose printed name matches no lake
-(Deadfall, Fish in Blacks Fork, BR-54) keep `lake_id NULL`. Pamphlet designation
-typos are corrected by name match ("Middle Rock (WR-67)" → WR-16) or by the
-hand-reviewed `DESIGNATION_FIXES`; a `note` records what the pamphlet printed.
-Plan/details: `docs/dwr-survey-tables-plan.md`.
-
-### June Sucker notes (`lakes.junesucker_notes`)
-```bash
-python3 scripts/scrape_junesucker.py --dry-run   # report what would change
-python3 scripts/scrape_junesucker.py             # scrape junesucker.com + update the DB
-```
-Re-scrapes every lake page linked from `https://junesucker.com/lakes/uintas/`. It is
-**idempotent** (re-running with no site changes reports `lakes updated: 0`) and stores
-markdown with `## ` section headings, which `index.html` styles in the lake modal.
-
-- **Two section types are deliberately dropped:** anything whose heading mentions DWR
-  ("Historical DWR Info", "DWR Historical Data", "DWR Info", "Historical Information")
-  because it repeats `dwr_notes`, and "Nearby Areas to Fish" because it's a directory of
-  *other* lakes. Older pages express these as a bold lead-in paragraph
-  (`Historical DWR Info: ...`) rather than an `<h4>`; both markups are handled.
-- **Matching is designation-first** (title → index link text → body, and only if the body
-  names exactly one lake), with an exact unique whole-name match as the last resort. The
-  original loose matcher mis-filed the *Julius Park Reservoir* page onto DF-17 Little Elk.
-- Cloudflare 403s a bare urllib/curl UA — the browser-like `HEADERS` are required.
-- Cleaned markdown is also written to `data/junesucker_pages/<slug>.md` (git-diffable
-  record of what the site said), and `data/uinta_lake_links.csv` is refreshed each run.
-- Supersedes the one-off `data/process_all_lake_pages.py`.
-
-### Falcon guide hike index (reference only, not used by the app)
-```bash
-python3 scripts/build_hike_index.py     # -> data/hike_index.json + data/hike_index.md
-```
-For "find me a hike that ..." questions, **read `data/hike_index.md` / query
-`data/hike_index.json` instead of the `guide_*` tables** — the book's free-text
-fields are parsed there into numbers (`distance_mi_min/max`, `time_hr_min/max`,
-`destination_elevation_ft`, `difficulty` 1–4 + note, `usage_rank`, `route_types`),
-each hike carries its lakes with the lake's own attributes AND Jed's status
-(`jed_status`, `starred`, species, acres, elevation), plus aggregates
-(`lake_count`, `lakes_uncaught_fishable`, `species_current`, ...), narrative
-`tags`, the book's intro `summary`, and a reverse lake→hikes table. `lake_count`
-excludes name-drops the hike doesn't visit (`mention_context: "reference"`, e.g.
-"Mirror Lake Scenic Byway") — `lake_count_all_mentions` is the raw link count.
-Re-run after `import_falcon_guide.py` or when lake statuses change (the CAUGHT
-counts are baked in). On the Mini the EPUB adds the intro blurbs and the
-book-TOC trailhead sections; on a mirror it degrades gracefully.
-
-### Coordinates & Mapping (placing is DONE — Locator retired 2026-09-24)
-**The coordinate pass is finished.** 738 lakes are `coord_status='confirmed'`;
-the only 8 without coordinates are `cant_find`, and every one is a fishless,
-unnamed "does not sustain fish life … shown on the map as a landmark" row with
-no usable position in any source. The `seed_unverified` / `seed_suspect` review
-queue is **empty**, so there is nothing left to place or verify.
-
-Accordingly the **Lake Locator is retired**: `scripts/locator_server.py` now
-exits immediately unless run with `UINTAS_LOCATOR=force`. It had been left
-running on `--host 0.0.0.0` — a LAN-exposed writer into the canonical DB — for
-a queue of zero. The source is kept, not deleted, because it is still the only
-way to place a **new** water (a future `JW-n`, or a `cant_find` row that finally
-gets a position):
-
-```bash
-UINTAS_LOCATOR=force python3 scripts/locator_server.py              # localhost only
-UINTAS_LOCATOR=force python3 scripts/locator_server.py --host 0.0.0.0   # LAN; prints the URL
-python3 scripts/export_web_data.py                                  # then push coords into the PWA
-```
-Stop it when you're done. It still obeys the single-writer model (refuses to
-start on a clone carrying `.db-readonly`).
-
-The seeding scripts below are likewise only needed if new lakes are ever added:
-```bash
-python3 scripts/seed_coordinates.py            # OSM seed; uses cached data if present
-python3 scripts/seed_coordinates.py --refresh  # re-fetch from Overpass
-```
-Seeding from the pamphlet text (fills the Locator's queue, never the PWA):
-```bash
-python3 scripts/seed_coordinates_from_text.py            # dry run + table
-python3 scripts/seed_coordinates_from_text.py --apply    # writes coord_source='dwr-text'
-python3 scripts/seed_coordinates_from_text.py --revert   # undo, back to unplaced
-```
-DWR write-ups usually locate a lake off a named neighbour with a real bearing and
-distance ("0.4 miles west of Island Lake"), which is enough to compute a position.
-Guards, learned the hard way — the loose first cut put Uinta River lakes ~20 miles
-away on Lake Fork's same-named Kidney, and anchored five Whiterocks lakes onto a
-*trailhead* that fuzzy-matched a lake name: **anchors must be in the same drainage**
-(the Uintas reuse names constantly), the reference must be called Lake/Reservoir/Pond
-right there and not name a trail/pass/meadow/creek/basin, and a lake whose anchor
-isn't placed yet is deferred to a later pass rather than falling through to a weaker
-phrase in the same paragraph. What's left unplaced after this has no usable text —
-mostly the "does not sustain fish life … shown on the map as a landmark" rows.
-Coordinate columns on `lakes`: `lat`, `lng`, `coord_source` (`osm-designation`/`osm-name`/`manual`),
-`coord_status` (`seed_unverified` | `seed_suspect` | `confirmed` | `manual` | `cant_find`).
-Only `confirmed`/`manual` coordinates are exported to the PWA (which shows an "Open in Maps"
-link); seeds stay internal to the Locator until you eyeball them. The Locator writes straight
-back into `uinta_lakes.db` — which is why it obeys the `.db-readonly` writer guard.
-
-### PWA Cache Management
-```bash
-# PWA cache version is automatically updated by the .githooks/pre-commit hook
-# (enable once per clone: git config core.hooksPath .githooks)
-# No manual intervention needed - just commit and the hook handles it
-git commit -m "your changes"  # Bumps cache version + re-exports data/seeds when the DB changed
-```
-**Every** commit bumps the version — including the 08:00 stocking auto-update
-and every edits-server "App edits" commit — so a phone that checks in finds a
-"new version" most days. The bump only touches the `const CACHE_NAME = …` line.
-
-### Working in this tree while the automation commits (enforced, 2026-09-22)
-The edits server and the stocking cron commit + push **in this same working
-tree, at any moment**. Until 2026-09-22 they swept up in-progress work on
-nearly every dev session: a plain `git commit` took everything staged, and the
-hook's `git add service-worker.js` staged every half-finished edit to the
-worker (six "App edits" commits on 2026-09-21 shipped a mid-rewrite worker).
-Now enforced by code:
-- `scripts/auto_commit.py: commit_own_files(paths, msg)` — both automations
-  commit through a **private index** (`GIT_INDEX_FILE` = HEAD + only their own
-  paths; the hook inherits it and adds the bump + regenerated seeds/JSON), then
-  re-point the real index at the new HEAD for just the touched paths. Anything
-  a dev has staged or edited elsewhere is untouched. Use it for any new
-  unattended committer; never `git add -A` / `git commit -a` from automation.
-- The hook stages the bump by rewriting the **index copy** of
-  `service-worker.js` (`git show :service-worker.js` → sed →
-  `update-index --cacheinfo`) — never the working-tree file's other changes.
-  It still bumps the working-tree line so a clean tree stays clean, which is
-  why the Edit tool sometimes reports the file "changed on disk" mid-session.
-- `tests/auto_commit_isolation.sh` proves it in a throwaway clone (13 checks).
-Not covered, by design: the DB is committed as-is whenever the automation
-fires (run migrations as single scripts), and the hook runs the working-tree
-exporters (finish + commit an exporter change in one go).
-So: leave in-progress work uncommitted as long as you like; only what you
-`git add` yourself ships. When you DO want to publish, commit normally.
-
-### Offline guarantee (service-worker contract, rewritten 2026-09-22)
-Incident: 2026-09-21, a full day in a new drainage with the PWA showing "Lake
-data not accessible" despite being opened the night before. Root causes, all
-fixed — keep these invariants:
-- **A failed precache must fail the install.** `CRITICAL_URLS` (shell, data,
-  Leaflet, manifest, icons) are all-or-nothing; any failure rejects `waitUntil`
-  so the browser discards the new worker and the previous one keeps serving its
-  complete cache. The old code `.catch`-ed the error, activated with an EMPTY
-  cache, and deleted the good one — which a flaky trailhead link triggers
-  reliably (17 KB worker script downloads, 7 MB precache doesn't).
-  `OPTIONAL_URLS` (drainage JPGs) are best-effort. `activate` also refuses to
-  delete old caches unless the new cache verifiably holds every critical URL.
-- **Lookups are cache-agnostic.** `lakes_data.json` is looked up in this
-  version's cache, then any cache (`caches.match`), under one canonical
-  query-less key (`dataCacheKey`) — the `?_=<ts>` refresh polls used to add a
-  2 MB copy per poll. The shell is re-cached on every clean network navigation.
-- **Captive portals can't poison the cache**: `isCleanAssetResponse` rejects
-  redirects and cross-origin 200s, and HTML is never stored as data.
-- **Second copy outside the worker**: `index.html` keeps the last-good
-  `lakes_data.json` text in IndexedDB (`uintas-data`/`kv`); `loadLakeData()`
-  tries worker → any Cache Storage copy → IndexedDB, and only then shows the
-  (now honest, with a Details list + Try again) failure screen.
-- **"Sync & offline" panel** (bottom link): `OFFLINE_STATUS`/`OFFLINE_REPAIR`
-  messages ask the worker which precache URLs are really present; shows
-  ✓ Ready / ✗ Not ready + Repair, and the worker's event ring buffer
-  (`/__push__/swlog` in `uintas-push-state`: install/activate/repair/fallback
-  events) so the next failure is diagnosable from the phone. A startup
-  self-check (8 s after load) auto-repairs when online and shows a red header
-  chip otherwise. **Check for "✓ Ready" the night before a trip.**
-Regression suite: `tests/offline/run.sh` — a fault-injecting static server
-(`tests/offline/testserver.py`: version bump, 503 on one asset, captive
-portal, dropped connections) driven by playwright-cli through first load →
-offline reload → failed update (must not take over) → offline again →
-successful update → portal → lost data entry (IndexedDB fallback + Repair) →
-nothing left (honest error + Try again). 20 assertions; run it after touching
-`service-worker.js` or the data-loading path in `index.html`.
-
-### Development Server
-Since this is a static web app, serve locally with:
-```bash
-python3 -m http.server 8804   # NOT 8000 — the Qwen3 embeddings LaunchAgent owns :8000 on the Mini
-# or
-npx serve .
-```
-
-### Tauri control-panel app (`tauri-app/`) — retired on the MacBook 2026-09-08
-The MacBook no longer runs this; Jed dropped the Tauri shell there, separated
-pull from build, and uses a Dock-installed PWA instead (see Single-writer model).
-The source stays in the repo for reference or for the Mini. What it was: a
-desktop wrapper (`/Applications/Uintas.app`) that ran the schedulers, served
-the web app on :8804 (moved off :8000 2026-08-12 — the shared Qwen3 embeddings
-LaunchAgent claims :8000), and exposed a gear-icon control panel. Build + install:
-```bash
-cd tauri-app && cargo tauri build --bundles app
-rm -rf /Applications/Uintas.app && cp -R src-tauri/target/release/bundle/macos/Uintas.app /Applications/
-```
-- **Schedule lives in a store, not in the repo.** Live intervals are in
-  `~/Library/Application Support/com.jedwood.uintas/schedule.json`; the values in
-  `scheduler.rs` are only defaults for a machine with no store yet. Don't read the
-  source and conclude what a given machine is doing — read that file (or the panel).
-- **On a mirror, the "Stocking Updates" interval IS the mirror-refresh cadence.**
-  `writer_guard.pull_and_exit_if_readonly()` turns that job into a
-  `git pull --ff-only`, so the interval sets how far behind the clone can drift.
-  (The MacBook ran it hourly until it dropped the app.) End-to-end freshness is
-  still capped by how often the *Mini* actually fetches from DWR — a mirror
-  can't be fresher than what was pushed.
-- The frontend is embedded at compile time by `tauri::generate_context!()`.
-  `build.rs` emits `rerun-if-changed` for `frontend/` to force a recompile on
-  frontend-only edits — `tauri_build::build()` does NOT do this itself, and without
-  it cargo skips the rebuild and silently ships a stale UI.
-- Editing an interval by hand in `schedule.json` requires quitting the app first;
-  a running app holds the config in memory and overwrites the file on its next save.
-
-## High-Level Architecture
-
-### Database (SQLite)
-- **`uinta_lakes.db`** - Main SQLite database containing all data
-- **Core Tables**:
-  - `lakes` - 672 lakes with designations (A-1, BR-25, etc.), physical data, species info
-  - `stocking_records` - DWR stocking history with normalized species names
-  - `drainages` - 17 major drainage systems with access info and maps
-  - `photos` - Lake photos from junesucker.com
-  - `other_waters` / `other_stocking_records` - "fringe" waters DWR stocks that are NOT lettered lakes (creeks, ponds, forks). Kept entirely separate from `lakes` and the PWA. `likely_drainage` is a GUESS borrowed from a namesake lake (e.g. "Beaver Cr" → BR-10 Beaver's drainage) — treat as use-at-your-own-risk. Rebuilt by `scripts/migrate_fringe_waters.py`.
-
-### Python Backend (`scripts/`)
-- **Data Pipeline**: CSV sources → SQLite via setup/update scripts
-- **Species Standardization**: `species_utils.py` normalizes all species names to consistent format (Brookies, Tigers, Cutthroats, etc.)
-- **Stocking matcher** (`database_utils.find_matching_lake`): a DWR water is credited to a lake ONLY on an exact letter-number designation or an exact name (after stripping a trailing "Lake"). Loose substring matching was removed because it mis-filed creeks/ponds onto same-named lakes (e.g. "Beaver Cr" → BR-10). "Reservoir" is NOT a throwaway suffix (only "Lake" is): a lowland "Echo Reservoir" must not name-match the tiny Uinta "Echo" lake (Z-16) — reservoirs are credited to a lake only by explicit designation, while a lake genuinely *named* "… Reservoir" (e.g. Y-41 "Drift Reservoir") still matches because "Reservoir" is compared on both sides. Such waters are instead routed to `other_waters` via `find_fringe_water` (whole-word name match → likely drainage). Fetch covers 5 counties: Summit, Duchesne, Uintah, Daggett, Wasatch. Fringe routing now lives in **both** stocking paths — `fetch_latest_stocking.py` (live DWR scrape) and `update_stocking.py` (CSV replay) — so either path keeps creeks/ponds out of `lakes`; `migrate_fringe_waters.py` was the one-time backfill for records already inserted under the old loose matcher.
-- **Apple Notes Integration**: Bidirectional sync using JXA scripts for personal fishing notes
-- **Lake Identification**: Letter-number system (BR-25, X-64) as primary keys
-
-### Web Frontend (`index.html`)
-- **Progressive Web App**: Full offline functionality with service worker, no CDN dependencies (Tailwind CSS vendored as `tailwind.css`, Leaflet vendored under `vendor/leaflet/`)
-- **JSON Data**: Loads `lakes_data.json` (generated from the database by `scripts/export_web_data.py`) with stocking records and photos nested per lake
-- **Search & Filtering**: By drainage, species, depth, elevation, size, stocking years. Filters collapse by default with an active-count badge.
-- **List / Map views**: One filtered result set, toggle between a list and a Leaflet map (USGS Topo + Imagery layers, status-colored pins, auto-fit, GPS "locate me"). A "Browse all lakes on the map" button opens the whole range without first picking a filter/drainage. View choice persists. Only `confirmed`/`manual` coordinates appear.
-- **Offline map tiles (added 2026-08-24)**: tiles live in the version-INDEPENDENT
-  `uintas-tiles` cache (spared by the SW activate cleanup, like `uintas-push-state`),
-  served cache-first. Two fill paths: every tile viewed online is stored passively on
-  the way through, and the **⤓ map control** opens an "Offline maps" panel that bulk
-  downloads the current view's full tile pyramid (z6→chosen max, USGS layers only —
-  OpenTopoMap is volunteer-run so it's passive-only) with progress/resume, saved-area
-  management (`uintas-offline-areas` in localStorage), and `navigator.storage.persist()`.
-  Background: Safari's HTTP cache evicts tiles within ~a day (USGS sends
-  `max-age=86400`), which is why pre-panning an area used to go blank mid-trip.
-  Tile layers set `crossOrigin: 'anonymous'` so responses are clean CORS 200s (both
-  tile hosts send `ACAO: *`) — required for the SW to see cacheable statuses. The SW
-  normalizes OpenTopoMap's `{a,b,c}` subdomains to one cache key. The old global
-  "45MB iOS limit" gate in `cacheResponse` was removed deliberately: modern iOS grants
-  installed PWAs gigabytes, and since `estimate()` counts ALL storage a single map
-  download would have tripped it and silently stopped photo caching.
-  **Tiles self-heal (2026-09-15):** a stored tile is only trusted if it's a 200 with an
-  `image/*` content-type — the SW validates on write and on read (evicting + refetching
-  bad entries), never stores opaque responses, and retries a failed fetch once; the
-  bulk downloader applies the same rule (so "Re-check" repairs a poisoned area), and
-  every Leaflet layer's `tileerror` evicts a tile that fails to decode and reloads it
-  once. Cause: desktop Safari showed tile-aligned gray blocks that survived restarts —
-  bad responses had been cached forever by the old `ok || opaque` check.
-- **Map orientation**: The red GPS marker shows a compass heading arrow (DeviceOrientation; iOS prompts for permission on the locate tap). The map supports rotation — two-finger twist on mobile, Shift+drag on desktop — via the vendored `leaflet-rotate` plugin (`vendor/leaflet/leaflet-rotate.js`); the heading arrow compensates for the current map bearing.
-- **Lake Details**: Modal views with stocking history, photos, DWR notes, "Open in Maps" link when coordinates exist
-- **Mission Progress**: Header shows CAUGHT-status count toward the 100-waters goal
-
-### Curated lake collections (`data/collections.json`) — the "Collections" filter
-The reports in `docs/` (`less-visited-lakes.md`, `4x4-access-lakes.md`) are also
-selectable *in the app*: a **Collections** multi-select in the filter panel, first
-control, grouped by report. Picking one shows that set in the list/map like any
-other filter, and it **composes** with drainage/species/depth/etc. rather than
-replacing them.
-
-- **Source of truth is `data/collections.json`, hand-curated.** It is NOT parsed
-  from the markdown: those reports also list ruled-out lakes, traps and
-  heavy-pressure waters in prose and tables, and a parser would sweep them in.
-  The reports are the argument; this file is the pick list.
-- **Kept OUTSIDE `uinta_lakes.db` on purpose** (same reasoning as
-  `data/app_edits_log.jsonl`) so the seeds / `rebuild_database` / `verify_rebuild`
-  machinery is untouched. `export_web_data.py` reads it and nests it into
-  `lakes_data.json` as `collections`.
-- **Validation is hard and happens at export time**, i.e. in the pre-commit hook:
-  an unknown designation or a duplicate key/lake raises and *fails the commit*,
-  rather than silently shipping a filter chip that matches nothing.
-- Each lake may carry a `note` — the curated one-liner for why it is in that set.
-  It shows on the result card when exactly one collection is selected (two sets
-  would make a single note ambiguous), and in the lake modal's "Collections"
-  section, which links back to the whole set.
-
-Adding a set: append an object with a unique `key`, a short `label` (it becomes a
-filter chip — keep it under ~28 chars), a `group`, and the `lakes`. Then
-`python3 scripts/export_web_data.py`.
-
-### Frontend Asset Regeneration
-- `lakes_data.json` - regenerate with `python3 scripts/export_web_data.py` after db changes (pre-commit hook does this automatically when the db is committed)
-- `cma_book.html` - full text of Cordell Andersen's book, one `<section id="cma-pNNN">` per printed page; regenerate with `python3 scripts/export_cma_book.py` (Mini-only — needs the gitignored PDF). The lake modal's "(p. NNN)" citation links and trailhead "book p. N" links fetch this file and jump to the cited page in an in-modal viewer (back arrow returns to the lake). It is deliberately NOT in the service-worker precache list (a missing file must not break install); `initApp` warm-fetches it so the SW caches it lazily for offline use.
-- `tailwind.css` - regenerate only if new Tailwind classes are added to index.html: `npx tailwindcss@3.4.17 -o tailwind.css --content "./index.html" --minify`
-
-### Data Sources Integration
-- **Utah DWR**: Official stocking reports (automated fetch from dwrapps.utah.gov)
-- **Norrick Data**: Physical lake characteristics (size, depth, elevation)
-- **Historical DWR Pamphlets**: OCR-extracted lake descriptions from 8 vintage PDFs
-- **Junesucker.com**: Species data and lake photos
-- **Personal Notes**: Apple Notes sync for trip reports and fishing status
-
-## Important Data Patterns
-
-### Lake Identification System
-- Primary key: `letter_number` (A-1, BR-25, X-64, etc.)
-- Name is optional - many lakes only have designations
-- Always use letter_number for lake lookups, not name
-
-### Species Normalization
-All fish species are standardized using `species_utils.py`:
-- "Brook trout" → "Brookies"
-- "Tiger trout" → "Tigers" 
-- "Cutthroat trout" → "Cutthroats"
-- Historical species marked with asterisks (*) if not recently stocked
-
-### Apple Notes Structure
-**Organization**: Notes are organized in the "Uintas 💯" folder with subfolders for each drainage. Lake notes are stored within their respective drainage subfolders.
-
-```
-Lake Name (A-42) 🎣        ← Status emoji in title
-Status: CAUGHT             ← Sync field
-Jed's Notes                ← User content
-Trip Reports               ← User content
-═══════════════════════   ← Delimiter
-Auto-generated lake data   ← System content
-```
-
-### PWA Cache Strategy
-- Service worker caches all static assets and database
-- Cache version is automatically updated by commit hook when changes are committed
-- Works offline indefinitely when installed to iPhone home screen
-
-## Development Notes
-
-- No build process required - static files served directly
-- Database changes require re-running appropriate Python scripts
-- PWA updates are handled automatically by commit hook (no manual cache version updates needed)
-- Apple Notes sync requires macOS with JXA (JavaScript for Automation)
-- Species data uses intelligent merging of historical and current stocking records
-
-## File Organization
-
-### Critical Files
-- `uinta_lakes.db` - Main database
-- `lakes_data.json` - Generated frontend data (do not edit by hand; regenerate via `scripts/export_web_data.py`)
-- `data/collections.json` - Hand-curated lake sets behind the PWA's "Collections" filter (see above)
-- `index.html` - Web app frontend
-- `tailwind.css` - Vendored static Tailwind build
-- `vendor/leaflet/` - Vendored Leaflet library + marker/layer-control images, plus the `leaflet-rotate` plugin (map view)
-- `service-worker.js` - PWA offline functionality
-- `scripts/setup_database.py` - Initial database creation
-- `scripts/export_web_data.py` - Database → lakes_data.json export
-- `scripts/export_seeds.py` - Database → `data/seeds/*.csv` (reconstruction source)
-- `scripts/rebuild_database.py` - Seeds → content-equivalent DB (offline recovery)
-- `scripts/verify_rebuild.py` - Proves seeds round-trip to the canonical DB (drift guard)
-- `data/seeds/` - Committed CSV seeds, one per table (the reproducible source of the DB)
-- `.githooks/pre-commit` - Version-controlled hook: PWA cache bump + auto re-export of `data/seeds/` when the DB is committed (enable: `git config core.hooksPath .githooks`)
-- `scripts/species_utils.py` - Species name standardization
-- `scripts/seed_coordinates.py` - OSM coordinate seeder
-- `scripts/seed_coordinates_from_text.py` - seeds unplaced lakes from bearing/distance references in `dwr_notes` (same-drainage anchors only; writes `coord_source='dwr-text'` seeds, never PWA-visible)
-- `scripts/locator_server.py` + `locator.html` - Lake Locator, **retired 2026-09-24** (coordinate pass complete). Still the only way to place a new water: `UINTAS_LOCATOR=force python3 scripts/locator_server.py`
-- `scripts/coord_utils.py` - Shared coordinate helpers (schema migration, name/designation normalization)
-
-### Data Sources (`data/`)
-- `lake_data.csv` - Original 609 lake designations
-- `utah_dwr_stocking_data.csv` - DWR stocking records
-- `norrick_lakes.txt` - Physical lake characteristics
-- `dwr_original_pamphlets/` - Historical DWR PDFs
-- `dwr_archive/` - **Statewide** DWR stocking snapshot (all counties, 2002-2026,
-  59,357 records) plus the raw year pages, so no future project has to re-scrape.
-  See its README for the three working URL facets (`label` / `county` / `species`)
-  and the archive-wide data quirks.
-
-### Generated Files (`logs/`)
-- `lake_dump.txt` - Human-readable lake export
-- `notes_sync.log` - Apple Notes sync history
+- `uinta_lakes.db` — the database. `data/seeds/` — its committed, diffable source.
+- `scripts/lakes.py` — read-only query tool (see above).
+- `scripts/export_web_data.py` → `lakes_data.json` (generated; don't edit).
+- `scripts/export_seeds.py` / `rebuild_database.py` / `verify_rebuild.py` — the reproducibility loop.
+- `scripts/species_utils.py` — species normalization and `WILD_SPECIES`.
+- `scripts/database_utils.py` — `find_matching_lake`, the stocking matcher.
+- `scripts/auto_commit.py` — private-index commits for unattended writers.
+- `index.html`, `service-worker.js`, `manifest.json`, `tailwind.css`, `vendor/leaflet/` — the app.
+- `.githooks/pre-commit` — cache bump + seed/JSON re-export.
+- `data/collections.json` — hand-curated lake sets behind the PWA's Collections filter.
+- `data/hike_index.md` / `.json` — the Falcon guide parsed into numbers; read this, not the `guide_*` tables, for "find me a hike that…".
+- `docs/less-visited-lakes.md`, `docs/4x4-access-lakes.md` — worked arguments behind the collections.
+- `tests/offline/run.sh`, `tests/auto_commit_isolation.sh` — the two regression suites.
 
 ## Boulder Mountain sub-project (`boulders/`)
 
 A second, independent database for Boulder Mountain ("the Boulders") in Wayne +
 Garfield counties — data only, no front end. Fully self-contained under
 `boulders/`; it does not touch `uinta_lakes.db` and is not part of the
-single-writer/Notes/PWA machinery. Full write-up: `boulders/README.md`.
+single-writer/PWA machinery. Full write-up: `boulders/README.md`.
 
 ```bash
 cd boulders
