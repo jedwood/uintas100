@@ -42,3 +42,4 @@
 {"id": "e-1790050731726-w3bl5v", "lake": "X-12", "field": "status", "value": "CAUGHT", "ts": "2026-09-22T04:18:51.726Z", "device": "dev-7wvw8frc", "applied_at": "2026-09-22T04:18:53+00:00"}
 {"id": "e-1790127818915-o4drxk", "lake": "RC-45", "field": "starred", "value": 1, "ts": "2026-09-23T01:43:38.915Z", "device": "dev-e1w1au3u", "applied_at": "2026-09-23T01:43:38+00:00"}
 {"id": "e-1790222128739-odwql8", "lake": "RC-36", "field": "starred", "value": 1, "ts": "2026-09-24T03:55:28.739Z", "device": "dev-7wvw8frc", "applied_at": "2026-09-24T03:55:29+00:00"}
+{"id": "e-1790285155563-1kol4b", "lake": "W-26", "field": "status", "value": "NONE", "ts": "2026-09-24T21:25:55.563Z", "device": "dev-7wvw8frc", "applied_at": "2026-09-24T21:25:55+00:00"}
