@@ -266,6 +266,31 @@ def create_database(db_path=None):
         )
     ''')
 
+    # Chemical (rotenone) reclamation projects that included a lettered lake.
+    # One row per lake x project. Loaded by scripts/import_lake_treatments.py.
+    # Streams are deliberately out of scope: this table exists to answer "was
+    # this lake poisoned, and what went back in", not to model DWR's stream
+    # units. lake_id is NULL for a named water that matches no lettered lake.
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS lake_treatments (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            lake_id INTEGER,
+            printed_name TEXT,
+            project_name TEXT,
+            water_unit TEXT,
+            treatment_type TEXT,
+            agency TEXT,
+            start_date DATE,
+            end_date DATE,
+            target_species TEXT,
+            restored_species TEXT,
+            note TEXT,
+            source TEXT,
+            source_url TEXT,
+            FOREIGN KEY (lake_id) REFERENCES lakes (id)
+        )
+    ''')
+
     # Idempotent safety net: back-fill any lakes column an OLDER database might
     # be missing. No-ops on a fresh build (the full CREATE above already has
     # them) and on the current live DB. Keeps any create_database() entry point

@@ -111,6 +111,7 @@ Each is the full, unabridged text that used to live in this file.
 | `drainages` | 18 | drainage systems with access info and maps |
 | `guide_hikes` / `guide_hike_lakes` / `guide_trailheads` | 90 / 405 / 22 | Falcon *Hiking Utah's High Uintas* (3rd ed.) |
 | `dwr_lake_summary` / `dwr_gillnet_samples` | 77 / 60 | tables from the 2025 DWR pamphlets |
+| `lake_treatments` | 2 | rotenone reclamation projects that included a lettered lake (`scripts/import_lake_treatments.py`); stream-only treatments are out of scope |
 | `trailheads` / `trailhead_lakes` | 50 / — | Andersen book trailheads |
 | `other_waters` / `other_stocking_records` | 15 / — | "fringe" waters DWR stocks that are **not** lettered lakes (creeks, ponds). Deliberately outside `lakes` and the PWA |
 | `photos`, `fishing_reports` | 34 / — | junesucker photos; per-trip records |

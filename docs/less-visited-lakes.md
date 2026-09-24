@@ -57,7 +57,9 @@ all. This pass changed the answer for nine of them.
   says fishless while DWR quietly keeps stocking them; that gap is the point.
 - **Rotenone warning.** Andersen records a DWR proposal to treat the Fall Creek,
   Ottoson, Oweep and Garfield drainages between 2022 and 2034, and the Carter
-  Creek project already ran in Aug 2021. That touches **X-87, X-88, X-89, X-90,
+  Creek project already ran in Aug 2021. **Confirmed since:** the West Fork Smiths
+  Fork treatment of Aug 30 – Sep 1, 2021 took in two lettered lakes, **G-64** and
+  **G-113** — see `lake_treatments` and the PWA's rotenone modal. That touches **X-87, X-88, X-89, X-90,
   X-94's neighbourhood, X-100, X-113, X-121, LF-21, LF-22, LF-30, GR-22, GR-23,
   GR-24** below. Several score well *because* they were just restocked. Confirm
   status with DWR before a long trip.
@@ -209,12 +211,12 @@ on the topo with the trail network overlaid. The map settled nine of them.
 | **P-16 Charity** (Provo) | 0.55 mi | 1.1 mi | Brookies ×7 →2026 | ❌ **Obscure, not remote.** Jed's own note: *"It's in the stocking reports, but is mentioned nowhere else online that I could find!"* — true, and it took a DWR biologist to place it. But the topo puts it squarely in the Notch Mountain / Wall Lake / Clegg corridor, ringed by trails, **1.1 mi from a drivable road.** The isolation is informational only. |
 | **D-45** (Duchesne) | 0.58 mi | **1.1 mi** | Tigers* | ❌ **Wrong report.** Murdock Basin — the topo shows it surrounded by ATV track. Belongs to `4x4-access-lakes.md`. |
 | **P-11** (Provo) | 0.13 mi | 2.5 mi | Brookies ×8 →2026 | ❌ **On the trail.** Sits on the North Fork Provo River trail between Duck/Pot/Weir and A-17/A-20. Busiest trail network in the range. |
-| **G-113** (Smiths Fork) | 0.14 mi | 3.5 mi | Cutts ×1 2023 | ❌ **Beside the Highline.** In Smiths Fork Meadows, right next to the North Slope Highline Trail. One plant of 276 fish. |
+| **G-113** (Smiths Fork) | 0.14 mi | 3.5 mi | **CRCT →2023** | ♻️ **Reclassified — the single plant was the point.** The original verdict here ("one plant of 276 fish", dismissed) was wrong, and the stocking record was the tell we misread. G-113 was **rotenone-treated Aug 30 – Sep 1, 2021** as part of DWR's West Fork Smiths Fork Colorado River cutthroat restoration, then restocked 2023-09-19 with ~270 CRCT fingerling from the North Slope brood at Mammoth Creek Hatchery — our 276-fish row *is* that event. UDWR, *Cutthroat Trout Report, Northern Region, 2023*, p. 52: *"a small headwater lake, G-113, which was also part of the rotenone treatment."* Still not remote (0.14 mi off-route, 3.5 mi from a road), so it stays out of the solitude tiers — but it is now a pure-strain CRCT water in a drainage that has none other, which is a different reason to go. See `lake_treatments`. |
 | **GR-119** (Sheep/Carter) | 0.48 mi | 0.5 mi | Grayling ×4 →2019 | ❌ **Half a mile from the Spirit Lake Road.** A meadow pond. Nothing since 2019. |
 | **BR-50** (Bear R.) | 0.30 mi | 0.4 mi | Brookies ×13 →2026 | ❌ **Roadside — but useful.** 0.4 mi from a drivable road on the Whiskey Creek corridor (Falcon usage Heavy). Its only description turns out to live on junesucker's *BR-1 Bourbon* page: *"There is no trail to BR-50 and you will likely need a GPS to find it… Marshes and downed trees make this lake difficult to fish."* A GPS detour, not a destination. |
 | **GR-3 Spirit Lake** (Sheep/Carter) | 0.12 mi | 0.1 mi | Cutts, Tigers | ❌ **It's a drive-to resort lake** with a lodge. Blank notes are a data gap, not remoteness. |
 
-**Net:** five real finds (U-100, RC-36, U-91, U-79, U-22), two maybes, eight out.
+**Net:** five real finds (U-100, RC-36, U-91, U-79, U-22), two maybes, seven out, and **one reclassified** (G-113 — not remote, but a 2021 rotenone restoration water).
 Note that **four of the five winners are in the Uinta River drainage** — it has by
 far the most undescribed-but-stocked water in the range.
 

@@ -212,6 +212,19 @@ def rebuild(output_path):
              row["spring_water"], row["horse_feed"], row["fish_species"],
              row["stocking_cycle"], row["note"], row["source_edition"]))
 
+    for row in _read_seed("lake_treatments.csv"):
+        cur.execute(
+            """INSERT INTO lake_treatments
+               (lake_id, printed_name, project_name, water_unit, treatment_type,
+                agency, start_date, end_date, target_species, restored_species,
+                note, source, source_url)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+            (lid(row["letter_number"]), row["printed_name"], row["project_name"],
+             row["water_unit"], row["treatment_type"], row["agency"],
+             row["start_date"], row["end_date"], row["target_species"],
+             row["restored_species"], row["note"], row["source"],
+             row["source_url"]))
+
     for row in _read_seed("guide_hike_lakes.csv"):
         hid = ghike_id.get(row["hike_number"])
         if hid is None:

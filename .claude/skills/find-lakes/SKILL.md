@@ -123,6 +123,11 @@ SELECT designation, name, drainage, gillnet_species, gillnet_mean_length_in,
 FROM lake_search WHERE gillnet_max_length_in IS NOT NULL
 ORDER BY gillnet_max_length_in DESC;
 
+-- lakes DWR has chemically reclaimed (rotenone), and what went back in
+SELECT designation, name, drainage, treatment_year, treatment_project,
+       treatment_restored, species_current, last_stocked
+FROM lake_search WHERE treated = 1 ORDER BY treatment_year DESC;
+
 -- solitude: deep, low pressure, well off any mapped route
 SELECT designation, name, drainage, max_depth_ft, size_acres, route_mi,
        fishing_pressure, collection_labels

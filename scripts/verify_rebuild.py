@@ -71,6 +71,12 @@ TABLE_QUERIES = {
                s.stocking_cycle, s.note, s.source_edition
         FROM dwr_lake_summary s LEFT JOIN lakes l ON s.lake_id = l.id
         ORDER BY s.source_edition, l.letter_number, s.printed_name""",
+    "lake_treatments": """
+        SELECT l.letter_number, t.printed_name, t.project_name, t.water_unit,
+               t.treatment_type, t.agency, t.start_date, t.end_date,
+               t.target_species, t.restored_species, t.note, t.source,
+               t.source_url
+        FROM lake_treatments t LEFT JOIN lakes l ON t.lake_id = l.id""",
     "guide_regions": "SELECT part_number, name, description FROM guide_regions",
     "guide_trailheads": """
         SELECT t.name, r.part_number, t.description, t.maps

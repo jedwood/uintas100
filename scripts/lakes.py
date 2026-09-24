@@ -123,6 +123,19 @@ def build(verbose=True):
             if v is not None and (g[key] is None or v > g[key]):
                 g[key] = v
 
+    # ---- chemical reclamation projects ---------------------------------
+    treat = {}
+    for r in src.execute(
+        "SELECT l.letter_number ln, t.* FROM lake_treatments t "
+        "JOIN lakes l ON l.id = t.lake_id"
+    ):
+        e = treat.setdefault(r["ln"], {"years": [], "projects": [], "restored": []})
+        if r["start_date"]:
+            e["years"].append(int(r["start_date"][:4]))
+        e["projects"].append(r["project_name"])
+        if r["restored_species"]:
+            e["restored"].append(r["restored_species"])
+
     # ---- photos --------------------------------------------------------
     photos = {r["ln"]: r["n"] for r in src.execute(
         "SELECT l.letter_number ln, COUNT(*) n FROM photos p "
@@ -260,6 +273,11 @@ def build(verbose=True):
             "has_jed_notes": 1 if (L["jed_notes"] or "").strip() else 0,
             "has_trip_reports": 1 if (L["trip_reports"] or "").strip() else 0,
             "n_photos": photos.get(ln, 0),
+
+            "treated": 1 if ln in treat else 0,
+            "treatment_year": max(treat[ln]["years"]) if treat.get(ln, {}).get("years") else None,
+            "treatment_project": csvj(treat[ln]["projects"]) if ln in treat else None,
+            "treatment_restored": csvj(treat[ln]["restored"]) if ln in treat else None,
         })
 
         listed = {s_: False for s_ in cur} | {s_: True for s_ in hist}

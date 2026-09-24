@@ -155,6 +155,21 @@ SEEDS = {
             ORDER BY s.source_edition, l.letter_number, s.printed_name
         """,
     },
+    "lake_treatments.csv": {
+        "columns": ["letter_number", "printed_name", "project_name", "water_unit",
+                    "treatment_type", "agency", "start_date", "end_date",
+                    "target_species", "restored_species", "note", "source",
+                    "source_url"],
+        "sql": """
+            SELECT l.letter_number, t.printed_name, t.project_name, t.water_unit,
+                   t.treatment_type, t.agency, t.start_date, t.end_date,
+                   t.target_species, t.restored_species, t.note, t.source,
+                   t.source_url
+            FROM lake_treatments t
+            LEFT JOIN lakes l ON t.lake_id = l.id
+            ORDER BY t.start_date, l.letter_number, t.printed_name
+        """,
+    },
     "guide_regions.csv": {
         "columns": ["part_number", "name", "description"],
         "sql": ("SELECT part_number, name, description FROM guide_regions "
