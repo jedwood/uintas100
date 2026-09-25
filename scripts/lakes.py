@@ -276,8 +276,9 @@ def build(verbose=True):
 
             "treated": 1 if ln in treat else 0,
             "treatment_year": max(treat[ln]["years"]) if treat.get(ln, {}).get("years") else None,
-            "treatment_project": csvj(treat[ln]["projects"]) if ln in treat else None,
-            "treatment_restored": csvj(treat[ln]["restored"]) if ln in treat else None,
+            "treatment_project": csvj(list(dict.fromkeys(treat[ln]["projects"]))) if ln in treat else None,
+            "treatment_restored": csvj(list(dict.fromkeys(treat[ln]["restored"]))) if ln in treat else None,
+            "n_treatments": len(treat[ln]["projects"]) if ln in treat else 0,
         })
 
         listed = {s_: False for s_ in cur} | {s_: True for s_ in hist}
