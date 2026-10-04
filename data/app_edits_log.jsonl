@@ -53,3 +53,4 @@
 {"id": "e-1790805347977-klacxk", "lake": "A-7", "field": "status", "value": "CAUGHT", "ts": "2026-09-30T21:55:47.977Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-01T00:37:30+00:00"}
 {"id": "e-1790812572566-cd481x", "lake": "A-26", "field": "jed_notes", "value": "Could have some good ones.", "ts": "2026-09-30T23:56:12.566Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-01T00:37:30+00:00"}
 {"id": "e-1790812594054-mjwc5w", "lake": "A-28", "field": "status", "value": "OTHERS", "ts": "2026-09-30T23:56:34.054Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-01T00:37:30+00:00"}
+{"id": "e-1791154209115-dhlu6k", "lake": "WR-49", "field": "status", "value": "CAUGHT", "ts": "2026-10-04T22:50:09.116Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-04T22:50:09+00:00"}
