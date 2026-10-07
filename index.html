@@ -3002,8 +3002,11 @@
                 <div class="mt-3">
                     <div class="text-xs text-gray-500 mb-1">Other lakes on this hike:</div>
                     <div class="flex flex-wrap gap-1">
-                        ${others.map(l => `<button type="button" onclick="showLakeDetail('${l.letter_number}')"
-                            class="px-2 py-0.5 text-xs border border-slate-300 rounded-full hover:bg-slate-100">${l.letter_number}</button>`).join('')}
+                        ${others.map(l => {
+                            const name = (lakes.find(x => x.letter_number === l.letter_number) || {}).name;
+                            return `<button type="button" onclick="showLakeDetail('${l.letter_number}')"
+                            class="px-2 py-0.5 text-xs border border-slate-300 rounded-full hover:bg-slate-100">${l.letter_number}${name ? ` <span class="text-gray-500">${escHtml(name)}</span>` : ''}</button>`;
+                        }).join('')}
                     </div>
                 </div>` : '';
             const finding = hike.finding_trailhead ? `
