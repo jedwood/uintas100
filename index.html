@@ -93,6 +93,8 @@
 
         /* Detail/About modals must sit above Leaflet panes & controls (z-index up to 1000) */
         #lake-detail-modal, #about-modal, #rotenone-modal, #sync-modal, #offline-modal { z-index: 1200; }
+        /* Above the map controls, below the lake modal its rows open. */
+        #stocking-report-modal { z-index: 1150; }
 
         /* Small flag-style labels pinned to map circles (permanent Leaflet
            tooltips, toggled by updatePinLabels when few enough pins are in
@@ -216,6 +218,13 @@
                     <button id="map-all" type="button"
                             class="w-full flex items-center justify-center gap-2 text-sm font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg px-4 py-2 transition-colors">
                         🗺️ Browse all lakes on the map
+                    </button>
+
+                    <!-- Everything DWR stocked lately, from the data — the way back
+                         to a stocking notification you didn't tap in time. -->
+                    <button id="recent-stockings-link" type="button"
+                            class="w-full flex items-center justify-center gap-2 text-sm font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg px-4 py-2 mt-2 transition-colors">
+                        🎣 Recent stockings
                     </button>
 
                     <!-- Jump straight to one drainage's map. Deliberately NOT the
@@ -566,7 +575,7 @@
                 <!-- Sync panel: server URL + manual flush for the My Record edits -->
                 <div id="sync-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
                     <div class="flex items-center justify-center min-h-screen p-4">
-                        <div id="sync-modal-card" class="bg-white rounded-lg max-w-md w-full">
+                        <div id="sync-modal-card" class="bg-white rounded-lg max-w-md w-full overflow-y-auto" style="max-height:calc(100dvh - 2rem)">
                             <div class="p-6">
                                 <div class="flex justify-between items-center mb-4">
                                     <h2 class="text-2xl font-bold">Sync &amp; offline</h2>
@@ -615,6 +624,7 @@
                                         <button id="notif-toggle-btn" class="flex-1 bg-slate-700 text-white px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors">Enable notifications</button>
                                         <button id="notif-test-btn" class="hidden px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-slate-50 transition-colors">Send test</button>
                                     </div>
+                                    <button id="notif-recent-btn" class="mt-3 text-sm text-slate-600 underline">🎣 See recent stockings</button>
                                 </div>
                             </div>
                         </div>
@@ -669,7 +679,7 @@
                     <div class="flex items-center justify-center min-h-screen p-4">
                         <div id="stocking-report-card" class="bg-white rounded-lg max-w-md w-full flex flex-col" style="max-height:85vh">
                             <div class="p-6 pb-3 flex justify-between items-center border-b border-gray-200">
-                                <h2 class="text-xl font-bold">🎣 New stockings</h2>
+                                <h2 class="text-xl font-bold">🎣 Recent stockings</h2>
                                 <button id="close-stocking-report" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
                             </div>
                             <div id="stocking-report-meta" class="px-6 pt-3 text-xs text-gray-500"></div>
@@ -1368,6 +1378,8 @@
                     closeSyncModal();
                 } else if (!document.getElementById('offline-modal').classList.contains('hidden')) {
                     closeOfflineModal();
+                } else if (!document.getElementById('stocking-report-modal').classList.contains('hidden')) {
+                    closeStockingReport();
                 }
             });
 
@@ -3817,6 +3829,15 @@
             });
             document.getElementById('notif-test-btn').addEventListener('click', sendTestPush);
             document.getElementById('close-stocking-report').addEventListener('click', closeStockingReport);
+            document.getElementById('stocking-report-body').addEventListener('click', (e) => {
+                const b = e.target.closest('[data-lake]');
+                if (b) showLakeDetail(b.dataset.lake);   // opens above; closing it returns here
+            });
+            document.getElementById('recent-stockings-link').addEventListener('click', openStockingReportFromStash);
+            document.getElementById('notif-recent-btn').addEventListener('click', () => {
+                closeSyncModal();
+                openStockingReportFromStash();
+            });
             document.getElementById('stocking-report-modal').addEventListener('click', (e) => {
                 if (!e.target.closest('#stocking-report-card')) closeStockingReport();
             });
@@ -4115,29 +4136,70 @@
                 return res ? await res.json() : null;
             } catch (e) { return null; }
         }
+        // One view for both ways in: tapping a push (report = that push's
+        // payload, shown first) and the "Recent stockings" buttons (report =
+        // whatever push was stashed last). Below it, every stocking in the
+        // loaded data from the last RECENT_STOCKING_DAYS, so a notification you
+        // never tapped — or one that went to another device — is still here.
+        const RECENT_STOCKING_DAYS = 45;
+        function stockingLine(name, lake, species, qty, len, date) {
+            const label = name ? `${escapeHtml(name)} <span class="font-normal text-gray-500">${escapeHtml(lake)}</span>` : escapeHtml(lake);
+            const q = (qty != null) ? ' ×' + Number(qty).toLocaleString() : '';
+            const l = len ? ` · ${len}"` : '';
+            const d = date ? ' · ' + escapeHtml(date) : '';
+            const known = lakes.some(x => x.letter_number === lake);
+            return `<${known ? `button type="button" data-lake="${escapeHtml(lake)}"` : 'div'} class="block w-full text-left py-2 border-b border-gray-100 last:border-0${known ? ' hover:bg-slate-50' : ''}">
+                <div class="font-semibold text-gray-800">${label}</div>
+                <div class="text-sm text-gray-600">${escapeHtml(species || '')}${q}${l}${d}</div>
+            </${known ? 'button' : 'div'}>`;
+        }
+        function recentStockingsFromData() {
+            const cutoff = new Date(Date.now() - RECENT_STOCKING_DAYS * 864e5).toISOString().slice(0, 10);
+            const rows = [];
+            lakes.forEach(l => (l.stocking || []).forEach(r => {
+                if (r.stock_date && r.stock_date >= cutoff) rows.push({ lake: l, r });
+            }));
+            rows.sort((a, b) => b.r.stock_date.localeCompare(a.r.stock_date)
+                || a.lake.letter_number.localeCompare(b.lake.letter_number, undefined, { numeric: true }));
+            return rows;
+        }
         function showStockingReport(report) {
             const modal = document.getElementById('stocking-report-modal');
             const body = document.getElementById('stocking-report-body');
             const meta = document.getElementById('stocking-report-meta');
             const items = (report && report.items) || [];
-            meta.textContent = report && report.when
+            const when = report && report.when
                 ? new Date(report.when).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' })
                 : '';
+            const head = t => `<h3 class="text-xs font-semibold uppercase tracking-wide text-gray-500 mt-3 mb-1">${t}</h3>`;
+            let html = '';
             if (report && report.test) {
-                body.innerHTML = `<p class="text-gray-700 text-sm py-2">${escapeHtml(report.message || 'Test notification.')}</p>`;
-            } else if (!items.length) {
-                body.innerHTML = '<p class="text-gray-600 text-sm py-2">No stocking details available.</p>';
-            } else {
-                body.innerHTML = items.map(it => {
-                    const name = it.name ? `${it.name} (${it.lake})` : it.lake;
-                    const qty = (it.qty != null) ? Number(it.qty).toLocaleString() : '';
-                    const len = it.len ? ` · ${it.len}"` : '';
-                    return `<div class="py-2 border-b border-gray-100 last:border-0">
-                        <div class="font-semibold text-gray-800">${escapeHtml(name)}</div>
-                        <div class="text-sm text-gray-600">${escapeHtml(it.species || '')}${qty ? ' ×' + qty : ''}${len}${it.date ? ' · ' + escapeHtml(it.date) : ''}</div>
-                    </div>`;
-                }).join('');
+                html += head(`Last notification${when ? ' · ' + escapeHtml(when) : ''}`)
+                    + `<p class="text-gray-700 text-sm py-2">${escapeHtml(report.message || 'Test notification.')}</p>`;
+            } else if (items.length && report.when
+                       && Date.now() - new Date(report.when) < RECENT_STOCKING_DAYS * 864e5) {
+                html += head(`Last notification${when ? ' · ' + escapeHtml(when) : ''}`)
+                    + items.map(it => stockingLine(it.name, it.lake, it.species, it.qty, it.len, it.date)).join('');
             }
+            const rows = recentStockingsFromData();
+            html += head(`All stockings · last ${RECENT_STOCKING_DAYS} days`);
+            if (!rows.length) {
+                html += '<p class="text-gray-600 text-sm py-2">No lettered lakes stocked in that window.</p>';
+            } else {
+                let lastDate = null;
+                rows.forEach(({ lake, r }) => {
+                    if (r.stock_date !== lastDate) {
+                        lastDate = r.stock_date;
+                        const d = new Date(r.stock_date + 'T12:00:00')
+                            .toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' });
+                        html += `<div class="text-sm font-medium text-slate-600 bg-slate-50 -mx-2 px-2 py-1 mt-2 rounded">${escapeHtml(d)}</div>`;
+                    }
+                    html += stockingLine(lake.name, lake.letter_number, r.species, r.quantity, r.length, null);
+                });
+            }
+            meta.textContent = '';
+            body.innerHTML = html;
+            body.scrollTop = 0;
             modal.classList.remove('hidden');
             lockBodyScroll('stocking');
             clearAppBadgeNow();
