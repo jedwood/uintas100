@@ -69,3 +69,4 @@
 {"id": "e-1791505549630-1ip34v", "lake": "W-46", "field": "jed_notes", "value": "Very likely no fish here. Subject to winterkill and not stocked since before 1999.", "ts": "2026-10-09T00:25:49.630Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-09T00:25:49+00:00"}
 {"id": "e-1791505779020-9sq8ji", "lake": "W-44", "field": "status", "value": "CAUGHT", "ts": "2026-10-09T00:29:39.020Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-09T00:29:39+00:00"}
 {"id": "e-1791505779020-ryaycy", "lake": "W-44", "field": "jed_notes", "value": "Despite the 4 year brookies stocking schedule, I caught a nice little cutthroat out of here.", "ts": "2026-10-09T00:29:39.020Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-09T00:29:39+00:00"}
+{"id": "e-1791505874370-8yr5fx", "lake": "W-43", "field": "status", "value": "CAUGHT", "ts": "2026-10-09T00:31:14.370Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-09T00:31:14+00:00"}
