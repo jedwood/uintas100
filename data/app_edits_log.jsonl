@@ -65,3 +65,5 @@
 {"id": "e-1791474314717-sf34y0", "lake": "W-42", "field": "status", "value": "CAUGHT", "ts": "2026-10-08T15:45:14.718Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-09T00:14:30+00:00"}
 {"id": "e-1791474314720-az5k0r", "lake": "W-42", "field": "jed_notes", "value": "One nice cutthroat, and one really chunky brook trout", "ts": "2026-10-08T15:45:14.720Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-09T00:14:30+00:00"}
 {"id": "e-1791505118176-dmmi53", "lake": "W-45", "field": "status", "value": "CAUGHT", "ts": "2026-10-09T00:18:38.177Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-09T00:18:39+00:00"}
+{"id": "e-1791505549629-7pe6ym", "lake": "W-46", "field": "status", "value": "NONE", "ts": "2026-10-09T00:25:49.629Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-09T00:25:49+00:00"}
+{"id": "e-1791505549630-1ip34v", "lake": "W-46", "field": "jed_notes", "value": "Very likely no fish here. Subject to winterkill and not stocked since before 1999.", "ts": "2026-10-09T00:25:49.630Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-09T00:25:49+00:00"}
