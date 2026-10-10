@@ -13,14 +13,38 @@ The pre-commit hook runs this automatically whenever uinta_lakes.db
 is part of a commit.
 """
 
+import csv
 import json
 import sqlite3
 from pathlib import Path
+
+import journal_store
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DB_PATH = REPO_ROOT / "uinta_lakes.db"
 OUTPUT_PATH = REPO_ROOT / "lakes_data.json"
 COLLECTIONS_PATH = REPO_ROOT / "data" / "collections.json"
+JOURNAL_PATH = REPO_ROOT / "data" / "journal.json"
+JUNESUCKER_PAGES = REPO_ROOT / "data" / "junesucker_pages"
+JUNESUCKER_LINKS = REPO_ROOT / "data" / "uinta_lake_links.csv"
+
+
+def junesucker_urls():
+    """Cached page text -> source URL. scripts/scrape_junesucker.py writes the
+    same markdown to data/junesucker_pages/<slug>.md and to the lake's
+    junesucker_notes, and the slug is the URL's last path segment, so the
+    source link is recoverable without a DB column."""
+    if not JUNESUCKER_LINKS.exists():
+        return {}
+    with JUNESUCKER_LINKS.open(newline="") as f:
+        by_slug = {row["url"].rstrip("/").rsplit("/", 1)[-1]: row["url"]
+                   for row in csv.DictReader(f)}
+    out = {}
+    for page in JUNESUCKER_PAGES.glob("*.md"):
+        url = by_slug.get(page.stem)
+        if url:
+            out[page.read_text().strip()] = url
+    return out
 
 
 def load_collections(known_designations):
@@ -123,6 +147,7 @@ def export():
     # Only surface human-verified coordinates in the PWA, so a half-finished
     # seeding pass doesn't ship wrong pins. Seeds stay internal to the Locator.
     verified = {"confirmed", "manual"}
+    js_urls = junesucker_urls()
 
     lakes = []
     for row in conn.execute(
@@ -148,6 +173,7 @@ def export():
                 "status": row["status"],
                 "trip_reports": row["trip_reports"],
                 "junesucker_notes": row["junesucker_notes"],
+                "junesucker_url": js_urls.get((row["junesucker_notes"] or "").strip()),
                 "dwr_notes": row["dwr_notes"],
                 "dwr_edition": row["dwr_edition"],
                 "dwr_notes_prev": row["dwr_notes_prev"],
@@ -245,20 +271,28 @@ def export():
 
     conn.close()
 
-    collections = load_collections({l["letter_number"] for l in lakes})
+    known = {l["letter_number"] for l in lakes}
+    collections = load_collections(known)
+    # User-authored trips / photo metadata / lake links (docs/trips-photos-
+    # links-plan.md). Unlike collections, bad designations only warn: the
+    # edits server's unattended commits must never fail on them.
+    journal = journal_store.public_view(journal_store.load(JOURNAL_PATH), known)
 
     data = {"lakes": lakes, "drainages": drainages, "trailheads": trailheads,
-            "hikes": hikes, "collections": collections}
+            "hikes": hikes, "collections": collections, "journal": journal}
     OUTPUT_PATH.write_text(
         json.dumps(data, ensure_ascii=False, separators=(",", ":"))
     )
 
     n_stocking = sum(len(l["stocking"]) for l in lakes)
+    n_js = sum(1 for l in lakes if l["junesucker_url"])
     size_kb = OUTPUT_PATH.stat().st_size / 1024
     print(
         f"Exported {len(lakes)} lakes, {n_stocking} stocking records, "
         f"{len(drainages)} drainages, {len(trailheads)} trailheads, "
-        f"{len(hikes)} hikes, {len(collections)} collections "
+        f"{len(hikes)} hikes, {len(collections)} collections, "
+        f"{len(journal['trips'])} trips / {len(journal['photos'])} photos / "
+        f"{len(journal['links'])} links, {n_js} junesucker urls "
         f"-> {OUTPUT_PATH.name} ({size_kb:.0f} KB)"
     )
 

@@ -22,7 +22,9 @@ git config user.email t@t; git config user.name t
 cp "$SRC/.githooks/pre-commit" .githooks/pre-commit
 cp "$SRC/scripts/auto_commit.py" scripts/auto_commit.py
 cp "$SRC/scripts/edits_server.py" scripts/edits_server.py
-git add .githooks scripts/auto_commit.py scripts/edits_server.py
+cp "$SRC/scripts/export_web_data.py" scripts/export_web_data.py
+cp "$SRC/scripts/journal_store.py" scripts/journal_store.py
+git add .githooks scripts/auto_commit.py scripts/edits_server.py scripts/export_web_data.py scripts/journal_store.py
 git commit -q -m "test fixture: isolation hook + helper" >/dev/null
 BASE=$(git rev-parse HEAD)
 
@@ -54,6 +56,22 @@ ok "no leftover private index files" '! ls /tmp/uintas-auto-index-* >/dev/null 2
 # --- Nothing-to-commit path ---------------------------------------------
 OUT=$(python3 scripts/auto_commit.py "App edits: none" uinta_lakes.db data/app_edits_log.jsonl)
 ok "no-op when owned files are unchanged" '[[ "$OUT" == "nothing to commit" ]] && [[ $(git rev-parse HEAD) == "$NEW" ]]'
+
+# --- Journal-only automation commit (edits server saving a trip) ---------
+sleep 1
+cat > data/journal.json <<'EOF'
+{"version": 1, "trips": [{"id": "t-actest-abcd", "updated": "2026-10-10T00:00:00.000Z", "title": "AC test trip", "planned": false, "date": "2026-10-01", "end_date": null, "when": null, "body": "", "lakes": ["BR-25", "ZZ-999"], "links": []}], "photos": [], "links": []}
+EOF
+echo '{"kind":"trip","id":"t-actest-abcd"}' >> data/app_edits_log.jsonl
+JBASE=$(git rev-parse HEAD)
+python3 scripts/auto_commit.py "App edits: journal" data/journal.json data/app_edits_log.jsonl >/dev/null 2>&1
+FILES=$(git diff-tree --no-commit-id --name-only -r HEAD | sort | tr '\n' ' ')
+ok "journal-only commit was made" '[[ $(git rev-parse HEAD) != "$JBASE" ]]'
+ok "journal-only commit = journal + log + lakes_data.json + worker bump, no seeds/db/dev files" \
+   '[[ "$FILES" == "data/app_edits_log.jsonl data/journal.json lakes_data.json service-worker.js " ]]'
+ok "committed lakes_data.json carries the trip, unknown lake dropped (warned, not failed)" \
+   'git show HEAD:lakes_data.json | grep -q "AC test trip" && ! git show HEAD:lakes_data.json | grep -q "ZZ-999"'
+ok "dev's staged index.html still staged after the journal commit" 'git diff --cached --name-only | grep -qx index.html'
 
 # --- A dev commit still ships a deliberately STAGED worker change --------
 sleep 1   # the bump is date +%s; two commits in the same second share a version

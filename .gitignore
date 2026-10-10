@@ -46,6 +46,11 @@ reports/2026-08-29-falcon-book-html/
 # embedded in index.html (public by design). See scripts/push_utils.py.
 data/push/
 
+# Private photos (Mini-only): full-size + thumbnail JPEGs and their GPS-location
+# sidecars, served by the edits server at /api/media/. The repo is public and
+# .git is already large — never commit these. Backup = Time Machine on the Mini.
+data/media/
+
 # offline regression-suite byproducts (tests/offline/run.sh)
 tests/offline/results.txt
 tests/offline/last-run.log

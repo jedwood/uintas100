@@ -9,6 +9,8 @@
 #      it so they can never silently drift from the DB:
 #        - data/seeds/      reproducible CSV source (scripts/export_seeds.py)
 #        - lakes_data.json  the JSON the PWA loads  (scripts/export_web_data.py)
+#      and regenerates lakes_data.json alone when only data/journal.json is
+#      staged (the PWA's trips / photo metadata / lake links).
 
 set -e
 
@@ -31,9 +33,16 @@ rm -f "${BUMP_TMP}"
 echo "PWA cache version updated to: ${NEW_VERSION}"
 
 # 2. Keep DB-derived artifacts in lockstep with the DB being committed
-if git diff --cached --name-only | grep -qx 'uinta_lakes.db'; then
+STAGED="$(git diff --cached --name-only)"
+if echo "${STAGED}" | grep -qx 'uinta_lakes.db'; then
     echo "uinta_lakes.db staged — regenerating data/seeds/ and lakes_data.json ..."
     python3 scripts/export_seeds.py
     python3 scripts/export_web_data.py
     git add data/seeds/ lakes_data.json
+# 3. The journal (trips / photo metadata / lake links) ships inside
+#    lakes_data.json too, but isn't in the DB, so no seeds.
+elif echo "${STAGED}" | grep -qx 'data/journal.json'; then
+    echo "data/journal.json staged — regenerating lakes_data.json ..."
+    python3 scripts/export_web_data.py
+    git add lakes_data.json
 fi

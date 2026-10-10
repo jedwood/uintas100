@@ -12,7 +12,7 @@ verify it, tick it off here, and note anything the next phase needs under
 ## Status
 
 - [x] **Phase 0** — search-field polish (2026-10-10, committed with this plan)
-- [ ] **Phase 1** — backend: journal store, edits-server endpoints, exporter, hook
+- [x] **Phase 1** — backend: journal store, edits-server endpoints, exporter, hook (2026-10-10, uncommitted)
 - [ ] **Phase 2** — client data layer: journal state + sync, media store, image pipeline
 - [ ] **Phase 3** — lake modal: Links card, Junesucker source link, Trips & photos card, photo lightbox
 - [ ] **Phase 4** — trip modal: view + editor, planned trips
@@ -333,3 +333,35 @@ photos, trip reports, future trips, filters. Keep the mission bar.
 - 2026-10-10 (Phase 0): search label removed; `#lake-search-clear` added
   (`.search-wrap` CSS in the `<style>` block; pointerdown `preventDefault`
   keeps the iOS keyboard up). Verified in Playwright at iPhone 15 size.
+- 2026-10-10 (Phase 1, **left uncommitted**; commit with Phase 7 or sooner):
+  - `scripts/journal_store.py` is the schema authority: `clean_doc(kind, doc,
+    known_lakes)` whitelists fields (unknown fields are **dropped**, so a new
+    client field needs a server change too), dedupes lakes, nulls
+    `date`/`end_date` when `planned` and `when` when not. `updated` must match
+    `YYYY-MM-DDTHH:MM:SS(.fff)Z` — i.e. JS `new Date().toISOString()`; LWW
+    compares it as a string. `taken` accepts `YYYY-MM-DD[THH:MM[:SS]]` (no zone).
+    Tombstones are stored as just `{id, updated, deleted:true}` and a stale
+    write can't resurrect one.
+  - `POST /api/journal` results are `{kind, id, result: applied|superseded|error,
+    current?|message?}`. journal.json is re-read on each batch (no in-memory
+    cache), so a one-off script (Phase 6) can edit it while the server runs.
+  - Media: `PUT` needs `Content-Type: image/jpeg` **and** JPEG magic bytes
+    (415 otherwise), 413 over 12 MB (body not drained — the client should treat
+    413 as permanent). The sidecar is `PUT …/<id>.json` with
+    `Content-Type: application/json`; it is **not** `GET`-able — only via
+    `/api/user-data` → `media_meta`. CORS now allows PUT.
+  - `GET /api/link-title?url=` → `{title}` (blank on failure, 400 on non-http).
+    Refuses hosts that resolve to private/loopback addresses. Verified live:
+    junesucker.com and wildlife.utah.gov (both behind Cloudflare) return titles.
+  - Static fence: `_is_private()` resolves through `translate_path` + lower-case
+    compare; GET and HEAD to `data/push/` and `data/media/` → JSON 404. **The
+    live server on the Mini still runs the old code and serves
+    `data/push/vapid_private.pem` over Tailscale until it is restarted.**
+  - Committer commits `data/journal.json` too (only if it exists) with message
+    "App edits: updates from the PWA"; the hook regenerates `lakes_data.json`
+    alone when only the journal is staged. `tests/auto_commit_isolation.sh`
+    gained 4 journal checks (17/17 pass).
+  - Exporter: top-level `journal: {trips, photos, links}` (tombstones dropped)
+    + per-lake `junesucker_url` (40/40). Harness used for testing:
+    `edits_server.py --db <copy> --log x.jsonl --journal j.json --media media
+    --no-git --port 8899 --host 127.0.0.1` (49 curl checks, all pass).
