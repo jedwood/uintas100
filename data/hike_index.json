@@ -4436,7 +4436,7 @@
      "fishing_pressure": "Low",
      "no_fish": true,
      "probably_no_fish": false,
-     "jed_status": "NONE",
+     "jed_status": null,
      "starred": false,
      "has_coords": true,
      "has_cma_notes": true,
@@ -19340,7 +19340,7 @@
    "letter_number": "W-46",
    "name": "Cuberant #5",
    "drainage": "Weber River Drainage",
-   "jed_status": "NONE",
+   "jed_status": null,
    "hikes": [
     24
    ],

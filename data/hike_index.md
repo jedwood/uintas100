@@ -348,7 +348,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** Pass Lake trailhead (section: Pass Lake Trailhead) · **Town:** Kamas, Utah · **Drainage:** Weber River
 - **Distance:** 5 miles out and back · **Elev:** 10420 ft · **Time:** 4 hours · **Difficulty:** Moderate · **Usage:** Moderate
-- **Lakes (7 on route):** W-42 Cuberant #1 (primary, CAUGHT, Brookies, 3.5ac); W-43 Cuberant #2 (primary, CAUGHT, 3.2ac); W-44 Cuberant #3 (primary, CAUGHT, Brookies, 3.5ac); W-45 Cuberant #4 (primary, CAUGHT, Cutthroats/Tigers, 22ac); W-46 Cuberant #5 (primary, NONE, no fish, 5ac); Z-5 Pass (CAUGHT, Brookies/Rainbows/Tigers, 10250ft, 3.3ac); W-40 Kamas (Tigers, 10500ft, 17.1ac)
+- **Lakes (7 on route):** W-42 Cuberant #1 (primary, CAUGHT, Brookies, 3.5ac); W-43 Cuberant #2 (primary, CAUGHT, 3.2ac); W-44 Cuberant #3 (primary, CAUGHT, Brookies, 3.5ac); W-45 Cuberant #4 (primary, CAUGHT, Cutthroats/Tigers, 22ac); W-46 Cuberant #5 (primary, no fish, 5ac); Z-5 Pass (CAUGHT, Brookies/Rainbows/Tigers, 10250ft, 3.3ac); W-40 Kamas (Tigers, 10500ft, 17.1ac)
 - **Aggregates:** 1 fishable & uncaught, 5 caught, 0 starred; species: Brookies, Cutthroats, Rainbows, Tigers (historical only: Grayling, Unknown); lake elev 10250–10500 ft; 57.6 ac total, largest 22 ac
 - **Tags:** camping, fishing, mountain-pass, bugs, multi-day, toilets
 - **Summary:** Most of the Cuberant Lakes are nestled in the pines, except for Cuberant #4, which sits against a talus slope in a picture-book setting. Lake #4 is by far the largest and deepest of the Cuberant Lakes. This is a relatively short and easy hike for these mountains. Please note many online GPS services simply label the largest lake as Cuberant.
@@ -1226,7 +1226,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 | W-43 Cuberant #2 | Weber River | CAUGHT | **24** |
 | W-44 Cuberant #3 | Weber River | CAUGHT | **24** |
 | W-45 Cuberant #4 | Weber River | CAUGHT | **24** |
-| W-46 Cuberant #5 | Weber River | NONE | **24** |
+| W-46 Cuberant #5 | Weber River |  | **24** |
 | W-47 Fish | Weber River |  | **22** |
 | W-48 Round | Weber River |  | 22 |
 | W-49 Sand | Weber River |  | 22 |
