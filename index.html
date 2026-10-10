@@ -91,6 +91,17 @@
             overflow: hidden;
         }
 
+        /* Lake search: the × clear button sits inside the field's right edge
+           and only shows while there's text to clear. */
+        .search-wrap { position: relative; }
+        .search-wrap #lake-search { padding-right: 2.5rem; }
+        #lake-search-clear { position: absolute; top: 0; bottom: 0; right: 0; width: 2.5rem;
+                   display: flex; align-items: center; justify-content: center;
+                   font-size: 1.375rem; line-height: 1; color: #9ca3af; background: none;
+                   border: none; cursor: pointer; }
+        #lake-search-clear:hover { color: #4b5563; }
+        #lake-search-clear.hidden { display: none; }
+
         /* Detail/About modals must sit above Leaflet panes & controls (z-index up to 1000) */
         #lake-detail-modal, #about-modal, #rotenone-modal, #sync-modal, #offline-modal { z-index: 1200; }
         /* Above the map controls, below the lake modal its rows open. */
@@ -201,10 +212,13 @@
 
                     <!-- Lake Name Search -->
                     <div class="mb-4">
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Lake Name or Designation</label>
-                        <input type="text" id="lake-search" placeholder="Start typing lake name or designation (e.g., Bear, G-7)"
-                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500"
-                               autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                        <div class="search-wrap">
+                            <input type="text" id="lake-search" placeholder="Start typing lake name or designation (e.g., Bear, G-7)"
+                                   aria-label="Lake name or designation"
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500"
+                                   autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                            <button id="lake-search-clear" type="button" class="hidden" aria-label="Clear search" title="Clear">&times;</button>
+                        </div>
                         <div id="search-results" class="mt-2 bg-white border border-gray-200 rounded-md hidden max-h-60 overflow-y-auto"></div>
                     </div>
 
@@ -1257,7 +1271,19 @@
             });
 
             // Event listeners
-            document.getElementById('lake-search').addEventListener('input', handleLakeSearch);
+            const searchInput = document.getElementById('lake-search');
+            const searchClear = document.getElementById('lake-search-clear');
+            searchInput.addEventListener('input', handleLakeSearch);
+            searchInput.addEventListener('input', () =>
+                searchClear.classList.toggle('hidden', !searchInput.value));
+            // pointerdown's default would blur the field (dropping the iOS
+            // keyboard); suppress it so the cursor stays put after clearing.
+            searchClear.addEventListener('pointerdown', (e) => e.preventDefault());
+            searchClear.addEventListener('click', () => {
+                searchInput.value = '';
+                searchInput.dispatchEvent(new Event('input'));
+                searchInput.focus();
+            });
             // Enter in the search box: jump straight to the single match, or put
             // all matches on the map.
             document.getElementById('lake-search').addEventListener('keydown', (e) => {
