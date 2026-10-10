@@ -72,3 +72,4 @@
 {"id": "e-1791505874370-8yr5fx", "lake": "W-43", "field": "status", "value": "CAUGHT", "ts": "2026-10-09T00:31:14.370Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-09T00:31:14+00:00"}
 {"id": "e-1791641512597-lxzggr", "lake": "BR-24", "field": "status", "value": "NONE", "ts": "2026-10-10T14:11:52.598Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-10T14:11:52+00:00"}
 {"id": "e-1791641525801-kjluum", "lake": "BR-27", "field": "status", "value": "NONE", "ts": "2026-10-10T14:12:05.801Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-10T14:12:06+00:00"}
+{"kind": "trip", "id": "t-mv2vex79-hw9k", "ts": "2026-10-10T20:52:39.189Z", "device": "dev-cpahluqg", "applied_at": "2026-10-10T20:52:43+00:00"}
