@@ -22,8 +22,8 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 | 1 | Upper Setting Road to East Shingle Creek and Erickson Lakes | 1 | End of Upper Setting Road | 5.6 | O&B | 10020 | 4 | Easy | Moderate | 6 | 5 | W-25, W-26 |
 | 2 | Norway Flats Road to Big Elk Lake | 1 | Norway Flats | 3–5 | O&B | 10020 | 2–4 | Moderate | Heavy | 2 | 1 | A-18 |
 | 3 | Long Pond | 1 | Crystal Lake Trailhead | 4 | O&B | 10100 | 2.5 | Easy | Moderate | 1 | 0 | — |
-| 4 | Island Lake | 1 | Crystal Lake Trailhead | 7.6 | O&B | 10140 | 4.5 | Moderate | Moderate | 6 | 3 | A-57 |
-| 5 | Lakes Country | 1 | Crystal Lake Trailhead | 7.4 | loop | 10325 | 4.5 | Moderate | Heavy | 4 | 2 | — |
+| 4 | Island Lake | 1 | Crystal Lake Trailhead | 7.6 | O&B | 10140 | 4.5 | Moderate | Moderate | 6 | 2 | A-57 |
+| 5 | Lakes Country | 1 | Crystal Lake Trailhead | 7.4 | loop | 10325 | 4.5 | Moderate | Heavy | 4 | 0 | — |
 | 6 | Cliff Lake | 1 | Crystal Lake Trailhead | 1 | O&B | 10230 | 1 | Easy | Heavy | 3 | 3 | A-34 |
 | 7 | Divide Lakes | 1 | Crystal Lake Trailhead | 5 | O&B | 10460 | 3 | Moderate | Moderate | 9 | 6 | A-36 |
 | 8 | Twin Lakes | 1 | Crystal Lake Trailhead | 5.4 | O&B/loop | 10410 | 3 | Easy | Moderate | 6 | 4 | A-33, A-32 |
@@ -42,7 +42,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 | 21 | Ouray Lake | 1 | Highline Trailhead (West) | 24 | O&B | 10380 | 15 | Moderate | Light | 6 | 5 | X-112 |
 | 22 | Dry Fork Trailhead to Fish Lake | 1 | Gardners Fork Area | 9.4 | loop | 10180 | 6 | Moderate | Heavy | 3 | 3 | W-47 |
 | 23 | Abes Lake | 1 | Gardners Fork Area | 7.8 | O&B | 9820 | 5 | Moderate | Light | 3 | 3 | W-30 |
-| 24 | Cuberant Lakes | 1 | Pass Lake Trailhead | 5 | O&B | 10420 | 4 | Moderate | Moderate | 7 | 6 | W-42, W-43, W-44, W-45, W-46 |
+| 24 | Cuberant Lakes | 1 | Pass Lake Trailhead | 5 | O&B | 10420 | 4 | Moderate | Moderate | 7 | 1 | W-42, W-43, W-44, W-45, W-46 |
 | 25 | Lofty Lake Loop | 1 | Pass Lake Trailhead | 4.5 | loop | 10840 | 2.5 | Moderate | Heavy | 4 | 4 | W-41 |
 | 26 | Ruth Lake Trailhead to Ruth Lake | 1 | Pass Lake Trailhead | 1.6 | O&B | 10340 | 1 | Easy | Heavy | 3 | 3 | BR-40 |
 | 27 | Whiskey Creek Trail to Bourbon Lake | 1 | Pass Lake Trailhead | 2.7 | O&B | 9820 | 1.5–2 | Easy–Moderate | Heavy | 2 | 2 | — |
@@ -83,7 +83,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 | 62 | Davis Lakes | 2 | West Fork Whiterocks Trailhead | 26 | O&B | 11020 | 16 | Difficult | Light | 7 | 6 | U-46, U-34 |
 | 63 | Reader Lake | 2 | Chepeta Trailhead | 9 | O&B | 10960 | 6 | Moderate | Light | 1 | 1 | WR-66 |
 | 64 | Walk-Up Lake | 2 | Chepeta Trailhead | 7 | O&B | 11114 | 5 | Moderate | Very light | 2 | 2 | — |
-| 65 | Cliff Lake | 2 | Chepeta Trailhead | 11.2 | O&B | 10348 | 7 | Moderate | Light | 7 | 7 | WR-49 |
+| 65 | Cliff Lake | 2 | Chepeta Trailhead | 11.2 | O&B | 10348 | 7 | Moderate | Light | 7 | 5 | WR-49 |
 | 66 | Kibah Lakes | 2 | Paradise Park/Blanchett Trailhead | 3–9.6 | O&B | 10550 | 4–7 | Moderate | Moderate | 4 | 1 | DF-11, DF-14, DF-15 |
 | 67 | Deadman Lake | 2 | Paradise Park/Blanchett Trailhead | 9.6–15.8 | O&B | 10790 | 7–10 | Moderate | Heavy | 4 | 3 | GR-38 |
 | 68 | North and South Twin Lakes | 2 | Paradise Park/Blanchett Trailhead | 5.4–9.2 | O&B | 10300 | 5–7 | Moderate | Heavy | 4 | 4 | GR-49 |
@@ -118,7 +118,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** End of Upper Setting Road · **Town:** Kamas, Utah · **Drainage:** Weber River
 - **Distance:** 5.6 miles out and back · **Elev:** 10020 ft · **Time:** 4 hours · **Difficulty:** Easy—one steep section · **Usage:** Moderate
-- **Lakes (6 on route, 1 name-drop only):** W-25 Erickson South (primary, Brookies, 10100ft, 10ac); W-26 Erickson North (primary, Brookies, 10020ft, 9ac); Z-3 Mirror (name-drop only, CAUGHT, Brookies/Rainbows/Tigers, 10200ft, 42ac); A-18 Big Elk (CAUGHT, Tigers, 10020ft, 30ac); A-39 Shingle Creek East (Tigers, 9700ft, 7ac); P-62 Shingle Creek Lower (9620ft, 4ac); P-60 Shingle Creek West (OTHERS, Brookies, 9940ft, 5ac)
+- **Lakes (6 on route, 1 name-drop only):** W-25 Erickson South (primary, NONE, Brookies, 10100ft, 10ac); W-26 Erickson North (primary, NONE, Brookies, 10020ft, 9ac); Z-3 Mirror (name-drop only, CAUGHT, Brookies/Rainbows/Tigers, 10200ft, 42ac); A-18 Big Elk (CAUGHT, Tigers, 10020ft, 30ac); A-39 Shingle Creek East (NONE, Tigers, 9700ft, 7ac); P-62 Shingle Creek Lower (9620ft, 4ac); P-60 Shingle Creek West (OTHERS, Brookies, 9940ft, 5ac)
 - **Aggregates:** 5 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Tigers (historical only: Cutthroats, Splake); lake elev 9620–10100 ft; 65 ac total, largest 30 ac
 - **Tags:** camping, fishing, tiger-trout, navigation, steep, mountain-pass, bugs, 4wd
 - **Summary:** North Erickson Lake sits at the head of Smith and Morehouse Creek in Erickson Basin. It can be reached from the Smith and Morehouse trailhead, but it is easier to start hiking from the end of Upper Setting Road in the Provo River Drainage.
@@ -148,8 +148,8 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** Crystal Lake trailhead (section: Crystal Lake Trailhead) · **Town:** Kamas, Utah · **Drainage:** Provo River
 - **Distance:** 7.6 miles out and back · **Elev:** 10140 ft · **Time:** 4.5 hours · **Difficulty:** Moderate—some steep sections · **Usage:** Moderate
-- **Lakes (6 on route, 2 name-drop only):** A-57 Island (primary, CAUGHT, Cutthroats/Tigers, 10140ft, 28ac); A-17 Beaver (Brookies, 9900ft, 3.5ac); A-51 Crystal (name-drop only, CAUGHT, Brookies/Grayling, 10020ft, 9.8ac); A-7 Duck (9780ft, 12.7ac); A-14 Fire (NONE, Cutthroats, 10200ft, 9ac); A-56 Junior (CAUGHT, Cutthroats/Tigers, 10200ft, 2.8ac); A-37 Long (CAUGHT, 10100ft, 35ac); A-23 Washington (name-drop only, CAUGHT, Brookies/Cutthroats/Grayling/Rainbows/Tigers, 9900ft, 106ac)
-- **Aggregates:** 3 fishable & uncaught, 3 caught, 0 starred; species: Brookies, Cutthroats, Tigers; lake elev 9780–10200 ft; 91 ac total, largest 35 ac
+- **Lakes (6 on route, 2 name-drop only):** A-57 Island (primary, CAUGHT, Cutthroats/Tigers, 10140ft, 28ac); A-17 Beaver (Brookies, 9900ft, 3.5ac); A-51 Crystal (name-drop only, CAUGHT, Brookies/Grayling, 10020ft, 9.8ac); A-7 Duck (CAUGHT, 9780ft, 12.7ac); A-14 Fire (NONE, Cutthroats, 10200ft, 9ac); A-56 Junior (CAUGHT, Cutthroats/Tigers, 10200ft, 2.8ac); A-37 Long (CAUGHT, 10100ft, 35ac); A-23 Washington (name-drop only, CAUGHT, Brookies/Cutthroats/Grayling/Rainbows/Tigers, 9900ft, 106ac)
+- **Aggregates:** 2 fishable & uncaught, 4 caught, 0 starred; species: Brookies, Cutthroats, Tigers; lake elev 9780–10200 ft; 91 ac total, largest 35 ac
 - **Tags:** camping, fishing, steep, mountain-pass, solitude, paved-access, toilets
 - **Summary:** “Which Island Lake?” you may ask. Just as there are many Hidden Lakes and Lost Lakes, it seems that every other drainage has an Island Lake. This one sits high on the Provo River drainage and can be reached fairly easily. The first mile is steep, and the last 0.5 mile is steep, but sandwiched between these sections is some easy and level hiking. The trail is quite popular among overnighters, so expect to see a few people, especially on weekends.
 - **Book:** pp. 22–23 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-04
@@ -158,8 +158,8 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** Crystal Lake trailhead (section: Crystal Lake Trailhead) · **Town:** Kamas, Utah · **Drainage:** Provo River
 - **Distance:** 7.4-mile loop · **Elev:** 10325 ft · **Time:** 4.5 hours · **Difficulty:** Moderate · **Usage:** Heavy
-- **Lakes (4 on route, 1 name-drop only):** A-51 Crystal (name-drop only, CAUGHT, Brookies/Grayling, 10020ft, 9.8ac); A-7 Duck (9780ft, 12.7ac); A-37 Long (CAUGHT, 10100ft, 35ac); A-12 Marjorie (NONE, 9980ft, 13ac); A-50 Weir (CAUGHT, Brookies/Grayling, 9940ft, 7ac)
-- **Aggregates:** 2 fishable & uncaught, 2 caught, 0 starred; species: Brookies, Grayling (historical only: Cutthroats); lake elev 9780–10100 ft; 67.7 ac total, largest 35 ac
+- **Lakes (4 on route, 1 name-drop only):** A-51 Crystal (name-drop only, CAUGHT, Brookies/Grayling, 10020ft, 9.8ac); A-7 Duck (CAUGHT, 9780ft, 12.7ac); A-37 Long (CAUGHT, 10100ft, 35ac); A-12 Marjorie (CAUGHT, 9980ft, 13ac); A-50 Weir (CAUGHT, Brookies/Grayling, 9940ft, 7ac)
+- **Aggregates:** 0 fishable & uncaught, 4 caught, 0 starred; species: Brookies, Grayling (historical only: Cutthroats); lake elev 9780–10100 ft; 67.7 ac total, largest 35 ac
 - **Tags:** camping, fishing, grayling, solitude, family, multi-day, paved-access, toilets
 - **Summary:** The Lakes Country trailhead from Crystal Lake offers a variety of hikes of all lengths. A lot of visitors understandably cluster near the trailhead’s amenities, but even the farther flung lakes on this trail see some traffic. Why? Reasonable elevation change and the multiple destination lakes that give this trail its name. Even better, Lakes Country offers a rare loop opportunity that isn’t solely suitable for overnight backpacking.
 - **Book:** pp. 22–23 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-05
@@ -168,7 +168,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** Crystal Lake trailhead (section: Crystal Lake Trailhead) · **Town:** Kamas, Utah · **Drainage:** Provo River
 - **Distance:** 1 mile out and back · **Elev:** 10230 ft · **Time:** 1 hour · **Difficulty:** Easy · **Usage:** Heavy
-- **Lakes (3 on route, 1 name-drop only):** A-34 Cliff (primary, Cutthroats/Tigers, 10230ft, 9ac); A-51 Crystal (name-drop only, CAUGHT, Brookies/Grayling, 10020ft, 9.8ac); A-29 Wall (Tigers, 10140ft, 80ac); A-28 Clyde (Brookies, 10420ft, 16ac)
+- **Lakes (3 on route, 1 name-drop only):** A-34 Cliff (primary, Cutthroats/Tigers, 10230ft, 9ac); A-51 Crystal (name-drop only, CAUGHT, Brookies/Grayling, 10020ft, 9.8ac); A-29 Wall (Tigers, 10140ft, 80ac); A-28 Clyde (OTHERS, Brookies, 10420ft, 16ac)
 - **Aggregates:** 3 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats, Tigers; lake elev 10140–10420 ft; 105 ac total, largest 80 ac
 - **Tags:** fishing, paved-access, toilets
 - **Summary:** You couldn’t ask for a prettier setting. The stage is set with picture-perfect campsites and rock-climbing routes that overlook a small lake dimpled by feeding fish. A stately cliff serves as a backdrop, with Mount Watson rising beyond. Grassy campsites are just off the trail on the eastern shore, providing an ideal place to watch the sunset and reflect on the finer things of life. The whole scene mirrors off the clear water.
@@ -178,7 +178,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** Crystal Lake trailhead (section: Crystal Lake Trailhead) · **Town:** Kamas, Utah · **Drainage:** Provo River
 - **Distance:** 5 miles out and back · **Elev:** 10460 ft · **Time:** 3 hours · **Difficulty:** Moderate—some steep sections · **Usage:** Moderate
-- **Lakes (9 on route, 1 name-drop only):** A-36 Divide, #1 (primary, CAUGHT, Brookies, 10460ft, 3.5ac); A-35 Booker (CAUGHT, Brookies, 10460ft, 4.1ac); A-34 Cliff (Cutthroats/Tigers, 10230ft, 9ac); A-51 Crystal (name-drop only, CAUGHT, Brookies/Grayling, 10020ft, 9.8ac); A-26 Petit (Junior #5) (Brookies, 10300ft, 2ac); A-61 Trial (CAUGHT, Brookies/Cutthroats/Grayling/Rainbows/Tigers, 9800ft, 98ac); A-27 Watson (Brookies, 10420ft, 6ac); W-21 Little Hidden (OTHERS, Brookies, 10280ft, 8ac); W-23 Lovenia (Brookies, 10300ft, 2.5ac); A-28 Clyde (Brookies, 10420ft, 16ac)
+- **Lakes (9 on route, 1 name-drop only):** A-36 Divide, #1 (primary, CAUGHT, Brookies, 10460ft, 3.5ac); A-35 Booker (CAUGHT, Brookies, 10460ft, 4.1ac); A-34 Cliff (Cutthroats/Tigers, 10230ft, 9ac); A-51 Crystal (name-drop only, CAUGHT, Brookies/Grayling, 10020ft, 9.8ac); A-26 Petit (Junior #5) (Brookies, 10300ft, 2ac); A-61 Trial (CAUGHT, Brookies/Cutthroats/Grayling/Rainbows/Tigers, 9800ft, 98ac); A-27 Watson (Brookies, 10420ft, 6ac); W-21 Little Hidden (OTHERS, Brookies, 10280ft, 8ac); W-23 Lovenia (Brookies, 10300ft, 2.5ac); A-28 Clyde (OTHERS, Brookies, 10420ft, 16ac)
 - **Aggregates:** 6 fishable & uncaught, 3 caught, 0 starred; species: Brookies, Cutthroats, Grayling, Rainbows, Tigers; lake elev 9800–10460 ft; 149.1 ac total, largest 98 ac
 - **Tags:** camping, fishing, cross-country, navigation, mountain-pass, multi-day, paved-access, toilets
 - **Summary:** Here’s a backpacking campout to take the kids on. You’ll see plenty of small lakes along the way, and the trail has a good mix of uphill and level stretches. They’re fairly easy to find, but the spur trail is easy to miss if your attention is on Clyde Lake. The trail is well marked from regular foot traffic all the way to Clyde. From the west side of Clyde, head due north to reach Divide Lakes.
@@ -188,7 +188,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** Crystal Lake trailhead (section: Crystal Lake Trailhead) · **Town:** Kamas, Utah · **Drainage:** Provo River
 - **Distance:** 5.4 miles out and back or loop · **Elev:** 10410 ft · **Time:** 3 hours · **Difficulty:** Easy—one steep section · **Usage:** Moderate
-- **Lakes (6 on route, 1 name-drop only):** A-33 Twin Lower (primary, Tigers, 10410ft, 3ac); A-32 Twin Upper (primary, Brookies, 10420ft, 9ac); A-51 Crystal (name-drop only, CAUGHT, Brookies/Grayling, 10020ft, 9.8ac); A-61 Trial (CAUGHT, Brookies/Cutthroats/Grayling/Rainbows/Tigers, 9800ft, 98ac); A-29 Wall (Tigers, 10140ft, 80ac); A-28 Clyde (Brookies, 10420ft, 16ac); A-36 Divide, #1 (CAUGHT, Brookies, 10460ft, 3.5ac)
+- **Lakes (6 on route, 1 name-drop only):** A-33 Twin Lower (primary, Tigers, 10410ft, 3ac); A-32 Twin Upper (primary, Brookies, 10420ft, 9ac); A-51 Crystal (name-drop only, CAUGHT, Brookies/Grayling, 10020ft, 9.8ac); A-61 Trial (CAUGHT, Brookies/Cutthroats/Grayling/Rainbows/Tigers, 9800ft, 98ac); A-29 Wall (Tigers, 10140ft, 80ac); A-28 Clyde (OTHERS, Brookies, 10420ft, 16ac); A-36 Divide, #1 (CAUGHT, Brookies, 10460ft, 3.5ac)
 - **Aggregates:** 4 fishable & uncaught, 2 caught, 0 starred; species: Brookies, Cutthroats, Grayling, Rainbows, Tigers; lake elev 9800–10460 ft; 209.5 ac total, largest 98 ac
 - **Tags:** camping, fishing, steep, mountain-pass, paved-access, toilets
 - **Summary:** Most people proceed unknowingly right past these lakes. It seems everyone makes the extra effort to hike over Notch Pass to see the beautiful scenery that Ibantik Lake offers. And rightly so. From Notch Pass, the country is amazing. On the other hand, Twin Lakes may make a good base camp that gives you the serenity no other lakes in this area can provide. Don’t get us wrong; Twin Lakes get their fair share of attention, but they are often overlooked.
@@ -348,8 +348,8 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** Pass Lake trailhead (section: Pass Lake Trailhead) · **Town:** Kamas, Utah · **Drainage:** Weber River
 - **Distance:** 5 miles out and back · **Elev:** 10420 ft · **Time:** 4 hours · **Difficulty:** Moderate · **Usage:** Moderate
-- **Lakes (7 on route):** W-42 Cuberant #1 (primary, Brookies, 3.5ac); W-43 Cuberant #2 (primary, 3.2ac); W-44 Cuberant #3 (primary, Brookies, 3.5ac); W-45 Cuberant #4 (primary, Cutthroats/Tigers, 22ac); W-46 Cuberant #5 (primary, 5ac); Z-5 Pass (CAUGHT, Brookies/Rainbows/Tigers, 10250ft, 3.3ac); W-40 Kamas (Tigers, 10500ft, 17.1ac)
-- **Aggregates:** 6 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Cutthroats, Rainbows, Tigers (historical only: Grayling, Unknown); lake elev 10250–10500 ft; 57.6 ac total, largest 22 ac
+- **Lakes (7 on route):** W-42 Cuberant #1 (primary, CAUGHT, Brookies, 3.5ac); W-43 Cuberant #2 (primary, CAUGHT, 3.2ac); W-44 Cuberant #3 (primary, CAUGHT, Brookies, 3.5ac); W-45 Cuberant #4 (primary, CAUGHT, Cutthroats/Tigers, 22ac); W-46 Cuberant #5 (primary, NONE, no fish, 5ac); Z-5 Pass (CAUGHT, Brookies/Rainbows/Tigers, 10250ft, 3.3ac); W-40 Kamas (Tigers, 10500ft, 17.1ac)
+- **Aggregates:** 1 fishable & uncaught, 5 caught, 0 starred; species: Brookies, Cutthroats, Rainbows, Tigers (historical only: Grayling, Unknown); lake elev 10250–10500 ft; 57.6 ac total, largest 22 ac
 - **Tags:** camping, fishing, mountain-pass, bugs, multi-day, toilets
 - **Summary:** Most of the Cuberant Lakes are nestled in the pines, except for Cuberant #4, which sits against a talus slope in a picture-book setting. Lake #4 is by far the largest and deepest of the Cuberant Lakes. This is a relatively short and easy hike for these mountains. Please note many online GPS services simply label the largest lake as Cuberant.
 - **Book:** pp. 72–73 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-24
@@ -480,8 +480,8 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** Grandview trailhead (section: Grandview Trailhead) · **Town:** Hanna, Utah · **Drainage:** Rock Creek
 - **Distance:** 18.6 miles out and back · **Elev:** 10390 ft · **Time:** 12 hours · **Difficulty:** Moderate · **Usage:** Light
-- **Lakes (6 on route):** Z-44 Allen (primary, 10390ft, 15.2ac); Z-46 Bedground (Grayling, 10500ft, 2ac); X-7 Betsey (CAUGHT, Cutthroats, 10350ft, 33.8ac); X-9 GranDaddy (Cutthroats, 10310ft, 173ac); Z-29 Lost (Brookies, 10030ft, 14ac); Z-30 Powell (Cutthroats, 9980ft, 22.4ac)
-- **Aggregates:** 5 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Cutthroats, Grayling; lake elev 9980–10500 ft; 260.4 ac total, largest 173 ac
+- **Lakes (6 on route):** Z-44 Allen (primary, ★, 10390ft, 15.2ac); Z-46 Bedground (Grayling, 10500ft, 2ac); X-7 Betsey (CAUGHT, Cutthroats, 10350ft, 33.8ac); X-9 GranDaddy (Cutthroats, 10310ft, 173ac); Z-29 Lost (Brookies, 10030ft, 14ac); Z-30 Powell (Cutthroats, 9980ft, 22.4ac)
+- **Aggregates:** 5 fishable & uncaught, 1 caught, 1 starred; species: Brookies, Cutthroats, Grayling; lake elev 9980–10500 ft; 260.4 ac total, largest 173 ac
 - **Tags:** camping, fishing, navigation, mountain-pass, horses, 4wd, toilets
 - **Summary:** For backpackers arriving via Grandview (or via the Highline Trail to Four Lakes Basin), Allen provides a scenic retreat from the more pressured areas. Anglers seeking large arctic grayling must visit Allen Lake. Grayling over a pound are reported and fishing pressure is light. A few big brook trout inhabit this lake too. You won’t catch a lot of fish at Allen Lake, but what you do catch will be sizable.
 - **Book:** pp. 98, 100 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-37
@@ -560,7 +560,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** Lake Fork trailhead before Moon Lake Campground (section: Lake Fork Trailhead) · **Town:** Duchesne, Utah · **Drainage:** Lake Fork
 - **Distance:** 30.4 miles out and back · **Elev:** 11075 ft · **Time:** 18 hours · **Difficulty:** Moderate · **Usage:** Light
-- **Lakes (3 on route):** LF-18 Cleveland (no fish); X-88 Ottoson Lower (11075ft, 9.1ac); X-87 Ottoson Upper (Cutthroats, 11099ft, 12.4ac)
+- **Lakes (3 on route):** LF-18 Cleveland (no fish); X-88 Ottoson Lower (Cutthroats, 11075ft, 9.1ac); X-87 Ottoson Upper (Cutthroats, 11099ft, 12.4ac)
 - **Aggregates:** 2 fishable & uncaught, 0 caught, 0 starred; species: Cutthroats; lake elev 11075–11099 ft; 21.5 ac total, largest 12.4 ac
 - **Tags:** camping, fishing, mountain-pass, horses, paved-access, toilets
 - **Summary:** Ottoson Basin offers one of the grandest views in the High Uintas, especially when viewed from the top of Cleveland Pass. Shutterbugs will want to be on the pass in early morning when the sun illuminates the peaks. Mornings are also very good for fishing, but you can always find fast fishing in the evening. If you want superb photos, choose the early hike up Cleveland Pass.
@@ -610,7 +610,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** Swift Creek trailhead (section: Swift Creek Trailhead) · **Town:** Duchesne, Utah · **Drainage:** Swift Creek
 - **Distance:** 11.2 miles out and back · **Elev:** 10240 ft · **Time:** 6.5 hours · **Difficulty:** Moderate · **Usage:** Moderate
-- **Lakes (2 on route):** X-55 Deer (primary, Cutthroats, 10240ft, 12ac); X-56 Grayling (Grayling, 9980ft, 8.5ac)
+- **Lakes (2 on route):** X-55 Deer (primary, Cutthroats, 10240ft, 12ac); X-56 Grayling (Cutthroats/Grayling, 9980ft, 8.5ac)
 - **Aggregates:** 2 fishable & uncaught, 0 caught, 0 starred; species: Cutthroats, Grayling (historical only: Brookies); lake elev 9980–10240 ft; 20.5 ac total, largest 12 ac
 - **Tags:** camping, fishing, grayling, horses, crowded, multi-day, toilets
 - **Summary:** Early in the summer season, before the higher country opens up, you may find yourself wanting some alpine adventure. Here’s a lake that just might provide some early relief from cabin fever; that is, if you call mid-June early. Pack some warm clothes. The temperatures can still be pretty brisk during June. Much of the hike is steep, but it’s not very far. Deer Lake makes an excellent primer hike that can easily fit into a weekend.
@@ -660,8 +660,8 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** Swift Creek or Uinta trailhead (section: Swift Creek Trailhead) · **Town:** Duchesne, Utah · **Drainage:** Yellowstone River or Uinta River
 - **Distance:** 39.6 to 49 miles out and back · **Elev:** 13528 ft · **Time:** Variable · **Difficulty:** Difficult—steep sections · **Usage:** Light
-- **Lakes (8 on route):** Z-44 Allen (10390ft, 15.2ac); X-23 Farmers (Brookies, 10990ft, 63ac); U-14 Allred (10995ft, 34ac); U-17 Carrot (Brookies, 10830ft, 31ac); U-3 Chain 1 (Lower) (10580ft, 62ac); U-2 Chain 2 (middle) (10605ft, 14.4ac); U-1 Chain 3 (upper) (10623ft, 51ac); U-4 Chain 4 (Cutthroats, 10870ft, 13.5ac)
-- **Aggregates:** 8 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats (historical only: Grayling); lake elev 10390–10995 ft; 284.1 ac total, largest 63 ac
+- **Lakes (8 on route):** Z-44 Allen (★, 10390ft, 15.2ac); X-23 Farmers (Brookies, 10990ft, 63ac); U-14 Allred (10995ft, 34ac); U-17 Carrot (Brookies, 10830ft, 31ac); U-3 Chain 1 (Lower) (10580ft, 62ac); U-2 Chain 2 (middle) (10605ft, 14.4ac); U-1 Chain 3 (upper) (10623ft, 51ac); U-4 Chain 4 (Cutthroats, 10870ft, 13.5ac)
+- **Aggregates:** 8 fishable & uncaught, 0 caught, 1 starred; species: Brookies, Cutthroats (historical only: Grayling); lake elev 10390–10995 ft; 284.1 ac total, largest 63 ac
 - **Tags:** camping, fishing, mountain-pass, river-crossing, crowded, family, toilets
 - **Summary:** Kings Peak, the highest point in the state of Utah, is the most popular destination of peak baggers in the High Uintas and in the entire Beehive State. Novice mountaineers with no special equipment can even reach it. However, it is a long, steep hike to the top of the 13,528-foot summit. Good health and conditioning are a must. More than 10,000 people attempt to reach the top of Utah each year according to the nonprofit group Friends of Kings Peak. There are several routes to the top of Kings Peak, all of them long and each providing a different backcountry hiking experience. This chapter describes two approaches from the South Slope. No matter the route, hikers should plan to head to the top early in the morning and return by early afternoon to avoid the trademark afternoon thunderstorms on the High Uintas. These summer storms frequently include lightning, and the highest point in Utah is the last place you want to be when the electrified bolts are coming from the sky. To time this correctly, most hikers plan at least one overnight at a nearby lake, basin, or pass—although from the south you’ll likely need two or more nights of backpacking preparedness.
 - **Book:** pp. 147, 149, 135, 151 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-55
@@ -700,8 +700,8 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** West Fork Whiterocks trailhead (section: West Fork Whiterocks Trailhead) · **Town:** Roosevelt, Utah · **Drainage:** Whiterocks River
 - **Distance:** 10 miles out and back · **Elev:** 10652 ft · **Time:** 7 hours · **Difficulty:** Easy, but long · **Usage:** Heavy
-- **Lakes (2 on route):** WR-7 Cleveland (CAUGHT, Brookies, 10700ft, 23.1ac); WR-5 Ogden (Cutthroats, 10900ft, 13.9ac)
-- **Aggregates:** 1 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Cutthroats; lake elev 10700–10900 ft; 37 ac total, largest 23.1 ac
+- **Lakes (2 on route):** WR-7 Cleveland (CAUGHT, Brookies, 10640ft, 23.1ac); WR-5 Ogden (Cutthroats, 10900ft, 13.9ac)
+- **Aggregates:** 1 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Cutthroats; lake elev 10640–10900 ft; 37 ac total, largest 23.1 ac
 - **Tags:** camping, fishing, horses, multi-day, 4wd, paved-access, toilets
 - **Summary:** A gentle hike, great camping, and a chance to get away from the campground masses—perhaps these are the reasons Queant Lake is so popular. While you’re likely to have neighbors here, it’s a whole lot better than spending the night with the RVs and roadside tenters. Besides, not all backpackers are loners. Many actually enjoy a little company, as long as backcountry etiquette is followed.
 - **Book:** pp. 160–161 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-59
@@ -710,8 +710,8 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** West Fork Whiterocks trailhead (section: West Fork Whiterocks Trailhead) · **Town:** Roosevelt, Utah · **Drainage:** Uinta River
 - **Distance:** 17 miles out and back · **Elev:** 10790 ft · **Time:** 11 hours · **Difficulty:** Difficult—due to Fox-Queant Pass · **Usage:** Heavy
-- **Lakes (5 on route):** U-47 Fox (primary, Brookies, 10790ft, 102ac); U-54 Brook (Brookies, 10950ft, 10ac); U-48 Crescent (Cutthroats, 10830ft, 31ac); U-49 Dime (10704ft, 11.5ac); WR-7 Cleveland (CAUGHT, Brookies, 10700ft, 23.1ac)
-- **Aggregates:** 4 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Cutthroats; lake elev 10700–10950 ft; 177.6 ac total, largest 102 ac
+- **Lakes (5 on route):** U-47 Fox (primary, Brookies, 10790ft, 102ac); U-54 Brook (Brookies, 10950ft, 10ac); U-48 Crescent (Cutthroats, 10830ft, 31ac); U-49 Dime (10704ft, 11.5ac); WR-7 Cleveland (CAUGHT, Brookies, 10640ft, 23.1ac)
+- **Aggregates:** 4 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Cutthroats; lake elev 10640–10950 ft; 177.6 ac total, largest 102 ac
 - **Tags:** camping, fishing, mountain-pass, horses, crowded, multi-day, 4wd, paved-access, toilets
 - **Summary:** Although Fox is a primitive lake, it just doesn’t always boast all the hallmarks of a designated Wilderness area. Large groups of campers bring horses loaded with all their “essentials” and settle in for a good time. Those who prefer a place that is a little less conspicuous may need to look elsewhere, depending on when you visit. Fox Lake gets more than its share of high-impact camping.
 - **Book:** pp. 160–161 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-60
@@ -720,8 +720,8 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** West Fork Whiterocks trailhead (section: West Fork Whiterocks Trailhead) · **Town:** Roosevelt, Utah · **Drainage:** Uinta River
 - **Distance:** 25.1 miles out and back · **Elev:** 10850 ft · **Time:** 16 hours · **Difficulty:** Difficult—due to Fox-Queant Pass · **Usage:** Heavy
-- **Lakes (10 on route, 3 name-drop only):** U-25 Kidney East (primary, 10850ft, 13.7ac); U-26 Kidney West (primary, Brookies, 10850ft, 20ac); GR-143 Hoop Lake (name-drop only, Grayling/Rainbows/Tigers); X-113 Ledge (Brookies/Cutthroats, 10845ft, 3.1ac); GR-3 Spirit Lake (name-drop only, Cutthroats/Tigers); U-48 Crescent (Cutthroats, 10830ft, 31ac); U-46 Davis North (Brookies, 11060ft, 7.3ac); U-34 Davis South (Brookies, 11020ft, 6.1ac); U-47 Fox (Brookies, 10790ft, 102ac); U-23 Lily (Brookies, 10919ft, 5.3ac); U-33 Rainbow (Brookies/Tigers, 11130ft, 35.1ac); WR-64 Chepeta (name-drop only, Brookies/Cutthroats, 10600ft, 135ac); WR-7 Cleveland (CAUGHT, Brookies, 10700ft, 23.1ac)
-- **Aggregates:** 9 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Cutthroats, Tigers; lake elev 10700–11130 ft; 246.7 ac total, largest 102 ac
+- **Lakes (10 on route, 3 name-drop only):** U-25 Kidney East (primary, 10850ft, 13.7ac); U-26 Kidney West (primary, Brookies, 10850ft, 20ac); GR-143 Hoop Lake (name-drop only, Grayling/Rainbows/Tigers); X-113 Ledge (Brookies/Cutthroats, 10845ft, 3.1ac); GR-3 Spirit Lake (name-drop only, Cutthroats/Tigers); U-48 Crescent (Cutthroats, 10830ft, 31ac); U-46 Davis North (Brookies, 11060ft, 7.3ac); U-34 Davis South (Brookies, 11020ft, 6.1ac); U-47 Fox (Brookies, 10790ft, 102ac); U-23 Lily (Brookies, 10919ft, 5.3ac); U-33 Rainbow (Brookies/Tigers, 11130ft, 35.1ac); WR-64 Chepeta (name-drop only, Brookies/Cutthroats, 10560ft, 135ac); WR-7 Cleveland (CAUGHT, Brookies, 10640ft, 23.1ac)
+- **Aggregates:** 9 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Cutthroats, Tigers; lake elev 10640–11130 ft; 246.7 ac total, largest 102 ac
 - **Tags:** camping, fishing, mountain-pass, river-crossing, horses, 4wd, paved-access, toilets
 - **Summary:** Several lakes make up the Kidney Lakes Basin, and most receive substantial camping or fishing use. Kidney Lakes are no exception. Large recreational groups usually occupy both Kidney Lakes. Plenty of campsites can be found between the lakes and around West Kidney. Fishing is often good for brook trout and an occasional 1-pound rainbow. Moose are often seen feeding in the shallows of both Kidney Lakes. Be aware of these large animals and give them their space. Although usually docile, an upset moose is extremely dangerous.
 - **Book:** pp. 160–161 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-61
@@ -730,8 +730,8 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** West Fork Whiterocks trailhead (section: West Fork Whiterocks Trailhead) · **Town:** Roosevelt, Utah · **Drainage:** Uinta River
 - **Distance:** 26 miles out and back · **Elev:** 11020 ft · **Time:** 16 hours · **Difficulty:** Difficult—due to Fox-Queant Pass · **Usage:** Light
-- **Lakes (7 on route):** U-46 Davis North (primary, Brookies, 11060ft, 7.3ac); U-34 Davis South (primary, Brookies, 11020ft, 6.1ac); U-48 Crescent (Cutthroats, 10830ft, 31ac); U-47 Fox (Brookies, 10790ft, 102ac); U-25 Kidney East (10850ft, 13.7ac); U-26 Kidney West (Brookies, 10850ft, 20ac); WR-7 Cleveland (CAUGHT, Brookies, 10700ft, 23.1ac)
-- **Aggregates:** 6 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Cutthroats; lake elev 10700–11060 ft; 203.2 ac total, largest 102 ac
+- **Lakes (7 on route):** U-46 Davis North (primary, Brookies, 11060ft, 7.3ac); U-34 Davis South (primary, Brookies, 11020ft, 6.1ac); U-48 Crescent (Cutthroats, 10830ft, 31ac); U-47 Fox (Brookies, 10790ft, 102ac); U-25 Kidney East (10850ft, 13.7ac); U-26 Kidney West (Brookies, 10850ft, 20ac); WR-7 Cleveland (CAUGHT, Brookies, 10640ft, 23.1ac)
+- **Aggregates:** 6 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Cutthroats; lake elev 10640–11060 ft; 203.2 ac total, largest 102 ac
 - **Tags:** camping, fishing, cross-country, navigation, 4wd, paved-access, toilets
 - **Summary:** Nestled in a high cirque, Davis Lakes offer a true alpine experience. The surrounding hills are composed of lush green grasses and scattered pines that may remind you of the Swiss Alps. Equestrians will appreciate all the space, pasture, and water for their animals, as well as the fact that horses cannot really roam any higher thanks to the steep divide rising behind them.
 - **Book:** pp. 160–161 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-62
@@ -740,7 +740,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** Chepeta Lake trailhead (section: Chepeta Trailhead) · **Town:** Roosevelt, Utah · **Drainage:** Whiterocks River
 - **Distance:** 9 miles out and back · **Elev:** 10960 ft · **Time:** 6 hours · **Difficulty:** Moderate—some cross-country travel · **Usage:** Light
-- **Lakes (1 on route, 1 name-drop only):** WR-66 Reader (primary, Cutthroats, 10960ft, 10.2ac); WR-64 Chepeta (name-drop only, Brookies/Cutthroats, 10600ft, 135ac)
+- **Lakes (1 on route, 1 name-drop only):** WR-66 Reader (primary, Cutthroats, 10960ft, 10.2ac); WR-64 Chepeta (name-drop only, Brookies/Cutthroats, 10560ft, 135ac)
 - **Aggregates:** 1 fishable & uncaught, 0 caught, 0 starred; species: Cutthroats (historical only: Grayling); lake elev 10960–10960 ft; 10.2 ac total, largest 10.2 ac
 - **Tags:** camping, navigation, steep, solitude, bugs, paved-access, toilets
 - **Summary:** You might take a hint from this lake’s name and bring a good book to read and binoculars to watch for wildlife. This is a good place to be alone and relax. Reader Lake is no longer managed as a fishery but does get some trout moving in from Reader Creek. Here is a respite for the non-fishing backpacker.
@@ -750,8 +750,8 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** Chepeta Lake trailhead (section: Chepeta Trailhead) · **Town:** Roosevelt, Utah · **Drainage:** Whiterocks River
 - **Distance:** 7 miles out and back · **Elev:** 11114 ft · **Time:** 5 hours · **Difficulty:** Moderate—cross-country travel · **Usage:** Very light
-- **Lakes (2 on route):** WR-64 Chepeta (Brookies/Cutthroats, 10600ft, 135ac); WR-52 Papoose (Brookies, 10607ft, 16.8ac)
-- **Aggregates:** 2 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats; lake elev 10600–10607 ft; 151.8 ac total, largest 135 ac
+- **Lakes (2 on route):** WR-64 Chepeta (Brookies/Cutthroats, 10560ft, 135ac); WR-52 Papoose (Brookies, 10607ft, 16.8ac)
+- **Aggregates:** 2 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats; lake elev 10560–10607 ft; 151.8 ac total, largest 135 ac
 - **Tags:** fishing, steep, crowded, solitude, paved-access, toilets
 - **Summary:** Walk-Up Lake is not as easy as its name implies. You don’t want to be in a hurry going through this country. It’s both beautiful and treacherous. But cirque lovers will adore this bowl carved out eons ago when glaciers ruled the High Uintas, and solitude seekers should like this place, since it sees very few visitors.
 - **Book:** pp. 170–171 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-64
@@ -760,8 +760,8 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** Chepeta Lake trailhead (section: Chepeta Trailhead) · **Town:** Roosevelt, Utah · **Drainage:** Whiterocks River
 - **Distance:** 11.2 miles out and back · **Elev:** 10348 ft · **Time:** 7 hours · **Difficulty:** Moderate · **Usage:** Light
-- **Lakes (7 on route):** WR-49 Cliff (primary, Brookies/Tigers, 11000ft, 68ac); WR-64 Chepeta (Brookies/Cutthroats, 10600ft, 135ac); WR-42 Sand (Cutthroats, 10435ft, 6.2ac); WR-48 Watkins (Brookies, 10390ft, 18.4ac); WR-46 Whiterocks Reservoir Lake (probably no fish, 10800ft, 67ac); WR-40 Wooley (Brookies/Tigers, 10680ft, 20.5ac); WR-50 Workman (10500ft, 20ac)
-- **Aggregates:** 7 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats, Tigers; lake elev 10390–11000 ft; 335.1 ac total, largest 135 ac
+- **Lakes (7 on route):** WR-49 Cliff (primary, CAUGHT, Brookies/Tigers, 10348ft, 68ac); WR-64 Chepeta (Brookies/Cutthroats, 10560ft, 135ac); WR-42 Sand (Cutthroats, 10435ft, 6.2ac); WR-48 Watkins (CAUGHT, Brookies, 10390ft, 18.4ac); WR-46 Whiterocks Reservoir Lake (probably no fish, 10800ft, 67ac); WR-40 Wooley (Brookies/Tigers, 10680ft, 20.5ac); WR-50 Workman (NONE, 10460ft, 20ac)
+- **Aggregates:** 5 fishable & uncaught, 2 caught, 0 starred; species: Brookies, Cutthroats, Tigers; lake elev 10348–10800 ft; 335.1 ac total, largest 135 ac
 - **Tags:** camping, fishing, river-crossing, horses, paved-access, toilets
 - **Summary:** Simply put—this is quite a quiet, rugged place.
 - **Book:** pp. 170–171 · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-65
@@ -810,7 +810,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** Highline trailhead (west end) or McKee Draw (east end) or Leidy Peak trailhead (near east end) (section: Paradise Park/Blanchett Trailhead) · **Town:** Kamas, Utah (west end), or Manila, Utah (east end) · **Drainage:** None
 - **Distance:** 79 to 104 miles one way · **Elev:** 12600 ft · **Time:** Variable · **Difficulty:** Extremely difficult · **Usage:** Moderate
-- **Lakes (7 on route, 1 name-drop only):** GR-40 Hacking (Cutthroats/Rainbows/Tigers, 10625ft, 7.4ac); Z-42 Carolyn (10430ft, 5ac); Z-3 Mirror (name-drop only, CAUGHT, Brookies/Rainbows/Tigers, 10200ft, 42ac); G-15 Red Castle (CAUGHT, Brookies/Tigers, 11295ft, 168.2ac); LF-22 Porcupine (Cutthroats, 11301ft, 12.8ac); X-113 Ledge (Brookies/Cutthroats, 10845ft, 3.1ac); WR-64 Chepeta (Brookies/Cutthroats, 10600ft, 135ac); WR-66 Reader (Cutthroats, 10960ft, 10.2ac)
+- **Lakes (7 on route, 1 name-drop only):** GR-40 Hacking (Cutthroats/Rainbows/Tigers, 10625ft, 7.4ac); Z-42 Carolyn (10430ft, 5ac); Z-3 Mirror (name-drop only, CAUGHT, Brookies/Rainbows/Tigers, 10200ft, 42ac); G-15 Red Castle (CAUGHT, Brookies/Tigers, 11295ft, 168.2ac); LF-22 Porcupine (Cutthroats, 11301ft, 12.8ac); X-113 Ledge (Brookies/Cutthroats, 10845ft, 3.1ac); WR-64 Chepeta (Brookies/Cutthroats, 10560ft, 135ac); WR-66 Reader (Cutthroats, 10960ft, 10.2ac)
 - **Aggregates:** 6 fishable & uncaught, 1 caught, 0 starred; species: Brookies, Cutthroats, Rainbows, Tigers (historical only: Grayling); lake elev 10430–11301 ft; 341.7 ac total, largest 168.2 ac
 - **Tags:** camping, steep, mountain-pass, horses, multi-day, 4wd, toilets
 - **Summary:** You’ve heard of the Appalachian Trail and the Pacific Crest Trail. Maybe you’ve heard of the John Muir Trail in California. But have you heard of Utah’s Highline Trail? With most of the trail above 10,000 feet, the 100-mile trek has a limited hiking season and its elevation commands respect. It takes a lot of stamina and willpower to take on a long hike lasting many days or even weeks—and may bring into immediate focus the reasons behind ultralight backpacking practices once you’ve gone just a few miles under the full weight of your pack. On that note, do not make Highline your first backpacking trip. Get in shape by taking on a trial trip or two—or three!—each time pushing your distance to know how many miles you are capable of covering in a day. But then, there is no “right way” to tackle Highline. If you are strong enough, conditioned enough, well prepared, and have enough time based on your chosen itinerary, then maybe you can join the elite long-haulers on the Highline Trail.
@@ -1012,8 +1012,8 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 
 - **Start:** Browne Lake (section: Spirit Lake Trailhead) · **Town:** Mountain View, Wyoming · **Drainage:** Carter Creek
 - **Distance:** 13 miles out and back · **Elev:** 10350 ft · **Time:** 8 hours · **Difficulty:** Difficult · **Usage:** Light
-- **Lakes (10 on route):** GR-19 Lamb (primary, Cutthroats/Tigers, 10540ft, 6ac); GR-22 Bummer (Brookies/Cutthroats, 10350ft, 1.9ac); GR-18 Ewe (Grayling, 10750ft, 3ac); GR-27 Lower Potter (probably no fish, 10130ft, 3.4ac); GR-28 Upper Potter (Cutthroats, 10130ft, 4.3ac); GR-3 Spirit Lake (Cutthroats/Tigers); GR-20 (Tigers, 10355ft, 5.7ac); GR-21 (Tigers, 10355ft, 3.7ac); GR-23 Mutton (Brookies/Cutthroats, 10570ft, 3.8ac); GR-24 Ram (Cutthroats/Tigers, 10380ft, 7ac)
-- **Aggregates:** 10 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats, Grayling, Tigers (historical only: Rainbows); lake elev 10130–10750 ft; 38.8 ac total, largest 7 ac
+- **Lakes (10 on route):** GR-19 Lamb (primary, Cutthroats/Tigers, 10540ft, 6ac); GR-22 Bummer (Brookies/Cutthroats, 10350ft, 1.9ac); GR-18 Ewe (Grayling, 10750ft, 3ac); GR-27 Lower Potter (probably no fish, 10130ft, 3.4ac); GR-28 Upper Potter (Cutthroats, 10130ft, 21.3ac); GR-3 Spirit Lake (Cutthroats/Tigers); GR-20 (Tigers, 10355ft, 5.7ac); GR-21 (Tigers, 10355ft, 3.7ac); GR-23 Mutton (Brookies/Cutthroats, 10570ft, 3.8ac); GR-24 Ram (Cutthroats/Tigers, 10380ft, 7ac)
+- **Aggregates:** 10 fishable & uncaught, 0 caught, 0 starred; species: Brookies, Cutthroats, Grayling, Tigers (historical only: Rainbows); lake elev 10130–10750 ft; 55.8 ac total, largest 21.3 ac
 - **Tags:** camping, fishing, cross-country, steep, river-crossing, horses, crowded, solitude, multi-day, toilets
 - **Summary:** The Browne Lake area is, in many respects, an outdoor recreation hub of the northeastern Uintas thanks to the campground; the cooling lake at 8,200 feet known for rainbow trout, brook trout, and kokanee salmon; and a network of ATV trails, including the historic Carter Military Trail. There are also three hiking and backpacking trailheads, though seasonal deadfall has made some navigation difficult—on a recent visit, the trail to Tepee was nowhere to be found.
 - **Book:** pp. ? · https://olaf.tail89dcea.ts.net:8443/data/tailscale_book/falcon_guide/index.html#hike-90
@@ -1050,8 +1050,8 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 | Lake | Drainage | Jed | Hikes (primary in **bold**) |
 |---|---|---|---|
 | A-1 Alexander | Provo River |  | **28** |
-| A-7 Duck | Provo River |  | 4, 5 |
-| A-12 Marjorie | Provo River | NONE | 5 |
+| A-7 Duck | Provo River | CAUGHT | 4, 5 |
+| A-12 Marjorie | Provo River | CAUGHT | 5 |
 | A-14 Fire | Provo River | NONE | 4 |
 | A-17 Beaver | Provo River |  | 4 |
 | A-18 Big Elk | Provo River | CAUGHT | 1, **2** |
@@ -1059,7 +1059,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 | A-23 Washington | Provo River | CAUGHT | 4 |
 | A-26 Petit (Junior #5) | Provo River |  | 7 |
 | A-27 Watson | Provo River |  | 7 |
-| A-28 Clyde | Provo River |  | 6, 7, 8 |
+| A-28 Clyde | Provo River | OTHERS | 6, 7, 8 |
 | A-29 Wall | Provo River |  | 6, 8, 9 |
 | A-32 Twin Upper | Provo River |  | **8** |
 | A-33 Twin Lower | Provo River |  | **8** |
@@ -1067,7 +1067,7 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 | A-35 Booker | Provo River | CAUGHT | 7 |
 | A-36 Divide, #1 | Provo River | CAUGHT | **7**, 8 |
 | A-37 Long | Provo River | CAUGHT | 3, 4, 5 |
-| A-39 Shingle Creek East | Provo River |  | 1 |
+| A-39 Shingle Creek East | Provo River | NONE | 1 |
 | A-50 Weir | Provo River | CAUGHT | 5 |
 | A-51 Crystal | Provo River | CAUGHT | 3, 4, 5, 6, 7, 8, 9, 11 |
 | A-56 Junior | Provo River | CAUGHT | 4 |
@@ -1212,8 +1212,8 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 | W-21 Little Hidden | Weber River | OTHERS | 7 |
 | W-23 Lovenia | Weber River |  | 7, 9, 23 |
 | W-24 Ibantik | Weber River |  | **9** |
-| W-25 Erickson South | Weber River |  | **1** |
-| W-26 Erickson North | Weber River |  | **1** |
+| W-25 Erickson South | Weber River | NONE | **1** |
+| W-26 Erickson North | Weber River | NONE | **1** |
 | W-27 Meadow | Weber River |  | 9 |
 | W-30 Abes | Weber River |  | **23** |
 | W-31 Neil | Weber River |  | 23 |
@@ -1222,11 +1222,11 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 | W-37 Bench | Weber River |  | 11 |
 | W-40 Kamas | Weber River |  | 24, 25 |
 | W-41 Lofty | Weber River |  | **25**, 26 |
-| W-42 Cuberant #1 | Weber River |  | **24** |
-| W-43 Cuberant #2 | Weber River |  | **24** |
-| W-44 Cuberant #3 | Weber River |  | **24** |
-| W-45 Cuberant #4 | Weber River |  | **24** |
-| W-46 Cuberant #5 | Weber River |  | **24** |
+| W-42 Cuberant #1 | Weber River | CAUGHT | **24** |
+| W-43 Cuberant #2 | Weber River | CAUGHT | **24** |
+| W-44 Cuberant #3 | Weber River | CAUGHT | **24** |
+| W-45 Cuberant #4 | Weber River | CAUGHT | **24** |
+| W-46 Cuberant #5 | Weber River | NONE | **24** |
 | W-47 Fish | Weber River |  | **22** |
 | W-48 Round | Weber River |  | 22 |
 | W-49 Sand | Weber River |  | 22 |
@@ -1235,9 +1235,9 @@ Columns: **Dist** = round-trip miles as the book states them (a range means the 
 | WR-40 Wooley | White Rocks |  | 65 |
 | WR-42 Sand | White Rocks |  | 65 |
 | WR-46 Whiterocks Reservoir Lake | White Rocks |  | 65 |
-| WR-48 Watkins | White Rocks |  | 65 |
-| WR-49 Cliff | White Rocks |  | **65** |
-| WR-50 Workman | White Rocks |  | 65 |
+| WR-48 Watkins | White Rocks | CAUGHT | 65 |
+| WR-49 Cliff | White Rocks | CAUGHT | **65** |
+| WR-50 Workman | White Rocks | NONE | 65 |
 | WR-52 Papoose | White Rocks |  | 64 |
 | WR-64 Chepeta | White Rocks |  | 61, 63, 64, 65, 70 |
 | WR-66 Reader | White Rocks |  | **63**, 70 |

@@ -112,7 +112,7 @@
      "fishing_pressure": "Moderate",
      "no_fish": false,
      "probably_no_fish": false,
-     "jed_status": null,
+     "jed_status": "NONE",
      "starred": false,
      "has_coords": true,
      "has_cma_notes": true,
@@ -137,7 +137,7 @@
      "fishing_pressure": "High",
      "no_fish": false,
      "probably_no_fish": false,
-     "jed_status": null,
+     "jed_status": "NONE",
      "starred": false,
      "has_coords": true,
      "has_cma_notes": true,
@@ -222,7 +222,7 @@
      "fishing_pressure": "High",
      "no_fish": false,
      "probably_no_fish": false,
-     "jed_status": null,
+     "jed_status": "NONE",
      "starred": false,
      "has_coords": true,
      "has_cma_notes": true,
@@ -563,8 +563,8 @@
     "A-57"
    ],
    "fishable_lake_count": 6,
-   "lakes_caught": 3,
-   "lakes_uncaught_fishable": 3,
+   "lakes_caught": 4,
+   "lakes_uncaught_fishable": 2,
    "lakes_starred": 0,
    "species_current": [
     "Brookies",
@@ -693,7 +693,7 @@
      "fishing_pressure": "High",
      "no_fish": false,
      "probably_no_fish": false,
-     "jed_status": null,
+     "jed_status": "CAUGHT",
      "starred": false,
      "has_coords": true,
      "has_cma_notes": true,
@@ -844,8 +844,8 @@
    "lake_count_all_mentions": 5,
    "primary_lakes": [],
    "fishable_lake_count": 4,
-   "lakes_caught": 2,
-   "lakes_uncaught_fishable": 2,
+   "lakes_caught": 4,
+   "lakes_uncaught_fishable": 0,
    "lakes_starred": 0,
    "species_current": [
     "Brookies",
@@ -923,7 +923,7 @@
      "fishing_pressure": "High",
      "no_fish": false,
      "probably_no_fish": false,
-     "jed_status": null,
+     "jed_status": "CAUGHT",
      "starred": false,
      "has_coords": true,
      "has_cma_notes": true,
@@ -974,12 +974,12 @@
      "fishing_pressure": "High",
      "no_fish": false,
      "probably_no_fish": false,
-     "jed_status": "NONE",
+     "jed_status": "CAUGHT",
      "starred": false,
      "has_coords": true,
      "has_cma_notes": true,
      "has_junesucker_notes": false,
-     "has_jed_notes": false
+     "has_jed_notes": true
     },
     {
      "letter_number": "A-50",
@@ -1175,7 +1175,7 @@
      "fishing_pressure": "High",
      "no_fish": false,
      "probably_no_fish": false,
-     "jed_status": null,
+     "jed_status": "OTHERS",
      "starred": false,
      "has_coords": true,
      "has_cma_notes": true,
@@ -1383,7 +1383,7 @@
      "has_coords": true,
      "has_cma_notes": true,
      "has_junesucker_notes": false,
-     "has_jed_notes": false
+     "has_jed_notes": true
     },
     {
      "letter_number": "A-61",
@@ -1507,7 +1507,7 @@
      "fishing_pressure": "High",
      "no_fish": false,
      "probably_no_fish": false,
-     "jed_status": null,
+     "jed_status": "OTHERS",
      "starred": false,
      "has_coords": true,
      "has_cma_notes": true,
@@ -1740,7 +1740,7 @@
      "fishing_pressure": "High",
      "no_fish": false,
      "probably_no_fish": false,
-     "jed_status": null,
+     "jed_status": "OTHERS",
      "starred": false,
      "has_coords": true,
      "has_cma_notes": true,
@@ -4279,9 +4279,9 @@
     "W-45",
     "W-46"
    ],
-   "fishable_lake_count": 7,
-   "lakes_caught": 1,
-   "lakes_uncaught_fishable": 6,
+   "fishable_lake_count": 6,
+   "lakes_caught": 5,
+   "lakes_uncaught_fishable": 1,
    "lakes_starred": 0,
    "species_current": [
     "Brookies",
@@ -4334,12 +4334,12 @@
      "fishing_pressure": "Moderate",
      "no_fish": false,
      "probably_no_fish": false,
-     "jed_status": null,
+     "jed_status": "CAUGHT",
      "starred": false,
      "has_coords": true,
      "has_cma_notes": true,
      "has_junesucker_notes": false,
-     "has_jed_notes": false
+     "has_jed_notes": true
     },
     {
      "letter_number": "W-43",
@@ -4360,7 +4360,7 @@
      "fishing_pressure": "Moderate",
      "no_fish": false,
      "probably_no_fish": false,
-     "jed_status": null,
+     "jed_status": "CAUGHT",
      "starred": false,
      "has_coords": true,
      "has_cma_notes": true,
@@ -4385,12 +4385,12 @@
      "fishing_pressure": "Moderate",
      "no_fish": false,
      "probably_no_fish": false,
-     "jed_status": null,
+     "jed_status": "CAUGHT",
      "starred": false,
      "has_coords": true,
      "has_cma_notes": true,
      "has_junesucker_notes": false,
-     "has_jed_notes": false
+     "has_jed_notes": true
     },
     {
      "letter_number": "W-45",
@@ -4411,7 +4411,7 @@
      "fishing_pressure": "Moderate",
      "no_fish": false,
      "probably_no_fish": false,
-     "jed_status": null,
+     "jed_status": "CAUGHT",
      "starred": false,
      "has_coords": true,
      "has_cma_notes": true,
@@ -4434,14 +4434,14 @@
       "Unknown"
      ],
      "fishing_pressure": "Low",
-     "no_fish": false,
+     "no_fish": true,
      "probably_no_fish": false,
-     "jed_status": null,
+     "jed_status": "NONE",
      "starred": false,
      "has_coords": true,
      "has_cma_notes": true,
      "has_junesucker_notes": false,
-     "has_jed_notes": false
+     "has_jed_notes": true
     },
     {
      "letter_number": "Z-5",
@@ -4625,7 +4625,7 @@
      "has_coords": true,
      "has_cma_notes": true,
      "has_junesucker_notes": true,
-     "has_jed_notes": true
+     "has_jed_notes": false
     },
     {
      "letter_number": "Z-3",
@@ -6612,7 +6612,7 @@
    "fishable_lake_count": 6,
    "lakes_caught": 1,
    "lakes_uncaught_fishable": 5,
-   "lakes_starred": 0,
+   "lakes_starred": 1,
    "species_current": [
     "Brookies",
     "Cutthroats",
@@ -6662,11 +6662,11 @@
      "no_fish": false,
      "probably_no_fish": false,
      "jed_status": null,
-     "starred": false,
+     "starred": true,
      "has_coords": true,
      "has_cma_notes": true,
      "has_junesucker_notes": false,
-     "has_jed_notes": false
+     "has_jed_notes": true
     },
     {
      "letter_number": "Z-46",
@@ -6904,10 +6904,11 @@
      "elevation_ft": 10590,
      "size_acres": 5.8,
      "max_depth_ft": 12,
-     "species_current": [],
-     "species_historical": [
-      "Brookies",
+     "species_current": [
       "Cutthroats"
+     ],
+     "species_historical": [
+      "Brookies"
      ],
      "fishing_pressure": "High",
      "no_fish": true,
@@ -6958,7 +6959,8 @@
      "size_acres": 13.6,
      "max_depth_ft": 30,
      "species_current": [
-      "Brookies"
+      "Brookies",
+      "Cutthroats"
      ],
      "species_historical": [],
      "fishing_pressure": "Moderate",
@@ -8400,10 +8402,10 @@
      "elevation_ft": 11075,
      "size_acres": 9.1,
      "max_depth_ft": 8,
-     "species_current": [],
-     "species_historical": [
+     "species_current": [
       "Cutthroats"
      ],
+     "species_historical": [],
      "fishing_pressure": "Low",
      "no_fish": false,
      "probably_no_fish": false,
@@ -9160,6 +9162,7 @@
      "size_acres": 8.5,
      "max_depth_ft": 33,
      "species_current": [
+      "Cutthroats",
       "Grayling"
      ],
      "species_historical": [
@@ -10128,7 +10131,7 @@
    "fishable_lake_count": 8,
    "lakes_caught": 0,
    "lakes_uncaught_fishable": 8,
-   "lakes_starred": 0,
+   "lakes_starred": 1,
    "species_current": [
     "Brookies",
     "Cutthroats"
@@ -10181,11 +10184,11 @@
      "no_fish": false,
      "probably_no_fish": false,
      "jed_status": null,
-     "starred": false,
+     "starred": true,
      "has_coords": true,
      "has_cma_notes": true,
      "has_junesucker_notes": false,
-     "has_jed_notes": false
+     "has_jed_notes": true
     },
     {
      "letter_number": "X-23",
@@ -11097,7 +11100,7 @@
    "lake_drainages": [
     "White Rocks Drainage"
    ],
-   "lake_elevation_min_ft": 10700,
+   "lake_elevation_min_ft": 10640,
    "lake_elevation_max_ft": 10900,
    "lake_acres_total": 37.0,
    "largest_lake_acres": 23.1,
@@ -11125,7 +11128,7 @@
      "mention_context": "route",
      "drainage": "White Rocks Drainage",
      "basin": null,
-     "elevation_ft": 10700,
+     "elevation_ft": 10640,
      "size_acres": 23.1,
      "max_depth_ft": 6,
      "species_current": [
@@ -11219,7 +11222,7 @@
     "Uinta River Drainage",
     "White Rocks Drainage"
    ],
-   "lake_elevation_min_ft": 10700,
+   "lake_elevation_min_ft": 10640,
    "lake_elevation_max_ft": 10950,
    "lake_acres_total": 177.6,
    "largest_lake_acres": 102.0,
@@ -11353,7 +11356,7 @@
      "mention_context": "route",
      "drainage": "White Rocks Drainage",
      "basin": null,
-     "elevation_ft": 10700,
+     "elevation_ft": 10640,
      "size_acres": 23.1,
      "max_depth_ft": 6,
      "species_current": [
@@ -11425,7 +11428,7 @@
     "Uinta River Drainage",
     "White Rocks Drainage"
    ],
-   "lake_elevation_min_ft": 10700,
+   "lake_elevation_min_ft": 10640,
    "lake_elevation_max_ft": 11130,
    "lake_acres_total": 246.7,
    "largest_lake_acres": 102.0,
@@ -11742,7 +11745,7 @@
      "mention_context": "reference",
      "drainage": "White Rocks Drainage",
      "basin": null,
-     "elevation_ft": 10600,
+     "elevation_ft": 10560,
      "size_acres": 135.0,
      "max_depth_ft": 60,
      "species_current": [
@@ -11768,7 +11771,7 @@
      "mention_context": "route",
      "drainage": "White Rocks Drainage",
      "basin": null,
-     "elevation_ft": 10700,
+     "elevation_ft": 10640,
      "size_acres": 23.1,
      "max_depth_ft": 6,
      "species_current": [
@@ -11838,7 +11841,7 @@
     "Uinta River Drainage",
     "White Rocks Drainage"
    ],
-   "lake_elevation_min_ft": 10700,
+   "lake_elevation_min_ft": 10640,
    "lake_elevation_max_ft": 11060,
    "lake_acres_total": 203.2,
    "largest_lake_acres": 102.0,
@@ -12020,7 +12023,7 @@
      "mention_context": "route",
      "drainage": "White Rocks Drainage",
      "basin": null,
-     "elevation_ft": 10700,
+     "elevation_ft": 10640,
      "size_acres": 23.1,
      "max_depth_ft": 6,
      "species_current": [
@@ -12144,7 +12147,7 @@
      "mention_context": "reference",
      "drainage": "White Rocks Drainage",
      "basin": null,
-     "elevation_ft": 10600,
+     "elevation_ft": 10560,
      "size_acres": 135.0,
      "max_depth_ft": 60,
      "species_current": [
@@ -12209,7 +12212,7 @@
    "lake_drainages": [
     "White Rocks Drainage"
    ],
-   "lake_elevation_min_ft": 10600,
+   "lake_elevation_min_ft": 10560,
    "lake_elevation_max_ft": 10607,
    "lake_acres_total": 151.8,
    "largest_lake_acres": 135.0,
@@ -12236,7 +12239,7 @@
      "mention_context": "route",
      "drainage": "White Rocks Drainage",
      "basin": null,
-     "elevation_ft": 10600,
+     "elevation_ft": 10560,
      "size_acres": 135.0,
      "max_depth_ft": 60,
      "species_current": [
@@ -12319,8 +12322,8 @@
     "WR-49"
    ],
    "fishable_lake_count": 7,
-   "lakes_caught": 0,
-   "lakes_uncaught_fishable": 7,
+   "lakes_caught": 2,
+   "lakes_uncaught_fishable": 5,
    "lakes_starred": 0,
    "species_current": [
     "Brookies",
@@ -12331,8 +12334,8 @@
    "lake_drainages": [
     "White Rocks Drainage"
    ],
-   "lake_elevation_min_ft": 10390,
-   "lake_elevation_max_ft": 11000,
+   "lake_elevation_min_ft": 10348,
+   "lake_elevation_max_ft": 10800,
    "lake_acres_total": 335.1,
    "largest_lake_acres": 135.0,
    "tags": [
@@ -12358,7 +12361,7 @@
      "mention_context": "route",
      "drainage": "White Rocks Drainage",
      "basin": null,
-     "elevation_ft": 11000,
+     "elevation_ft": 10348,
      "size_acres": 68.0,
      "max_depth_ft": 55,
      "species_current": [
@@ -12371,7 +12374,7 @@
      "fishing_pressure": "Moderate",
      "no_fish": false,
      "probably_no_fish": false,
-     "jed_status": null,
+     "jed_status": "CAUGHT",
      "starred": false,
      "has_coords": true,
      "has_cma_notes": true,
@@ -12386,7 +12389,7 @@
      "mention_context": "route",
      "drainage": "White Rocks Drainage",
      "basin": null,
-     "elevation_ft": 10600,
+     "elevation_ft": 10560,
      "size_acres": 135.0,
      "max_depth_ft": 60,
      "species_current": [
@@ -12449,7 +12452,7 @@
      "fishing_pressure": "Low",
      "no_fish": false,
      "probably_no_fish": false,
-     "jed_status": null,
+     "jed_status": "CAUGHT",
      "starred": false,
      "has_coords": true,
      "has_cma_notes": true,
@@ -12498,7 +12501,7 @@
       "Tigers"
      ],
      "species_historical": [],
-     "fishing_pressure": "Moderate",
+     "fishing_pressure": "Low",
      "no_fish": false,
      "probably_no_fish": false,
      "jed_status": null,
@@ -12516,7 +12519,7 @@
      "mention_context": "route",
      "drainage": "White Rocks Drainage",
      "basin": null,
-     "elevation_ft": 10500,
+     "elevation_ft": 10460,
      "size_acres": 20.0,
      "max_depth_ft": 14,
      "species_current": [],
@@ -12527,12 +12530,12 @@
      "fishing_pressure": "Moderate",
      "no_fish": false,
      "probably_no_fish": false,
-     "jed_status": null,
+     "jed_status": "NONE",
      "starred": false,
      "has_coords": true,
      "has_cma_notes": true,
      "has_junesucker_notes": false,
-     "has_jed_notes": false
+     "has_jed_notes": true
     }
    ]
   },
@@ -13454,7 +13457,7 @@
      "mention_context": "route",
      "drainage": "White Rocks Drainage",
      "basin": null,
-     "elevation_ft": 10600,
+     "elevation_ft": 10560,
      "size_acres": 135.0,
      "max_depth_ft": 60,
      "species_current": [
@@ -16681,8 +16684,8 @@
    ],
    "lake_elevation_min_ft": 10130,
    "lake_elevation_max_ft": 10750,
-   "lake_acres_total": 38.8,
-   "largest_lake_acres": 7.0,
+   "lake_acres_total": 55.8,
+   "largest_lake_acres": 21.3,
    "tags": [
     "camping",
     "fishing",
@@ -16817,15 +16820,15 @@
      "drainage": "Sheep/Carter Creek Drainages",
      "basin": null,
      "elevation_ft": 10130,
-     "size_acres": 4.3,
-     "max_depth_ft": 28,
+     "size_acres": 21.3,
+     "max_depth_ft": 75,
      "species_current": [
       "Cutthroats"
      ],
      "species_historical": [
       "Brookies"
      ],
-     "fishing_pressure": "High",
+     "fishing_pressure": "Low",
      "no_fish": false,
      "probably_no_fish": false,
      "jed_status": null,
@@ -17398,7 +17401,7 @@
    "letter_number": "A-7",
    "name": "Duck",
    "drainage": "Provo River Drainage",
-   "jed_status": null,
+   "jed_status": "CAUGHT",
    "hikes": [
     4,
     5
@@ -17409,7 +17412,7 @@
    "letter_number": "A-12",
    "name": "Marjorie",
    "drainage": "Provo River Drainage",
-   "jed_status": "NONE",
+   "jed_status": "CAUGHT",
    "hikes": [
     5
    ],
@@ -17492,7 +17495,7 @@
    "letter_number": "A-28",
    "name": "Clyde",
    "drainage": "Provo River Drainage",
-   "jed_status": null,
+   "jed_status": "OTHERS",
    "hikes": [
     6,
     7,
@@ -17588,7 +17591,7 @@
    "letter_number": "A-39",
    "name": "Shingle Creek East",
    "drainage": "Provo River Drainage",
-   "jed_status": null,
+   "jed_status": "NONE",
    "hikes": [
     1
    ],
@@ -19177,7 +19180,7 @@
    "letter_number": "W-25",
    "name": "Erickson South",
    "drainage": "Weber River Drainage",
-   "jed_status": null,
+   "jed_status": "NONE",
    "hikes": [
     1
    ],
@@ -19189,7 +19192,7 @@
    "letter_number": "W-26",
    "name": "Erickson North",
    "drainage": "Weber River Drainage",
-   "jed_status": null,
+   "jed_status": "NONE",
    "hikes": [
     1
    ],
@@ -19289,7 +19292,7 @@
    "letter_number": "W-42",
    "name": "Cuberant #1",
    "drainage": "Weber River Drainage",
-   "jed_status": null,
+   "jed_status": "CAUGHT",
    "hikes": [
     24
    ],
@@ -19301,7 +19304,7 @@
    "letter_number": "W-43",
    "name": "Cuberant #2",
    "drainage": "Weber River Drainage",
-   "jed_status": null,
+   "jed_status": "CAUGHT",
    "hikes": [
     24
    ],
@@ -19313,7 +19316,7 @@
    "letter_number": "W-44",
    "name": "Cuberant #3",
    "drainage": "Weber River Drainage",
-   "jed_status": null,
+   "jed_status": "CAUGHT",
    "hikes": [
     24
    ],
@@ -19325,7 +19328,7 @@
    "letter_number": "W-45",
    "name": "Cuberant #4",
    "drainage": "Weber River Drainage",
-   "jed_status": null,
+   "jed_status": "CAUGHT",
    "hikes": [
     24
    ],
@@ -19337,7 +19340,7 @@
    "letter_number": "W-46",
    "name": "Cuberant #5",
    "drainage": "Weber River Drainage",
-   "jed_status": null,
+   "jed_status": "NONE",
    "hikes": [
     24
    ],
@@ -19434,7 +19437,7 @@
    "letter_number": "WR-48",
    "name": "Watkins",
    "drainage": "White Rocks Drainage",
-   "jed_status": null,
+   "jed_status": "CAUGHT",
    "hikes": [
     65
    ],
@@ -19444,7 +19447,7 @@
    "letter_number": "WR-49",
    "name": "Cliff",
    "drainage": "White Rocks Drainage",
-   "jed_status": null,
+   "jed_status": "CAUGHT",
    "hikes": [
     65
    ],
@@ -19456,7 +19459,7 @@
    "letter_number": "WR-50",
    "name": "Workman",
    "drainage": "White Rocks Drainage",
-   "jed_status": null,
+   "jed_status": "NONE",
    "hikes": [
     65
    ],
