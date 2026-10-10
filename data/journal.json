@@ -3,31 +3,13 @@
  "trips": [
   {
    "id": "t-mv2vex79-hw9k",
-   "updated": "2026-10-10T20:52:39.189Z",
-   "title": "x",
-   "planned": false,
-   "date": "2024-01-01",
-   "end_date": null,
-   "when": null,
-   "body": "",
-   "lakes": [
-    "A-14"
-   ],
-   "links": []
+   "updated": "2026-10-10T21:16:44.000Z",
+   "deleted": true
   },
   {
    "id": "t-mv2vf5xr-dmlc",
-   "updated": "2026-10-10T20:52:50.511Z",
-   "title": "x",
-   "planned": false,
-   "date": "2024-01-01",
-   "end_date": null,
-   "when": null,
-   "body": "",
-   "lakes": [
-    "A-14"
-   ],
-   "links": []
+   "updated": "2026-10-10T21:16:44.000Z",
+   "deleted": true
   }
  ],
  "photos": [],
