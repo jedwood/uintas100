@@ -71,3 +71,4 @@
 {"id": "e-1791505779020-ryaycy", "lake": "W-44", "field": "jed_notes", "value": "Despite the 4 year brookies stocking schedule, I caught a nice little cutthroat out of here.", "ts": "2026-10-09T00:29:39.020Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-09T00:29:39+00:00"}
 {"id": "e-1791505874370-8yr5fx", "lake": "W-43", "field": "status", "value": "CAUGHT", "ts": "2026-10-09T00:31:14.370Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-09T00:31:14+00:00"}
 {"id": "e-1791641512597-lxzggr", "lake": "BR-24", "field": "status", "value": "NONE", "ts": "2026-10-10T14:11:52.598Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-10T14:11:52+00:00"}
+{"id": "e-1791641525801-kjluum", "lake": "BR-27", "field": "status", "value": "NONE", "ts": "2026-10-10T14:12:05.801Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-10T14:12:06+00:00"}
