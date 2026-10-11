@@ -2,6 +2,186 @@
  "version": 1,
  "trips": [
   {
+   "id": "t-kej6qdc0-nhbc",
+   "updated": "2026-10-10T00:00:00.000Z",
+   "title": "Detoured Highline: East Red Castle → Red Castle → Hessie",
+   "planned": false,
+   "date": "2020-09",
+   "end_date": null,
+   "when": null,
+   "body": "Our re-routed Highline attempt, with Dilworth, Hui and John.\n\nG-49: Caught three trout species here. Wonderful little break on our sidehilling off-trailing slog from East Red Castle on our way up to Red Castle. I followed the stream for most of it and caught at least one out of there.\n\nRed Castle (G-15): Magical couple of days here partway through our re-routed Highline attempt, with Dilworth and Hui.\n\nHessie (G-18): Camped on the east side overnight w/ John and Hui, as part of detoured Highline. Caught one nice one and saw some very big ones over on the west side.",
+   "lakes": [
+    "G-49",
+    "G-15",
+    "G-18"
+   ],
+   "links": []
+  },
+  {
+   "id": "t-kqk55hc0-350u",
+   "updated": "2026-10-10T00:00:00.000Z",
+   "title": "Hessie w/ Ryan",
+   "planned": false,
+   "date": "2021-07",
+   "end_date": null,
+   "when": null,
+   "body": "Camped overnight on west side with Ryan, John joined the next day. Caught a couple of nice ones, again on west side.",
+   "lakes": [
+    "G-18"
+   ],
+   "links": []
+  },
+  {
+   "id": "t-lzaieio0-4v0n",
+   "updated": "2026-10-10T00:00:00.000Z",
+   "title": "Red Castle w/ Dilworth + Ryan",
+   "planned": false,
+   "date": "2024-08",
+   "end_date": null,
+   "when": null,
+   "body": "Red Castle (G-15): Dilworth and Ryan and I had repeated success with cutthroats in that little outlet pond, and I caught a few from my packraft out in the middle.\n\nG-49: Camped right nearby. Saw some rising but didn’t catch any that evening, but did see a bull, cow, and calf moose!",
+   "lakes": [
+    "G-15",
+    "G-49"
+   ],
+   "links": []
+  },
+  {
+   "id": "t-m0hdm2o0-38j1",
+   "updated": "2026-10-10T00:00:00.000Z",
+   "title": "Ryder + McPheters w/ Dilworth",
+   "planned": false,
+   "date": "2024-08-31",
+   "end_date": "2024-09-02",
+   "when": null,
+   "body": "Labor Day weekend.\n\nRyder (BR-15): Spent an hour here with Dilworth before heading up to McPheters. Tons of hungry small brookies right along the shore.\n\nMcPheters (BR-14): Dilworth and I each caught big tigers out of here.",
+   "lakes": [
+    "BR-15",
+    "BR-14"
+   ],
+   "links": []
+  },
+  {
+   "id": "t-m1po9hc0-tdgc",
+   "updated": "2026-10-10T00:00:00.000Z",
+   "title": "Toomset + Amethyst w/ Ryan",
+   "planned": false,
+   "date": "2024-10",
+   "end_date": null,
+   "when": null,
+   "body": "Ryan and I spent two nights at Toomset, day-tripping up to Amethyst.\n\nToomset (BR-25): Caught several that were small to medium size.\n\nAmethyst (BR-28): Ryan and I each caught a couple on the far south side off the big rocks.",
+   "lakes": [
+    "BR-25",
+    "BR-28"
+   ],
+   "links": []
+  },
+  {
+   "id": "t-mcjrh1c0-sr1y",
+   "updated": "2026-10-10T00:00:00.000Z",
+   "title": "Diamond w/ Kenny",
+   "planned": false,
+   "date": "2025-07",
+   "end_date": null,
+   "when": null,
+   "body": "Summer 2025 (month approximate). Kenny and I thought we were at Start Lake, since we had mistaken a nameless pond to the south for Diamond.",
+   "lakes": [
+    "A-22"
+   ],
+   "links": []
+  },
+  {
+   "id": "t-mdawu800-71qy",
+   "updated": "2026-10-10T00:00:00.000Z",
+   "title": "Shingle Creek West w/ Ryan",
+   "planned": false,
+   "date": "2025-07-20",
+   "end_date": null,
+   "when": null,
+   "body": "With Ryan, accessed via Provo River trail. Heavy mosquitoes but good fishing. I had one break me off.",
+   "lakes": [
+    "P-60"
+   ],
+   "links": []
+  },
+  {
+   "id": "t-mg02s5c0-89au",
+   "updated": "2026-10-10T00:00:00.000Z",
+   "title": "Hell Hole day hike w/ Chelsey",
+   "planned": false,
+   "date": "2025-09-26",
+   "end_date": null,
+   "when": null,
+   "body": "Chelsey and I did a day hike in. Plenty of eager small cutthroats. Caught two on gulp minnows showing Chels how to use the spinning rod, then got everything ready to go out on my packraft with new fly rod, and then it started to hail and rain. After a while, I just packed everything up and got ready to leave, and of course, then it stopped raining. :-) I tried to find the old cabin ruins mentioned on RoadTripRyan but was unsuccessful.",
+   "lakes": [
+    "BR-29"
+   ],
+   "links": [
+    {
+     "url": "https://www.roadtripryan.com/go/t/utah/northern-utah/hell-hole-lake",
+     "title": "Hell Hole Lake - Western Uintas - Road Trip Ryan"
+    }
+   ]
+  },
+  {
+   "id": "t-mr1b6yo0-i2jn",
+   "updated": "2026-10-10T00:00:00.000Z",
+   "title": "Little Hidden w/ Dilworth",
+   "planned": false,
+   "date": "2026-07",
+   "end_date": null,
+   "when": null,
+   "body": "Dilworth caught a nice 18 inch brookie here. It was delicious. :)",
+   "lakes": [
+    "W-21"
+   ],
+   "links": []
+  },
+  {
+   "id": "t-ms9ludc0-7jnm",
+   "updated": "2026-10-10T00:00:00.000Z",
+   "title": "East Slide w/ Ryan",
+   "planned": false,
+   "date": "2026-08",
+   "end_date": null,
+   "when": null,
+   "body": "Brutal approach! Ryan and I ascended from south at an attempted diagonal, then descended almost straight down the outlet ravine, other than circumnavigating some cliffs near the top. See CalTopo for deets.",
+   "lakes": [
+    "LF-44"
+   ],
+   "links": []
+  },
+  {
+   "id": "t-mthwhs00-cfux",
+   "updated": "2026-10-10T00:00:00.000Z",
+   "title": "Norway Flats: Big Elk, Fire + W-62 w/ Ryan",
+   "planned": false,
+   "date": "2026-09",
+   "end_date": null,
+   "when": null,
+   "body": "Big Elk (A-18): Ryan and I took his new truck up the Norway flats Road and parked where 035 branches off to 916, which took 45 minutes. I think his truck would’ve easily made it to where 035 branches 035A. But it was actually a blast ride mountain bikes to the trailhead (15 minutes). We each caught 3 brookies, and surprisingly zero tigers given the stocking record for the last 10 years. Battling the wind in my pack raft wasn’t much fun.\n\nFire (A-14): Didn’t have much time. Had one on that broke off. Worked out well to shortcut off trail to the west and link up with the trail back to Big Elk, instead of going back to Island.\n\nW-62: Ryan and I each caught a few small guys.",
+   "lakes": [
+    "A-18",
+    "A-14",
+    "W-62"
+   ],
+   "links": []
+  },
+  {
+   "id": "t-mthwhs00-cyps",
+   "updated": "2026-10-10T00:00:00.000Z",
+   "title": "East Kibah",
+   "planned": false,
+   "date": "2026-09",
+   "end_date": null,
+   "when": null,
+   "body": "Only a few casts, didn’t leave ourselves enough time.",
+   "lakes": [
+    "DF-11"
+   ],
+   "links": []
+  },
+  {
    "id": "t-mv2vex79-hw9k",
    "updated": "2026-10-10T21:16:44.000Z",
    "deleted": true
@@ -13,5 +193,62 @@
   }
  ],
  "photos": [],
- "links": []
+ "links": [
+  {
+   "id": "l-mv1mo000-822y",
+   "updated": "2026-10-10T00:00:00.000Z",
+   "lake": "BR-29",
+   "url": "https://www.roadtripryan.com/go/t/utah/northern-utah/hell-hole-lake",
+   "title": "Hell Hole Lake - Western Uintas - Road Trip Ryan",
+   "note": "Shortcut trailhead off the Mirror Lake Hwy; old cabin ruins by the bridge"
+  },
+  {
+   "id": "l-mv1mo000-dxgq",
+   "updated": "2026-10-10T00:00:00.000Z",
+   "lake": "G-38",
+   "url": "https://redrockadventure.com/fish/utah-fishing-lakes-reservoirs/31-uinta-mountains/330-family-fishing-at-alligator-lake",
+   "title": "Family Fishing at Alligator Lake — Red Rock Adventure",
+   "note": "Dave Webb’s 2005 report"
+  },
+  {
+   "id": "l-mv1mo000-ecuf",
+   "updated": "2026-10-10T00:00:00.000Z",
+   "lake": "P-62",
+   "url": "https://utahstories.com/2021/08/the-top-five-lakes-in-the-high-uinta-mountains-to-visit/",
+   "title": "The Top Five Lakes in the High Uinta Mountains to Visit",
+   "note": "Potts: route from the Upper Setting Rd trailhead"
+  },
+  {
+   "id": "l-mv1mo000-j17j",
+   "updated": "2026-10-10T00:00:00.000Z",
+   "lake": "LF-44",
+   "url": "https://backcountrypost.com/threads/east-slide-lake-uintas-6-28-12.1019",
+   "title": "East Slide Lake - Uintas (6/28/12)",
+   "note": "2012 day trip; cairns mark the Oweep gorge crossing"
+  },
+  {
+   "id": "l-mv1mo000-obc8",
+   "updated": "2026-10-10T00:00:00.000Z",
+   "lake": "BR-20",
+   "url": "https://backcountrypost.com/threads/kermsuh-shortcut.2363/",
+   "title": "Kermsuh “shortcut” — Backcountry Post",
+   "note": "Up and over the Hayden/Kletting saddle from Hwy 150"
+  },
+  {
+   "id": "l-mv1mo000-ytdx",
+   "updated": "2026-10-10T00:00:00.000Z",
+   "lake": "BR-31",
+   "url": "https://utahstories.com/2021/08/the-top-five-lakes-in-the-high-uinta-mountains-to-visit/",
+   "title": "The Top Five Lakes in the High Uinta Mountains to Visit",
+   "note": "Potts: from Christmas Meadows, 27 brookies on consecutive casts"
+  },
+  {
+   "id": "l-mv1mo000-zhhi",
+   "updated": "2026-10-10T00:00:00.000Z",
+   "lake": "BR-31",
+   "url": "https://www.utahwildlife.net/threads/hell-hole-seidner-lake.25935/",
+   "title": "Hell Hole - Seidner Lake | Utah Wildlife Forum",
+   "note": "Up and over from Hell Hole, around the base of A-1 Peak"
+  }
+ ]
 }
