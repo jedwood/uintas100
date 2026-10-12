@@ -1,4 +1,4 @@
-const CACHE_NAME = 'uintas-v1791814873';
+const CACHE_NAME = 'uintas-v1791815148';
 
 // A version-INDEPENDENT cache used as a tiny key/value store shared between this
 // service worker and the page (the unseen-badge count, the last stocking report,

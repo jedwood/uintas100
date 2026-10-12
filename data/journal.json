@@ -169,7 +169,7 @@
   },
   {
    "id": "t-mthwhs00-cyps",
-   "updated": "2026-10-12T14:21:04.333Z",
+   "updated": "2026-10-12T14:25:38.248Z",
    "title": "East Kibah w/ Ben and Steve",
    "planned": false,
    "date": "2026-09-11",
@@ -203,65 +203,33 @@
  "photos": [
   {
    "id": "p-mv5c5x2d-62or",
-   "updated": "2026-10-12T14:20:24.781Z",
-   "trip": "t-mthwhs00-cyps",
-   "lakes": [],
-   "caption": "",
-   "taken": "2026-09-11T07:32:00",
-   "w": 2048,
-   "h": 1536
+   "updated": "2026-10-12T14:25:38.256Z",
+   "deleted": true
   },
   {
    "id": "p-mv5c5x7f-32bw",
-   "updated": "2026-10-12T14:20:24.787Z",
-   "trip": "t-mthwhs00-cyps",
-   "lakes": [],
-   "caption": "",
-   "taken": "2026-09-11T07:36:57",
-   "w": 2048,
-   "h": 1536
+   "updated": "2026-10-12T14:25:38.261Z",
+   "deleted": true
   },
   {
    "id": "p-mv5c5xbj-shev",
-   "updated": "2026-10-12T14:20:24.791Z",
-   "trip": "t-mthwhs00-cyps",
-   "lakes": [],
-   "caption": "",
-   "taken": "2026-09-11T09:44:04",
-   "w": 1536,
-   "h": 2048
+   "updated": "2026-10-12T14:25:38.265Z",
+   "deleted": true
   },
   {
    "id": "p-mv5c5xfv-td6t",
-   "updated": "2026-10-12T14:20:24.795Z",
-   "trip": "t-mthwhs00-cyps",
-   "lakes": [],
-   "caption": "",
-   "taken": "2026-09-11T14:32:33",
-   "w": 2048,
-   "h": 1536
+   "updated": "2026-10-12T14:25:38.271Z",
+   "deleted": true
   },
   {
    "id": "p-mv5c5xjc-1pi7",
-   "updated": "2026-10-12T14:20:24.799Z",
-   "trip": "t-mthwhs00-cyps",
-   "lakes": [],
-   "caption": "",
-   "taken": "2026-09-11T14:32:36",
-   "w": 2048,
-   "h": 1536
+   "updated": "2026-10-12T14:25:38.274Z",
+   "deleted": true
   },
   {
    "id": "p-mv5c5xne-uc91",
-   "updated": "2026-10-12T14:20:24.802Z",
-   "trip": "t-mthwhs00-cyps",
-   "lakes": [
-    "DF-14"
-   ],
-   "caption": "",
-   "taken": "2026-09-11T11:59:11",
-   "w": 1536,
-   "h": 2048
+   "updated": "2026-10-12T14:25:38.268Z",
+   "deleted": true
   }
  ],
  "links": [
