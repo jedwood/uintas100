@@ -191,6 +191,58 @@
    ]
   },
   {
+   "id": "t-mthwhs00-r313",
+   "updated": "2026-10-12T14:47:39.266Z",
+   "title": "Grandaddy West - Solo",
+   "planned": false,
+   "date": "2026-09",
+   "end_date": null,
+   "when": null,
+   "body": "",
+   "lakes": [
+    "RC-30",
+    "X-7",
+    "X-10",
+    "X-11",
+    "X-12"
+   ],
+   "links": []
+  },
+  {
+   "id": "t-muorpc00-sg17",
+   "updated": "2026-10-12T14:47:39.266Z",
+   "title": "Cliff w/ Ben and Hirum",
+   "planned": false,
+   "date": "2026-10",
+   "end_date": null,
+   "when": null,
+   "body": "",
+   "lakes": [
+    "WR-49",
+    "WR-48",
+    "WR-50"
+   ],
+   "links": []
+  },
+  {
+   "id": "t-muyrsao0-pkwc",
+   "updated": "2026-10-12T14:47:39.266Z",
+   "title": "Cuberant lakes w/ Nick",
+   "planned": false,
+   "date": "2026-10-08",
+   "end_date": null,
+   "when": null,
+   "body": "Day trip with Nick; hit all five Cuberant lakes.",
+   "lakes": [
+    "W-42",
+    "W-43",
+    "W-44",
+    "W-45",
+    "W-46"
+   ],
+   "links": []
+  },
+  {
    "id": "t-mv2vex79-hw9k",
    "updated": "2026-10-10T21:16:44.000Z",
    "deleted": true
@@ -199,6 +251,88 @@
    "id": "t-mv2vf5xr-dmlc",
    "updated": "2026-10-10T21:16:44.000Z",
    "deleted": true
+  },
+  {
+   "id": "t-mv4hjpc0-6s28",
+   "updated": "2026-10-12T14:47:39.266Z",
+   "title": "Seidner, up and over from Hell Hole",
+   "planned": true,
+   "date": null,
+   "end_date": null,
+   "when": null,
+   "body": "Hike to Hell Hole, then go up and over to Seidner (easterly over the base of A-1 Peak), as in the Utah Wildlife Forum report.",
+   "lakes": [
+    "BR-31",
+    "BR-29"
+   ],
+   "links": [
+    {
+     "url": "https://www.utahwildlife.net/threads/hell-hole-seidner-lake.25935/",
+     "title": "Hell Hole - Seidner Lake | Utah Wildlife Forum"
+    }
+   ]
+  },
+  {
+   "id": "t-mv4hjpc0-atha",
+   "updated": "2026-10-12T14:47:39.266Z",
+   "title": "Workman by packraft",
+   "planned": true,
+   "date": null,
+   "end_date": null,
+   "when": null,
+   "body": "So shallow all the way around. Hit it with the pack raft next time. Could be fun to get up to this and surrounding lakes via e-bike.",
+   "lakes": [
+    "WR-50"
+   ],
+   "links": []
+  },
+  {
+   "id": "t-mv4hjpc0-ddgq",
+   "updated": "2026-10-12T14:47:39.266Z",
+   "title": "Kermsuh: in via Stillwater, out over the Hayden/Kletting shortcut",
+   "planned": true,
+   "date": null,
+   "end_date": null,
+   "when": null,
+   "body": "Hike in via Stillwater, then hike out over the “shortcut” up and over Hayden/Kletting to a waiting shuttle. Probably no net time savings though. The saddle is between Hayden and Kletting, closer to Kletting — the low point on the ridge as seen from Hwy 150 around the Ruth Lake TH.",
+   "lakes": [
+    "BR-20"
+   ],
+   "links": [
+    {
+     "url": "https://backcountrypost.com/threads/kermsuh-shortcut.2363/",
+     "title": "Kermsuh “shortcut” — Backcountry Post"
+    }
+   ]
+  },
+  {
+   "id": "t-mv4hjpc0-o2i6",
+   "updated": "2026-10-12T14:47:39.266Z",
+   "title": "Allen as home base",
+   "planned": true,
+   "date": null,
+   "end_date": null,
+   "when": null,
+   "body": "Make this home base. High marks from small book for campsites, fishing, and light usage.",
+   "lakes": [
+    "Z-44"
+   ],
+   "links": []
+  },
+  {
+   "id": "t-mv4hjpc0-w11l",
+   "updated": "2026-10-12T14:47:39.266Z",
+   "title": "Camp on the north side of BR-24",
+   "planned": true,
+   "date": null,
+   "end_date": null,
+   "when": null,
+   "body": "We camped near Toomset on the Amethyst trip and it was great. Camping on the north side of BR-24 would be even better, if that campsite is available.",
+   "lakes": [
+    "BR-24",
+    "BR-28"
+   ],
+   "links": []
   }
  ],
  "photos": [
