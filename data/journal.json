@@ -169,17 +169,25 @@
   },
   {
    "id": "t-mthwhs00-cyps",
-   "updated": "2026-10-10T00:00:00.000Z",
-   "title": "East Kibah",
+   "updated": "2026-10-12T14:20:24.769Z",
+   "title": "East Kibah w/ Ben and Steve",
    "planned": false,
    "date": "2026-09",
    "end_date": null,
    "when": null,
-   "body": "Only a few casts, didn’t leave ourselves enough time.",
+   "body": "Long day trip with an early start- 2am! Ben and I spent 10 hours in his Land Cruiser. But it was worth it. Brutal approach with boulder hopping and bushwhacking, but honestly felt like no big deal compared to East Slide. \n\nOnly a few casts in East and Finger, didn’t leave ourselves enough time.",
    "lakes": [
-    "DF-11"
+    "DF-11",
+    "DF-12",
+    "DF-14",
+    "DF-16"
    ],
-   "links": []
+   "links": [
+    {
+     "url": "https://www.youtube.com/watch?v=epoKMpWuc7o",
+     "title": "Steve’s video with the goats"
+    }
+   ]
   },
   {
    "id": "t-mv2vex79-hw9k",
@@ -192,7 +200,70 @@
    "deleted": true
   }
  ],
- "photos": [],
+ "photos": [
+  {
+   "id": "p-mv5c5x2d-62or",
+   "updated": "2026-10-12T14:20:24.781Z",
+   "trip": "t-mthwhs00-cyps",
+   "lakes": [],
+   "caption": "",
+   "taken": "2026-09-11T07:32:00",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mv5c5x7f-32bw",
+   "updated": "2026-10-12T14:20:24.787Z",
+   "trip": "t-mthwhs00-cyps",
+   "lakes": [],
+   "caption": "",
+   "taken": "2026-09-11T07:36:57",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mv5c5xbj-shev",
+   "updated": "2026-10-12T14:20:24.791Z",
+   "trip": "t-mthwhs00-cyps",
+   "lakes": [],
+   "caption": "",
+   "taken": "2026-09-11T09:44:04",
+   "w": 1536,
+   "h": 2048
+  },
+  {
+   "id": "p-mv5c5xfv-td6t",
+   "updated": "2026-10-12T14:20:24.795Z",
+   "trip": "t-mthwhs00-cyps",
+   "lakes": [],
+   "caption": "",
+   "taken": "2026-09-11T14:32:33",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mv5c5xjc-1pi7",
+   "updated": "2026-10-12T14:20:24.799Z",
+   "trip": "t-mthwhs00-cyps",
+   "lakes": [],
+   "caption": "",
+   "taken": "2026-09-11T14:32:36",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mv5c5xne-uc91",
+   "updated": "2026-10-12T14:20:24.802Z",
+   "trip": "t-mthwhs00-cyps",
+   "lakes": [
+    "DF-14"
+   ],
+   "caption": "",
+   "taken": "2026-09-11T11:59:11",
+   "w": 1536,
+   "h": 2048
+  }
+ ],
  "links": [
   {
    "id": "l-mv1mo000-822y",
