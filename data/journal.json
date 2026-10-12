@@ -153,17 +153,18 @@
   },
   {
    "id": "t-mthwhs00-cfux",
-   "updated": "2026-10-10T00:00:00.000Z",
+   "updated": "2026-10-12T14:31:12.555Z",
    "title": "Norway Flats: Big Elk, Fire + W-62 w/ Ryan",
    "planned": false,
    "date": "2026-09",
    "end_date": null,
    "when": null,
-   "body": "Big Elk (A-18): Ryan and I took his new truck up the Norway flats Road and parked where 035 branches off to 916, which took 45 minutes. I think his truck would’ve easily made it to where 035 branches 035A. But it was actually a blast ride mountain bikes to the trailhead (15 minutes). We each caught 3 brookies, and surprisingly zero tigers given the stocking record for the last 10 years. Battling the wind in my pack raft wasn’t much fun.\n\nFire (A-14): Didn’t have much time. Had one on that broke off. Worked out well to shortcut off trail to the west and link up with the trail back to Big Elk, instead of going back to Island.\n\nW-62: Ryan and I each caught a few small guys.",
+   "body": "Big Elk (A-18): Ryan and I took his new truck up the Norway flats Road and parked where 035 branches off to 916, which took 45 minutes. I think his truck would’ve easily made it to where 035 branches 035A. But it was actually a blast ride mountain bikes to the trailhead (15 minutes). We each caught 3 brookies, and surprisingly zero tigers given the stocking record for the last 10 years. Battling the wind in my pack raft wasn’t much fun.\n\nJunior: after no luck for a while, Ryan switched to an old-school red and white daredevil spoon and caught several cutthroats. I finally caught one on a fly.\n\nFire (A-14): Didn’t have much time. Had one on that broke off. Worked out well to shortcut off trail to the west and link up with the trail back to Big Elk, instead of going back to Island.\n\nW-62: Ryan and I each caught a few small guys.",
    "lakes": [
     "A-18",
     "A-14",
-    "W-62"
+    "W-62",
+    "A-56"
    ],
    "links": []
   },
@@ -230,6 +231,16 @@
    "id": "p-mv5c5xne-uc91",
    "updated": "2026-10-12T14:25:38.268Z",
    "deleted": true
+  },
+  {
+   "id": "p-mv5cnx3l-ms5d",
+   "updated": "2026-10-12T14:31:12.556Z",
+   "trip": "t-mthwhs00-cfux",
+   "lakes": [],
+   "caption": "",
+   "taken": "2026-09-04T07:38:46",
+   "w": 2048,
+   "h": 1536
   }
  ],
  "links": [

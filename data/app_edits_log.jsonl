@@ -110,3 +110,5 @@
 {"kind": "photo", "id": "p-mv5c5xne-uc91", "ts": "2026-10-12T14:25:38.268Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-12T14:25:39+00:00"}
 {"kind": "photo", "id": "p-mv5c5xfv-td6t", "ts": "2026-10-12T14:25:38.271Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-12T14:25:39+00:00"}
 {"kind": "photo", "id": "p-mv5c5xjc-1pi7", "ts": "2026-10-12T14:25:38.274Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-12T14:25:39+00:00"}
+{"kind": "trip", "id": "t-mthwhs00-cfux", "ts": "2026-10-12T14:31:12.555Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-12T14:31:13+00:00"}
+{"kind": "photo", "id": "p-mv5cnx3l-ms5d", "ts": "2026-10-12T14:31:12.556Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-12T14:31:13+00:00"}
