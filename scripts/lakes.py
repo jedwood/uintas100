@@ -8,8 +8,8 @@
 Builds a denormalized cache at data/cache/lake_search.db (gitignored,
 ~1s) so a "find me lakes that ..." question is a single SELECT instead of
 a six-table join. The cache auto-rebuilds whenever uinta_lakes.db, the
-hike index, collections.json, the trail-distance cache, or this script is
-newer than it.
+hike index, collections.json, the journal (data/journal.json), the
+trail-distance cache, or this script is newer than it.
 
 Two tables in the cache:
   lake_search   one row per lake (746) - every filterable attribute
@@ -37,10 +37,11 @@ CACHE_DIR = os.path.join(REPO, "data", "cache")
 CACHE = os.path.join(CACHE_DIR, "lake_search.db")
 HIKE_INDEX = os.path.join(REPO, "data", "hike_index.json")
 COLLECTIONS = os.path.join(REPO, "data", "collections.json")
+JOURNAL = os.path.join(REPO, "data", "journal.json")
 TRAIL_DIST = os.path.join(CACHE_DIR, "lake_trail_distance.json")
 APP = "https://jedwood.github.io/uintas100/#"
 
-SOURCES = [DB, HIKE_INDEX, COLLECTIONS, TRAIL_DIST, os.path.abspath(__file__)]
+SOURCES = [DB, HIKE_INDEX, COLLECTIONS, JOURNAL, TRAIL_DIST, os.path.abspath(__file__)]
 M_PER_MI = 1609.344
 
 
@@ -181,6 +182,22 @@ def build(verbose=True):
                 if entry.get("note"):
                     e["notes"].append(f"[{c['label']}] {entry['note']}")
 
+    # ---- Jed's journal: trips, photos, lake links (tombstones dropped) ----
+    jtrips, jplanned, jphotos, jlinks = {}, {}, {}, {}
+    if os.path.exists(JOURNAL):
+        jd = json.load(open(JOURNAL))
+        for t in jd.get("trips", []):
+            if t.get("deleted"):
+                continue
+            for ln in t.get("lakes", []):
+                (jplanned if t.get("planned") else jtrips).setdefault(ln, []).append(t)
+        for ph in jd.get("photos", []):
+            for ln in ([] if ph.get("deleted") else ph.get("lakes", [])):
+                jphotos[ln] = jphotos.get(ln, 0) + 1
+        for lk in jd.get("links", []):
+            if not lk.get("deleted"):
+                jlinks[lk["lake"]] = jlinks.get(lk["lake"], 0) + 1
+
     # ---- assemble -------------------------------------------------------
     rows, sp_rows = [], []
     for ln, L in lakes.items():
@@ -273,6 +290,15 @@ def build(verbose=True):
             "has_jed_notes": 1 if (L["jed_notes"] or "").strip() else 0,
             "has_trip_reports": 1 if (L["trip_reports"] or "").strip() else 0,
             "n_photos": photos.get(ln, 0),
+
+            "trip_count": len(jtrips.get(ln, [])),
+            "last_trip": max((t["date"] for t in jtrips.get(ln, []) if t.get("date")), default=None),
+            # " | "-joined: trip titles contain commas
+            "trip_titles": " | ".join(t["title"] for t in sorted(jtrips.get(ln, []), key=lambda t: t.get("date") or "")) or None,
+            "planned_trip_count": len(jplanned.get(ln, [])),
+            "planned_trip_titles": " | ".join(t["title"] for t in jplanned.get(ln, [])) or None,
+            "journal_photos": jphotos.get(ln, 0),
+            "lake_links": jlinks.get(ln, 0),
 
             "treated": 1 if ln in treat else 0,
             "treatment_year": max(treat[ln]["years"]) if treat.get(ln, {}).get("years") else None,

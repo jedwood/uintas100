@@ -13,12 +13,12 @@ verify it, tick it off here, and note anything the next phase needs under
 
 - [x] **Phase 0** — search-field polish (2026-10-10, committed with this plan)
 - [x] **Phase 1** — backend: journal store, edits-server endpoints, exporter, hook (2026-10-10, uncommitted)
-- [ ] **Phase 2** — client data layer: journal state + sync, media store, image pipeline
-- [ ] **Phase 3** — lake modal: Links card, Junesucker source link, Trips & photos card, photo lightbox
-- [ ] **Phase 4** — trip modal: view + editor, planned trips
-- [ ] **Phase 5** — top level: Photos / Trip reports / Future trips lists, drainage scoping, Sync-panel photo status
-- [ ] **Phase 6** — data migration: old `trip_reports` → Trips; URLs in `jed_notes` → Links
-- [ ] **Phase 7** — ship: commit/push, restart edits server, phone test over Tailscale, runbooks
+- [x] **Phase 2** — client data layer: journal state + sync, media store, image pipeline (2026-10-10, uncommitted)
+- [x] **Phase 3** — lake modal: Links card, Junesucker source link, Trips & photos card, photo lightbox (2026-10-10, uncommitted)
+- [x] **Phase 4** — trip modal: view + editor, planned trips (2026-10-10, uncommitted)
+- [x] **Phase 5** — top level: Photos / Trip reports / Future trips lists, drainage scoping, Sync-panel photo status (2026-10-10, uncommitted)
+- [x] **Phase 6** — data migration: old `trip_reports` → Trips; URLs in `jed_notes` → Links (2026-10-10, docs live in ff6236a; script + month-only dates uncommitted; clearing `trip_reports` waits for Jed's review after Phase 7)
+- [ ] **Phase 7** — ship: commit/push, restart edits server, phone test over Tailscale, runbooks (2026-10-12: shipped + docs done; **phone test pending**, see handoff notes)
 - [ ] **Phase 8** — home page redesign (design mode)
 
 Phases 1–5 can't be published piecemeal without care: Phase 1's server
@@ -102,6 +102,10 @@ server on the Mini (single-writer model holds).
 }
 ```
 
+- `date` / `end_date` are `YYYY-MM-DD` or, when the day is unknown,
+  month-only `YYYY-MM` (both the same precision; added in Phase 6 for the old
+  reports). Shown as "Oct 2024" / "Jul–Aug 2024"; the editor has a "Month
+  only" checkbox.
 - `planned: true` ⇒ future trip: `date`/`end_date` null, optional free-text
   `when` ("summer 2027"). "Mark as done" flips `planned` and asks for a date.
 - Trip links are **embedded** in the trip (edited together). Lake links are
@@ -258,7 +262,8 @@ harness media dir with EXIF stripped (check with `exiftool` or a byte scan for
 - **Photo lightbox**: full image (thumb shown while full loads), caption,
   taken date, "📍 Open in Maps" when the sidecar has a location, lake chips (→ lake), "From trip: … →", prev/next + swipe, edit
   caption/tags inline, delete (tombstone + keep blob until synced).
-Verify with Playwright at iPhone size + screenshots.
+Verify with Playwright at iPhone size + screenshots, and keep
+`tests/journal/run.sh` green.
 
 ### Phase 4 — trip modal
 View: title, date range or "Planned · when", lake chips, body (autolinked,
@@ -328,6 +333,12 @@ first), let Jed pick, then implement. Entry points to organize: search
 (primary), starred, map, recent stockings, jump to drainage, rotenone,
 photos, trip reports, future trips, filters. Keep the mission bar.
 
+## Later ideas
+
+- **Photos layer on the map**: pins from the private location sidecars
+  (`mediaMeta`), tap → lightbox. Sidecars only reach devices that sync with
+  the Mini, so the layer would be empty on a github.io-only client.
+
 ## Handoff notes
 
 - 2026-10-10 (Phase 0): search label removed; `#lake-search-clear` added
@@ -365,3 +376,254 @@ photos, trip reports, future trips, filters. Keep the mission bar.
     + per-lake `junesucker_url` (40/40). Harness used for testing:
     `edits_server.py --db <copy> --log x.jsonl --journal j.json --media media
     --no-git --port 8899 --host 127.0.0.1` (49 curl checks, all pass).
+- 2026-10-10: Phase 1 committed (874f202) and the live server restarted —
+  `data/push/` now 404s on LAN + Tailscale (verified).
+- 2026-10-10 (Phase 2, **left uncommitted**: `index.html`,
+  `scripts/edits_server.py`, new `tests/journal/`). **Restart the live edits
+  server when this is committed** (server now deletes a photo's media files
+  when its tombstone arrives).
+  - **Regression suite: `tests/journal/run.sh`** (server endpoints + client
+    data layer in Chromium *and* WebKit + ImageIO leak check; ~3 min; never
+    touches live data — harness on :8899, fixtures on :8898, live hosts
+    aborted). Run it after any journal/sync/media change. Phases 3–5 should
+    add their UI assertions to `client-test.js` (or a sibling file).
+  - Client API (all in `index.html`, next to `syncNow`), for Phases 3–5 to call:
+    `queueJournal(kind, doc)` (stamps `updated`, returns the stamped doc),
+    `deleteJournal(kind, id)`, `newJournalId(kind)`, `getJournalDoc(kind, id)`
+    (null if deleted), `journalList(kind)`, indices `tripsByLake`,
+    `photosByLake`, `photosByTrip`, `linksByLake` (rebuilt by
+    `rebuildJournal()`; trips sorted taken-newest-first then planned,
+    photos by `taken`), `mediaMeta[id]` → private location sidecar.
+    Re-render on the `journalchange` event (fired on queue, sync, and
+    hydrate).
+  - Photos: `addPhotoFile(file)` → `{id, taken, w, h, sidecar, nearLakes:
+    [{letter_number, km}]}`; it stores blobs + meta but does **not** queue
+    the photo doc — the caller does (`queueJournal('photo', {id, trip,
+    lakes, caption, taken, w, h})`). Blobs of a photo with no doc are never
+    uploaded and are purged after 3 days; for Cancel call
+    `discardPhotoMedia(id)` right away. HEIC/undecodable → throws an Error
+    with a friendly message. `lakesNear(lat, lng, km=1.2)` is reusable.
+  - Rendering: `<img data-pid="p-…" data-size="t|f">` then
+    `hydrateMedia(rootEl)`; states via `data-media-state` =
+    loading|ok|offline (CSS in the `<style>` block). `getPhotoUrl(id, size)`
+    for the lightbox (thumb first, then full).
+  - Sync: `syncNow()` now returns the in-flight pass instead of a no-op when
+    one is running (fixes awaiting callers racing the `online` event). Order:
+    lake edits → media uploads → journal docs → fold `/api/user-data` →
+    background thumbnail prefetch (3 at a time). Docs the server rejects keep
+    `error` and are not retried until edited; the Sync panel line counts
+    them. Chip now says "N changes pending" (edits + docs + photo uploads).
+  - Media store = IndexedDB `uintas-media`, images stored as **ArrayBuffers**
+    (`putImage`/`getImage`), not Blobs — Safari rejects Blobs in IDB in
+    private/ephemeral mode.
+  - WebKit findings: the picked File is read **once** (re-reading throws
+    NotReadableError); Safari's canvas JPEG encoder writes its own tiny EXIF
+    (ColorSpace + pixel dimensions only — verified no GPS/camera/date), so
+    don't test for "no Exif bytes". Playwright-WebKit can't read files while
+    `setOffline(true)` nor do offline SW navigations — harness artifacts; the
+    real airplane-mode add-photo check is the Phase 7 phone test.
+- 2026-10-10 (Phase 3, **left uncommitted**: `index.html`, `tests/journal/`,
+  and a locally regenerated `lakes_data.json` — the committed copy predated
+  Phase 1's exporter, so it lacked `journal` / `junesucker_url`; the
+  pre-commit hook would regenerate it anyway).
+  - Lake modal: `<div id="lake-journal">` sits right below My Record.
+    `wireLakeJournal(lake)` (called from `showLakeDetail`) builds
+    `#jr-cards` (re-rendered by `renderLakeJournal(ln)` on every
+    `journalchange`), `#jr-status` (add-photo progress/errors) and
+    `#jr-link-form` — the last two are outside the re-rendered part so a
+    background sync can't wipe a half-typed link. Actions are delegated via
+    `data-jr` attributes. Unvisited lake = one row of pills (＋ Photo ＋ Trip
+    ＋ Plan ＋ Link); ＋ Link moves into the Links card once it exists.
+  - **Phase 4 hooks (currently console.warn stubs)**: `showTripDetail(id)`
+    (trip rows, lightbox "From trip: … →") and `openTripEditor(trip, {lakes,
+    planned})` (＋ Trip / ＋ Plan pills, `trip` null = new). Replace them.
+  - Reusable helpers: `tripDateLabel(trip)` ("Oct 12–14, 2024", "Sep 30 –
+    Oct 2, 2024", "Planned · summer 2027"), `photoTakenLabel`, `fmtDay`,
+    `normalizeUrl` (adds https:// to bare domains; null if not http(s)),
+    `prettyUrl`, `urlHost`, `safeHref`, `lakeLabel(ln)`, `fetchLinkTitle(url)`
+    (`null` = Mini unreachable, `''` = no title), `armDelete(btn, fn)`
+    (two-tap delete, no `confirm()`), and `matchLakes(lowercasedQuery)` —
+    the search box's matcher, factored out for the lake pickers.
+  - Lightbox: `openLightbox(ids, startId)` / `closeLightbox()`; state in the
+    `lightbox` object. Edit mode = caption + tag chips; one-tap candidates =
+    the photo's trip's lakes, then `lakesNear` from the sidecar (with
+    distance). Re-renders on `journalchange` but never clobbers an open edit.
+    Closed by `hideModals()` (so browser-back closes it **and** the modal
+    under it — no history entry, per the plan) and first in the Escape chain.
+  - Saving a link with a blank title retries the title lookup in the
+    background and fills it in if the doc is unchanged.
+  - New CSS is in the `<style>` block (`.jr-*`, `.lb-*`, `#photo-lightbox`);
+    `tailwind.css` was **not** regenerated — only classes already in it are
+    used.
+  - Tests: `tests/journal/ui-test.js` (37 checks, iPhone viewport) runs per
+    browser from `run.sh`. Gotcha: Playwright-WebKit **can't route** requests
+    from a service-worker-controlled page, so `/api/link-title` is mocked by
+    wrapping `window.fetch` in the page, not with `context.route`.
+  - Not verified here (Phase 7, on the phone): touch swipe in the lightbox,
+    the iOS photo picker → ＋ Photo, keyboard + edit panel layout.
+- 2026-10-10 (Phase 4, **left uncommitted**: `index.html`, `tests/journal/`).
+  - Markup: `#trip-modal` (z 1250) → `#trip-modal-card` → sticky
+    `#trip-modal-header` (← `#trip-back` / `#trip-close` in view mode;
+    `#trip-cancel` / `#trip-save` in edit mode, swapped by
+    `#trip-modal.editing`) + `#trip-content`. CSS `.tv-*` / `.te-*` in the
+    `<style>` block; `tailwind.css` still **not** regenerated.
+  - Entry points: `showTripDetail(id)` (returns false if the trip is gone)
+    and `openTripEditor(tripOrNull, {lakes, planned})`. Both work from any
+    state — lake modal open, trip modal open, or nothing open (Phase 5's
+    list/“＋ New trip” can call them directly).
+  - **Navigation**: `crossStack` entries are `{type:'lake', id, nav, scroll}`
+    or `{type:'trip', id, scroll}`. `hopToTrip()` pushes whatever is being
+    left; `openLakeFromTrip(ln)` pushes the trip; `popCross()` walks back
+    (skipping deleted trips) and is what ← in both modals falls through to
+    after `lakeNavStack`. The hidden lake modal keeps its DOM, so returning
+    to the same lake restores scroll without a re-render. **Phase 5:** add a
+    `{type:'journal', …}` entry for the list modal — push it in `hopToTrip`
+    (and before `showLakeDetail` from a list row), restore it in `popCross`,
+    and close it in `hideModals`.
+  - History: still one entry per stack; the hash follows the top modal
+    (`#trip-<id>` / `#BR-25`). Deep link `#trip-t-…` on load; forward
+    navigation re-opens via the popstate `'trip'` branch. Escape closes the
+    stack from the trip *view*; it is ignored in the editor (no lost drafts);
+    the backdrop likewise.
+  - Editor = draft in `tripEdit`; Save queues the trip + changed/new photo
+    docs (`trip`, `caption`, `lakes`), tombstones removed photos, then
+    `refreshPendingUploads → syncNow` and a background title lookup for
+    untitled links (`fillTripLinkTitles`). Cancel / browser back / Escape-
+    from-elsewhere all go through `discardTripDraft()`, which deletes the
+    blobs of photos added during that edit. A URL left typed in the link box
+    is added on Save. Validation: title required; end ≥ start; no end
+    without start.
+  - Photos in the editor: tag chips = trip lakes ∪ the photo's tags ∪ lakes
+    within 1.2 km of its sidecar location (with distance); "＋ other lake…"
+    opens a per-photo search. GPS near-lakes not yet in the trip show as
+    dashed "＋ Lake · 166 m" suggestions in the Lakes section.
+  - Delete: no photos → two-tap; with photos → "Delete trip and photos" /
+    "Delete trip, keep photos" (kept ones get `trip: null`, keep tags).
+  - "✓ Mark as done" on a planned trip = inline date form (today prefilled)
+    → `planned:false`, dates set, `when` null.
+  - New helpers: `rankedLakeMatches(q, exclude, n)` (the lightbox uses it
+    now too), `autolinkHtml(text)`, `photoNearLakes(pid)`, `fmtKm`,
+    `todayIso`, `isOpen(elementId)`.
+  - Tests: `tests/journal/trip-test.js` (42 checks, iPhone viewport) runs per
+    browser from `run.sh`; `JOURNAL_TEST_ONLY=trip-test.js
+    tests/journal/run.sh chromium` runs one UI script alone. Full suite and
+    `tests/offline/run.sh` pass.
+  - Not verified here (Phase 7, on the phone): the iOS date wheel (the
+    editor listens to `change` as well as `input` for it), keyboard over
+    the sticky header, photo picker → editor.
+- 2026-10-10 (Phase 5, **left uncommitted**: `index.html`, `tests/journal/`).
+  - Home: `#home-journal` = three buttons (📷 Photos / 🥾 Trip reports /
+    🧭 Future trips, counts under each) below "Recent stockings" — a plain
+    grid for Phase 8 to restyle/move. `updateHomeJournal()` keeps counts
+    current on `journalchange`.
+  - Journal list = `#journal-modal` (z 1150, same tier as the stocking
+    report) → tabs `[data-jl-tab]` trips|planned|photos, `#journal-status`
+    (add-photo progress, outside the re-rendered body), `#journal-body`
+    (re-rendered by `renderJournal()` on every `journalchange`, scroll kept).
+    Entry: `openJournal(tab, drainage|null)`; state in `journalView {tab,
+    drainage, photoIds}`; hash `#journal-<tab>` (deep link + popstate
+    forward work; the drainage scope is in-memory only).
+    `journalScoped(drainage)` → `{trips, planned, photos}` is the one scoping
+    rule (trip: any lake in the drainage; photo: any tag, or its trip's
+    lakes when untagged). Cards: `journalTripCard(t)`; photo grid:
+    `journalPhotosHtml(photos)` (groups by trip, trip-less by month,
+    newest group first, shooting order within).
+  - **Navigation: the list stays open underneath** whatever it opens (lake,
+    trip, lightbox) instead of the crossStack entry the Phase 4 note
+    suggested — simpler, and it keeps the list's scroll for free.
+    `hideModals()` computes `keepJournal` (list open *and* a lake/trip open
+    above it): it then closes only the upper stack and `pushState`s
+    `#journal-<tab>` again, so ×, ← with nothing left to pop, and browser
+    back all land on the list; with nothing above it, the list closes too.
+    Escape order: lightbox → trip → lake → list.
+  - "＋ Add photos" in the list: trip-less, untagged photo docs, then the
+    lightbox opens on the first in edit mode (GPS near-lake suggestions are
+    the one-tap tags). ＋ New trip / ＋ Plan a trip call `openTripEditor`
+    with no lakes.
+  - Drainage view: `setResults` takes `drainage` (`view.drainage`, set only
+    by `showDrainageLakes`); `#results-journal` row of pills under
+    `#results-lead` opens the list scoped; hidden when the drainage has
+    nothing. `showDrainageMap` scrolls to the row when it's visible, and
+    aims again once the drainage map image above it has loaded (it has no
+    fixed size, so it used to push the target ~300 px down mid-scroll —
+    true of the old map-wrap target too).
+  - Sync panel → "Photos" section: `refreshPhotoStatus()` ("N photos · N
+    full-size on this device · N waiting to upload · N rejected"), called
+    from `refreshSyncModalStatus`; `saveAllFullPhotos()` pulls missing
+    full-size images 3 at a time with progress, asks for persistent storage
+    (`askPersistentStorage()`, factored out of `addPhotoFile`).
+  - Tests: `tests/journal/list-test.js` (34 checks, iPhone viewport), wired
+    into `run.sh`; it sets `page.setDefaultTimeout(15000)` so a stuck step
+    fails instead of hanging the suite. **WebKit gotcha:** Playwright's
+    headless WebKit wedges the whole page (no rAF, no screenshots, evaluate
+    never returns) on `pushManager.getSubscription()`, which
+    `openSyncModal → refreshNotifStatus` calls — tests that open the Sync
+    panel must stub `window.refreshNotifStatus` first. Real Safari is fine.
+  - **Incident:** an ad-hoc Playwright probe on `:8804` (no sync-URL
+    override) synced two junk "x" trips to the **live** edits server, which
+    committed + pushed them (0d6229b, a3a3a12). Tombstoned through
+    `POST olaf.local:8802/api/journal` per Jed (647f381); published journal
+    is empty again. Probe only through the harness, or abort
+    `olaf.local|ts.net` and set `uintas-sync-url` first.
+  - Not verified here (Phase 7, on the phone): the list modal's scroll
+    inside the fixed overlay on iOS, the photo picker from the list.
+- 2026-10-10 (Phase 6). **Migrated docs are live** (applied through the live
+  edits server, which committed + pushed them as ff6236a; `lakes_data.json`
+  now carries 12 trips + 7 links). **Left uncommitted:** new
+  `scripts/migrate_trip_reports.py`, `scripts/journal_store.py`,
+  `index.html`, `tests/journal/`.
+  - Jed approved the grouping as proposed: 12 trips from the 16 lakes (G-49/
+    G-15/G-18 Sep 2020 Highline; G-18 Jul 2021; G-15+G-49 Aug 2024;
+    BR-15+BR-14 Labor Day 2024; BR-25+BR-28 Oct 2024; A-22; P-60; BR-29
+    + RoadTripRyan link; W-21; LF-44; A-18+A-14+W-62 Norway Flats; DF-11).
+    Island A-57 deliberately untagged. 7 lake links (BR-20, BR-29, BR-31 ×2
+    incl. the Utah Wildlife Forum thread found by search, G-38, LF-44, P-62).
+    `jed_notes` untouched.
+  - **Month-only dates** (Jed's choice over 1st-of-month): `DATE_RE` accepts
+    `YYYY-MM`; `end_date` must match `date`'s precision (server-enforced).
+    Client: `tripDateLabel` handles it; editor `#te-month-only` checkbox
+    swaps the inputs to `type=month` (text fallback with pattern on desktop
+    Safari/Firefox) via `setTripMonthOnly(on)` (day → month drops the day;
+    month → day prefills the 1st). String sort already orders "2024-10"
+    just after the days of Oct 2024 in newest-first lists. Tests: 1 server
+    check, 7 trip-test checks (both browsers).
+  - **The live edits server was restarted** to load the month-only
+    validation, so it now runs the working tree's uncommitted
+    `edits_server.py` (Phase 2: photo tombstone deletes its media files) +
+    `journal_store.py`. Phase 7 should still restart after committing.
+  - Script: fixed ids (base36 of the trip's start + hash) and a fixed
+    `updated` of 2026-10-10T00:00Z; skips docs the server already has, so a
+    re-run is a no-op and can't overwrite in-app edits.
+  - **Still to do (after Phase 7, once Jed has reviewed the trips on his
+    phone):** clear the 16 lakes' `trip_reports` via the normal edit path
+    (`POST /api/edits`, field `trip_reports`, value `""`) and remove the
+    "Older notes" block from My Record.
+- 2026-10-12 (Phase 7). Committed + pushed Phases 2–7 together; live edits
+  server restarted on the committed code.
+  - Docs: `docs/runbooks/edits-push.md` gained a "Journal" section (storage,
+    sync, private media + location, Time Machine backup, iOS picker
+    location caveat, link-title, static fence, test suite); CLAUDE.md gained
+    the `data/media/` invariant, journal in the architecture + critical
+    files, `tests/journal/run.sh` among the suites.
+  - `scripts/lakes.py` → `lake_search` gained `trip_count`, `last_trip`,
+    `trip_titles` (" | "-joined), `planned_trip_count`,
+    `planned_trip_titles`, `journal_photos`, `lake_links`; journal.json is a
+    cache source. Documented in the `find-lakes` skill.
+  - Tests no longer read the live published journal: `edits_server.py
+    --web-root` + `run.sh` serves a symlinked copy of the repo whose
+    `lakes_data.json` has an empty `journal` (the migrated trips had broken
+    20 count/order assertions).
+  - `tests/offline/run.sh` flaked once ("Execution context was destroyed")
+    right after the journal suite; passed on rerun.
+  - **Phone test (Jed, Tailscale on)** — still to do, then tick Phase 7:
+    1. PWA picks up the new version (Sync panel shows today's data).
+    2. Home → 🥾 Trip reports shows the 12 migrated trips; open a few, check
+       the grouping/text; the "Older notes" block is still on those lakes.
+    3. Airplane mode → a lake → ＋ Photo from the camera roll → turn
+       Tailscale back on → it uploads (chip clears) → appears on the Mac PWA
+       with its thumbnail. Check whether "📍 Open in Maps" appears (if not,
+       the picker stripped GPS: picker "Options → Location").
+    4. ＋ Trip with photos, a link and month-only date; iOS date + month
+       wheels; keyboard vs the sticky header; lightbox swipe; list scroll.
+  - After the phone test and Jed's OK on the trips: the remaining Phase 6
+    step (clear `trip_reports`, drop "Older notes").

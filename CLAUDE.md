@@ -65,6 +65,10 @@ a runbook:
   data-loading path in `index.html`. → `docs/runbooks/offline-pwa.md`
 - **Never commit `data/push/` secrets** (VAPID private key, per-device
   subscriptions) — the repo is public.
+- **Never commit `data/media/`** — Jed's photos and their GPS sidecars are
+  private, on the Mini only, served by the edits server. Photo *location*
+  never goes in `data/journal.json`. Run `tests/journal/run.sh` after
+  touching journal / sync / media code. → `docs/runbooks/edits-push.md`
 
 ## Common tasks
 
@@ -92,7 +96,7 @@ Each is the full, unabridged text that used to live in this file.
 | File | Covers |
 |---|---|
 | `docs/runbooks/publishing.md` | Seeds → rebuild → verify, the pre-commit hook, PWA cache bump, Collections, frontend asset regeneration, dev server, working in this tree while the automation commits |
-| `docs/runbooks/edits-push.md` | Single-writer model and the `.db-readonly` guard, the PWA edits server on :8802, Tailscale :8443, iOS Web Push + badge |
+| `docs/runbooks/edits-push.md` | Single-writer model and the `.db-readonly` guard, the PWA edits server on :8802, Tailscale :8443, journal (trips/photos/links) + private media, iOS Web Push + badge |
 | `docs/runbooks/offline-pwa.md` | Service-worker offline contract and its regression suite, offline map tiles, map views and rotation, lake modal |
 | `docs/runbooks/data-imports.md` | Designation conventions, DWR pamphlet editions, 2025 survey tables, junesucker scrape, Falcon hike index, coordinates, stocking matcher and fringe waters, `data/` inventory |
 | `docs/runbooks/retired.md` | Apple Notes sync, the Tauri control panel, the Lake Locator — why each was retired and how to run it manually if ever needed |
@@ -114,14 +118,20 @@ Each is the full, unabridged text that used to live in this file.
 | `lake_treatments` | 2 | rotenone reclamation projects that included a lettered lake (`scripts/import_lake_treatments.py`); stream-only treatments are out of scope |
 | `trailheads` / `trailhead_lakes` | 50 / — | Andersen book trailheads |
 | `other_waters` / `other_stocking_records` | 15 / — | "fringe" waters DWR stocks that are **not** lettered lakes (creeks, ponds). Deliberately outside `lakes` and the PWA |
-| `photos`, `fishing_reports` | 34 / — | junesucker photos; per-trip records |
+| `photos`, `fishing_reports` | 34 / — | junesucker photos; per-trip records (unused — Jed's trips live in the journal, below) |
 
 **Frontend** — `index.html` is the whole app: a single-file PWA with no CDN
 dependencies (Tailwind vendored as `tailwind.css`, Leaflet under
 `vendor/leaflet/`). It loads `lakes_data.json`, offers search + filters
 (drainage, species, depth, elevation, size, stocking years, Collections),
-list and map views, lake modals, offline map tiles and Web Push. No build
-step. `#A-11` deep-links straight to a lake.
+list and map views, lake modals, offline map tiles and Web Push, plus Jed's
+journal: trips (taken + planned, spanning many lakes), photos, lake links.
+No build step. `#A-11` deep-links straight to a lake, `#trip-<id>` to a trip.
+
+**Journal** — `data/journal.json` (committed, outside the DB, written only by
+the edits server; schema in `scripts/journal_store.py`): trips, photo
+metadata, lake links, synced per-document last-write-wins. Photo image files +
+GPS sidecars live in gitignored `data/media/` on the Mini, never on github.io.
 
 **Backend** — `scripts/`, plain Python 3 + sqlite3, no framework. Data
 pipeline is CSV/PDF/web sources → SQLite → `lakes_data.json`.
@@ -138,9 +148,10 @@ pipeline is CSV/PDF/web sources → SQLite → `lakes_data.json`.
 - `index.html`, `service-worker.js`, `manifest.json`, `tailwind.css`, `vendor/leaflet/` — the app.
 - `.githooks/pre-commit` — cache bump + seed/JSON re-export.
 - `data/collections.json` — hand-curated lake sets behind the PWA's Collections filter.
+- `data/journal.json` + `scripts/journal_store.py` — trips / photo metadata / lake links and their validator; `data/media/` (gitignored) — the private photos.
 - `data/hike_index.md` / `.json` — the Falcon guide parsed into numbers; read this, not the `guide_*` tables, for "find me a hike that…".
 - `docs/less-visited-lakes.md`, `docs/4x4-access-lakes.md` — worked arguments behind the collections.
-- `tests/offline/run.sh`, `tests/auto_commit_isolation.sh` — the two regression suites.
+- `tests/offline/run.sh`, `tests/journal/run.sh`, `tests/auto_commit_isolation.sh` — the regression suites.
 
 ## Boulder Mountain sub-project (`boulders/`)
 

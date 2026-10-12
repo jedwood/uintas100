@@ -105,7 +105,42 @@
         /* Detail/About modals must sit above Leaflet panes & controls (z-index up to 1000) */
         #lake-detail-modal, #about-modal, #rotenone-modal, #sync-modal, #offline-modal { z-index: 1200; }
         /* Above the map controls, below the lake modal its rows open. */
-        #stocking-report-modal { z-index: 1150; }
+        #stocking-report-modal, #journal-modal { z-index: 1150; }
+        #photos-save-all-btn:disabled { opacity: .55; cursor: default; }
+
+        /* Journal: home entry points, the list modal (jl-) and the drainage
+           view's count row. */
+        .home-journal { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; margin-top: .5rem; }
+        .home-journal button { display: flex; flex-direction: column; align-items: center; gap: .125rem; padding: .5rem .25rem;
+                               font-size: .8125rem; font-weight: 500; line-height: 1.2; color: #334155; background: #f1f5f9;
+                               border: none; border-radius: .5rem; cursor: pointer; transition: background-color .15s; }
+        .home-journal button:hover { background: #e2e8f0; }
+        .home-journal .hj-n { font-size: .6875rem; font-weight: 400; color: #64748b; }
+        .jl-tabs { display: flex; gap: .25rem; padding: 0 1.5rem; border-bottom: 1px solid #e2e8f0; }
+        .jl-tabs button { flex: 1; padding: .5rem .25rem .625rem; font-size: .875rem; font-weight: 500; color: #64748b;
+                          background: none; border: none; border-bottom: 2px solid transparent; margin-bottom: -1px; cursor: pointer; }
+        .jl-tabs button.on { color: #1e293b; border-bottom-color: #334155; }
+        .jl-tabs .jl-n { font-weight: 400; color: #94a3b8; }
+        .jl-card { display: flex; gap: .75rem; width: 100%; text-align: left; padding: .625rem; border: 1px solid #e2e8f0;
+                   border-radius: .5rem; background: #fff; cursor: pointer; transition: background-color .15s; }
+        .jl-card:hover { background: #f8fafc; }
+        .jl-card + .jl-card { margin-top: .5rem; }
+        .jl-thumb { flex: none; width: 4.5rem; height: 4.5rem; border-radius: .375rem; overflow: hidden; background: #f1f5f9;
+                    display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+        .jl-thumb img { width: 100%; height: 100%; display: block; }
+        .jl-title { font-weight: 600; color: #1e293b; overflow-wrap: anywhere; }
+        .jl-lakes { font-size: .75rem; color: #475569; margin-top: .125rem; }
+        .jl-snippet { font-size: .8125rem; color: #6b7280; margin-top: .25rem; overflow: hidden;
+                      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+        .jl-group + .jl-group { margin-top: 1rem; }
+        .jl-group-h { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; margin-bottom: .375rem;
+                      font-size: .875rem; font-weight: 600; color: #334155; }
+        .jl-group-h button { text-align: left; background: none; border: none; padding: 0; cursor: pointer; color: inherit;
+                             font: inherit; text-decoration: underline; text-decoration-color: #cbd5e1; text-underline-offset: 3px; }
+        .jl-group-h .jr-sub { flex: none; font-weight: 400; }
+        .jl-empty { padding: 2rem 0; text-align: center; font-size: .875rem; color: #6b7280; }
+        #results-journal { display: flex; flex-wrap: wrap; gap: .375rem; }
+        #results-journal.hidden { display: none; }
 
         /* Small flag-style labels pinned to map circles (permanent Leaflet
            tooltips, toggled by updatePinLabels when few enough pins are in
@@ -148,11 +183,28 @@
         #lake-modal-header.condensed { padding-top: .625rem; padding-bottom: .625rem;
             box-shadow: 0 1px 0 rgba(0,0,0,.06), 0 2px 8px rgba(0,0,0,.06); }
         #lake-modal-header.condensed #modal-title { font-size: 1.125rem; line-height: 1.75rem; }
+        /* Trip modal: above the lake modal it hops from (and the journal list,
+           Phase 5); same sticky header idea, but the title may wrap — trip
+           titles are long. View-only / edit-only header controls swap on
+           .editing. */
+        #trip-modal { z-index: 1250; }
+        #trip-modal-header {
+            position: sticky; top: 0; z-index: 1050; background: #fff;
+            margin: -1.5rem -1.5rem 0; padding: 1rem 1.5rem .625rem;
+            border-radius: .5rem .5rem 0 0; box-shadow: 0 1px 0 rgba(0,0,0,.06);
+        }
+        #trip-title { font-size: 1.25rem; line-height: 1.625rem; min-width: 0; overflow-wrap: anywhere;
+                      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        #trip-modal .tm-edit-only { display: none; }
+        #trip-modal.editing .tm-edit-only { display: inline-block; }
+        #trip-modal.editing .tm-view-only { display: none; }
+        #trip-modal.editing #trip-title { font-size: 1.0625rem; text-align: center; flex: 1; }
+        #trip-modal.editing #trip-modal-header > div { flex: 1; }
 
         /* Modal scroll containment: a scroll that hits the card's extremes must
            not chain to the page behind it. */
         #lake-modal-card, #about-modal-card, #rotenone-modal-card, #sync-modal-card,
-        #offline-modal-card, #stocking-report-body { overscroll-behavior: contain; }
+        #offline-modal-card, #stocking-report-body, #trip-modal-card { overscroll-behavior: contain; }
         /* Body freeze while any full-screen overlay is open. Plain
            overflow:hidden doesn't hold in iOS Safari, so lockBodyScroll() uses
            the position:fixed technique (top:-scrollY inline, restored on unlock). */
@@ -165,6 +217,129 @@
         #book-content .cma-empty { color: #9ca3af; font-style: italic; }
         #book-content .cma-page-target { background: #fefce8; }
         #book-content .cma-photo { display: block; max-width: 100%; height: auto; margin: .5rem 0; border-radius: .25rem; }
+
+        /* Journal photos: <img data-pid> placeholders resolved by hydrateMedia()
+           from this device's media store or the Mini. Grey box while loading;
+           a dashed "offline" box when neither has it. */
+        img[data-pid] { background: #e2e8f0; object-fit: cover; color: transparent; }
+        img[data-pid][data-media-state="offline"] {
+            background: #f1f5f9; border: 1px dashed #cbd5e1; color: #94a3b8; font-size: .7rem;
+        }
+
+        /* Lake modal journal section (#lake-journal): Trips & photos card,
+           Links card, the add-link form, and the action pills that are all an
+           unvisited lake shows. */
+        .jr-pills { display: flex; flex-wrap: wrap; gap: .375rem; }
+        .jr-pill { padding: .3125rem .625rem; font-size: .8125rem; line-height: 1.25rem; color: #334155;
+                   background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 9999px; cursor: pointer;
+                   transition: background-color .15s; }
+        .jr-pill:hover { background: #e2e8f0; }
+        .jr-pill:disabled { opacity: .5; cursor: default; }
+        .jr-strip { display: flex; gap: .5rem; overflow-x: auto; margin: 0 -1rem; padding: 0 1rem .25rem;
+                    scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; }
+        .jr-thumb { flex: none; width: 5.5rem; height: 5.5rem; padding: 0; border: none; border-radius: .5rem;
+                    overflow: hidden; cursor: pointer; scroll-snap-align: start; background: none; }
+        .jr-thumb img { width: 100%; height: 100%; display: block; }
+        .jr-row { display: flex; align-items: flex-start; gap: .5rem; width: 100%; text-align: left;
+                  padding: .5rem .25rem; border-radius: .375rem; background: none; border: none; cursor: pointer; }
+        .jr-row:hover { background: #f8fafc; }
+        .jr-row + .jr-row, .jr-link + .jr-link { border-top: 1px solid #f1f5f9; }
+        .jr-sub { font-size: .75rem; color: #6b7280; }
+        .jr-link { display: flex; align-items: flex-start; gap: .25rem; }
+        .jr-link a { flex: 1; min-width: 0; padding: .5rem .25rem; border-radius: .375rem; text-decoration: none; color: inherit; }
+        .jr-link a:hover { background: #f8fafc; }
+        .jr-link-title { font-size: .875rem; font-weight: 500; color: #1e293b; overflow-wrap: anywhere; }
+        .jr-host { display: inline-block; margin-top: .125rem; padding: 0 .375rem; font-size: .6875rem; color: #475569;
+                   background: #f1f5f9; border-radius: .25rem; }
+        .jr-note { margin-top: .25rem; font-size: .8125rem; color: #4b5563; white-space: pre-line; }
+        .jr-edit { flex: none; padding: .5rem; color: #94a3b8; background: none; border: none; cursor: pointer; font-size: .875rem; }
+        .jr-edit:hover { color: #475569; }
+        .jr-input { width: 100%; padding: .5rem .75rem; font-size: 1rem; border: 1px solid #d1d5db; border-radius: .5rem; }
+        .jr-input:focus { outline: none; box-shadow: 0 0 0 2px #64748b; border-color: transparent; }
+        .jr-btn { padding: .5rem 1rem; font-size: .875rem; border-radius: .5rem; border: 1px solid #cbd5e1;
+                  background: #fff; color: #334155; cursor: pointer; }
+        .jr-btn-primary { background: #334155; border-color: #334155; color: #fff; }
+        .jr-btn-primary:hover { background: #1e293b; }
+        .jr-btn-danger { color: #b91c1c; border-color: #fecaca; }
+        .jr-btn-danger.armed { background: #b91c1c; border-color: #b91c1c; color: #fff; }
+        .jr-chip { display: inline-flex; align-items: center; gap: .25rem; padding: .125rem .5rem; font-size: .75rem;
+                   border: 1px solid #cbd5e1; border-radius: 9999px; background: #fff; color: #334155; cursor: pointer; }
+        .jr-chip:hover { background: #f1f5f9; }
+        .jr-chip.on { background: #334155; border-color: #334155; color: #fff; }
+        .jr-chip.suggest { border-style: dashed; }
+
+        /* Photo lightbox: above every modal (lake 1200, trip 1250). No
+           history entry — ×, backdrop, Escape, swipe close it. */
+        #photo-lightbox { position: fixed; inset: 0; z-index: 1400; background: #09090b;
+                          display: flex; flex-direction: column; color: #e5e7eb; overscroll-behavior: contain; }
+        #photo-lightbox.hidden { display: none; }
+        .lb-top { display: flex; align-items: center; justify-content: space-between; flex: none;
+                  padding: max(.5rem, env(safe-area-inset-top)) .75rem .25rem; font-size: .875rem; color: #9ca3af; }
+        .lb-top button { font-size: 2rem; line-height: 1; padding: .25rem .5rem; color: #d1d5db; background: none; border: none; cursor: pointer; }
+        .lb-stage { position: relative; flex: 1 1 auto; min-height: 0; display: flex; align-items: center; justify-content: center;
+                    touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+        #lb-img { max-width: 100%; max-height: 100%; object-fit: contain; background: transparent; }
+        .lb-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 2.75rem; height: 4rem; font-size: 2.25rem;
+                  color: #e5e7eb; background: rgba(0,0,0,.25); border: none; border-radius: .5rem; cursor: pointer; }
+        .lb-nav:disabled { visibility: hidden; }
+        #lb-prev { left: .25rem; } #lb-next { right: .25rem; }
+        .lb-info { flex: none; max-height: 45vh; overflow-y: auto; padding: .75rem 1rem max(1rem, env(safe-area-inset-bottom));
+                   font-size: .875rem; overscroll-behavior: contain; }
+        /* Editing: the form gets most of the screen (iOS keyboard), photo shrinks. */
+        #photo-lightbox.editing .lb-info { max-height: 72vh; }
+        .lb-info .lb-caption { color: #f9fafb; font-size: 1rem; white-space: pre-line; overflow-wrap: anywhere; }
+        .lb-info .lb-meta { color: #9ca3af; font-size: .8125rem; }
+        .lb-info a, .lb-info .lb-link { color: #cbd5e1; text-decoration: underline; background: none; border: none; cursor: pointer; padding: 0; font-size: inherit; }
+        .lb-info .jr-chip { background: transparent; color: #e5e7eb; border-color: #52525b; }
+        .lb-info .jr-chip:hover { background: #27272a; }
+        .lb-info .jr-chip.on { background: #e5e7eb; color: #18181b; border-color: #e5e7eb; }
+        .lb-info .jr-btn { background: transparent; color: #e5e7eb; border-color: #52525b; }
+        .lb-info .jr-btn-primary { background: #e5e7eb; color: #18181b; border-color: #e5e7eb; }
+        .lb-info .jr-btn-danger { color: #fca5a5; border-color: #7f1d1d; }
+        .lb-info .jr-btn-danger.armed { background: #b91c1c; color: #fff; border-color: #b91c1c; }
+        .lb-info .jr-input { background: #18181b; color: #f9fafb; border-color: #3f3f46; }
+        .lb-matches { margin-top: .25rem; border: 1px solid #3f3f46; border-radius: .5rem; overflow: hidden; }
+        .lb-matches button { display: block; width: 100%; text-align: left; padding: .5rem .75rem; background: #18181b;
+                             color: #e5e7eb; border: none; cursor: pointer; }
+        .lb-matches button + button { border-top: 1px solid #27272a; }
+
+        /* Trip view (tv-) and trip editor (te-) inside #trip-modal. */
+        .tv-when { font-size: .9375rem; color: #475569; }
+        .tv-body { color: #374151; line-height: 1.6; white-space: pre-line; overflow-wrap: anywhere; }
+        .tv-body a { color: #334155; text-decoration: underline; }
+        .tv-h { font-size: .8125rem; font-weight: 600; letter-spacing: .03em; text-transform: uppercase; color: #64748b; margin-bottom: .5rem; }
+        .tv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .375rem; }
+        @media (min-width: 640px) { .tv-grid { grid-template-columns: repeat(4, 1fr); } }
+        .tv-thumb { aspect-ratio: 1; padding: 0; border: none; border-radius: .375rem; overflow: hidden; cursor: pointer; background: none; }
+        .tv-thumb img { width: 100%; height: 100%; display: block; }
+        .tv-panel { border: 1px solid #cbd5e1; background: #f8fafc; border-radius: .5rem; padding: .75rem; }
+        .te-label { display: block; font-size: .8125rem; font-weight: 500; color: #374151; margin-bottom: .25rem; }
+        .te-seg { display: inline-flex; border: 1px solid #cbd5e1; border-radius: .5rem; overflow: hidden; }
+        .te-seg button { padding: .375rem .875rem; font-size: .875rem; background: #fff; color: #334155; border: none; cursor: pointer; }
+        .te-seg button + button { border-left: 1px solid #cbd5e1; }
+        .te-seg button.on { background: #334155; color: #fff; }
+        .te-dates { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+        .te-dates > div, .te-dates input { min-width: 0; }
+        .te-month-only { display: flex; align-items: center; gap: .4rem; margin-top: .4rem; font-size: .8rem; color: #64748b; }
+        .te-matches { margin-top: .25rem; border: 1px solid #e2e8f0; border-radius: .5rem; overflow: hidden; }
+        .te-matches button { display: block; width: 100%; text-align: left; padding: .5rem .75rem; background: #fff; border: none; cursor: pointer; font-size: .875rem; }
+        .te-matches button + button { border-top: 1px solid #f1f5f9; }
+        .te-matches button:hover { background: #f8fafc; }
+        .te-link { display: flex; align-items: center; gap: .25rem; }
+        .te-link + .te-link { margin-top: .375rem; }
+        .te-link .te-link-url { font-size: .6875rem; color: #6b7280; overflow-wrap: anywhere; padding: .125rem .75rem 0; }
+        .te-x { flex: none; width: 2.25rem; height: 2.25rem; color: #94a3b8; background: none; border: none; cursor: pointer; font-size: 1.125rem; }
+        .te-x:hover { color: #b91c1c; }
+        .te-photo { border: 1px solid #e2e8f0; border-radius: .5rem; padding: .5rem; }
+        .te-photo + .te-photo { margin-top: .5rem; }
+        .te-photo-top { display: flex; gap: .5rem; align-items: flex-start; }
+        .te-photo-top img { flex: none; width: 4.5rem; height: 4.5rem; border-radius: .375rem; }
+        .te-photo-top textarea { flex: 1; min-width: 0; font-size: .9375rem; }
+        .te-photo.removed { display: flex; align-items: center; justify-content: space-between; color: #6b7280; font-size: .875rem; background: #f8fafc; }
+        .te-add-tile { display: flex; align-items: center; justify-content: center; gap: .375rem; width: 100%; margin-top: .5rem;
+                       padding: .75rem; border: 1px dashed #94a3b8; border-radius: .5rem; color: #334155; background: #fff; cursor: pointer; font-size: .9375rem; }
+        .te-add-tile:hover { background: #f8fafc; }
+        .te-error { color: #b91c1c; font-size: .875rem; }
     </style>
 </head>
 <body class="bg-slate-50 min-h-screen">
@@ -240,6 +415,14 @@
                             class="w-full flex items-center justify-center gap-2 text-sm font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg px-4 py-2 mt-2 transition-colors">
                         🎣 Recent stockings
                     </button>
+
+                    <!-- Journal: every photo / trip report / planned trip, each
+                         opening the journal list on its tab. -->
+                    <div class="home-journal" id="home-journal">
+                        <button type="button" data-journal-tab="photos">📷 Photos<span class="hj-n" data-n="photos"></span></button>
+                        <button type="button" data-journal-tab="trips">🥾 Trip reports<span class="hj-n" data-n="trips"></span></button>
+                        <button type="button" data-journal-tab="planned">🧭 Future trips<span class="hj-n" data-n="planned"></span></button>
+                    </div>
 
                     <!-- Jump straight to one drainage's map. Deliberately NOT the
                          drainage filter below: that one is multi-select and stacks
@@ -393,6 +576,8 @@
                              for BOTH views, so "More about <drainage>" shows the
                              drainage writeup even when the map view is active -->
                         <div id="results-lead" class="hidden p-4 sm:p-6" style="padding-bottom:0"></div>
+                        <!-- Drainage view only: its trips / plans / photos (opens the journal list scoped to it) -->
+                        <div id="results-journal" class="hidden px-4 sm:px-6 pt-3"></div>
 
                         <!-- List view -->
                         <div id="results-list" class="p-4 sm:p-6 space-y-4">
@@ -629,6 +814,16 @@
                                     <button id="sync-save-url" class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-slate-50 transition-colors">Save URL</button>
                                 </div>
 
+                                <!-- Photos: kept on the Mini, not github.io. Thumbnails come down
+                                     on their own; full-size ones only when viewed — or all at once here. -->
+                                <div class="mt-6 pt-5 border-t border-gray-200">
+                                    <h3 class="text-lg font-bold mb-1">Photos</h3>
+                                    <p class="text-xs text-gray-500 mb-3">Photos are stored on the Mac Mini, not on github.io. Thumbnails are saved on this device as they sync; full-size photos only once you've opened them. Save them all before a trip to see them with no signal.</p>
+                                    <div id="photos-status-line" class="text-sm font-medium text-gray-800 mb-3">Checking…</div>
+                                    <button id="photos-save-all-btn" class="w-full bg-slate-700 text-white px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors">Save all full-size photos offline</button>
+                                    <div id="photos-save-progress" class="text-xs text-gray-600 mt-2" hidden></div>
+                                </div>
+
                                 <!-- Notifications: iOS 16.4+ Web Push + home-screen badge -->
                                 <div class="mt-6 pt-5 border-t border-gray-200">
                                     <h3 class="text-lg font-bold mb-1">Notifications</h3>
@@ -700,6 +895,67 @@
                             <div id="stocking-report-body" class="px-6 py-3 overflow-y-auto"></div>
                         </div>
                     </div>
+                </div>
+
+                <!-- Journal list: all trip reports / future trips / photos,
+                     optionally scoped to one drainage. Lakes, trips and the
+                     lightbox open above it; closing them lands back here. -->
+                <div id="journal-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden">
+                    <div class="flex items-center justify-center min-h-screen p-4">
+                        <div id="journal-modal-card" class="bg-white rounded-lg max-w-2xl w-full flex flex-col" style="max-height:calc(100dvh - 2rem)">
+                            <div class="flex justify-between items-center gap-3 px-6 pt-5 pb-3">
+                                <h2 class="text-xl font-bold">Trips &amp; photos</h2>
+                                <button id="close-journal-modal" class="text-gray-400 hover:text-gray-600 text-2xl" aria-label="Close">&times;</button>
+                            </div>
+                            <div class="jl-tabs" role="tablist">
+                                <button type="button" role="tab" data-jl-tab="trips">Trips <span class="jl-n"></span></button>
+                                <button type="button" role="tab" data-jl-tab="planned">Planned <span class="jl-n"></span></button>
+                                <button type="button" role="tab" data-jl-tab="photos">Photos <span class="jl-n"></span></button>
+                            </div>
+                            <div id="journal-status" class="px-6 pt-3 text-sm text-gray-600" hidden></div>
+                            <div id="journal-body" class="px-6 py-4 overflow-y-auto"></div>
+                            <input type="file" id="journal-photo-input" accept="image/*" multiple hidden>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trip modal (journal trips): the trip view, and the editor
+                     (new / edit / plan) in the same card. Lake ↔ trip hops hide
+                     the one being left; crossStack walks back. -->
+                <div id="trip-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden">
+                    <div class="flex items-center justify-center min-h-screen p-4">
+                        <div id="trip-modal-card" class="bg-white rounded-lg max-w-2xl w-full max-h-screen overflow-y-auto">
+                            <div class="p-6">
+                                <div id="trip-modal-header" class="flex justify-between items-center gap-3">
+                                    <div class="flex items-center gap-3 min-w-0">
+                                        <button id="trip-back" title="Back" class="tm-view-only text-gray-400 hover:text-gray-600 text-2xl leading-none shrink-0"
+                                                style="padding:.25rem .5rem;margin:-.25rem -.5rem">&larr;</button>
+                                        <button id="trip-cancel" type="button" class="tm-edit-only jr-btn shrink-0">Cancel</button>
+                                        <h2 id="trip-title" class="font-bold"></h2>
+                                    </div>
+                                    <button id="trip-close" class="tm-view-only text-gray-400 hover:text-gray-600 text-2xl shrink-0">&times;</button>
+                                    <button id="trip-save" type="button" class="tm-edit-only jr-btn jr-btn-primary shrink-0">Save</button>
+                                </div>
+                                <div id="trip-content" class="space-y-6 mt-4"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo lightbox (journal photos): full image over a set,
+                     caption / date / location / lake tags, inline edit. -->
+                <div id="photo-lightbox" class="hidden" role="dialog" aria-modal="true" aria-label="Photo">
+                    <div class="lb-top">
+                        <span id="lb-count"></span>
+                        <button id="lb-close" type="button" aria-label="Close" title="Close">&times;</button>
+                    </div>
+                    <div class="lb-stage" id="lb-stage">
+                        <img id="lb-img" alt="">
+                        <div id="lb-msg" class="lb-meta" hidden>Photo not available offline</div>
+                        <button id="lb-prev" class="lb-nav" type="button" aria-label="Previous photo">&lsaquo;</button>
+                        <button id="lb-next" class="lb-nav" type="button" aria-label="Next photo">&rsaquo;</button>
+                    </div>
+                    <div class="lb-info" id="lb-info"></div>
                 </div>
             <!-- About Link -->
             <div class="mt-8 text-center">
@@ -942,6 +1198,11 @@
             applyLocalEdits();
             migrateLocalStars();
             updateStarredLink();
+            // Trips / photo metadata / lake links (published copy; this
+            // device's pending docs and the last server snapshot fold on top).
+            publishedJournal = data.journal || emptyJournal();
+            rebuildJournal();
+            document.dispatchEvent(new CustomEvent('journalchange'));
         }
 
         async function initApp() {
@@ -973,8 +1234,9 @@
                 // can't break the install.
                 setTimeout(() => { fetch('cma_book.html').catch(() => {}); }, 4000);
 
-                // Deep link: open a lake (#BR-25), the about page (#about), or
-                // a page of the Andersen book (#book-p356)
+                // Deep link: open a lake (#BR-25), the about page (#about), a
+                // page of the Andersen book (#book-p356), a trip (#trip-t-…),
+                // or a journal list (#journal-photos)
                 if (location.hash.length > 1) {
                     const target = decodeURIComponent(location.hash.slice(1));
                     const bookPage = target.match(/^book-p(\d+)$/);
@@ -984,6 +1246,10 @@
                         openBookPage(parseInt(bookPage[1], 10));
                     } else if (lakes.some(l => l.letter_number === target)) {
                         showLakeDetail(target);
+                    } else if (/^trip-t-/.test(target)) {
+                        showTripDetail(target.slice(5));
+                    } else if (/^journal-(trips|planned|photos)$/.test(target)) {
+                        openJournal(target.slice(8));
                     }
                 }
 
@@ -1296,6 +1562,9 @@
             document.getElementById('clear-filters').addEventListener('click', clearFilters);
             document.getElementById('close-modal').addEventListener('click', closeModal);
             document.getElementById('modal-back').addEventListener('click', modalBack);
+            wireLightbox();
+            wireTripModal();
+            initJournalList();
             // iOS-style header condensing: shrink once genuinely scrolled,
             // expand only near the very top (the 8–32px dead band keeps the
             // transition from flickering when the scroll rests on a boundary).
@@ -1394,7 +1663,13 @@
             // Close modals on Escape
             document.addEventListener('keydown', (e) => {
                 if (e.key !== 'Escape') return;
-                if (!document.getElementById('lake-detail-modal').classList.contains('hidden')) {
+                if (lightbox.open) {
+                    closeLightbox();
+                } else if (isOpen('trip-modal')) {
+                    if (!tripEdit) closeModal();   // never drop a draft on a stray Escape
+                } else if (!document.getElementById('lake-detail-modal').classList.contains('hidden')) {
+                    closeModal();
+                } else if (isOpen('journal-modal')) {
                     closeModal();
                 } else if (!document.getElementById('about-modal').classList.contains('hidden')) {
                     closeAboutModal();
@@ -1432,6 +1707,13 @@
                 } else if (e.state && e.state.modal === 'about') {
                     openAboutModal();
                     return;
+                } else if (e.state && e.state.modal === 'trip') {
+                    const m = location.hash.match(/^#trip-(t-[a-z0-9-]+)$/);
+                    if (m && isOpen('trip-modal') && currentTrip === m[1]) return;
+                    if (m && showTripDetail(m[1])) return;
+                } else if (e.state && e.state.modal === 'journal') {
+                    const m = location.hash.match(/^#journal-(trips|planned|photos)$/);
+                    if (m) { openJournal(m[1], journalView.drainage); return; }
                 } else if (e.state && e.state.modal === 'rotenone') {
                     openRotenoneModal();
                     return;
@@ -1509,6 +1791,14 @@
         // the first handful, but "show on map" / Enter act on all of them).
         let searchMatches = [];
 
+        // Name/designation substring match (lower-cased query) — the search
+        // box's matcher, reused by the lake pickers.
+        function matchLakes(query) {
+            if (!query) return [];
+            return lakes.filter(lake => (lake.name || '').toLowerCase().includes(query) ||
+                                        lake.letter_number.toLowerCase().includes(query));
+        }
+
         function handleLakeSearch(e) {
             const query = e.target.value.toLowerCase().trim();
             const resultsDiv = document.getElementById('search-results');
@@ -1519,11 +1809,7 @@
                 return;
             }
 
-            searchMatches = lakes.filter(lake => {
-                const name = (lake.name || '').toLowerCase();
-                const designation = lake.letter_number.toLowerCase();
-                return name.includes(query) || designation.includes(query);
-            });
+            searchMatches = matchLakes(query);
 
             if (searchMatches.length > 0) {
                 const shown = searchMatches.slice(0, 10);
@@ -1934,14 +2220,16 @@
             // renderLakeCard then shows that set's curated note per lake. With
             // two sets selected a single note would be ambiguous, so it's null.
             noteCollection: null,
+            drainage: null,      // set for a single-drainage view (its trips/photos row)
             // Bumped every time the result SET changes (new filter, new drainage,
             // new search). renderMap auto-fits ONCE per token and then leaves the
             // camera alone — see lastFitToken.
             fitToken: 0
         };
 
-        function setResults(results, { title = '', showDrainage = false, leadHtml = '', fromFilters = false, scroll = true, noteCollection = null } = {}) {
+        function setResults(results, { title = '', showDrainage = false, leadHtml = '', fromFilters = false, scroll = true, noteCollection = null, drainage = null } = {}) {
             view.fitToken++;
+            view.drainage = drainage;
             view.noteCollection = noteCollection;
             view.results = results;
             view.title = title;
@@ -1989,6 +2277,7 @@
                 ${view.leadHtml}
                 ${view.title ? `<h3 class="text-lg font-semibold">${view.title}</h3>` : ''}`;
             leadEl.classList.toggle('hidden', !view.leadHtml && !view.title);
+            renderResultsJournal();
             if (view.mode === 'map') {
                 listEl.classList.add('hidden');
                 mapWrap.classList.remove('hidden');
@@ -2776,12 +3065,19 @@
             }
 
             setResults(drainageLakes, { title: `Lakes in ${drainage} (${drainageLakes.length} lakes)`, leadHtml,
-                                        scroll: !scrollToMap });
+                                        scroll: !scrollToMap, drainage });
             // Jumped here for the map: the drainage write-up + map image + trailhead
-            // list sit above it, so aim the scroll at the map itself.
+            // list sit above it, so aim the scroll at the map itself — or at the
+            // trips/photos row just above it, when the drainage has any.
+            // The drainage map image above has no fixed size, so aim again once
+            // it has loaded — otherwise it pushes the target down mid-scroll.
             if (scrollToMap) {
-                requestAnimationFrame(() => document.getElementById('results-map-wrap')
-                    .scrollIntoView({ behavior: 'smooth', block: 'start' }));
+                const row = document.getElementById('results-journal');
+                const go = () => (row.classList.contains('hidden') ? document.getElementById('results-map-wrap') : row)
+                    .scrollIntoView({ behavior: 'smooth', block: 'start' });
+                requestAnimationFrame(go);
+                const img = document.querySelector('#results-lead img');
+                if (img && !img.complete) img.addEventListener('load', go, { once: true });
             }
         }
 
@@ -3230,7 +3526,8 @@
                             </div>` : ''}
                         ${lake.trip_reports ? `
                             <div class="mt-3">
-                                <div class="text-sm font-medium text-gray-700">Trip Reports</div>
+                                <div class="text-sm font-medium text-gray-700">Older notes
+                                    <span class="font-normal text-xs text-gray-400">· from the old Trip Reports field, read-only</span></div>
                                 <div class="text-sm text-gray-700 whitespace-pre-line">${escHtml(lake.trip_reports)}</div>
                             </div>` : ''}
                     </div>
@@ -3253,15 +3550,14 @@
                         <textarea id="edit-jed-notes" rows="3" placeholder="Beta, plans, gear notes…"
                                   class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500 text-sm">${escHtml(lake.jed_notes || '')}</textarea>
                     </div>
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Trip Reports</label>
-                        <textarea id="edit-trip-reports" rows="4" placeholder="Date, conditions, what worked…"
-                                  class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500 text-sm">${escHtml(lake.trip_reports || '')}</textarea>
-                    </div>
                     <button id="save-record" disabled
                             class="w-full bg-gray-300 text-gray-500 px-4 py-2 rounded-lg cursor-not-allowed transition-colors">Save</button>
                     </div>
                 </div>
+
+                <!-- Trips & photos + Links (journal docs; renderLakeJournal
+                     fills it and re-renders it on every journalchange) -->
+                <div id="lake-journal" class="space-y-6"></div>
 
                 <!-- Where it is (our coordinates) — interactive mini-map -->
                 ${lake.lat != null ? `
@@ -3312,7 +3608,10 @@
                 <!-- Notes from Junesucker.com (collapsed to a 2-line preview) -->
                 ${lake.junesucker_notes ? `
                     <div class="rounded-lg p-4 border border-slate-200">
-                        <h3 class="text-lg font-semibold mb-3">Notes from Junesucker.com</h3>
+                        <h3 class="text-lg font-semibold ${lake.junesucker_url ? 'mb-1' : 'mb-3'}">Notes from Junesucker.com</h3>
+                        ${lake.junesucker_url ? `
+                            <a href="${escAttr(lake.junesucker_url)}" target="_blank" rel="noopener"
+                               id="js-source-link" class="inline-block mb-3 text-sm text-slate-600 underline hover:text-slate-900">View original on junesucker.com ↗</a>` : ''}
                         ${collapsibleNotes('js-notes', `
                             ${lake.photos.length > 0 ? `
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
@@ -3403,6 +3702,7 @@
             paintStarButton(lake);
             initDetailMap(lake);
             wireRecordEditor(lake);
+            wireLakeJournal(lake);
         }
 
         // ---- My Record editor (inside the lake modal) ----
@@ -3417,7 +3717,6 @@
             });
             const statusBtns = sec.querySelectorAll('[data-status]');
             const jn = document.getElementById('edit-jed-notes');
-            const tr = document.getElementById('edit-trip-reports');
             const save = document.getElementById('save-record');
             const note = document.getElementById('record-sync-note');
             let sel = lake.status || '';
@@ -3442,12 +3741,10 @@
                 sel = b.dataset.status; paintStatus(); markDirty();
             }));
             jn.addEventListener('input', markDirty);
-            tr.addEventListener('input', markDirty);
 
             save.addEventListener('click', () => {
                 if ((lake.status || '') !== sel) queueEdit(lake, 'status', sel);
                 if ((lake.jed_notes || '') !== jn.value.trim()) queueEdit(lake, 'jed_notes', jn.value.trim());
-                if ((lake.trip_reports || '') !== tr.value.trim()) queueEdit(lake, 'trip_reports', tr.value.trim());
                 updateMissionProgress();
                 deferredRefresh = true;   // repaint list/map pins on modal close
                 setSaveEnabled(false);
@@ -3458,6 +3755,1442 @@
                         ? 'saved on this device — will sync when the Mini is reachable'
                         : 'synced ✓';
                 });
+            });
+        }
+
+        // ---- Journal in the lake modal: Trips & photos, Links -----------
+        // #lake-journal is filled from the journal indices (tripsByLake,
+        // photosByLake, linksByLake) and #jr-cards is re-rendered in place on
+        // every journalchange — own edits, sync passes, other devices. The
+        // link form and the add-photo status live outside #jr-cards so a
+        // background sync can't wipe what's being typed.
+        let linkForm = null;   // {ln, id|null, titleTouched, lookedUp, seq} while the form is open
+
+        function fmtDay(iso, { year = true } = {}) {
+            const [y, m, d] = iso.slice(0, 10).split('-').map(Number);
+            return `${MONTHS[m - 1]} ${d}${year ? ', ' + y : ''}`;
+        }
+        // "Oct 12–14, 2024" · "Sep 30 – Oct 2, 2024" · "Dec 30, 2024 – Jan 2, 2025"
+        // · "Planned · summer 2027". Formatted from the strings, not Date
+        // (YYYY-MM-DD parses as UTC and shifts a day in Mountain Time).
+        // A month-only date ("2024-10", day unknown) → "Oct 2024" ·
+        // "Jul–Aug 2024" · "Dec 2024 – Jan 2025".
+        function tripDateLabel(t) {
+            if (t.planned) return 'Planned' + (t.when ? ' · ' + t.when : '');
+            if (!t.date) return 'Undated';
+            const end = t.end_date && t.end_date !== t.date ? t.end_date : null;
+            if (t.date.length === 7) {
+                const fm = iso => { const [y, m] = iso.split('-').map(Number); return { y, m: MONTHS[m - 1] }; };
+                const a = fm(t.date), b = end && end.length === 7 ? fm(end) : null;
+                if (!b) return `${a.m} ${a.y}`;
+                return a.y === b.y ? `${a.m}–${b.m} ${a.y}` : `${a.m} ${a.y} – ${b.m} ${b.y}`;
+            }
+            if (!end) return fmtDay(t.date);
+            const [y1, m1] = t.date.split('-'), [y2, m2] = end.split('-');
+            if (y1 !== y2) return `${fmtDay(t.date)} – ${fmtDay(end)}`;
+            if (m1 !== m2) return `${fmtDay(t.date, { year: false })} – ${fmtDay(end)}`;
+            return `${fmtDay(t.date, { year: false })}–${Number(end.slice(8, 10))}, ${y1}`;
+        }
+        // "Oct 13, 2024 · 9:41 AM" from an EXIF-style local timestamp (no zone).
+        function photoTakenLabel(taken) {
+            if (!taken) return '';
+            const t = taken.match(/T(\d\d):(\d\d)/);
+            if (!t) return fmtDay(taken);
+            const h = Number(t[1]);
+            return `${fmtDay(taken)} · ${h % 12 || 12}:${t[2]} ${h < 12 ? 'AM' : 'PM'}`;
+        }
+        const urlHost = url => { try { return new URL(url).hostname.replace(/^www\./, ''); } catch (e) { return ''; } };
+        // An untitled link's display form: host + path, no "www." or trailing "/".
+        function prettyUrl(url) {
+            try {
+                const u = new URL(url);
+                const path = (u.pathname + u.search).replace(/\/$/, '');
+                return urlHost(url) + (path.length > 60 ? path.slice(0, 57) + '…' : path);
+            } catch (e) { return url; }
+        }
+        // Typed/pasted link → canonical http(s) URL or null; a bare
+        // "example.com/x" gets https://. Mirrors the server's check.
+        function normalizeUrl(s) {
+            s = (s || '').trim();
+            if (!s) return null;
+            if (!/^[a-z][a-z0-9+.-]*:/i.test(s) && /^[^\s/]+\.[^\s/]+/.test(s)) s = 'https://' + s;
+            try {
+                const u = new URL(s);
+                if (!/^https?:$/.test(u.protocol) || !u.hostname) return null;
+                return u.href.length <= 2000 ? u.href : null;
+            } catch (e) { return null; }
+        }
+        const safeHref = url => /^https?:\/\//i.test(url || '') ? escAttr(url) : '#';
+        function lakeLabel(ln) {
+            const l = lakes.find(x => x.letter_number === ln);
+            return l && l.name ? `${l.name} ${ln}` : ln;
+        }
+        // Two-tap delete: the first tap arms the button, the second (within
+        // 4 s) confirms. No confirm() — native dialogs are clumsy in the PWA.
+        function armDelete(btn, onConfirm) {
+            if (btn.classList.contains('armed')) { onConfirm(); return; }
+            btn.classList.add('armed');
+            const label = btn.textContent;
+            btn.textContent = 'Tap again to delete';
+            setTimeout(() => { if (btn.isConnected) { btn.classList.remove('armed'); btn.textContent = label; } }, 4000);
+        }
+
+        // Lake picker matches for a typed query: exact designation, then
+        // designation prefix, then name prefix, then the rest.
+        function rankedLakeMatches(q, exclude = [], n = 6) {
+            const rank = l => l.letter_number.toLowerCase() === q ? 0 : l.letter_number.toLowerCase().startsWith(q) ? 1
+                            : (l.name || '').toLowerCase().startsWith(q) ? 2 : 3;
+            return matchLakes(q).filter(l => !exclude.includes(l.letter_number))
+                .sort((a, b) => rank(a) - rank(b)).slice(0, n);
+        }
+        const fmtKm = km => km < 1 ? Math.round(km * 1000) + ' m' : km.toFixed(1) + ' km';
+        // Lakes within ~1.2 km of where a photo was taken (private sidecar).
+        function photoNearLakes(pid) {
+            const loc = mediaMeta[pid];
+            return loc && Number.isFinite(loc.lat) && Number.isFinite(loc.lng) ? lakesNear(loc.lat, loc.lng) : [];
+        }
+        // Free text → HTML with bare http(s) URLs linked (trailing
+        // punctuation stays text; a closing paren only belongs to a URL
+        // that opened one).
+        function autolinkHtml(text) {
+            let out = '', last = 0;
+            for (const m of (text || '').matchAll(/\bhttps?:\/\/[^\s<>"']+/gi)) {
+                let url = m[0];
+                while (/[.,;:!?)\]]$/.test(url) && !(url.endsWith(')') && url.split('(').length > url.split(')').length - 1)) url = url.slice(0, -1);
+                out += escHtml(text.slice(last, m.index)) +
+                       `<a href="${escAttr(url)}" target="_blank" rel="noopener">${escHtml(prettyUrl(url))}</a>`;
+                last = m.index + url.length;
+            }
+            return out + escHtml((text || '').slice(last));
+        }
+        const todayIso = () => { const d = new Date(); return new Date(d - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10); };
+
+        // ---- Trip modal: view + editor ------------------------------------
+        // Lake ↔ trip hops hide the modal being left and push it onto
+        // crossStack ({type:'lake', id, nav, scroll} | {type:'trip', id,
+        // scroll}); ← in either modal pops lakeNavStack first, then
+        // crossStack. Still one history entry for the whole stack, so browser
+        // back closes everything (hideModals). Deep link: #trip-<id>.
+        let crossStack = [];
+        let crossPopping = false;
+        let currentTrip = null;    // trip id the trip modal is showing / editing
+        let tripEdit = null;       // the editor's draft while it is open
+        let markDoneOpen = false;
+
+        const tripModalEl = () => document.getElementById('trip-modal');
+        const isOpen = id => !document.getElementById(id).classList.contains('hidden');
+
+        // Leave whichever modal is showing so a trip can take its place.
+        function hopToTrip(id) {
+            const lakeOpen = isOpen('lake-detail-modal'), tripOpen = isOpen('trip-modal');
+            if (!crossPopping) {
+                if (lakeOpen && currentModalLake)
+                    crossStack.push({ type: 'lake', id: currentModalLake, nav: [...lakeNavStack],
+                                      scroll: document.getElementById('lake-modal-card').scrollTop });
+                else if (tripOpen && currentTrip && currentTrip !== id && !tripEdit)
+                    crossStack.push({ type: 'trip', id: currentTrip, scroll: document.getElementById('trip-modal-card').scrollTop });
+                else if (!tripOpen) crossStack.length = 0;
+            }
+            tripModalEl().classList.remove('hidden');
+            lockBodyScroll('trip');
+            if (lakeOpen) {
+                // Keep its content (and currentModalLake) for a quick return.
+                closeLinkForm();
+                document.getElementById('lake-detail-modal').classList.add('hidden');
+                lakeNavStack.length = 0;
+            }
+            pushModalState('trip', '#trip-' + id);
+        }
+
+        function showTripDetail(id, { scroll = 0 } = {}) {
+            if (!getJournalDoc('trip', id)) return false;
+            if (tripEdit) discardTripDraft();
+            hopToTrip(id);
+            currentTrip = id;
+            markDoneOpen = false;
+            renderTripView();
+            document.getElementById('trip-modal-card').scrollTop = scroll;
+            return true;
+        }
+
+        // A lake chip in the trip view (or the lightbox over it).
+        function openLakeFromTrip(ln) {
+            if (isOpen('trip-modal') && currentTrip)
+                crossStack.push({ type: 'trip', id: currentTrip, scroll: document.getElementById('trip-modal-card').scrollTop });
+            showLakeDetail(ln);          // lake modal is hidden → a fresh lake open
+            hideTripForHop();
+        }
+        function hideTripForHop() {
+            tripModalEl().classList.add('hidden');
+            tripModalEl().classList.remove('editing');
+            unlockBodyScroll('trip');    // the lake modal holds its own lock
+        }
+
+        // Back one step across modals. Skips entries whose trip or lake is
+        // gone (deleted meanwhile). Returns false when there was nothing.
+        function popCross() {
+            while (crossStack.length) {
+                const e = crossStack.pop();
+                crossPopping = true;
+                try {
+                    if (e.type === 'trip') {
+                        if (showTripDetail(e.id, { scroll: e.scroll })) return true;
+                    } else if (e.type === 'lake' && lakes.some(l => l.letter_number === e.id)) {
+                        returnToLake(e);
+                        return true;
+                    }
+                } finally { crossPopping = false; }
+            }
+            return false;
+        }
+        function returnToLake(e) {
+            const modal = document.getElementById('lake-detail-modal');
+            if (currentModalLake === e.id && document.getElementById('lake-journal')) {
+                // Still holds this lake: just show it again where it was.
+                modal.classList.remove('hidden');
+                lockBodyScroll('lake');
+                renderLakeJournal(e.id);
+                pushModalState('lake', `#${encodeURIComponent(e.id)}`);
+            } else {
+                showLakeDetail(e.id);
+            }
+            lakeNavStack = [...(e.nav || [])];
+            document.getElementById('lake-modal-card').scrollTop = e.scroll || 0;
+            hideTripForHop();
+        }
+        function tripBack() {
+            if (!popCross()) closeModal();
+        }
+
+        function renderTripView() {
+            const t = getJournalDoc('trip', currentTrip);
+            const content = document.getElementById('trip-content');
+            tripModalEl().classList.remove('editing');
+            if (!t) {
+                document.getElementById('trip-title').textContent = 'Trip deleted';
+                content.innerHTML = '<p class="text-sm text-gray-500">This trip has been deleted.</p>';
+                return;
+            }
+            document.getElementById('trip-title').textContent = t.title || 'Untitled trip';
+            const photos = photosByTrip.get(t.id) || [];
+            const links = t.links || [];
+            content.innerHTML = `
+                <div>
+                    <div class="tv-when">${t.planned ? '🧭' : '🥾'} ${escHtml(tripDateLabel(t))}</div>
+                    ${t.lakes.length ? `<div class="flex flex-wrap gap-1 mt-2">${t.lakes.map(ln => `
+                        <button type="button" class="jr-chip" data-tv="lake" data-ln="${escAttr(ln)}">${escHtml(lakeLabel(ln))} →</button>`).join('')}
+                    </div>` : '<div class="jr-sub mt-1">No lakes added yet</div>'}
+                </div>
+                ${markDoneOpen ? `
+                    <div class="tv-panel" id="tv-done">
+                        <div class="text-sm font-medium text-gray-800 mb-2">When did you go?</div>
+                        <div class="te-dates">
+                            <div><label class="te-label" for="tv-done-date">Date</label>
+                                <input id="tv-done-date" class="jr-input" type="date" value="${todayIso()}"></div>
+                            <div><label class="te-label" for="tv-done-end">Until (optional)</label>
+                                <input id="tv-done-end" class="jr-input" type="date"></div>
+                        </div>
+                        <div id="tv-done-error" class="te-error mt-2" hidden></div>
+                        <div class="flex gap-2 mt-3">
+                            <button type="button" class="jr-btn jr-btn-primary" data-tv="done-save">Save as a trip report</button>
+                            <button type="button" class="jr-btn" data-tv="done-cancel">Cancel</button>
+                        </div>
+                    </div>` : ''}
+                ${t.body ? `<div class="tv-body">${autolinkHtml(t.body)}</div>` : ''}
+                ${photos.length ? `
+                    <div>
+                        <div class="tv-h">Photos · ${photos.length}</div>
+                        <div class="tv-grid">${photos.map(p => `
+                            <button type="button" class="tv-thumb" data-tv="photo" data-id="${escAttr(p.id)}" aria-label="${escAttr(p.caption || 'Photo')}">
+                                <img data-pid="${escAttr(p.id)}" data-size="t" alt="${escAttr(p.caption || '')}">
+                            </button>`).join('')}
+                        </div>
+                    </div>` : ''}
+                ${links.length ? `
+                    <div id="tv-links">
+                        <div class="tv-h" style="margin-bottom:.125rem">Links</div>
+                        ${links.map(l => `
+                            <div class="jr-link">
+                                <a href="${safeHref(l.url)}" target="_blank" rel="noopener">
+                                    <div class="jr-link-title">${escHtml(l.title || prettyUrl(l.url))}</div>
+                                    ${l.title ? `<span class="jr-host">${escHtml(urlHost(l.url))}</span>` : ''}
+                                </a>
+                            </div>`).join('')}
+                    </div>` : ''}
+                <div class="flex flex-wrap gap-2 pb-2">
+                    <button type="button" class="jr-btn" data-tv="edit">Edit</button>
+                    ${t.planned && !markDoneOpen ? '<button type="button" class="jr-btn" data-tv="mark-done">✓ Mark as done</button>' : ''}
+                </div>`;
+            hydrateMedia(content);
+        }
+
+        function saveMarkDone() {
+            const t = getJournalDoc('trip', currentTrip);
+            if (!t) return;
+            const date = document.getElementById('tv-done-date').value;
+            const end = document.getElementById('tv-done-end').value || null;
+            const err = document.getElementById('tv-done-error');
+            const problem = !date ? 'Pick the date you went.' : end && end < date ? 'The end date is before the start date.' : '';
+            if (problem) { err.hidden = false; err.textContent = problem; return; }
+            markDoneOpen = false;
+            queueJournal('trip', { ...t, planned: false, date, end_date: end, when: null });   // journalchange re-renders
+            syncNow();
+        }
+
+        // ---- Trip editor ----
+        // Works on a draft (tripEdit); nothing is queued until Save. Photos
+        // added here are stored on the device at once (addPhotoFile) but get
+        // their docs only on Save — Cancel discards their blobs.
+        function openTripEditor(trip, opts = {}) {
+            const t = trip ? getJournalDoc('trip', trip.id || trip) : null;
+            if (trip && !t) return;
+            const id = t ? t.id : newJournalId('trip');
+            if (!isOpen('trip-modal') || currentTrip !== id) hopToTrip(id);
+            currentTrip = id;
+            markDoneOpen = false;
+            const planned = t ? !!t.planned : !!opts.planned;
+            tripEdit = {
+                id, isNew: !t, planned,
+                title: t ? t.title || '' : '',
+                date: t && t.date || '', end_date: t && t.end_date || '', when: t && t.when || '',
+                monthOnly: !!(t && t.date && t.date.length === 7),
+                body: t ? t.body || '' : '',
+                lakes: [...(t ? t.lakes : (opts.lakes || []))],
+                links: (t ? t.links || [] : []).map(l => ({ ...l })),
+                photos: (t ? photosByTrip.get(t.id) || [] : []).map(p => ({ id: p.id, isNew: false, removed: false,
+                    caption: p.caption || '', lakes: [...(p.lakes || [])], taken: p.taken, w: p.w, h: p.h, orig: p })),
+                linkTitleTouched: false, linkLookedUp: null, linkSeq: 0, adding: 0, deleting: false,
+            };
+            renderTripEditor();
+            document.getElementById('trip-modal-card').scrollTop = 0;
+            if (!t) document.getElementById('te-title').focus();
+        }
+
+        function renderTripEditor() {
+            const d = tripEdit;
+            tripModalEl().classList.add('editing');
+            document.getElementById('trip-title').textContent = d.isNew ? (d.planned ? 'Plan a trip' : 'New trip') : 'Edit trip';
+            const content = document.getElementById('trip-content');
+            content.innerHTML = `
+                <div>
+                    <label class="te-label" for="te-title">Title</label>
+                    <input id="te-title" class="jr-input" type="text" maxlength="200" value="${escAttr(d.title)}"
+                           placeholder="${d.planned ? 'e.g. Highline loop with Ryan' : 'e.g. Toomset + Amethyst w/ Ryan'}">
+                </div>
+                <div>
+                    <div class="te-seg" role="tablist">
+                        <button type="button" data-te="taken" class="${d.planned ? '' : 'on'}">🥾 Taken</button>
+                        <button type="button" data-te="planned" class="${d.planned ? 'on' : ''}">🧭 Planned</button>
+                    </div>
+                    <div id="te-when-wrap" class="mt-3"></div>
+                </div>
+                <div>
+                    <div class="te-label">Lakes</div>
+                    <div id="te-lakes"></div>
+                    <input id="te-lake-search" class="jr-input mt-2" type="text" placeholder="Add a lake (name or designation)"
+                           autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false">
+                    <div id="te-lake-matches" class="te-matches" hidden></div>
+                </div>
+                <div>
+                    <label class="te-label" for="te-body">${d.planned ? 'Notes' : 'Trip report'}</label>
+                    <textarea id="te-body" class="jr-input" rows="7" maxlength="50000"
+                              placeholder="${d.planned ? 'Route ideas, who’s coming, what to bring…' : 'How it went — fish, weather, trail, who came…'}">${escHtml(d.body)}</textarea>
+                </div>
+                <div>
+                    <div class="te-label">Links</div>
+                    <div id="te-links"></div>
+                    <div class="mt-2 space-y-2">
+                        <input id="te-link-url" class="jr-input" type="url" inputmode="url" autocomplete="off" autocapitalize="off"
+                               autocorrect="off" spellcheck="false" placeholder="Paste a link (https://…)">
+                        <div class="flex gap-2">
+                            <input id="te-link-title" class="jr-input" type="text" maxlength="200" placeholder="Title (filled in from the page)">
+                            <button type="button" class="jr-btn shrink-0" data-te="add-link">Add</button>
+                        </div>
+                        <div id="te-link-hint" class="jr-sub" hidden></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="te-label">Photos</div>
+                    <div id="te-photos"></div>
+                    <button type="button" class="te-add-tile" data-te="add-photos">＋ Add photos</button>
+                    <input type="file" id="te-photo-input" accept="image/*" multiple hidden>
+                    <div id="te-photo-status" class="text-sm text-gray-600 mt-2" hidden></div>
+                </div>
+                <div id="te-error" class="te-error" hidden></div>
+                ${d.isNew ? '' : `
+                    <div class="pt-4 border-t border-gray-200 pb-2" id="te-delete-wrap">
+                        <button type="button" class="jr-btn jr-btn-danger" data-te="delete">Delete trip</button>
+                    </div>`}`;
+            renderTripWhen();
+            renderTripLakes();
+            renderTripLinks();
+            renderTripPhotos();
+            wireTripEditorInputs(content);
+        }
+
+        function renderTripWhen() {
+            const d = tripEdit;
+            // type=month falls back to a text box where unsupported (desktop
+            // Safari/Firefox), hence the pattern + placeholder.
+            const dateAttrs = d.monthOnly ? 'type="month" pattern="\\d{4}-\\d{2}" placeholder="YYYY-MM"' : 'type="date"';
+            document.getElementById('te-when-wrap').innerHTML = d.planned ? `
+                <label class="te-label" for="te-when">When (optional)</label>
+                <input id="te-when" class="jr-input" type="text" maxlength="100" value="${escAttr(d.when)}" placeholder="e.g. summer 2027, Labor Day weekend">` : `
+                <div class="te-dates">
+                    <div><label class="te-label" for="te-date">${d.monthOnly ? 'Month' : 'Date'}</label>
+                        <input id="te-date" class="jr-input" ${dateAttrs} value="${escAttr(d.date)}"></div>
+                    <div><label class="te-label" for="te-end">Until (optional)</label>
+                        <input id="te-end" class="jr-input" ${dateAttrs} value="${escAttr(d.end_date)}"></div>
+                </div>
+                <label class="te-month-only"><input id="te-month-only" type="checkbox"${d.monthOnly ? ' checked' : ''}> Month only — exact day unknown</label>`;
+        }
+        // Month-only ↔ exact day keeps what's there: "2024-10-05" → "2024-10",
+        // "2024-10" → "2024-10-01" (so the day picker opens on that month).
+        function setTripMonthOnly(on) {
+            const d = tripEdit;
+            const conv = v => !v ? '' : on ? v.slice(0, 7) : v.length === 7 ? v + '-01' : v;
+            d.monthOnly = on;
+            d.date = conv(d.date);
+            d.end_date = conv(d.end_date);
+            renderTripWhen();
+        }
+
+        // The trip's lakes as removable chips, then one-tap suggestions:
+        // lakes near where its photos were taken.
+        function renderTripLakes() {
+            const d = tripEdit;
+            const near = new Map();
+            d.photos.filter(p => !p.removed).forEach(p => photoNearLakes(p.id).forEach(x => {
+                if (!d.lakes.includes(x.letter_number) && !(near.get(x.letter_number) <= x.km)) near.set(x.letter_number, x.km);
+            }));
+            const sugg = [...near].sort((a, b) => a[1] - b[1]).slice(0, 6);
+            document.getElementById('te-lakes').innerHTML = `
+                <div class="flex flex-wrap gap-1">
+                    ${d.lakes.map(ln => `<button type="button" class="jr-chip on" data-te="lake-remove" data-ln="${escAttr(ln)}" title="Remove">${escHtml(lakeLabel(ln))} ✕</button>`).join('')}
+                    ${sugg.map(([ln, km]) => `<button type="button" class="jr-chip suggest" data-te="lake-add" data-ln="${escAttr(ln)}" title="Near a photo">＋ ${escHtml(lakeLabel(ln))} · ${fmtKm(km)}</button>`).join('')}
+                    ${!d.lakes.length && !sugg.length ? '<span class="jr-sub">None yet — search below</span>' : ''}
+                </div>`;
+        }
+
+        function renderTripLinks() {
+            document.getElementById('te-links').innerHTML = tripEdit.links.map((l, i) => `
+                <div class="te-link-row">
+                    <div class="te-link">
+                        <input class="jr-input" type="text" maxlength="200" data-te-link-title="${i}" value="${escAttr(l.title || '')}"
+                               placeholder="${escAttr(prettyUrl(l.url))}">
+                        <button type="button" class="te-x" data-te="link-remove" data-i="${i}" aria-label="Remove link" title="Remove">✕</button>
+                    </div>
+                    <div class="te-link-url">${escHtml(l.url)}</div>
+                </div>`).join('');
+        }
+
+        // Per photo: thumb + caption, and tag chips — the trip's lakes and
+        // lakes near where it was taken as toggles, plus any other tags.
+        function photoTagChips(p) {
+            const near = new Map(photoNearLakes(p.id).slice(0, 4).map(x => [x.letter_number, x.km]));
+            const cands = [...new Set([...tripEdit.lakes, ...p.lakes, ...near.keys()])];
+            return `
+                ${cands.map(ln => {
+                    const on = p.lakes.includes(ln);
+                    return `<button type="button" class="jr-chip${on ? ' on' : near.has(ln) && !tripEdit.lakes.includes(ln) ? ' suggest' : ''}" data-te="tag"
+                                    data-pid="${escAttr(p.id)}" data-ln="${escAttr(ln)}" aria-pressed="${on}">${on ? '✓ ' : ''}${escHtml(lakeLabel(ln))}${near.has(ln) ? ` · ${fmtKm(near.get(ln))}` : ''}</button>`;
+                }).join('')}
+                <button type="button" class="jr-chip" data-te="tag-other" data-pid="${escAttr(p.id)}">＋ other lake…</button>`;
+        }
+        function renderTripPhotos() {
+            const list = [...tripEdit.photos].sort(comparePhotos);
+            const el = document.getElementById('te-photos');
+            el.innerHTML = list.map(p => p.removed ? `
+                <div class="te-photo removed" data-pid="${escAttr(p.id)}">
+                    <span>Photo will be deleted when you save</span>
+                    <button type="button" class="jr-btn" data-te="photo-undo" data-pid="${escAttr(p.id)}">Undo</button>
+                </div>` : `
+                <div class="te-photo" data-pid="${escAttr(p.id)}">
+                    <div class="te-photo-top">
+                        <img data-pid="${escAttr(p.id)}" data-size="t" alt="">
+                        <textarea class="jr-input" rows="2" maxlength="2000" data-te-caption="${escAttr(p.id)}" placeholder="Caption">${escHtml(p.caption)}</textarea>
+                        <button type="button" class="te-x" data-te="photo-remove" data-pid="${escAttr(p.id)}" aria-label="Remove photo" title="Remove photo">✕</button>
+                    </div>
+                    ${p.taken ? `<div class="jr-sub mt-1">${escHtml(photoTakenLabel(p.taken))}</div>` : ''}
+                    <div class="flex flex-wrap gap-1 mt-2 te-tags" data-pid="${escAttr(p.id)}">${photoTagChips(p)}</div>
+                    <div class="te-tag-search" data-pid="${escAttr(p.id)}" hidden>
+                        <input class="jr-input mt-2" type="text" placeholder="Tag a lake (name or designation)" data-te-tag-search="${escAttr(p.id)}"
+                               autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false">
+                        <div class="te-matches" hidden></div>
+                    </div>
+                </div>`).join('');
+            hydrateMedia(el);
+        }
+        // Re-render only the chip rows (keeps captions and open searches).
+        function refreshPhotoTags() {
+            document.querySelectorAll('#te-photos .te-tags').forEach(row => {
+                const p = tripEdit.photos.find(x => x.id === row.dataset.pid);
+                if (p) row.innerHTML = photoTagChips(p);
+            });
+        }
+
+        // Per-render wiring (these elements are rebuilt with the editor).
+        function wireTripEditorInputs(content) {
+            const url = content.querySelector('#te-link-url');
+            url.addEventListener('paste', () => setTimeout(prefillTripLinkTitle, 0));
+            url.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); addTripLink(); } });
+            content.querySelector('#te-link-title').addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); addTripLink(); } });
+            content.querySelector('#te-lake-search').addEventListener('keydown', (e) => {
+                if (e.key !== 'Enter') return;
+                e.preventDefault();
+                const first = document.querySelector('#te-lake-matches button');
+                if (first) first.click();
+            });
+            content.querySelector('#te-photo-input').addEventListener('change', (e) => {
+                const files = [...e.target.files];
+                e.target.value = '';
+                if (files.length) addTripPhotos(files);
+            });
+        }
+        function showLakeMatches(input, box, exclude, action, pid) {
+            const found = rankedLakeMatches(input.value.toLowerCase().trim(), exclude);
+            box.hidden = !found.length;
+            box.innerHTML = found.map(l => `
+                <button type="button" data-te="${action}" data-ln="${escAttr(l.letter_number)}"${pid ? ` data-pid="${escAttr(pid)}"` : ''}>${lakeTitle(l)}
+                    <span class="jr-sub"> · ${escHtml(l.drainage || '')}</span></button>`).join('');
+            if (found.length) box.scrollIntoView({ block: 'nearest' });
+        }
+
+        async function prefillTripLinkTitle() {
+            const d = tripEdit;
+            const urlEl = document.getElementById('te-link-url');
+            if (!d || !urlEl) return;
+            const url = normalizeUrl(urlEl.value);
+            if (!url || d.linkTitleTouched || url === d.linkLookedUp) return;
+            d.linkLookedUp = url;
+            const seq = ++d.linkSeq;
+            const hint = document.getElementById('te-link-hint');
+            hint.hidden = false;
+            hint.textContent = 'Looking up the page title…';
+            const t = await fetchLinkTitle(url);
+            if (tripEdit !== d || seq !== d.linkSeq || !document.getElementById('te-link-hint')) return;
+            if (t && !d.linkTitleTouched) document.getElementById('te-link-title').value = t;
+            hint.hidden = !!t;
+            hint.textContent = t ? '' : t === null
+                ? 'Couldn’t reach the Mini for the title — add one, or it’ll fill in after the next sync.'
+                : 'No title found — add one if you like.';
+        }
+        // Returns false (and says why) when the URL box holds something
+        // that isn't a link; true when added or the box was empty.
+        function addTripLink() {
+            const d = tripEdit;
+            const urlEl = document.getElementById('te-link-url');
+            const raw = urlEl.value.trim();
+            if (!raw) return true;
+            const url = normalizeUrl(raw);
+            const hint = document.getElementById('te-link-hint');
+            if (!url) {
+                hint.hidden = false;
+                hint.textContent = 'That doesn’t look like a web link (http:// or https://).';
+                urlEl.focus();
+                return false;
+            }
+            if (d.links.length >= 50) { hint.hidden = false; hint.textContent = 'A trip can hold 50 links.'; return false; }
+            d.links.push({ url, title: document.getElementById('te-link-title').value.trim().slice(0, 200) });
+            urlEl.value = '';
+            document.getElementById('te-link-title').value = '';
+            hint.hidden = true;
+            d.linkTitleTouched = false; d.linkLookedUp = null; d.linkSeq++;
+            renderTripLinks();
+            return true;
+        }
+
+        async function addTripPhotos(files) {
+            const d = tripEdit;
+            const status = document.getElementById('te-photo-status');
+            const show = (html, error = false) => {
+                if (tripEdit !== d) return;
+                status.hidden = !html;
+                status.style.color = error ? '#b91c1c' : '';
+                status.innerHTML = html;
+            };
+            const errors = [];
+            d.adding++;
+            try {
+                for (let i = 0; i < files.length; i++) {
+                    show(files.length > 1 ? `Adding photo ${i + 1} of ${files.length}…` : 'Adding photo…');
+                    try {
+                        const r = await addPhotoFile(files[i]);
+                        if (tripEdit !== d) { discardPhotoMedia(r.id); continue; }   // editor closed meanwhile
+                        d.photos.push({ id: r.id, isNew: true, removed: false, caption: '', lakes: [], taken: r.taken, w: r.w, h: r.h });
+                        renderTripPhotos();
+                        renderTripLakes();
+                    } catch (e) { errors.push(escHtml(e.message || String(e))); }
+                }
+            } finally { d.adding--; }
+            show(errors.join('<br>'), errors.length > 0);
+        }
+
+        function tripEditorClick(e) {
+            const b = e.target.closest('[data-te]');
+            const d = tripEdit;
+            if (!b || !d) return;
+            const ln = b.dataset.ln, pid = b.dataset.pid;
+            const photo = pid ? d.photos.find(x => x.id === pid) : null;
+            switch (b.dataset.te) {
+                case 'taken': case 'planned':
+                    if (d.planned === (b.dataset.te === 'planned')) return;
+                    d.planned = !d.planned;
+                    b.parentElement.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
+                    document.getElementById('trip-title').textContent = d.isNew ? (d.planned ? 'Plan a trip' : 'New trip') : 'Edit trip';
+                    renderTripWhen();
+                    break;
+                case 'lake-add':
+                    if (!d.lakes.includes(ln) && d.lakes.length < 100) d.lakes.push(ln);
+                    document.getElementById('te-lake-search').value = '';
+                    document.getElementById('te-lake-matches').hidden = true;
+                    renderTripLakes(); refreshPhotoTags();
+                    break;
+                case 'lake-remove':
+                    d.lakes = d.lakes.filter(x => x !== ln);
+                    renderTripLakes(); refreshPhotoTags();
+                    break;
+                case 'link-remove':
+                    d.links.splice(Number(b.dataset.i), 1);
+                    renderTripLinks();
+                    break;
+                case 'add-link': addTripLink(); break;
+                case 'add-photos': document.getElementById('te-photo-input').click(); break;
+                case 'tag':
+                    if (!photo) return;
+                    photo.lakes = photo.lakes.includes(ln) ? photo.lakes.filter(x => x !== ln) : [...photo.lakes, ln];
+                    { const box = document.querySelector(`.te-tag-search[data-pid="${CSS.escape(pid)}"]`);
+                      if (box && b.closest('.te-matches')) { box.hidden = true; box.querySelector('input').value = ''; } }
+                    refreshPhotoTags();
+                    break;
+                case 'tag-other': {
+                    const box = document.querySelector(`.te-tag-search[data-pid="${CSS.escape(pid)}"]`);
+                    box.hidden = !box.hidden;
+                    if (!box.hidden) box.querySelector('input').focus();
+                    break;
+                }
+                case 'photo-remove':
+                    if (!photo) return;
+                    if (photo.isNew) { d.photos = d.photos.filter(x => x !== photo); discardPhotoMedia(photo.id); }
+                    else photo.removed = true;
+                    renderTripPhotos(); renderTripLakes();
+                    break;
+                case 'photo-undo':
+                    if (photo) { photo.removed = false; renderTripPhotos(); renderTripLakes(); }
+                    break;
+                case 'delete': askDeleteTrip(b); break;
+                case 'delete-all': deleteTrip(true); break;
+                case 'delete-keep': deleteTrip(false); break;
+                case 'delete-cancel':
+                    document.getElementById('te-delete-wrap').innerHTML = '<button type="button" class="jr-btn jr-btn-danger" data-te="delete">Delete trip</button>';
+                    break;
+            }
+        }
+
+        function tripEditorError(msg) {
+            const err = document.getElementById('te-error');
+            err.hidden = !msg;
+            err.textContent = msg || '';
+            if (msg) err.scrollIntoView({ block: 'nearest' });
+        }
+
+        function saveTripEditor() {
+            const d = tripEdit;
+            if (!d) return;
+            if (d.adding) return tripEditorError('Wait for the photos to finish adding.');
+            if (!addTripLink()) return;    // a half-entered link would be lost
+            const title = d.title.trim();
+            if (!title) { document.getElementById('te-title').focus(); return tripEditorError('Give the trip a title.'); }
+            if (!d.planned && d.end_date && !d.date) return tripEditorError('Add the start date too.');
+            const dateRe = d.monthOnly ? /^\d{4}-(0[1-9]|1[0-2])$/ : /^\d{4}-\d\d-\d\d$/;
+            if (!d.planned && [d.date, d.end_date].some(v => v && !dateRe.test(v)))
+                return tripEditorError(d.monthOnly ? 'Enter months as YYYY-MM, e.g. 2024-10.' : 'That date isn’t valid.');
+            if (!d.planned && d.end_date && d.end_date < d.date) return tripEditorError('The end date is before the start date.');
+            const doc = queueJournal('trip', {
+                id: d.id, title: title.slice(0, 200), planned: d.planned,
+                date: d.planned ? null : d.date || null,
+                end_date: d.planned || !d.end_date || d.end_date === d.date ? null : d.end_date,
+                when: d.planned ? d.when.trim().slice(0, 100) || null : null,
+                body: d.body.trim(), lakes: [...d.lakes],
+                links: d.links.map(l => ({ url: l.url, title: (l.title || '').trim().slice(0, 200) }))
+            });
+            for (const p of d.photos) {
+                if (p.removed) { deleteJournal('photo', p.id); continue; }
+                const next = { id: p.id, trip: d.id, lakes: [...p.lakes], caption: p.caption.trim().slice(0, 2000), taken: p.taken || null, w: p.w, h: p.h };
+                const o = p.orig;
+                if (p.isNew || !o || o.trip !== d.id || o.caption !== next.caption || (o.lakes || []).join() !== next.lakes.join())
+                    queueJournal('photo', { ...(o || {}), ...next });
+            }
+            tripEdit = null;
+            renderTripView();
+            document.getElementById('trip-modal-card').scrollTop = 0;
+            refreshPendingUploads().then(() => syncNow());
+            fillTripLinkTitles(doc);
+        }
+        // Links saved untitled: look the titles up in the background and
+        // fill them in if the trip hasn't changed those links since.
+        async function fillTripLinkTitles(doc) {
+            const untitled = (doc.links || []).filter(l => !l.title).map(l => l.url);
+            if (!untitled.length) return;
+            const found = new Map();
+            for (const url of untitled) { const t = await fetchLinkTitle(url); if (t) found.set(url, t); }
+            const cur = getJournalDoc('trip', doc.id);
+            if (!found.size || !cur) return;
+            let changed = false;
+            const links = cur.links.map(l => !l.title && found.has(l.url) ? (changed = true, { ...l, title: found.get(l.url) }) : l);
+            if (changed) { queueJournal('trip', { ...cur, links }); syncNow(); }
+        }
+
+        // Drop the draft: blobs of photos added in this session go too.
+        function discardTripDraft() {
+            const d = tripEdit;
+            if (!d) return;
+            tripEdit = null;
+            d.photos.filter(p => p.isNew).forEach(p => discardPhotoMedia(p.id));
+        }
+        function cancelTripEditor() {
+            const d = tripEdit;
+            if (!d) return;
+            discardTripDraft();
+            if (d.isNew || !getJournalDoc('trip', d.id)) tripBack();
+            else { renderTripView(); document.getElementById('trip-modal-card').scrollTop = 0; }
+        }
+
+        // Delete: a trip without photos goes on a two-tap; with photos, ask
+        // whether they go too or stay (lake-tagged) on their own.
+        function askDeleteTrip(btn) {
+            const n = (photosByTrip.get(tripEdit.id) || []).length;
+            if (!n) { armDelete(btn, () => deleteTrip(true)); return; }
+            document.getElementById('te-delete-wrap').innerHTML = `
+                <div class="tv-panel">
+                    <div class="text-sm text-gray-800 mb-3">Delete this trip? It has ${n} photo${n > 1 ? 's' : ''}.</div>
+                    <div class="flex flex-wrap gap-2">
+                        <button type="button" class="jr-btn jr-btn-danger" data-te="delete-all">Delete trip and photos</button>
+                        <button type="button" class="jr-btn" data-te="delete-keep">Delete trip, keep photos</button>
+                        <button type="button" class="jr-btn" data-te="delete-cancel">Cancel</button>
+                    </div>
+                    <div class="jr-sub mt-2">Kept photos stay on the lakes they’re tagged with.</div>
+                </div>`;
+        }
+        function deleteTrip(withPhotos) {
+            const d = tripEdit;
+            if (!d) return;
+            for (const p of photosByTrip.get(d.id) || []) {
+                if (withPhotos) deleteJournal('photo', p.id);
+                else queueJournal('photo', { ...p, trip: null });
+            }
+            discardTripDraft();
+            deleteJournal('trip', d.id);
+            syncNow();
+            tripBack();
+        }
+
+        function wireTripModal() {
+            document.getElementById('trip-back').addEventListener('click', tripBack);
+            document.getElementById('trip-close').addEventListener('click', closeModal);
+            document.getElementById('trip-cancel').addEventListener('click', cancelTripEditor);
+            document.getElementById('trip-save').addEventListener('click', saveTripEditor);
+            document.getElementById('trip-modal').addEventListener('click', (e) => {
+                if (!e.target.isConnected || tripEdit) return;
+                if (!e.target.closest('#trip-modal-card')) closeModal();
+            });
+            const content = document.getElementById('trip-content');
+            // Editor fields → draft (delegated; the editor re-renders its parts).
+            content.addEventListener('input', (e) => {
+                const d = tripEdit;
+                if (!d) return;
+                const el = e.target;
+                if (el.id === 'te-title') d.title = el.value;
+                else if (el.id === 'te-body') d.body = el.value;
+                else if (el.id === 'te-date') d.date = el.value;
+                else if (el.id === 'te-end') d.end_date = el.value;
+                else if (el.id === 'te-when') d.when = el.value;
+                else if (el.dataset.teLinkTitle !== undefined) d.links[Number(el.dataset.teLinkTitle)].title = el.value;
+                else if (el.dataset.teCaption) { const p = d.photos.find(x => x.id === el.dataset.teCaption); if (p) p.caption = el.value; }
+                else if (el.id === 'te-lake-search') showLakeMatches(el, document.getElementById('te-lake-matches'), d.lakes, 'lake-add');
+                else if (el.dataset.teTagSearch) {
+                    const p = d.photos.find(x => x.id === el.dataset.teTagSearch);
+                    if (p) showLakeMatches(el, el.nextElementSibling, p.lakes, 'tag', p.id);
+                } else if (el.id === 'te-link-title') d.linkTitleTouched = !!el.value.trim();
+                else if (el.id === 'te-link-url') { clearTimeout(d.linkTimer); d.linkTimer = setTimeout(prefillTripLinkTitle, 500); }
+            });
+            // Native date inputs on iOS fire 'change' rather than 'input'.
+            content.addEventListener('change', (e) => {
+                const d = tripEdit;
+                if (!d) return;
+                if (e.target.id === 'te-date') d.date = e.target.value;
+                else if (e.target.id === 'te-end') d.end_date = e.target.value;
+                else if (e.target.id === 'te-month-only') setTripMonthOnly(e.target.checked);
+            });
+            content.addEventListener('click', (e) => {
+                if (tripEdit) { tripEditorClick(e); return; }
+                const b = e.target.closest('[data-tv]');
+                if (!b) return;
+                switch (b.dataset.tv) {
+                    case 'lake': openLakeFromTrip(b.dataset.ln); break;
+                    case 'photo': openLightbox((photosByTrip.get(currentTrip) || []).map(p => p.id), b.dataset.id); break;
+                    case 'edit': openTripEditor({ id: currentTrip }); break;
+                    case 'mark-done': markDoneOpen = true; renderTripView(); document.getElementById('tv-done-date').focus(); break;
+                    case 'done-cancel': markDoneOpen = false; renderTripView(); break;
+                    case 'done-save': saveMarkDone(); break;
+                }
+            });
+        }
+
+        function lakeJournalHtml(ln) {
+            const photos = photosByLake.get(ln) || [];
+            const trips = tripsByLake.get(ln) || [];
+            const links = linksByLake.get(ln) || [];
+            const pills = `
+                <div class="jr-pills">
+                    <button type="button" class="jr-pill" data-jr="add-photo">＋ Photo</button>
+                    <button type="button" class="jr-pill" data-jr="add-trip">＋ Trip</button>
+                    <button type="button" class="jr-pill" data-jr="add-plan">＋ Plan</button>
+                    ${links.length ? '' : '<button type="button" class="jr-pill" data-jr="add-link">＋ Link</button>'}
+                </div>`;
+            // Nothing yet: just the actions, so unvisited lakes stay uncluttered.
+            if (!photos.length && !trips.length && !links.length) return pills;
+            let html = '';
+            if (photos.length || trips.length) {
+                const tripRows = trips.map(t => {
+                    const n = (photosByTrip.get(t.id) || []).length;
+                    const sub = [t.lakes.length > 1 ? `${t.lakes.length} lakes` : '',
+                                 n ? `${n} photo${n > 1 ? 's' : ''}` : ''].filter(Boolean).join(' · ');
+                    return `
+                        <button type="button" class="jr-row" data-jr="trip" data-id="${escAttr(t.id)}">
+                            <span>${t.planned ? '🧭' : '🥾'}</span>
+                            <span class="min-w-0">
+                                <span class="block text-sm text-gray-800"><span class="text-gray-500">${escHtml(tripDateLabel(t))} ·</span> ${escHtml(t.title || 'Untitled trip')}</span>
+                                ${sub ? `<span class="jr-sub">${sub}</span>` : ''}
+                            </span>
+                        </button>`;
+                }).join('');
+                html += `
+                    <div id="jr-trips-card" class="rounded-lg p-4 border border-slate-200">
+                        <h3 class="text-lg font-semibold mb-3">Trips &amp; photos</h3>
+                        ${photos.length ? `
+                            <div class="jr-strip mb-3">${photos.map(p => `
+                                <button type="button" class="jr-thumb" data-jr="photo" data-id="${escAttr(p.id)}" aria-label="${escAttr(p.caption || 'Photo')}">
+                                    <img data-pid="${escAttr(p.id)}" data-size="t" alt="${escAttr(p.caption || '')}">
+                                </button>`).join('')}
+                            </div>` : ''}
+                        ${tripRows ? `<div class="mb-3">${tripRows}</div>` : ''}
+                        ${pills}
+                    </div>`;
+            } else {
+                html += pills;
+            }
+            if (links.length) {
+                html += `
+                    <div id="jr-links-card" class="rounded-lg p-4 border border-slate-200">
+                        <div class="flex items-center justify-between mb-1">
+                            <h3 class="text-lg font-semibold">Links</h3>
+                            <button type="button" class="text-sm text-slate-500 underline" data-jr="add-link">＋ Add link</button>
+                        </div>
+                        ${links.map(l => `
+                            <div class="jr-link">
+                                <a href="${safeHref(l.url)}" target="_blank" rel="noopener">
+                                    <div class="jr-link-title">${escHtml(l.title || prettyUrl(l.url))}</div>
+                                    ${l.title ? `<span class="jr-host">${escHtml(urlHost(l.url))}</span>` : ''}
+                                    ${l.note ? `<div class="jr-note">${escHtml(l.note)}</div>` : ''}
+                                </a>
+                                <button type="button" class="jr-edit" data-jr="edit-link" data-id="${escAttr(l.id)}" aria-label="Edit link" title="Edit">✎</button>
+                            </div>`).join('')}
+                    </div>`;
+            }
+            return html;
+        }
+
+        function renderLakeJournal(ln) {
+            const cards = document.getElementById('jr-cards');
+            if (!cards) return;
+            cards.innerHTML = lakeJournalHtml(ln);
+            hydrateMedia(cards);
+        }
+
+        function wireLakeJournal(lake) {
+            const root = document.getElementById('lake-journal');
+            if (!root) return;
+            const ln = lake.letter_number;
+            linkForm = null;
+            // [hidden] (not .hidden) so the parent's space-y-6 skips them.
+            root.innerHTML = `
+                <div id="jr-cards" class="space-y-6"></div>
+                <div id="jr-status" class="text-sm text-gray-600" hidden></div>
+                <div id="jr-link-form" hidden></div>
+                <input type="file" id="jr-photo-input" accept="image/*" multiple hidden>`;
+            renderLakeJournal(ln);
+            root.addEventListener('click', (e) => {
+                const b = e.target.closest('[data-jr]');
+                if (!b || !root.contains(b)) return;
+                const id = b.dataset.id;
+                switch (b.dataset.jr) {
+                    case 'add-photo': document.getElementById('jr-photo-input').click(); break;
+                    case 'add-trip': openTripEditor(null, { lakes: [ln], planned: false }); break;
+                    case 'add-plan': openTripEditor(null, { lakes: [ln], planned: true }); break;
+                    case 'trip': showTripDetail(id); break;
+                    case 'photo': openLightbox((photosByLake.get(ln) || []).map(p => p.id), id); break;
+                    case 'add-link': openLinkForm(ln, null); break;
+                    case 'edit-link': openLinkForm(ln, id); break;
+                }
+            });
+            document.getElementById('jr-photo-input').addEventListener('change', (e) => {
+                const files = [...e.target.files];
+                e.target.value = '';
+                if (files.length) addLakePhotos(ln, files);
+            });
+        }
+
+        document.addEventListener('journalchange', () => {
+            if (currentModalLake && !document.getElementById('lake-detail-modal').classList.contains('hidden'))
+                renderLakeJournal(currentModalLake);
+            // The trip view follows along; an open editor or "mark as done"
+            // form is never clobbered.
+            if (currentTrip && isOpen('trip-modal') && !tripEdit && !markDoneOpen) renderTripView();
+            if (lightbox.open) refreshLightbox();
+        });
+
+        // "＋ Photo" on a lake: each picked image becomes a photo doc tagged
+        // with this lake and no trip. Caption/more tags come later via the
+        // lightbox's Edit.
+        async function addLakePhotos(ln, files) {
+            const status = document.getElementById('jr-status');   // this lake's, even if the user moves on
+            const show = (html, error = false) => {
+                status.hidden = !html;
+                status.style.color = error ? '#b91c1c' : '';
+                status.innerHTML = html;
+            };
+            const errors = [];
+            let added = 0;
+            for (let i = 0; i < files.length; i++) {
+                show(files.length > 1 ? `Adding photo ${i + 1} of ${files.length}…` : 'Adding photo…');
+                try {
+                    const r = await addPhotoFile(files[i]);
+                    queueJournal('photo', { id: r.id, trip: null, lakes: [ln], caption: '', taken: r.taken, w: r.w, h: r.h });
+                    added++;
+                } catch (e) { errors.push(escHtml(e.message || String(e))); }
+            }
+            const done = added ? `Added ${added} photo${added > 1 ? 's' : ''} — tap one to add a caption or tag other lakes.` : '';
+            show(errors.length ? [done, ...errors].filter(Boolean).join('<br>') : done, errors.length > 0);
+            if (!errors.length) setTimeout(() => { if (status.innerHTML === done) show(''); }, 8000);
+            if (added) { await refreshPendingUploads(); syncNow(); }
+        }
+
+        // ---- Link add / edit form ----
+        function openLinkForm(ln, id) {
+            const l = id ? getJournalDoc('link', id) : null;
+            if (id && !l) return;
+            const f = linkForm = { ln, id: l ? l.id : null, titleTouched: !!(l && l.title), lookedUp: l ? l.url : null, seq: 0 };
+            const el = document.getElementById('jr-link-form');
+            el.hidden = false;
+            el.innerHTML = `
+                <div class="rounded-lg p-4 border border-slate-300 bg-slate-50">
+                    <h3 class="text-lg font-semibold mb-3">${l ? 'Edit link' : 'Add a link'}</h3>
+                    <div class="space-y-2">
+                        <input id="lf-url" class="jr-input" type="url" inputmode="url" autocomplete="off" autocapitalize="off"
+                               autocorrect="off" spellcheck="false" placeholder="Paste a link (https://…)" value="${l ? escAttr(l.url) : ''}">
+                        <input id="lf-title" class="jr-input" type="text" maxlength="200" placeholder="Title (filled in from the page)"
+                               value="${l ? escAttr(l.title || '') : ''}">
+                        <div id="lf-hint" class="jr-sub" hidden></div>
+                        <textarea id="lf-note" class="jr-input" rows="2" maxlength="2000" placeholder="Note (optional)">${l ? escHtml(l.note || '') : ''}</textarea>
+                    </div>
+                    <div id="lf-error" class="text-sm mt-2" style="color:#b91c1c" hidden></div>
+                    <div class="flex flex-wrap gap-2 mt-3">
+                        <button type="button" id="lf-save" class="jr-btn jr-btn-primary">Save</button>
+                        <button type="button" id="lf-cancel" class="jr-btn">Cancel</button>
+                        ${l ? '<button type="button" id="lf-delete" class="jr-btn jr-btn-danger" style="margin-left:auto">Delete</button>' : ''}
+                    </div>
+                </div>`;
+            const url = el.querySelector('#lf-url');
+            let timer = null;
+            url.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(prefillLinkTitle, 500); });
+            url.addEventListener('paste', () => setTimeout(prefillLinkTitle, 0));
+            url.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); el.querySelector('#lf-title').focus(); } });
+            el.querySelector('#lf-title').addEventListener('input', (e) => { f.titleTouched = !!e.target.value.trim(); });
+            el.querySelector('#lf-save').addEventListener('click', saveLinkForm);
+            el.querySelector('#lf-cancel').addEventListener('click', closeLinkForm);
+            const del = el.querySelector('#lf-delete');
+            if (del) del.addEventListener('click', () => armDelete(del, () => {
+                deleteJournal('link', f.id);
+                closeLinkForm();
+                syncNow();
+            }));
+            el.scrollIntoView({ block: 'nearest' });
+            if (!l) url.focus();
+        }
+        function closeLinkForm() {
+            linkForm = null;
+            const el = document.getElementById('jr-link-form');
+            if (el) { el.hidden = true; el.innerHTML = ''; }
+        }
+        // Title for a URL via the Mini (a page can't read cross-origin
+        // pages itself). '' = reached it, page has no title; null = no Mini.
+        async function fetchLinkTitle(url) {
+            const base = await ensureSyncUrl();
+            if (!base) return null;
+            try {
+                const r = await fetch(`${base}/api/link-title?url=${encodeURIComponent(url)}`, { signal: AbortSignal.timeout(10000) });
+                if (!r.ok) return '';
+                return String((await r.json()).title || '').trim().slice(0, 200);
+            } catch (e) { return null; }
+        }
+        async function prefillLinkTitle() {
+            const f = linkForm;
+            const urlEl = document.getElementById('lf-url');
+            if (!f || !urlEl) return;
+            const url = normalizeUrl(urlEl.value);
+            if (!url || f.titleTouched || url === f.lookedUp) return;
+            f.lookedUp = url;
+            const seq = ++f.seq;
+            const hint = document.getElementById('lf-hint');
+            hint.hidden = false;
+            hint.textContent = 'Looking up the page title…';
+            const t = await fetchLinkTitle(url);
+            if (linkForm !== f || seq !== f.seq) return;
+            if (t && !f.titleTouched) document.getElementById('lf-title').value = t;
+            hint.hidden = !!t;
+            hint.textContent = t ? '' : t === null
+                ? 'Couldn’t reach the Mini for the title — add one, or it’ll fill in after the next sync.'
+                : `No title found — it’ll show as ${prettyUrl(url)} unless you add one.`;
+        }
+        function saveLinkForm() {
+            const f = linkForm;
+            if (!f) return;
+            const url = normalizeUrl(document.getElementById('lf-url').value);
+            if (!url) {
+                const err = document.getElementById('lf-error');
+                err.hidden = false;
+                err.textContent = 'That doesn’t look like a web link (http:// or https://).';
+                return;
+            }
+            const doc = queueJournal('link', {
+                id: f.id || newJournalId('link'), lake: f.ln, url,
+                title: document.getElementById('lf-title').value.trim().slice(0, 200),
+                note: document.getElementById('lf-note').value.trim().slice(0, 2000)
+            });
+            closeLinkForm();
+            syncNow();
+            // Saved untitled (offline, or before the lookup came back): try
+            // again in the background and fill it in if the doc is unchanged.
+            if (!doc.title) fetchLinkTitle(url).then(t => {
+                const cur = getJournalDoc('link', doc.id);
+                if (t && cur && !cur.title && cur.url === url) { queueJournal('link', { ...cur, title: t }); syncNow(); }
+            });
+        }
+
+        // ---- Journal list: Trips / Planned / Photos, optionally one drainage
+        // Opened from the home buttons and the drainage view's row. It stays
+        // under the lakes, trips and lightbox opened from it (hideModals keeps
+        // it), so closing those lands back on the list with its scroll intact.
+        const JOURNAL_TABS = ['trips', 'planned', 'photos'];
+        const journalView = { tab: 'trips', drainage: null, photoIds: [] };
+        const shortDrainage = d => d.replace(/\s+Drainages?$/, '');
+
+        // A trip is in a drainage if any of its lakes is; a photo if any of
+        // its tags is (an untagged trip photo goes by its trip's lakes).
+        function journalScoped(drainage) {
+            const dOf = new Map(lakes.map(l => [l.letter_number, l.drainage]));
+            const inD = lns => !drainage || (lns || []).some(ln => dOf.get(ln) === drainage);
+            const trips = journalList('trip').filter(t => inD(t.lakes)).sort(compareTrips);
+            const photos = journalList('photo').filter(p => {
+                if (!drainage) return true;
+                const trip = !(p.lakes || []).length && p.trip ? getJournalDoc('trip', p.trip) : null;
+                return inD(trip ? trip.lakes : p.lakes);
+            });
+            return { trips: trips.filter(t => !t.planned), planned: trips.filter(t => t.planned), photos };
+        }
+
+        function openJournal(tab = 'trips', drainage = null) {
+            journalView.tab = JOURNAL_TABS.includes(tab) ? tab : 'trips';
+            journalView.drainage = drainage;
+            document.getElementById('journal-modal').classList.remove('hidden');
+            lockBodyScroll('journal');
+            pushModalState('journal', '#journal-' + journalView.tab);
+            renderJournal({ resetScroll: true });
+        }
+        function setJournalTab(tab) {
+            journalView.tab = tab;
+            history.replaceState({ modal: 'journal' }, '', '#journal-' + tab);
+            renderJournal({ resetScroll: true });
+        }
+
+        function renderJournal({ resetScroll = false } = {}) {
+            const { tab, drainage } = journalView;
+            const s = journalScoped(drainage);
+            document.querySelectorAll('#journal-modal [data-jl-tab]').forEach(b => {
+                const on = b.dataset.jlTab === tab;
+                b.classList.toggle('on', on);
+                b.setAttribute('aria-selected', on);
+                b.querySelector('.jl-n').textContent = s[b.dataset.jlTab].length || '';
+            });
+            const where = drainage ? ` in ${escHtml(shortDrainage(drainage))}` : '';
+            const add = { trips: ['add-trip', '＋ New trip'], planned: ['add-plan', '＋ Plan a trip'], photos: ['add-photos', '＋ Add photos'] }[tab];
+            const bar = `
+                <div class="flex flex-wrap items-center gap-2 mb-3">
+                    <button type="button" class="jr-pill" data-jl="${add[0]}">${add[1]}</button>
+                    ${drainage ? `<button type="button" class="jr-chip on" data-jl="unscope" title="Show every drainage">📍 ${escHtml(shortDrainage(drainage))} ✕</button>` : ''}
+                </div>`;
+            let html;
+            if (tab === 'photos') {
+                html = journalPhotosHtml(s.photos);
+                if (!s.photos.length) html = `<div class="jl-empty">No photos${where} yet.${drainage
+                    ? '<br>A photo shows up under a drainage once it’s tagged with one of its lakes, or is on a trip there.' : ''}</div>`;
+            } else {
+                const list = s[tab];
+                html = list.length ? list.map(journalTripCard).join('')
+                    : `<div class="jl-empty">${tab === 'planned' ? 'No future trips planned' : 'No trip reports'}${where} yet.</div>`;
+            }
+            const body = document.getElementById('journal-body');
+            const scroll = resetScroll ? 0 : body.scrollTop;
+            body.innerHTML = bar + html;
+            hydrateMedia(body);
+            body.scrollTop = scroll;
+        }
+
+        function journalTripCard(t) {
+            const photos = photosByTrip.get(t.id) || [];
+            const names = (t.lakes || []).map(lakeLabel);
+            const lakesTxt = names.length > 4 ? `${names.slice(0, 3).join(', ')} +${names.length - 3} more` : names.join(', ');
+            const snippet = (t.body || '').replace(/\s+/g, ' ').trim().slice(0, 240);
+            return `
+                <button type="button" class="jl-card" data-jl="trip" data-id="${escAttr(t.id)}">
+                    <span class="jl-thumb">${photos.length ? `<img data-pid="${escAttr(photos[0].id)}" data-size="t" alt="">` : (t.planned ? '🧭' : '🥾')}</span>
+                    <span class="min-w-0 flex-1">
+                        <span class="block jl-title">${escHtml(t.title || 'Untitled trip')}</span>
+                        <span class="block jr-sub">${escHtml(tripDateLabel(t))}${photos.length ? ` · ${photos.length} photo${photos.length > 1 ? 's' : ''}` : ''}</span>
+                        ${lakesTxt ? `<span class="block jl-lakes">${escHtml(lakesTxt)}</span>` : ''}
+                        ${snippet ? `<span class="jl-snippet">${escHtml(snippet)}</span>` : ''}
+                    </span>
+                </button>`;
+        }
+
+        // Photos grouped by trip (trip-less ones by the month they were taken),
+        // newest group first, each group in shooting order. The lightbox walks
+        // the whole visible set in that order (journalView.photoIds).
+        function journalPhotosHtml(photos) {
+            const groups = new Map();
+            for (const p of photos) {
+                const trip = p.trip ? getJournalDoc('trip', p.trip) : null;
+                const key = trip ? 't:' + trip.id : 'm:' + (p.taken || '').slice(0, 7);
+                if (!groups.has(key)) groups.set(key, { trip, month: trip ? null : (p.taken || '').slice(0, 7), photos: [] });
+                groups.get(key).photos.push(p);
+            }
+            const list = [...groups.values()];
+            list.forEach(g => {
+                g.photos.sort(comparePhotos);
+                const last = g.photos.map(p => p.taken || '').sort().pop();
+                g.sort = g.trip ? (g.trip.date || last || g.trip.updated || '') : g.month;
+            });
+            list.sort((a, b) => a.sort < b.sort ? 1 : a.sort > b.sort ? -1 : 0);
+            journalView.photoIds = list.flatMap(g => g.photos.map(p => p.id));
+            return list.map(g => {
+                const n = `${g.photos.length} photo${g.photos.length > 1 ? 's' : ''}`;
+                let head;
+                if (g.trip) head = `<button type="button" data-jl="trip" data-id="${escAttr(g.trip.id)}">${escHtml(g.trip.title || 'Untitled trip')}</button>
+                                    <span class="jr-sub">${escHtml(tripDateLabel(g.trip))} · ${n}</span>`;
+                else {
+                    const [y, m] = (g.month || '').split('-').map(Number);
+                    const label = y && m ? new Date(y, m - 1, 1).toLocaleDateString(undefined, { month: 'long', year: 'numeric' }) : 'Undated';
+                    head = `<span>${escHtml(label)}</span><span class="jr-sub">${n}</span>`;
+                }
+                return `
+                    <div class="jl-group">
+                        <div class="jl-group-h">${head}</div>
+                        <div class="tv-grid">
+                            ${g.photos.map(p => `<button type="button" class="tv-thumb" data-jl="photo" data-id="${escAttr(p.id)}"
+                                aria-label="${escAttr(p.caption || 'Photo')}"><img data-pid="${escAttr(p.id)}" data-size="t" alt=""></button>`).join('')}
+                        </div>
+                    </div>`;
+            }).join('');
+        }
+
+        // "＋ Add photos" in the list: untagged, trip-less photo docs, then the
+        // first opens in the lightbox editor to tag (GPS suggests lakes).
+        async function addJournalPhotos(files) {
+            const status = document.getElementById('journal-status');
+            const show = (html, error = false) => {
+                status.hidden = !html;
+                status.style.color = error ? '#b91c1c' : '';
+                status.innerHTML = html;
+            };
+            const errors = [], ids = [];
+            for (let i = 0; i < files.length; i++) {
+                show(files.length > 1 ? `Adding photo ${i + 1} of ${files.length}…` : 'Adding photo…');
+                try {
+                    const r = await addPhotoFile(files[i]);
+                    queueJournal('photo', { id: r.id, trip: null, lakes: [], caption: '', taken: r.taken, w: r.w, h: r.h });
+                    ids.push(r.id);
+                } catch (e) { errors.push(escHtml(e.message || String(e))); }
+            }
+            const done = ids.length ? `Added ${ids.length} photo${ids.length > 1 ? 's' : ''} — tag the lakes in ${ids.length > 1 ? 'each' : 'it'} so ${ids.length > 1 ? 'they show' : 'it shows'} up on those lakes.` : '';
+            show(errors.length ? [done, ...errors].filter(Boolean).join('<br>') : done, errors.length > 0);
+            if (!errors.length) setTimeout(() => { if (status.innerHTML === done) show(''); }, 8000);
+            if (!ids.length) return;
+            if (isOpen('journal-modal') && !isOpen('lake-detail-modal') && !isOpen('trip-modal')) {
+                openLightbox(ids, ids[0]);
+                const p = getJournalDoc('photo', ids[0]);
+                if (lightbox.open && p) { lightbox.editing = true; renderLightboxEditor(p); }
+            }
+            await refreshPendingUploads();
+            syncNow();
+        }
+
+        // Home buttons' counts and the drainage view's row.
+        function updateHomeJournal() {
+            const s = journalScoped(null);
+            document.querySelectorAll('#home-journal [data-n]').forEach(el => { el.textContent = s[el.dataset.n].length || ''; });
+        }
+        function renderResultsJournal() {
+            const el = document.getElementById('results-journal');
+            const s = view.drainage ? journalScoped(view.drainage) : null;
+            const items = s ? [['trips', '🥾', s.trips.length, n => n === 1 ? 'trip' : 'trips'],
+                               ['planned', '🧭', s.planned.length, () => 'planned'],
+                               ['photos', '📷', s.photos.length, n => n === 1 ? 'photo' : 'photos']].filter(x => x[2]) : [];
+            el.classList.toggle('hidden', !items.length);
+            el.innerHTML = items.map(([tab, icon, n, word]) =>
+                `<button type="button" class="jr-pill" data-journal-tab="${tab}">${icon} ${n} ${word(n)}</button>`).join('');
+        }
+
+        function initJournalList() {
+            document.getElementById('home-journal').addEventListener('click', (e) => {
+                const b = e.target.closest('[data-journal-tab]');
+                if (b) openJournal(b.dataset.journalTab);
+            });
+            document.getElementById('results-journal').addEventListener('click', (e) => {
+                const b = e.target.closest('[data-journal-tab]');
+                if (b && view.drainage) openJournal(b.dataset.journalTab, view.drainage);
+            });
+            const modal = document.getElementById('journal-modal');
+            document.getElementById('close-journal-modal').addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target.isConnected && !e.target.closest('#journal-modal-card')) closeModal();
+            });
+            modal.querySelector('.jl-tabs').addEventListener('click', (e) => {
+                const b = e.target.closest('[data-jl-tab]');
+                if (b && b.dataset.jlTab !== journalView.tab) setJournalTab(b.dataset.jlTab);
+            });
+            document.getElementById('journal-body').addEventListener('click', (e) => {
+                const b = e.target.closest('[data-jl]');
+                if (!b) return;
+                switch (b.dataset.jl) {
+                    case 'trip': showTripDetail(b.dataset.id); break;
+                    case 'photo': openLightbox(journalView.photoIds, b.dataset.id); break;
+                    case 'add-trip': openTripEditor(null, { lakes: [], planned: false }); break;
+                    case 'add-plan': openTripEditor(null, { lakes: [], planned: true }); break;
+                    case 'add-photos': document.getElementById('journal-photo-input').click(); break;
+                    case 'unscope': journalView.drainage = null; renderJournal({ resetScroll: true }); break;
+                }
+            });
+            document.getElementById('journal-photo-input').addEventListener('change', (e) => {
+                const files = [...e.target.files];
+                e.target.value = '';
+                if (files.length) addJournalPhotos(files);
+            });
+        }
+
+        document.addEventListener('journalchange', () => {
+            updateHomeJournal();
+            if (view.drainage && !document.getElementById('results-section').classList.contains('hidden')) renderResultsJournal();
+            if (isOpen('journal-modal')) renderJournal();
+        });
+
+        // ---- Photo lightbox ---------------------------------------------
+        // Over any modal (z 1400), no history entry. Shows the thumbnail
+        // at once and swaps in the full image when it arrives.
+        const lightbox = { open: false, ids: [], i: 0, editing: false, tags: null, caption: null, seq: 0 };
+
+        function openLightbox(ids, startId) {
+            lightbox.ids = ids.filter(id => getJournalDoc('photo', id));
+            if (!lightbox.ids.length) return;
+            lightbox.i = Math.max(0, lightbox.ids.indexOf(startId));
+            lightbox.open = true;
+            endLightboxEdit();
+            document.getElementById('photo-lightbox').classList.remove('hidden');
+            lockBodyScroll('photo');
+            renderLightbox();
+        }
+        function closeLightbox() {
+            if (!lightbox.open) return;
+            lightbox.open = false;
+            endLightboxEdit();
+            lightbox.seq++;
+            document.getElementById('photo-lightbox').classList.add('hidden');
+            document.getElementById('photo-lightbox').classList.remove('editing');
+            const img = document.getElementById('lb-img');
+            img.removeAttribute('src');
+            delete img.dataset.showing;
+            unlockBodyScroll('photo');
+        }
+        function endLightboxEdit() { lightbox.editing = false; lightbox.tags = null; lightbox.caption = null; }
+        function stepLightbox(d) {
+            const i = lightbox.i + d;
+            if (i < 0 || i >= lightbox.ids.length) return;
+            lightbox.i = i;
+            endLightboxEdit();
+            renderLightbox();
+        }
+        // Journal changed underneath (sync, delete): drop vanished photos,
+        // keep the current one if it survived, never clobber an open edit.
+        function refreshLightbox() {
+            const cur = lightbox.ids[lightbox.i];
+            lightbox.ids = lightbox.ids.filter(id => getJournalDoc('photo', id));
+            if (!lightbox.ids.length) { closeLightbox(); return; }
+            const i = lightbox.ids.indexOf(cur);
+            if (i >= 0) { lightbox.i = i; if (lightbox.editing) return; }
+            else { lightbox.i = Math.min(lightbox.i, lightbox.ids.length - 1); endLightboxEdit(); }
+            renderLightbox();
+        }
+
+        function renderLightbox() {
+            const id = lightbox.ids[lightbox.i];
+            const p = getJournalDoc('photo', id);
+            if (!p) return;
+            const n = lightbox.ids.length;
+            document.getElementById('lb-count').textContent = n > 1 ? `${lightbox.i + 1} / ${n}` : '';
+            document.getElementById('lb-prev').disabled = lightbox.i === 0;
+            document.getElementById('lb-next').disabled = lightbox.i === n - 1;
+            showLightboxImage(p);
+            if (lightbox.editing) renderLightboxEditor(p); else renderLightboxInfo(p);
+            // Warm the neighbour so swiping on is instant.
+            const next = lightbox.ids[lightbox.i + 1];
+            if (next) getPhotoUrl(next, 't').then(() => getPhotoUrl(next, 'f'));
+        }
+        async function showLightboxImage(p) {
+            const img = document.getElementById('lb-img');
+            const msg = document.getElementById('lb-msg');
+            const seq = ++lightbox.seq;
+            img.alt = p.caption || 'Photo';
+            if (img.dataset.showing === p.id && img.dataset.level === 'f') return;
+            if (img.dataset.showing !== p.id) { img.removeAttribute('src'); img.dataset.level = ''; }
+            img.dataset.showing = p.id;
+            img.hidden = false; msg.hidden = true;
+            const thumb = await getPhotoUrl(p.id, 't');
+            if (seq !== lightbox.seq) return;
+            if (thumb && img.dataset.level !== 'f') { img.src = thumb; img.dataset.level = 't'; }
+            const full = await getPhotoUrl(p.id, 'f');
+            if (seq !== lightbox.seq) return;
+            if (full) { img.src = full; img.dataset.level = 'f'; }
+            else if (!thumb) { img.hidden = true; msg.hidden = false; }
+        }
+
+        function renderLightboxInfo(p) {
+            document.getElementById('photo-lightbox').classList.remove('editing');
+            const loc = mediaMeta[p.id];
+            const trip = p.trip ? getJournalDoc('trip', p.trip) : null;
+            const meta = [
+                p.taken ? `<span>${escHtml(photoTakenLabel(p.taken))}</span>` : '',
+                loc && Number.isFinite(loc.lat) && Number.isFinite(loc.lng)
+                    ? `<a id="lb-maps" href="https://maps.apple.com/?ll=${loc.lat},${loc.lng}&q=${encodeURIComponent(p.caption || 'Photo')}" target="_blank" rel="noopener">📍 Open in Maps</a>` : ''
+            ].filter(Boolean).join('');
+            document.getElementById('lb-info').innerHTML = `
+                ${p.caption ? `<div class="lb-caption mb-1">${escHtml(p.caption)}</div>` : ''}
+                ${meta ? `<div class="lb-meta flex flex-wrap" style="gap:.25rem .75rem">${meta}</div>` : ''}
+                ${(p.lakes || []).length ? `<div class="flex flex-wrap gap-1 mt-2">${p.lakes.map(ln => `
+                    <button type="button" class="jr-chip" data-lb="lake" data-ln="${escAttr(ln)}">${escHtml(lakeLabel(ln))} →</button>`).join('')}
+                </div>` : ''}
+                ${trip ? `<div class="mt-2"><button type="button" class="lb-link" data-lb="trip" data-id="${escAttr(trip.id)}">From trip: ${escHtml(trip.title || 'Untitled trip')} →</button></div>` : ''}
+                <div class="flex gap-2 mt-3">
+                    <button type="button" class="jr-btn" data-lb="edit">Edit</button>
+                    <button type="button" class="jr-btn jr-btn-danger" data-lb="delete">Delete</button>
+                </div>`;
+        }
+
+        // Inline editor: caption + lake tags. One-tap candidates are the
+        // trip's lakes, then lakes within ~1.2 km of where it was taken.
+        function renderLightboxEditor(p) {
+            if (!lightbox.tags) { lightbox.tags = [...(p.lakes || [])]; lightbox.caption = p.caption || ''; }
+            const tags = lightbox.tags;
+            const loc = mediaMeta[p.id];
+            const trip = p.trip ? getJournalDoc('trip', p.trip) : null;
+            const near = loc && Number.isFinite(loc.lat) ? lakesNear(loc.lat, loc.lng).slice(0, 5) : [];
+            const km = new Map(near.map(x => [x.letter_number, x.km]));
+            const cands = [...new Set([...(trip ? trip.lakes : []), ...near.map(x => x.letter_number)])]
+                .filter(ln => !tags.includes(ln));
+            document.getElementById('photo-lightbox').classList.add('editing');
+            const info = document.getElementById('lb-info');
+            info.innerHTML = `
+                <label class="lb-meta block mb-1" for="lb-caption-input">Caption</label>
+                <textarea id="lb-caption-input" class="jr-input" rows="2" maxlength="2000" placeholder="What’s in this photo?">${escHtml(lightbox.caption)}</textarea>
+                <div class="lb-meta mt-3 mb-1">Lakes in this photo</div>
+                <div class="flex flex-wrap gap-1">
+                    ${tags.map(ln => `<button type="button" class="jr-chip on" data-lb="untag" data-ln="${escAttr(ln)}" title="Remove">${escHtml(lakeLabel(ln))} ✕</button>`).join('')}
+                    ${cands.map(ln => `<button type="button" class="jr-chip suggest" data-lb="tag" data-ln="${escAttr(ln)}">＋ ${escHtml(lakeLabel(ln))}${km.has(ln) ? ` · ${fmtKm(km.get(ln))}` : ''}</button>`).join('')}
+                    ${!tags.length && !cands.length ? '<span class="lb-meta">None yet</span>' : ''}
+                </div>
+                <input id="lb-lake-search" class="jr-input mt-2" type="text" placeholder="Tag another lake (name or designation)"
+                       autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false">
+                <div id="lb-lake-matches" class="lb-matches" hidden></div>
+                <div class="flex gap-2 mt-3">
+                    <button type="button" class="jr-btn jr-btn-primary" data-lb="save">Save</button>
+                    <button type="button" class="jr-btn" data-lb="cancel">Cancel</button>
+                </div>`;
+            info.querySelector('#lb-caption-input').addEventListener('input', (e) => { lightbox.caption = e.target.value; });
+            const search = info.querySelector('#lb-lake-search');
+            const matches = info.querySelector('#lb-lake-matches');
+            search.addEventListener('input', () => {
+                const found = rankedLakeMatches(search.value.toLowerCase().trim(), tags);
+                matches.hidden = !found.length;
+                matches.innerHTML = found.map(l => `
+                    <button type="button" data-lb="tag" data-ln="${escAttr(l.letter_number)}">${lakeTitle(l)}
+                        <span class="lb-meta"> · ${escHtml(l.drainage || '')}</span></button>`).join('');
+                if (found.length) matches.scrollIntoView({ block: 'nearest' });
+            });
+        }
+
+        function wireLightbox() {
+            const stage = document.getElementById('lb-stage');
+            document.getElementById('lb-close').addEventListener('click', closeLightbox);
+            document.getElementById('lb-prev').addEventListener('click', () => stepLightbox(-1));
+            document.getElementById('lb-next').addEventListener('click', () => stepLightbox(1));
+            stage.addEventListener('click', (e) => { if (e.target === stage) closeLightbox(); });
+            // Swipe: left/right steps through the set, a long pull down closes.
+            let t0 = null;
+            stage.addEventListener('touchstart', (e) => {
+                t0 = e.touches.length === 1 ? { x: e.touches[0].clientX, y: e.touches[0].clientY } : null;
+            }, { passive: true });
+            stage.addEventListener('touchend', (e) => {
+                if (!t0 || lightbox.editing) return;
+                const dx = e.changedTouches[0].clientX - t0.x, dy = e.changedTouches[0].clientY - t0.y;
+                t0 = null;
+                if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) stepLightbox(dx < 0 ? 1 : -1);
+                else if (dy > 90 && dy > Math.abs(dx)) closeLightbox();
+            }, { passive: true });
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.open || lightbox.editing || /^(INPUT|TEXTAREA)$/.test(e.target.tagName)) return;
+                if (e.key === 'ArrowLeft') stepLightbox(-1);
+                else if (e.key === 'ArrowRight') stepLightbox(1);
+            });
+            document.getElementById('lb-info').addEventListener('click', (e) => {
+                const b = e.target.closest('[data-lb]');
+                if (!b) return;
+                const p = getJournalDoc('photo', lightbox.ids[lightbox.i]);
+                if (!p) return;
+                const ln = b.dataset.ln;
+                switch (b.dataset.lb) {
+                    case 'lake':
+                        closeLightbox();
+                        if (isOpen('trip-modal')) openLakeFromTrip(ln);
+                        else if (ln !== currentModalLake || !isOpen('lake-detail-modal')) showLakeDetail(ln);
+                        break;
+                    case 'trip':
+                        closeLightbox();
+                        if (!(isOpen('trip-modal') && currentTrip === b.dataset.id)) showTripDetail(b.dataset.id);
+                        break;
+                    case 'edit': lightbox.editing = true; renderLightboxEditor(p); break;
+                    case 'cancel': endLightboxEdit(); renderLightboxInfo(p); break;
+                    case 'tag': if (!lightbox.tags.includes(ln)) lightbox.tags.push(ln); renderLightboxEditor(p); break;
+                    case 'untag': lightbox.tags = lightbox.tags.filter(x => x !== ln); renderLightboxEditor(p); break;
+                    case 'save': {
+                        const doc = { ...p, caption: lightbox.caption.trim().slice(0, 2000), lakes: [...lightbox.tags] };
+                        endLightboxEdit();
+                        queueJournal('photo', doc);    // journalchange re-renders the info view
+                        syncNow();
+                        break;
+                    }
+                    case 'delete':
+                        armDelete(b, () => { deleteJournal('photo', p.id); syncNow(); });
+                        break;
+                }
             });
         }
 
@@ -3514,7 +5247,7 @@
                 lakeNavPopping = true;
                 showLakeDetail(prev);   // pushModalState replaces the hash
                 lakeNavPopping = false;
-            } else {
+            } else if (!popCross()) {
                 closeModal();
             }
         }
@@ -3531,6 +5264,19 @@
         }
 
         function hideModals() {
+            // The journal list stays under the lake / trip opened from it:
+            // closing that (×, ←, browser back) lands back on the list, which
+            // gets its own history entry again. With nothing above it, it goes.
+            const keepJournal = isOpen('journal-modal') && (isOpen('lake-detail-modal') || isOpen('trip-modal'));
+            closeLightbox();
+            closeLinkForm();
+            discardTripDraft();
+            crossStack.length = 0;
+            currentTrip = null;
+            markDoneOpen = false;
+            tripModalEl().classList.add('hidden');
+            tripModalEl().classList.remove('editing');
+            unlockBodyScroll('trip');
             resetBookView();
             bookReturnScroll = null;
             lakeNavStack.length = 0;
@@ -3541,10 +5287,15 @@
             unlockBodyScroll('lake');
             unlockBodyScroll('about');
             unlockBodyScroll('rotenone');
+            if (!keepJournal) {
+                document.getElementById('journal-modal').classList.add('hidden');
+                unlockBodyScroll('journal');
+            }
             destroyDetailMap();
             if (location.hash) {
                 history.replaceState(null, '', location.pathname + location.search);
             }
+            if (keepJournal) history.pushState({ modal: 'journal' }, '', '#journal-' + journalView.tab);
             // A background data refresh was held back while the modal was open;
             // fold it into the visible view now that it's closing.
             if (deferredRefresh) {
@@ -3670,7 +5421,9 @@
                     if (!e.synced) out.push({ id: e.id, lake: ln, field: f, value: e.v, ts: e.ts });
             return out;
         }
-        const pendingCount = () => pendingEdits().length;
+        // Everything this device still owes the Mini: lake-field edits,
+        // journal docs, and photos not fully uploaded.
+        const pendingCount = () => pendingEdits().length + pendingJournal().length + pendingUploads;
 
         // Overlay local edits onto the in-memory lake objects, and prune
         // entries the exported data already reflects (the edit has completed
@@ -3732,11 +5485,15 @@
             return null;
         }
 
-        let syncing = false;
+        let syncInFlight = null;
         let lastSyncNote = 'Not synced yet this session';
-        async function syncNow() {
-            if (syncing) return;
-            syncing = true;
+        // Callers that await this (chip, panel buttons) get the pass already
+        // running rather than an instant no-op — e.g. the 'online' event's
+        // sync is usually mid-flight when someone taps "Sync now".
+        function syncNow() {
+            return syncInFlight || (syncInFlight = runSync().finally(() => { syncInFlight = null; }));
+        }
+        async function runSync() {
             updateSyncChip('busy');
             try {
                 const base = await resolveSyncUrl();
@@ -3763,6 +5520,10 @@
                     saveLocalEdits();
                 }
 
+                // Journal: photo files first, then the docs that describe them.
+                try { await uploadPendingMedia(base); } catch (e) { console.warn('Photo upload failed:', e); }
+                if (!(await syncJournalDocs(base))) return;
+
                 // Fold in the server's view of the user fields — this is how
                 // edits made on OTHER devices show up here immediately.
                 try {
@@ -3775,7 +5536,21 @@
                             l[f] = server[f] !== undefined ? server[f] : null;
                         });
                     });
+                    // ...and of the journal: other devices' trips, photos and
+                    // links (tombstones included, so deletes propagate).
+                    if (ud.journal) {
+                        serverJournal = ud.journal;
+                        localStorage.setItem('uintas-server-journal', JSON.stringify(serverJournal));
+                    }
+                    if (ud.media_meta) {
+                        localStorage.setItem('uintas-server-media-meta', JSON.stringify(ud.media_meta));
+                        Object.assign(mediaMeta, ud.media_meta);
+                    }
                 } catch (e) { /* freshness fold-in is best-effort */ }
+                rebuildJournal();
+                journalChanged();
+                await refreshPendingUploads();
+                prefetchThumbs(base);   // background; not awaited
 
                 lastSyncNote = pendingCount() ? 'Partially synced' : 'All edits synced';
                 updateMissionProgress();
@@ -3783,9 +5558,530 @@
                 if (lakeModalOpen) deferredRefresh = true;
                 else if (!document.getElementById('results-section').classList.contains('hidden')) renderCurrentView();
             } finally {
-                syncing = false;
                 updateSyncChip();
             }
+        }
+
+        // ---- Journal: trips, photo metadata, lake links --------------------
+        // docs/trips-photos-links-plan.md. User-authored docs that live in
+        // data/journal.json on the Mini (not the DB). Same offline-first shape
+        // as the lake-field edits above, but last-write-wins per DOCUMENT on
+        // doc.updated, folded in order: published (lakes_data.json) → last
+        // server snapshot → this device's pending docs. Deletes are tombstones
+        // ({id, updated, deleted: true}) so they sync like any other write.
+        const JOURNAL_KINDS = { trip: 'trips', photo: 'photos', link: 'links' };
+        const emptyJournal = () => ({ trips: [], photos: [], links: [] });
+        function readStoredJson(key, fallback) {
+            try { return JSON.parse(localStorage.getItem(key)) || fallback; } catch (e) { return fallback; }
+        }
+        let publishedJournal = emptyJournal();
+        // Last /api/user-data journal, so an offline reload still shows docs
+        // other devices synced since lakes_data.json was published.
+        let serverJournal = readStoredJson('uintas-server-journal', emptyJournal());
+        // { "trip:t-…": {kind, doc, synced, error?} } — this device's writes
+        let localJournal = readStoredJson('uintas-local-journal', {});
+        let journalDocs = new Map();     // "kind:id" -> merged doc (incl. tombstones)
+        let tripsByLake = new Map();     // letter_number -> [trip]
+        let photosByLake = new Map();    // letter_number -> [photo]  (explicit tags only)
+        let photosByTrip = new Map();    // trip id -> [photo]
+        let linksByLake = new Map();     // letter_number -> [link]
+        // Private photo locations (data/media/<id>.json on the Mini): this
+        // device's own from the media store + everyone's from /api/user-data.
+        // Never part of lakes_data.json.
+        let mediaMeta = readStoredJson('uintas-server-media-meta', {});
+
+        const journalKey = (kind, id) => kind + ':' + id;
+        const saveLocalJournal = () => localStorage.setItem('uintas-local-journal', JSON.stringify(localJournal));
+
+        // `<kind letter>-<Date.now() base36>-<4 random>` — the server checks it.
+        function newJournalId(kind) {
+            const alphabet = '0123456789abcdefghijklmnopqrstuvwxyz';
+            const rand = Array.from(crypto.getRandomValues(new Uint8Array(4)), b => alphabet[b % 36]).join('');
+            return `${kind[0]}-${Date.now().toString(36)}-${rand}`;
+        }
+
+        function rebuildJournal() {
+            const merged = new Map();
+            const fold = (kind, doc) => {
+                if (!doc || !doc.id || !JOURNAL_KINDS[kind]) return;
+                const k = journalKey(kind, doc.id);
+                const cur = merged.get(k);
+                if (!cur || (doc.updated || '') >= (cur.updated || '')) merged.set(k, doc);
+            };
+            for (const src of [publishedJournal, serverJournal])
+                for (const [kind, plural] of Object.entries(JOURNAL_KINDS))
+                    (src[plural] || []).forEach(d => fold(kind, d));
+            let pruned = false;
+            for (const [k, e] of Object.entries(localJournal)) {
+                // Synced and the published/server copy has caught up: done.
+                const remote = merged.get(k);
+                if (e.synced && remote && (remote.updated || '') >= e.doc.updated) {
+                    delete localJournal[k]; pruned = true; continue;
+                }
+                fold(e.kind, e.doc);
+            }
+            if (pruned) saveLocalJournal();
+            journalDocs = merged;
+
+            tripsByLake = new Map(); photosByLake = new Map(); photosByTrip = new Map(); linksByLake = new Map();
+            const add = (m, k, v) => { if (!m.has(k)) m.set(k, []); m.get(k).push(v); };
+            for (const [k, d] of merged) {
+                if (d.deleted) continue;
+                const kind = k.slice(0, k.indexOf(':'));
+                if (kind === 'trip') (d.lakes || []).forEach(ln => add(tripsByLake, ln, d));
+                else if (kind === 'photo') {
+                    (d.lakes || []).forEach(ln => add(photosByLake, ln, d));
+                    if (d.trip) add(photosByTrip, d.trip, d);
+                } else if (kind === 'link') add(linksByLake, d.lake, d);
+            }
+            tripsByLake.forEach(list => list.sort(compareTrips));
+            photosByLake.forEach(list => list.sort(comparePhotos));
+            photosByTrip.forEach(list => list.sort(comparePhotos));
+            linksByLake.forEach(list => list.sort((a, b) => a.id < b.id ? -1 : 1));
+        }
+        // Taken trips newest first, then planned ones most-recently-touched first.
+        function compareTrips(a, b) {
+            if (!!a.planned !== !!b.planned) return a.planned ? 1 : -1;
+            const ka = a.planned ? a.updated : (a.date || a.updated);
+            const kb = b.planned ? b.updated : (b.date || b.updated);
+            return ka < kb ? 1 : ka > kb ? -1 : 0;
+        }
+        // Photos in the order they were taken (untimed ones by creation id).
+        function comparePhotos(a, b) {
+            const ka = a.taken || a.id, kb = b.taken || b.id;
+            return ka < kb ? -1 : ka > kb ? 1 : 0;
+        }
+        // Live (non-deleted) docs of one kind.
+        function journalList(kind) {
+            const out = [];
+            for (const [k, d] of journalDocs) if (!d.deleted && k.startsWith(kind + ':')) out.push(d);
+            return out;
+        }
+        function getJournalDoc(kind, id) {
+            const d = journalDocs.get(journalKey(kind, id));
+            return d && !d.deleted ? d : null;
+        }
+
+        // The one write path for journal docs: stamp `updated`, keep it as a
+        // pending local doc, re-index, notify. Works offline; syncNow() ships it.
+        function queueJournal(kind, doc) {
+            const k = journalKey(kind, doc.id);
+            const prev = journalDocs.get(k);
+            let updated = new Date().toISOString();
+            // Never stamp older than the copy being replaced (clock skew).
+            if (prev && prev.updated && updated <= prev.updated)
+                updated = new Date(Date.parse(prev.updated) + 1).toISOString();
+            const stamped = { ...doc, updated };
+            localJournal[k] = { kind, doc: stamped, synced: false };
+            saveLocalJournal();
+            rebuildJournal();
+            journalChanged();
+            return stamped;
+        }
+        const deleteJournal = (kind, id) => queueJournal(kind, { id, deleted: true });
+        function journalChanged() {
+            updateSyncChip();
+            document.dispatchEvent(new CustomEvent('journalchange'));
+        }
+        const pendingJournal = () => Object.values(localJournal)
+            .filter(e => !e.synced && !e.error).map(e => ({ kind: e.kind, doc: e.doc }));
+        // Docs the server refused (validation). Kept, not retried, until edited again.
+        const rejectedJournal = () => Object.values(localJournal).filter(e => !e.synced && e.error);
+
+        function foldServerDoc(kind, doc) {
+            const plural = JOURNAL_KINDS[kind];
+            if (!plural || !doc || !doc.id) return;
+            const list = serverJournal[plural] = (serverJournal[plural] || []).filter(d => d.id !== doc.id);
+            list.push(doc);
+        }
+
+        // POST pending docs. Returns false on a transport/HTTP failure.
+        async function syncJournalDocs(base) {
+            const docs = pendingJournal();
+            for (let i = 0; i < docs.length; i += 200) {
+                const batch = docs.slice(i, i + 200);
+                const sent = new Map(batch.map(({ kind, doc }) => [journalKey(kind, doc.id), doc.updated]));
+                const r = await fetch(base + '/api/journal', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ device: deviceId, docs: batch })
+                });
+                if (!r.ok) { lastSyncNote = `Sync failed (HTTP ${r.status})`; return false; }
+                const { results } = await r.json();
+                for (const res of results || []) {
+                    const k = journalKey(res.kind, res.id);
+                    const e = localJournal[k];
+                    // Re-edited while the request was in flight: leave the newer copy pending.
+                    if (!e || e.doc.updated !== sent.get(k)) continue;
+                    if (res.result === 'applied') e.synced = true;
+                    else if (res.result === 'superseded') { delete localJournal[k]; foldServerDoc(res.kind, res.current); }
+                    else { e.error = res.message || 'rejected by server'; console.warn('Journal doc rejected:', k, e.error); }
+                }
+                saveLocalJournal();
+            }
+            return true;
+        }
+
+        // ---- Media store: photo blobs on this device --------------------
+        // Its own IndexedDB (not the service worker's caches, so the offline
+        // contract in service-worker.js is untouched). blobs: "<id>:f" / "<id>:t"
+        // → JPEG Blob. meta: id → {id, created, uploadedF, uploadedT, uploadedS,
+        // sidecar, error}. Holds the photos taken here (until deleted) plus
+        // every photo this device has viewed, so they work offline. Images are
+        // stored as ArrayBuffers, not Blobs: Safari refuses Blobs in IndexedDB
+        // in private/ephemeral mode, and older WebKit had Blob-in-IDB bugs.
+        const MEDIA_DB = 'uintas-media';
+        let mediaDbPromise = null;
+        function mediaDb() {
+            if (!mediaDbPromise) {
+                mediaDbPromise = new Promise((resolve, reject) => {
+                    if (!window.indexedDB) return reject(new Error('no indexedDB'));
+                    const req = indexedDB.open(MEDIA_DB, 1);
+                    req.onupgradeneeded = () => {
+                        req.result.createObjectStore('blobs');
+                        req.result.createObjectStore('meta');
+                    };
+                    req.onsuccess = () => {
+                        const db = req.result;
+                        db.onversionchange = () => { db.close(); mediaDbPromise = null; };
+                        resolve(db);
+                    };
+                    req.onerror = () => reject(req.error);
+                    req.onblocked = () => reject(new Error('blocked'));
+                }).catch(e => { mediaDbPromise = null; throw e; });
+            }
+            return mediaDbPromise;
+        }
+        async function mediaTx(store, mode, fn) {
+            const db = await mediaDb();
+            return new Promise((resolve, reject) => {
+                const tx = db.transaction(store, mode);
+                const req = fn(tx.objectStore(store));
+                tx.oncomplete = () => resolve(req ? req.result : undefined);
+                tx.onerror = () => reject(tx.error || new Error('IndexedDB write failed'));
+                tx.onabort = () => reject(tx.error || new Error('IndexedDB transaction aborted'));
+            });
+        }
+        const mediaGet = (store, key) => mediaTx(store, 'readonly', s => s.get(key));
+        const mediaPut = (store, key, val) => mediaTx(store, 'readwrite', s => s.put(val, key));
+        const mediaAll = (store) => mediaTx(store, 'readonly', s => s.getAll());
+        const mediaKeys = (store) => mediaTx(store, 'readonly', s => s.getAllKeys());
+        async function putImage(key, blob) {
+            await mediaPut('blobs', key, await blob.arrayBuffer());
+        }
+        async function getImage(key) {
+            const v = await mediaGet('blobs', key);
+            if (!v) return null;
+            return v instanceof Blob ? v : new Blob([v], { type: 'image/jpeg' });
+        }
+
+        const photoUrlCache = new Map();     // "id:t" -> object URL
+        const photoUrlInflight = new Map();
+
+        // Drop a photo's blobs + meta from this device (Cancel on an unsaved
+        // photo, or after its tombstone has synced).
+        async function discardPhotoMedia(id) {
+            await mediaTx('blobs', 'readwrite', s => { s.delete(id + ':f'); return s.delete(id + ':t'); });
+            await mediaTx('meta', 'readwrite', s => s.delete(id));
+            for (const size of ['f', 't']) {
+                const url = photoUrlCache.get(`${id}:${size}`);
+                if (url) { URL.revokeObjectURL(url); photoUrlCache.delete(`${id}:${size}`); }
+            }
+        }
+
+        let resolvingSync = null;
+        function ensureSyncUrl() {
+            if (syncUrl) return Promise.resolve(syncUrl);
+            return resolvingSync || (resolvingSync = resolveSyncUrl().finally(() => { resolvingSync = null; }));
+        }
+
+        async function fetchMediaBlob(base, id, size) {
+            const r = await fetch(`${base}/api/media/${id}${size === 't' ? '_t' : ''}.jpg`);
+            if (!r.ok) return null;
+            const blob = await r.blob();
+            await putImage(`${id}:${size}`, blob).catch(() => {});
+            return blob;
+        }
+
+        // Object URL for a photo: this device's copy → the Mini → null (offline).
+        function getPhotoUrl(id, size) {
+            const key = `${id}:${size}`;
+            if (photoUrlCache.has(key)) return Promise.resolve(photoUrlCache.get(key));
+            if (photoUrlInflight.has(key)) return photoUrlInflight.get(key);
+            const p = (async () => {
+                let blob = null;
+                try { blob = await getImage(key); } catch (e) { /* no IDB: try the network */ }
+                if (!blob) {
+                    const base = await ensureSyncUrl();
+                    if (base) blob = await fetchMediaBlob(base, id, size).catch(() => null);
+                }
+                if (!blob) return null;
+                const url = URL.createObjectURL(blob);
+                photoUrlCache.set(key, url);
+                return url;
+            })().finally(() => photoUrlInflight.delete(key));
+            photoUrlInflight.set(key, p);
+            return p;
+        }
+
+        // Resolve every `<img data-pid=… data-size="t|f">` placeholder under root.
+        function hydrateMedia(root = document) {
+            root.querySelectorAll('img[data-pid]:not([data-media-state])').forEach(img => {
+                img.dataset.mediaState = 'loading';
+                getPhotoUrl(img.dataset.pid, img.dataset.size === 'f' ? 'f' : 't').then(url => {
+                    if (url) { img.src = url; img.dataset.mediaState = 'ok'; }
+                    else { img.dataset.mediaState = 'offline'; if (!img.alt) img.alt = 'Photo not available offline'; }
+                });
+            });
+        }
+
+        // Photos still to reach the Mini (only ones with a live photo doc —
+        // an unsaved draft's blobs are never uploaded).
+        let pendingUploads = 0;
+        function needsUpload(m) {
+            const doc = journalDocs.get(journalKey('photo', m.id));
+            return !!doc && !doc.deleted && !m.error &&
+                (!m.uploadedF || !m.uploadedT || (!!m.sidecar && !m.uploadedS));
+        }
+        async function refreshPendingUploads() {
+            try { pendingUploads = (await mediaAll('meta')).filter(needsUpload).length; }
+            catch (e) { pendingUploads = 0; }
+            updateSyncChip();
+        }
+
+        // PUT pending thumbnails, full images and location sidecars. Also
+        // purges blobs of deleted photos (once the tombstone has synced) and
+        // drafts abandoned for 3+ days. Returns the number that failed.
+        async function uploadPendingMedia(base) {
+            let metas;
+            try { metas = await mediaAll('meta'); } catch (e) { return 0; }
+            let failed = 0;
+            for (const m of metas) {
+                const k = journalKey('photo', m.id);
+                const doc = journalDocs.get(k);
+                const local = localJournal[k];
+                if ((doc && doc.deleted && !(local && !local.synced)) ||
+                    (!doc && Date.now() - (m.created || 0) > 3 * 86400e3)) {
+                    await discardPhotoMedia(m.id).catch(() => {});
+                    continue;
+                }
+                if (!needsUpload(m)) continue;
+                try {
+                    for (const [flag, size, suffix] of [['uploadedT', 't', '_t.jpg'], ['uploadedF', 'f', '.jpg']]) {
+                        if (m[flag]) continue;
+                        const blob = await getImage(`${m.id}:${size}`);
+                        if (!blob) { m.error = 'image missing on this device'; break; }
+                        const r = await fetch(`${base}/api/media/${m.id}${suffix}`,
+                            { method: 'PUT', headers: { 'Content-Type': 'image/jpeg' }, body: blob });
+                        if ([400, 413, 415].includes(r.status)) { m.error = `rejected by server (HTTP ${r.status})`; break; }
+                        if (!r.ok) throw new Error('HTTP ' + r.status);
+                        m[flag] = true;
+                    }
+                    if (!m.error && m.sidecar && !m.uploadedS) {
+                        const r = await fetch(`${base}/api/media/${m.id}.json`,
+                            { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(m.sidecar) });
+                        if (r.ok) m.uploadedS = true;
+                        else if ([400, 413].includes(r.status)) { m.uploadedS = true; m.sidecarError = `HTTP ${r.status}`; }
+                        else throw new Error('HTTP ' + r.status);
+                    }
+                } catch (e) { failed++; }
+                if (m.error) console.warn('Photo upload rejected:', m.id, m.error);
+                await mediaPut('meta', m.id, m).catch(() => {});
+            }
+            return failed;
+        }
+
+        // Pull thumbnails this device doesn't have yet, 3 at a time, so the
+        // strips and grids work offline later. Best-effort, in the background.
+        async function prefetchThumbs(base) {
+            let have;
+            try { have = new Set(await mediaKeys('blobs')); } catch (e) { return; }
+            const queue = journalList('photo').map(p => p.id).filter(id => !have.has(id + ':t'));
+            const worker = async () => {
+                while (queue.length) {
+                    const id = queue.shift();
+                    await fetchMediaBlob(base, id, 't').catch(() => null);
+                }
+            };
+            await Promise.all([worker(), worker(), worker()]);
+        }
+
+        async function initMediaState() {
+            try {
+                for (const m of await mediaAll('meta')) if (m.sidecar) mediaMeta[m.id] = m.sidecar;
+            } catch (e) { /* no IDB: photos just won't be offline */ }
+            refreshPendingUploads();
+        }
+
+        // ---- Image pipeline: a picked file → full + thumbnail JPEGs ------
+        // Re-encoding through a canvas strips ALL metadata from the image
+        // files; the one place a location survives is the private sidecar,
+        // read from the original bytes first.
+        let storagePersistAsked = false;
+        function askPersistentStorage() {
+            if (!storagePersistAsked && navigator.storage && navigator.storage.persist) {
+                storagePersistAsked = true;
+                navigator.storage.persist().catch(() => {});
+            }
+        }
+        async function addPhotoFile(file) {
+            askPersistentStorage();
+            // Read the picked file exactly once and work from the in-memory
+            // copy: re-reading a File can fail (NotReadableError) on WebKit.
+            const buf = await file.arrayBuffer();
+            let exif = {};
+            try { exif = parseExif(buf); } catch (e) { console.warn('EXIF parse failed:', e); }
+            let source;
+            try { source = await decodeImage(new Blob([buf], { type: file.type || 'image/jpeg' })); } catch (e) {
+                const heic = /hei[cf]/i.test((file.type || '') + (file.name || ''));
+                throw new Error(`Couldn't read “${file.name || 'that file'}” — ` + (heic
+                    ? 'this browser can’t decode HEIC photos. Add it from the iPhone, or export it as JPEG.'
+                    : 'it doesn’t look like an image this browser can open.'));
+            }
+            let full, thumb;
+            try {
+                full = await renderJpeg(source, 2048, 0.86);
+                thumb = await renderJpeg(source, 480, 0.8);
+            } finally { if (source.close) source.close(); }
+            const id = newJournalId('photo');
+            const sidecar = exif.lat != null ? {
+                lat: exif.lat, lng: exif.lng, alt: exif.alt ?? null, gps_time: exif.gps_time || null,
+                taken: exif.taken || null, make: exif.make || null, model: exif.model || null
+            } : null;
+            await putImage(id + ':f', full.blob);
+            await putImage(id + ':t', thumb.blob);
+            await mediaPut('meta', id, { id, created: Date.now(), uploadedF: false, uploadedT: false,
+                                         uploadedS: false, sidecar, error: null });
+            if (sidecar) mediaMeta[id] = sidecar;
+            return { id, taken: exif.taken || null, w: full.w, h: full.h, sidecar,
+                     nearLakes: sidecar ? lakesNear(sidecar.lat, sidecar.lng) : [] };
+        }
+
+        async function decodeImage(blob) {
+            if (window.createImageBitmap) {
+                try { return await createImageBitmap(blob); } catch (e) { /* fall back to <img> */ }
+            }
+            const url = URL.createObjectURL(blob);
+            try {
+                const img = new Image();
+                img.decoding = 'async';
+                img.src = url;
+                await img.decode();
+                return img;
+            } finally { URL.revokeObjectURL(url); }
+        }
+
+        function renderJpeg(source, maxSide, quality) {
+            const sw = source.naturalWidth || source.width, sh = source.naturalHeight || source.height;
+            const scale = Math.min(1, maxSide / Math.max(sw, sh));
+            const w = Math.max(1, Math.round(sw * scale)), h = Math.max(1, Math.round(sh * scale));
+            const canvas = document.createElement('canvas');
+            canvas.width = w; canvas.height = h;
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = '#fff';            // transparent PNG screenshots → white, not black
+            ctx.fillRect(0, 0, w, h);
+            ctx.imageSmoothingQuality = 'high';
+            ctx.drawImage(source, 0, 0, w, h);
+            return new Promise((resolve, reject) => canvas.toBlob(
+                blob => blob ? resolve({ blob, w, h }) : reject(new Error('Could not encode the image (out of memory?)')),
+                'image/jpeg', quality));
+        }
+
+        // Minimal EXIF reader for JPEGs: DateTimeOriginal, Make/Model, GPS.
+        // Returns {} for anything else (PNG screenshots, HEIC, no APP1).
+        function parseExif(buf) {
+            const v = new DataView(buf);
+            if (v.byteLength < 4 || v.getUint16(0) !== 0xFFD8) return {};
+            let off = 2;
+            while (off + 4 <= v.byteLength) {
+                if (v.getUint8(off) !== 0xFF) return {};
+                const marker = v.getUint8(off + 1);
+                if (marker === 0xDA || marker === 0xD9) return {};   // image data: no EXIF before it
+                const len = v.getUint16(off + 2);
+                if (marker === 0xE1 && len >= 16 && v.getUint32(off + 4) === 0x45786966 && v.getUint16(off + 8) === 0)
+                    return readExifTiff(v, off + 10, Math.min(len - 8, v.byteLength - off - 10));
+                off += 2 + len;
+            }
+            return {};
+        }
+        function readExifTiff(v, start, length) {
+            const le = v.getUint16(start) === 0x4949;    // "II" little-endian, "MM" big
+            const u16 = o => v.getUint16(start + o, le);
+            const u32 = o => v.getUint32(start + o, le);
+            if (u16(2) !== 42) return {};
+            const SIZES = { 1: 1, 2: 1, 3: 2, 4: 4, 5: 8, 7: 1, 9: 4, 10: 8 };
+            const readValue = (type, count, o) => {
+                if (type === 2) {
+                    let s = '';
+                    for (let i = 0; i < count; i++) { const c = v.getUint8(start + o + i); if (!c) break; s += String.fromCharCode(c); }
+                    return s.trim();
+                }
+                const vals = [];
+                for (let i = 0; i < count; i++) {
+                    const p = o + i * SIZES[type];
+                    if (type === 3) vals.push(u16(p));
+                    else if (type === 4) vals.push(u32(p));
+                    else if (type === 9) vals.push(v.getInt32(start + p, le));
+                    else if (type === 5) vals.push(u32(p) / u32(p + 4));
+                    else if (type === 10) vals.push(v.getInt32(start + p, le) / v.getInt32(start + p + 4, le));
+                    else vals.push(v.getUint8(start + p));
+                }
+                return count === 1 ? vals[0] : vals;
+            };
+            const readIfd = (o) => {
+                const tags = {};
+                if (!o || o + 2 > length) return tags;
+                const n = u16(o);
+                for (let i = 0; i < n; i++) {
+                    const e = o + 2 + i * 12;
+                    if (e + 12 > length) break;
+                    const tag = u16(e), type = u16(e + 2), count = u32(e + 4);
+                    if (!SIZES[type] || count > 4096) continue;
+                    const total = SIZES[type] * count;
+                    const vo = total <= 4 ? e + 8 : u32(e + 8);
+                    if (vo + total > length) continue;
+                    tags[tag] = readValue(type, count, vo);
+                }
+                return tags;
+            };
+            const ifd0 = readIfd(u32(4));
+            const exifIfd = typeof ifd0[0x8769] === 'number' ? readIfd(ifd0[0x8769]) : {};
+            const gps = typeof ifd0[0x8825] === 'number' ? readIfd(ifd0[0x8825]) : {};
+            const out = {};
+            const dt = String(exifIfd[0x9003] || ifd0[0x0132] || '').match(/^(\d{4}):(\d\d):(\d\d)[ T](\d\d):(\d\d):(\d\d)/);
+            if (dt && dt[1] !== '0000') out.taken = `${dt[1]}-${dt[2]}-${dt[3]}T${dt[4]}:${dt[5]}:${dt[6]}`;
+            if (typeof ifd0[0x010F] === 'string' && ifd0[0x010F]) out.make = ifd0[0x010F].slice(0, 64);
+            if (typeof ifd0[0x0110] === 'string' && ifd0[0x0110]) out.model = ifd0[0x0110].slice(0, 64);
+            const dms = a => Array.isArray(a) && a.length === 3 ? a[0] + a[1] / 60 + a[2] / 3600 : NaN;
+            const lat = dms(gps[2]) * (gps[1] === 'S' ? -1 : 1);
+            const lng = dms(gps[4]) * (gps[3] === 'W' ? -1 : 1);
+            if (Number.isFinite(lat) && Number.isFinite(lng) && Math.abs(lat) <= 90 && Math.abs(lng) <= 180 && (lat || lng)) {
+                out.lat = Math.round(lat * 1e7) / 1e7;
+                out.lng = Math.round(lng * 1e7) / 1e7;
+                const alt = typeof gps[6] === 'number' ? gps[6] * (gps[5] === 1 ? -1 : 1) : NaN;
+                if (Number.isFinite(alt) && alt >= -500 && alt <= 9000) out.alt = Math.round(alt * 10) / 10;
+                const t = gps[7];
+                if (typeof gps[0x1D] === 'string' && /^\d{4}:\d\d:\d\d$/.test(gps[0x1D]) && Array.isArray(t) && t.length === 3 && t.every(Number.isFinite)) {
+                    const p2 = n => String(Math.floor(n)).padStart(2, '0');
+                    out.gps_time = `${gps[0x1D].replace(/:/g, '-')}T${p2(t[0])}:${p2(t[1])}:${p2(t[2])}Z`;
+                }
+            }
+            return out;
+        }
+
+        function haversineKm(lat1, lng1, lat2, lng2) {
+            const rad = d => d * Math.PI / 180;
+            const a = Math.sin(rad(lat2 - lat1) / 2) ** 2 +
+                      Math.cos(rad(lat1)) * Math.cos(rad(lat2)) * Math.sin(rad(lng2 - lng1) / 2) ** 2;
+            return 6371 * 2 * Math.asin(Math.sqrt(a));
+        }
+        // Lakes (with placed coordinates) within `km` of a point, nearest first:
+        // [{letter_number, km}] — drives one-tap lake tags for GPS photos.
+        function lakesNear(lat, lng, km = 1.2) {
+            return lakes.filter(l => l.lat != null && l.lng != null)
+                .map(l => ({ letter_number: l.letter_number, km: haversineKm(lat, lng, l.lat, l.lng) }))
+                .filter(x => x.km <= km)
+                .sort((a, b) => a.km - b.km);
         }
 
         // ---- Sync UI: header chip + settings panel ----
@@ -3800,7 +6096,7 @@
                 chip.textContent = '↻ Syncing…';
             } else if (n > 0) {
                 chip.className = base + 'bg-amber-100 text-amber-800 border-amber-300';
-                chip.textContent = `● ${n} edit${n === 1 ? '' : 's'} pending — tap to sync`;
+                chip.textContent = `● ${n} change${n === 1 ? '' : 's'} pending — tap to sync`;
             } else if (state === 'flash') {
                 chip.className = base + 'bg-green-100 text-green-800 border-green-300';
                 chip.textContent = '✓ Synced';
@@ -3820,16 +6116,79 @@
             lockBodyScroll('sync');
         }
         function refreshSyncModalStatus() {
-            const n = pendingCount();
+            const plural = (k, word) => `${k} ${word}${k === 1 ? '' : 's'}`;
+            const parts = [];
+            const e = pendingEdits().length, j = pendingJournal().length, rejected = rejectedJournal().length;
+            if (e) parts.push(plural(e, 'edit'));
+            if (j) parts.push(plural(j, 'trip/photo/link change'));
+            if (pendingUploads) parts.push(plural(pendingUploads, 'photo upload'));
             document.getElementById('sync-status-line').textContent =
-                `${n ? `${n} edit${n === 1 ? '' : 's'} waiting to sync` : 'No pending edits'}` +
+                (parts.length ? `${parts.join(', ')} waiting to sync` : 'No pending edits') +
+                (rejected ? ` · ${plural(rejected, 'change')} rejected by the server` : '') +
                 ` · ${lastSyncNote}` + (syncUrl ? ` · server: ${syncUrl}` : '');
+            refreshPhotoStatus();
         }
+
+        // Sync panel → Photos: how many are on this device full-size, how
+        // many still have to reach the Mini, and a "save them all" pass.
+        let savingPhotos = null;
+        async function refreshPhotoStatus() {
+            const line = document.getElementById('photos-status-line');
+            const btn = document.getElementById('photos-save-all-btn');
+            const ids = journalList('photo').map(p => p.id);
+            let have = new Set(), metas = [];
+            try { have = new Set(await mediaKeys('blobs')); metas = await mediaAll('meta'); } catch (e) { /* no IDB */ }
+            const full = ids.filter(id => have.has(id + ':f')).length;
+            const waiting = metas.filter(needsUpload).length;
+            const rejected = metas.filter(m => m.error && getJournalDoc('photo', m.id)).length;
+            line.textContent = !ids.length ? 'No photos yet' : [
+                `${ids.length} photo${ids.length === 1 ? '' : 's'}`,
+                `${full} full-size on this device`,
+                waiting ? `${waiting} waiting to upload` : '',
+                rejected ? `${rejected} rejected by the server` : ''].filter(Boolean).join(' · ');
+            const missing = ids.length - full;
+            btn.disabled = !!savingPhotos || !missing;
+            if (!savingPhotos) btn.textContent = ids.length && !missing ? 'All full-size photos are on this device ✓'
+                : `Save all full-size photos offline${missing ? ` (${missing})` : ''}`;
+        }
+        function saveAllFullPhotos() {
+            return savingPhotos || (savingPhotos = (async () => {
+                const prog = document.getElementById('photos-save-progress');
+                const btn = document.getElementById('photos-save-all-btn');
+                const say = t => { prog.hidden = !t; prog.textContent = t; };
+                btn.disabled = true;
+                btn.textContent = 'Saving…';
+                askPersistentStorage();
+                let have;
+                try { have = new Set(await mediaKeys('blobs')); }
+                catch (e) { say('This browser isn’t letting the app store photos (private mode?).'); return; }
+                const queue = journalList('photo').map(p => p.id).filter(id => !have.has(id + ':f'));
+                if (!queue.length) { say(''); return; }
+                const base = await ensureSyncUrl();
+                if (!base) { say('Can’t reach the Mac Mini — on the iPhone, turn the Tailscale VPN on and try again.'); return; }
+                const total = queue.length;
+                let done = 0, failed = 0;
+                say(`Saving 0 of ${total}…`);
+                const worker = async () => {
+                    while (queue.length) {
+                        const id = queue.shift();
+                        if (!await fetchMediaBlob(base, id, 'f').catch(() => null)) failed++;
+                        done++;
+                        say(`Saving ${done} of ${total}…`);
+                    }
+                };
+                await Promise.all([worker(), worker(), worker()]);
+                say(failed ? `Saved ${total - failed} of ${total}; ${failed} couldn’t be downloaded (not uploaded from their device yet?).`
+                           : `Saved ${total} full-size photo${total === 1 ? '' : 's'} on this device.`);
+            })().finally(() => { savingPhotos = null; refreshPhotoStatus(); }));
+        }
+
         function closeSyncModal() {
             document.getElementById('sync-modal').classList.add('hidden');
             unlockBodyScroll('sync');
         }
         function initSyncUI() {
+            initMediaState();
             document.getElementById('sync-chip').addEventListener('click', () =>
                 syncNow().then(() => updateSyncChip(pendingCount() ? undefined : 'flash')));
             document.getElementById('sync-settings-link').addEventListener('click', openSyncModal);
@@ -3846,6 +6205,7 @@
             });
             document.getElementById('sync-now-btn').addEventListener('click', () =>
                 syncNow().then(refreshSyncModalStatus));
+            document.getElementById('photos-save-all-btn').addEventListener('click', saveAllFullPhotos);
 
             // Notifications (Web Push) controls
             document.getElementById('notif-toggle-btn').addEventListener('click', (e) => {

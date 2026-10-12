@@ -51,6 +51,16 @@ NULL as unknown, not as low.
 skunked), `OTHERS` (3, others caught fish), NULL (692, never logged).
 "Untried" / "haven't been" = `status IS NULL`.
 
+**Jed's journal** (`data/journal.json`: the trips he logs in the app):
+`trip_count` / `last_trip` / `trip_titles` (taken trips that include the
+lake; `last_trip` is `YYYY-MM-DD` or month-only `YYYY-MM`; titles are
+`" | "`-joined because they contain commas), `planned_trip_count` /
+`planned_trip_titles` (future trips), `journal_photos` (Jed's photos tagged
+with the lake — not `n_photos`, which counts junesucker photos), and
+`lake_links` (saved web links). "Been there" is `status IS NOT NULL OR
+trip_count > 0`. A trip's full text is in the journal file, not the cache.
+`has_trip_reports` is the legacy per-lake text that Trips replaced.
+
 ## Gotchas that will bite
 
 - **An asterisk in `species` means historical.** `"Brookies, Cutthroats*"`

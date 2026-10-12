@@ -36,11 +36,12 @@ autostash conflicts).
   (internal-disk plist, FDA on the venv python, reboot revival via the
   agent-bootstrapper). Full runbook: `deploy/README.md`.
 
-### App edits (status / Jed's Notes / trip reports) — the PWA write path
-Since 2026-08-10 the user-owned lake fields (`status`, `jed_notes`,
-`trip_reports`) are edited **in the PWA itself** ("My Record" section of the
-lake modal), not in Apple Notes. This keeps the single-writer model intact
-while allowing edits to *originate* on any device:
+### App edits (status / Jed's Notes) — the PWA write path
+Since 2026-08-10 the user-owned lake fields (`status`, `jed_notes`) are
+edited **in the PWA itself** ("My Record" section of the lake modal), not in
+Apple Notes. (`trip_reports` is now shown read-only as "Older notes"; Trips
+in the journal, below, replaced it in 2026-10.) This keeps the single-writer
+model intact while allowing edits to *originate* on any device:
 
 - **Client side (`index.html`)**: saves land in `localStorage` instantly
   (fully offline — designed for multi-day trips), overlay the loaded data, and
@@ -66,12 +67,63 @@ while allowing edits to *originate* on any device:
   week gets "superseded" (not applied) for any edit older than what another
   device already wrote to the same field.
 - **Test harness**: `python3 scripts/edits_server.py --db /tmp/x.db --log
-  /tmp/x.jsonl --no-git --port 8899` — also serves the repo statically, so one
-  process backs a full browser test.
+  /tmp/x.jsonl --journal /tmp/j.json --media /tmp/media --no-git --port 8899
+  --host 127.0.0.1` — also serves the repo statically, so one process backs a
+  full browser test. **Always** pass `--journal`/`--media` in tests, and point
+  ad-hoc Playwright probes at the harness (set `uintas-sync-url`, abort
+  `olaf.local|ts.net`): a probe of `:8804` syncs to the *live* server, which
+  commits and pushes whatever it receives (2026-10-10 junk-trip incident).
 
 ```bash
 curl http://olaf.local:8802/api/ping        # is the writer up?
 tail -f /Users/jed/Library/Logs/uintas-edits-server.log
+```
+
+### Journal: trips, photos, lake links (added 2026-10)
+Trips (taken or planned, spanning many lakes), photo metadata and per-lake
+links are documents in **`data/journal.json`** — committed, outside the DB
+(same reasoning as the edits log), written only by the edits server, schema
+enforced by `scripts/journal_store.py` (unknown fields are dropped, so a new
+client field needs a server change too). Design + history:
+`docs/trips-photos-links-plan.md`.
+
+- **Sync** is per-document last-write-wins on the client-stamped `updated`;
+  deletes are tombstones. `POST /api/journal {device, docs:[{kind, doc}]}`
+  answers per doc `applied | superseded{current} | error{message}`.
+  `GET /api/user-data` also returns `journal` (incl. tombstones) and
+  `media_meta`. The exporter drops tombstones and emits `journal` into
+  `lakes_data.json`; the pre-commit hook re-exports when `data/journal.json`
+  is staged.
+- **Photos are private, on the Mini.** Images live in gitignored
+  **`data/media/`** (`<id>.jpg` ≤ 2048 px, `<id>_t.jpg` thumb), uploaded by
+  `PUT /api/media/<id>.jpg|_t.jpg` (`image/jpeg`, ≤ 12 MB) and served by
+  `GET /api/media/…` — reachable over LAN :8802 or Tailscale :8443, **never**
+  github.io. **Never commit `data/media/`** (the repo is public). Each device
+  keeps the photos it took or viewed in IndexedDB `uintas-media` for offline
+  use; the Sync panel can pull every full-size image down before a trip.
+- **Location stays private too.** GPS/EXIF is read on the device before the
+  re-encode strips it, and stored only as a sidecar `data/media/<id>.json`
+  (`PUT …/<id>.json`, not GET-able; served only via `user-data.media_meta`).
+  It never reaches `journal.json`. Photo captions, lake tags, trip text and
+  links ARE public, like `jed_notes`.
+- **Backup**: `data/media/` is covered only by Time Machine on the Mini; the
+  originals stay in the phone's camera roll. A photo's tombstone deletes its
+  three media files on the server.
+- **iOS photo picker**: it may strip location from the file handed to a web
+  page unless "Options → Location" is on in the picker (iOS 17+).
+- `GET /api/link-title?url=` fetches a page's `og:title`/`<title>` for the
+  add-link form (the browser can't fetch cross-origin pages); refuses
+  private/loopback hosts.
+- Static fence: GET/HEAD under `/data/push/` and `/data/media/` → 404, so the
+  Tailscale proxy can't leak the VAPID key or bypass the media API.
+- **Regression suite**: `tests/journal/run.sh` (server endpoints, client data
+  layer, lake/trip/list UI, in Chromium and WebKit; ~4 min, harness only).
+  Run it after any journal / sync / media change.
+
+```bash
+python3 -c "import json; d=json.load(open('data/journal.json')); print({k: len(v) for k, v in d.items() if k != 'version'})"
+du -sh data/media/
+tests/journal/run.sh
 ```
 
 ### Push notifications + home-screen badge (iOS 16.4+ Web Push, added 2026-08-15)

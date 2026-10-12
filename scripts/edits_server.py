@@ -241,6 +241,14 @@ def apply_journal(db_path, device, docs):
                 results.append({"kind": kind, "id": doc_id, "result": "superseded",
                                 "current": current})
                 continue
+            if kind == "photo" and clean.get("deleted"):
+                # A deleted photo's image files + location go too — the
+                # tombstone is all that's left of it anywhere.
+                for suffix in (".jpg", "_t.jpg", ".json"):
+                    try:
+                        os.remove(os.path.join(MEDIA_DIR, doc_id + suffix))
+                    except FileNotFoundError:
+                        pass
             append_log({
                 "kind": kind, "id": doc_id, "ts": clean["updated"], "device": device,
                 "applied_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -574,6 +582,9 @@ def main():
                         help="journal.json path (tests point this at a scratch file)")
     parser.add_argument("--media", default=journal_store.DEFAULT_MEDIA,
                         help="photo media dir (tests point this at a scratch dir)")
+    parser.add_argument("--web-root", default=str(REPO_ROOT),
+                        help="directory served statically (tests serve a copy whose "
+                             "lakes_data.json carries no published journal)")
     args = parser.parse_args()
     global EDIT_LOG, JOURNAL_PATH, MEDIA_DIR
     EDIT_LOG = args.log
@@ -595,7 +606,7 @@ def main():
     if not args.no_git:
         threading.Thread(target=committer_loop, daemon=True).start()
 
-    handler = partial(EditsHandler, directory=str(REPO_ROOT))
+    handler = partial(EditsHandler, directory=args.web_root)
     server = ThreadingHTTPServer((args.host, args.port), handler)
     print(f"App-edits sync server on http://{socket.gethostname()}:{args.port}/api/ping"
           f"  (db={args.db}, git={'off' if args.no_git else 'on'})")

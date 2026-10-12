@@ -39,7 +39,9 @@ ID_RE = {
 }
 MEDIA_ID_RE = ID_RE["photo"]
 UPDATED_RE = re.compile(r"^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(\.\d{1,6})?Z$")
-DATE_RE = re.compile(r"^\d{4}-\d\d-\d\d$")
+# A trip date is a day or, when the day isn't known ("2024 Oct" in an old
+# report), just a month; end_date must use the same precision as date.
+DATE_RE = re.compile(r"^\d{4}-(0[1-9]|1[0-2])(-(0[1-9]|[12]\d|3[01]))?$")
 TAKEN_RE = re.compile(r"^\d{4}-\d\d-\d\d(T\d\d:\d\d(:\d\d(\.\d+)?)?)?$")
 
 MAX_TITLE, MAX_BODY, MAX_CAPTION, MAX_NOTE, MAX_WHEN = 200, 50_000, 2_000, 2_000, 100
@@ -167,11 +169,15 @@ def clean_doc(kind, doc, known_lakes):
                 raise DocError("each link must be an object")
             clean_links.append({"url": check_url(lk.get("url")),
                                 "title": _str(lk.get("title"), "link title", MAX_TITLE)})
+        date = None if planned else _opt(doc.get("date"), "date", DATE_RE)
+        end_date = None if planned else _opt(doc.get("end_date"), "end_date", DATE_RE)
+        if end_date and (not date or len(end_date) != len(date)):
+            raise DocError("end_date needs a date of the same precision")
         return {**base,
                 "title": _str(doc.get("title"), "title", MAX_TITLE),
                 "planned": planned,
-                "date": None if planned else _opt(doc.get("date"), "date", DATE_RE),
-                "end_date": None if planned else _opt(doc.get("end_date"), "end_date", DATE_RE),
+                "date": date,
+                "end_date": end_date,
                 "when": (_str(doc.get("when"), "when", MAX_WHEN) or None) if planned else None,
                 "body": _str(doc.get("body"), "body", MAX_BODY),
                 "lakes": _lakes(doc.get("lakes"), known_lakes),
