@@ -342,17 +342,18 @@
   },
   {
    "id": "t-mvcs7v86-yers",
-   "updated": "2026-10-17T19:21:51.303Z",
+   "updated": "2026-10-17T19:23:53.953Z",
    "title": "P-11 w/ Matt Mckell",
    "planned": false,
-   "date": "2026-10-17",
+   "date": "2026-09-30",
    "end_date": null,
    "when": null,
-   "body": "",
+   "body": "So fun chatting with Matt!",
    "lakes": [
     "P-11",
     "A-7",
-    "A-12"
+    "A-12",
+    "A-8"
    ],
    "links": []
   }
@@ -758,6 +759,16 @@
    "taken": "2026-08-27T09:39:10",
    "w": 1536,
    "h": 2048
+  },
+  {
+   "id": "p-mvcsbdp7-h952",
+   "updated": "2026-10-17T19:23:53.963Z",
+   "trip": "t-mvcs7v86-yers",
+   "lakes": [],
+   "caption": "",
+   "taken": "2026-09-30T17:50:19",
+   "w": 2048,
+   "h": 1536
   }
  ],
  "links": [
