@@ -3,7 +3,7 @@
  "trips": [
   {
    "id": "t-kej6qdc0-nhbc",
-   "updated": "2026-10-17T21:08:36.756Z",
+   "updated": "2026-10-17T21:53:42.640Z",
    "title": "Detoured Highline: Red Castle → Hessie",
    "planned": false,
    "date": "2020-09",
@@ -1227,6 +1227,160 @@
    "taken": "2021-07-22T17:51:51",
    "w": 2048,
    "h": 1536
+  },
+  {
+   "id": "p-mvcxls1m-ikw4",
+   "updated": "2026-10-17T21:53:42.657Z",
+   "trip": "t-kej6qdc0-nhbc",
+   "lakes": [
+    "G-15"
+   ],
+   "caption": "",
+   "taken": "2020-09-04T19:26:01",
+   "w": 1536,
+   "h": 2048
+  },
+  {
+   "id": "p-mvcxm9dy-uhca",
+   "updated": "2026-10-17T21:53:42.665Z",
+   "trip": "t-kej6qdc0-nhbc",
+   "lakes": [],
+   "caption": "",
+   "taken": "2020-08-30T19:54:33",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcxnkj5-j6zy",
+   "updated": "2026-10-17T21:53:42.671Z",
+   "trip": "t-kej6qdc0-nhbc",
+   "lakes": [],
+   "caption": "",
+   "taken": "2020-09-06T10:53:15",
+   "w": 2048,
+   "h": 1152
+  },
+  {
+   "id": "p-mvcxnknd-ojdg",
+   "updated": "2026-10-17T21:53:42.676Z",
+   "trip": "t-kej6qdc0-nhbc",
+   "lakes": [],
+   "caption": "",
+   "taken": "2020-09-06T10:32:00",
+   "w": 1536,
+   "h": 2048
+  },
+  {
+   "id": "p-mvcxnkrj-o075",
+   "updated": "2026-10-17T21:53:42.682Z",
+   "trip": "t-kej6qdc0-nhbc",
+   "lakes": [],
+   "caption": "",
+   "taken": "2020-09-04T17:52:18",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcxnkv2-9yy3",
+   "updated": "2026-10-17T21:53:42.687Z",
+   "trip": "t-kej6qdc0-nhbc",
+   "lakes": [],
+   "caption": "",
+   "taken": "2020-09-04T15:30:29",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcxnl0k-cu00",
+   "updated": "2026-10-17T21:53:42.690Z",
+   "trip": "t-kej6qdc0-nhbc",
+   "lakes": [],
+   "caption": "",
+   "taken": "2020-09-04T14:05:28",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcxnl3s-yedb",
+   "updated": "2026-10-17T21:53:42.695Z",
+   "trip": "t-kej6qdc0-nhbc",
+   "lakes": [],
+   "caption": "",
+   "taken": "2020-09-03T15:35:58",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcxnl75-ll7s",
+   "updated": "2026-10-17T21:53:42.698Z",
+   "trip": "t-kej6qdc0-nhbc",
+   "lakes": [],
+   "caption": "",
+   "taken": "2020-09-03T15:31:56",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcxnlay-o4e0",
+   "updated": "2026-10-17T21:53:42.702Z",
+   "trip": "t-kej6qdc0-nhbc",
+   "lakes": [],
+   "caption": "",
+   "taken": "2020-09-03T15:13:48",
+   "w": 1536,
+   "h": 2048
+  },
+  {
+   "id": "p-mvcxnlf1-j625",
+   "updated": "2026-10-17T21:53:42.705Z",
+   "trip": "t-kej6qdc0-nhbc",
+   "lakes": [
+    "G-17"
+   ],
+   "caption": "",
+   "taken": "2020-09-03T13:46:32",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcxnlj0-u4eb",
+   "updated": "2026-10-17T21:53:42.707Z",
+   "trip": "t-kej6qdc0-nhbc",
+   "lakes": [],
+   "caption": "",
+   "taken": "2020-09-02T16:42:45",
+   "w": 1536,
+   "h": 2048
+  },
+  {
+   "id": "p-mvcxnlmr-onyf",
+   "updated": "2026-10-17T21:53:42.710Z",
+   "trip": "t-kej6qdc0-nhbc",
+   "lakes": [],
+   "caption": "",
+   "taken": "2020-09-02T15:01:35",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcxnlq2-y35z",
+   "updated": "2026-10-17T21:53:42.713Z",
+   "trip": "t-kej6qdc0-nhbc",
+   "lakes": [],
+   "caption": "",
+   "taken": "2020-09-02T14:59:57",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcxnlun-4mbj",
+   "updated": "2026-10-17T21:53:42.716Z",
+   "trip": "t-kej6qdc0-nhbc",
+   "lakes": [],
+   "caption": "",
+   "taken": "2020-08-31T18:50:57",
+   "w": 1536,
+   "h": 2048
   }
  ],
  "links": [
