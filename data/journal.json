@@ -3,8 +3,8 @@
  "trips": [
   {
    "id": "t-kej6qdc0-nhbc",
-   "updated": "2026-10-10T00:00:00.000Z",
-   "title": "Detoured Highline: East Red Castle → Red Castle → Hessie",
+   "updated": "2026-10-17T21:08:36.756Z",
+   "title": "Detoured Highline: Red Castle → Hessie",
    "planned": false,
    "date": "2020-09",
    "end_date": null,
@@ -19,11 +19,11 @@
   },
   {
    "id": "t-kqk55hc0-350u",
-   "updated": "2026-10-10T00:00:00.000Z",
-   "title": "Hessie w/ Ryan",
+   "updated": "2026-10-17T20:58:28.062Z",
+   "title": "Hessie Return w/ Ryan & Dilworth",
    "planned": false,
-   "date": "2021-07",
-   "end_date": null,
+   "date": "2021-07-22",
+   "end_date": "2021-07-23",
    "when": null,
    "body": "Camped overnight on west side with Ryan, John joined the next day. Caught a couple of nice ones, again on west side.",
    "lakes": [
@@ -33,46 +33,54 @@
   },
   {
    "id": "t-lzaieio0-4v0n",
-   "updated": "2026-10-10T00:00:00.000Z",
+   "updated": "2026-10-17T20:48:01.243Z",
    "title": "Red Castle w/ Dilworth + Ryan",
    "planned": false,
-   "date": "2024-08",
-   "end_date": null,
+   "date": "2024-08-01",
+   "end_date": "2026-10-03",
    "when": null,
-   "body": "Red Castle (G-15): Dilworth and Ryan and I had repeated success with cutthroats in that little outlet pond, and I caught a few from my packraft out in the middle.\n\nG-49: Camped right nearby. Saw some rising but didn’t catch any that evening, but did see a bull, cow, and calf moose!",
+   "body": "Red Castle (G-15): Dilworth and Ryan and I had repeated success with cutthroats in that little outlet pond, and I caught a few from my packraft out in the middle.\n\nG-49: Camped right nearby on the first night. Saw some rising but didn’t catch any that evening, but did see a bull, cow, and calf moose!\n\nSpent 2nd night camped by G-53. A million hungry tiny brookies. Our off trail to get there sucked and was better on the way out.",
    "lakes": [
     "G-15",
-    "G-49"
+    "G-49",
+    "G-53",
+    "G-16"
    ],
    "links": []
   },
   {
    "id": "t-m0hdm2o0-38j1",
-   "updated": "2026-10-10T00:00:00.000Z",
-   "title": "Ryder + McPheters w/ Dilworth",
+   "updated": "2026-10-17T20:42:59.631Z",
+   "title": "McPheters w/ Dilworth",
    "planned": false,
-   "date": "2024-08-31",
-   "end_date": "2024-09-02",
+   "date": "2024-08-30",
+   "end_date": "2024-08-31",
    "when": null,
    "body": "Labor Day weekend.\n\nRyder (BR-15): Spent an hour here with Dilworth before heading up to McPheters. Tons of hungry small brookies right along the shore.\n\nMcPheters (BR-14): Dilworth and I each caught big tigers out of here.",
    "lakes": [
     "BR-15",
-    "BR-14"
+    "BR-14",
+    "BR-16",
+    "BR-17",
+    "BR-18",
+    "BR-19"
    ],
    "links": []
   },
   {
    "id": "t-m1po9hc0-tdgc",
-   "updated": "2026-10-10T00:00:00.000Z",
+   "updated": "2026-10-17T20:37:24.612Z",
    "title": "Toomset + Amethyst w/ Ryan",
    "planned": false,
-   "date": "2024-10",
-   "end_date": null,
+   "date": "2024-10-03",
+   "end_date": "2024-10-05",
    "when": null,
    "body": "Ryan and I spent two nights at Toomset, day-tripping up to Amethyst.\n\nToomset (BR-25): Caught several that were small to medium size.\n\nAmethyst (BR-28): Ryan and I each caught a couple on the far south side off the big rocks.",
    "lakes": [
     "BR-25",
-    "BR-28"
+    "BR-28",
+    "BR-27",
+    "BR-24"
    ],
    "links": []
   },
@@ -913,6 +921,310 @@
    ],
    "caption": "",
    "taken": "2025-08-06T08:24:40",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcuwaed-yzpi",
+   "updated": "2026-10-17T20:37:24.615Z",
+   "trip": "t-m1po9hc0-tdgc",
+   "lakes": [],
+   "caption": "",
+   "taken": "2024-10-04T09:21:51",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcuwaiq-oxjz",
+   "updated": "2026-10-17T20:37:24.615Z",
+   "trip": "t-m1po9hc0-tdgc",
+   "lakes": [],
+   "caption": "",
+   "taken": "2024-10-04T13:45:28",
+   "w": 1536,
+   "h": 2048
+  },
+  {
+   "id": "p-mvcuwam5-2mza",
+   "updated": "2026-10-17T20:37:24.616Z",
+   "trip": "t-m1po9hc0-tdgc",
+   "lakes": [],
+   "caption": "",
+   "taken": "2024-10-04T18:30:10",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcuwapq-xwxp",
+   "updated": "2026-10-17T20:37:24.617Z",
+   "trip": "t-m1po9hc0-tdgc",
+   "lakes": [],
+   "caption": "",
+   "taken": "2024-10-04T18:10:18",
+   "w": 1536,
+   "h": 2048
+  },
+  {
+   "id": "p-mvcuwatl-6p5h",
+   "updated": "2026-10-17T20:37:24.617Z",
+   "trip": "t-m1po9hc0-tdgc",
+   "lakes": [],
+   "caption": "",
+   "taken": "2024-10-05T10:41:35",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcv2f8x-if1p",
+   "updated": "2026-10-17T20:41:10.331Z",
+   "trip": "t-m0hdm2o0-38j1",
+   "lakes": [],
+   "caption": "",
+   "taken": "2024-08-31T19:04:55",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcv2fcb-b16o",
+   "updated": "2026-10-17T20:41:10.337Z",
+   "trip": "t-m0hdm2o0-38j1",
+   "lakes": [
+    "BR-14"
+   ],
+   "caption": "",
+   "taken": "2024-08-30T19:49:13",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcv2ffz-rjd2",
+   "updated": "2026-10-17T20:41:10.343Z",
+   "trip": "t-m0hdm2o0-38j1",
+   "lakes": [
+    "BR-14"
+   ],
+   "caption": "",
+   "taken": "2024-08-31T09:20:28",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcvarsi-0w8l",
+   "updated": "2026-10-17T20:47:40.670Z",
+   "trip": "t-lzaieio0-4v0n",
+   "lakes": [],
+   "caption": "",
+   "taken": "2024-08-01T10:30:53",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcvarws-wywz",
+   "updated": "2026-10-17T20:47:40.678Z",
+   "trip": "t-lzaieio0-4v0n",
+   "lakes": [],
+   "caption": "",
+   "taken": "2024-08-01T13:13:51",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcvarzz-bce5",
+   "updated": "2026-10-17T20:47:40.683Z",
+   "trip": "t-lzaieio0-4v0n",
+   "lakes": [],
+   "caption": "",
+   "taken": "2024-08-01T16:25:50",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcvas47-wwyw",
+   "updated": "2026-10-17T20:47:40.688Z",
+   "trip": "t-lzaieio0-4v0n",
+   "lakes": [],
+   "caption": "",
+   "taken": "2024-08-01T17:30:10",
+   "w": 1536,
+   "h": 2048
+  },
+  {
+   "id": "p-mvcvas72-9h1r",
+   "updated": "2026-10-17T20:47:40.691Z",
+   "trip": "t-lzaieio0-4v0n",
+   "lakes": [],
+   "caption": "",
+   "taken": "2024-08-01T19:20:07",
+   "w": 1536,
+   "h": 2048
+  },
+  {
+   "id": "p-mvcvasa1-cix0",
+   "updated": "2026-10-17T20:47:40.695Z",
+   "trip": "t-lzaieio0-4v0n",
+   "lakes": [],
+   "caption": "",
+   "taken": "2024-08-01T20:43:54",
+   "w": 1536,
+   "h": 2048
+  },
+  {
+   "id": "p-mvcvasd5-mu0s",
+   "updated": "2026-10-17T20:47:40.698Z",
+   "trip": "t-lzaieio0-4v0n",
+   "lakes": [],
+   "caption": "",
+   "taken": "2024-08-02T08:40:26",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcvasgk-jxk1",
+   "updated": "2026-10-17T20:47:40.702Z",
+   "trip": "t-lzaieio0-4v0n",
+   "lakes": [],
+   "caption": "",
+   "taken": "2024-08-02T09:12:27",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcvasjl-3olk",
+   "updated": "2026-10-17T20:47:40.705Z",
+   "trip": "t-lzaieio0-4v0n",
+   "lakes": [],
+   "caption": "",
+   "taken": "2024-08-02T09:25:08",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcvasmt-mft1",
+   "updated": "2026-10-17T20:47:40.708Z",
+   "trip": "t-lzaieio0-4v0n",
+   "lakes": [],
+   "caption": "",
+   "taken": "2024-08-02T13:40:20",
+   "w": 1536,
+   "h": 2048
+  },
+  {
+   "id": "p-mvcvasqk-iwx9",
+   "updated": "2026-10-17T20:47:40.711Z",
+   "trip": "t-lzaieio0-4v0n",
+   "lakes": [],
+   "caption": "",
+   "taken": "2024-08-02T11:35:50",
+   "w": 1536,
+   "h": 2048
+  },
+  {
+   "id": "p-mvcvasto-5ccs",
+   "updated": "2026-10-17T20:47:40.714Z",
+   "trip": "t-lzaieio0-4v0n",
+   "lakes": [],
+   "caption": "",
+   "taken": "2024-08-02T13:43:38",
+   "w": 1536,
+   "h": 2048
+  },
+  {
+   "id": "p-mvcvasx3-3hax",
+   "updated": "2026-10-17T20:47:40.716Z",
+   "trip": "t-lzaieio0-4v0n",
+   "lakes": [],
+   "caption": "",
+   "taken": "2024-08-02T18:29:46",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcvat0i-w36k",
+   "updated": "2026-10-17T20:47:40.719Z",
+   "trip": "t-lzaieio0-4v0n",
+   "lakes": [],
+   "caption": "",
+   "taken": "2024-08-03T14:47:05",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcvopay-kp7c",
+   "updated": "2026-10-17T20:58:28.077Z",
+   "trip": "t-kqk55hc0-350u",
+   "lakes": [],
+   "caption": "",
+   "taken": "2021-07-22T16:19:46",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcvopep-opz1",
+   "updated": "2026-10-17T20:58:28.084Z",
+   "trip": "t-kqk55hc0-350u",
+   "lakes": [],
+   "caption": "",
+   "taken": "2021-07-22T20:42:32",
+   "w": 2048,
+   "h": 1753
+  },
+  {
+   "id": "p-mvcvophw-ojbg",
+   "updated": "2026-10-17T20:58:28.090Z",
+   "trip": "t-kqk55hc0-350u",
+   "lakes": [],
+   "caption": "",
+   "taken": "2021-07-23T09:36:58",
+   "w": 1536,
+   "h": 2048
+  },
+  {
+   "id": "p-mvcvopkq-x6sm",
+   "updated": "2026-10-17T20:58:28.094Z",
+   "trip": "t-kqk55hc0-350u",
+   "lakes": [],
+   "caption": "",
+   "taken": "2021-07-23T07:24:42",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcvopo3-6scy",
+   "updated": "2026-10-17T20:58:28.098Z",
+   "trip": "t-kqk55hc0-350u",
+   "lakes": [],
+   "caption": "",
+   "taken": "2021-07-23T07:42:21",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcvopsg-ztyk",
+   "updated": "2026-10-17T20:58:28.101Z",
+   "trip": "t-kqk55hc0-350u",
+   "lakes": [],
+   "caption": "",
+   "taken": "2021-07-23T07:42:28",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcvopv0-aj1j",
+   "updated": "2026-10-17T20:58:28.105Z",
+   "trip": "t-kqk55hc0-350u",
+   "lakes": [],
+   "caption": "",
+   "taken": "2021-07-23T11:09:32",
+   "w": 2048,
+   "h": 1502
+  },
+  {
+   "id": "p-mvcvopyn-n0t1",
+   "updated": "2026-10-17T20:58:28.108Z",
+   "trip": "t-kqk55hc0-350u",
+   "lakes": [],
+   "caption": "",
+   "taken": "2021-07-22T17:51:51",
    "w": 2048,
    "h": 1536
   }
