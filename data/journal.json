@@ -356,6 +356,26 @@
     "A-8"
    ],
    "links": []
+  },
+  {
+   "id": "t-mvcscq03-0u92",
+   "updated": "2026-10-17T19:28:54.422Z",
+   "title": "Long Pond w/ Kip & Preston",
+   "planned": false,
+   "date": "2026-06-04",
+   "end_date": "2026-06-05",
+   "when": null,
+   "body": "Camped at some great spots by Long Pond. Really pretty scramble from Long down the creek to Weir. Skunked at Marjorie, but fixed that when I went back with Matt. Got a nice one out of Island the next morning when Preston and I zipped over there.",
+   "lakes": [
+    "A-37",
+    "A-62",
+    "A-43",
+    "A-50",
+    "A-40",
+    "A-57",
+    "A-12"
+   ],
+   "links": []
   }
  ],
  "photos": [
@@ -767,6 +787,56 @@
    "lakes": [],
    "caption": "",
    "taken": "2026-09-30T17:50:19",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcsgglm-j033",
+   "updated": "2026-10-17T19:28:54.434Z",
+   "trip": "t-mvcscq03-0u92",
+   "lakes": [],
+   "caption": "",
+   "taken": "2026-06-05T08:55:38",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcsggov-ypu7",
+   "updated": "2026-10-17T19:28:54.440Z",
+   "trip": "t-mvcscq03-0u92",
+   "lakes": [],
+   "caption": "",
+   "taken": "2026-06-04T13:42:48",
+   "w": 1536,
+   "h": 2048
+  },
+  {
+   "id": "p-mvcsggtk-6713",
+   "updated": "2026-10-17T19:28:54.446Z",
+   "trip": "t-mvcscq03-0u92",
+   "lakes": [],
+   "caption": "",
+   "taken": "2026-06-04T11:55:27",
+   "w": 1536,
+   "h": 2048
+  },
+  {
+   "id": "p-mvcsggy0-8ub9",
+   "updated": "2026-10-17T19:28:54.450Z",
+   "trip": "t-mvcscq03-0u92",
+   "lakes": [],
+   "caption": "",
+   "taken": "2026-06-04T11:52:27",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcsgh1o-yfht",
+   "updated": "2026-10-17T19:28:54.458Z",
+   "trip": "t-mvcscq03-0u92",
+   "lakes": [],
+   "caption": "",
+   "taken": "2026-06-04T08:46:05",
    "w": 2048,
    "h": 1536
   }
