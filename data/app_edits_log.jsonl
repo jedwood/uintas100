@@ -179,3 +179,6 @@
 {"kind": "photo", "id": "p-mvcsqp2t-2jzb", "ts": "2026-10-17T19:35:47.458Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-17T19:35:54+00:00"}
 {"kind": "photo", "id": "p-mvcsqp75-z99o", "ts": "2026-10-17T19:35:47.462Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-17T19:35:54+00:00"}
 {"kind": "photo", "id": "p-mvcsqp9t-ys3p", "ts": "2026-10-17T19:35:47.466Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-17T19:35:54+00:00"}
+{"kind": "trip", "id": "t-mdawu800-71qy", "ts": "2026-10-17T19:38:30.286Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-17T19:38:34+00:00"}
+{"kind": "photo", "id": "p-mvcstecs-5ogq", "ts": "2026-10-17T19:38:30.295Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-17T19:38:34+00:00"}
+{"kind": "photo", "id": "p-mvcstegs-4dqp", "ts": "2026-10-17T19:38:30.301Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-17T19:38:34+00:00"}
