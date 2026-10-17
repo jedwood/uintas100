@@ -125,25 +125,31 @@
   },
   {
    "id": "t-mr1b6yo0-i2jn",
-   "updated": "2026-10-10T00:00:00.000Z",
+   "updated": "2026-10-17T19:10:01.710Z",
    "title": "Little Hidden w/ Dilworth",
    "planned": false,
-   "date": "2026-07",
-   "end_date": null,
+   "date": "2026-06-18",
+   "end_date": "2026-06-19",
    "when": null,
-   "body": "Dilworth caught a nice 18 inch brookie here. It was delicious. :)",
+   "body": "Camped between Divide #1 and #2. Dilworth caught a nice 18 inch brookie at Little Hidden. It was delicious. :)",
    "lakes": [
-    "W-21"
+    "W-21",
+    "A-36",
+    "W-20",
+    "A-31",
+    "A-30",
+    "A-35",
+    "A-28"
    ],
    "links": []
   },
   {
    "id": "t-ms9ludc0-7jnm",
-   "updated": "2026-10-10T00:00:00.000Z",
+   "updated": "2026-10-17T19:03:32.871Z",
    "title": "East Slide w/ Ryan",
    "planned": false,
-   "date": "2026-08",
-   "end_date": null,
+   "date": "2026-08-20",
+   "end_date": "2026-08-22",
    "when": null,
    "body": "Brutal approach! Ryan and I ascended from south at an attempted diagonal, then descended almost straight down the outlet ravine, other than circumnavigating some cliffs near the top. See CalTopo for deets.",
    "lakes": [
@@ -170,7 +176,7 @@
   },
   {
    "id": "t-mthwhs00-cyps",
-   "updated": "2026-10-12T14:25:38.248Z",
+   "updated": "2026-10-17T18:58:18.750Z",
    "title": "East Kibah w/ Ben and Steve",
    "planned": false,
    "date": "2026-09-11",
@@ -192,10 +198,10 @@
   },
   {
    "id": "t-mthwhs00-r313",
-   "updated": "2026-10-12T14:47:39.266Z",
+   "updated": "2026-10-17T19:00:40.091Z",
    "title": "Grandaddy West - Solo",
    "planned": false,
-   "date": "2026-09",
+   "date": "2026-09-21",
    "end_date": null,
    "when": null,
    "body": "",
@@ -210,13 +216,13 @@
   },
   {
    "id": "t-muorpc00-sg17",
-   "updated": "2026-10-12T14:47:39.266Z",
+   "updated": "2026-10-17T18:56:42.163Z",
    "title": "Cliff w/ Ben and Hirum",
    "planned": false,
    "date": "2026-10",
    "end_date": null,
    "when": null,
-   "body": "",
+   "body": "Water was quite murky from recent rains. Probably what made the fishing at Watkins less productive.",
    "lakes": [
     "WR-49",
     "WR-48",
@@ -226,7 +232,7 @@
   },
   {
    "id": "t-muyrsao0-pkwc",
-   "updated": "2026-10-12T14:47:39.266Z",
+   "updated": "2026-10-17T18:52:45.553Z",
    "title": "Cuberant lakes w/ Nick",
    "planned": false,
    "date": "2026-10-08",
@@ -375,6 +381,343 @@
    "taken": "2026-09-04T07:38:46",
    "w": 2048,
    "h": 1536
+  },
+  {
+   "id": "p-mvcr55yz-xia6",
+   "updated": "2026-10-17T18:52:45.571Z",
+   "trip": "t-muyrsao0-pkwc",
+   "lakes": [
+    "W-43"
+   ],
+   "caption": "",
+   "taken": "2026-10-08T13:22:06",
+   "w": 1536,
+   "h": 2048
+  },
+  {
+   "id": "p-mvcr5630-xwj9",
+   "updated": "2026-10-17T18:52:45.579Z",
+   "trip": "t-muyrsao0-pkwc",
+   "lakes": [
+    "W-44"
+   ],
+   "caption": "",
+   "taken": "2026-10-08T12:52:15",
+   "w": 1536,
+   "h": 2048
+  },
+  {
+   "id": "p-mvcr566b-zagk",
+   "updated": "2026-10-17T18:52:45.585Z",
+   "trip": "t-muyrsao0-pkwc",
+   "lakes": [
+    "W-17"
+   ],
+   "caption": "Fishless but pretty",
+   "taken": "2026-10-08T11:39:42",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcr56an-bcie",
+   "updated": "2026-10-17T18:52:45.589Z",
+   "trip": "t-muyrsao0-pkwc",
+   "lakes": [
+    "W-42"
+   ],
+   "caption": "Chunky brook!",
+   "taken": "2026-10-08T09:36:42",
+   "w": 1536,
+   "h": 2048
+  },
+  {
+   "id": "p-mvcr56e8-n72h",
+   "updated": "2026-10-17T18:52:45.594Z",
+   "trip": "t-muyrsao0-pkwc",
+   "lakes": [],
+   "caption": "Cool crag along the trail. Wonder if it could be climbed. 🤔",
+   "taken": "2026-10-08T08:22:49",
+   "w": 1536,
+   "h": 2048
+  },
+  {
+   "id": "p-mvcrahtj-rr62",
+   "updated": "2026-10-17T18:56:42.180Z",
+   "trip": "t-muorpc00-sg17",
+   "lakes": [],
+   "caption": "",
+   "taken": "2026-10-02T11:37:00",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcrahyv-uj3g",
+   "updated": "2026-10-17T18:56:42.188Z",
+   "trip": "t-muorpc00-sg17",
+   "lakes": [
+    "WR-48"
+   ],
+   "caption": "Mountain goats",
+   "taken": "2026-10-02T12:50:04",
+   "w": 1536,
+   "h": 2048
+  },
+  {
+   "id": "p-mvcrai83-afrb",
+   "updated": "2026-10-17T18:56:42.194Z",
+   "trip": "t-muorpc00-sg17",
+   "lakes": [
+    "WR-50"
+   ],
+   "caption": "",
+   "taken": "2026-10-02T15:52:34",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcraibx-pvhz",
+   "updated": "2026-10-17T18:56:42.199Z",
+   "trip": "t-muorpc00-sg17",
+   "lakes": [
+    "WR-49"
+   ],
+   "caption": "",
+   "taken": "2026-10-02T18:29:26",
+   "w": 1536,
+   "h": 2048
+  },
+  {
+   "id": "p-mvcraihv-lurv",
+   "updated": "2026-10-17T18:56:42.203Z",
+   "trip": "t-muorpc00-sg17",
+   "lakes": [
+    "WR-49"
+   ],
+   "caption": "",
+   "taken": "2026-10-03T11:22:18",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcrcg9t-3nk5",
+   "updated": "2026-10-17T18:56:42.207Z",
+   "trip": "t-muorpc00-sg17",
+   "lakes": [
+    "WR-48"
+   ],
+   "caption": "",
+   "taken": "2026-10-02T13:08:45",
+   "w": 1536,
+   "h": 2048
+  },
+  {
+   "id": "p-mvcrebvm-621o",
+   "updated": "2026-10-17T18:58:18.769Z",
+   "trip": "t-mthwhs00-cyps",
+   "lakes": [],
+   "caption": "",
+   "taken": "2026-09-11T07:32:00",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcrebzg-jli8",
+   "updated": "2026-10-17T18:58:18.776Z",
+   "trip": "t-mthwhs00-cyps",
+   "lakes": [],
+   "caption": "",
+   "taken": "2026-09-11T09:44:02",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcrec3a-nn26",
+   "updated": "2026-10-17T18:58:18.781Z",
+   "trip": "t-mthwhs00-cyps",
+   "lakes": [
+    "DF-14"
+   ],
+   "caption": "",
+   "taken": "2026-09-11T11:59:11",
+   "w": 1536,
+   "h": 2048
+  },
+  {
+   "id": "p-mvcrec84-8e7v",
+   "updated": "2026-10-17T18:58:18.786Z",
+   "trip": "t-mthwhs00-cyps",
+   "lakes": [],
+   "caption": "",
+   "taken": "2026-09-11T14:32:33",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcrgr5b-yijq",
+   "updated": "2026-10-17T19:00:40.108Z",
+   "trip": "t-mthwhs00-r313",
+   "lakes": [],
+   "caption": "",
+   "taken": "2026-09-21T07:44:40",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcrgr93-jvj7",
+   "updated": "2026-10-17T19:00:40.117Z",
+   "trip": "t-mthwhs00-r313",
+   "lakes": [],
+   "caption": "",
+   "taken": "2026-09-21T09:13:50",
+   "w": 1536,
+   "h": 2048
+  },
+  {
+   "id": "p-mvcrgrco-qqft",
+   "updated": "2026-10-17T19:00:40.123Z",
+   "trip": "t-mthwhs00-r313",
+   "lakes": [],
+   "caption": "South mystery lake",
+   "taken": "2026-09-21T09:58:22",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcrgrgd-eesw",
+   "updated": "2026-10-17T19:00:40.128Z",
+   "trip": "t-mthwhs00-r313",
+   "lakes": [],
+   "caption": "North mystery lake",
+   "taken": "2026-09-21T10:38:10",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcrk5tl-6jf1",
+   "updated": "2026-10-17T19:03:32.887Z",
+   "trip": "t-ms9ludc0-7jnm",
+   "lakes": [
+    "LF-44"
+   ],
+   "caption": "",
+   "taken": "2026-08-22T10:00:45",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcrk5xa-g9ca",
+   "updated": "2026-10-17T19:03:32.896Z",
+   "trip": "t-ms9ludc0-7jnm",
+   "lakes": [
+    "LF-44"
+   ],
+   "caption": "",
+   "taken": "2026-08-22T09:29:33",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcrk61m-62zl",
+   "updated": "2026-10-17T19:03:32.902Z",
+   "trip": "t-ms9ludc0-7jnm",
+   "lakes": [
+    "LF-44"
+   ],
+   "caption": "",
+   "taken": "2026-08-22T09:10:27",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcrk65k-tu07",
+   "updated": "2026-10-17T19:03:32.907Z",
+   "trip": "t-ms9ludc0-7jnm",
+   "lakes": [
+    "LF-44"
+   ],
+   "caption": "",
+   "taken": "2026-08-22T11:06:48",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcrk68s-ivd6",
+   "updated": "2026-10-17T19:03:32.912Z",
+   "trip": "t-ms9ludc0-7jnm",
+   "lakes": [
+    "LF-44"
+   ],
+   "caption": "",
+   "taken": "2026-08-22T11:06:43",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcrk6cc-9dgd",
+   "updated": "2026-10-17T19:03:32.916Z",
+   "trip": "t-ms9ludc0-7jnm",
+   "lakes": [],
+   "caption": "",
+   "taken": "2026-08-21T08:45:24",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcro3y0-ewfn",
+   "updated": "2026-10-17T19:07:48.146Z",
+   "trip": "t-mr1b6yo0-i2jn",
+   "lakes": [],
+   "caption": "",
+   "taken": "2026-06-18T17:43:04",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcro47t-5m57",
+   "updated": "2026-10-17T19:07:48.152Z",
+   "trip": "t-mr1b6yo0-i2jn",
+   "lakes": [],
+   "caption": "",
+   "taken": "2026-06-18T20:51:09",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcro492-ge41",
+   "updated": "2026-10-17T19:07:48.157Z",
+   "trip": "t-mr1b6yo0-i2jn",
+   "lakes": [],
+   "caption": "",
+   "taken": "2026-06-19T09:54:15",
+   "w": 1618,
+   "h": 1080
+  },
+  {
+   "id": "p-mvcro4bm-01dk",
+   "updated": "2026-10-17T19:07:48.161Z",
+   "trip": "t-mr1b6yo0-i2jn",
+   "lakes": [],
+   "caption": "",
+   "taken": "2026-06-19T12:58:29",
+   "w": 928,
+   "h": 2048
+  },
+  {
+   "id": "p-mvcrzcb2-uih9",
+   "updated": "2026-10-17T19:14:15.193Z",
+   "trip": null,
+   "lakes": [
+    "W-21"
+   ],
+   "caption": "",
+   "taken": "2026-08-19T09:08:47",
+   "w": 2048,
+   "h": 1536
+  },
+  {
+   "id": "p-mvcs4wwq-1nzl",
+   "updated": "2026-10-17T19:18:44.174Z",
+   "deleted": true
   }
  ],
  "links": [
