@@ -1244,9 +1244,11 @@
   },
   {
    "id": "p-mvcxm9dy-uhca",
-   "updated": "2026-10-17T21:53:42.665Z",
+   "updated": "2026-10-18T02:42:55.178Z",
    "trip": "t-kej6qdc0-nhbc",
-   "lakes": [],
+   "lakes": [
+    "WR-7"
+   ],
    "caption": "",
    "taken": "2020-08-30T19:54:33",
    "w": 2048,
