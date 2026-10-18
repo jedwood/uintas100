@@ -86,13 +86,13 @@
   },
   {
    "id": "t-mcjrh1c0-sr1y",
-   "updated": "2026-10-10T00:00:00.000Z",
+   "updated": "2026-10-18T02:33:06.024Z",
    "title": "Diamond w/ Kenny",
    "planned": false,
    "date": "2025-07",
    "end_date": null,
    "when": null,
-   "body": "Summer 2025 (month approximate). Kenny and I thought we were at Start Lake, since we had mistaken a nameless pond to the south for Diamond.",
+   "body": "Kenny and I thought we were at Star Lake, since we had mistaken a nameless pond to the south for Diamond. We ended with a few casts at Trial where we each caught one.",
    "lakes": [
     "A-22"
    ],
@@ -1381,6 +1381,26 @@
    "taken": "2020-08-31T18:50:57",
    "w": 1536,
    "h": 2048
+  },
+  {
+   "id": "p-mvd7nj12-d5hn",
+   "updated": "2026-10-18T02:33:06.040Z",
+   "trip": "t-mcjrh1c0-sr1y",
+   "lakes": [],
+   "caption": "",
+   "taken": null,
+   "w": 2048,
+   "h": 945
+  },
+  {
+   "id": "p-mvd7nj3n-q6ts",
+   "updated": "2026-10-18T02:33:06.050Z",
+   "trip": "t-mcjrh1c0-sr1y",
+   "lakes": [],
+   "caption": "",
+   "taken": null,
+   "w": 2048,
+   "h": 945
   }
  ],
  "links": [
