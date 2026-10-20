@@ -2,7 +2,7 @@
 
 Kept for reference. None of these run on a schedule any more — do not
 restart one without reading why it was retired. Split out of CLAUDE.md
-2026-09-24; the text below is unchanged.
+2026-09-24; the text below is unchanged except where dated later.
 
 ### Apple Notes Sync (RETIRED as a write path, 2026-08-10; LaunchAgent undeployed 2026-08-12)
 The Notes round trip is retired: `notes_sync_agent.py` exits immediately unless
@@ -54,33 +54,19 @@ another device while DB→Notes rewrites it, that device may iCloud-conflict-mer
 and show a duplicated section — fix is simply deleting the duplicated lower
 section(s) by hand on that device.
 
-### Tauri control-panel app (`tauri-app/`) — retired on the MacBook 2026-09-08
-The MacBook no longer runs this; Jed dropped the Tauri shell there, separated
-pull from build, and uses a Dock-installed PWA instead (see Single-writer model).
-The source stays in the repo for reference or for the Mini. What it was: a
-desktop wrapper (`/Applications/Uintas.app`) that ran the schedulers, served
-the web app on :8804 (moved off :8000 2026-08-12 — the shared Qwen3 embeddings
-LaunchAgent claims :8000), and exposed a gear-icon control panel. Build + install:
-```bash
-cd tauri-app && cargo tauri build --bundles app
-rm -rf /Applications/Uintas.app && cp -R src-tauri/target/release/bundle/macos/Uintas.app /Applications/
-```
-- **Schedule lives in a store, not in the repo.** Live intervals are in
-  `~/Library/Application Support/com.jedwood.uintas/schedule.json`; the values in
-  `scheduler.rs` are only defaults for a machine with no store yet. Don't read the
-  source and conclude what a given machine is doing — read that file (or the panel).
-- **On a mirror, the "Stocking Updates" interval IS the mirror-refresh cadence.**
-  `writer_guard.pull_and_exit_if_readonly()` turns that job into a
-  `git pull --ff-only`, so the interval sets how far behind the clone can drift.
-  (The MacBook ran it hourly until it dropped the app.) End-to-end freshness is
-  still capped by how often the *Mini* actually fetches from DWR — a mirror
-  can't be fresher than what was pushed.
-- The frontend is embedded at compile time by `tauri::generate_context!()`.
-  `build.rs` emits `rerun-if-changed` for `frontend/` to force a recompile on
-  frontend-only edits — `tauri_build::build()` does NOT do this itself, and without
-  it cargo skips the rebuild and silently ships a stale UI.
-- Editing an interval by hand in `schedule.json` requires quitting the app first;
-  a running app holds the config in memory and overwrites the file on its next save.
+### Tauri desktop app (`tauri-app/`) — REMOVED 2026-10-20
+A desktop wrapper (`/Applications/Uintas.app`) that served the web app on
+:8804 in an iframe, ran an in-app stocking scheduler, and exposed a gear-icon
+control panel (intervals, run-now, logs). It came from a stretch of wanting
+everything self-contained in one app; the PWA plus the jedOS scheduler made it
+redundant. The MacBook dropped it 2026-09-08; on the Mini it was still
+launched but its scheduler was disabled, so it did nothing. On 2026-10-20 the
+source was deleted from the repo, the app bundle and its
+`~/Library/Application Support/com.jedwood.uintas/` store were removed, and
+the PWA's iframe `REFRESH_DATA` listener was dropped. The stocking fetch is
+scheduled by jedOS; see "What runs unattended on the Mini" in
+`edits-push.md`. The source is in git history before that date if it's ever
+needed.
 
 ### Apple Notes Structure
 **Organization**: Notes are organized in the "Uintas 💯" folder with subfolders for each drainage. Lake notes are stored within their respective drainage subfolders.

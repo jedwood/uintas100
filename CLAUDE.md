@@ -76,6 +76,7 @@ a runbook:
 |---|---|---|
 | Find lakes matching criteria | `python3 scripts/lakes.py "SELECT …"` | `find-lakes` skill |
 | Pull the latest DWR stocking | `python3 scripts/fetch_latest_stocking.py` | publishing |
+| Change / pause the daily 08:00 stocking run | edit `uintas-stocking-check` in `jedOS-vault/_config/scheduler.yaml` (jedOS scheduler — nothing in this repo schedules anything) | edits-push |
 | Regenerate the app's data file | `python3 scripts/export_web_data.py` | publishing |
 | Publish a change | `git commit` (the hook bumps the cache + re-exports) | publishing |
 | Prove the seeds still round-trip | `python3 scripts/verify_rebuild.py` | publishing |
@@ -96,10 +97,10 @@ Each is the full, unabridged text that used to live in this file.
 | File | Covers |
 |---|---|
 | `docs/runbooks/publishing.md` | Seeds → rebuild → verify, the pre-commit hook, PWA cache bump, Collections, frontend asset regeneration, dev server, working in this tree while the automation commits |
-| `docs/runbooks/edits-push.md` | Single-writer model and the `.db-readonly` guard, the PWA edits server on :8802, Tailscale :8443, journal (trips/photos/links) + private media, iOS Web Push + badge |
+| `docs/runbooks/edits-push.md` | Single-writer model and the `.db-readonly` guard, what runs unattended on the Mini (jedOS-scheduled stocking fetch + edits-server LaunchAgent), the PWA edits server on :8802, Tailscale :8443, journal (trips/photos/links) + private media, iOS Web Push + badge |
 | `docs/runbooks/offline-pwa.md` | Service-worker offline contract and its regression suite, offline map tiles, map views and rotation, lake modal |
 | `docs/runbooks/data-imports.md` | Designation conventions, DWR pamphlet editions, 2025 survey tables, junesucker scrape, Falcon hike index, coordinates, stocking matcher and fringe waters, `data/` inventory |
-| `docs/runbooks/retired.md` | Apple Notes sync, the Tauri control panel, the Lake Locator — why each was retired and how to run it manually if ever needed |
+| `docs/runbooks/retired.md` | Apple Notes sync, the Tauri desktop app (deleted 2026-10-20), the Lake Locator — why each was retired and how to run it manually if ever needed |
 | `docs/db-recovery-plan.md` | Full disaster-recovery write-up |
 | `deploy/README.md` | LaunchAgent deployment on the Mini (non-standard: home on an external volume) |
 

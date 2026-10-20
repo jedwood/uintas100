@@ -1,10 +1,10 @@
 """Single-writer guard for the database.
 
 In this project exactly one machine (the Mac Mini) is allowed to WRITE the
-database — stocking fetch, Notes->DB, DB->Notes, and the commit+push. Every
-other clone is a read-only mirror that only `git pull`s and runs the app.
+database — stocking fetch, app edits, and the commit+push. Every other clone
+is a read-only mirror that only `git pull`s and runs the app.
 
-To enforce that independently of any GUI toggle or scheduler, a mirror carries a
+To enforce that independently of any scheduler, a mirror carries a
 gitignored marker file `.db-readonly` in the repo root. The writing scripts call
 exit_if_readonly() up front and bail out cleanly when the marker is present, so
 even if a scheduler fires the job it does nothing.
@@ -37,8 +37,7 @@ def pull_and_exit_if_readonly(job="this job"):
 
     A mirror's version of "fetch the latest data" is pulling what the Mini
     pushed. Used by the stocking-fetch path so a scheduler firing the job on a
-    mirror (e.g. the Tauri app on the MacBook) keeps that clone — and the web
-    app it serves — up to date instead of silently no-oping.
+    mirror keeps that clone up to date instead of silently no-oping.
 
     Exit 0 only when the pull succeeds. A failed pull exits 1 with the git
     output on stderr so the scheduler records the failure and notifies,

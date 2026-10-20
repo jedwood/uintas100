@@ -104,7 +104,6 @@
       "Bash(echo \"removed, exit=$?\")",
       "Skill(schedule)",
       "Bash(ps -o pid,lstart,etime,command -p 21744)",
-      "Bash(find /Volumes/OLAF-EXT/jedwoodx/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tauri-plugin-store-2.4.2 -name *.rs)",
       "Bash(fc -l -100)",
       "Bash(echo \"exit: $?\")"
     ],

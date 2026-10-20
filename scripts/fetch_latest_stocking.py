@@ -247,9 +247,9 @@ def commit_and_push_changes(log_file, new_records_count, refreshed_count=0):
 
 def main():
     """Main function to fetch and update stocking data."""
-    # Single-writer guard: on a read-only mirror (e.g. the MacBook) this becomes
-    # a `git pull --ff-only` so the mirror clone — and the Tauri-served web app —
-    # picks up whatever the Mini pushed, then exits.
+    # Single-writer guard: on a read-only mirror (any non-Mini clone) this
+    # becomes a `git pull --ff-only` so the clone picks up whatever the Mini
+    # pushed, then exits.
     pull_and_exit_if_readonly("stocking fetch")
 
     # Setup paths

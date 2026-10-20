@@ -1,4 +1,3 @@
-tauri-app/src-tauri/target/
 dist/
 venv/
 __pycache__/

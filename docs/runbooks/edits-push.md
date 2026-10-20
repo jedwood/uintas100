@@ -1,14 +1,16 @@
 # Runbook: single-writer model, edits server, push notifications
 
 How writes reach the database and how devices find out. Split out of
-CLAUDE.md 2026-09-24; the text below is unchanged.
+CLAUDE.md 2026-09-24; the text below is unchanged except where dated later.
 
 ### Single-writer model (the Mac Mini writes; everything else is a client)
 Exactly ONE machine — the Mac Mini — writes `uinta_lakes.db` and pushes. Every
 other device is a **client of the published app**: since 2026-09-08 the MacBook
-runs no clone and no Tauri shell at all — Jed uses a Dock-installed PWA (Safari
-web app of the github.io page), exactly like the iPhone. A device "sees" a
-change when the PWA picks up the new service-worker cache version after a push.
+runs no clone at all — Jed uses a Dock-installed PWA (Safari web app of the
+github.io page), exactly like the iPhone. There is no desktop app; the old
+Tauri wrapper was deleted from the repo on 2026-10-20 (see `retired.md`). A
+device "sees" a change when the PWA picks up the new service-worker cache
+version after a push.
 Any other clone that does exist (a dev checkout, say) is a **read-only mirror**:
 it only `git pull`s and runs the app, and must never run a sync/fetch or commit
 the DB. This removes the two-machine write-conflict class (e.g. the binary-DB
@@ -21,20 +23,24 @@ autostash conflicts).
   the marker exists — so even if a scheduler fires the job, it does nothing.
   Exception: on a mirror, `fetch_latest_stocking.py` runs `git pull --ff-only`
   instead (`writer_guard.pull_and_exit_if_readonly()`), so a scheduler that
-  fires the stocking job on a mirror doubles as that clone's auto-refresh. (This
-  was how the MacBook's Tauri app stayed fresh before it was retired; nothing
-  uses it routinely now.)
+  fires the stocking job on a mirror doubles as that clone's auto-refresh.
+  (Nothing uses this routinely now.)
   - Mirror (any non-Mini clone): `touch .db-readonly`
   - Writer (Mini): the marker must NOT exist (`ls .db-readonly` → absent)
-- The Mini is the only machine that should run the schedulers/cron for fetch and
-  Notes sync. You edit Apple Notes on any device; iCloud syncs them to the Mini,
-  which is the only place Notes↔DB is translated.
-- Notes sync runs on the Mini as the `com.limechile.uintas-notes-sync` LaunchAgent
-  (every 6h; `scripts/notes_sync_agent.py` → Notes→DB, then DB→Notes for lakes
-  flagged by stocking updates, then commit+push). Because
-  the home is on an external `/Volumes` disk, its deployment is non-standard
-  (internal-disk plist, FDA on the venv python, reboot revival via the
-  agent-bootstrapper). Full runbook: `deploy/README.md`.
+
+### What runs unattended on the Mini (and where it's controlled)
+Exactly two background processes write this repo, both outside the app:
+
+| Process | Controlled by | Schedule | Log |
+|---|---|---|---|
+| Stocking fetch (`scripts/fetch_latest_stocking.py`) | **jedOS scheduler** — task `uintas-stocking-check` in `jedOS-vault/_config/scheduler.yaml`, run by the jedOS daemon (`python -m src.scheduler.daemon` in `repos/jedOS`) via `jedOS/src/uintas_stocking_check.py` | daily 08:00 | `logs/stocking_update.log` |
+| Edits server (`scripts/edits_server.py`) | `com.limechile.uintas-edits-server` LaunchAgent (KeepAlive) — `deploy/README.md` | always on, :8802 | `/Users/jed/Library/Logs/uintas-edits-server.log` |
+
+Change the stocking time / pause it by editing that scheduler.yaml entry
+(`schedule:` / `enabled:`). The jedOS wrapper only shells out to the fetch
+script and logs a vault notification; the fetch script itself does the commit +
+push and sends the PWA Web Push (below). Nothing in this repo schedules
+anything, and the Apple Notes sync agent is gone (see `retired.md`).
 
 ### App edits (status / Jed's Notes) — the PWA write path
 Since 2026-08-10 the user-owned lake fields (`status`, `jed_notes`) are

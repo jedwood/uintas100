@@ -1375,17 +1375,11 @@
                     else if (e.data.type === 'PUSH_RECEIVED') refreshData();
                 });
             }
-            // The desktop (Tauri) shell embeds this page in an iframe and
-            // pings it right after a scheduled stocking run lands fresh data,
-            // so updates show up in seconds instead of at the next heartbeat.
-            window.addEventListener('message', e => {
-                if (e.data && e.data.type === 'REFRESH_DATA') refreshData();
-            });
             // Refresh shortly after launch too: initApp may have loaded a stale
-            // copy from the service-worker cache (e.g. a mirror that just pulled,
-            // or right after a cache-version bump). This cache-busting fetch
-            // pulls the freshest bytes from the local server so a fresh launch
-            // self-heals in seconds instead of waiting for the first heartbeat.
+            // copy from the service-worker cache (e.g. right after a
+            // cache-version bump). This cache-busting fetch pulls the freshest
+            // bytes from the server so a fresh launch self-heals in seconds
+            // instead of waiting for the first heartbeat.
             setTimeout(refreshData, 3000);
             setInterval(refreshData, 15 * 60 * 1000);   // 15-minute heartbeat
             document.addEventListener('visibilitychange', () => {

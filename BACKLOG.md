@@ -17,5 +17,5 @@ Running list of ideas and follow-ups that aren't urgent enough to do now.
 
 ## Maps
 
-- True offline tiles (PMTiles/OPFS or the Tauri native build) so the satellite/topo
+- True offline tiles (PMTiles/OPFS) so the satellite/topo
   imagery — not just pins + drainage photos — is available with no signal.
