@@ -245,3 +245,4 @@
 {"kind": "photo", "id": "p-mvcxnl0k-cu00", "ts": "2026-10-18T02:44:14.899Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-18T02:44:14+00:00"}
 {"id": "e-1792291529649-zqn0r0", "lake": "G-49", "field": "jed_notes", "value": null, "ts": "2026-10-18T02:45:29.649Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-18T02:45:29+00:00"}
 {"id": "e-1792295077333-2teqku", "lake": "RC-42", "field": "starred", "value": 1, "ts": "2026-10-18T03:44:37.333Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-18T03:44:37+00:00"}
+{"id": "e-1792542269286-ejnndi", "lake": "RC-3", "field": "starred", "value": 1, "ts": "2026-10-21T00:24:29.286Z", "device": "dev-7wvw8frc", "applied_at": "2026-10-21T00:24:29+00:00"}
