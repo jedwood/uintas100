@@ -11,6 +11,10 @@ that publishes it — <https://jedwood.github.io/uintas100>. The app is
 feature-complete and every lake is placed on the map; most work here now is
 **querying the data**, not changing the app.
 
+**Jed tests on his phone, which only runs the published app: any change he
+should see there must be committed AND pushed to GitHub — uncommitted work on
+the Mini is invisible to him.**
+
 ## Answering "find me lakes that…"
 
 Use the **`find-lakes` skill** (`.claude/skills/find-lakes/`) — it loads the

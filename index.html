@@ -31,6 +31,15 @@
         #results-map { height: 70vh; min-height: 340px; }
         /* Interactive mini-map inside a lake's detail modal */
         #detail-map { height: 260px; width: 100%; }
+        /* Expanded lake mini-map: the wrapper goes position:fixed, pinned (by
+           toggleDetailMapExpanded, which sets top/left/width/height inline) to the
+           card area below the sticky header; its slot keeps the collapsed
+           height so the content doesn't jump. z-index sits under the header's
+           1050 so the title + back button stay on top and usable. */
+        #detail-map-wrap.expanded { position: fixed; z-index: 1040; border-radius: 0; border-width: 0; background: #fff; }
+        #detail-map-wrap.expanded #detail-map { height: 100%; }
+        #lake-modal-card.map-expanded { overflow-y: hidden; }
+        .expand-btn { font-size: 18px; line-height: 30px; }
         /* Compact multi-select popovers (species / drainage). Kept tight when
            idle; the checkbox list only appears while the popover is open. */
         .ms-btn { width: 100%; display: flex; align-items: center; justify-content: space-between;
@@ -1234,6 +1243,11 @@
                 // can't break the install.
                 setTimeout(() => { fetch('cma_book.html').catch(() => {}); }, 4000);
 
+                // Came back from a "New version available" reload: put the
+                // results, filters and camera back first, so a lake modal opened
+                // by the deep link below locks the page scroll at the right place.
+                const restored = restoreViewSnapshot();
+
                 // Deep link: open a lake (#BR-25), the about page (#about), a
                 // page of the Andersen book (#book-p356), a trip (#trip-t-…),
                 // or a journal list (#journal-photos)
@@ -1252,6 +1266,10 @@
                         openJournal(target.slice(8));
                     }
                 }
+
+                // ...then the modal's own details (card scroll, mini-map camera)
+                // and the navigation mode, which needs the map to exist.
+                if (restored) restoreViewDetails(restored);
 
                 // Opened by tapping a stocking notification (cold start): show
                 // the full report from the payload the SW stashed, then strip the
@@ -2462,12 +2480,37 @@
             headingFrame = requestAnimationFrame(() => { headingFrame = null; applyHeading(); });
         }
 
+        // leaflet-rotate sign convention (verified empirically in Chromium):
+        // map.setBearing(b) puts the tile/overlay pane under CSS rotate(b deg), so
+        // the map turns CLOCKWISE by b — north points b degrees clockwise from
+        // screen-up, and a world direction d (compass degrees, clockwise from
+        // north) appears on screen at d + b. Marker icons live in the un-rotated
+        // "norotatePane": only their POSITION follows the map; the icon keeps
+        // screen orientation. Consequences:
+        //   - the GPS arrow's CSS angle (screen-relative) must be heading + bearing.
+        //     The old code used heading - bearing, right only at bearing 0 and
+        //     wrong by 2x the bearing once the map was twisted.
+        //   - heading-up wants `heading` on screen-up: heading + b = 0, so
+        //     bearing = -heading (mod 360). The arrow then reads ~0 (straight up).
         function applyHeading() {
-            if (lastHeading == null || !gpsHeadingEl) return;
+            if (lastHeading == null) return;
             const bearing = (resultsMap && resultsMap.getBearing) ? resultsMap.getBearing() : 0;
+            if (navMode === 'headingup' && resultsMap) {
+                // Short way round across 0/360; ignore sub-degree changes so the
+                // map doesn't shimmer (the heading is already low-passed). Flagged
+                // as our own rotation so the 'rotate' handler doesn't mistake it
+                // for the user twisting the map.
+                const d = mod360(-lastHeading - bearing + 180) - 180;
+                if (Math.abs(d) >= NAV_MIN_ROTATE) {
+                    navSelfRotate = true;
+                    try { resultsMap.setBearing(bearing + d); } finally { navSelfRotate = false; }
+                    return;   // setBearing fires 'rotate' -> scheduleHeading -> arrow pass
+                }
+            }
+            if (!gpsHeadingEl) return;
             // Unwrap against what's currently rendered: always take the short way
             // round, so the CSS transition never spins 359° to move 1°.
-            const delta = mod360(lastHeading - bearing - headingDisplay + 180) - 180;
+            const delta = mod360(lastHeading + bearing - headingDisplay + 180) - 180;
             if (headingShown && Math.abs(delta) < 0.25) return;  // below visible resolution
             headingDisplay += delta;
             // Set the angle BEFORE unhiding: a display:none element doesn't run the
@@ -2477,8 +2520,9 @@
             gpsHeadingEl.style.display = '';
             headingShown = true;
         }
-        // Must run inside the user-gesture stack (the locate tap) for the iOS prompt.
-        function requestHeading() {
+        // Must run inside the user-gesture stack (a tap) for the iOS prompt.
+        // `onDenied` fires if the user refuses the compass permission.
+        function requestHeading(onDenied) {
             if (headingListening) return;
             const begin = () => {
                 window.addEventListener('deviceorientationabsolute', onOrient, true);
@@ -2488,10 +2532,38 @@
             if (typeof DeviceOrientationEvent !== 'undefined'
                 && typeof DeviceOrientationEvent.requestPermission === 'function') {
                 DeviceOrientationEvent.requestPermission()
-                    .then(state => { if (state === 'granted') begin(); }).catch(() => {});
+                    .then(state => { if (state === 'granted') begin(); else if (onDenied) onDenied(); })
+                    .catch(() => { if (onDenied) onDenied(); });
             } else {
                 begin();
             }
+        }
+
+        // leaflet-rotate's rotate control cycles map._handlers "compassBearing",
+        // whose stock listener does setBearing(webkitCompassHeading - orientation):
+        // the wrong sign for heading-up (see applyHeading), the flat-only raw
+        // heading, and unsmoothed. It also turns the control orange, which on the
+        // results map is how the user reads "navigation mode". So the stock handler
+        // is neutralised on both maps and the control's tap is rerouted to
+        // `onTap` (results map: our heading-up toggle; detail map: reset north).
+        // The click handler is bound to the prototype fn at onAdd, hence off/on.
+        function hardenRotateControl(map, onTap) {
+            if (map.compassBearing) {
+                map.compassBearing.disable();
+                map.compassBearing.enable = function () { return this; };
+            }
+            const ctrl = map.rotateControl;
+            if (!ctrl || !ctrl._link) return;
+            L.DomEvent.off(ctrl._link, 'click', ctrl._cycleState, ctrl);
+            ctrl._cycleState = onTap;
+            L.DomEvent.on(ctrl._link, 'click', onTap);
+        }
+        // Orange exactly while heading-up. (The results map is created with
+        // closeOnZeroBearing:false so the control is always there to tap.)
+        function styleRotateControl() {
+            const c = resultsMap && resultsMap.rotateControl;
+            if (!c) return;
+            c._link.style.backgroundColor = navMode === 'headingup' ? 'orange' : null;
         }
 
         function initMap() {
@@ -2499,7 +2571,8 @@
             // rotate/touchRotate (leaflet-rotate): two-finger twist on mobile, Shift+drag on
             // desktop; the rotate control doubles as a "reset to north" compass.
             resultsMap = L.map('results-map', {
-                rotate: true, touchRotate: true, bearing: 0
+                rotate: true, touchRotate: true, bearing: 0,
+                rotateControl: { closeOnZeroBearing: false }
             }).setView([40.72, -110.40], 9);
             const layers = {};
             Object.entries(MAP_LAYERS).forEach(([name, l], i) => {
@@ -2518,7 +2591,32 @@
             // Track the active basemap so the offline downloader defaults to it
             resultsMap.on('baselayerchange', e => { activeLayerName = e.name; });
             // Keep the heading arrow pointing true as the map is manually rotated
-            resultsMap.on('rotate', () => scheduleHeading());
+            resultsMap.on('rotate', () => {
+                // A rotation we didn't make (shift-drag; touch twist is off in
+                // heading-up) hands the map back to the user.
+                if (!navSelfRotate && navMode === 'headingup') setNavMode('off', true);
+                scheduleHeading();
+            });
+            // The compass button is the heading-up toggle (see hardenRotateControl).
+            hardenRotateControl(resultsMap, () => setNavMode(navMode === 'headingup' ? 'off' : 'headingup'));
+            // Stock _restyle is bound to 'rotate' at control creation, so it can't
+            // be overridden on the instance; re-apply ours right after it runs.
+            resultsMap.on('rotate', styleRotateControl);
+            // Portrait <-> landscape: the container resizes and (flat mode) the
+            // heading reference jumps by 90°. Drop the low-pass history so a stale
+            // vector can't sweep the map, then resize (twice: iOS reports the new
+            // size a beat after the event).
+            const onScreenTurn = () => {
+                headingVec = null;
+                [0, 300].forEach(ms => setTimeout(() => {
+                    if (!resultsMap) return;
+                    resultsMap.invalidateSize();
+                }, ms));
+            };
+            if (screen.orientation && screen.orientation.addEventListener) {
+                screen.orientation.addEventListener('change', onScreenTurn);
+            }
+            window.addEventListener('orientationchange', onScreenTurn);
         }
 
         // ---- Flag labels on map pins ----
@@ -2563,12 +2661,80 @@
         // (the modal content HTML — and thus #detail-map — is regenerated).
         function destroyDetailMap() {
             if (detailMap) { detailMap.remove(); detailMap = null; }
+            // Expanded state deliberately does NOT persist: closing the modal or
+            // hopping to a neighbor lake (whose details are the point of the hop)
+            // returns to the normal scrolling card.
+            detailMapExpanded = false;
+            const card = document.getElementById('lake-modal-card');
+            if (card) card.classList.remove('map-expanded');
+            window.removeEventListener('resize', layoutDetailMapExpanded);
+        }
+        let detailMapExpanded = false;
+        // Pin the expanded wrapper to the card: full card width, from just below
+        // the sticky header to the card's bottom edge (clamped to the viewport).
+        function layoutDetailMapExpanded() {
+            const wrap = document.getElementById('detail-map-wrap');
+            const card = document.getElementById('lake-modal-card');
+            const header = document.getElementById('lake-modal-header');
+            if (!wrap || !card || !header || !detailMapExpanded) return;
+            const c = card.getBoundingClientRect(), top = header.getBoundingClientRect().bottom;
+            const bottom = Math.min(c.bottom, window.innerHeight);
+            Object.assign(wrap.style, { top: top + 'px', left: c.left + 'px',
+                width: card.clientWidth + 'px', height: Math.max(0, bottom - top) + 'px' });
+            if (detailMap) detailMap.invalidateSize();
+        }
+        function toggleDetailMapExpanded() {
+            const wrap = document.getElementById('detail-map-wrap');
+            const slot = document.getElementById('detail-map-slot');
+            const card = document.getElementById('lake-modal-card');
+            if (!wrap || !slot || !detailMap) return;
+            detailMapExpanded = !detailMapExpanded;
+            if (detailMapExpanded) {
+                // Keep the collapsed footprint in the flow so scroll position holds.
+                slot.style.height = wrap.offsetHeight + 'px';
+                card.classList.add('map-expanded');   // freeze card scroll (position retained)
+                wrap.classList.add('expanded');
+                window.addEventListener('resize', layoutDetailMapExpanded);
+                layoutDetailMapExpanded();
+            } else {
+                window.removeEventListener('resize', layoutDetailMapExpanded);
+                wrap.classList.remove('expanded');
+                wrap.style.top = wrap.style.left = wrap.style.width = wrap.style.height = '';
+                slot.style.height = '';
+                card.classList.remove('map-expanded');
+            }
+            const a = document.querySelector('#detail-map .expand-btn');
+            if (a) { a.innerHTML = detailMapExpanded ? '⤡' : '⛶';
+                     a.title = detailMapExpanded ? 'Collapse map' : 'Expand map'; }
+            detailMap.invalidateSize();
+            updatePinLabels(detailMap, detailPinRefs, DETAIL_LABEL_MAX);
+        }
+        function addDetailExpandControl() {
+            const Expand = L.Control.extend({
+                options: { position: 'topleft' },
+                onAdd() {
+                    const div = L.DomUtil.create('div', 'leaflet-bar');
+                    const a = L.DomUtil.create('a', 'expand-btn', div);
+                    a.href = '#'; a.title = 'Expand map'; a.innerHTML = '⛶';
+                    L.DomEvent.on(a, 'click', L.DomEvent.stop).on(a, 'click', toggleDetailMapExpanded);
+                    return div;
+                }
+            });
+            detailMap.addControl(new Expand());
         }
         function initDetailMap(lake) {
             destroyDetailMap();
             const el = document.getElementById('detail-map');
             if (!el || lake.lat == null) return;
-            detailMap = L.map('detail-map', { attributionControl: true });
+            // rotate/touchRotate as on the results map: two-finger twist works in
+            // both collapsed and expanded states; leaflet-rotate's compass control
+            // doubles as reset-to-north. Pin labels are DOM tooltips, which
+            // leaflet-rotate counter-rotates to stay upright.
+            detailMap = L.map('detail-map', { attributionControl: true,
+                rotate: true, touchRotate: true, bearing: 0 });
+            // no GPS/heading here: the compass control just resets to north
+            hardenRotateControl(detailMap, () => detailMap.setBearing(0));
+            addDetailExpandControl();
             const layers = {};
             Object.entries(MAP_LAYERS).forEach(([name, l], i) => {
                 layers[name] = makeTileLayer(l);
@@ -2661,7 +2827,11 @@
             lastFitBounds = bounds.length ? bounds : null;
             if (lastFitToken !== view.fitToken) {
                 lastFitToken = view.fitToken;
-                fitResults();
+                // A view snapshot (see "Keep the view across an update reload")
+                // supplies the camera for the first fit after the reload, so the
+                // map opens where it was instead of flashing the overview.
+                if (restoreMapCamera) { const cam = restoreMapCamera; restoreMapCamera = null; applyMapCamera(resultsMap, cam); }
+                else fitResults();
             }
             // fitBounds that actually moves fires moveend (handled), but a
             // same-view render wouldn't — evaluate the labels directly too.
@@ -2675,6 +2845,44 @@
             else resultsMap.setView([40.72, -110.40], 9);
         }
 
+        // ---- Heading-up: the compass button toggles it ----
+        //   off       north-up (or however you twisted it by hand)
+        //   headingup car-nav style: where the phone points is screen-up and the
+        //             map turns as you turn (sign maths in applyHeading)
+        // Independent of GPS and of the 📍 button: it only rotates the map about
+        // its centre. Touch twist is disabled while on (the compass owns the
+        // bearing; a pinch would otherwise fire stray 'rotate' events).
+        const NAV_MIN_ROTATE = 1;   // degrees; smaller heading changes don't move the map
+        let navMode = 'off', navSelfRotate = false;
+        function getNavMode() { return navMode; }
+
+        // keepBearing: leave the map rotated as it is (a gesture-driven exit);
+        // the compass tap ending heading-up squares the map to north instead.
+        function setNavMode(mode, keepBearing) {
+            if (!resultsMap || !['off', 'headingup'].includes(mode)) return;
+            const prev = navMode;
+            navMode = mode;
+            if (mode === 'headingup') {
+                // In the tap's gesture stack, for the iOS compass prompt.
+                requestHeading(() => {
+                    if (navMode !== 'headingup') return;
+                    setNavMode('off', true);
+                    showMapNote('Compass permission denied — staying north-up.');
+                });
+                resultsMap.touchRotate.disable();
+                scheduleHeading();
+            } else {
+                resultsMap.touchRotate.enable();
+                if (prev === 'headingup' && !keepBearing) {
+                    navSelfRotate = true;
+                    try { resultsMap.setBearing(0); } finally { navSelfRotate = false; }
+                }
+            }
+            if (resultsMap.rotateControl) resultsMap.rotateControl._restyle();
+            styleRotateControl();
+        }
+
+        // 📍: one job — find me, drop the dot (with its heading arrow), centre.
         function addLocateControl() {
             const Locate = L.Control.extend({
                 options: { position: 'topleft' },
@@ -3555,8 +3763,10 @@
 
                 <!-- Where it is (our coordinates) — interactive mini-map -->
                 ${lake.lat != null ? `
-                <div class="rounded-lg overflow-hidden border border-slate-200">
-                    <div id="detail-map"></div>
+                <div id="detail-map-slot">
+                    <div id="detail-map-wrap" class="rounded-lg overflow-hidden border border-slate-200">
+                        <div id="detail-map"></div>
+                    </div>
                 </div>
                 ` : ''}
 
@@ -6592,6 +6802,153 @@
             showStockingReport(await readStashedReport());
         }
 
+        // ---- Keep the view across an update reload ----------------------
+        // The "New version available" reload is unavoidable (the app code itself
+        // changed), but it used to drop you back at the top of the list, out of
+        // the map, with the lake you were reading closed. So right before that
+        // reload we write a short-lived snapshot of the UI to sessionStorage
+        // (per tab, gone when the tab closes), and initApp puts it back once the
+        // data has loaded. Only things the user can see or set are kept — never
+        // data — so restoring cannot queue an edit or touch sync. The snapshot
+        // is consumed on read and ignored when stale (older than two minutes) or
+        // when the page was opened on a different hash than the one we left
+        // (an explicit deep link wins). Every storage access is try/catch: a
+        // missing snapshot just means a normal fresh start.
+        const RESTORE_KEY = 'uintas-restore-view';
+        const RESTORE_MAX_AGE_MS = 2 * 60 * 1000;
+        const FILTER_INPUT_IDS = ['depth-min', 'depth-max', 'elevation-min', 'elevation-max',
+                                  'size-min', 'size-max', 'year-min', 'year-max'];
+        let restoreMapCamera = null;   // consumed by renderMap's first fit
+
+        const mapCamera = m => { const c = m.getCenter();
+            return { lat: c.lat, lng: c.lng, zoom: m.getZoom(), bearing: m.getBearing ? m.getBearing() : 0 }; };
+        // Unanimated, so nothing is mid-flight when the labels / pins settle.
+        function applyMapCamera(m, cam) {
+            if (m.setBearing) m.setBearing(cam.bearing || 0);
+            m.setView([cam.lat, cam.lng], cam.zoom, { animate: false });
+        }
+
+        function saveViewSnapshot() {
+            try {
+                const snap = { t: Date.now(), hash: location.hash, mode: view.mode,
+                    scrollY: openOverlays.size ? scrollLockY : (window.scrollY || 0) };
+                snap.search = document.getElementById('lake-search').value;
+                snap.searchOpen = !document.getElementById('search-results').classList.contains('hidden');
+                snap.filters = {
+                    collections: [...filterState.collections], drainages: [...filterState.drainages],
+                    species: [...filterState.species], speciesMode: filterState.speciesMode,
+                    inputs: Object.fromEntries(FILTER_INPUT_IDS.map(id => [id, val(id)])),
+                    expanded: !document.getElementById('filters-panel').classList.contains('hidden')
+                };
+                if (!document.getElementById('results-section').classList.contains('hidden')) {
+                    // The result SET, by designation, plus how it was titled; a
+                    // filter / drainage / search / starred view all restore alike.
+                    snap.results = { ids: view.results.map(l => l.letter_number), title: view.title,
+                        leadHtml: view.leadHtml, showDrainage: view.showDrainage,
+                        fromFilters: view.fromFilters, noteCollection: view.noteCollection,
+                        drainage: view.drainage };
+                }
+                if (resultsMap) { snap.map = mapCamera(resultsMap); snap.nav = navMode; }
+                if (isOpen('lake-detail-modal') && currentModalLake) {
+                    snap.lake = { id: currentModalLake, nav: [...lakeNavStack],
+                        scroll: document.getElementById('lake-modal-card').scrollTop,
+                        expanded: detailMapExpanded,
+                        map: detailMap ? mapCamera(detailMap) : null };
+                }
+                sessionStorage.setItem(RESTORE_KEY, JSON.stringify(snap));
+            } catch (e) { /* private mode / quota: restart plain */ }
+        }
+
+        // Phase 1 (before the deep link): filters, search, results, page scroll
+        // and the results-map camera. Returns the snapshot for phase 2, or null.
+        function restoreViewSnapshot() {
+            let snap = null;
+            try {
+                snap = JSON.parse(sessionStorage.getItem(RESTORE_KEY) || 'null');
+                sessionStorage.removeItem(RESTORE_KEY);   // one shot: a later manual reload starts clean
+            } catch (e) { return null; }
+            if (!snap || Date.now() - snap.t > RESTORE_MAX_AGE_MS || snap.hash !== location.hash) return null;
+            try {
+                const f = snap.filters || {};
+                filterState.collections = new Set(f.collections || []);
+                filterState.drainages = new Set(f.drainages || []);
+                filterState.species = new Set(f.species || []);
+                filterState.speciesMode = f.speciesMode || 'or';
+                document.querySelectorAll('#collection-ms-panel input, #drainage-ms-panel input, #species-ms-panel input')
+                    .forEach(cb => {
+                        cb.checked = filterState.collections.has(cb.value) || filterState.drainages.has(cb.value)
+                            || filterState.species.has(cb.value);
+                    });
+                document.querySelectorAll('#species-mode button')
+                    .forEach(b => b.classList.toggle('active', b.dataset.mode === filterState.speciesMode));
+                FILTER_INPUT_IDS.forEach(id => { document.getElementById(id).value = (f.inputs || {})[id] || ''; });
+                updateMsLabels();
+                updateFilterButtonState();
+                setFiltersExpanded(!!f.expanded);
+
+                const box = document.getElementById('lake-search');
+                box.value = snap.search || '';
+                box.dispatchEvent(new Event('input'));   // clear button + matches
+                if (!snap.searchOpen) document.getElementById('search-results').classList.add('hidden');
+
+                if (snap.mode === 'map' || snap.mode === 'list') view.mode = snap.mode;
+                updateViewToggle();
+                if (snap.results) {
+                    const byId = new Map(lakes.map(l => [l.letter_number, l]));
+                    const r = snap.results;
+                    if (snap.map && view.mode === 'map') restoreMapCamera = snap.map;
+                    setResults(r.ids.map(id => byId.get(id)).filter(Boolean), {
+                        title: r.title, leadHtml: r.leadHtml, showDrainage: r.showDrainage,
+                        fromFilters: r.fromFilters, noteCollection: r.noteCollection,
+                        drainage: r.drainage, scroll: false });
+                    restoreMapCamera = null;   // list mode never consumed it
+                }
+                window.scrollTo(0, snap.scrollY || 0);
+                return snap;
+            } catch (e) {
+                console.warn('View restore failed:', e);
+                return null;
+            }
+        }
+
+        // Phase 2 (after the deep link opened the modal): the modal's own scroll
+        // and mini-map, then the 📍 mode.
+        function restoreViewDetails(snap) {
+            try {
+                const L0 = snap.lake;
+                if (L0 && currentModalLake === L0.id && isOpen('lake-detail-modal')) {
+                    lakeNavStack = [...(L0.nav || [])];
+                    // Applied twice: content below the fold (journal, photos) can
+                    // still be filling in and would clamp the first attempt.
+                    const card = document.getElementById('lake-modal-card');
+                    let touched = false;
+                    ['wheel', 'touchstart'].forEach(ev => card.addEventListener(ev, () => { touched = true; }, { once: true, passive: true }));
+                    card.scrollTop = L0.scroll || 0;
+                    setTimeout(() => { if (!touched && currentModalLake === L0.id) card.scrollTop = L0.scroll || 0; }, 400);
+                    if (L0.expanded && detailMap && !detailMapExpanded) toggleDetailMapExpanded();
+                    if (L0.map && detailMap) applyMapCamera(detailMap, L0.map);
+                }
+                if (snap.nav === 'headingup' && resultsMap && view.mode === 'map') restoreNavMode();
+            } catch (e) {
+                console.warn('View restore (details) failed:', e);
+            }
+        }
+
+        // Heading-up needs the compass, and iOS only grants DeviceOrientationEvent
+        // permission inside a tap: after a reload it may refuse. Try it; if it
+        // won't come, stay north-up and say how to get heading-up back.
+        function restoreNavMode() {
+            const note = () => showMapNote('Updated. Tap the compass to resume heading-up.');
+            const D = window.DeviceOrientationEvent;
+            if (D && typeof D.requestPermission === 'function') {
+                D.requestPermission()
+                    .then(st => { if (st === 'granted') setNavMode('headingup'); else note(); })
+                    .catch(note);
+            } else {
+                setNavMode('headingup');
+            }
+        }
+
         // Service Worker Registration
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
@@ -6608,6 +6965,7 @@
                         navigator.serviceWorker.addEventListener('controllerchange', () => {
                             if (reloadingForUpdate) return;
                             reloadingForUpdate = true;
+                            saveViewSnapshot();
                             window.location.reload();
                         });
 
