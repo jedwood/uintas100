@@ -62,8 +62,8 @@ ok "PUT thumb jpg" '[[ -f $S/media/${ID}_t.jpg ]]'
 R=$(curl -s -X PUT -H 'Content-Type: image/jpeg' --data-binary @$S/f.jpg $H/api/media/$ID.jpg)
 ok "PUT is idempotent" '[[ "$R" == *\"ok\":\ true* ]]'
 ok "no tmp files left in media dir" '[[ $(ls -A $S/media | grep -c tmp) -eq 0 ]]'
-R=$(curl -s -D - $H/api/media/$ID.jpg -o $S/got.jpg)
-ok "GET full: 200, CORS *, immutable cache, bytes match" '[[ "$R" == *"200"* && "$R" == *"Access-Control-Allow-Origin: *"* && "$R" == *"private, max-age=31536000, immutable"* ]] && cmp -s $S/f.jpg $S/got.jpg'
+R=$(curl -s -D - -H 'Origin: https://jedwood.github.io' $H/api/media/$ID.jpg -o $S/got.jpg)
+ok "GET full: 200, CORS for the app, immutable cache, bytes match" '[[ "$R" == *"200"* && "$R" == *"Access-Control-Allow-Origin: https://jedwood.github.io"* && "$R" == *"private, max-age=31536000, immutable"* ]] && cmp -s $S/f.jpg $S/got.jpg'
 R=$(curl -s -o /dev/null -w '%{http_code}' $H/api/media/p-nothere-0000_t.jpg)
 ok "GET missing -> 404" '[[ "$R" == 404 ]]'
 R=$(curl -s -o /dev/null -w '%{http_code}' -X PUT -H 'Content-Type: image/jpeg' --data-binary @$S/f.jpg $H/api/media/x-bad.jpg)
@@ -112,6 +112,16 @@ ok "link-title non-http -> 400" '[[ "$R" == 400 ]]'
 # --- old endpoint unaffected ---
 R=$(curl -s -X POST -H 'Content-Type: application/json' --data '{"device":"t","edits":[{"id":"e1","lake":"BR-25","field":"status","value":"CAUGHT","ts":"2026-10-10T18:00:00.000Z"}]}' $H/api/edits)
 ok "/api/edits still applies" '[[ "$R" == *applied* ]]'
+
+# --- origin allow-list: a foreign page can't read or write ---
+R=$(curl -s -o /dev/null -w '%{http_code}' -H 'Origin: https://evil.example' $H/api/user-data)
+ok "foreign origin GET user-data -> 403" '[[ "$R" == 403 ]]'
+R=$(curl -s -o /dev/null -w '%{http_code}' -X POST -H 'Origin: https://evil.example' -H 'Content-Type: text/plain' --data '{"edits":[]}' $H/api/edits)
+ok "foreign origin text/plain POST -> 403" '[[ "$R" == 403 ]]'
+R=$(curl -s -D - -o /dev/null -X OPTIONS -H 'Origin: https://evil.example' $H/api/edits)
+ok "foreign origin preflight gets no Allow-Origin" '[[ "$R" != *Access-Control-Allow-Origin* ]]'
+R=$(curl -s -D - -o /dev/null -H 'Origin: https://jedwood.github.io' $H/api/ping)
+ok "github.io origin allowed + echoed" '[[ "$R" == *"Access-Control-Allow-Origin: https://jedwood.github.io"* ]]'
 
 echo; echo "server: passed=$pass failed=$fail"
 [[ $fail -eq 0 ]]

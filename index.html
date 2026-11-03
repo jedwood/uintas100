@@ -1882,8 +1882,11 @@
             species: new Set(),
             speciesMode: 'or',   // 'or' = any of the picks; 'only' = nothing but the picks
         };
-        const escHtml = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-        const escAttr = s => escHtml(s).replace(/"/g, '&quot;');
+        function escapeHtml(s) {
+            return String(s == null ? '' : s).replace(/[&<>"']/g, ch => (
+                { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+        }
+        const escHtml = escapeHtml, escAttr = escapeHtml;
 
         function wireMsCheckboxes(panel, set) {
             panel.querySelectorAll('input[type="checkbox"]').forEach(cb => {
@@ -6714,10 +6717,6 @@
             if (navigator.clearAppBadge) { try { navigator.clearAppBadge(); } catch (e) {} }
             const c = navigator.serviceWorker && navigator.serviceWorker.controller;
             if (c) c.postMessage({ type: 'CLEAR_BADGE' });
-        }
-        function escapeHtml(s) {
-            return String(s == null ? '' : s).replace(/[&<>"']/g, ch => (
-                { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
         }
         async function readStashedReport() {
             try {

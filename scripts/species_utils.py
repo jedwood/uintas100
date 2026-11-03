@@ -192,10 +192,12 @@ def update_lake_fish_species(cursor, lake_id, cutoff_year=DEFAULT_SPECIES_CUTOFF
     # Format for display
     if all_species:
         updated_fish_species = format_species_display(sorted(all_species), asterisk_species)
-        cursor.execute('UPDATE lakes SET fish_species = ? WHERE id = ?', (updated_fish_species, lake_id))
+        # Skip no-op writes: they'd still dirty the DB file and trigger a commit.
+        if updated_fish_species != current_species_text:
+            cursor.execute('UPDATE lakes SET fish_species = ? WHERE id = ?', (updated_fish_species, lake_id))
         return updated_fish_species
-    
-    return None
+
+    return current_species_text
 
 def refresh_all_fish_species(cursor, cutoff_year=DEFAULT_SPECIES_CUTOFF_YEAR):
     """
@@ -214,7 +216,7 @@ def refresh_all_fish_species(cursor, cutoff_year=DEFAULT_SPECIES_CUTOFF_YEAR):
     changed = 0
     for lake_id, before in rows:
         after = update_lake_fish_species(cursor, lake_id, cutoff_year=cutoff_year)
-        if after != before:
+        if after != (before or ''):  # '' and NULL both mean "none"
             changed += 1
     return changed
 
@@ -245,6 +247,17 @@ if __name__ == "__main__":
         "GRAYLING ARCTIC"
     ]
     
+    # A lake with '' and no stocking is not a "change" (it caused a daily no-op commit).
+    import sqlite3
+    _c = sqlite3.connect(":memory:").cursor()
+    _c.execute("CREATE TABLE lakes (id INTEGER, letter_number TEXT, fish_species TEXT)")
+    _c.execute("CREATE TABLE stocking_records (lake_id INTEGER, species TEXT, source_year INTEGER)")
+    _c.executemany("INSERT INTO lakes VALUES (?, ?, ?)", [(1, "T-1", ""), (2, "T-2", None)])
+    assert refresh_all_fish_species(_c) == 0
+    _c.execute("INSERT INTO stocking_records VALUES (1, 'Brookies', 2025)")
+    assert refresh_all_fish_species(_c) == 1 and refresh_all_fish_species(_c) == 0
+    print("refresh_all_fish_species no-op check: OK\n")
+
     print("=== Testing Species Normalization ===\n")
     
     for case in test_cases:

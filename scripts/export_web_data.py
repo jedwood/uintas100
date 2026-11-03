@@ -94,7 +94,7 @@ def export():
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
 
-    # Tolerate a database built before coordinates existed (fresh setup_database.py)
+    # Tolerate a database built before coordinates existed (old schema)
     try:
         from coord_utils import ensure_coord_columns
         ensure_coord_columns(conn)

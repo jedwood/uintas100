@@ -142,8 +142,8 @@ The database uses standardized species names for consistency across all data sou
 
 ## Key Files
 
-- **`setup_database.py`**: One-time database setup (lakes, Norrick data, drainages)
-- **`update_stocking.py`**: Stocking data import and updates
+- **`rebuild_database.py`**: Build `uinta_lakes.db` from the committed seeds in `data/seeds/`
+- **`fetch_latest_stocking.py`**: Pull new DWR stocking records
 - **`database_utils.py`**: Core database utility functions
 - **`species_utils.py`**: Shared species name normalization and formatting functions
 - **`lake_data.csv`**: Original lake designations and drainages (609 lakes)
@@ -239,14 +239,14 @@ SELECT name, info FROM drainages WHERE name LIKE '%Bear River%';
 
 ## Quick Start
 
-**Initial database setup (run once):**
+**Build the database from the seeds** (into a temp file; `--output PATH` to place it):
 ```bash
-python3 setup_database.py
+python3 scripts/rebuild_database.py
 ```
 
 **Add/update stocking data:**
-```bash  
-python3 update_stocking.py
+```bash
+python3 scripts/fetch_latest_stocking.py
 ```
 
 **Generate fresh dump files:**

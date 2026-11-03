@@ -6,12 +6,11 @@ the text below is unchanged.
 
 ### Database Management
 ```bash
-# Initial setup (run once)
-python3 scripts/setup_database.py
+# Build the DB from the seeds (into a temp file; --output PATH to place it — see Reproducibility below)
+python3 scripts/rebuild_database.py
 
 # Update with latest stocking data
 python3 scripts/fetch_latest_stocking.py
-python3 scripts/update_stocking.py
 
 # Regenerate the frontend data file after any database change
 # (the pre-commit hook also runs this automatically when uinta_lakes.db is committed)
@@ -60,8 +59,7 @@ confirms an exact, zero-diff round-trip on every table. SQL `NULL` is stored in 
 seeds as the sentinel `\N` (empty string stays empty) so the `NULL`-vs-`''`
 distinction (e.g. `basin`) round-trips. Schema lives in one place —
 `create_database()` builds the full canonical schema (all columns + triggers +
-coordinate columns); `setup_database.py`/`update_stocking.py` no longer patch it
-ad hoc. Full recovery write-up: `docs/db-recovery-plan.md`.
+coordinate columns). Full recovery write-up: `docs/db-recovery-plan.md`.
 
 ### PWA Cache Management
 ```bash

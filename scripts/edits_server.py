@@ -86,6 +86,13 @@ MAX_JOURNAL_BODY = 8 * 1024 * 1024
 LINK_TITLE_UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 "
                  "(KHTML, like Gecko) Version/17.0 Safari/605.1.15")
 
+# Pages allowed to call the API cross-origin: the published app, local dev
+# servers, and the Mini's own names (same-origin via the Tailscale proxy, which
+# may rewrite Host). Never "*": any web page open on a LAN/Tailscale device
+# could then read photo GPS (/api/user-data) and post edits that get pushed.
+ALLOWED_ORIGINS = {"https://jedwood.github.io"}
+ALLOWED_ORIGIN_HOSTS = {"localhost", "127.0.0.1", "olaf.local", "olaf.tail89dcea.ts.net"}
+
 EDITABLE_FIELDS = {"status", "jed_notes", "trip_reports", "starred"}
 VALID_STATUSES = {"CAUGHT", "NONE", "OTHERS"}  # DB CHECK constraint; NULL = unset
 
@@ -356,10 +363,25 @@ def committer_loop():
                  if os.path.exists(os.path.join(REPO_ROOT, p))]
         try:
             with _write_lock:
-                commit_own_files(paths, "App edits: updates from the PWA",
+                commit_own_files(paths, "App edits: updates from the PWA", push=False,
                                  log=lambda m: print("[edits-server] " + m))
         except subprocess.CalledProcessError as e:
-            print(f"[edits-server] WARNING: git commit failed: {e.stderr or e}")
+            # e.g. the stocking cron holding git's lock; retry after the next quiet gap
+            print(f"[edits-server] WARNING: git commit failed, retrying in 60s: {e.stderr or e}")
+            sys.stdout.flush()
+            time.sleep(60)  # back off so a persistent failure doesn't spin
+            _commit_signal.set()
+        else:
+            # Outside the lock: a stalled push must not block incoming edits.
+            # Pushes whatever is committed, so it also catches up on earlier failures.
+            try:
+                p = subprocess.run(["git", "push"], cwd=REPO_ROOT, capture_output=True,
+                                   text=True, timeout=120)
+                if p.returncode != 0:
+                    print("[edits-server] WARNING: git push failed (committed locally): "
+                          + p.stderr.strip())
+            except subprocess.TimeoutExpired:
+                print("[edits-server] WARNING: git push timed out (committed locally)")
         sys.stdout.flush()
 
 
@@ -376,10 +398,30 @@ class EditsHandler(SimpleHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
+    def _origin_ok(self):
+        """No Origin (curl, scripts) or same-origin or allow-listed."""
+        origin = self.headers.get("Origin")
+        if not origin:
+            return True
+        o = urlsplit(origin)
+        return (origin in ALLOWED_ORIGINS or o.hostname in ALLOWED_ORIGIN_HOSTS
+                or o.netloc == self.headers.get("Host"))
+
     def _cors(self):
-        self.send_header("Access-Control-Allow-Origin", "*")
+        if self.headers.get("Origin") and self._origin_ok():
+            self.send_header("Access-Control-Allow-Origin", self.headers["Origin"])
+            self.send_header("Vary", "Origin")
         self.send_header("Access-Control-Allow-Methods", "GET, POST, PUT, OPTIONS")
         self.send_header("Access-Control-Allow-Headers", "Content-Type")
+
+    def _refuse_origin(self):
+        # Server-side too: a text/plain POST skips the CORS preflight, so the
+        # browser alone wouldn't stop a foreign page's write.
+        if self._origin_ok():
+            return False
+        self.close_connection = True
+        self._json({"error": "origin not allowed"}, 403)
+        return True
 
     def do_OPTIONS(self):
         self.send_response(204)
@@ -387,6 +429,8 @@ class EditsHandler(SimpleHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self):
+        if self._refuse_origin():
+            return
         parts = urlsplit(self.path)
         if self.path == "/api/ping":
             return self._json({"ok": True, "role": "writer"})
@@ -451,6 +495,8 @@ class EditsHandler(SimpleHTTPRequestHandler):
         self.wfile.write(body)
 
     def do_PUT(self):
+        if self._refuse_origin():
+            return
         m = MEDIA_PATH_RE.match(urlsplit(self.path).path)
         if not m:
             return self._json({"error": "not found"}, 404)
@@ -488,6 +534,8 @@ class EditsHandler(SimpleHTTPRequestHandler):
             return None
 
     def do_POST(self):
+        if self._refuse_origin():
+            return
         if self.path == "/api/edits":
             return self._post_edits()
         if self.path == "/api/journal":

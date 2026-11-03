@@ -333,8 +333,8 @@ def create_database(db_path=None):
     ensure_coord_columns(conn)
 
     # Triggers: keep last_modified fresh and flag lakes whose user-facing fields
-    # changed so the Apple Notes sync knows to re-export them. Defined here (not
-    # only in setup_database) so every entry point gets a complete schema.
+    # changed so the Apple Notes sync knows to re-export them. Defined here so every entry point gets a complete
+    # schema.
     cursor.execute('''
         CREATE TRIGGER IF NOT EXISTS lakes_insert_trigger
         AFTER INSERT ON lakes

@@ -17,7 +17,7 @@ the DB. This removes the two-machine write-conflict class (e.g. the binary-DB
 autostash conflicts).
 
 - **Enforcement:** a gitignored `.db-readonly` marker in the repo root makes a
-  clone a mirror. `fetch_latest_stocking.py`, `update_stocking.py`,
+  clone a mirror. `fetch_latest_stocking.py`,
   `sync_notes_to_db.sh`, and `sync_notes_and_push.sh` call
   `writer_guard.exit_if_readonly()` (or the bash equivalent) and exit early when
   the marker exists — so even if a scheduler fires the job, it does nothing.
